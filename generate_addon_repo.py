@@ -6,44 +6,57 @@ from xml.dom.minidom import parseString
 from urllib.parse import quote
 
 BASE_URL = "https://stogie87.github.io/Embuary-2K-Skin/"
-
 ADDONS_DIR = os.getcwd()
 OUTPUT_ADDONS_XML = "addons.xml"
 OUTPUT_MD5 = "addons.xml.md5"
 OUTPUT_INDEX_HTML = "index.html"
-TARGET_ADDON_ID = "skin.embuary2k.omega"
 
-def bump_version_in_addon(addon_path):
+def get_current_version(addon_path):
     with open(addon_path, 'r', encoding='utf-8') as f:
         content = f.read()
+    match = re.search(r'version="(\d+)\.(\d+)\.(\d+)"', content)
+    if not match:
+        raise ValueError(f"❌ Keine gültige Versionsnummer in {addon_path}")
+    return tuple(map(int, match.groups()))
 
-    if f'id="{TARGET_ADDON_ID}"' not in content:
-        return None, None  # Nicht das gewünschte Addon
+def generate_zip_filename(addon_dir, version):
+    return f"{os.path.basename(addon_dir)}-{version}.zip"
 
-    version_match = re.search(rf'id="{TARGET_ADDON_ID}"\s+version="(\d+)\.(\d+)\.(\d+)"', content)
-    if not version_match:
-        raise ValueError("⚠️ Keine gültige Versionsnummer im Ziel-Addon gefunden!")
+def calculate_folder_hash(folder_path):
+    """Erzeugt einen Hash aller Dateien im Ordner, um Änderungen zu erkennen."""
+    sha = hashlib.sha256()
+    for root, _, files in sorted(os.walk(folder_path)):
+        for file in sorted(files):
+            file_path = os.path.join(root, file)
+            with open(file_path, 'rb') as f:
+                while chunk := f.read(8192):
+                    sha.update(chunk)
+    return sha.hexdigest()
 
-    major, minor, patch = map(int, version_match.groups())
-    patch += 1
-    new_version = f'{major}.{minor}.{patch}'
-
-    new_content = re.sub(
-        rf'(id="{TARGET_ADDON_ID}"\s+version=")\d+\.\d+\.\d+(")',
-        rf'\g<1>{new_version}\g<2>',
-        content
+def get_latest_zip_hash(addon_dir):
+    """Sucht die neueste ZIP für ein Addon und berechnet ihren Inhaltshash."""
+    prefix = os.path.basename(addon_dir)
+    zips = sorted(
+        [f for f in os.listdir() if f.startswith(prefix) and f.endswith('.zip')],
+        reverse=True
     )
+    if not zips:
+        return None
+    latest_zip = zips[0]
+    sha = hashlib.sha256()
+    with zipfile.ZipFile(latest_zip, 'r') as zipf:
+        for name in sorted(zipf.namelist()):
+            sha.update(zipf.read(name))
+    return sha.hexdigest()
 
-    with open(addon_path, 'w', encoding='utf-8') as f:
-        f.write(new_content)
-
-    print(f"🔢 Version erhöht für {TARGET_ADDON_ID}: {major}.{minor}.{patch - 1} → {new_version}")
-    return new_version, addon_path
+def bump_version(version):
+    major, minor, patch = version
+    return f"{major}.{minor}.{patch + 1}"
 
 def zip_addon(addon_folder, version):
-    zip_name = f"{os.path.basename(addon_folder)}-{version}.zip"
+    zip_name = generate_zip_filename(addon_folder, version)
     with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED) as zipf:
-        for root, dirs, files in os.walk(addon_folder):
+        for root, _, files in os.walk(addon_folder):
             for file in files:
                 full_path = os.path.join(root, file)
                 rel_path = os.path.relpath(full_path, os.path.dirname(addon_folder))
@@ -80,20 +93,17 @@ def write_md5(content):
     print(f"🔐 addons.xml.md5 geschrieben: {md5_hash}")
 
 def generate_zip_index():
-    zip_files = []
-    for root, dirs, files in os.walk(ADDONS_DIR):
-        for file in files:
-            if file.endswith('.zip'):
-                rel_path = os.path.relpath(os.path.join(root, file), ADDONS_DIR).replace("\\", "/")
-                zip_files.append(rel_path)
-
+    zip_files = [
+        os.path.relpath(os.path.join(root, file), ADDONS_DIR).replace("\\", "/")
+        for root, dirs, files in os.walk(ADDONS_DIR)
+        for file in files if file.endswith('.zip')
+    ]
     with open(OUTPUT_INDEX_HTML, 'w', encoding='utf-8') as f:
         f.write("<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Kodi ZIPs</title></head><body>\n")
         f.write("<h1>Kodi Addon ZIP-Dateien</h1><ul>\n")
         for zip_file in sorted(zip_files):
             f.write(f"<li><a href='{BASE_URL}{quote(zip_file)}'>{zip_file}</a></li>\n")
         f.write("</ul></body></html>\n")
-
     print(f"🌐 index.html geschrieben mit {len(zip_files)} ZIP-Dateien")
 
 def main():
@@ -101,18 +111,31 @@ def main():
         d for d in os.listdir()
         if os.path.isdir(d) and os.path.isfile(os.path.join(d, 'addon.xml'))
     ]
-
     if not addon_dirs:
         print("⚠️ Kein Addon-Ordner mit addon.xml gefunden.")
         return
 
-    version = None
     for addon_dir in addon_dirs:
         addon_path = os.path.join(addon_dir, 'addon.xml')
-        bumped_version, bumped_path = bump_version_in_addon(addon_path)
-        if bumped_version:
-            version = bumped_version
-            zip_addon(addon_dir, version)
+        current_version = get_current_version(addon_path)
+        folder_hash = calculate_folder_hash(addon_dir)
+        zip_hash = get_latest_zip_hash(addon_dir)
+
+        if folder_hash != zip_hash:
+            new_version = bump_version(current_version)
+            with open(addon_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+            content = re.sub(
+                r'version="\d+\.\d+\.\d+"',
+                f'version="{new_version}"',
+                content
+            )
+            with open(addon_path, 'w', encoding='utf-8') as f:
+                f.write(content)
+            print(f"🔢 Version erhöht: {current_version} → {new_version}")
+            zip_addon(addon_dir, new_version)
+        else:
+            print(f"⏩ Keine Änderung im Ordner {addon_dir}, ZIP bleibt unverändert.")
 
     addon_paths = find_addons()
     addons_xml = create_addons_xml(addon_paths)

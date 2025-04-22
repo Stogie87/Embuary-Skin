@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="skin.embuary2k.omega" version="21.0.2" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
-		<import addon="script.embuary.helper" version="1.3.6"/>
-		<import addon="script.embuary.info" version="1.2.4"/>
-		<import addon="resource.uisounds.embuary" version="0.0.4"/>
-		<import addon="plugin.program.autocompletion" version="1.0.1"/>
-		<import addon="script.skinshortcuts" version="1.0.17"/>
+		<import addon="script.embuary.helper" version="21.0.2"/>
+		<import addon="script.embuary.info" version="21.0.2"/>
+		<import addon="resource.uisounds.embuary" version="21.0.2"/>
+		<import addon="plugin.program.autocompletion" version="21.0.2"/>
+		<import addon="script.skinshortcuts" version="21.0.2"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false" defaultresolution="1440p">
 		<res width="2560" height="1440" aspect="16:9" default="true" folder="xml" />
