@@ -1,3 +1,0 @@
-git add .github/workflows/pages.yml
-git commit -m "Add GitHub Pages deploy workflow"
-git push
