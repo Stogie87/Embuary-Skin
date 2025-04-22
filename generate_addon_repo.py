@@ -5,37 +5,40 @@ import zipfile
 from xml.dom.minidom import parseString
 from urllib.parse import quote
 
-# 🔧 GitHub Pages URL – anpassen!
 BASE_URL = "https://stogie87.github.io/Embuary-2K-Skin/"
 
 ADDONS_DIR = os.getcwd()
 OUTPUT_ADDONS_XML = "addons.xml"
 OUTPUT_MD5 = "addons.xml.md5"
 OUTPUT_INDEX_HTML = "index.html"
+TARGET_ADDON_ID = "skin.embuary2k.omega"
 
 def bump_version_in_addon(addon_path):
     with open(addon_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    version_match = re.search(r'version="(\d+)\.(\d+)\.(\d+)"', content)
+    if f'id="{TARGET_ADDON_ID}"' not in content:
+        return None, None  # Nicht das gewünschte Addon
+
+    version_match = re.search(rf'id="{TARGET_ADDON_ID}"\s+version="(\d+)\.(\d+)\.(\d+)"', content)
     if not version_match:
-        raise ValueError("⚠️ Keine gültige Versionsnummer in addon.xml gefunden!")
+        raise ValueError("⚠️ Keine gültige Versionsnummer im Ziel-Addon gefunden!")
 
     major, minor, patch = map(int, version_match.groups())
     patch += 1
     new_version = f'{major}.{minor}.{patch}'
 
     new_content = re.sub(
-        r'version="\d+\.\d+\.\d+"',
-        f'version="{new_version}"',
+        rf'(id="{TARGET_ADDON_ID}"\s+version=")\d+\.\d+\.\d+(")',
+        rf'\g<1>{new_version}\g<2>',
         content
     )
 
     with open(addon_path, 'w', encoding='utf-8') as f:
         f.write(new_content)
 
-    print(f"🔢 Version erhöht: {major}.{minor}.{patch - 1} → {new_version}")
-    return new_version
+    print(f"🔢 Version erhöht für {TARGET_ADDON_ID}: {major}.{minor}.{patch - 1} → {new_version}")
+    return new_version, addon_path
 
 def zip_addon(addon_folder, version):
     zip_name = f"{os.path.basename(addon_folder)}-{version}.zip"
@@ -59,14 +62,9 @@ def create_addons_xml(addon_paths):
     for addon_file in addon_paths:
         with open(addon_file, 'r', encoding='utf-8') as f:
             content = f.read()
-
-        # Entferne XML-Deklaration
         content = re.sub(r'<\?xml.*?\?>', '', content).strip()
         addons += content + "\n\n"
-
     addons = f"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<addons>\n{addons}</addons>\n"
-
-    # Optional: schön formatieren
     dom = parseString(addons)
     return dom.toprettyxml(indent="  ")
 
@@ -108,10 +106,13 @@ def main():
         print("⚠️ Kein Addon-Ordner mit addon.xml gefunden.")
         return
 
+    version = None
     for addon_dir in addon_dirs:
         addon_path = os.path.join(addon_dir, 'addon.xml')
-        version = bump_version_in_addon(addon_path)
-        zip_addon(addon_dir, version)
+        bumped_version, bumped_path = bump_version_in_addon(addon_path)
+        if bumped_version:
+            version = bumped_version
+            zip_addon(addon_dir, version)
 
     addon_paths = find_addons()
     addons_xml = create_addons_xml(addon_paths)
