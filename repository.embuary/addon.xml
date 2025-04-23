@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addon id="repository.embuary" name="Embuary Skins (Omega)" version="0.3.4" provider-name="Embuary Team">
+<addon id="repository.embuary" name="Embuary Skins (Omega)" version="0.3.6" provider-name="Embuary Team">
     <extension point="xbmc.addon.metadata">
         <summary>Embuary Skin Repository</summary>
         <description lang="en_GB">The well-known and popular Skin Embuary from Sualfred has arrived in the UHD age. Thanks to the 2K/4K modification by Teddyknuddel, the full potential of a UHD display (2K also cuts a very good figure on FullHD) can be utilised. The CPM modification by jamal2367 provides detailed information about Dolby Vision and video soundtracks. Embuary is modelled on Emby's Web UI and was developed for Emby-for-Kodi and EmbyCon users, but also works for all common Kodi setups.</description>

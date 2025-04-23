@@ -59,6 +59,8 @@ def create_zip(addon_id, addon_path, zip_path, version):
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
         for root, _, files in os.walk(addon_path):
             for file in files:
+                if file.endswith(".zip"):
+                    continue  # ZIP-Dateien überspringen
                 full_path = os.path.join(root, file)
                 rel_path = os.path.relpath(full_path, addon_path)
                 zipf.write(full_path, os.path.join(addon_id, rel_path))
