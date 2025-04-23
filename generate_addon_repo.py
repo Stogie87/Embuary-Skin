@@ -101,9 +101,9 @@ def update_repository_addon(addon_dirs, repo_path, version):
     dir_elem = ET.SubElement(repo_ext, "dir", {
         "minversion": "20.999.0"
     })
-    ET.SubElement(dir_elem, "info", {"compressed": "false"}).text = "https://raw.githubusercontent.com/Teddyknuddel/embuary.omega/master/addons.xml"
-    ET.SubElement(dir_elem, "checksum").text = "https://raw.githubusercontent.com/Teddyknuddel/embuary.omega/master/addons.xml.md5"
-    ET.SubElement(dir_elem, "datadir", {"zip": "true"}).text = "https://raw.githubusercontent.com/Teddyknuddel/embuary.omega/master/"
+    ET.SubElement(dir_elem, "info", {"compressed": "false"}).text = "https://raw.githubusercontent.com/Stogie87/Embuary-Skin/master/addons.xml"
+    ET.SubElement(dir_elem, "checksum").text = "https://raw.githubusercontent.com/Stogie87/Embuary-Skin/master/addons.xml.md5"
+    ET.SubElement(dir_elem, "datadir", {"zip": "true"}).text = "https://raw.githubusercontent.com/Stogie87/Embuary-Skin/master/"
 
     ET.indent(tree, space="    ", level=0)
     tree.write(xml_path, encoding="utf-8", xml_declaration=True)
