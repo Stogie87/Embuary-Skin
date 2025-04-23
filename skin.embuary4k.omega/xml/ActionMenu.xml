@@ -8,7 +8,7 @@
         <control type="group">
             <!-- hidden container -->
             <control type="list" id="3000">
-                <top>-8</top>
+                <top>-10</top>
                 <left>-10</left>
                 <width>1</width>
                 <height>1600</height>

@@ -172,14 +172,9 @@ def main():
                 new_version
             )
             zip_filename = f"{addon}-{new_version}.zip"
-            zip_target_root = os.path.join(ROOT_DIR, zip_filename)
-            create_zip(addon_id, addon_path, zip_target_root, new_version)
-            print(f"✅ Repository ZIP aktualisiert: {zip_target_root}")
-
-            # ➕ ZIP auch im Addon-Ordner ablegen
             zip_target_folder = os.path.join(addon_path, zip_filename)
-            shutil.copy2(zip_target_root, zip_target_folder)
-            print(f"📁 Repository ZIP zusätzlich im Addon-Ordner gespeichert: {zip_target_folder}")
+            create_zip(addon_id, addon_path, zip_target_folder, new_version)
+            print(f"✅ Repository ZIP erstellt: {zip_target_folder}")
         else:
             zip_target = os.path.join(addon_path, f"{addon}-{major}.{minor}.{patch}.zip")
             if has_changes_since_last_zip(addon_path, zip_target):
