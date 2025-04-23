@@ -163,18 +163,21 @@ def main():
             continue
 
         if is_repo:
-            patch += 1
-            new_version = f"{major}.{minor}.{patch}"
-            update_addon_version(addon_path, new_version)
-            update_repository_addon(
-                [a for a in all_addons if not a.startswith("repository.")],
-                addon_path,
-                new_version
-            )
-            zip_filename = f"{addon}-{new_version}.zip"
-            zip_target_folder = os.path.join(addon_path, zip_filename)
-            create_zip(addon_id, addon_path, zip_target_folder, new_version)
-            print(f"✅ Repository ZIP erstellt: {zip_target_folder}")
+            zip_target = os.path.join(addon_path, f"{addon}-{major}.{minor}.{patch}.zip")
+            if has_changes_since_last_zip(addon_path, zip_target):
+                patch += 1
+                new_version = f"{major}.{minor}.{patch}"
+                update_addon_version(addon_path, new_version)
+                update_repository_addon(
+                    [a for a in all_addons if not a.startswith("repository.")],
+                    addon_path,
+                    new_version
+                )
+                zip_target = os.path.join(addon_path, f"{addon}-{new_version}.zip")
+                create_zip(addon_id, addon_path, zip_target, new_version)
+                print(f"✅ Repository ZIP erstellt: {zip_target}")
+            else:
+                print(f"⏩ Keine Änderungen am Repository, keine neue ZIP erstellt.")
         else:
             zip_target = os.path.join(addon_path, f"{addon}-{major}.{minor}.{patch}.zip")
             if has_changes_since_last_zip(addon_path, zip_target):
