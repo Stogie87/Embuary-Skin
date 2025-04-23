@@ -63,6 +63,14 @@ def create_zip(addon_id, addon_path, zip_path, version):
                 rel_path = os.path.relpath(full_path, addon_path)
                 zipf.write(full_path, os.path.join(addon_id, rel_path))
 
+        # ✅ Füge addons.xml und .md5 in Repository-ZIP ein
+        if addon_id.startswith("repository."):
+            addons_xml_path = os.path.join(ROOT_DIR, "addons.xml")
+            md5_path = addons_xml_path + ".md5"
+            zipf.write(addons_xml_path, os.path.join(addon_id, "addons.xml"))
+            zipf.write(md5_path, os.path.join(addon_id, "addons.xml.md5"))
+            print("📝 addons.xml und MD5 in Repository-ZIP eingefügt.")
+
 def generate_addons_xml(addon_dirs):
     addons = []
     for d in addon_dirs:
@@ -87,12 +95,12 @@ def update_repository_addon(addon_dirs, repo_path, version):
         root = tree.getroot()
         root.set("version", version)
 
-    # Remove old <extension point="xbmc.addon.repository">
+    # Entferne alten Repository-Abschnitt
     for elem in root.findall("extension"):
         if elem.attrib.get("point") == "xbmc.addon.repository":
             root.remove(elem)
 
-    # Add fresh repo extension with current plugins/skins
+    # Füge aktualisierten Repository-Abschnitt ein
     repo_ext = ET.SubElement(root, "extension", {
         "point": "xbmc.addon.repository",
         "name": "Embuary Skins Repository"
@@ -109,7 +117,6 @@ def update_repository_addon(addon_dirs, repo_path, version):
     tree.write(xml_path, encoding="utf-8", xml_declaration=True)
 
 def generate_index_html():
-    # Sammle alle ZIP-Dateien gruppiert nach Ordner
     zips_by_folder = {}
 
     for root, dirs, files in os.walk(ROOT_DIR):
@@ -117,12 +124,10 @@ def generate_index_html():
             if file.endswith(".zip"):
                 folder = os.path.relpath(root, ROOT_DIR)
                 if folder == ".":
-                    # Sonderbehandlung für Root-Verzeichnis
                     addon_name = file.split("-")[0]
                     folder = addon_name
                 zips_by_folder.setdefault(folder, []).append(os.path.join(folder, file) if folder != "." else file)
 
-    # HTML-Seite schreiben
     html_path = os.path.join(ROOT_DIR, "index.html")
     with open(html_path, "w", encoding="utf-8") as f:
         f.write("<html><head><title>Embuary Addons</title></head><body>\n")
@@ -132,7 +137,7 @@ def generate_index_html():
             f.write(f"<h2>{folder}</h2>\n<ul>\n")
             for zip_path in sorted(zip_files):
                 file_name = os.path.basename(zip_path)
-                file_href = zip_path.replace("\\", "/")  # Für Windows-Pfade
+                file_href = zip_path.replace("\\", "/")
                 f.write(f'<li><a href="{file_href}">{file_name}</a></li>\n')
             f.write("</ul>\n")
 
