@@ -109,18 +109,36 @@ def update_repository_addon(addon_dirs, repo_path, version):
     tree.write(xml_path, encoding="utf-8", xml_declaration=True)
 
 def generate_index_html():
-    files = sorted([
-        f for f in os.listdir(ROOT_DIR)
-        if f.endswith(".zip") and os.path.isfile(os.path.join(ROOT_DIR, f))
-    ])
+    # Sammle alle ZIP-Dateien gruppiert nach Ordner
+    zips_by_folder = {}
+
+    for root, dirs, files in os.walk(ROOT_DIR):
+        for file in files:
+            if file.endswith(".zip"):
+                folder = os.path.relpath(root, ROOT_DIR)
+                if folder == ".":
+                    # Sonderbehandlung für Root-Verzeichnis
+                    addon_name = file.split("-")[0]
+                    folder = addon_name
+                zips_by_folder.setdefault(folder, []).append(os.path.join(folder, file) if folder != "." else file)
+
+    # HTML-Seite schreiben
     html_path = os.path.join(ROOT_DIR, "index.html")
     with open(html_path, "w", encoding="utf-8") as f:
         f.write("<html><head><title>Embuary Addons</title></head><body>\n")
-        f.write("<h1>Verfügbare ZIP-Dateien</h1><ul>\n")
-        for file in files:
-            f.write(f'<li><a href="{file}">{file}</a></li>\n')
-        f.write("</ul></body></html>\n")
-    print("✅ index.html aktualisiert.")
+        f.write("<h1>Embuary Addon ZIP-Dateien</h1>\n")
+
+        for folder, zip_files in sorted(zips_by_folder.items()):
+            f.write(f"<h2>{folder}</h2>\n<ul>\n")
+            for zip_path in sorted(zip_files):
+                file_name = os.path.basename(zip_path)
+                file_href = zip_path.replace("\\", "/")  # Für Windows-Pfade
+                f.write(f'<li><a href="{file_href}">{file_name}</a></li>\n')
+            f.write("</ul>\n")
+
+        f.write("</body></html>\n")
+
+    print("✅ index.html mit Ordnerstruktur aktualisiert.")
 
 def main():
     all_addons = get_all_addons()
