@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.embuary4k.omega" version="21.0.2" name="Embuary 4K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel">
+	<requires>
+		<import addon="script.embuary.helper" version="1.3.6"/>
+		<import addon="script.embuary.info" version="1.2.4"/>
+		<import addon="resource.uisounds.embuary" version="0.0.4"/>
+		<import addon="plugin.program.autocompletion" version="1.0.1"/>
+		<import addon="script.skinshortcuts" version="1.0.17"/>
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="3840" height="2160" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Embuary skin - Creator sualfred - 4k-Modification Teddyknuddel - CPM Modification jamal2367</summary>
+		<summary lang="de_DE">Embuary Skin - Ersteller sualfred - 4k-Modifikation Teddyknuddel - CPM Modifikation jamal2367</summary>
+		<description lang="en_GB">The well-known and popular Skin Embuary from Sualfred has arrived in the UHD age. Thanks to the 4K modification by Teddyknuddel, the full potential of a UHD display can be utilised. The CPM modification by jamal2367 provides detailed information about Dolby Vision and video soundtracks. Embuary is modelled on Emby's Web UI and was developed for Emby-for-Kodi and EmbyCon users, but also works for all common Kodi setups.</description>
+		<description lang="de_DE">Die bekannte und beliebte Skin Embuary von Sualfred ist im UHD-Zeitalter angekommen. Dank der 4K Modifikation von Teddyknuddel kann das volle Potenzial eines UHD Displays genutzt werden. Durch die CPM Modifikation von jamal2367 erhält man detaillierte Informationen über Dolby Vision und Video Tonspuren. Embuary ist dem Web UI von Emby nachempfunden und für Emby-for-Kodi und EmbyCon Nutzer entwickelt worden, funktioniert aber auch für alle gängigen Kodi Setups.</description>
+		<disclaimer lang="en_GB">No mouse support. With the installation of the skin you agree that you don't use it in combination with blacklisted and illegal Kodi add-ons. We are not associated with any available build and I won't give any support to blacklisted, banned or illegal third party addons.</disclaimer>
+		<disclaimer lang="de_DE">Keine Maus Unterstützung. Mit der Installation des Skins erklärst du dich damit einverstanden keine verbotenen und illegalen Addons von Kodi damit zu benutzen. Wir stehen in keinerlei Verbindung zu verfübaren Builds und gebe keinen Support für diese oder andere illegalen Drittanbieter-Addons.</disclaimer>
+		<platform>all</platform>
+		<license>CC-BY-NC-ND-4.0</license>
+		<forum>https://emby.media/community/index.php?/topic/137508-embuary-2k4k-cpm-modification/</forum>
+		<source>https://github.com/Teddyknuddel/embuary.omega</source>
+		<assets>
+			<icon>resources/icon4k.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshot-04.jpg</screenshot>
+		</assets>
+	</extension>
+</addon>
