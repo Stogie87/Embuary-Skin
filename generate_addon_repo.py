@@ -2,134 +2,119 @@ import os
 import re
 import hashlib
 import zipfile
-from xml.dom.minidom import parseString
-from urllib.parse import quote
+from pathlib import Path
+from xml.etree import ElementTree as ET
 
-BASE_URL = "https://stogie87.github.io/Embuary-2K-Skin/"
-OUTPUT_ADDONS_XML = "addons.xml"
-OUTPUT_MD5 = "addons.xml.md5"
-OUTPUT_INDEX_HTML = "index.html"
+ROOT = Path(__file__).parent
+ADDONS_XML_PATH = ROOT / "addons.xml"
+MD5_PATH = ROOT / "addons.xml.md5"
+INDEX_HTML_PATH = ROOT / "index.html"
 
-def get_current_version(addon_xml_path):
-    with open(addon_xml_path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    match = re.search(r'<addon[^>]+version="(\d+)\.(\d+)\.(\d+)"', content)
-    if not match:
-        raise ValueError(f"⚠️ Keine gültige Versionsnummer in {addon_xml_path} gefunden!")
-    return tuple(map(int, match.groups()))
+# Addons, die wie ein Repository behandelt werden sollen
+REPO_ID_PREFIX = "repository."
 
-def update_addon_version(addon_xml_path, new_version):
-    with open(addon_xml_path, 'r', encoding='utf-8') as f:
-        content = f.read()
+def get_current_version(addon_path):
+    addon_xml = addon_path / "addon.xml"
+    tree = ET.parse(addon_xml)
+    root = tree.getroot()
+    version = root.attrib.get("version", "")
+    if not re.match(r"^\d+\.\d+\.\d+$", version):
+        raise ValueError(f"⚠️ Keine gültige Versionsnummer in {addon_path} gefunden!")
+    return list(map(int, version.split(".")))
 
-    new_content = re.sub(
-        r'(<addon[^>]+version=")(\d+\.\d+\.\d+)(")',
-        r'\g<1>' + new_version + r'\g<3>',
-        content
-    )
+def update_addon_version(addon_path, new_version):
+    addon_xml = addon_path / "addon.xml"
+    content = addon_xml.read_text(encoding="utf-8")
 
-    with open(addon_xml_path, 'w', encoding='utf-8') as f:
-        f.write(new_content)
+    def replace_version(match):
+        return match.group(0).replace(match.group(1), new_version)
 
-def zip_addon(addon_folder, version):
-    zip_name = f"{addon_folder}-{version}.zip"
-    with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED) as zipf:
-        for root, dirs, files in os.walk(addon_folder):
-            for file in files:
-                full_path = os.path.join(root, file)
-                rel_path = os.path.relpath(full_path, os.path.dirname(addon_folder))
-                zipf.write(full_path, arcname=rel_path)
-    print(f"📦 ZIP erstellt: {zip_name}")
-    return zip_name
+    new_content = re.sub(r'version="(\d+\.\d+\.\d+)"', replace_version, content, count=1)
+    addon_xml.write_text(new_content, encoding="utf-8")
 
-def get_folder_checksum(folder_path):
-    checksums = []
-    for root, _, files in os.walk(folder_path):
-        for file in sorted(files):
-            path = os.path.join(root, file)
-            with open(path, 'rb') as f:
-                data = f.read()
-                checksums.append(hashlib.md5(data).hexdigest())
-    return hashlib.md5("".join(checksums).encode()).hexdigest()
+def has_changes(addon_path, zip_path):
+    if not zip_path.exists():
+        return True
+    latest_zip_time = zip_path.stat().st_mtime
+    for path in addon_path.rglob("*"):
+        if path.is_file() and path.stat().st_mtime > latest_zip_time:
+            return True
+    return False
 
-def get_last_zip_checksum(addon_id):
-    zip_files = sorted([
-        f for f in os.listdir()
-        if f.startswith(addon_id + "-") and f.endswith(".zip")
-    ])
-    if not zip_files:
-        return None
-    latest = zip_files[-1]
-    with zipfile.ZipFile(latest, 'r') as zipf:
-        data = b''.join([zipf.read(name) for name in sorted(zipf.namelist())])
-    return hashlib.md5(data).hexdigest()
+def zip_addon(addon_path, zip_path):
+    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
+        for file in addon_path.rglob("*"):
+            if file.is_file():
+                z.write(file, file.relative_to(addon_path.parent))
 
-def should_bump_version(addon_id, addon_folder):
-    current_checksum = get_folder_checksum(addon_folder)
-    last_checksum = get_last_zip_checksum(addon_id)
-    return current_checksum != last_checksum
+def build_addons_xml(addon_dirs):
+    addons = []
+    for path in addon_dirs:
+        addon_xml = path / "addon.xml"
+        xml = addon_xml.read_text(encoding="utf-8").strip()
+        xml = re.sub(r"<\?xml.*?\?>", "", xml, count=1).strip()
+        addons.append(xml)
+    return "<addons>\n" + "\n\n".join(addons) + "\n</addons>\n"
 
-def find_addons():
-    return [
-        d for d in os.listdir()
-        if os.path.isdir(d) and os.path.isfile(os.path.join(d, 'addon.xml'))
-    ]
+def write_md5(file_path, md5_path):
+    md5_hash = hashlib.md5(file_path.read_bytes()).hexdigest()
+    md5_path.write_text(md5_hash)
 
-def create_addons_xml(addon_dirs):
-    addons = ""
-    for addon_dir in addon_dirs:
-        addon_path = os.path.join(addon_dir, 'addon.xml')
-        with open(addon_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-        content = re.sub(r'<\?xml.*?\?>', '', content).strip()
-        addons += content + "\n\n"
-    addons = f"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<addons>\n{addons}</addons>\n"
-    dom = parseString(addons)
-    return dom.toprettyxml(indent="  ")
+def generate_index_html(zip_files):
+    links = [f'<li><a href="{zip_path.name}">{zip_path.name}</a></li>' for zip_path in zip_files]
+    html = f"""<html><body><h1>Kodi Add-ons</h1><ul>{''.join(links)}</ul></body></html>"""
+    INDEX_HTML_PATH.write_text(html, encoding="utf-8")
 
-def write_addons_xml(content):
-    with open(OUTPUT_ADDONS_XML, 'w', encoding='utf-8') as f:
-        f.write(content)
-    print("📝 addons.xml geschrieben")
+def update_repository_xml(repo_path, addon_paths):
+    addon_ids = [p.name for p in addon_paths if not p.name.startswith(REPO_ID_PREFIX)]
+    repo_xml_path = repo_path / "addon.xml"
+    tree = ET.parse(repo_xml_path)
+    root = tree.getroot()
 
-def write_md5(content):
-    md5_hash = hashlib.md5(content.encode('utf-8')).hexdigest()
-    with open(OUTPUT_MD5, 'w') as f:
-        f.write(md5_hash)
-    print(f"🔐 addons.xml.md5 geschrieben: {md5_hash}")
+    # Setze children im repository automatisch
+    extension = root.find("./extension[@point='xbmc.addon.repository']")
+    if extension is not None:
+        for child in extension.findall("dir"):
+            extension.remove(child)
 
-def generate_zip_index():
-    zip_files = [f for f in os.listdir() if f.endswith('.zip')]
-    with open(OUTPUT_INDEX_HTML, 'w', encoding='utf-8') as f:
-        f.write("<!DOCTYPE html><html><head><meta charset='UTF-8'><title>Kodi ZIPs</title></head><body>\n")
-        f.write("<h1>Kodi Addon ZIP-Dateien</h1><ul>\n")
-        for zip_file in sorted(zip_files):
-            f.write(f"<li><a href='{BASE_URL}{quote(zip_file)}'>{zip_file}</a></li>\n")
-        f.write("</ul></body></html>\n")
-    print(f"🌐 index.html geschrieben mit {len(zip_files)} ZIP-Dateien")
+        dir_elem = ET.Element("dir", attrib={"minversion": "20.999.0"})
+        ET.SubElement(dir_elem, "info", {"compressed": "false"}).text = "https://raw.githubusercontent.com/Teddyknuddel/embuary.omega/master/addons.xml"
+        ET.SubElement(dir_elem, "checksum").text = "https://raw.githubusercontent.com/Teddyknuddel/embuary.omega/master/addons.xml.md5"
+        ET.SubElement(dir_elem, "datadir", {"zip": "true"}).text = "https://raw.githubusercontent.com/Teddyknuddel/embuary.omega/master/"
+        extension.append(dir_elem)
+
+    repo_xml_str = ET.tostring(root, encoding="unicode")
+    repo_xml_str = re.sub(r"^\s*\n", "", repo_xml_str, flags=re.MULTILINE)
+    repo_xml_path.write_text(f'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n{repo_xml_str}', encoding="utf-8")
 
 def main():
-    addon_dirs = find_addons()
+    addon_dirs = [d for d in ROOT.iterdir() if d.is_dir() and (d / "addon.xml").exists()]
+    updated_zip_paths = []
 
-    for addon_dir in addon_dirs:
-        addon_path = os.path.join(addon_dir, 'addon.xml')
-        addon_id = os.path.basename(addon_dir)
+    for addon_path in addon_dirs:
+        addon_id = addon_path.name
+        is_repo = addon_id.startswith(REPO_ID_PREFIX)
 
-        if should_bump_version(addon_id, addon_dir):
-            major, minor, patch = get_current_version(addon_path)
-            patch += 1
-            new_version = f"{major}.{minor}.{patch}"
+        major, minor, patch = get_current_version(addon_path)
+        new_version = f"{major}.{minor}.{patch + 1}"
+
+        zip_name = f"{addon_id}-{new_version}.zip"
+        zip_path = (ROOT if is_repo else addon_path) / zip_name
+
+        if has_changes(addon_path, zip_path):
             update_addon_version(addon_path, new_version)
-            zip_addon(addon_dir, new_version)
-            print(f"🔢 Version erhöht für {addon_id}: {major}.{minor}.{patch - 1} → {new_version}")
-        else:
-            print(f"⏩ Keine Änderung an {addon_id}, Version bleibt gleich.")
+            zip_addon(addon_path, zip_path)
+            updated_zip_paths.append(zip_path)
 
-    addons_xml = create_addons_xml(addon_dirs)
-    write_addons_xml(addons_xml)
-    write_md5(addons_xml)
-    generate_zip_index()
-    print("\n✅ Fertig! Repository aktualisiert.")
+    # repository.*-addon.xml anpassen
+    for repo_path in [p for p in addon_dirs if p.name.startswith(REPO_ID_PREFIX)]:
+        update_repository_xml(repo_path, addon_dirs)
+
+    # addons.xml, .md5, index.html aktualisieren
+    addons_xml = build_addons_xml(addon_dirs)
+    ADDONS_XML_PATH.write_text(addons_xml, encoding="utf-8")
+    write_md5(ADDONS_XML_PATH, MD5_PATH)
+    generate_index_html(list(ROOT.glob("*.zip")) + [p / z for p in addon_dirs for z in p.glob("*.zip")])
 
 if __name__ == "__main__":
     main()
