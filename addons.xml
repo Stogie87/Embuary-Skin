@@ -1,7 +1,7 @@
 <addons>
 
 <?xml version='1.0' encoding='utf-8'?>
-<addon id="repository.embuary" name="Embuary Skins (Omega)" version="0.3.3" provider-name="Embuary Team">
+<addon id="repository.embuary" name="Embuary Skins (Omega)" version="0.3.4" provider-name="Embuary Team">
     <extension point="xbmc.addon.metadata">
         <summary>Embuary Skin Repository</summary>
         <description lang="en_GB">The well-known and popular Skin Embuary from Sualfred has arrived in the UHD age. Thanks to the 2K/4K modification by Teddyknuddel, the full potential of a UHD display (2K also cuts a very good figure on FullHD) can be utilised. The CPM modification by jamal2367 provides detailed information about Dolby Vision and video soundtracks. Embuary is modelled on Emby's Web UI and was developed for Emby-for-Kodi and EmbyCon users, but also works for all common Kodi setups.</description>
@@ -24,7 +24,7 @@
 </addon>
 
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-	<addon id="script.skin.helper.colorpicker" name="Skin Helper Service ColorPicker" version="2.0.4" provider-name="marcelveldt,sualfred, Stogie and others">
+	<addon id="script.skin.helper.colorpicker" name="Skin Helper Service ColorPicker" version="2.0.5" provider-name="marcelveldt,sualfred, Stogie and others">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
 		<import addon="script.module.pil" version="1.1.7"/>
