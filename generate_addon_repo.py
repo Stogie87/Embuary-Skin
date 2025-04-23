@@ -108,9 +108,22 @@ def update_repository_addon(addon_dirs, repo_path, version):
     ET.indent(tree, space="    ", level=0)
     tree.write(xml_path, encoding="utf-8", xml_declaration=True)
 
+def generate_index_html():
+    files = sorted([
+        f for f in os.listdir(ROOT_DIR)
+        if f.endswith(".zip") and os.path.isfile(os.path.join(ROOT_DIR, f))
+    ])
+    html_path = os.path.join(ROOT_DIR, "index.html")
+    with open(html_path, "w", encoding="utf-8") as f:
+        f.write("<html><head><title>Embuary Addons</title></head><body>\n")
+        f.write("<h1>Verfügbare ZIP-Dateien</h1><ul>\n")
+        for file in files:
+            f.write(f'<li><a href="{file}">{file}</a></li>\n')
+        f.write("</ul></body></html>\n")
+    print("✅ index.html aktualisiert.")
+
 def main():
     all_addons = get_all_addons()
-    addons_to_zip = []
     addons_xml_sources = []
 
     for addon in all_addons:
@@ -152,7 +165,8 @@ def main():
 
     addons_xml = generate_addons_xml(addons_xml_sources)
     write_addons_files(addons_xml)
-    print("✅ addons.xml und MD5 aktualisiert.")
+    generate_index_html()
+    print("✅ addons.xml, MD5 und index.html aktualisiert.")
 
 if __name__ == "__main__":
     main()
