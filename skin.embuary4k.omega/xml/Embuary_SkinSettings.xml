@@ -955,22 +955,6 @@
 			<selected>System.HasAddon(script.artistslideshow)</selected>
 			<label>Artist Slideshow</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]05">
-			<include>SettingsButton</include>
-			<onclick condition="System.HasAddon(script.skin.helper.skinbackup)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.skinbackup,enable=false)</onclick>
-			<onclick condition="!System.HasAddon(script.skin.helper.skinbackup)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.skinbackup,enable=true)</onclick>
-			<onclick condition="!System.HasAddon(script.skin.helper.skinbackup)">InstallAddon(script.skin.helper.skinbackup)</onclick>
-			<selected>System.HasAddon(script.skin.helper.skinbackup)</selected>
-			<label>Skin Helper Service Skin Backup</label>
-		</control>
-		<control type="radiobutton" id="$PARAM[id]06">
-			<include>SettingsButton</include>
-			<onclick condition="System.HasAddon(script.skin.helper.colorpicker)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.colorpicker,enable=false)</onclick>
-			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.colorpicker,enable=true)</onclick>
-			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
-			<selected>System.HasAddon(script.skin.helper.colorpicker)</selected>
-			<label>Skin Helper Service ColorPicker</label>
-		</control>
 		<control type="radiobutton" id="$PARAM[id]07">
 			<include>SettingsButton</include>
 			<onclick condition="System.HasAddon(script.cu.lrclyrics)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.cu.lrclyrics,enable=false)</onclick>

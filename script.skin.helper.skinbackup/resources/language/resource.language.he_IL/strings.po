@@ -1,0 +1,173 @@
+# Kodi language file
+# Addon Name: Skin Helper Skinbackup
+# Addon id: script.skin.helper.skinbackup
+# Addon Provider: marcelveldt
+msgid ""
+msgstr ""
+"Project-Id-Version: script.skin.helper.skinbackup\n"
+"Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
+"POT-Creation-Date: 2014-10-26 17:05+0000\n"
+"PO-Revision-Date: 2017-10-17 16:13+0300\n"
+"Last-Translator: A. Dambledore\n"
+"Language-Team: Eng2Heb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#32000"
+msgid "General"
+msgstr "כללי"
+
+msgctxt "#32001"
+msgid "Default backup path"
+msgstr "נתיב ברירת המחדל לגיבוי"
+
+msgctxt "#32002"
+msgid "Select location to store skin backups"
+msgstr "בחר מיקום לאחסון גיבויי מעטפת"
+
+msgctxt "#32003"
+msgid "Please enter a name for the backup"
+msgstr "נא הזן שם עבור הגיבוי"
+
+msgctxt "#32004"
+msgid "Backup the skin settings"
+msgstr "הגדרות גיבוי מעטפת"
+
+msgctxt "#32005"
+msgid "Backupfile was succesfully created!"
+msgstr "קובץ הגיבוי נוצר בהצלחה!"
+
+msgctxt "#32006"
+msgid "Restore the skin settings"
+msgstr "הגדרות שיחזור מעטפת"
+
+msgctxt "#32007"
+msgid "Restoring..."
+msgstr "משחזר..."
+
+msgctxt "#32008"
+msgid "Select skin backup file"
+msgstr "בחר קובץ גיבוי למעטפת"
+
+msgctxt "#32009"
+msgid "Your backup is succesfully restored!"
+msgstr "הגיבוי שלך שוחזר בהצלחה!"
+
+msgctxt "#32010"
+msgid "Reset the skin to default settings"
+msgstr "אפס את הגדרות המעטפת לברירות המחדל"
+
+msgctxt "#32011"
+msgid "Are you sure you want to reset the skin to default settings ?"
+msgstr "האם אתה בטוח שברצונך לאפס את המעטפת לברירת המחדל?"
+
+msgctxt "#32012"
+msgid "Settings"
+msgstr "הגדרות"
+
+msgctxt "#32013"
+msgid "Create new backup"
+msgstr "צור גיבוי חדש"
+
+msgctxt "#32014"
+msgid "Select backup from file"
+msgstr "בחר גיבוי מקובץ"
+
+msgctxt "#32015"
+msgid "Restore"
+msgstr "שחזור"
+
+msgctxt "#32016"
+msgid "Manage skin backups"
+msgstr "ניהול גיבויי המעטפת"
+
+msgctxt "#32017"
+msgid "Please enter the time that this theme should be activated (hh:mm in 24-hours format)"
+msgstr "אנא הזן את השעה להפעלת תהליך הגיבוי (hh: mm בתבנית 24 שעות ביממה)"
+
+msgctxt "#32018"
+msgid "Did you enter the time in the correct format ?"
+msgstr "האם הזנת את הזמן בתבנית הנכונה?"
+
+msgctxt "#32019"
+msgid "Activates every day at "
+msgstr "פועל כל יום ב-"
+
+msgctxt "#32020"
+msgid "Manage Color themes"
+msgstr "ניהול ערכות צבע"
+
+msgctxt "#32021"
+msgid "Apply this Color Theme"
+msgstr "החל את ערכת הצבע הזו"
+
+msgctxt "#32022"
+msgid "Export this theme to file"
+msgstr "ייצא את הערכה לקובץ"
+
+msgctxt "#32023"
+msgid "Enter a name for your color theme"
+msgstr "הזן שם עבור ערכת הצבע שלך"
+
+msgctxt "#32024"
+msgid "Screenshot of color theme (optional)"
+msgstr "צילום מסך של ערכת הצבע (אופציונאלי)"
+
+msgctxt "#32025"
+msgid "User defined color theme"
+msgstr "ערכת צבע מוגדרת על ידי המשתמש"
+
+msgctxt "#32026"
+msgid "Color theme created succesfully"
+msgstr "ערכת צבע נוצרה בהצלחה"
+
+msgctxt "#32027"
+msgid "Your color theme is now available in the list of available themes"
+msgstr "ערכת הצבע שלך זמינה כעת ברשימה של ערכות צבע זמינות"
+
+msgctxt "#32028"
+msgid "Enter a name for the theme"
+msgstr "הזן שם עבור ערכת הנושא"
+
+msgctxt "#32029"
+msgid "Select location to store export"
+msgstr "בחר מיקום לאחסון הייצוא"
+
+msgctxt "#32030"
+msgid "Select skin theme backup file"
+msgstr "בחר קובץ גיבוי למעטפת"
+
+msgctxt "#32031"
+msgid "Select Color theme"
+msgstr "בחר ערכת צבע"
+
+msgctxt "#32032"
+msgid "Enable automatic daily backups"
+msgstr "אפשר גיבוי אוטומטית כל יום"
+
+msgctxt "#32033"
+msgid "Restoring..."
+msgstr "משחזר..."
+
+msgctxt "#32034"
+msgid "Maximum number of historic backups to keep"
+msgstr "כמות מרבית של גיבויים ישנים לשמירה"
+
+msgctxt "#32035"
+msgid "Create Color Theme"
+msgstr "צור ערכת צבע"
+
+msgctxt "#32036"
+msgid "Create new custom color theme based on your current skin color settings."
+msgstr "צור ערכת צבע מותאמת אישית חדשה, בהתאם להגדרות צבע הנוכחיות שלך במעטפת."
+
+msgctxt "#32037"
+msgid "Import Color Theme"
+msgstr "יבא ערכת צבע"
+
+msgctxt "#32038"
+msgid "Import a color theme from file."
+msgstr "יבא ערכת צבע מקובץ."
