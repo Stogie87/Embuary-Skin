@@ -7,73 +7,101 @@
 '''
 
 import sys
+import traceback
+
+# Kodi core modules (sind beim Testen außerhalb von Kodi nicht vorhanden)
+try:
+    import xbmc
+    import xbmcgui
+    import xbmcvfs
+    LOG_WARNING = xbmc.LOGWARNING
+    LOG_ERROR = xbmc.LOGERROR
+except ImportError:
+    # Fallback-Loglevel für Tests außerhalb von Kodi
+    LOG_WARNING = 30
+    LOG_ERROR = 40
+
 from resources.lib.backuprestore import BackupRestore
 from resources.lib.colorthemes import ColorThemes
 from resources.lib.utils import log_exception, log_msg
 
 
-class Main():
+class Main:
     '''Main entry point for script'''
 
     def __init__(self):
         '''Initialization and main code run'''
         try:
             self.params = self.get_params()
-            log_msg("called with parameters: %s" % self.params)
+            log_msg(f"called with parameters: {self.params}")
             action = self.params.get("action", "")
             if not action:
                 # launch main backuprestore dialog
                 BackupRestore().backuprestore()
-            else:
+            elif hasattr(self, action):
                 # launch module for action provided by this script
-                if hasattr(self, action):
-                    getattr(self, action)()
-                else:
-                    log_msg("No such action: %s" % action, xbmc.LOGWARNING)
+                getattr(self, action)()
+            else:
+                log_msg(f"No such action: {action}", LOG_WARNING)
         except Exception as exc:
+            log_msg(f"Exception occurred: {exc}\n{traceback.format_exc()}", LOG_ERROR)
             log_exception(__name__, exc)
 
     def backup(self):
-        '''backup skin settings to file'''
+        '''Backup skin settings to file'''
         backuprestore = BackupRestore()
-        filters = self.params.get("filter", [])
+        filters = self.params.get("filter")
         if filters:
             filters = filters.split("|")
+        else:
+            filters = []
+
         silent = self.params.get("silent", "")
-        promptfilename = self.params.get("promptfilename", "") == "true"
+        promptfilename = self.params.get("promptfilename", "").lower() == "true"
+
         if silent:
             silent_backup = True
             backup_file = silent
         else:
             silent_backup = False
             backup_file = backuprestore.get_backupfilename(promptfilename)
+
         backuprestore.backup(filters, backup_file, silent_backup)
-        del backuprestore
 
     def restore(self):
-        '''restore skin settings from file'''
+        '''Restore skin settings from file'''
         backuprestore = BackupRestore()
-        silent = self.params.get("SILENT", "")
+        silent = self.params.get("silent", "")
+
         if silent and not xbmcvfs.exists(silent):
             log_msg(
-                "ERROR while restoring backup ! --> Filename invalid."
-                "Make sure you provide the FULL path, for example special://skin/extras/mybackup.zip",
-                xbmc.LOGERROR)
+                "ERROR while restoring backup! --> Filename invalid. "
+                "Make sure you provide the FULL path, e.g., special://skin/extras/mybackup.zip",
+                LOG_ERROR
+            )
             return
+
         backuprestore.restore(silent)
 
     def reset(self):
-        '''reset skin settings'''
+        '''Reset skin settings'''
         backuprestore = BackupRestore()
-        filters = self.params.get("filter", [])
+        filters = self.params.get("filter")
         if filters:
             filters = filters.split("|")
-        silent = self.params.get("silent", "") == "true"
+        else:
+            filters = []
+
+        silent = self.params.get("silent", "").lower() == "true"
         backuprestore.reset(filters, silent)
-        xbmc.Monitor().waitForAbort(2)
-        # Optional: If skin helper service present - tell it that the skin settings should be checked.
-        if xbmc.getCondVisibility("System.HasAddon(script.skin.helper.service)"):
-            xbmc.executebuiltin("RunScript(script.skin.helper.service,action=checkskinsettings)")
+
+        # Short delay to ensure settings are applied
+        if 'xbmc' in sys.modules:
+            xbmc.Monitor().waitForAbort(2)
+
+            # Optional: Notify skin.helper.service to re-check settings
+            if xbmc.getCondVisibility("System.HasAddon(script.skin.helper.service)"):
+                xbmc.executebuiltin("RunScript(script.skin.helper.service,action=checkskinsettings)")
 
     def colorthemes(self):
         '''Open colorthemes dialog'''
@@ -90,29 +118,30 @@ class Main():
 
     @staticmethod
     def createcolortheme():
-        '''Method to directly create a colortheme'''
+        '''Create a color theme'''
         colorthemes = ColorThemes()
         colorthemes.createColorTheme()
 
     @staticmethod
     def restorecolortheme():
-        '''Restore colortheme from backupfile'''
+        '''Restore colortheme from backup'''
         colorthemes = ColorThemes()
         colorthemes.restoreColorTheme()
 
     @staticmethod
     def get_params():
-        '''extract the params from the called script path'''
+        '''Extract parameters from script arguments'''
         params = {}
         for arg in sys.argv[1:]:
-            paramname = arg.split('=')[0]
-            paramvalue = arg.replace(paramname + "=", "")
-            paramname = paramname.lower()
-            if paramname == "action":
-                paramvalue = paramvalue.lower()
-            params[paramname] = paramvalue
+            if '=' in arg:
+                key, value = arg.split('=', 1)
+                key = key.lower()
+                if key == "action":
+                    value = value.lower()
+                params[key] = value
         return params
 
 
 # MAIN
-Main()
+if __name__ == '__main__':
+    Main()
