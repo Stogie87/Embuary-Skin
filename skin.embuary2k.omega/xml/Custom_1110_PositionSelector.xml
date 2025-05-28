@@ -18,16 +18,16 @@
 				<visible>!Window.IsVisible(1111)</visible>
 				<include>Dialog_PopupOpenClose</include>
 				<include>Visible_PopupOpenClose</include>
-				<centerleft>50%</centerleft>
-				<centertop>50%</centertop>
-				<width>900</width>
+				<centerleft>35%</centerleft>
+				<centertop>35%</centertop>
+				<width>1050</width>
 				<height max="940">auto</height>
 				<orientation>vertical</orientation>
 				<itemgap>20</itemgap>
 				<align>center</align>
 				<!-- headline -->
 				<control type="group">
-					<height>50</height>
+					<height>100</height>
 					<control type="label">
 						<width>100%</width>
 						<height>48</height>
@@ -41,16 +41,16 @@
 				</control>
 				<!-- list -->
 				<control type="group">
-					<height>770</height>
+					<height>690</height>
 					<control type="image">
-						<height>770</height>
+						<height>700</height>
 						<texture colordiffuse="panel_background">common/white.jpg</texture>
 						<aspectratio>stretch</aspectratio>
 					</control>
 					<control type="list" id="211">
-						<centerleft>50%</centerleft>
+						<centerleft>35%</centerleft>
 						<top>10</top>
-						<height>750</height>
+						<height>700</height>
 						<onup>noop</onup>
 						<onleft>101</onleft>
 						<onright>101</onright>
@@ -61,7 +61,7 @@
 							<control type="label">
 								<right>220</right>
 								<left>25</left>
-								<height>75</height>
+								<height>90</height>
 								<aligny>center</aligny>
 								<font>Reg24</font>
 								<label>$INFO[ListItem.Property(pos),,    ][COLOR disabled]$INFO[ListItem.Label][/COLOR]</label>
@@ -81,7 +81,7 @@
 								<visible>!String.IsEmpty(ListItem.Property(item))</visible>
 							</control>
 						</itemlayout>
-						<focusedlayout height="75" width="900">
+						<focusedlayout height="150" width="1800">
 							<control type="group">
 								<visible>ControlGroup(100).HasFocus</visible>
 								<control type="image">
@@ -164,7 +164,7 @@
 						<right>0</right>
 						<top>0</top>
 						<bottom>0</bottom>
-						<width>4</width>
+						<width>8</width>
 						<orientation>vertical</orientation>
 						<showonepage>false</showonepage>
 						<texturesliderbackground colordiffuse="00ffffff">common/white.jpg</texturesliderbackground>
@@ -191,8 +191,8 @@
 						<orientation>horizontal</orientation>
 						<!-- Move up -->
 						<control type="button" id="101">
-							<height>75</height>
-							<width>50</width>
+							<height>150</height>
+							<width>100</width>
 							<font>Material26</font>
 							<textcolor>white</textcolor>
 							<focusedcolor>$VAR[AccentColor]</focusedcolor>
@@ -210,8 +210,8 @@
 						</control>
 						<!-- Move down -->
 						<control type="button" id="102">
-							<height>75</height>
-							<width>50</width>
+							<height>150</height>
+							<width>100</width>
 							<font>Material26</font>
 							<textcolor>white</textcolor>
 							<focusedcolor>$VAR[AccentColor]</focusedcolor>
@@ -229,8 +229,8 @@
 						</control>
 						<!-- Add -->
 						<control type="button" id="103">
-							<height>75</height>
-							<width>50</width>
+							<height>150</height>
+							<width>100</width>
 							<font>Material26</font>
 							<textcolor>white</textcolor>
 							<focusedcolor>$VAR[AccentColor]</focusedcolor>
@@ -247,8 +247,8 @@
 						</control>
 						<!-- Change -->
 						<control type="button" id="104">
-							<height>75</height>
-							<width>50</width>
+							<height>150</height>
+							<width>100</width>
 							<font>Material26</font>
 							<textcolor>white</textcolor>
 							<focusedcolor>$VAR[AccentColor]</focusedcolor>
@@ -265,8 +265,8 @@
 						</control>
 						<!-- Delete -->
 						<control type="button" id="108">
-							<height>75</height>
-							<width>50</width>
+							<height>150</height>
+							<width>100</width>
 							<font>Material26</font>
 							<textcolor>white</textcolor>
 							<focusedcolor>$VAR[AccentColor]</focusedcolor>
