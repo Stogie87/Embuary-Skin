@@ -15,15 +15,15 @@
 			<include>Window_OpenClose</include>
 			<control type="grouplist" id="100">
 				<top>93</top>
-				<width>1920</width>
-				<height>40</height>
+				<width>2560</width>
+				<height>54</height>
 				<orientation>horizontal</orientation>
 				<align>center</align>
 				<itemgap>20</itemgap>
 				<onleft>SetFocus(900)</onleft>
 				<control type="label" id="101">
 					<width>auto</width>
-					<height>40</height>
+					<height>54</height>
 					<font>Med18</font>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -32,7 +32,7 @@
 				</control>
 				<control type="button" id="2">
 					<width>auto</width>
-					<height>40</height>
+					<height>54</height>
 					<font>Med18</font>
 					<align>center</align>
 					<aligny>center</aligny>
@@ -43,16 +43,16 @@
 			</control>
 			<!-- grid -->
 			<control type="grouplist">
-				<width>1820</width>
-				<top>169</top>
-				<right>50</right>
+				<width>2426</width>
+				<top>225</top>
+				<right>67</right>
 				<align>center</align>
-				<height>853</height>
+				<height>1137</height>
 				<orientation>horizontal</orientation>
-				<itemgap>0</itemgap>
+				<itemgap>10</itemgap>
 				<control type="group">
-					<left>5</left>
-					<width>550</width>
+					<left>7</left>
+					<width>733</width>
 					<control type="image">
 						<height>100%</height>
 						<texture background="true">$INFO[Weather.Fanartcode,special://skin/extras/weather/,.jpg]</texture>
@@ -60,16 +60,16 @@
 					</control>
 					<control type="image">
 						<centertop>50%</centertop>
-						<height>272</height>
+						<height>363</height>
 						<texture colordiffuse="66222326">common/white.jpg</texture>
 					</control>
 					<control type="group">
 						<centertop>50%</centertop>
-						<height>243</height>
+						<height>324</height>
 						<control type="label">
 							<textoffsetx>23</textoffsetx>
 							<width>50%</width>
-							<height>38</height>
+							<height>51</height>
 							<font>Light28</font>
 							<label>$LOCALIZE[33006]</label>
 							<textcolor>white</textcolor>
@@ -78,16 +78,16 @@
 							<right>0</right>
 							<textoffsetx>23</textoffsetx>
 							<width>50%</width>
-							<height>38</height>
+							<height>51</height>
 							<font>Light28</font>
 							<align>right</align>
 							<label>$LOCALIZE[19030]</label>
 							<textcolor>white</textcolor>
 						</control>
 						<control type="textbox">
-							<left>23</left>
+							<left>31</left>
 							<width>50%</width>
-							<top>49</top>
+							<top>87</top>
 							<height>auto</height>
 							<font>Med20</font>
 							<label>$INFO[Window(Weather).Property(Day0.Outlook)]</label>
@@ -95,9 +95,9 @@
 							<textcolor>text_white</textcolor>
 						</control>
 						<control type="textbox">
-							<right>23</right>
+							<right>31</right>
 							<width>50%</width>
-							<top>49</top>
+							<top>87</top>
 							<height>auto</height>
 							<font>Med20</font>
 							<align>right</align>
@@ -106,19 +106,19 @@
 							<textcolor>text_white</textcolor>
 						</control>
 						<control type="image">
-							<left>23</left>
-							<right>23</right>
-							<top>77</top>
-							<width>140</width>
-							<height>140</height>
+							<left>31</left>
+							<right>31</right>
+							<top>103</top>
+							<width>187</width>
+							<height>187</height>
 							<texture background="true">$INFO[Window(Weather).Property(Day0.FanartCode),weather/icons/,.png]</texture>
 							<aspectratio>keep</aspectratio>
 						</control>
 						<control type="label">
 							<textoffsetx>23</textoffsetx>
 							<width>50%</width>
-							<top>214</top>
-							<height>30</height>
+							<top>285</top>
+							<height>40</height>
 							<font>Med20</font>
 							<textcolor>white</textcolor>
 							<label>$INFO[Window(Weather).Property(Day0.LowTemp),$LOCALIZE[391] ,°]    $INFO[Window(Weather).Property(Day0.HighTemp),$LOCALIZE[393] ,°]</label>
@@ -127,8 +127,8 @@
 							<right>0</right>
 							<textoffsetx>23</textoffsetx>
 							<width>50%</width>
-							<top>214</top>
-							<height>30</height>
+							<top>285</top>
+							<height>40</height>
 							<font>Med20</font>
 							<align>right</align>
 							<textcolor>white</textcolor>
@@ -200,21 +200,21 @@
 				<visible>ControlGroup(4000).HasFocus + !Window.IsVisible(selectdialog)</visible>
 				<include>Visible_PopupOpenClose</include>
 				<centerleft>50%</centerleft>
-				<width>800</width>
+				<width>1067</width>
 				<centertop>50%</centertop>
-				<height>982</height>
+				<height>1309</height>
 				<control type="grouplist" id="4000">
 					<orientation>vertical</orientation>
 					<height>auto</height>
 					<align>center</align>
 					<itemgap>0</itemgap>
-					<onright>100</onright>
-					<onleft>100</onleft>
-					<onback>100</onback>
+					<onright>133</onright>
+					<onleft>133</onleft>
+					<onback>133</onback>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="image" id="4001">
 						<width>100%</width>
-						<height>61</height>
+						<height>81</height>
 						<texture border="65,0,65,0" colordiffuse="context_color">dialogs/context/top.png</texture>
 					</control>
 					<control type="spincontrolex" id="3">
@@ -223,7 +223,7 @@
 					</control>
 					<control type="image" id="4002">
 						<width>100%</width>
-						<height>61</height>
+						<height>81</height>
 						<texture border="65,0,65,0" colordiffuse="context_color">dialogs/context/bottom.png</texture>
 					</control>
 				</control>
