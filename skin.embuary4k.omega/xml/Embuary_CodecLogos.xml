@@ -5,7 +5,7 @@
             <left>35</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-                <top>35</top>
+                <top>50</top>
                 <width>210</width>
                 <height>170</height>
                 <control type="image">
@@ -310,7 +310,7 @@
             <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
             <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
-            <top>75</top>
+            <top>80</top>
             <left>35</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
@@ -614,10 +614,10 @@
 
     <include name="CodecLogosCenterPPI">
         <control type="group">
-            <left>855</left>
+            <left>1815</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-                <top>35</top>
+                <top>50</top>
                 <width>210</width>
                 <height>170</height>
                 <control type="image">
@@ -922,8 +922,8 @@
             <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
             <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
-            <top>45</top>
-            <left>855</left>
+            <top>80</top>
+            <left>1815</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>
@@ -1226,10 +1226,10 @@
 
     <include name="CodecLogosRightPPI">
         <control type="group">
-            <left>1675</left>
+            <left>3585</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-                <top>35</top>
+                <top>50</top>
                 <width>210</width>
                 <height>170</height>
                 <control type="image">
@@ -1534,8 +1534,8 @@
             <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
             <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
-            <top>45</top>
-            <left>1675</left>
+            <top>80</top>
+            <left>3585</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>

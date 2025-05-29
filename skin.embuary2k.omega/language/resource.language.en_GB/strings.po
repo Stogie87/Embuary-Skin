@@ -2156,7 +2156,7 @@ msgid "Kb/s"
 msgstr ""
 
 msgctxt "#32013"
-msgid "Playback time"
+msgid "DV metadata"
 msgstr ""
 
 msgctxt "#32014"
@@ -2164,7 +2164,7 @@ msgid "Processor"
 msgstr ""
 
 msgctxt "#32015"
-msgid "Metadata"
+msgid "Version"
 msgstr ""
 
 msgctxt "#32016"
@@ -2374,5 +2374,3 @@ msgstr "Next Episode"
 msgctxt "#42002"
 msgid "Previous Episode"
 msgstr "Previous Episode"
-
-

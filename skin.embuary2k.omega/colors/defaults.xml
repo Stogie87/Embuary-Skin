@@ -83,9 +83,8 @@
 	<color name="panel_textcolor2">66ffffff</color>
 
 	<!-- player process info -->	
-	<color name="dialog_fg_100">ffededed</color>
-	<color name="dialog_fg_90">e7ededed</color>
-	<color name="dialog_fg_70">b3ededed</color>
-	<color name="panel_fg_12">1fededed</color>
+    <color name="dialog_fg_100">ffededed</color>
+    <color name="dialog_fg_90">e7ededed</color>
+    <color name="dialog_fg_70">b3ededed</color>
 
 </colors>
