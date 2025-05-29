@@ -68,12 +68,12 @@
 					<visible>Player.ChapterCount | Integer.IsGreater(Playlist.Length(video),1) | Integer.IsGreater(Playlist.Length(music),1) | Player.SeekEnabled</visible>
 				</control>
 				<control type="button" id="620">
-    					<label>Previous Episode</label>
+    					<label>Vorherige Episode</label>
     					<onclick>RunScript(script.episodejumper,previous)</onclick>
    					<visible>Player.HasMedia + VideoPlayer.Content(episodes)</visible>
 				</control>
 				<control type="button" id="621">
-    					<label>Next Episode</label>
+    					<label>Nächste Episode</label>
     					<onclick>RunScript(script.episodejumper,next)</onclick>
     					<visible>Player.HasMedia + VideoPlayer.Content(episodes)</visible>
 				</control>
