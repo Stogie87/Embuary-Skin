@@ -6,6 +6,7 @@
 	<onload>SetProperty(startup,1,home)</onload>
 	<onload>AlarmClock(startup,ClearProperty(startup,home),00:10,silent)</onload>
 	<onload>ReplaceWindow($VAR[StartUpWindow])</onload>
+	<onload>RunScript(script.embuary.helper,action=setkodisetting,setting=lookandfeel.skincolors,value=Blex)</onload>
 	<include>PropertyIncludes</include>
 	<controls/>
 </window>
