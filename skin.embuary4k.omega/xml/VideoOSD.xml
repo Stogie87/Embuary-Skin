@@ -72,7 +72,7 @@
         				<param name="type" value="previous" />
     					</include>
     					<label>Vorherige Episode</label>
-    					<onclick>RunScript(script.episodejump,previous)</onclick>
+    					<onclick>RunScript(script.episodejumper,previous)</onclick>
     					<visible>Player.HasMedia + VideoPlayer.Content(episodes)</visible>
 				</control>
 				<control type="button" id="621">
@@ -80,7 +80,7 @@
         				<param name="type" value="next" />
     					</include>
     					<label>Nächste Episode</label>
-    					<onclick>RunScript(script.episodejump,next)</onclick>
+    					<onclick>RunScript(script.episodejumper,next)</onclick>
     					<visible>Player.HasMedia + VideoPlayer.Content(episodes)</visible>
 				</control>
 				<control type="button" id="607">
