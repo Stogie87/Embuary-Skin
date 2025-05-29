@@ -1,0 +1,28 @@
+<addon id="script.episodejump"
+       name="Episode Jumper"
+       version="1.0.1"
+       provider-name="DeinName">
+    <extension point="xbmc.python.script" library="main.py">
+        <provides>executable</provides>
+    </extension>
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="de">Springt zur nächsten oder vorherigen Serienepisode (auch Addons unterstützt).</summary>
+        <description lang="de">
+            Dieses Addon ermöglicht das komfortable Springen zur nächsten oder vorherigen Episode direkt aus dem OSD heraus.
+            Unterstützt die Kodi-Bibliothek sowie Playlisten von Jellyfin, Emby und EmbyCon.
+        </description>
+        <platform>all</platform>
+	<source>https://github.com/Stogie87/Embuary-Skin</source>
+        <author>Stogie</author>
+	<assets>
+        	<icon>resources/icon.png</icon>
+	</assets>
+    </extension>
+</addon>
+
+
+
+

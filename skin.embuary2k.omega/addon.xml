@@ -8,6 +8,7 @@
 		<import addon="script.skinshortcuts" version="1.0.17"/>
 		<import addon="script.skin.helper.colorpicker" version="2.0.4"/>
 		<import addon="script.skin.helper.skinbackup" version="1.0.22"/>
+		<import addon="script.episodejumper" version="1.0.1"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false" defaultresolution="1440p">
 		<res width="2560" height="1440" aspect="16:9" default="true" folder="xml" />
