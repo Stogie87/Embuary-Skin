@@ -310,7 +310,7 @@
             <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
             <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
-            <top>75</top>
+            <top>60</top>
             <left>35</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
@@ -614,7 +614,7 @@
 
     <include name="CodecLogosCenterPPI">
         <control type="group">
-            <left>855</left>
+            <left>1175</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>
@@ -922,8 +922,8 @@
             <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
             <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
-            <top>45</top>
-            <left>855</left>
+            <top>60</top>
+            <left>1175</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>
@@ -1226,7 +1226,7 @@
 
     <include name="CodecLogosRightPPI">
         <control type="group">
-            <left>1675</left>
+            <left>2315</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>
@@ -1534,8 +1534,8 @@
             <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
             <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
-            <top>45</top>
-            <left>1675</left>
+            <top>60</top>
+            <left>2315</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>35</top>

@@ -33,7 +33,7 @@
 	<include file="Embuary_SkinSettings.xml" />
 	<include file="Embuary_Sidebar.xml" />
 	<include file="Embuary_Overlays.xml" />
-	<include file="Embuary_CodecLogos.xml"/>
+    <include file="Embuary_CodecLogos.xml"/>
 	<include file="script-skinshortcuts-includes.xml" />
 
 	<!-- General -->
@@ -158,10 +158,38 @@
 	</expression>
 
 	<expression name="PosterViewVisible">[
-		[Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(actors) | Container.Content(directors) | String.StartsWith(Container.FolderPath,plugin://script.embuary.helper/?info=getgenre) | [[String.StartsWith(Container.Folderpath,pvr://channels/tv) | String.StartsWith(Container.Folderpath,pvr://recordings/tv)] + String.IsEqual(Skin.String(EPGar),2to3)]]
-		+ !String.Contains(Container.Folderpath,setid)
-		+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
+    		[
+			Container.Content(movies)
+			| Container.Content(tvshows)
+			| Container.Content(sets)
+			| Container.Content(actors)
+			| Container.Content(directors)
+			| String.StartsWith(Container.FolderPath,plugin://script.embuary.helper/?info=getgenre)
+			| [[String.StartsWith(Container.Folderpath,pvr://channels/tv)
+			| String.StartsWith(Container.Folderpath,pvr://recordings/tv)]
+			+ String.IsEqual(Skin.String(EPGar),2to3)]]
+    			+ !String.Contains(Container.Folderpath,setid)
+    			+ ![String.Contains(Container.FolderPath,BoxSet)
+			+ !String.Contains(Container.FolderPath,CollapseBoxSet)
+			+ Container.Content(movies)
 		]
+    		|
+    		[
+        		!Container.Content(seasons)
+        		+ !Container.Content(episodes)
+        		+ !Container.Content(movies)
+        		+ !Container.Content(sets)
+        		+ !Container.Content(tvshows)
+        		+ !Container.Content(videos)
+        		+ !Window.IsVisible(MyPVRSearch.xml)
+        		+ !Window.IsVisible(MyPVRTimers.xml)
+        		+ !Window.IsVisible(MyPVRguide.xml)
+        		+ !String.StartsWith(Container.Folderpath,androidapp://)
+        		+ !String.StartsWith(Container.FolderPath,pvr://channels/radio/)
+        		+ !Container.Content(games)
+    		]
+    		| Window.IsVisible(MyPics.xml)
+    		]
 	</expression>
 
 	<expression name="SquareViewVisible">[
@@ -185,7 +213,6 @@
 
 	<expression name="SeasonViewVisible">[
 		Container.Content(seasons)
-		+ [!String.StartsWith(Container.FolderPath,plugin://) | String.StartsWith(Container.FolderPath,plugin://plugin.video.emby)]
 		]
 	</expression>
 
@@ -206,7 +233,6 @@
 	<expression name="EpisodeViewVisible">[
 		Container.Content(episodes)
 		+ !Window.IsVisible(pictures)
-		+ [!String.StartsWith(Container.FolderPath,plugin://) | String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) | String.StartsWith(Container.FolderPath,plugin://script.embuary) | String.StartsWith(Container.FolderPath,plugin://plugin.video.plexbmc) | String.StartsWith(plugin.video.plexkodiconnect)]
 		]
 	</expression>
 
