@@ -93,7 +93,7 @@
 					<right>30</right>
 					<bottom>75</bottom>
 					<control type="label" id="99">
-						<width>170</width>
+						<width>100</width>
 						<height>50</height>
 						<aligny>center</aligny>
 						<align>left</align>
@@ -103,7 +103,7 @@
 						<visible>!String.IsEmpty(Player.Time)</visible>
 					</control>
 					<control type="label" id="99">
-						<width>170</width>
+						<width>100</width>
 						<right>0</right>
 						<height>50</height>
 						<align>right</align>
@@ -362,7 +362,7 @@
             <depth>DepthOSD+</depth>
             <visible>Skin.HasSetting(osd.useleftCodecStartupLogos)</visible>
             <visible>String.IsEqual(Player.Process(av.change),1)</visible>
-            <top>60</top>
+            <top>75</top>
             <left>35</left>
             <animation type="Hidden">
                 <effect type="fade" start="100" end="0" delay="3000" time="500" tween="sine" />
@@ -613,8 +613,8 @@
             <depth>DepthOSD+</depth>
             <visible>Skin.HasSetting(osd.usecenterCodecStartupLogos)</visible>
             <visible>String.IsEqual(Player.Process(av.change),1)</visible>
-            <top>60</top>
-            <left>1175</left>
+            <top>45</top>
+            <left>855</left>
             <animation type="Hidden">
                 <effect type="fade" start="100" end="0" delay="3000" time="500" tween="sine" />
             </animation>
@@ -864,8 +864,8 @@
             <depth>DepthOSD+</depth>
             <visible>Skin.HasSetting(osd.userightCodecStartupLogos)</visible>
             <visible>String.IsEqual(Player.Process(av.change),1)</visible>
-            <top>60</top>
-            <left>2315</left>
+            <top>45</top>
+            <left>1675</left>
             <animation type="Hidden">
                 <effect type="fade" start="100" end="0" delay="3000" time="500" tween="sine" />
             </animation>
