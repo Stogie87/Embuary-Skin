@@ -67,6 +67,22 @@
 					<onclick>PlayerControl(Next)</onclick>
 					<visible>Player.ChapterCount | Integer.IsGreater(Playlist.Length(video),1) | Integer.IsGreater(Playlist.Length(music),1) | Player.SeekEnabled</visible>
 				</control>
+				<control type="button" id="620">
+    					<include content="PlayerButtons">
+        				<param name="type" value="previous" />
+    					</include>
+    					<label>Vorherige Episode</label>
+    					<onclick>RunScript(script.episodejump,previous)</onclick>
+    					<visible>Player.HasMedia + VideoPlayer.Content(episodes)</visible>
+				</control>
+				<control type="button" id="621">
+    					<include content="PlayerButtons">
+        				<param name="type" value="next" />
+    					</include>
+    					<label>Nächste Episode</label>
+    					<onclick>RunScript(script.episodejump,next)</onclick>
+    					<visible>Player.HasMedia + VideoPlayer.Content(episodes)</visible>
+				</control>
 				<control type="button" id="607">
 					<colordiffuse>$VAR[PlayerRecordIconColor]</colordiffuse>
 					<include content="PlayerButtons">
