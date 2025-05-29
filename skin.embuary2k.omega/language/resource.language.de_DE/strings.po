@@ -2438,3 +2438,11 @@ msgstr "VS10-Modus"
 msgctxt "#32067"
 msgid "L5 Active Offsets"
 msgstr "L5 Aktive Offsets"
+
+msgctxt "#42001"
+msgid "Next Episode"
+msgstr "Nächste Episode"
+
+msgctxt "#42002"
+msgid "Previous Episode"
+msgstr "Vorherige Episode"

@@ -2366,3 +2366,11 @@ msgstr ""
 msgctxt "#32067"
 msgid "L5 Active Offsets"
 msgstr ""
+
+msgctxt "#42001"
+msgid "Next Episode"
+msgstr "Next Episode"
+
+msgctxt "#42002"
+msgid "Previous Episode"
+msgstr "Previous Episode"
