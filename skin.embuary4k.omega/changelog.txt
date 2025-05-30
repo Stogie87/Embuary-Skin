@@ -1,3 +1,13 @@
+[B]Version 21.0.5[/B]
+- Include Episode Jumper Addon create by Stogie
+
+[B]Version 21.0.4[/B]
+- Adjustment widgetsettungsmenu 
+- Adjustment waetherwidget
+
+[B]Version 21.0.3[/B]
+- small changes to the skin
+
 [B]Version 21.0.2[/B]
 - Improvements and corrections of individual areas and layouts by Stogie
 
