@@ -1,3 +1,6 @@
+[B]Version 21.0.6[/B]
+- Optimized DialogPlayerProcessInfo
+
 [B]Version 21.0.5[/B]
 - Include Episode Jumper Addon create by Stogie
 
