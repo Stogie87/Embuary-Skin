@@ -174,6 +174,15 @@ class Arrow:
         elif isinstance(tzinfo, str):
             tzinfo = parser.TzinfoParser.parse(tzinfo)
 
+        # >>> PATCH: robuste Prüfung/Fallback für tzinfo
+        try:
+            from datetime import tzinfo as dt_tzinfo
+            if not isinstance(tzinfo, dt_tzinfo):
+                tzinfo = dateutil_tz.tzutc()
+        except Exception:
+            tzinfo = dateutil_tz.tzutc()
+        # <<< PATCH ENDE
+        
         fold = kwargs.get("fold", 0)
 
         self._datetime = dt_datetime(
