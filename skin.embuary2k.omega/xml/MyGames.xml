@@ -50,7 +50,7 @@
 					<control type="button" id="10">
 						<include content="ContextButton"/>
 					</control>
-					<control type="togglebutton" id="4">
+					<control type="button" id="4">
 						<include content="ContextButton"/>
 						<label>$LOCALIZE[580]: $LOCALIZE[584]</label>
 						<altlabel>$LOCALIZE[580]: $LOCALIZE[585]</altlabel>

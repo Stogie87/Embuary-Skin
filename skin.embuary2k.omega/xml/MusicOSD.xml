@@ -27,7 +27,7 @@
 					</include>
 					<onclick>PlayerControl(Rewind)</onclick>
 				</control>
-				<control type="togglebutton" id="603">
+				<control type="button" id="603">
 					<include content="PlayerButtons">
 						<param name="type" value="play"/>
 						<param name="alt" value="pause"/>
@@ -67,7 +67,7 @@
 					<onclick>PlayerControl(random)</onclick>
 					<visible>Integer.IsGreater(Playlist.Length(music),1)</visible>
 				</control>
-				<control type="togglebutton" id="610">
+				<control type="button" id="610">
 					<include content="PlayerButtons">
 						<param name="type" value="repeat"/>
 						<param name="alt" value="repeat1"/>

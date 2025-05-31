@@ -37,7 +37,7 @@
 					<onclick>PlayerControl(Rewind)</onclick>
 					<visible>Player.SeekEnabled</visible>
 				</control>
-				<control type="togglebutton" id="603">
+				<control type="button" id="603">
 					<include content="PlayerButtons">
 						<param name="type" value="play"/>
 						<param name="alt" value="pause"/>

@@ -795,12 +795,12 @@
         <font>
             <name>font_tiny</name>
             <filename>Inter-Unicode-Regular.ttf</filename>
-            <size>37</size>
+            <size>28</size>
         </font>
         <font>
             <name>font_tiny_iconic</name>
             <filename>fa-solid-900.ttf</filename>
-            <size>38</size>
+            <size>29</size>
         </font>
 	</fontset>
 	<fontset id="Arial" unicode="true">
@@ -1689,12 +1689,12 @@
         <font>
             <name>font_tiny</name>
             <filename>Inter-Unicode-Regular.ttf</filename>
-            <size>37</size>
+            <size>28</size>
         </font>
         <font>
             <name>font_tiny_iconic</name>
             <filename>fa-solid-900.ttf</filename>
-            <size>38</size>
+            <size>29</size>
         </font>
 	</fontset>
 </fonts>
