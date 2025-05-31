@@ -1,5 +1,6 @@
 [B]Version 21.1.1[/B]
 - Small fixes
+- removed useless fonts
 
 [B]Version 21.1.0[/B]
 - Optimized DialogPlayerProcessInfo
