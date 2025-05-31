@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
-# License: GPL v.3 https://www.gnu.org/copyleft/gpl.html
-
-from __future__ import unicode_literals
+# Gismeteo Wetter-API Parser für Kodi (robust/future-proof)
 
 import calendar
 import time
-from typing import Any, Dict, List
-
 import requests
 
 try:
@@ -14,39 +10,39 @@ try:
 except ImportError:
     import xml.etree.ElementTree as etree
 
-__all__ = ['GismeteoError', 'GismeteoClient']
-
 class GismeteoError(Exception):
     pass
 
 class GismeteoClient(object):
     _base_url = 'https://services.gismeteo.net/inform-service/inf_chrome'
 
-    def __init__(self, lang: str = 'en') -> None:
+    def __init__(self, lang='en'):
         self._lang = lang
         self._client = requests.Session()
 
     def __del__(self):
         self._client.close()
 
-    @staticmethod
-    def _extract_xml(r: requests.Response) -> etree.Element:
+    def _extract_xml(self, r):
         try:
-            return etree.fromstring(r.content)
+            x = etree.fromstring(r.content)
         except Exception as e:
-            raise GismeteoError(f'Fehler beim Parsen der XML-Antwort: {e}')
+            print("Gismeteo: Fehler beim XML-Parsing:", e)
+            raise GismeteoError(e)
+        return x
 
-    def _get(self, url: str, params: dict = None, *args, **kwargs) -> requests.Response:
+    def _get(self, url, params=None, *args, **kwargs):
         params = params or {}
         params['lang'] = self._lang
         try:
-            return self._client.get(url, params=params, *args, **kwargs)
+            r = self._client.get(url, params=params, *args, **kwargs)
+            r.raise_for_status()
         except Exception as e:
-            raise GismeteoError(f'HTTP-Request fehlgeschlagen: {e}')
+            print("Gismeteo: HTTP-Fehler:", e)
+            raise GismeteoError(e)
+        return r
 
-    # ------------- Locations -----------------
-    @staticmethod
-    def _get_locations_list(root: etree.Element) -> List[Dict[str, Any]]:
+    def _get_locations_list(self, root):
         result = []
         for item in root:
             location = {
@@ -61,9 +57,7 @@ class GismeteoClient(object):
             result.append(location)
         return result
 
-    # ------------- Datumshandling -------------
-    @staticmethod
-    def _get_date(source: Any, tzone: int) -> Dict[str, Any]:
+    def _get_date(self, source, tzone):
         if not source:
             return {'local': '', 'utc': '', 'unix': 0, 'offset': tzone or 0}
         try:
@@ -84,71 +78,59 @@ class GismeteoClient(object):
             'offset': tzone or 0
         }
 
-    # ------------- Forecast Handling -------------
-    def _get_forecast_info(self, root: etree.Element) -> Dict[str, Any]:
-        if not root or not len(root):
-            raise GismeteoError('Fehler: Keine Standortdaten gefunden.')
+    def _get_fact_forecast(self, xml_location):
+        fact = xml_location.find('fact')
+        if fact is None or not len(fact):
+            print("Gismeteo: <fact> fehlt oder ist leer!")
+            return {}
+        values = fact.find('values')
+        if values is None:
+            print("Gismeteo: <values> fehlt in <fact>!")
+            return {}
+        return self._get_item_forecast(values, self._get_int(xml_location.attrib.get('tzone', 0)))
 
-        xml_location = root[0]
-        tzone = self._get_int(xml_location.attrib.get('tzone', 0))
-        return {
-            'name': xml_location.attrib.get('name', xml_location.attrib.get('n', 'Unbekannt')),
-            'id': xml_location.attrib.get('id', ''),
-            'kind': xml_location.attrib.get('kind', ''),
-            'country': xml_location.attrib.get('country_name', ''),
-            'district': xml_location.attrib.get('district_name', ''),
-            'lat': xml_location.attrib.get('lat', ''),
-            'lng': xml_location.attrib.get('lng', ''),
-            'cur_time': self._get_date(xml_location.attrib.get('cur_time', 0), tzone),
-            'current': self._get_fact_forecast(xml_location),
-            'days': self._get_days_forecast(xml_location),
-        }
-
-    def _get_item_forecast(self, xml_item: etree.Element, tzone: int) -> Dict[str, Any]:
+    def _get_item_forecast(self, xml_values, tzone):
+        # xml_values ist nun das <values> Tag direkt
         result = {}
-        if not xml_item or not len(xml_item):
+        attrib = xml_values.attrib
+        if not attrib:
+            print("Gismeteo: <values> leer!")
             return result
-        xml_values = xml_item[0]
-        result['date'] = self._get_date(xml_item.attrib.get('valid', 0), tzone)
-        if xml_item.attrib.get('sunrise') is not None:
-            result['sunrise'] = self._get_date(self._get_float(xml_item.attrib.get('sunrise')), tzone)
-        if xml_item.attrib.get('sunset') is not None:
-            result['sunset'] = self._get_date(self._get_float(xml_item.attrib.get('sunset')), tzone)
+        # Robust: Alle Werte mit .get abfragen
+        result['date'] = self._get_date(xml_values.attrib.get('valid', 0), tzone)
+        if 'sunrise' in attrib:
+            result['sunrise'] = self._get_date(self._get_float(attrib.get('sunrise')), tzone)
+        if 'sunset' in attrib:
+            result['sunset'] = self._get_date(self._get_float(attrib.get('sunset')), tzone)
         result['temperature'] = {
-            'air': self._get_int(xml_values.attrib.get('t')),
-            'comfort': self._get_int(xml_values.attrib.get('hi')),
+            'air': self._get_int(attrib.get('t')),
+            'comfort': self._get_int(attrib.get('hi')),
         }
-        if xml_values.attrib.get('water_t') is not None:
-            result['temperature']['water'] = self._get_int(xml_values.attrib.get('water_t'))
-        result['description'] = xml_values.attrib.get('descr', '')
-        result['humidity'] = self._get_int(xml_values.attrib.get('hum'))
-        result['pressure'] = self._get_int(xml_values.attrib.get('p'))
-        result['cloudiness'] = xml_values.attrib.get('cl', '')
-        result['storm'] = (xml_values.attrib.get('ts', '0') == '1')
+        if 'water_t' in attrib:
+            result['temperature']['water'] = self._get_int(attrib.get('water_t'))
+        result['description'] = attrib.get('descr', '')
+        result['humidity'] = self._get_int(attrib.get('hum'))
+        result['pressure'] = self._get_int(attrib.get('p'))
+        result['cloudiness'] = attrib.get('cl', '')
+        result['storm'] = (attrib.get('ts', '0') == '1')
         result['precipitation'] = {
-            'type': xml_values.attrib.get('pt', ''),
-            'amount': self._get_float(xml_values.attrib.get('prflt')),
-            'intensity': xml_values.attrib.get('pr', ''),
+            'type': attrib.get('pt', ''),
+            'amount': self._get_float(attrib.get('prflt')),
+            'intensity': attrib.get('pr', ''),
         }
-        if xml_values.attrib.get('ph'):
-            result['phenomenon'] = self._get_int(xml_values.attrib.get('ph'))
-        if xml_item.attrib.get('tod') is not None:
-            result['tod'] = self._get_int(xml_item.attrib.get('tod'))
-        result['icon'] = xml_values.attrib.get('icon', '')
-        result['gm'] = xml_values.attrib.get('grade', '')
+        if 'ph' in attrib:
+            result['phenomenon'] = self._get_int(attrib.get('ph'))
+        if 'tod' in attrib:
+            result['tod'] = self._get_int(attrib.get('tod'))
+        result['icon'] = attrib.get('icon', '')
+        result['gm'] = attrib.get('grade', '')
         result['wind'] = {
-            'speed': self._get_float(xml_values.attrib.get('ws')),
-            'direction': xml_values.attrib.get('wd', ''),
+            'speed': self._get_float(attrib.get('ws')),
+            'direction': attrib.get('wd', ''),
         }
         return result
 
-    def _get_fact_forecast(self, xml_location: etree.Element) -> Dict[str, Any]:
-        fact = xml_location.find('fact')
-        if fact is None:
-            return {}
-        return self._get_item_forecast(fact, self._get_int(xml_location.attrib.get('tzone', 0)))
-
-    def _get_days_forecast(self, xml_location: etree.Element) -> List[Dict[str, Any]]:
+    def _get_days_forecast(self, xml_location):
         tzone = self._get_int(xml_location.attrib.get('tzone', 0))
         result = []
         for xml_day in xml_location.findall('day'):
@@ -192,57 +174,67 @@ class GismeteoClient(object):
                 },
             }
             if len(xml_day):
-                day['hourly'] = self._get_hourly_forecast(xml_day, tzone)
+                # Untergeordnete <forecast> für Stundenwerte
+                for xml_forecast in xml_day.findall('forecast'):
+                    if 'hourly' not in day:
+                        day['hourly'] = []
+                    values = xml_forecast.find('values')
+                    if values is not None:
+                        day['hourly'].append(self._get_item_forecast(values, tzone))
             result.append(day)
         return result
 
-    def _get_hourly_forecast(self, xml_day: etree.Element, tzone: int) -> List[Dict[str, Any]]:
-        result = []
-        for xml_forecast in xml_day.findall('forecast'):
-            item = self._get_item_forecast(xml_forecast, tzone)
-            result.append(item)
-        return result
-
-    # ------------- Hilfsmethoden -------------
     @staticmethod
-    def _get_int(value: Any) -> int:
+    def _get_int(value):
         try:
             return int(value)
         except (ValueError, TypeError):
             return 0
 
     @staticmethod
-    def _get_float(value: Any) -> float:
+    def _get_float(value):
         try:
             return float(value)
         except (ValueError, TypeError):
             return 0.0
 
-    # ------------- Public API -------------
-    def cities_search(self, keyword: str) -> List[Dict[str, Any]]:
+    def cities_search(self, keyword):
         url = self._base_url + '/cities/'
         u_params = {'startsWith': keyword}
         r = self._get(url, params=u_params)
         x = self._extract_xml(r)
         return self._get_locations_list(x)
 
-    def cities_ip(self, count: int = 1) -> List[Dict[str, Any]]:
+    def cities_ip(self, count=1):
         url = self._base_url + '/cities/'
         u_params = {'mode': 'ip', 'count': count, 'nocache': 1}
         r = self._get(url, params=u_params)
         x = self._extract_xml(r)
         return self._get_locations_list(x)
 
-    def cities_nearby(self, lat: str, lng: str, count: int = 5) -> List[Dict[str, Any]]:
+    def cities_nearby(self, lat, lng, count=5):
         url = self._base_url + '/cities/'
         u_params = {'lat': lat, 'lng': lng, 'count': count, 'nocache': 1}
         r = self._get(url, params=u_params)
         x = self._extract_xml(r)
         return self._get_locations_list(x)
 
-    def forecast(self, city_id: str) -> Dict[str, Any]:
+    def forecast(self, city_id):
         url = self._base_url + '/forecast/'
         u_params = {'city': city_id}
         r = self._get(url, params=u_params)
         x = self._extract_xml(r)
-        return self._get_forecast_info(x)
+        # --- Location-Infos ---
+        info = {
+            'name': x[0].attrib.get('name', x[0].attrib.get('n', 'Unbekannt')),
+            'id': x[0].attrib.get('id', ''),
+            'kind': x[0].attrib.get('kind', ''),
+            'country': x[0].attrib.get('country_name', ''),
+            'district': x[0].attrib.get('district_name', ''),
+            'lat': x[0].attrib.get('lat', ''),
+            'lng': x[0].attrib.get('lng', ''),
+            'cur_time': self._get_date(x[0].attrib.get('cur_time', 0), self._get_int(x[0].attrib.get('tzone', 0))),
+            'current': self._get_fact_forecast(x[0]),
+            'days': self._get_days_forecast(x[0]),
+        }
+        return info

@@ -26,6 +26,9 @@ WEATHER_ICON = weather.weather_icon
 
 CURRENT_TIME = {'unix': time.time()}
 
+def log(msg):
+    xbmc.log("[Gismeteo][default.py] %s" % msg, xbmc.LOGNOTICE)
+
 def safeget(dct, *keys, default=None):
     """Sichere Navigation durch verschachtelte Dicts."""
     for key in keys:
@@ -307,6 +310,7 @@ def forecast(params):
             lang = weather.gismeteo_lang()
             data = _location_forecast(lang, location.id)
         except (GismeteoError, WebClientError) as e:
+            log(f"Wetterdaten-Fehler: {e}")
             weather.notify_error(e)
             clear()
         else:
@@ -323,6 +327,7 @@ def location(params):
             lang = weather.gismeteo_lang()
             search_result = Gismeteo(lang).cities_search(keyword)
         except (GismeteoError, WebClientError) as e:
+            log(f"Städte-Suchfehler: {e}")
             weather.notify_error(e, True)
         else:
             for s_location in search_result:
@@ -382,6 +387,7 @@ def _call_method(func, params=None):
         try:
             return func(**params)
         except (GismeteoError, WebClientError, ImportError) as e:
+            log(f"_call_method Fehler: {e}")
             if retry >= 10:
                 raise e
         finally:
