@@ -165,7 +165,7 @@ class Arrow:
             tzinfo = dateutil_tz.tzutc()
         # detect that tzinfo is a pytz object (issue #626)
         elif (
-            isinstance(tzinfo, dt_tzinfo)
+            isinstance(tzinfo, __import__('datetime').tzinfo)
             and hasattr(tzinfo, "localize")
             and hasattr(tzinfo, "zone")
             and tzinfo.zone  # type: ignore[attr-defined]
@@ -174,15 +174,6 @@ class Arrow:
         elif isinstance(tzinfo, str):
             tzinfo = parser.TzinfoParser.parse(tzinfo)
 
-        # >>> PATCH: robuste Prüfung/Fallback für tzinfo
-        try:
-            from datetime import tzinfo as dt_tzinfo
-            if not isinstance(tzinfo, dt_tzinfo):
-                tzinfo = dateutil_tz.tzutc()
-        except Exception:
-            tzinfo = dateutil_tz.tzutc()
-        # <<< PATCH ENDE
-        
         fold = kwargs.get("fold", 0)
 
         self._datetime = dt_datetime(
