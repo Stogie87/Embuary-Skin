@@ -105,6 +105,26 @@
     </extension>
 </addon>
 
+<addon id="script.module.arrow" name="arrow" version="1.2.4" provider-name="Stogie">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0" />
+    <import addon="script.module.dateutil" version="2.8.2" />
+    <import addon="script.module.typing_extensions" version="4.7.1" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Better dates and times for Python</summary>
+    <description lang="en_GB">Better dates and times for Python</description>
+    <license>Apache-2.0</license>
+    <platform>all</platform>
+    <website>https://arrow.readthedocs.io/en/latest/</website>
+    <source>https://github.com/Stogie87/Embuary-Skin</source>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon>
+
 <addon id="script.skin.helper.colorpicker" name="Skin Helper Service ColorPicker" version="2.0.4" provider-name="marcelveldt, sualfred, Stogie and others">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
@@ -214,6 +234,7 @@
 		<import addon="script.skin.helper.colorpicker" version="2.0.4"/>
 		<import addon="script.skin.helper.skinbackup" version="1.0.22"/>
 		<import addon="script.episodejumper" version="1.0.1"/>
+		<import addon="script.module.arrow" version="1.2.4"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false" defaultresolution="1440p">
 		<res width="2560" height="1440" aspect="16:9" default="true" folder="xml" />
@@ -250,6 +271,7 @@
 		<import addon="script.skin.helper.colorpicker" version="2.0.4"/>
 		<import addon="script.skin.helper.skinbackup" version="1.0.22"/>
 		<import addon="script.episodejumper" version="1.0.1"/>
+		<import addon="script.module.arrow" version="1.2.4"/>
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="3840" height="2160" aspect="16:9" default="true" folder="xml" />
