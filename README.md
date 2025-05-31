@@ -3,7 +3,8 @@
 Die bekannte und beliebte Skin Embuary von Sualfred ist im UHD-Zeitalter angekommen. Dank der 2K/4K Modifikation von Teddyknuddel kann das volle Potenzial eines UHD Displays (auch auf FullHD macht 2K eine gute Figur) genutzt werden. Durch die CPM Modifikation von jamal2367 erhält man detaillierte Informationen über Dolby Vision und Video Tonspuren. Embuary ist dem Web UI von Emby nachempfunden und für Emby-for-Kodi und EmbyCon Nutzer entwickelt worden, funktioniert aber auch für alle gängigen Kodi Setups.
 
 ## Installation
-* Lade das aktuellste repository.embuary-x.y.z.zip herunter (siehe [Release Bereich](https://github.com/Stogie87/Embuary-Skin/releases)).
+* Lade das aktuellste  repository.embuary-x.y.z.zip herunter (siehe [Release Bereich](https://github.com/Stogie87/Embuary-Skin/releases)).
+* Aktiviere unter Kodi Einstellungen -> System -> Aktive Addons -> "Unbekannte Quellen" und "Offizielle Addons aktualisieren von" -> Beliebige Repositorys
 * Installiere das zip-Archiv (repository.embuary-x.y.z.zip) über die Funktion "Aus ZIP-Datei installieren" als Addon in Kodi.
 * Danach kann Embuary 2K/4K über den Kodi Addon Browser über die Funktion "Aus Repository installieren" installiert werden.
 
@@ -16,6 +17,7 @@ The well-known and popular Skin Embuary from Sualfred has arrived in the UHD age
 
 ## Installation
 * Download the latest repository.embuary-x.y.z.zip (see the [Release Section](https://github.com/Stogie87/Embuary-Skin/releases)).
+* Activate under Kodi Settings → System → Active Add-ons → "Unknown sources" and "Update official add-ons from" → Any repositories
 * Install the zip archive (repository.embuary-x.y.z.zip) as an addon in Kodi using the "Install from ZIP file" function.
 * Afterwards, Embuary 2K/4K can be installed via the Kodi addon browser using the "Install from repository" function.
 
