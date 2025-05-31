@@ -83,7 +83,7 @@
 						<ondown>1000</ondown>
 						<onback>1100</onback>
 					</control>
-					<control type="button" id="10">
+					<control type="togglebutton" id="10">
 						<alttexturefocus/>
 						<include>SettingsButtonSidePanel</include>
 					</control>
