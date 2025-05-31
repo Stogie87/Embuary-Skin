@@ -319,7 +319,7 @@
 						<label>$LOCALIZE[31165]</label>
 						<onup>SetFocus(100)</onup>
 					</control>
-					<control type="togglebutton" id="34">
+					<control type="button" id="34">
 						<width>250</width>
 						<label>$LOCALIZE[19174]</label>
 						<altlabel>$LOCALIZE[19173]</altlabel>

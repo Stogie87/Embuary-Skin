@@ -323,7 +323,7 @@
 						<onclick>PlayerControl(Previous)</onclick>
 						<visible>!VideoPlayer.Content(livetv) + !String.StartsWith(Player.Filenameandpath,pvr://)</visible>
 					</control>
-					<control type="togglebutton" id="6103">
+					<control type="button" id="6103">
 						<include content="PlayerButtons">
 							<param name="type" value="play"/>
 							<param name="alt" value="pause"/>
