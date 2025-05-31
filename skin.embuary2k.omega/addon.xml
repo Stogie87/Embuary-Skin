@@ -11,7 +11,7 @@
 		<import addon="script.episodejumper" version="1.0.1"/>
 		<import addon="script.module.arrow" version="1.2.4"/>
 	</requires>
-	<extension point="xbmc.gui.skin" debugging="false" defaultresolution="1440p">
+	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="2560" height="1440" aspect="16:9" default="true" folder="xml" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
