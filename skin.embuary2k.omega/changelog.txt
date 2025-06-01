@@ -1,6 +1,9 @@
+[B]Version 21.1.2[/B]
+- Fix Radiobuttons for activated/deactivated addons
+
 [B]Version 21.1.1[/B]
 - Small fixes
-- removed useless fonts
+- removed useless Fonts
 
 [B]Version 21.1.0[/B]
 - Optimized DialogPlayerProcessInfo
