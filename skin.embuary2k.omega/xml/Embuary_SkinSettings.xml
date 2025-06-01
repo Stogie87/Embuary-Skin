@@ -940,44 +940,44 @@
 			<param name="label" value="$LOCALIZE[31274]"/>
 		</include>
 		<control type="radiobutton" id="$PARAM[id]02">
-			<include>SettingsButton</include>
-			<onclick condition="System.HasAddon(service.upnext)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.upnext,enable=false)</onclick>
-			<onclick condition="!System.HasAddon(service.upnext)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.upnext,enable=true)</onclick>
-			<onclick condition="!System.HasAddon(service.upnext)">InstallAddon(service.upnext)</onclick>
-			<selected>System.HasAddon(service.upnext)</selected>
-			<label>Up Next</label>
+    			<include>SettingsButton</include>
+    			<onclick condition="System.AddonIsEnabled(service.upnext)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.upnext,enable=false)</onclick>
+   			<onclick condition="System.HasAddon(service.upnext) + !System.AddonIsEnabled(service.upnext)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.upnext,enable=true)</onclick>
+    			<onclick condition="!System.HasAddon(service.upnext)">InstallAddon(service.upnext)</onclick>
+    			<selected>System.AddonIsEnabled(service.upnext)</selected>
+    			<label>Up Next</label>
 		</control>
 		<control type="radiobutton" id="$PARAM[id]04">
-			<include>SettingsButton</include>
-			<onclick condition="System.HasAddon(script.artistslideshow)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.artistslideshow,enable=false)</onclick>
-			<onclick condition="!System.HasAddon(script.artistslideshow)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.artistslideshow,enable=true)</onclick>
-			<onclick condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)</onclick>
-			<selected>System.HasAddon(script.artistslideshow)</selected>
-			<label>Artist Slideshow</label>
+    			<include>SettingsButton</include>
+    			<onclick condition="System.AddonIsEnabled(script.artistslideshow)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.artistslideshow,enable=false)</onclick>
+    			<onclick condition="System.HasAddon(script.artistslideshow) + !System.AddonIsEnabled(script.artistslideshow)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.artistslideshow,enable=true)</onclick>
+    			<onclick condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)
+    			</onclick><selected>System.AddonIsEnabled(script.artistslideshow)</selected>
+    			<label>Artist Slideshow</label>
 		</control>
 		<control type="radiobutton" id="$PARAM[id]07">
-			<include>SettingsButton</include>
-			<onclick condition="System.HasAddon(script.cu.lrclyrics)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.cu.lrclyrics,enable=false)</onclick>
-			<onclick condition="!System.HasAddon(script.cu.lrclyrics)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.cu.lrclyrics,enable=true)</onclick>
-			<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
-			<selected>System.HasAddon(script.cu.lrclyrics)</selected>
-			<label>CU LRC Lyrics</label>
+    			<include>SettingsButton</include>
+    			<onclick condition="System.AddonIsEnabled(script.cu.lrclyrics)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.cu.lrclyrics,enable=false)</onclick>
+    			<onclick condition="System.HasAddon(script.cu.lrclyrics) + !System.AddonIsEnabled(script.cu.lrclyrics)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.cu.lrclyrics,enable=true)</onclick>
+    			<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
+    			<selected>System.AddonIsEnabled(script.cu.lrclyrics)</selected>
+    			<label>CU LRC Lyrics</label>
 		</control>
 		<control type="radiobutton" id="$PARAM[id]08">
-			<include>SettingsButton</include>
-			<onclick condition="System.HasAddon(plugin.video.youtube)">RunScript(script.embuary.helper,action=toggleaddons,addonid=plugin.video.youtube,enable=false)</onclick>
-			<onclick condition="!System.HasAddon(plugin.video.youtube)">RunScript(script.embuary.helper,action=toggleaddons,addonid=plugin.video.youtube,enable=true)</onclick>
-			<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
-			<selected>System.HasAddon(plugin.video.youtube)</selected>
-			<label>YouTube</label>
+    			<include>SettingsButton</include>
+    			<onclick condition="System.AddonIsEnabled(plugin.video.youtube)">RunScript(script.embuary.helper,action=toggleaddons,addonid=plugin.video.youtube,enable=false)</onclick>
+    			<onclick condition="System.HasAddon(plugin.video.youtube) + !System.AddonIsEnabled(plugin.video.youtube)">RunScript(script.embuary.helper,action=toggleaddons,addonid=plugin.video.youtube,enable=true)</onclick>
+    			<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
+    			<selected>System.AddonIsEnabled(plugin.video.youtube)</selected>
+    			<label>YouTube</label>
 		</control>
 		<control type="radiobutton" id="$PARAM[id]09">
-			<include>SettingsButton</include>
-			<onclick condition="System.HasAddon(script.metadata.editor)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.metadata.editor,enable=false)</onclick>
-			<onclick condition="!System.HasAddon(script.metadata.editor)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.metadata.editor,enable=true)</onclick>
-			<onclick condition="!System.HasAddon(script.metadata.editor)">InstallAddon(script.metadata.editor)</onclick>
-			<selected>System.HasAddon(script.metadata.editor)</selected>
-			<label>Metadata Editor</label>
+    			<include>SettingsButton</include>
+    			<onclick condition="System.AddonIsEnabled(script.metadata.editor)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.metadata.editor,enable=false)</onclick>
+    			<onclick condition="System.HasAddon(script.metadata.editor) + !System.AddonIsEnabled(script.metadata.editor)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.metadata.editor,enable=true)</onclick>
+    			<onclick condition="!System.HasAddon(script.metadata.editor)">InstallAddon(script.metadata.editor)</onclick>
+    			<selected>System.AddonIsEnabled(script.metadata.editor)</selected>
+    			<label>Metadata Editor</label>
 		</control>
 		<include content="SkinSettingsHeadlineLabel">
 			<param name="id" value="$PARAM[id]20"/>
