@@ -239,6 +239,9 @@
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="2560" height="1440" aspect="16:9" default="true" folder="xml" />
 	</extension>
+	<resolutions>
+    		<resolution default="true">1440</resolution>
+	</resolutions>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Embuary skin - Creator sualfred - 2k-Modification Teddyknuddel - CPM Modification jamal2367</summary>
 		<summary lang="de_DE">Embuary Skin - Ersteller sualfred - 2k-Modifikation Teddyknuddel - CPM Modifikation jamal2367</summary>
@@ -276,6 +279,9 @@
 	<extension point="xbmc.gui.skin" debugging="false">
 		<res width="3840" height="2160" aspect="16:9" default="true" folder="xml" />
 	</extension>
+	<resolutions>
+    		<resolution default="true">2160</resolution>
+	</resolutions>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Embuary skin - Creator sualfred - 4k-Modification Teddyknuddel - CPM Modification jamal2367</summary>
 		<summary lang="de_DE">Embuary Skin - Ersteller sualfred - 4k-Modifikation Teddyknuddel - CPM Modifikation jamal2367</summary>
