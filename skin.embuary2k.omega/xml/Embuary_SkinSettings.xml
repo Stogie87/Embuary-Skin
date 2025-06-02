@@ -911,7 +911,7 @@
 			<selected>System.HasAddon(script.embuary.helper)</selected>
 			<label>Embuary Helper</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]14">
+		<control type="radiobutton" id="$PARAM[id]12">
 			<include>SettingsButton</include>
 			<onclick condition="System.HasAddon(script.embuary.info)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.embuary.info,enable=false)</onclick>
 			<onclick condition="!System.HasAddon(script.embuary.info)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.embuary.info,enable=true)</onclick>
@@ -919,7 +919,7 @@
 			<selected>System.HasAddon(script.embuary.info)</selected>
 			<label>Embuary Info Script</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]12">
+		<control type="radiobutton" id="$PARAM[id]13">
 			<include>SettingsButton</include>
 			<onclick condition="System.HasAddon(script.skinshortcuts)">RunScript(script.embuary.helper,action=dialogok,message=$LOCALIZE[24091])</onclick>
 			<onclick condition="!System.HasAddon(script.skinshortcuts)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skinshortcuts,enable=true)</onclick>
@@ -927,7 +927,7 @@
 			<selected>System.HasAddon(script.skinshortcuts)</selected>
 			<label>Skin Shortcuts</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]13">
+		<control type="radiobutton" id="$PARAM[id]14">
 			<include>SettingsButton</include>
 			<onclick condition="System.HasAddon(plugin.program.autocompletion)">RunScript(script.embuary.helper,action=dialogok,message=$LOCALIZE[24091])</onclick>
 			<onclick condition="!System.HasAddon(plugin.program.autocompletion)">RunScript(script.embuary.helper,action=toggleaddons,addonid=plugin.program.autocompletion,enable=true)</onclick>
@@ -947,32 +947,40 @@
     			<selected>System.AddonIsEnabled(service.upnext)</selected>
     			<label>Up Next</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]04">
+		<control type="radiobutton" id="$PARAM[id]03">
     			<include>SettingsButton</include>
+    			<onclick condition="System.AddonIsEnabled(script.episodejumper)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.episodejumper,enable=false)</onclick>
+    			<onclick condition="System.HasAddon(script.episodejumper) + !System.AddonIsEnabled(script.episodejumper)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.episodejumper,enable=true)</onclick>
+    			<onclick condition="!System.HasAddon(script.episodejumper)">InstallAddon(script.episodejumper)</onclick>
+    			<selected>System.AddonIsEnabled(script.episodejumper)</selected>
+    			<label>Episode Jumper</label>
+		</control>
+		<control type="radiobutton" id="$PARAM[id]04">
+    		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.artistslideshow)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.artistslideshow,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.artistslideshow) + !System.AddonIsEnabled(script.artistslideshow)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.artistslideshow,enable=true)</onclick>
     			<onclick condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)
     			</onclick><selected>System.AddonIsEnabled(script.artistslideshow)</selected>
     			<label>Artist Slideshow</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]07">
-    			<include>SettingsButton</include>
+		<control type="radiobutton" id="$PARAM[id]05">
+    		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.cu.lrclyrics)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.cu.lrclyrics,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.cu.lrclyrics) + !System.AddonIsEnabled(script.cu.lrclyrics)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.cu.lrclyrics,enable=true)</onclick>
     			<onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
     			<selected>System.AddonIsEnabled(script.cu.lrclyrics)</selected>
     			<label>CU LRC Lyrics</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]08">
-    			<include>SettingsButton</include>
+		<control type="radiobutton" id="$PARAM[id]06">
+    		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(plugin.video.youtube)">RunScript(script.embuary.helper,action=toggleaddons,addonid=plugin.video.youtube,enable=false)</onclick>
     			<onclick condition="System.HasAddon(plugin.video.youtube) + !System.AddonIsEnabled(plugin.video.youtube)">RunScript(script.embuary.helper,action=toggleaddons,addonid=plugin.video.youtube,enable=true)</onclick>
     			<onclick condition="!System.HasAddon(plugin.video.youtube)">InstallAddon(plugin.video.youtube)</onclick>
     			<selected>System.AddonIsEnabled(plugin.video.youtube)</selected>
     			<label>YouTube</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]09">
-    			<include>SettingsButton</include>
+		<control type="radiobutton" id="$PARAM[id]07">
+    		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.metadata.editor)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.metadata.editor,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.metadata.editor) + !System.AddonIsEnabled(script.metadata.editor)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.metadata.editor,enable=true)</onclick>
     			<onclick condition="!System.HasAddon(script.metadata.editor)">InstallAddon(script.metadata.editor)</onclick>
@@ -983,32 +991,32 @@
 			<param name="id" value="$PARAM[id]20"/>
 			<param name="label" value="$LOCALIZE[31001]"/>
 		</include>
-		<control type="radiobutton" id="$PARAM[id]22">
-    			<include>SettingsButton</include>
+		<control type="radiobutton" id="$PARAM[id]21">
+    		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.module.metadatautils)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.module.metadatautils,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.module.metadatautils) + !System.AddonIsEnabled(script.module.metadatautils)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.module.metadatautils,enable=true)</onclick>
     			<onclick condition="!System.HasAddon(script.module.metadatautils)">InstallAddon(script.module.metadatautils)</onclick>
     			<selected>System.AddonIsEnabled(script.module.metadatautils)</selected>
     			<label>MetadataUtils</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]23">
-    			<include>SettingsButton</include>
+		<control type="radiobutton" id="$PARAM[id]22">
+    		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.service,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.skin.helper.service) + !System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.service,enable=true)</onclick>
     			<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
     			<selected>System.AddonIsEnabled(script.skin.helper.service)</selected>
     			<label>Skin Helper Service</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]24">
-    			<include>SettingsButton</include>
+		<control type="radiobutton" id="$PARAM[id]23">
+    		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.skin.helper.widgets)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.widgets,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.skin.helper.widgets) + !System.AddonIsEnabled(script.skin.helper.widgets)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.widgets,enable=true)</onclick>
    			<onclick condition="!System.HasAddon(script.skin.helper.widgets)">InstallAddon(script.skin.helper.widgets)</onclick>
     			<selected>System.AddonIsEnabled(script.skin.helper.widgets)</selected>
     			<label>Skin Helper Widgets</label>
 		</control>
-		<control type="button" id="$PARAM[id]21">
-    			<include>SettingsButton</include>
+		<control type="button" id="$PARAM[id]24">
+    		<include>SettingsButton</include>
     			<onclick condition="![!System.HasAddon(script.module.metadatautils) + !System.HasAddon(script.skin.helper.service) + !System.HasAddon(script.skin.helper.widgets)]">RunScript(script.embuary.helper,action=dialogyesno,header=$LOCALIZE[31312],message=$LOCALIZE[31314][CR][CR]$LOCALIZE[31316],yesaction=RunScript(script.embuary.helper,action=toggleaddons,addonid=script.module.metadatautils+script.skin.helper.service+script.skin.helper.widgets,enable=false))</onclick>
     			<onclick condition="[!System.HasAddon(script.module.metadatautils) + !System.HasAddon(script.skin.helper.service) + !System.HasAddon(script.skin.helper.widgets)]">RunScript(script.embuary.helper,action=dialogyesno,header=$LOCALIZE[31313],message=$LOCALIZE[31314][CR][CR]$LOCALIZE[31315],yesaction=RunScript(script.embuary.helper,action=toggleaddons,addonid=script.module.metadatautils+script.skin.helper.service+script.skin.helper.widgets,enable=true))</onclick>
     			<label>$LOCALIZE[31312]</label>
