@@ -9,13 +9,13 @@ The well-known and popular Embuary skin by Sualfred has arrived in the UHD era. 
 ## Installation
 
 Deutsch:
-1. Lade die neueste `repository.embuary-x.y.z.zip` herunter (siehe Releases-Bereich: https://github.com/Stogie87/Embuary-Skin/releases).
+1. Lade die neueste `repository.embuary-x.y.z.zip` herunter (siehe [Release Bereich](https://github.com/Stogie87/Embuary-Skin/releases)).
 2. Aktiviere unter Kodi Einstellungen → System → Addons die Optionen „Unbekannte Quellen“ sowie „Offizielle Addons aktualisieren von: Beliebige Repositories“.
 3. Installiere das ZIP-Archiv (`repository.embuary-x.y.z.zip`) über Addons → Aus ZIP-Datei installieren.
 4. Anschließend kann Embuary 2K/4K über den Kodi Addon-Browser mit Aus Repository installieren hinzugefügt werden.
 
 English:
-1. Download the latest `repository.embuary-x.y.z.zip` (see the Releases section: https://github.com/Stogie87/Embuary-Skin/releases).
+1. Download the latest `repository.embuary-x.y.z.zip` (see the [Release Section](https://github.com/Stogie87/Embuary-Skin/releases)).
 2. In Kodi Settings → System → Add-ons, activate “Unknown sources” and set “Update official add-ons from” to “Any repositories.”
 3. Install the ZIP archive (`repository.embuary-x.y.z.zip`) via Add-ons → Install from ZIP file.
 4. Afterwards, Embuary 2K/4K can be installed using Install from repository in the Kodi Add-on browser.
