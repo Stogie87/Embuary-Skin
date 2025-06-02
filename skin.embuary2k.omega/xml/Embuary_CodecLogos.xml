@@ -310,7 +310,6 @@
             <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
             <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
-            <top>60</top>
             <left>35</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
@@ -922,7 +921,6 @@
             <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
             <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
-            <top>60</top>
             <left>1175</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
@@ -1534,7 +1532,6 @@
             <animation effect="fade" end="0" start="100" time="150">Hidden</animation>
             <animation effect="fade" end="0" start="100" time="150">WindowClose</animation>
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
-            <top>60</top>
             <left>2315</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
