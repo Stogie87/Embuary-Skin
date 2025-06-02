@@ -1,5 +1,6 @@
 [B]Version 21.1.2[/B]
 - Fix Radiobuttons for activated/deactivated addons
+- add codec logo time
 
 [B]Version 21.1.1[/B]
 - Small fixes

@@ -785,6 +785,12 @@
 			<param name="label" value="$LOCALIZE[32063]"/>
 		</include>
 		<control type="button" id="$PARAM[id]41">
+    		<include>SettingsButton</include>
+    			<onclick>RunScript(special://skin/scripts/script.osd_codec_logo_timer.py)</onclick>
+    			<label2>$VAR[OSDCodecLogosStartupTimerLabel]</label2>
+    			<label>$LOCALIZE[32071]</label>
+		</control>
+		<control type="button" id="$PARAM[id]42">
 			<include>SettingsButton</include>
 			<onclick condition="!Skin.HasSetting(osd.useleftCodecStartupLogos) + !Skin.HasSetting(osd.usecenterCodecStartupLogos) + !Skin.HasSetting(osd.userightCodecStartupLogos)">Skin.ToggleSetting(osd.useleftCodecStartupLogos)</onclick>
 			<onclick condition="Skin.HasSetting(osd.useleftCodecStartupLogos)">Skin.ToggleSetting(osd.usecenterCodecStartupLogos)</onclick>
@@ -794,17 +800,6 @@
 			<onclick condition="Skin.HasSetting(osd.usecenterCodecStartupLogos)">Skin.Reset(osd.usecenterCodecStartupLogos)</onclick>
 			<label2>$VAR[OSDCodecLogosStartupLabel]</label2>
 			<label>$LOCALIZE[32062]</label>
-		</control>
-		<control type="button" id="$PARAM[id]42">
-			<include>SettingsButton</include>
-			<onclick condition="!Skin.HasSetting(osd.useleftCodecLogos) + !Skin.HasSetting(osd.usecenterCodecLogos) + !Skin.HasSetting(osd.userightCodecLogos)">Skin.ToggleSetting(osd.useleftCodecLogos)</onclick>
-			<onclick condition="Skin.HasSetting(osd.useleftCodecLogos)">Skin.ToggleSetting(osd.usecenterCodecLogos)</onclick>
-			<onclick condition="Skin.HasSetting(osd.usecenterCodecLogos)">Skin.ToggleSetting(osd.userightCodecLogos)</onclick>
-			<onclick condition="Skin.HasSetting(osd.useleftCodecLogos)">Skin.Reset(osd.useleftCodecLogos)</onclick>
-			<onclick condition="Skin.HasSetting(osd.userightCodecLogos)">Skin.Reset(osd.userightCodecLogos)</onclick>
-			<onclick condition="Skin.HasSetting(osd.usecenterCodecLogos)">Skin.Reset(osd.usecenterCodecLogos)</onclick>
-			<label2>$VAR[OSDCodecLogosLabel]</label2>
-			<label>$LOCALIZE[32060]</label>
 		</control>
 		<control type="button" id="$PARAM[id]43">
 			<include>SettingsButton</include>
@@ -816,6 +811,17 @@
 			<onclick condition="Skin.HasSetting(ppi.usecenterCodecLogos)">Skin.Reset(ppi.usecenterCodecLogos)</onclick>
 			<label2>$VAR[PPICodecLogosLabel]</label2>
 			<label>$LOCALIZE[32061]</label>
+		</control>
+		<control type="button" id="$PARAM[id]44">
+			<include>SettingsButton</include>
+			<onclick condition="!Skin.HasSetting(osd.useleftCodecLogos) + !Skin.HasSetting(osd.usecenterCodecLogos) + !Skin.HasSetting(osd.userightCodecLogos)">Skin.ToggleSetting(osd.useleftCodecLogos)</onclick>
+			<onclick condition="Skin.HasSetting(osd.useleftCodecLogos)">Skin.ToggleSetting(osd.usecenterCodecLogos)</onclick>
+			<onclick condition="Skin.HasSetting(osd.usecenterCodecLogos)">Skin.ToggleSetting(osd.userightCodecLogos)</onclick>
+			<onclick condition="Skin.HasSetting(osd.useleftCodecLogos)">Skin.Reset(osd.useleftCodecLogos)</onclick>
+			<onclick condition="Skin.HasSetting(osd.userightCodecLogos)">Skin.Reset(osd.userightCodecLogos)</onclick>
+			<onclick condition="Skin.HasSetting(osd.usecenterCodecLogos)">Skin.Reset(osd.usecenterCodecLogos)</onclick>
+			<label2>$VAR[OSDCodecLogosLabel]</label2>
+			<label>$LOCALIZE[32060]</label>
 		</control>
 	</include>
 
@@ -993,29 +999,39 @@
 		</include>
 		<control type="radiobutton" id="$PARAM[id]21">
     		<include>SettingsButton</include>
+    			<onclick condition="System.AddonIsEnabled(script.skin.helper.skinbackup)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.skinbackup,enable=false)</onclick>
+    			<onclick condition="System.HasAddon(script.skin.helper.skinbackup) + !System.AddonIsEnabled(script.skin.helper.skinbackup)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.skinbackup,enable=true)</onclick>
+    			<onclick condition="!System.HasAddon(script.skin.helper.skinbackup)">InstallAddon(script.skin.helper.skinbackup)</onclick>
+    			<selected>System.AddonIsEnabled(script.skin.helper.skinbackup)</selected>
+    			<label>Skin Backup</label>
+		</control>
+		<control type="radiobutton" id="$PARAM[id]22">
+    		<include>SettingsButton</include>
+    			<onclick condition="System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.colorpicker,enable=false)</onclick>
+    			<onclick condition="System.HasAddon(script.skin.helper.colorpicker) + !System.AddonIsEnabled(script.skin.helper.colorpicker)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.colorpicker,enable=true)</onclick>
+    			<onclick condition="!System.HasAddon(script.skin.helper.colorpicker)">InstallAddon(script.skin.helper.colorpicker)</onclick>
+    			<selected>System.AddonIsEnabled(script.skin.helper.colorpicker)</selected>
+    			<label>Color Picker</label>
+		</control>
+		<control type="radiobutton" id="$PARAM[id]23">
+    		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.module.metadatautils)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.module.metadatautils,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.module.metadatautils) + !System.AddonIsEnabled(script.module.metadatautils)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.module.metadatautils,enable=true)</onclick>
     			<onclick condition="!System.HasAddon(script.module.metadatautils)">InstallAddon(script.module.metadatautils)</onclick>
     			<selected>System.AddonIsEnabled(script.module.metadatautils)</selected>
     			<label>MetadataUtils</label>
+			<visible>System.Platform.Windows</visible>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]22">
+		<control type="radiobutton" id="$PARAM[id]24">
     		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.service,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.skin.helper.service) + !System.AddonIsEnabled(script.skin.helper.service)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.service,enable=true)</onclick>
     			<onclick condition="!System.HasAddon(script.skin.helper.service)">InstallAddon(script.skin.helper.service)</onclick>
     			<selected>System.AddonIsEnabled(script.skin.helper.service)</selected>
     			<label>Skin Helper Service</label>
+			<visible>System.Platform.Windows</visible>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]23">
-    		<include>SettingsButton</include>
-    			<onclick condition="System.AddonIsEnabled(script.skin.helper.widgets)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.widgets,enable=false)</onclick>
-    			<onclick condition="System.HasAddon(script.skin.helper.widgets) + !System.AddonIsEnabled(script.skin.helper.widgets)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.widgets,enable=true)</onclick>
-   			<onclick condition="!System.HasAddon(script.skin.helper.widgets)">InstallAddon(script.skin.helper.widgets)</onclick>
-    			<selected>System.AddonIsEnabled(script.skin.helper.widgets)</selected>
-    			<label>Skin Helper Widgets</label>
-		</control>
-		<control type="radiobutton" id="$PARAM[id]24">
+		<control type="radiobutton" id="$PARAM[id]25">
     		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.skin.helper.widgets)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.widgets,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.skin.helper.widgets) + !System.AddonIsEnabled(script.skin.helper.widgets)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.skin.helper.widgets,enable=true)</onclick>
@@ -1024,10 +1040,10 @@
     			<label>Skin Helper Widgets</label>
 			<visible>System.Platform.Windows</visible>
 		</control>
-		<control type="button" id="$PARAM[id]25">
+		<control type="button" id="$PARAM[id]26">
     		<include>SettingsButton</include>
-    			<onclick condition="![!System.HasAddon(script.module.metadatautils) + !System.HasAddon(script.skin.helper.service) + !System.HasAddon(script.skin.helper.widgets) + !System.HasAddon(script.skin.helper.skinbackup)]">RunScript(script.embuary.helper,action=dialogyesno,header=$LOCALIZE[31312],message=$LOCALIZE[31314][CR][CR]$LOCALIZE[31316],yesaction=RunScript(script.embuary.helper,action=toggleaddons,addonid=script.module.metadatautils+script.skin.helper.service+script.skin.helper.widgets+script.skin.helper.skinbackup,enable=false))</onclick>
-    			<onclick condition="[!System.HasAddon(script.module.metadatautils) + !System.HasAddon(script.skin.helper.service) + !System.HasAddon(script.skin.helper.widgets) + !System.HasAddon(script.skin.helper.skinbackup)]">RunScript(script.embuary.helper,action=dialogyesno,header=$LOCALIZE[31313],message=$LOCALIZE[31314][CR][CR]$LOCALIZE[31315],yesaction=RunScript(script.embuary.helper,action=toggleaddons,addonid=script.module.metadatautils+script.skin.helper.service+script.skin.helper.widgets+script.skin.helper.skinbackup,enable=true))</onclick>
+    			<onclick condition="![!System.HasAddon(script.module.metadatautils) + !System.HasAddon(script.skin.helper.service) + !System.HasAddon(script.skin.helper.widgets) + !System.HasAddon(script.skin.helper.skinbackup) + !System.HasAddon(script.skin.helper.colorpicker)]">RunScript(script.embuary.helper,action=dialogyesno,header=$LOCALIZE[31312],message=$LOCALIZE[31314][CR][CR]$LOCALIZE[31316],yesaction=RunScript(script.embuary.helper,action=toggleaddons,addonid=script.module.metadatautils+script.skin.helper.service+script.skin.helper.widgets+script.skin.helper.skinbackup+script.skin.helper.colorpicker,enable=false))</onclick>
+    			<onclick condition="[!System.HasAddon(script.module.metadatautils) + !System.HasAddon(script.skin.helper.service) + !System.HasAddon(script.skin.helper.widgets) + !System.HasAddon(script.skin.helper.skinbackup) + !System.HasAddon(script.skin.helper.colorpicker)]">RunScript(script.embuary.helper,action=dialogyesno,header=$LOCALIZE[31313],message=$LOCALIZE[31314][CR][CR]$LOCALIZE[31315],yesaction=RunScript(script.embuary.helper,action=toggleaddons,addonid=script.module.metadatautils+script.skin.helper.service+script.skin.helper.widgets+script.skin.helper.skinbackup+script.skin.helper.colorpicker,enable=true))</onclick>
     			<label>$LOCALIZE[31312]</label>
 		</control>
 

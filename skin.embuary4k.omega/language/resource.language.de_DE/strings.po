@@ -2439,6 +2439,34 @@ msgctxt "#32067"
 msgid "L5 Active Offsets"
 msgstr "L5 Aktive Offsets"
 
+msgctxt "#32068"
+msgid "Version"
+msgstr "Version"
+
+msgctxt "#32069"
+msgid "Bit depth"
+msgstr "Bittiefe"
+
+msgctxt "#32070"
+msgid "EOTF & Gamut"
+msgstr "EOTF & Gamut"
+
+msgctxt "#32071"
+msgid "Duration of the codec logos when video starts"
+msgstr "Dauer der Codec-Logos beim Start des Videos"
+
+msgctxt "#32072"
+msgid "Standard"
+msgstr "Standard"
+
+msgctxt "#32075"
+msgid "second"
+msgstr "Sekunde"
+
+msgctxt "#32076"
+msgid "seconds"
+msgstr "Sekunden"
+
 msgctxt "#42001"
 msgid "Next Episode"
 msgstr "Nächste Episode"
@@ -2446,4 +2474,3 @@ msgstr "Nächste Episode"
 msgctxt "#42002"
 msgid "Previous Episode"
 msgstr "Vorherige Episode"
-
