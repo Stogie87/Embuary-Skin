@@ -918,12 +918,12 @@
 			<label>Embuary Helper</label>
 		</control>
 		<control type="radiobutton" id="$PARAM[id]12">
-			<include>SettingsButton</include>
-			<onclick condition="System.HasAddon(script.embuary.info)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.embuary.info,enable=false)</onclick>
-			<onclick condition="!System.HasAddon(script.embuary.info)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.embuary.info,enable=true)</onclick>
-			<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
-			<selected>System.HasAddon(script.embuary.info)</selected>
-			<label>Embuary Info Script</label>
+    		<include>SettingsButton</include>
+    			<onclick condition="System.HasAddon(script.embuary.info)">RunScript(script.embuary.helper,action=dialogok,message=$LOCALIZE[24091])</onclick>
+    			<onclick condition="!System.HasAddon(script.embuary.info)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.embuary.info,enable=true)</onclick>
+    			<onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
+    			<selected>System.HasAddon(script.embuary.info)</selected>
+    			<label>Embuary Info Script</label>
 		</control>
 		<control type="radiobutton" id="$PARAM[id]13">
 			<include>SettingsButton</include>
