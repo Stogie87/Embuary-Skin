@@ -1,501 +1,487 @@
 # XBMC Media Center language file
-# Addon Name: embuary
-# Addon id: skin.embuary
-# Addon Provider: sualfred
-# Translators:
-# Translators:
-# sualfred <su4lfred@gmail.com>, 2019
-# 
+# Addon Name: Embuary 2K
+# Addon id: skin.embuary2k.omega
+# Addon Provider: Teddyknuddel, Stogie
+#  
 msgid ""
 msgstr ""
 "Project-Id-Version: skin.ftv pvr mod\n"
 "Report-Msgid-Bugs-To: http://trac.xbmc.org/\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2019-09-04 11:31+0000\n"
-"Last-Translator: sualfred <su4lfred@gmail.com>, 2019\n"
-"Language-Team: Portuguese (Portugal) (https://www.transifex.com/sualfred/teams/80018/pt_PT/)\n"
+"PO-Revision-Date: 2016-02-26 13:31+0000\n"
+"Last-Translator: sualfred <su4lfred@gmail.com>\n"
+"Language-Team: English (http://www.transifex.com/skinrefred/skinftv-pvr-mod/language/en/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_PT\n"
+"Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.7\n"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31000"
 msgid "Home"
-msgstr "Início"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31001"
 msgid "Misc."
-msgstr "Misc."
+msgstr ""
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31002"
 msgid "More like this"
-msgstr "Mais como isto"
+msgstr ""
 
 #: /xml/DialogKeyboard.xml
 msgctxt "#31003"
 msgid "Suggestions"
-msgstr "Sugestões"
+msgstr ""
 
 #: /xml/Embuary_Wide_View_50.xml
 msgctxt "#31004"
 msgid "Wide"
-msgstr "Amplo"
+msgstr ""
 
 #: /xml/Embuary_Square_View_52.xml
 msgctxt "#31005"
 msgid "Square"
-msgstr "Quadrado"
+msgstr ""
 
 #: /xml/Embuary_Season_View_54.xml
 msgctxt "#31006"
 msgid "Season"
-msgstr "Temporada"
+msgstr ""
 
 #: /xml/Embuary_Episode_View_55.xml
 msgctxt "#31007"
 msgid "Episode"
-msgstr "Episódio"
+msgstr ""
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31008"
 msgid "Filter-String"
-msgstr "Filtro"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31009"
 msgid "Watch again"
-msgstr "Ver novamente"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31010"
 msgid "Watch now"
-msgstr "Ver agora"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31011"
 msgid "Browse TV show"
-msgstr "Navegar Série de TV"
+msgstr ""
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31012"
 msgid "Next up"
-msgstr "Próximo"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31013"
 msgid "Browse season"
-msgstr "Navegar Temporada"
+msgstr ""
 
 #: /xml/Embuary_Season_View_54.xml
 msgctxt "#31014"
 msgid "Info dialog"
-msgstr "Diálogo de info"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31015"
 msgid "Holiday themes"
-msgstr "Temas de Natal"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31016"
 msgid "Enable widget bounce animation on focus"
-msgstr "Ativar animação de salto ao focar o widget"
+msgstr ""
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31017"
 msgid "Recommended"
-msgstr "Recomendado"
+msgstr ""
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31018"
 msgid "Because you watched"
-msgstr "Porque viu"
+msgstr ""
 
 #: /xml/MyPVRChannels.xml
 msgctxt "#31019"
 msgid "Show hidden"
-msgstr "Mostrar oculto"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31020"
 msgid "Tune in"
-msgstr "Sintonizar"
+msgstr ""
 
 #: /xml/DialogPVRInfo.xml
 msgctxt "#31021"
 msgid "Similar titles"
-msgstr "Títulos semelhantes"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31022"
 msgid "Encrypted channel"
-msgstr "Canal codificado"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31023"
 msgid "Recording active"
-msgstr "Gravação ativa"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31024"
 msgid "Timer active"
-msgstr "Temporizador ativo"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31025"
 msgid "Repeating timer"
-msgstr "Temporizador repetido"
+msgstr ""
 
 #: /xml/Custom_1122_MusicHub.xml
 msgctxt "#31026"
 msgid "All music"
-msgstr "Toda a música"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31027"
 msgid "Custom shortcuts"
-msgstr "Atalhos personalizados"
+msgstr ""
 
 #: /xml/Custom_1120_MovieHub.xml
 msgctxt "#31028"
 msgid "Menu configuration"
-msgstr "Configuração do menu"
+msgstr ""
 
 #: /xml/Custom_1122_MusicHub.xml
 msgctxt "#31029"
 msgid "Music library"
-msgstr "Biblioteca de Música"
+msgstr ""
 
 #: /xml/Custom_1124_PVRHub.xml
 msgctxt "#31030"
 msgid "Last tuned channels"
-msgstr "Últimos canais sintonizados"
+msgstr ""
 
 #: /xml/MyPVRRecordings.xml
 msgctxt "#31031"
 msgid "Folder structure"
-msgstr "Estrutura de pastas"
+msgstr ""
 
 #: /xml/MyPVRRecordings.xml
 msgctxt "#31032"
 msgid "Show deleted"
-msgstr "Mostrar apagado"
+msgstr ""
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31033"
 msgid "Creator"
-msgstr "Criador"
+msgstr ""
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31034"
 msgid "Full description"
-msgstr "Descrição completa"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31035"
 msgid "Add-on broken"
-msgstr "Addon inutilizado"
+msgstr ""
 
 #: /xml/SettingsCategory.xml
 msgctxt "#31036"
 msgid "Settings mode"
-msgstr "Modo de definições"
+msgstr ""
 
 #: /xml/VideoOSD.xml
 msgctxt "#31037"
 msgid "Ends at"
-msgstr "Termina pelas"
+msgstr ""
 
 #: /xml/VideoOSD.xml
 msgctxt "#31038"
 msgid "Timeshift"
-msgstr "Timeshift"
+msgstr ""
 
 #: /xml/VideoOSD.xml
 msgctxt "#31039"
 msgid "Audio settings"
-msgstr "Definições de audio"
+msgstr ""
 
 #: /xml/VideoOSD.xml
 msgctxt "#31040"
 msgid "Subtitle settings"
-msgstr "Definições de legendas"
+msgstr ""
 
 #: /xml/VideoOSD.xml
 msgctxt "#31041"
 msgid "Stats for nerds"
-msgstr "Estatísticas para totós"
+msgstr ""
 
 #: /xml/Custom_1124_PVRHub.xml
 msgctxt "#31042"
 msgid "Live TV"
-msgstr "TV em direto"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31043"
 msgid "Muted"
-msgstr "Silenciado"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31044"
 msgid "Parent folder"
-msgstr "Pasta principal"
+msgstr ""
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31045"
 msgid "Memory usage"
-msgstr "Uso de memória"
+msgstr ""
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31046"
 msgid "Video decoder"
-msgstr "Descodificador video"
+msgstr ""
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31047"
 msgid "Pixel format"
-msgstr "Formato de píxeis"
+msgstr ""
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31048"
 msgid "Deinterlacing method"
-msgstr "Método de desentrelaçar"
+msgstr ""
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31049"
 msgid "Frames per second"
-msgstr "Quadros por segundo"
+msgstr ""
 
 #: /xml/script-globalsearch-main.xml
 msgctxt "#31050"
 msgid "Movies containing the actor"
-msgstr "Filmes com o ator"
+msgstr ""
 
 #: /xml/script-globalsearch-main.xml
 msgctxt "#31051"
 msgid "Movies containing the director"
-msgstr "Filmes com o realizador"
+msgstr ""
 
 #: /xml/script-globalsearch-main.xml
 msgctxt "#31052"
 msgid "New search"
-msgstr "Nova pesquisa"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31053"
 msgid "Once"
-msgstr "Uma vez"
+msgstr ""
 
 #: /xml/MusicOSD.xml
 msgctxt "#31054"
 msgid "Visualisation presets"
-msgstr "Predefinições de visualização"
+msgstr ""
 
 #: /xml/MusicOSD.xml
 msgctxt "#31055"
 msgid "Visualisation settings"
-msgstr "Definições de visualização"
+msgstr ""
 
 #: /xml/MusicOSD.xml
 msgctxt "#31056"
 msgid "Randomise fanart"
-msgstr "Qualquer fanart"
+msgstr ""
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31057"
 msgid "Number of favourites"
-msgstr "Número de favoritos"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31058"
 msgid "Embuary settings"
-msgstr "Definições do Embuary"
+msgstr ""
 
 #: /xml/DialogPVRChannelManager.xml
 msgctxt "#31059"
 msgid "Toggle TV / radio"
-msgstr "Alternar TV / rádio"
+msgstr ""
 
 #: /xml/SmartPlaylistEditor.xml
 msgctxt "#31060"
 msgid "Rules"
-msgstr "Regras"
+msgstr ""
 
 #: /xml/SmartPlaylistEditor.xml
 msgctxt "#31061"
-msgid ""
-"Set the type and add rules to create a smart playlist. These playlists are "
-"dynamic and include all media items from your database which apply to your "
-"chosen rules."
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
 msgstr ""
-"Escolhe o tipo e adiciona regras para criar uma lista inteligente. Estas "
-"listas são dinâmicas e incluem todos os itens multimédia da tua base de "
-"dados a que se apliquem as regras escolhidas."
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31062"
 msgid "Favourite movies"
-msgstr "Filmes favoritos"
+msgstr ""
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31063"
 msgid "Kodi favourites"
-msgstr "Favoritos do Kodi"
+msgstr ""
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31064"
 msgid "Favourite TV shows"
-msgstr "Séries de TV favoritas"
+msgstr ""
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31065"
 msgid "Favourite episodes"
-msgstr "Episódios favoritos"
+msgstr ""
 
 #: /xml/MyWeather.xml
 msgctxt "#31066"
 msgid "Location"
-msgstr "Localização"
+msgstr ""
 
 #: /xml/MyMusicPlaylistEditor.xml
 msgctxt "#31067"
 msgid "Load"
-msgstr "Carregar"
+msgstr ""
 
 #: /xml/MyMusicPlaylistEditor.xml
 msgctxt "#31068"
 msgid "Number of tracks in current playlist"
-msgstr "Número de pistas na lista atual"
+msgstr ""
 
 #: /xml/Embuary_Season_View_54.xml
 msgctxt "#31069"
 msgid "Back"
-msgstr "Retroceder"
+msgstr ""
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31070"
 msgid "Channel group"
-msgstr "Grupo de canais"
+msgstr ""
 
 #: /xml/VideoOSD.xml
 msgctxt "#31071"
 msgid "Channel guide"
-msgstr "Guia de canais"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31072"
 msgid "Local search"
-msgstr "Pesquisa local"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31073"
 msgid "EmbyCon: Search for movies"
-msgstr "EmbyCon: Procurar filmes"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31074"
 msgid "EmbyCon: Search for TV shows"
-msgstr "EmbyCon: Procurar séries de TV"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31075"
 msgid "EmbyCon: Search for episodes"
-msgstr "EmbyCon: Procurar episódios"
+msgstr ""
 
 #: /xml/Custom_1110_testwindow.xml
 msgctxt "#31076"
 msgid "Stop playback"
-msgstr "Parar a reprodução"
+msgstr ""
 
 #: /xml/script-nextup-notification-PostPlayInfo.xml
 msgctxt "#31077"
 msgid "seconds"
-msgstr "segundos"
+msgstr ""
 
 #: /xml/script-nextup-notification-PostPlayInfo.xml
 msgctxt "#31078"
 msgid "Playback starts in"
-msgstr "Reprodução começa em"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31079"
 msgid "Next episode"
-msgstr "Próximo episódio"
+msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31080"
 msgid "Continue watching"
-msgstr "Continuar a ver"
+msgstr ""
 
 #: /xml/Home.xml
 msgctxt "#31081"
 msgid "Recently updated TV shows"
-msgstr "Séries de TV atualizadas recentemente"
+msgstr ""
 
 #: /xml/Custom_1124_PVRHub.xml
 msgctxt "#31082"
 msgid "Last tuned radio channels"
-msgstr "Canais de rádio sintonizados recentemente"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31083"
 msgid "Widgets"
-msgstr "Widgets"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31084"
 msgid "Show custom shortcuts in Emby nodes"
-msgstr "Mostrar atalhos personalizados dos nós do Emby"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31085"
 msgid "Show EmbyCon source label"
-msgstr "Mostrar a fonte do EmbyCon"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31086"
 msgid "Default widgets"
-msgstr "Widgets padrão"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31087"
 msgid "Show fanarts in the background"
-msgstr "Mostrar fanart no fundo"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31088"
 msgid "Show video playback in the background"
-msgstr "Mostrar reprodução de video no fundo"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31089"
 msgid "minutes"
-msgstr "minutos"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31090"
 msgid "minute"
-msgstr "minuto"
+msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31091"
 msgid "Welcome to Embuary"
-msgstr "Bem vindo ao Embuary"
+msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31092"
-msgid ""
-"This skin is designed to simulate the web gui experience of Emby. In order "
-"to get everything running as it should, it's recommended to set the "
-"following Kodi options:"
+msgid "This skin is designed to simulate the web gui experience of Emby. In order to get everything running as it should, it's recommended to set the following Kodi options:"
 msgstr ""
-"Este tema é desenhado para estimular a experiência web do Emby. Para que "
-"tudo corra como é suposto, recomenda-se definir as seguintes opções do Kodi:"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31093"
@@ -505,944 +491,927 @@ msgstr ""
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31094"
 msgid "No, I'll keep my config"
-msgstr "Não, quero manter as configurações"
+msgstr ""
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31095"
 msgid "Pause playback"
-msgstr "Pausar reprodução"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31096"
 msgid "Resume playback"
-msgstr "Continuar reprodução"
+msgstr ""
 
 #: /xml/Custom_1120_MovieHub.xml
 msgctxt "#31097"
 msgid "Movies in the Top 250"
-msgstr "Filmes no Top 250"
+msgstr ""
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31098"
 msgid "TV shows in the Top 250"
-msgstr "Séries de TV no Top 250"
+msgstr ""
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31099"
 msgid "Widget layout"
-msgstr "Formato do widget"
+msgstr ""
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31100"
 msgid "Position"
-msgstr "Posição"
+msgstr ""
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31101"
 msgid "Layout"
-msgstr "Formato"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31102"
 msgid "Background settings"
-msgstr "Definições de fundo"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31103"
 msgid "Widget settings"
-msgstr "Definições de widget"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31104"
 msgid "Use own static background image"
-msgstr "Usar uma imagem de fundo estática"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31105"
 msgid "Change background, header and other misc. settings of Embuary."
-msgstr "Mudar o fundo, topo e outras definições do Embuary"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31106"
 msgid "Configure home & side panel menu items and general widget limitations."
 msgstr ""
-"Configurar início e itens do painel lateral e limitações gerais aos widgets."
 
 #: /xml/Custom_1111_PositionItemSelector.xml
 msgctxt "#31107"
 msgid "Select content"
-msgstr "Escolher conteúdo"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31108"
 msgid "Event log"
-msgstr "Log de eventos"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31109"
 msgid "Header bar"
-msgstr "Barra de cabeçalho"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31110"
 msgid "Show current temperature (if available)"
-msgstr "Mostrar temperatura atual (se disponível)"
+msgstr ""
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31111"
 msgid "Change location"
-msgstr "Mudar localização"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31112"
 msgid "Kiosk mode"
-msgstr "Modo quiosque"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31113"
 msgid "Show button to change the EmbyCon user"
-msgstr "Mostrar botão para alterar o usuário do EmbyCon"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31114"
 msgid "Show update library button"
-msgstr "Mostrar botão de atualizar biblioteca"
+msgstr ""
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31115"
 msgid "Switch to file mode"
-msgstr "Mudar para modo de ficheiro"
+msgstr ""
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31116"
 msgid "Unlock shares"
-msgstr "Desbloquear partilhas"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31117"
 msgid "Replace device name in the header bar"
-msgstr "Substituir nome do aparelho na barra de título"
+msgstr ""
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31118"
 msgid "EmbyCon sources"
-msgstr "Fontes do EmbyCon"
+msgstr ""
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31119"
 msgid "Previous group"
-msgstr "Grupo anterior"
+msgstr ""
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31120"
 msgid "Next group"
-msgstr "Próximo grupo"
+msgstr ""
 
 #: /xml/MusicVisualisation.xml
 msgctxt "#31121"
 msgid "Rewinding"
-msgstr "Retrocedendo"
+msgstr ""
 
 #: /xml/MusicVisualisation.xml
 msgctxt "#31122"
 msgid "Forwarding"
-msgstr "Avançando"
+msgstr ""
 
 #: /xml/PlayerControls.xml
 msgctxt "#31123"
 msgid "Show playlist"
-msgstr "Mostrar lista"
+msgstr ""
 
 #: /xml/Settings.xml
 msgctxt "#31124"
 msgid "LibreELEC"
-msgstr "LibreELEC"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31125"
 msgid "Custom widgets"
-msgstr "Widgets personalizados"
+msgstr ""
 
 #: /xml/MyPics.xml
 msgctxt "#31126"
 msgid "Randomise slideshow"
-msgstr "Apresentação aleatória"
+msgstr ""
 
 #: /xml/Custom_1112_MainMenuReset.xml
 msgctxt "#31127"
 msgid "Restored default widgets"
-msgstr "Widgets padrão restaurados"
+msgstr ""
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31128"
 msgid "Hide broken addons"
-msgstr "Ocultar addons inutilizados"
+msgstr ""
 
 #: /xml/Custom_1123_AddonHub.xml
 msgctxt "#31129"
 msgid "Update local addons"
-msgstr "Atualizar addons locais"
+msgstr ""
 
 #: /xml/script-nextup-notification-StillWatchingInfo.xml
 msgctxt "#31130"
 msgid "Still watching?"
-msgstr "Ainda a ver?"
+msgstr ""
 
 #: /xml/Custom_1118_ct.xml
 msgctxt "#31131"
 msgid "Attention"
-msgstr "Atenção"
+msgstr ""
 
 #: /xml/Custom_1118_ct.xml
 msgctxt "#31132"
-msgid ""
-"It seems that you have one ore more blacklisted plugins installed. This skin"
-" has been designed for a legal usage of Kodi and I - and all the other skin "
-"contributers - do not want be associated with such tools. Please check the "
-"kodi.tv community if you need any assistance to remove them."
+msgid "It seems that you have one ore more blacklisted plugins installed. This skin has been designed for a legal usage of Kodi and I - and all the other skin contributers - do not want be associated with such tools. Please check the kodi.tv community if you need any assistance to remove them."
 msgstr ""
-"Parece que tem um ou mais addons indicados na lista negra. Este tema foi "
-"desenhado para um uso legal do Kodi e eu - e todos os outros contribuintes "
-"do tema - não quero estar associado a tais ferramentas. Por favor consulte a"
-" comunidade kodi.tv se necessitar de assistência para removê-los."
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31133"
 msgid "Language filter"
-msgstr "Filtro de idioma"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31134"
 msgid "Side panel"
-msgstr "Painel lateral"
+msgstr ""
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31135"
 msgid "Restore defaults"
-msgstr "Restaurar padrão"
+msgstr ""
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31136"
 msgid "Setting changes are only applied after saving"
-msgstr "As mudanças às definições só serão aplicadas depois de guardadas"
+msgstr ""
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31137"
 msgid "Awards"
-msgstr "Prémios"
+msgstr ""
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31138"
 msgid "Retail release"
-msgstr "Lançamento comercial"
+msgstr ""
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31139"
 msgid "Do you want to apply unsaved changes?"
-msgstr "Deseja aplicar as mudanças não guardadas?"
+msgstr ""
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31140"
 msgid "Add-on settings not saved"
-msgstr "Definições do add-on não guardadas"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31141"
 msgid "Rumored"
-msgstr "Rumor"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31142"
 msgid "Planned"
-msgstr "Planeado"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31143"
 msgid "In production"
-msgstr "Em produção"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31144"
 msgid "Post production"
-msgstr "Pós produção"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31145"
 msgid "Released"
-msgstr "Lançado"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31146"
 msgid "Canceled"
-msgstr "Cancelado"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31147"
 msgid "Returning series"
-msgstr "Série a retornar"
+msgstr ""
 
 #: /xml/DialogSubtitles.xml
 msgctxt "#31148"
 msgid "Available sutbtitles"
-msgstr "Legendas disponíveis"
+msgstr ""
 
 #: /xml/DialogSubtitles.xml
 msgctxt "#31149"
 msgid "Installed subtitle services"
-msgstr "Serviços de legendas instalados"
+msgstr ""
 
 #: /xml/DialogSubtitles.xml
 msgctxt "#31150"
 msgid "Local subtitles are available for this video."
-msgstr "Existem legendas locais para este video."
+msgstr ""
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31151"
 msgid "Nr."
-msgstr "Nr."
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31152"
 msgid "Hub shortcuts"
-msgstr "Atalhos do Hub"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31153"
 msgid "Hide widgets and use fullscreen panel layout for the main menu"
-msgstr "Ocultar widgets e usar painel de ecrã inteiro como menu principal"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31154"
 msgid "Next aired"
-msgstr "Próxima emissão"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31155"
 msgid "Show library item edit buttons in info dialogs"
-msgstr "Mostrar botões de edição de itens da biblioteca nos diálogos de info"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31156"
 msgid "No further program information available"
-msgstr "Não existe mais informação disponível sobre o programa"
+msgstr ""
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31157"
 msgid "Persons named"
-msgstr "Pessoas nomeadas"
+msgstr ""
 
 #: /shortcuts/mainmenu.DATA.xml
 msgctxt "#31158"
 msgid "Custom item"
-msgstr "Item personalizado"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31159"
 msgid "No label"
-msgstr "Sem etiqueta"
+msgstr ""
 
 #: /shortcuts/moviehub.DATA.xml
 msgctxt "#31160"
 msgid "Movies - EmbyCon"
-msgstr "Filmes - EmbyCon"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31161"
 msgid "Free receivable channel"
-msgstr "Canal gratuito"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31162"
 msgid "Searching for updates"
-msgstr "A procurar atualizações"
+msgstr ""
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31163"
 msgid "Unmapped channels"
-msgstr "Canais não definidos"
+msgstr ""
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31164"
 msgid "Mapped channels"
-msgstr "Canais definidos"
+msgstr ""
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31165"
 msgid "Delete group"
-msgstr "Apagar grupo"
+msgstr ""
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31166"
 msgid "Add group"
-msgstr "Adicionar grupo"
+msgstr ""
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31167"
 msgid "Rename group"
-msgstr "Renomear grupo"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31168"
 msgid "Show music videos button"
-msgstr "Mostrar botão de Videoclips"
+msgstr ""
 
 #: /xml/Custom_1120_MovieHub.xml
 msgctxt "#31169"
 msgid "Collections"
-msgstr "Conjuntos"
+msgstr ""
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31170"
 msgid "Place of birth"
-msgstr "Naturalidade"
+msgstr ""
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31171"
 msgid "Age"
-msgstr "Idade"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31172"
 msgid "TV show hub"
-msgstr "Hub de Séries de TV"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31173"
 msgid "Movie hub"
-msgstr "Hub de Filmes"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31174"
 msgid "Music hub"
-msgstr "Hub de Música"
+msgstr ""
 
 #: /xml/Custom_1145_PlaylistSelect.xml
 msgctxt "#31175"
 msgid "Video playlist"
-msgstr "Lista de Videos"
+msgstr ""
 
 #: /xml/Custom_1145_PlaylistSelect.xml
 msgctxt "#31176"
 msgid "Music playlist"
-msgstr "Lista de Música"
+msgstr ""
 
 #: /xml/MusicOSD.xml
 msgctxt "#31177"
 msgid "Disc art"
-msgstr "Disc art"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31178"
 msgid "Custom menu entries"
-msgstr "Entradas de menu personalizadas"
+msgstr ""
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31179"
 msgid "All TV shows"
-msgstr "Todas as séries de TV"
+msgstr ""
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31180"
 msgid "All movies"
-msgstr "Todos os filmes"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31181"
 msgid "Emby node"
-msgstr "Nó do Emby"
+msgstr ""
 
 #: /xml/Embuary_TagHubIncludes.xml
 msgctxt "#31182"
 msgid "Recommended TV shows"
-msgstr "Séries de TV recomendadas"
+msgstr ""
 
 #: /xml/Custom_1130_Emby0Hub.xml
 msgctxt "#31183"
 msgid "Recommended movies"
-msgstr "Filmes recomendados"
+msgstr ""
 
 #: /xml/Custom_1130_Emby0Hub.xml
 msgctxt "#31184"
 msgid "Random movies"
-msgstr "Filmes aleatórios"
+msgstr ""
 
 #: /xml/Embuary_TagHubIncludes.xml
 msgctxt "#31185"
 msgid "Random TV shows"
-msgstr "Séries de TV aleatórias"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31186"
 msgid "Emby stream"
-msgstr "Stream do Emby"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31187"
 msgid "Home videos & photos"
-msgstr "Videos e fotos caseiras"
+msgstr ""
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31188"
 msgid "Filmography"
-msgstr "Filmografia"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31189"
 msgid "collection"
-msgstr "coleção"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31190"
 msgid "Settings backup"
-msgstr "Backup das Definições"
+msgstr ""
 
 #: /xml/LoginScreen.xml
 msgctxt "#31191"
 msgid "Power options"
-msgstr "Opções de energia"
+msgstr ""
 
 #: /xml/Embuary_Set_View_56.xml
 msgctxt "#31192"
 msgid "Included movies"
-msgstr "Filmes incluídos"
+msgstr ""
 
 #: /xml/Custom_1123_AddonHub.xml
 msgctxt "#31193"
 msgid "Installed add-ons"
-msgstr "Addons instalados"
+msgstr ""
 
 #: /xml/Custom_1123_AddonHub.xml
 msgctxt "#31194"
 msgid "Search add-ons"
-msgstr "Procurar addons"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31195"
 msgid "Use own background image path"
-msgstr "Usar imagem personalizada de fundo"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31196"
 msgid "Ended"
-msgstr "Terminado"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31197"
 msgid "Continuing"
-msgstr "Continua"
+msgstr ""
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31198"
 msgid "Hide labels"
-msgstr "Ocultar etiquetas"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31199"
 msgid "Slide"
-msgstr "Ligação"
+msgstr ""
 
 #: /extras/skinsettings.xml
 msgctxt "#31200"
 msgid "Custom"
-msgstr "Personalização"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31201"
 msgid "Select position"
-msgstr "Escolher posição"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31202"
 msgid "Menu positions"
-msgstr "Posições do menu"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31203"
 msgid "Default menu entries"
-msgstr "Entradas do menu padrão"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31204"
 msgid "Reset menu to default"
-msgstr "Voltar ao menu padrão"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31205"
 msgid "Change menu thumbnails"
-msgstr "Mudar as imagens do menu"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31206"
 msgid "Thumbnail options"
-msgstr "Opções de miniaturas"
+msgstr ""
 
 #: /xml/Custom_1112_MainMenuReset.xml
 msgctxt "#31207"
 msgid "Restored default main menu configuration"
-msgstr "Configuração padrão do menu principal restaurada"
+msgstr ""
 
 #: /xml/Custom_1111_PositionItemSelector.xml
 msgctxt "#31208"
 msgid "EmbyCon node"
-msgstr "Nó do EmbyCon"
+msgstr ""
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31209"
 msgid "Unwatched movies"
-msgstr "Filmes por ver"
+msgstr ""
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31210"
 msgid "Unwatched TV shows"
-msgstr "Séries de TV por ver"
+msgstr ""
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31211"
 msgid "Recently played songs"
-msgstr "Músicas recentemente reproduzidas"
+msgstr ""
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31212"
 msgid "Favourite artists"
-msgstr "Artistas favoritos"
+msgstr ""
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31213"
 msgid "Favourite albums"
-msgstr "Albuns favoritos"
+msgstr ""
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31214"
 msgid "Favourite songs"
-msgstr "Músicas favoritas"
+msgstr ""
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31215"
 msgid "Often played songs"
-msgstr "Músicas reproduzidas repetidamente"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31216"
 msgid "Reset widget configuration to default"
-msgstr "Restaurar configuração dos widgets para padrão"
+msgstr ""
 
 #: /xml/Custom_1112_Reset.xml
 msgctxt "#31217"
 msgid "Build default skin configuartion"
-msgstr "Construir configuração padrão do tema"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31218"
 msgid "Edit current configuration"
-msgstr "Editar a configuração atual"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31219"
 msgid "Horizontal"
-msgstr "Horizontal"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31220"
 msgid "Vertical"
-msgstr "Vertical"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31221"
 msgid "Use EPG thumbnails for PVR widgets (if available)"
-msgstr "Usar imagens do EPG para widgets de PVR (se disponível)"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31222"
 msgid "Support at emby.media"
-msgstr "Suporte em emby.media"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31223"
 msgid "Configure shortcuts of the power menu."
-msgstr "Configurar atalhos do menu de energia."
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31224"
 msgid "Power menu"
-msgstr "Menu de Energia"
+msgstr ""
 
 #: /xml/DialogButtonMenu.xml
 msgctxt "#31225"
 msgid "EmbyCon login"
-msgstr "Login do EmbyCon"
+msgstr ""
 
 #: /xml/DialogButtonMenu.xml
 msgctxt "#31226"
 msgid "Change EmbyCon user"
-msgstr "Alterar utilizador do EmbyCon"
+msgstr ""
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31227"
 msgid "Play album"
-msgstr "Reproduzir album"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31228"
 msgid "Search result provider"
-msgstr "Fornecedor de pesquisa"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31229"
-msgid ""
-"Create and manage your own widgets source. Please note that each widget has "
-"to be manually assigned to the chosen window."
+msgid "Create and manage your own widgets source. Please note that each widget has to be manually assigned to the chosen window."
 msgstr ""
-"Crie e gira a sua fonte de widgets. Note que cada widget tem de ser "
-"manualmente ligado à janela pretendida."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31230"
 msgid "Hide thumbnails of unwatched episodes"
-msgstr "Ocultar imagens de episódios não vistos"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31231"
 msgid "Pause video playback while the player info screen is active"
-msgstr "Pausa a reprodução enquanto são mostradas as informações do video"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31232"
 msgid "Custom hub"
-msgstr "Hub personalizado"
+msgstr ""
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31233"
 msgid "Movies starring"
-msgstr "Filmes estreando"
+msgstr ""
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31234"
 msgid "TV shows starring"
-msgstr "Séries de TV estreando"
+msgstr ""
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31235"
 msgid "Directed by"
-msgstr "Realizado por"
+msgstr ""
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31236"
 msgid "Episodes starring"
-msgstr "Episódios estreando"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31237"
 msgid "Available items starring the chosen actor"
-msgstr "Itens disponíveis com o ator/atriz escolhido/a"
+msgstr ""
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31238"
 msgid "Facts"
-msgstr "Fatos"
+msgstr ""
 
 #: /shortcuts/tvshowhub.DATA.xml
 msgctxt "#31239"
 msgid "TV shows - EmbyCon"
-msgstr "Séries de TV - EmbyCon"
+msgstr ""
 
 #: /shortcuts/musichub.DATA.xml
 msgctxt "#31240"
 msgid "Artists - EmbyCon"
-msgstr "Artistas - EmbyCon"
+msgstr ""
 
 #: /shortcuts/musichub.DATA.xml
 msgctxt "#31241"
 msgid "Albums - EmbyCon"
-msgstr "Albums - EmbyCon"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31242"
 msgid "Repositories"
-msgstr "Repositórios"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31243"
 msgid "Install from zip"
-msgstr "Instalar de um ZIP"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31244"
 msgid "Edit menu configuration"
-msgstr "Editar configuração do menu"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31245"
 msgid "Edit widget configuration"
-msgstr "Editar configuração dos widgets"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31246"
 msgid "Hubs"
-msgstr "Hubs"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31247"
 msgid "Menus & widgets"
-msgstr "Menus & widgets"
+msgstr ""
 
 #: /xml/Custom_1110_PositionSelector.xml
 msgctxt "#31248"
 msgid "Reset widgets to default"
-msgstr "Voltar a widgets padrão"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31249"
 msgid "Window configuration"
-msgstr "Configuração da janela"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31250"
 msgid "Automatically switch to full screen when starting playback"
-msgstr "Alternar automaticamente para ecrã completo ao iniciar a reprodução"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31251"
 msgid "Add-on hub"
-msgstr "Hub de Addons"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31252"
 msgid "PVR hub"
-msgstr "Hub de PVR"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31253"
 msgid "hub"
-msgstr "hub"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31254"
 msgid "Hide main menu and only show widgets"
-msgstr "Ocultar menu principal e mostrar apenas widgets"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31255"
 msgid "Cinema mode"
-msgstr "Modo cinema"
+msgstr ""
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31256"
 msgid "On right now"
-msgstr "Agora no ar"
+msgstr ""
 
 #: /shortcuts/overrides.xml
 msgctxt "#31257"
 msgid "Try to use an Emby styled artwork"
-msgstr "Tente usar arte estilizada do Emby"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31258"
 msgid "Special"
-msgstr "Especial"
+msgstr ""
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31259"
 msgid "More from season"
-msgstr "Mais da temporada"
+msgstr ""
 
 #: /xml/LoginScreen.xml
 msgctxt "#31260"
 msgid "Please login"
-msgstr "Por favor entre"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31261"
 msgid "Main menu"
-msgstr "Menu principal"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31262"
 msgid "Audio books"
-msgstr "Audio livros"
+msgstr ""
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31263"
 msgid "Color palette"
-msgstr "Palete de cores"
+msgstr ""
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31264"
 msgid "Opacity"
-msgstr "Transparência"
+msgstr ""
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31265"
 msgid "Current color"
-msgstr "Cor atual"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31266"
 msgid "Custom colors"
-msgstr "Cores personalizadas"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31267"
 msgid "Accent color"
-msgstr "Cor de acentuação"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31268"
 msgid "Player element color"
-msgstr "Cor do elemento de reprodução"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31269"
 msgid "Item fallback background color"
-msgstr "Cor de fundo do item"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31270"
 msgid "Button focused color"
-msgstr "Cor do botão focado"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31271"
 msgid "Background opacity"
-msgstr "Transparência do fundo"
+msgstr ""
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31272"
 msgid "Set for all"
-msgstr "Definir para todos"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31273"
 msgid "Required add-ons and dependencies"
-msgstr "Add-ons e dependências necessários"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31274"
 msgid "Supported optional add-ons"
-msgstr "Add-ons opcionais suportados"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31275"
-msgid ""
-"List of installed dependencies and supported add-ons. Missing items can be "
-"installed from here."
+msgid "List of installed dependencies and supported add-ons. Missing items can be installed from here."
 msgstr ""
-"Lista de dependências instaladas e add-ons suportados. Itens em falta podem "
-"ser instalados aqui."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31276"
 msgid "Dependencies & add-ons"
-msgstr "Dependências & add-ons"
+msgstr ""
 
-#: /xml/SkinSettings.xml
+#: /xml/Embuary_SkinSettings.xml
 msgctxt "#31277"
-msgid "Simple CU LRC Lyrics layout"
-msgstr "Formato simples de CU LRC Lyrics"
+msgid "Hide video OSD while playback is paused"
+msgstr ""
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31278"
 msgid "Suggestions by genre"
-msgstr "Sugestões por género"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31279"
@@ -1452,273 +1421,257 @@ msgstr ""
 #: /xml/SkinSettings.xml
 msgctxt "#31280"
 msgid "Edit TV show widget configuration"
-msgstr "Editar configuração do widget das Séries de TV"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31281"
 msgid "Edit movie widget configuration"
-msgstr "Editar configuração do widget de Filmes"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31282"
 msgid "EmbyCon nodes"
-msgstr "Nós do EmbyCon"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31283"
 msgid "Edit music widget configuration"
-msgstr "Editar configuração do widget de Música"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31284"
 msgid "No items found"
-msgstr "Não foram encontrados itens"
+msgstr ""
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31285"
 msgid "No channels found"
-msgstr "Não foram encontrados canais"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31286"
 msgid "Limit items of default widgets"
-msgstr "Limitar itens de widgets padrão"
+msgstr ""
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31287"
 msgid "More movies directed by"
-msgstr "Mais filmes realizados por"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31288"
 msgid "Limit"
-msgstr "Limite"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31289"
 msgid "not configured yet"
-msgstr "ainda não configurado"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31290"
 msgid "Config"
-msgstr "Configuração"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31291"
 msgid "Spooky suggestions"
-msgstr "Sugestões assustadoras"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31292"
 msgid "Holiday season suggestions"
-msgstr "Sugestões de Natal"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31293"
 msgid "Enable suggestion widgets"
-msgstr "Ativar widgets de sugestões"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31294"
 msgid "Enable startup sound"
-msgstr "Ativar som do início"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31295"
 msgid "Enable holiday themes"
-msgstr "Ativar tema de Natal"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31296"
-msgid ""
-"Useful links for support, to report issues or if you want to help to "
-"translate the skin to your language."
+msgid "Useful links for support, to report issues or if you want to help to translate the skin to your language."
 msgstr ""
-"Ligações úteis para suporte, reportar problemas ou se quiser ajudar a "
-"traduzir o tema para o seu idioma"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31297"
 msgid "Support at kodi.tv"
-msgstr "Suporte em kodi.tv"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31298"
 msgid "Support & translations"
-msgstr "Suporte & traduções"
+msgstr ""
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31299"
 msgid "Update Kodi"
-msgstr "Atualizar Kodi"
+msgstr ""
 
 #: /xml/Embuary_HomeIncludes.xml
 msgctxt "#31300"
 msgid "My media"
-msgstr "Minha coleção"
+msgstr ""
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31301"
 msgid "Latest movies"
-msgstr "Filmes recentes"
+msgstr ""
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31302"
 msgid "Latest TV shows"
-msgstr "Séries de TV recentes"
+msgstr ""
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31303"
 msgid "Latest albums"
-msgstr "Albuns recentes"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31304"
 msgid "Search TV guide"
-msgstr "Procurar no guia TV"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31305"
 msgid "No color set"
-msgstr "Não foi escolhida cor"
+msgstr ""
 
 #: /xml/script-skinshortcuts.xml
 msgctxt "#31306"
 msgid "Replace default thumbnail"
-msgstr "Substituir imagem padrão"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31307"
 msgid "More specials"
-msgstr "Mais especiais"
+msgstr ""
 
 #: /xml/script-skinshortcuts.xml
 msgctxt "#31308"
 msgid "Thumbnail aspect ratio"
-msgstr "Proporção de miniaturas"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31309"
 msgid "scale"
-msgstr "escala"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31310"
 msgid "stretch"
-msgstr "trecho"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31311"
 msgid "keep"
-msgstr "manter"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31312"
 msgid "Disable 'Skin Helper Service' add-on packages"
-msgstr "Desativar pacotes do add-on \"Skin Helper Service\""
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31313"
 msgid "Enable 'Skin Helper Service' add-on packages"
-msgstr "Ativar pacotes do add-on \"Skin Helper Service\""
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31314"
-msgid ""
-"To prevent speed penalties and issues it's recommended to disable the "
-"following add-ons:[CR][CR][COLOR blue]• script.module.metadatautils[CR]• "
-"script.skin.helper.service[CR]• script.skin.helper.widgets[CR]• "
-"script.skin.helper.backgrounds[/COLOR]"
+msgid "To prevent speed penalties and issues it's recommended to disable the following add-ons:[CR][CR][COLOR blue]• script.module.metadatautils[CR]• script.skin.helper.service[CR]• script.skin.helper.widgets[CR]• script.skin.helper.backgrounds[/COLOR]"
 msgstr ""
-"Para evitar gastos desnecessários e outros problemas recomenda-se a "
-"desativação dos add-ons seguintes:[CR][CR][COLOR blue]• "
-"script.module.metadatautils[CR]• script.skin.helper.service[CR]• "
-"script.skin.helper.widgets[CR]• script.skin.helper.backgrounds[/COLOR]"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31315"
 msgid "Do you really want to enable them?"
-msgstr "Quer mesmo ativá-los?"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31316"
 msgid "Do you really want to disable them?"
-msgstr "Quer mesmo desativá-los?"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31317"
 msgid "Enable channel labeling for EPG thumbnails"
-msgstr "Ativar título do canal para figuras no EPG"
+msgstr ""
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31318"
 msgid "Premiere"
-msgstr "Estreia"
+msgstr ""
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31319"
 msgid "Budget"
-msgstr "Económicos"
+msgstr ""
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31320"
 msgid "Revenue"
-msgstr "Receita"
+msgstr ""
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31321"
 msgid "Crew"
-msgstr "Pessoal"
+msgstr ""
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31322"
 msgid "More seasons"
-msgstr "Mais temporadas"
+msgstr ""
 
 #: /xml/Embuary_BigList_View_59.xml
 msgctxt "#31323"
 msgid "Shuffle"
-msgstr "Embaralhar"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31324"
 msgid "Intro folder"
-msgstr "Pasta de introdução"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31325"
 msgid "Number of trailers"
-msgstr "Número de trailers"
+msgstr ""
 
 #: /xml/DialogContextMenu.xml
 msgctxt "#31326"
 msgid "Play with cinema mode"
-msgstr "Reproduzir em modo cinema"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31327"
-msgid ""
-"Use cinema mode when starting playback via info dialog, play buttons or "
-"default widgets"
+msgid "Use cinema mode when starting playback via info dialog, play buttons or default widgets"
 msgstr ""
-"Usar modo cinema quando inicia reprodução via diálogo de informação,  botões"
-" de reprodução ou widgets padrão"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31328"
 msgid "Enable and disable items of the shutdown menu."
-msgstr "Ativar ou desativar items no menu de energia"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31329"
 msgid "Change the behaviour of playback and media actions."
-msgstr "Alterar o comportamento de ações de reprodução e media"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31330"
 msgid "Playback & media"
-msgstr "Reprodução e Media"
+msgstr ""
 
 #: /xml/SkinSettings.xml
 msgctxt "#31331"
@@ -1727,205 +1680,188 @@ msgstr ""
 
 #: /xml/DialogKeyboard.xml
 msgctxt "#31332"
-msgid ""
-"The updated hub label will be shown on the next opening of the menu editor"
+msgid "The updated hub label will be shown on the next opening of the menu editor"
 msgstr ""
-"O título atualizado do hub será mostrado na próxima abertura do editor de "
-"menu"
 
-#: /xml/Embuary_SkinSettings.xml
+#: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31333"
-msgid "Show YouTube search results"
-msgstr "Mostrar resultados da procura no YouTube"
+msgid "Enabled auto updating"
+msgstr ""
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31334"
 msgid "More available items with"
-msgstr "Mais itens disponíveis com "
+msgstr ""
 
 #: /xml/PlayerControls.xml
 msgctxt "#31335"
 msgid "Eject disc"
-msgstr "Ejetar disco"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31336"
 msgid "Show EPG thumbnail in video OSD (if available)"
-msgstr "Mostrar miniatura do EPG no OSD do vídeo (se disponível)"
+msgstr ""
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31337"
 msgid "Upload Kodi log"
-msgstr "Atualizar log do Kodi"
+msgstr ""
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31338"
 msgid "Running services"
-msgstr "Serviços em execução"
+msgstr ""
 
 #: /xml/MusicOSD.xml
 msgctxt "#31339"
 msgid "Pan and zoom"
-msgstr "Pan e zoom"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31340"
 msgid "Use available hubs as target"
-msgstr "Usar os hubs disponíveis como alvo"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31341"
 msgid "EPG thumbnail aspect ratio"
-msgstr "Aspeto da miniatura de EPG"
+msgstr ""
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31342"
 msgid "Embuary changelog"
-msgstr "Alterações do Embuary"
+msgstr ""
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31343"
 msgid "Add-on news"
-msgstr "Notícias de Addons"
+msgstr ""
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31344"
 msgid "Force default icon"
-msgstr "Forçar icone padrão"
+msgstr ""
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31345"
 msgid "Skin dependencies"
-msgstr "Dependências do tema"
+msgstr ""
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31346"
 msgid "On now"
-msgstr "No ar"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31347"
 msgid "Use mini EPG for channels OSD"
-msgstr "Usar mini EPG para OSD dos canais"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31348"
 msgid "very dark"
-msgstr "muito escuro"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31349"
 msgid "darker"
-msgstr "mais escuro"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31350"
 msgid "dark"
-msgstr "escuro"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31351"
 msgid "bright"
-msgstr "claro"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31352"
 msgid "brighter"
-msgstr "mais claro"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31353"
 msgid "very bright"
-msgstr "muito claro"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31354"
 msgid "Blur background images"
-msgstr "Ofuscar imagens de fundo"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31355"
-msgid ""
-"This feature is very expensive and should not be enabled on slow devices "
-"like a Raspberry Pi. It will also require some storage space on your drive, "
-"because each fanart is going to be processed and stored separately as "
-"blurred image in the Kodi userdata folder."
+msgid "This feature is very expensive and should not be enabled on slow devices like a Raspberry Pi. It will also require some storage space on your drive, because each fanart is going to be processed and stored separately as blurred image in the Kodi userdata folder."
 msgstr ""
-"Esta característica é muito dispendiosa e não deve ser ativada em aparelhos "
-"mais lentos como o Raspberry Pi. Requer igualmente algum espaço em disco, "
-"porque cada fanart vai ser processado e guardado separadamente como uma "
-"imagem ofuscada na pasta de utilizador do Kodi."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31356"
 msgid "Translate on transifex.com"
-msgstr "Traduzir em transifex.com"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31357"
 msgid "Live long and prosper"
-msgstr "Vida longa e próspera"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31358"
 msgid "Enable cinema mode for"
-msgstr "Ativar modo cinema para"
+msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31359"
 msgid "Disable mouse and touch control"
-msgstr "Desativar rato e controlo tátil"
+msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31360"
 msgid "Hide parent folder items"
-msgstr "Ocultar itens da pasta principal"
+msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31361"
 msgid "Always select the first unwatched season/episode"
-msgstr "Selecione sempre a primeira temporada/episódio não visto"
+msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31362"
 msgid "Set the Embuary UI navigation sounds"
-msgstr "Definir sons de navegação do Embuary UI"
+msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31363"
-msgid ""
-"Please keep in mind that these settings are global and will be valid for all"
-" installed skins. But don't panic, all settings can be reverted in the Kodi "
-"settings."
+msgid "Please keep in mind that these settings are global and will be valid for all installed skins. But don't panic, all settings can be reverted in the Kodi settings."
 msgstr ""
-"Por favor observe que estas definições são globais e válidas para todos os "
-"temas instalados. Mas não entre em pânico, todas as definições podem ser "
-"revertidas na definições do Kodi."
 
 #: /xml/DialogPVRInfo.xml
 msgctxt "#31364"
 msgid "Timer"
-msgstr "Temporizador"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31365"
 msgid "Stop"
-msgstr "Stop"
+msgstr ""
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31366"
 msgid "More"
-msgstr "Mais"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31367"
 msgid "Show channel groups in the PVR hub"
-msgstr "Mostrar grupos de canais no hub do PVR"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31368"
 msgid "Blurring strength"
-msgstr "Força do embaciamento"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31369"
@@ -1936,63 +1872,61 @@ msgstr ""
 msgctxt "#31370"
 msgid "Show Emby based Rotten Tomatoes ratings (uses user ratings)"
 msgstr ""
-"Mostrar classificação do Emby com base no Rotten Tomatoes (usa classificação"
-" do utilizador)"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31371"
 msgid "Created by"
-msgstr "Criado por"
+msgstr ""
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31372"
 msgid "Known for"
-msgstr "Conhecido por"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31373"
 msgid "male"
-msgstr "masculino"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31374"
 msgid "female"
-msgstr "feminino"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31375"
 msgid "Configure menu and widget items of the hubs."
-msgstr "Configurar itens de menu e widgets dos hubs"
+msgstr ""
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31376"
 msgid "Home & side panel"
-msgstr "Início e painel lateral"
+msgstr ""
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31377"
 msgid "Use main menu entries in the side panel"
-msgstr "Usar entradas do menu principal no painel lateral"
+msgstr ""
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31378"
 msgid "Search themoviedb.org"
-msgstr "Procurar em themoviedb.org"
+msgstr ""
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31379"
 msgid "Search database"
-msgstr "Procurar na base de dados"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31380"
 msgid "items in database"
-msgstr "Itens na base de dados"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31381"
 msgid "item in database"
-msgstr "Item na base de dados"
+msgstr ""
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31382"
@@ -2076,19 +2010,12 @@ msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31398"
-msgid ""
-"A unique feature of Embuary is the auto generation of hubs based on existing"
-" library tags in your database (e.g. 'kids content', 'HDR videos', "
-"'documentaries')."
+msgid "A unique feature of Embuary is the auto generation of hubs based on existing library tags in your database (e.g. 'kids content', 'HDR videos', 'documentaries')."
 msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31399"
-msgid ""
-"Since every setup is different and some people only want to have hubs for a "
-"few available tags, you can disable the ones you don't want to have "
-"populated at any time. By default future and new tags will be whitelisted "
-"automatically."
+msgid "Since every setup is different and some people only want to have hubs for a few available tags, you can disable the ones you don't want to have populated at any time. By default future and new tags will be whitelisted automatically."
 msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
@@ -2103,10 +2030,7 @@ msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31402"
-msgid ""
-"To get the best out-of-box experience the skin will automatically populate "
-"shipped widgets for database items like 'in progress episodes', 'recently "
-"added movies' or suggestions based on the items you have watched."
+msgid "To get the best out-of-box experience the skin will automatically populate shipped widgets for database items like 'in progress episodes', 'recently added movies' or suggestions based on the items you have watched."
 msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
@@ -2116,10 +2040,7 @@ msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31404"
-msgid ""
-"For existing Embuary installations, this step must be performed to get "
-"everything working due to a recent update. Configured custom widgets are not"
-" removed and only need to be reassigned."
+msgid "For existing Embuary installations, this step must be performed to get everything working due to a recent update. Configured custom widgets are not removed and only need to be reassigned."
 msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
@@ -2134,12 +2055,12 @@ msgstr ""
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31407"
-msgid "Favourite Kodi movies"
+msgid "Movie watchlist"
 msgstr ""
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31408"
-msgid "Favourite Kodi TV shows"
+msgid "TV show watchlist"
 msgstr ""
 
 #: /xml/Embuary_Set_View_56.xml
@@ -2147,12 +2068,333 @@ msgctxt "#31409"
 msgid "Favourite"
 msgstr ""
 
-#: /xml/DialogContextMenu.xml
+#: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31410"
-msgid "Add/remove favourite"
+msgid "Disabled auto updating"
 msgstr ""
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31411"
 msgid "OK, add found to whitelist"
 msgstr ""
+
+#: /xml/DialogButtonMenu.xml
+msgctxt "#31412"
+msgid "Restart Kodi"
+msgstr ""
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31413"
+msgid "Media importer"
+msgstr ""
+
+#: /xml/DialogMediaImportInfo.xml
+msgctxt "#31414"
+msgid "Sync options"
+msgstr ""
+
+#: /xml/DialogMediaImportInfo.xml
+msgctxt "#31415"
+msgid "Provider"
+msgstr ""
+
+#: /xml/DialogMediaImportInfo.xml
+msgctxt "#31416"
+msgid "Media type"
+msgstr ""
+
+msgctxt "#32000"
+msgid "Display mode"
+msgstr ""
+
+msgctxt "#32001"
+msgid "Video mode"
+msgstr ""
+
+msgctxt "#32002"
+msgid "Color space"
+msgstr ""
+
+msgctxt "#32003"
+msgid "Mb/s"
+msgstr ""
+
+msgctxt "#32004"
+msgid "Bit depth"
+msgstr ""
+
+msgctxt "#32005"
+msgid "Decoder"
+msgstr ""
+
+msgctxt "#32006"
+msgid "VS10 engine"
+msgstr ""
+
+msgctxt "#32007"
+msgid "More"
+msgstr ""
+
+msgctxt "#32008"
+msgid "Video queue"
+msgstr ""
+
+msgctxt "#32009"
+msgid "Video queue data"
+msgstr ""
+
+msgctxt "#32010"
+msgid "Audio queue"
+msgstr ""
+
+msgctxt "#32011"
+msgid "Audio queue data"
+msgstr ""
+
+msgctxt "#32012"
+msgid "Kb/s"
+msgstr ""
+
+msgctxt "#32013"
+msgid "Playback time"
+msgstr ""
+
+msgctxt "#32014"
+msgid "Processor"
+msgstr ""
+
+msgctxt "#32015"
+msgid "Metadata"
+msgstr ""
+
+msgctxt "#32016"
+msgid "Profile"
+msgstr ""
+
+msgctxt "#32017"
+msgid "Level"
+msgstr ""
+
+msgctxt "#32018"
+msgid "RPU"
+msgstr ""
+
+msgctxt "#32019"
+msgid "Base Layer"
+msgstr ""
+
+msgctxt "#32020"
+msgid "Enhancement Layer"
+msgstr ""
+
+msgctxt "#32021"
+msgid "Enhancement Layer Type"
+msgstr ""
+
+msgctxt "#32022"
+msgid "Metadata"
+msgstr ""
+
+msgctxt "#32023"
+msgid "Pixel format"
+msgstr ""
+
+msgctxt "#32024"
+msgid "Aspect ratio"
+msgstr ""
+
+msgctxt "#32025"
+msgid "HDR10 MDL"
+msgstr ""
+
+msgctxt "#32026"
+msgid "HDR10 MaxCLL/FALL"
+msgstr ""
+
+msgctxt "#32027"
+msgid "Media source"
+msgstr ""
+
+msgctxt "#32028"
+msgid "Unknown"
+msgstr ""
+
+msgctxt "#32029"
+msgid "On"
+msgstr ""
+
+msgctxt "#32030"
+msgid "Off"
+msgstr ""
+
+msgctxt "#32031"
+msgid "Deinterlacing"
+msgstr ""
+
+msgctxt "#32032"
+msgid "Player cache"
+msgstr ""
+
+msgctxt "#32033"
+msgid "N/A"
+msgstr ""
+
+msgctxt "#32034"
+msgid "Memory usage"
+msgstr ""
+
+msgctxt "#32035"
+msgid "Bit depth"
+msgstr ""
+
+msgctxt "#32036"
+msgid "AML FPS"
+msgstr ""
+
+msgctxt "#32037"
+msgid "DV Configuration"
+msgstr ""
+
+msgctxt "#32038"
+msgid "DV Levels Metadata"
+msgstr ""
+
+msgctxt "#32039"
+msgid "HDR Static Metadata"
+msgstr ""
+
+msgctxt "#32040"
+msgid "cd/m²"
+msgstr ""
+
+msgctxt "#32041"
+msgid "RPU MDL"
+msgstr ""
+
+msgctxt "#32042"
+msgid "RPU MaxCLL/FALL"
+msgstr ""
+
+msgctxt "#32043"
+msgid "FLL MIN / MAX / Ø"
+msgstr ""
+
+msgctxt "#32044"
+msgid "PQ  MIN / MAX / Ø"
+msgstr ""
+
+msgctxt "#32045"
+msgid "12-bit"
+msgstr ""
+
+msgctxt "#32046"
+msgid "Codec"
+msgstr ""
+
+msgctxt "#32047"
+msgid "Bitrate"
+msgstr ""
+
+msgctxt "#32048"
+msgid "VS10 status"
+msgstr ""
+
+msgctxt "#32051"
+msgid "Sample rate"
+msgstr ""
+
+msgctxt "#32052"
+msgid "Audio language"
+msgstr ""
+
+msgctxt "#32053"
+msgid "Subtitle language"
+msgstr ""
+
+msgctxt "#32054"
+msgid "Video"
+msgstr ""
+
+msgctxt "#32055"
+msgid "System"
+msgstr ""
+
+msgctxt "#32056"
+msgid "Audio"
+msgstr ""
+
+msgctxt "#32057"
+msgid "Top left"
+msgstr ""
+
+msgctxt "#32058"
+msgid "Top center"
+msgstr ""
+
+msgctxt "#32059"
+msgid "Top right"
+msgstr ""
+
+msgctxt "#32060"
+msgid "Position of the codec logos in the OSD"
+msgstr ""
+
+msgctxt "#32061"
+msgid "Position of the codec logos in the PlayerProcessInfo"
+msgstr ""
+
+msgctxt "#32062"
+msgid "Position of the codec logos when video starts"
+msgstr ""
+
+msgctxt "#32063"
+msgid "Codec logos"
+msgstr ""
+
+msgctxt "#32064"
+msgid "Original"
+msgstr ""
+
+msgctxt "#32065"
+msgid "VS10 mode"
+msgstr ""
+
+msgctxt "#32067"
+msgid "L5 Active Offsets"
+msgstr ""
+
+msgctxt "#32068"
+msgid "Version"
+msgstr ""
+
+msgctxt "#32069"
+msgid "Bit depth"
+msgstr ""
+
+msgctxt "#32070"
+msgid "EOTF & Gamut"
+msgstr ""
+
+msgctxt "#32071"
+msgid "Duration of the codec logos when video starts"
+msgstr ""
+
+msgctxt "#32072"
+msgid "Standard"
+msgstr ""
+
+msgctxt "#32075"
+msgid "second"
+msgstr ""
+
+msgctxt "#32076"
+msgid "seconds"
+msgstr ""
+
+msgctxt "#42001"
+msgid "Next Episode"
+msgstr "Next Episode"
+
+msgctxt "#42002"
+msgid "Previous Episode"
+msgstr "Previous Episode"
