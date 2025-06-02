@@ -70,12 +70,12 @@
 				<control type="button" id="620">
     					<label>$LOCALIZE[42002]</label>
     					<onclick>RunScript(script.episodejumper,previous)</onclick>
-    					<visible>Player.HasMedia + VideoPlayer.Content(episodes)</visible>
+    					<visible>System.AddonIsEnabled(script.episodejumper) + Player.HasMedia + VideoPlayer.Content(episodes)</visible>
 				</control>
 				<control type="button" id="621">
     					<label>$LOCALIZE[42001]</label>
     					<onclick>RunScript(script.episodejumper,next)</onclick>
-    					<visible>Player.HasMedia + VideoPlayer.Content(episodes)</visible>
+    					<visible>System.AddonIsEnabled(script.episodejumper) + Player.HasMedia + VideoPlayer.Content(episodes)</visible>
 				</control>
 				<control type="button" id="607">
 					<colordiffuse>$VAR[PlayerRecordIconColor]</colordiffuse>
