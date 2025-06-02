@@ -1,28 +1,29 @@
 [B]Version 21.1.1[/B]
-- Fix Radiobuttons for activated/deactivated addons
-- add codec logo time
-- removed useless Fonts
-- Small fixes
+- Fixed the position of video and audio codec logos in the Video OSD
+- Added and optimized the codec logo display duration option
+- Fixed radiobuttons in the Addons Settings menu
+- Removed unnecessary fonts
+- Various optimizations and bug fixes
 
 [B]Version 21.1.0[/B]
-- Optimized DialogPlayerProcessInfo
-- Include Episode Jumper Addon create by Stogie
+- Optimized information display in DialogPlayerProcessInfo
+- Included the newly created Episode Jumper addon
 
 [B]Version 21.0.4[/B]
-- Adjustment widgetsettungsmenu 
-- Adjustment waetherwidget
+- Adjusted widget settings menu
+- Adjusted weather widget
 
 [B]Version 21.0.3[/B]
-- small changes to the skin
+- Various optimizations
 
 [B]Version 21.0.2[/B]
 - Improvements and corrections of individual areas and layouts by Stogie
 
 [B]Version 21.0.1[/B]
 - Changes by jamal2367
-- Added two buttons in the video OSD for "PlayerProcessInfo" and "VS10."
+- Added two buttons to the video OSD for "PlayerProcessInfo" and "VS10"
 - Modified PlayerProcessInfo
-- Codec logos, which can be set in the settings under "Playback & Media" at the bottom
+- Codec logos can now be set in the settings under "Playback & Media"
 - Improved audio codec detection
 
 [B]Version 19.0.2[/B]
