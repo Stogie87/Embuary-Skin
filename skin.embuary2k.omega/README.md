@@ -1,13 +1,25 @@
-# skin.embuary
-Embuary is based on the web UI of Emby and has been developed for Emby-For-kodi users, but it doesn't require Emby at all and will also work with a regular Kodi setup.
+# Embuary Skin
 
-# Terms of use
-With the installation of the skin you agree that you don't use it in combination with blacklisted and illegal Kodi add-ons.
-I'm not associated with any available build and I won't give any support to blacklisted, banned or illegal third party addons.
+Deutsch:
+Embuary ist vom Emby-Web-Interface inspiriert und wurde ursprünglich für Emby-for-Kodi-Nutzer entwickelt. Es benötigt jedoch **kein** Emby und funktioniert auch problemlos mit einer normalen Kodi-Installation.
 
-# License
-This work has been released under CC by-nc-nd 4.0.
+English:
+Embuary is inspired by the Emby web UI and was originally developed for Emby-for-Kodi users. However, it does **not** require Emby and also works perfectly with a standard Kodi setup.
 
-You are allowed to:
-- Change whatever if you want to use it for your your personal use, but don't share it to the public. That restriction also applies to public GitHub repositories.
-- If you fork and add your personal modifications you are allowed to release it to the public if you don't change the addon title/name to someting complete different (rebranding). Modification tags behind the addon title are okay. Example: ID "skin.embuary-moddedbyme" Name "Embuary Skin - Modded by me". The addon.xml has to include proper credits and the information that it's a fork based on my work. The license model cannot be changed.
+## Terms of Use
+
+Deutsch:
+Mit der Installation dieses Skins erklärst du dich damit einverstanden, ihn **nicht** in Verbindung mit gesperrten oder illegalen Kodi-Addons zu verwenden.
+Ich bin mit keinen verfügbaren Builds verbunden und biete **keinen** Support für gesperrte, verbotene oder illegale Drittanbieter-Addons.
+
+English:
+By installing this skin, you agree **not** to use it in combination with blacklisted or illegal Kodi add-ons.
+I am not affiliated with any available builds, and I do **not** provide support for blacklisted, banned, or illegal third-party add-ons.
+
+## License
+
+Deutsch:
+Dieses Werk steht unter der Creative-Commons-Lizenz BY-NC-ND 4.0.
+
+English:
+This work is released under the Creative Commons BY-NC-ND 4.0 license.
