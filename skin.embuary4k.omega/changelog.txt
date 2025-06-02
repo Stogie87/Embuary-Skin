@@ -1,10 +1,8 @@
-[B]Version 21.1.2[/B]
+[B]Version 21.1.1[/B]
 - Fix Radiobuttons for activated/deactivated addons
 - add codec logo time
-
-[B]Version 21.1.1[/B]
+- removed useless Fonts
 - Small fixes
-- removed useless fonts
 
 [B]Version 21.1.0[/B]
 - Optimized DialogPlayerProcessInfo
