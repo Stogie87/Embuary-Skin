@@ -7,7 +7,7 @@
 
 [B]Version 21.1.0[/B]
 - Optimized information display in DialogPlayerProcessInfo
-- Included the newly created Episode Jumper addon
+- Included the newly created Episode Jumper addon by Stogie87
 
 [B]Version 21.0.4[/B]
 - Adjusted widget settings menu

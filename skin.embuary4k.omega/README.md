@@ -23,7 +23,7 @@ I am not affiliated with any available builds, and I do **not** provide support 
 Dieses Kodi-Skin ist ein Fork des Originalwerks **Embuary** von [Sualfred](https://github.com/sualfred/skin.embuary) (Copyright: Sualfred), das unter der [Creative Commons BY-NC-ND 4.0 Lizenz](https://creativecommons.org/licenses/by-nc-nd/4.0/) veröffentlicht wurde.
 
 Dieses Repository stellt einen **öffentlichen Fork** des Original-Skins dar und beinhaltet Modifikationen und Erweiterungen von:
-- [Teddyknuddel](https://github.com/TeddyRaspin/skin.embuary) (2K/4K-Anpassungen),
+- [Teddyknuddel](https://github.com/Teddyknuddel/embuary.omega) (2K/4K-Anpassungen),
 - [jamal2362](https://github.com/jamal2362) (Code, z. B. CPM-Modifikation),
 - sowie eigene Anpassungen und Pflege durch Stogie (diese Version).
 
@@ -42,7 +42,7 @@ Eigene Erweiterungen sind im Code und in dieser README gekennzeichnet und mit Qu
 This Kodi skin is a fork of the original **Embuary** skin by [Sualfred](https://github.com/sualfred/skin.embuary) (Copyright: Sualfred), released under the [Creative Commons BY-NC-ND 4.0 License](https://creativecommons.org/licenses/by-nc-nd/4.0/).
 
 This repository is a **public fork** of the original skin and includes modifications and extensions by:
-- [Teddyknuddel](https://github.com/TeddyRaspin/skin.embuary) (2K/4K adaptations),
+- [Teddyknuddel](https://github.com/Teddyknuddel/embuary.omega) (2K/4K adaptations),
 - [jamal2362](https://github.com/jamal2362) (code, e.g., CPM modification),
 - as well as further adaptations and maintenance by Stogie (this version).
 

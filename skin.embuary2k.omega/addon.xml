@@ -22,6 +22,18 @@
 		<disclaimer lang="de_DE">Keine Maus Unterstützung. Mit der Installation des Skins erklärst du dich damit einverstanden keine verbotenen und illegalen Addons von Kodi damit zu benutzen. Wir stehen in keinerlei Verbindung zu verfübaren Builds und gebe keinen Support für diese oder andere illegalen Drittanbieter-Addons.</disclaimer>
 		<platform>all</platform>
 		<license>CC-BY-NC-ND-4.0</license>
+		<credits lang="de_DE">
+		Original Embuary Skin von sualfred (https://github.com/sualfred/skin.embuary). 
+		Fork gepflegt und erweitert von Teddyknuddel, jamal2367 (CPM) und Stogie (diese Version). 
+		Dies ist kein Rebranding, sondern ein Fork mit erhaltenen Original-Credits. 
+		Alle Modifikationen sind im Code und in der Dokumentation gekennzeichnet.
+		</credits>
+		<credits lang="en_GB">
+		Original Embuary skin by sualfred (https://github.com/sualfred/skin.embuary). 
+		Fork maintained and extended by Teddyknuddel, jamal2367 (CPM), and Stogie (this version). 
+		This is not a rebranding but a fork with original credits preserved. 
+		All modifications are clearly marked in the code and documentation.
+		</credits>
 		<forum>https://emby.media/community/index.php?/topic/137508-embuary-2k4k-cpm-modification/</forum>
 		<source>https://github.com/Stogie87/Embuary-Skin</source>
 		<assets>
