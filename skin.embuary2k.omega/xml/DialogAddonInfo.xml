@@ -160,14 +160,15 @@
 					</control>
 					<!-- Desc -->
 					<control type="textbox">
-						<top>306</top>
-						<width>100%</width>
-						<height max="630">auto</height>
-						<align>justify</align>
-						<aligny>top</aligny>
-						<label>$INFO[ListItem.AddonSummary,[B],[/B][CR][CR]]$INFO[ListItem.AddonDisclaimer,,[CR][CR]]$INFO[ListItem.AddonDescription]</label>
-						<font>Light24</font>
-						<autoscroll>false</autoscroll>
+    						<top>306</top>
+    						<left>0</left>
+    						<width>1800</width>  <!-- Angepasst: nicht mehr 100% -->
+    						<height max="630">auto</height>
+    						<align>justify</align>
+    						<aligny>top</aligny>
+    						<label>$INFO[ListItem.AddonSummary,[B],[/B][CR][CR]]$INFO[ListItem.AddonDisclaimer,,[CR][CR]]$INFO[ListItem.AddonDescription]</label>
+    						<font>Light24</font>
+    						<autoscroll>false</autoscroll>
 					</control>
 				</control>
 			</control>
