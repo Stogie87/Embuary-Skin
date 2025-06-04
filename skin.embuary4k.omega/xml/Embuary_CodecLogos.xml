@@ -37,7 +37,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -47,7 +47,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -57,7 +57,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -67,7 +67,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -77,7 +77,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -87,7 +87,7 @@
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
-                    <texture colordiffuse="AB16A34A">codecs/VS10.png</texture>
+                    <texture colordiffuse="AB16A34A">$INFO[Skin.String(codeclogos_path)]/VS10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -97,7 +97,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -107,7 +107,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -117,7 +117,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -127,7 +127,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -137,7 +137,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -157,7 +157,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/PCM.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -167,7 +167,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/AAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -177,7 +177,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -187,7 +187,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -197,7 +197,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -207,7 +207,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -217,7 +217,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -227,7 +227,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/MP3.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -237,7 +237,7 @@
                 <control type="image">
                     <width>100</width>
                     <height>25</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -247,7 +247,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>46</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-MA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -257,7 +257,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-HRA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -267,7 +267,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>31</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTSX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -277,7 +277,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>48</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/IMAX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -287,7 +287,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/FLAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -297,7 +297,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
         </control>
@@ -345,7 +345,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -355,7 +355,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -365,7 +365,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -375,7 +375,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -385,7 +385,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -395,7 +395,7 @@
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
-                    <texture colordiffuse="AB16A34A">codecs/VS10.png</texture>
+                    <texture colordiffuse="AB16A34A">$INFO[Skin.String(codeclogos_path)]/VS10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -405,7 +405,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -415,7 +415,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -425,7 +425,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -435,7 +435,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -445,7 +445,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -465,7 +465,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/PCM.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -475,7 +475,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/AAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -485,7 +485,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -495,7 +495,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -505,7 +505,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -515,7 +515,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -525,7 +525,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -535,7 +535,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/MP3.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -545,7 +545,7 @@
                 <control type="image">
                     <width>100</width>
                     <height>25</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -555,7 +555,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>46</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-MA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -565,7 +565,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-HRA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -575,7 +575,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>31</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTSX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -585,7 +585,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>48</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/IMAX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -595,7 +595,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/FLAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -605,7 +605,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
         </control>
@@ -648,7 +648,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -658,7 +658,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -668,7 +668,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -678,7 +678,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -688,7 +688,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -698,7 +698,7 @@
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
-                    <texture colordiffuse="AB16A34A">codecs/VS10.png</texture>
+                    <texture colordiffuse="AB16A34A">$INFO[Skin.String(codeclogos_path)]/VS10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -708,7 +708,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -718,7 +718,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -728,7 +728,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -738,7 +738,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -748,7 +748,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -768,7 +768,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/PCM.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -778,7 +778,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/AAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -788,7 +788,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -798,7 +798,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -808,7 +808,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -818,7 +818,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -828,7 +828,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -838,7 +838,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/MP3.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -848,7 +848,7 @@
                 <control type="image">
                     <width>100</width>
                     <height>25</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -858,7 +858,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>46</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-MA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -868,7 +868,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-HRA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -878,7 +878,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>31</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTSX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -888,7 +888,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>48</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/IMAX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -898,7 +898,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/FLAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -908,7 +908,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
         </control>
@@ -956,7 +956,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -966,7 +966,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -976,7 +976,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -986,7 +986,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -996,7 +996,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1006,7 +1006,7 @@
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
-                    <texture colordiffuse="AB16A34A">codecs/VS10.png</texture>
+                    <texture colordiffuse="AB16A34A">$INFO[Skin.String(codeclogos_path)]/VS10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1016,7 +1016,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1026,7 +1026,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1036,7 +1036,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1046,7 +1046,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1056,7 +1056,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1076,7 +1076,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/PCM.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1086,7 +1086,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/AAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1096,7 +1096,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1106,7 +1106,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1116,7 +1116,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1126,7 +1126,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1136,7 +1136,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1146,7 +1146,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/MP3.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1156,7 +1156,7 @@
                 <control type="image">
                     <width>100</width>
                     <height>25</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1166,7 +1166,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>46</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-MA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1176,7 +1176,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-HRA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1186,7 +1186,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>31</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTSX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1196,7 +1196,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>48</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/IMAX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1206,7 +1206,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/FLAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1216,7 +1216,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
         </control>
@@ -1259,7 +1259,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1269,7 +1269,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1279,7 +1279,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1289,7 +1289,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1299,7 +1299,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1309,7 +1309,7 @@
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
-                    <texture colordiffuse="AB16A34A">codecs/VS10.png</texture>
+                    <texture colordiffuse="AB16A34A">$INFO[Skin.String(codeclogos_path)]/VS10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1319,7 +1319,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1329,7 +1329,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1339,7 +1339,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1349,7 +1349,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1359,7 +1359,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1379,7 +1379,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/PCM.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1389,7 +1389,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/AAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1399,7 +1399,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1409,7 +1409,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1419,7 +1419,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1429,7 +1429,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1439,7 +1439,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1449,7 +1449,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/MP3.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1459,7 +1459,7 @@
                 <control type="image">
                     <width>100</width>
                     <height>25</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1469,7 +1469,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>46</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-MA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1479,7 +1479,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-HRA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1489,7 +1489,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>31</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTSX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1499,7 +1499,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>48</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/IMAX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1509,7 +1509,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/FLAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1519,7 +1519,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
         </control>
@@ -1567,7 +1567,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1577,7 +1577,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1587,7 +1587,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1597,7 +1597,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1607,7 +1607,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1617,7 +1617,7 @@
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
-                    <texture colordiffuse="AB16A34A">codecs/VS10.png</texture>
+                    <texture colordiffuse="AB16A34A">$INFO[Skin.String(codeclogos_path)]/VS10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1627,7 +1627,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/SDR.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1637,7 +1637,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1647,7 +1647,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>52</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HDR10Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1657,7 +1657,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Vision.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1667,7 +1667,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>42</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/HLG.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1687,7 +1687,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/PCM.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1697,7 +1697,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/AAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1707,7 +1707,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1717,7 +1717,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1727,7 +1727,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1737,7 +1737,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_TrueHD.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1747,7 +1747,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>56</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/Dolby_Digital_Plus_Atmos.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1757,7 +1757,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/MP3.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1767,7 +1767,7 @@
                 <control type="image">
                     <width>100</width>
                     <height>25</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1777,7 +1777,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>46</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-MA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1787,7 +1787,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>49</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTS-HD-HRA.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1797,7 +1797,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>31</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/DTSX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1807,7 +1807,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>48</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/IMAX.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1817,7 +1817,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/FLAC.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
             <control type="group">
@@ -1827,7 +1827,7 @@
                 <control type="image">
                     <width>150</width>
                     <height>45</height>
-                    <texture colordiffuse="dialog_fg_90">codecs/OPUS.png</texture>
+                    <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
         </control>

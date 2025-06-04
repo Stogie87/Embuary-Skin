@@ -1,3 +1,6 @@
+[B]Version 21.1.2[/B]
+- Introduce Codec Logo Style-Switcher
+
 [B]Version 21.1.1[/B]
 - Fixed the position of video and audio codec logos in the Video OSD
 - Added and optimized the codec logo display duration option

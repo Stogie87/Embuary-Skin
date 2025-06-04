@@ -2402,3 +2402,7 @@ msgstr ""
 msgctxt "#42002"
 msgid "Previous Episode"
 msgstr ""
+
+msgctxt "#42003"
+msgid "Logo Style"
+msgstr ""
