@@ -5,7 +5,7 @@
             <left>35</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-                <top>50</top>
+                <top>52</top>
                 <width>210</width>
                 <height>170</height>
                 <control type="image">
@@ -62,28 +62,28 @@
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),SDR) | String.Contains(Player.Process(amlogic.vs10.mode),HDR10) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>43</top>
-                <left>192</left>
+                <top>52</top>
+                <left>30</left>
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
@@ -122,21 +122,21 @@
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
@@ -156,67 +156,67 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,aac) | String.IsEqual(VideoPlayer.AudioCodec,aac_latm)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dolbydigital) | String.IsEqual(VideoPlayer.AudioCodec,ac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
@@ -226,17 +226,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dca)</visible>
-                <top>150</top>
-                <left>55</left>
+                <top>140</top>
+                <left>30</left>
                 <control type="image">
-                    <width>100</width>
-                    <height>25</height>
+                    <width>150</width>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
@@ -246,7 +246,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>46</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
@@ -256,17 +256,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x)</visible>
-                <top>147</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>31</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
@@ -276,7 +276,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>48</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
@@ -286,7 +286,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
@@ -296,7 +296,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
@@ -370,28 +370,28 @@
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),SDR) | String.Contains(Player.Process(amlogic.vs10.mode),HDR10) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>43</top>
-                <left>192</left>
+                <top>52</top>
+                <left>30</left>
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
@@ -430,21 +430,21 @@
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
@@ -464,67 +464,67 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,aac) | String.IsEqual(VideoPlayer.AudioCodec,aac_latm)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dolbydigital) | String.IsEqual(VideoPlayer.AudioCodec,ac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
@@ -534,17 +534,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dca)</visible>
-                <top>150</top>
-                <left>55</left>
+                <top>140</top>
+                <left>30</left>
                 <control type="image">
-                    <width>100</width>
-                    <height>25</height>
+                    <width>150</width>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
@@ -554,7 +554,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>46</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
@@ -564,17 +564,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x)</visible>
-                <top>147</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>31</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
@@ -584,7 +584,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>48</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
@@ -594,7 +594,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
@@ -604,7 +604,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
@@ -616,7 +616,7 @@
             <left>1815</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-                <top>50</top>
+                <top>52</top>
                 <width>210</width>
                 <height>170</height>
                 <control type="image">
@@ -673,28 +673,28 @@
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),SDR) | String.Contains(Player.Process(amlogic.vs10.mode),HDR10) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>43</top>
-                <left>192</left>
+                <top>52</top>
+                <left>30</left>
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
@@ -733,21 +733,21 @@
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
@@ -767,67 +767,67 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,aac) | String.IsEqual(VideoPlayer.AudioCodec,aac_latm)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dolbydigital) | String.IsEqual(VideoPlayer.AudioCodec,ac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
@@ -837,17 +837,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dca)</visible>
-                <top>150</top>
-                <left>55</left>
+                <top>140</top>
+                <left>30</left>
                 <control type="image">
-                    <width>100</width>
-                    <height>25</height>
+                    <width>150</width>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
@@ -857,7 +857,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>46</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
@@ -867,17 +867,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x)</visible>
-                <top>147</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>31</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
@@ -887,7 +887,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>48</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
@@ -897,7 +897,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
@@ -907,7 +907,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
@@ -981,28 +981,28 @@
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),SDR) | String.Contains(Player.Process(amlogic.vs10.mode),HDR10) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>43</top>
-                <left>192</left>
+                <top>52</top>
+                <left>30</left>
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
@@ -1041,21 +1041,21 @@
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
@@ -1075,67 +1075,67 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,aac) | String.IsEqual(VideoPlayer.AudioCodec,aac_latm)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dolbydigital) | String.IsEqual(VideoPlayer.AudioCodec,ac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
@@ -1145,17 +1145,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dca)</visible>
-                <top>150</top>
-                <left>55</left>
+                <top>140</top>
+                <left>30</left>
                 <control type="image">
-                    <width>100</width>
-                    <height>25</height>
+                    <width>150</width>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
@@ -1165,7 +1165,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>46</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
@@ -1175,17 +1175,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x)</visible>
-                <top>147</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>31</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
@@ -1195,7 +1195,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>48</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
@@ -1205,7 +1205,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
@@ -1215,7 +1215,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
@@ -1227,7 +1227,7 @@
             <left>3585</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-                <top>50</top>
+                <top>52</top>
                 <width>210</width>
                 <height>170</height>
                 <control type="image">
@@ -1284,28 +1284,28 @@
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),SDR) | String.Contains(Player.Process(amlogic.vs10.mode),HDR10) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>43</top>
-                <left>192</left>
+                <top>52</top>
+                <left>30</left>
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
@@ -1344,21 +1344,21 @@
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
@@ -1378,67 +1378,67 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,aac) | String.IsEqual(VideoPlayer.AudioCodec,aac_latm)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dolbydigital) | String.IsEqual(VideoPlayer.AudioCodec,ac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
@@ -1448,17 +1448,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dca)</visible>
-                <top>150</top>
-                <left>55</left>
+                <top>140</top>
+                <left>30</left>
                 <control type="image">
-                    <width>100</width>
-                    <height>25</height>
+                    <width>150</width>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
@@ -1468,7 +1468,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>46</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
@@ -1478,17 +1478,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x)</visible>
-                <top>147</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>31</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
@@ -1498,7 +1498,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>48</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
@@ -1508,7 +1508,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
@@ -1518,7 +1518,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
@@ -1592,28 +1592,28 @@
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),SDR) | String.Contains(Player.Process(amlogic.vs10.mode),HDR10) | String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>43</top>
-                <left>192</left>
+                <top>52</top>
+                <left>30</left>
                 <control type="image">
                     <width>8</width>
                     <height>8</height>
@@ -1652,21 +1652,21 @@
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)</visible>
-                <top>50</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
-                <top>57</top>
+                <top>52</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/HLG.png</texture>
                 </control>
             </control>
@@ -1686,67 +1686,67 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/PCM.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,aac) | String.IsEqual(VideoPlayer.AudioCodec,aac_latm)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/AAC.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dolbydigital) | String.IsEqual(VideoPlayer.AudioCodec,ac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD_Atmos.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,truehd)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_TrueHD.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,eac3_ddp_atmos)</visible>
-                <top>135</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/Dolby_Digital_Plus_Atmos.png</texture>
                 </control>
             </control>
@@ -1756,17 +1756,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/MP3.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dca)</visible>
-                <top>150</top>
-                <left>55</left>
+                <top>140</top>
+                <left>30</left>
                 <control type="image">
-                    <width>100</width>
-                    <height>25</height>
+                    <width>150</width>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS.png</texture>
                 </control>
             </control>
@@ -1776,7 +1776,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>46</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-MA.png</texture>
                 </control>
             </control>
@@ -1786,17 +1786,17 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTS-HD-HRA.png</texture>
                 </control>
             </control>
             <control type="group">
                 <visible>String.IsEqual(VideoPlayer.AudioCodec,dtshd_ma_x)</visible>
-                <top>147</top>
+                <top>140</top>
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>31</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/DTSX.png</texture>
                 </control>
             </control>
@@ -1806,7 +1806,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>48</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/IMAX.png</texture>
                 </control>
             </control>
@@ -1816,7 +1816,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/FLAC.png</texture>
                 </control>
             </control>
@@ -1826,7 +1826,7 @@
                 <left>30</left>
                 <control type="image">
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/OPUS.png</texture>
                 </control>
             </control>
@@ -1965,10 +1965,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>50</top>
+                    <top>52</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -1986,10 +1986,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>57</top>
+                    <top>52</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2007,8 +2007,8 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>43</top>
-                    <left>192</left>
+                    <top>52</top>
+                    <left>30</left>
                     <width>8</width>
                     <height>8</height>
                     <visible>$PARAM[visible]</visible>
@@ -2091,10 +2091,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>50</top>
+                    <top>52</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2112,10 +2112,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>57</top>
+                    <top>52</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>42</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2157,7 +2157,7 @@
                     <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2175,10 +2175,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>135</top>
+                    <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2196,10 +2196,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>135</top>
+                    <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2217,10 +2217,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>135</top>
+                    <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2238,10 +2238,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>135</top>
+                    <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2259,10 +2259,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>135</top>
+                    <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2280,10 +2280,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>135</top>
+                    <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>56</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2304,7 +2304,7 @@
                     <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2322,10 +2322,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>150</top>
-                    <left>55</left>
-                    <width>100</width>
-                    <height>25</height>
+                    <top>140</top>
+                    <left>30</left>
+                    <width>150</width>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2346,7 +2346,7 @@
                     <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>46</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2367,7 +2367,7 @@
                     <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>49</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2385,10 +2385,10 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                    <top>147</top>
+                    <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>31</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2409,7 +2409,7 @@
                     <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>48</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2430,7 +2430,7 @@
                     <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
@@ -2451,7 +2451,7 @@
                     <top>140</top>
                     <left>30</left>
                     <width>150</width>
-                    <height>45</height>
+                    <height>52</height>
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>

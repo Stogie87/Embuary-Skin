@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <styles>
-    	<style>aeon_nox_codec_logos</style>
-    	<style>aeon_nox_codec_logos_colorful</style>
-    	<style>arctic_codec_logos</style>
-	<style>arctic_codec_logos_colorful</style>
-	<style>embuary_codec_logos</style>
-	<style>titan_codec_logos</style>
+    	<style>standard_logos</style>
+    	<style>alternative_logos</style>
+    	<style>colorful_logos</style>
+	<style>exclusive_logos</style>
 </styles>
