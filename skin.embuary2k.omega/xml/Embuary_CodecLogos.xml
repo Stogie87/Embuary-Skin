@@ -35,8 +35,8 @@
                 <top>52</top>
                 <left>30</left>
                 <control type="image">
-                    <width>150</width>
-                    <height>52</height>
+		<width>$INFO[Integer(Skin.String(codeclogos_scale_wide))]</width>
+		<height>$INFO[Integer(Skin.String(codeclogos_scale_height))]</height>
                     <texture colordiffuse="dialog_fg_90">$INFO[Skin.String(codeclogos_path)]/SDR.png</texture>
                 </control>
             </control>
