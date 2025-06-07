@@ -2406,3 +2406,7 @@ msgstr ""
 msgctxt "#42003"
 msgid "Logo Style"
 msgstr ""
+
+msgctxt "#42004"
+msgid "Codec Logo Size"
+msgstr ""

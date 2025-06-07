@@ -1497,4 +1497,380 @@
 			<onclick>ActivateWindow(addonbrowser,addons://search/,return)</onclick>
 		</item>
 	</include>
+
+	<!-- CENTER Position: 1185, Schritt -8 je 10% -->
+
+	<include name="CodecLogoLeftCenter_100"><left>1185</left></include>
+	<include name="CodecLogoLeftCenter_110"><left>1177</left></include>
+	<include name="CodecLogoLeftCenter_120"><left>1169</left></include>
+	<include name="CodecLogoLeftCenter_130"><left>1161</left></include>
+	<include name="CodecLogoLeftCenter_140"><left>1153</left></include>
+	<include name="CodecLogoLeftCenter_150"><left>1145</left></include>
+	<include name="CodecLogoLeftCenter_160"><left>1137</left></include>
+	<include name="CodecLogoLeftCenter_170"><left>1129</left></include>
+	<include name="CodecLogoLeftCenter_180"><left>1121</left></include>
+	<include name="CodecLogoLeftCenter_190"><left>1113</left></include>
+	<include name="CodecLogoLeftCenter_200"><left>1105</left></include>
+	<include name="CodecLogoLeftCenter_210"><left>1097</left></include>
+	<include name="CodecLogoLeftCenter_220"><left>1089</left></include>
+	<include name="CodecLogoLeftCenter_230"><left>1081</left></include>
+	<include name="CodecLogoLeftCenter_240"><left>1073</left></include>
+	<include name="CodecLogoLeftCenter_250"><left>1065</left></include>
+	<include name="CodecLogoLeftCenter_260"><left>1057</left></include>
+	<include name="CodecLogoLeftCenter_270"><left>1049</left></include>
+	<include name="CodecLogoLeftCenter_280"><left>1041</left></include>
+	<include name="CodecLogoLeftCenter_290"><left>1033</left></include>
+	<include name="CodecLogoLeftCenter_300"><left>1025</left></include>
+
+	<!-- RIGHT Position: 2330, Schritt -15 je 10% -->
+
+	<include name="CodecLogoLeftRight_100"><left>2330</left></include>
+	<include name="CodecLogoLeftRight_110"><left>2315</left></include>
+	<include name="CodecLogoLeftRight_120"><left>2300</left></include>
+	<include name="CodecLogoLeftRight_130"><left>2285</left></include>
+	<include name="CodecLogoLeftRight_140"><left>2270</left></include>
+	<include name="CodecLogoLeftRight_150"><left>2255</left></include>
+	<include name="CodecLogoLeftRight_160"><left>2240</left></include>
+	<include name="CodecLogoLeftRight_170"><left>2225</left></include>
+	<include name="CodecLogoLeftRight_180"><left>2210</left></include>
+	<include name="CodecLogoLeftRight_190"><left>2195</left></include>
+	<include name="CodecLogoLeftRight_200"><left>2180</left></include>
+	<include name="CodecLogoLeftRight_210"><left>2165</left></include>
+	<include name="CodecLogoLeftRight_220"><left>2150</left></include>
+	<include name="CodecLogoLeftRight_230"><left>2135</left></include>
+	<include name="CodecLogoLeftRight_240"><left>2120</left></include>
+	<include name="CodecLogoLeftRight_250"><left>2105</left></include>
+	<include name="CodecLogoLeftRight_260"><left>2090</left></include>
+	<include name="CodecLogoLeftRight_270"><left>2075</left></include>
+	<include name="CodecLogoLeftRight_280"><left>2060</left></include>
+	<include name="CodecLogoLeftRight_290"><left>2045</left></include>
+	<include name="CodecLogoLeftRight_300"><left>2030</left></include>
+
+	<!-- Codec Logo Größen: 100% bis 300% (in 10%-Schritten) -->
+
+	<include name="CodecLogoSize_100">
+    		<width>150</width>
+    		<height>52</height>
+	</include>
+	<include name="CodecLogoSize_110">
+    		<width>165</width>
+    		<height>57</height>
+	</include>
+	<include name="CodecLogoSize_120">
+    		<width>180</width>
+    		<height>62</height>
+	</include>
+	<include name="CodecLogoSize_130">
+    		<width>195</width>
+    		<height>68</height>
+	</include>
+	<include name="CodecLogoSize_140">
+    		<width>210</width>
+    		<height>73</height>
+	</include>
+	<include name="CodecLogoSize_150">
+    		<width>225</width>
+    		<height>78</height>
+	</include>
+	<include name="CodecLogoSize_160">
+    		<width>240</width>
+    		<height>83</height>
+	</include>
+	<include name="CodecLogoSize_170">
+    		<width>255</width>
+    		<height>88</height>
+	</include>
+	<include name="CodecLogoSize_180">
+    		<width>270</width>
+    		<height>94</height>
+	</include>
+	<include name="CodecLogoSize_190">
+    		<width>285</width>
+    		<height>99</height>
+	</include>
+	<include name="CodecLogoSize_200">
+    		<width>300</width>
+    		<height>104</height>
+	</include>
+	<include name="CodecLogoSize_210">
+    		<width>315</width>
+    		<height>109</height>
+	</include>
+	<include name="CodecLogoSize_220">
+    		<width>330</width>
+    		<height>114</height>
+	</include>
+	<include name="CodecLogoSize_230">
+    		<width>345</width>
+    		<height>120</height>
+	</include>
+	<include name="CodecLogoSize_240">
+    		<width>360</width>
+    		<height>125</height>
+	</include>
+	<include name="CodecLogoSize_250">
+    		<width>375</width>
+    		<height>130</height>
+	</include>
+	<include name="CodecLogoSize_260">
+    		<width>390</width>
+    		<height>135</height>
+	</include>
+	<include name="CodecLogoSize_270">
+    		<width>405</width>
+    		<height>141</height>
+	</include>
+	<include name="CodecLogoSize_280">
+    		<width>420</width>
+    		<height>146</height>
+	</include>
+	<include name="CodecLogoSize_290">
+    		<width>435</width>
+    		<height>151</height>
+	</include>
+	<include name="CodecLogoSize_300">
+    		<width>450</width>
+    		<height>156</height>
+	</include>
+
+	<!-- Codec Logo Hintergrund-Größen Corner: 100% bis 300% (in in 7,25%-Schritten für width unf 7%-Schritte für height) -->
+
+	<include name="CodecLogoBG1_100">
+    		<width>210</width>
+    		<height>170</height>
+	</include>
+	<include name="CodecLogoBG1_110">
+    		<width>225</width>
+    		<height>182</height>
+	</include>
+	<include name="CodecLogoBG1_120">
+    		<width>240</width>
+    		<height>192</height>
+	</include>
+	<include name="CodecLogoBG1_130">
+    		<width>256</width>
+    		<height>204</height>
+	</include>
+	<include name="CodecLogoBG1_140">
+    		<width>271</width>
+    		<height>215</height>
+	</include>
+	<include name="CodecLogoBG1_150">
+    		<width>287</width>
+    		<height>226</height>
+	</include>
+	<include name="CodecLogoBG1_160">
+    		<width>302</width>
+    		<height>238</height>
+	</include>
+	<include name="CodecLogoBG1_170">
+    		<width>318</width>
+    		<height>249</height>
+	</include>
+	<include name="CodecLogoBG1_180">
+    		<width>333</width>
+    		<height>260</height>
+	</include>
+	<include name="CodecLogoBG1_190">
+    		<width>349</width>
+    		<height>272</height>
+	</include>
+	<include name="CodecLogoBG1_200">
+    		<width>364</width>
+    		<height>283</height>
+	</include>
+	<include name="CodecLogoBG1_210">
+    		<width>380</width>
+    		<height>294</height>
+	</include>
+	<include name="CodecLogoBG1_220">
+    		<width>395</width>
+    		<height>306</height>
+	</include>
+	<include name="CodecLogoBG1_230">
+    		<width>410</width>
+    		<height>317</height>
+	</include>
+	<include name="CodecLogoBG1_240">
+    		<width>426</width>
+    		<height>329</height>
+	</include>
+	<include name="CodecLogoBG1_250">
+    		<width>441</width>
+    		<height>340</height>
+	</include>
+	<include name="CodecLogoBG1_260">
+    		<width>457</width>
+    		<height>351</height>
+	</include>
+	<include name="CodecLogoBG1_270">
+    		<width>472</width>
+    		<height>363</height>
+	</include>
+	<include name="CodecLogoBG1_280">
+    		<width>488</width>
+    		<height>374</height>
+	</include>
+	<include name="CodecLogoBG1_290">
+    		<width>503</width>
+    		<height>386</height>
+	</include>
+	<include name="CodecLogoBG1_300">
+    		<width>519</width>
+    		<height>397</height>
+	</include>
+
+	<!-- Codec Logo Hintergrund-Größen Corner Small: 100% bis 300% (in in 7,25%-Schritten für width unf 6,5%-Schritte für height) -->
+
+	<include name="CodecLogoBG2_100">
+    		<width>210</width>
+    		<height>90</height>
+	</include>
+	<include name="CodecLogoBG2_110">
+    		<width>225</width>
+    		<height>96</height>
+	</include>
+	<include name="CodecLogoBG2_120">
+    		<width>240</width>
+    		<height>102</height>
+	</include>
+	<include name="CodecLogoBG2_130">
+    		<width>256</width>
+    		<height>108</height>
+	</include>
+	<include name="CodecLogoBG2_140">
+    		<width>271</width>
+    		<height>114</height>
+	</include>
+	<include name="CodecLogoBG2_150">
+    		<width>287</width>
+    		<height>120</height>
+	</include>
+	<include name="CodecLogoBG2_160">
+    		<width>302</width>
+    		<height>126</height>
+	</include>
+	<include name="CodecLogoBG2_170">
+    		<width>318</width>
+    		<height>132</height>
+	</include>
+	<include name="CodecLogoBG2_180">
+    		<width>333</width>
+    		<height>138</height>
+	</include>
+	<include name="CodecLogoBG2_190">
+    		<width>349</width>
+    		<height>144</height>
+	</include>
+	<include name="CodecLogoBG2_200">
+    		<width>364</width>
+    		<height>149</height>
+	</include>
+	<include name="CodecLogoBG2_210">
+    		<width>380</width>
+    		<height>155</height>
+	</include>
+	<include name="CodecLogoBG2_220">
+    		<width>395</width>
+    		<height>161</height>
+	</include>
+	<include name="CodecLogoBG2_230">
+    		<width>410</width>
+    		<height>167</height>
+	</include>
+	<include name="CodecLogoBG2_240">
+    		<width>426</width>
+    		<height>173</height>
+	</include>
+	<include name="CodecLogoBG2_250">
+    		<width>441</width>
+    		<height>179</height>
+	</include>
+	<include name="CodecLogoBG2_260">
+    		<width>457</width>
+    		<height>185</height>
+	</include>
+	<include name="CodecLogoBG2_270">
+    		<width>472</width>
+    		<height>191</height>
+	</include>
+	<include name="CodecLogoBG2_280">
+    		<width>488</width>
+    		<height>197</height>
+	</include>
+	<include name="CodecLogoBG2_290">
+    		<width>503</width>
+    		<height>203</height>
+	</include>
+	<include name="CodecLogoBG2_300">
+    		<width>519</width>
+    		<height>209</height>
+	</include>
+
+	<!-- Codec Logo WhiteBar: 100% bis 300% (in 8-Pixel-Schritten) -->
+
+	<include name="BarPosition_100">
+    		<left>17</left>
+	</include>
+	<include name="BarPosition_110">
+    		<left>25</left>
+	</include>
+	<include name="BarPosition_120">
+    		<left>33</left>
+	</include>
+	<include name="BarPosition_130">
+    		<left>41</left>
+	</include>
+	<include name="BarPosition_140">
+    		<left>49</left>
+	</include>
+	<include name="BarPosition_150">
+    		<left>57</left>
+	</include>
+	<include name="BarPosition_160">
+    		<left>65</left>
+	</include>
+	<include name="BarPosition_170">
+    		<left>73</left>
+	</include>
+	<include name="BarPosition_180">
+    		<left>81</left>
+	</include>
+	<include name="BarPosition_190">
+    		<left>89</left>
+	</include>
+	<include name="BarPosition_200">
+    		<left>97</left>
+	</include>
+	<include name="BarPosition_210">
+    		<left>105</left>
+	</include>
+	<include name="BarPosition_220">
+    		<left>113</left>
+	</include>
+	<include name="BarPosition_230">
+    		<left>121</left>
+	</include>
+	<include name="BarPosition_240">
+    		<left>129</left>
+	</include>
+	<include name="BarPosition_250">
+    		<left>137</left>
+	</include>
+	<include name="BarPosition_260">
+    		<left>145</left>
+	</include>
+	<include name="BarPosition_270">
+    		<left>153</left>
+	</include>
+	<include name="BarPosition_280">
+    		<left>161</left>
+	</include>
+	<include name="BarPosition_290">
+    		<left>169</left>
+	</include>
+	<include name="BarPosition_300">
+    		<left>177</left>
+	</include>
+
 </includes>

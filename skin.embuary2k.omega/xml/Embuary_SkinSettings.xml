@@ -790,6 +790,12 @@
     			<label>$LOCALIZE[42003]</label>
 			<label2>$INFO[Skin.String(codeclogos_name)]</label2>
 		</control>
+		<control type="button" id="$PARAM[id]42">
+    		<include>SettingsButton</include>
+    			<onclick>RunScript(special://skin/scripts/logo_resizer.py)</onclick>
+    			<label>$LOCALIZE[42004]</label>
+			<label2>$INFO[Skin.String(codeclogos_scale)]%</label2>
+		</control>
 		<control type="button" id="$PARAM[id]43">
     		<include>SettingsButton</include>
     			<onclick>RunScript(special://skin/scripts/script.osd_codec_logo_timer.py)</onclick>
