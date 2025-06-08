@@ -1,0 +1,10 @@
+[B]Version 1.0.2[/B]
+- Improved Sorting and Episode Detection
+- Enhanced Robustness
+- Enhanced Error Handling and Logging
+- Enhanced Readability and Maintainability
+- Enhanced Player/Stream Compatibility
+- Other Improvements
+
+[B]Version 1.0.1[/B]
+- Initial Release

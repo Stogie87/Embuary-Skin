@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 import xbmc
 import xbmcaddon
 import xbmcgui
 import json
 import sys
 import traceback
+import re
 
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
@@ -23,6 +25,10 @@ def show_error_dialog(message):
     xbmcgui.Dialog().notification("Episode Jumper", message, xbmcgui.NOTIFICATION_ERROR)
 
 def get_episode_from_kodi_library(tvshowtitle, season, episode, direction="next"):
+    """
+    Liefert den Dateipfad der nächsten/vorherigen Episode aus der Kodi Library.
+    Funktioniert staffelübergreifend.
+    """
     try:
         query = {
             "jsonrpc": "2.0",
@@ -34,17 +40,23 @@ def get_episode_from_kodi_library(tvshowtitle, season, episode, direction="next"
             },
             "id": 1
         }
+        # Zusätzlich nach Episode sortieren!
+        query['params']['sort'] = {
+            "order": "ascending",
+            "method": "episode",
+            "ignorearticle": True
+        }
         response = xbmc.executeJSONRPC(json.dumps(query))
         data = json.loads(response)
         episodes = data.get("result", {}).get("episodes", [])
+        episodes = sorted(episodes, key=lambda x: (int(x["season"]), int(x["episode"])))
         for idx, ep in enumerate(episodes):
-            if ep["season"] == int(season) and ep["episode"] == int(episode):
-                if direction == "next":
-                    if idx+1 < len(episodes):
-                        return episodes[idx+1]["file"]
-                elif direction == "previous":
-                    if idx-1 >= 0:
-                        return episodes[idx-1]["file"]
+            if int(ep["season"]) == int(season) and int(ep["episode"]) == int(episode):
+                next_idx = idx + 1 if direction == "next" else idx - 1
+                if 0 <= next_idx < len(episodes):
+                    return episodes[next_idx]["file"]
+                else:
+                    return None
         return None
     except Exception as e:
         log(f"Fehler beim Abrufen der Episode: {repr(e)}", level='ERROR')
@@ -99,38 +111,85 @@ def get_episode_from_playlist(direction="next"):
         pos = playlist.getposition()
         if pos == -1:
             return None
-        if direction == "next":
-            if pos + 1 < playlist.size():
-                return playlist[pos + 1].getfilename()
-        elif direction == "previous":
-            if pos - 1 >= 0:
-                return playlist[pos - 1].getfilename()
+        if direction == "next" and pos + 1 < playlist.size():
+            return playlist[pos + 1].getfilename()
+        elif direction == "previous" and pos - 1 >= 0:
+            return playlist[pos - 1].getfilename()
         return None
     except Exception as e:
         log(f"Fehler beim Playlist-Check: {repr(e)}", level='ERROR')
         return None
 
 def is_kodi_library_episode(filepath):
-    # Prüfe, ob Datei wie eine lokale Datei aussieht (z.B. Pfad beginnt nicht mit plugin://)
-    return filepath and not filepath.startswith("plugin://")
+    return filepath and not filepath.lower().startswith("plugin://")
 
 def jump_to_end_and_wait(player):
     try:
         total_time = player.getTotalTime()
         if total_time > 1:
-            seek_time = max(0, total_time - 1)  # 1 Sekunde vor Schluss
+            seek_time = max(0, total_time - 1)
             player.seekTime(seek_time)
-            xbmc.sleep(1500)  # 1,5 Sekunden warten
+            xbmc.sleep(1500)
             log("Habe 1 Sekunde vor Episodenende gespult und gewartet.", "DEBUG")
     except Exception as e:
         log(f"Fehler beim Vorspulen ans Ende: {repr(e)}", "ERROR")
 
+def collect_episode_info():
+    info = {
+        "tvshowtitle": xbmc.getInfoLabel('VideoPlayer.TVShowTitle'),
+        "season": xbmc.getInfoLabel('VideoPlayer.Season'),
+        "episode": xbmc.getInfoLabel('VideoPlayer.Episode'),
+        "file": xbmc.getInfoLabel('VideoPlayer.Filenameandpath')
+    }
+    log(f"Aktuelle Wiedergabe: {info}", level='DEBUG')
+    return info
+
+def extract_season_episode_from_path(path):
+    """
+    Extrahiert season und episode aus einem Pfad oder Dateinamen im S01E10 Format.
+    Gibt (season:int, episode:int) oder (None, None) zurück.
+    """
+    if not path:
+        return None, None
+    match = re.search(r'[Ss](\d{1,2})[Eex](\d{1,2})', path)
+    if match:
+        return int(match.group(1)), int(match.group(2))
+    return None, None
+
+def guess_next_episode_path(current_path, direction="next"):
+    """
+    Versucht anhand des Dateinamens oder Pfads (SxxExx) die nächste oder vorherige Episode zu finden.
+    Nur als Fallback für Streams!
+    """
+    season, episode = extract_season_episode_from_path(current_path)
+    if season is None or episode is None:
+        return None
+
+    if direction == "next":
+        next_season, next_episode = season, episode + 1
+    else:
+        next_season, next_episode = season, episode - 1
+
+    # Am Anfang/Ende der Staffel: Staffelwechsel versuchen!
+    # Annahme: SxxE{0 oder max}
+    def build_pattern(s, e):
+        return re.sub(r'([Ss])(\d{1,2})([Eex])(\d{1,2})',
+                      r'\1{:02d}\3{:02d}'.format(s, e),
+                      current_path, count=1)
+
+    # Test: Gibt es SxxE(episode +/- 1)?
+    test_path = build_pattern(next_season, next_episode)
+
+    if test_path != current_path:
+        log(f"Versuche staffelübergreifend: {test_path}", "INFO")
+        return test_path
+    return None
+
 def main():
     try:
         direction = "next"
-        if len(sys.argv) > 1:
-            if sys.argv[1].lower() in ["previous", "next"]:
-                direction = sys.argv[1].lower()
+        if len(sys.argv) > 1 and sys.argv[1].lower() in ["previous", "next"]:
+            direction = sys.argv[1].lower()
 
         log(f"Script gestartet, Richtung: {direction}", level='INFO')
         player = xbmc.Player()
@@ -139,49 +198,54 @@ def main():
             show_error_dialog("Kein aktives Playback – keine Episode kann gestartet werden.")
             return
 
-        tvshowtitle = xbmc.getInfoLabel('VideoPlayer.TVShowTitle')
-        season = xbmc.getInfoLabel('VideoPlayer.Season')
-        episode = xbmc.getInfoLabel('VideoPlayer.Episode')
-        current_file = xbmc.getInfoLabel('VideoPlayer.Filenameandpath')
-
-        log(f"Metadaten: Serie={tvshowtitle}, Staffel={season}, Episode={episode}, Datei={current_file}", level='DEBUG')
+        info = collect_episode_info()
+        tvshowtitle = info["tvshowtitle"]
+        season = info["season"]
+        episode = info["episode"]
+        current_file = info["file"]
 
         episode_path = None
 
-        # Hole das Ziel (nächste/vorherige Episode)
-        if tvshowtitle and season and episode:
+        # --- 1. Kodi-Library: staffelübergreifend ---
+        if tvshowtitle and season.isdigit() and episode.isdigit():
             episode_path = get_episode_from_kodi_library(tvshowtitle, season, episode, direction)
             if episode_path:
                 log(f"Episode ({direction}) aus Kodi-Library: {episode_path}", level='INFO')
 
+        # --- 2. Playlist ---
         if not episode_path:
             episode_path = get_episode_from_playlist(direction)
             if episode_path:
                 log(f"Episode ({direction}) aus Playlist: {episode_path}", level='INFO')
 
+        # --- 3. Staffelübergreifender Fallback für Streams: SxxExx im Pfad suchen ---
+        if not episode_path:
+            episode_path = guess_next_episode_path(current_file, direction)
+            if episode_path and episode_path != current_file:
+                log(f"Episode ({direction}) staffelübergreifend per Dateinamen geraten: {episode_path}", level='INFO')
+
+        # --- Kein Treffer? ---
         if not episode_path:
             log(f"{direction.capitalize()} Episode konnte nicht gefunden werden.", level='ERROR')
             label = "Nächste" if direction == "next" else "Vorherige"
-            show_error_dialog(f"{label} Episode konnte nicht gefunden werden.")
+            msg = f"{label} Episode konnte nicht gefunden werden. Vermutlich ist das {'Staffel-' if season else ''}Finale erreicht."
+            show_error_dialog(msg)
             return
 
         # --- Status-Handling ---
         if direction == "next":
-            # Immer: Vorspulen ans Ende (1 Sekunde vor Schluss) und warten!
             jump_to_end_and_wait(player)
-            # Zusätzlich: Für Kodi-Library Episoden den Status setzen
             if is_kodi_library_episode(current_file):
                 episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
                 if episodeid:
                     set_episode_playcount(episodeid, 1)  # Gesehen
         elif direction == "previous":
-            # NICHT vorspulen, nur Status "ungesehen" setzen (nur bei Kodi-Library)
             if is_kodi_library_episode(current_file):
                 episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
                 if episodeid:
                     set_episode_playcount(episodeid, 0)  # Ungesehen
 
-        # Springe zur gewünschten Episode
+        # --- Episode abspielen ---
         try:
             player.play(episode_path)
             log(f"Gestartet: {episode_path}", level='INFO')
