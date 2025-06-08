@@ -1,9 +1,3 @@
-[B]Version 1.0.3[/B]
-- Faster Mark as Watched
-- Reduced Wait Time
-- Improved Compatibility 
-- Cleaner, More Efficient Code
-
 [B]Version 1.0.2[/B]
 - Improved Sorting and Episode Detection
 - Enhanced Robustness
