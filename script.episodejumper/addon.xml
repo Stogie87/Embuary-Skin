@@ -1,6 +1,6 @@
 <addon id="script.episodejumper"
        name="Episode Jumper"
-       version="1.0.2"
+       version="1.0.3"
        provider-name="Stogie87">
     <extension point="xbmc.python.script" library="main.py">
         <provides>executable</provides>

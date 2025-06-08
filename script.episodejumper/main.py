@@ -24,43 +24,212 @@ def log(msg, level='INFO'):
 def show_error_dialog(message):
     xbmcgui.Dialog().notification("Episode Jumper", message, xbmcgui.NOTIFICATION_ERROR)
 
-def get_episode_from_kodi_library(tvshowtitle, season, episode, direction="next"):
-    """
-    Liefert den Dateipfad der nächsten/vorherigen Episode aus der Kodi Library.
-    Funktioniert staffelübergreifend.
-    """
+def get_tvshowid_by_title(tvshowtitle):
     try:
+        query = {
+            "jsonrpc": "2.0",
+            "method": "VideoLibrary.GetTVShows",
+            "params": {"filter": {"field": "title", "operator": "is", "value": tvshowtitle}},
+            "id": 1
+        }
+        response = xbmc.executeJSONRPC(json.dumps(query))
+        data = json.loads(response)
+        shows = data.get("result", {}).get("tvshows", [])
+        if shows:
+            return shows[0]["tvshowid"]
+    except Exception as e:
+        log(f"Fehler beim Ermitteln der TVShowID: {repr(e)}", level='ERROR')
+    return None
+
+def get_episode_upnext(tvshowid, season, episode, direction="next"):
+    try:
+        if direction == "next":
+            operator = "greaterthan"
+            sort_order = "ascending"
+            fallback_season_operator = "greaterthan"
+            fallback_episode = "1"
+        else:
+            operator = "lessthan"
+            sort_order = "descending"
+            fallback_season_operator = "lessthan"
+            fallback_episode = None
+
+        filters_same_season = {
+            "and": [
+                {"field": "tvshowid", "operator": "is", "value": tvshowid},
+                {"field": "season", "operator": "is", "value": str(season)},
+                {"field": "episode", "operator": operator, "value": str(episode)}
+            ]
+        }
         query = {
             "jsonrpc": "2.0",
             "method": "VideoLibrary.GetEpisodes",
             "params": {
-                "filter": {"field": "tvshow", "operator": "is", "value": tvshowtitle},
+                "filter": filters_same_season,
                 "properties": ["file", "season", "episode", "playcount"],
-                "sort": {"order": "ascending", "method": "season", "ignorearticle": True}
+                "sort": {"order": sort_order, "method": "episode"},
+                "limits": {"start": 0, "end": 1}
             },
             "id": 1
-        }
-        # Zusätzlich nach Episode sortieren!
-        query['params']['sort'] = {
-            "order": "ascending",
-            "method": "episode",
-            "ignorearticle": True
         }
         response = xbmc.executeJSONRPC(json.dumps(query))
         data = json.loads(response)
         episodes = data.get("result", {}).get("episodes", [])
-        episodes = sorted(episodes, key=lambda x: (int(x["season"]), int(x["episode"])))
-        for idx, ep in enumerate(episodes):
-            if int(ep["season"]) == int(season) and int(ep["episode"]) == int(episode):
-                next_idx = idx + 1 if direction == "next" else idx - 1
-                if 0 <= next_idx < len(episodes):
-                    return episodes[next_idx]["file"]
-                else:
-                    return None
-        return None
+        if episodes:
+            return episodes[0]["file"]
+
+        if direction == "next":
+            filters_next_season = {
+                "and": [
+                    {"field": "tvshowid", "operator": "is", "value": tvshowid},
+                    {"field": "season", "operator": fallback_season_operator, "value": str(season)},
+                    {"field": "episode", "operator": "is", "value": fallback_episode}
+                ]
+            }
+            query["params"]["filter"] = filters_next_season
+            query["params"]["sort"] = {"order": "ascending", "method": "season"}
+        else:
+            prev_season_query = {
+                "jsonrpc": "2.0",
+                "method": "VideoLibrary.GetEpisodes",
+                "params": {
+                    "filter": {
+                        "and": [
+                            {"field": "tvshowid", "operator": "is", "value": tvshowid},
+                            {"field": "season", "operator": fallback_season_operator, "value": str(season)}
+                        ]
+                    },
+                    "properties": ["season"],
+                    "sort": {"order": "descending", "method": "season"},
+                    "limits": {"start": 0, "end": 1}
+                },
+                "id": 1
+            }
+            response_prev = xbmc.executeJSONRPC(json.dumps(prev_season_query))
+            data_prev = json.loads(response_prev)
+            prev_episodes = data_prev.get("result", {}).get("episodes", [])
+            if not prev_episodes:
+                return None
+            prev_season_num = prev_episodes[0]["season"]
+            filters_prev_season = {
+                "and": [
+                    {"field": "tvshowid", "operator": "is", "value": tvshowid},
+                    {"field": "season", "operator": "is", "value": str(prev_season_num)}
+                ]
+            }
+            query["params"]["filter"] = filters_prev_season
+            query["params"]["sort"] = {"order": "descending", "method": "episode"}
+
+        response = xbmc.executeJSONRPC(json.dumps(query))
+        data = json.loads(response)
+        episodes = data.get("result", {}).get("episodes", [])
+        if episodes:
+            return episodes[0]["file"]
+
     except Exception as e:
-        log(f"Fehler beim Abrufen der Episode: {repr(e)}", level='ERROR')
-        return None
+        log(f"Fehler bei Up Next Episode-Suche ({direction}): {repr(e)}", level='ERROR')
+    return None
+
+def get_episode_fallback(tvshowtitle, season, episode, direction="next"):
+    try:
+        if direction == "next":
+            operator = "greaterthan"
+            sort_order = "ascending"
+            fallback_season_operator = "greaterthan"
+            fallback_episode = "1"
+        else:
+            operator = "lessthan"
+            sort_order = "descending"
+            fallback_season_operator = "lessthan"
+            fallback_episode = None
+
+        filters_same_season = {
+            "and": [
+                {"field": "tvshow", "operator": "is", "value": tvshowtitle},
+                {"field": "season", "operator": "is", "value": str(season)},
+                {"field": "episode", "operator": operator, "value": str(episode)}
+            ]
+        }
+        query = {
+            "jsonrpc": "2.0",
+            "method": "VideoLibrary.GetEpisodes",
+            "params": {
+                "filter": filters_same_season,
+                "properties": ["file", "season", "episode", "playcount"],
+                "sort": {"order": sort_order, "method": "episode"},
+                "limits": {"start": 0, "end": 1}
+            },
+            "id": 1
+        }
+        response = xbmc.executeJSONRPC(json.dumps(query))
+        data = json.loads(response)
+        episodes = data.get("result", {}).get("episodes", [])
+        if episodes:
+            return episodes[0]["file"]
+
+        if direction == "next":
+            filters_next_season = {
+                "and": [
+                    {"field": "tvshow", "operator": "is", "value": tvshowtitle},
+                    {"field": "season", "operator": fallback_season_operator, "value": str(season)},
+                    {"field": "episode", "operator": "is", "value": fallback_episode}
+                ]
+            }
+            query["params"]["filter"] = filters_next_season
+            query["params"]["sort"] = {"order": "ascending", "method": "season"}
+        else:
+            prev_season_query = {
+                "jsonrpc": "2.0",
+                "method": "VideoLibrary.GetEpisodes",
+                "params": {
+                    "filter": {
+                        "and": [
+                            {"field": "tvshow", "operator": "is", "value": tvshowtitle},
+                            {"field": "season", "operator": fallback_season_operator, "value": str(season)}
+                        ]
+                    },
+                    "properties": ["season"],
+                    "sort": {"order": "descending", "method": "season"},
+                    "limits": {"start": 0, "end": 1}
+                },
+                "id": 1
+            }
+            response_prev = xbmc.executeJSONRPC(json.dumps(prev_season_query))
+            data_prev = json.loads(response_prev)
+            prev_episodes = data_prev.get("result", {}).get("episodes", [])
+            if not prev_episodes:
+                return None
+            prev_season_num = prev_episodes[0]["season"]
+            filters_prev_season = {
+                "and": [
+                    {"field": "tvshow", "operator": "is", "value": tvshowtitle},
+                    {"field": "season", "operator": "is", "value": str(prev_season_num)}
+                ]
+            }
+            query["params"]["filter"] = filters_prev_season
+            query["params"]["sort"] = {"order": "descending", "method": "episode"}
+
+        response = xbmc.executeJSONRPC(json.dumps(query))
+        data = json.loads(response)
+        episodes = data.get("result", {}).get("episodes", [])
+        if episodes:
+            return episodes[0]["file"]
+    except Exception as e:
+        log(f"Fehler bei klassischer Episode-Suche ({direction}): {repr(e)}", level='ERROR')
+    return None
+
+def find_episode(tvshowtitle, season, episode, direction="next"):
+    tvshowid = get_tvshowid_by_title(tvshowtitle)
+    if tvshowid:
+        file = get_episode_upnext(tvshowid, season, episode, direction)
+        if file:
+            log(f"{direction.capitalize()} Episode via TVShowID (Up Next Style) gefunden.", "DEBUG")
+            return file
+    file = get_episode_fallback(tvshowtitle, season, episode, direction)
+    if file:
+        log(f"{direction.capitalize()} Episode klassisch per Serienname gefunden.", "DEBUG")
+        return file
+    return None
 
 def get_episodeid_from_kodi_library(tvshowtitle, season, episode):
     try:
@@ -105,21 +274,6 @@ def set_episode_playcount(episodeid, playcount):
     except Exception as e:
         log(f"Fehler beim Setzen des playcount: {repr(e)}", "ERROR")
 
-def get_episode_from_playlist(direction="next"):
-    try:
-        playlist = xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
-        pos = playlist.getposition()
-        if pos == -1:
-            return None
-        if direction == "next" and pos + 1 < playlist.size():
-            return playlist[pos + 1].getfilename()
-        elif direction == "previous" and pos - 1 >= 0:
-            return playlist[pos - 1].getfilename()
-        return None
-    except Exception as e:
-        log(f"Fehler beim Playlist-Check: {repr(e)}", level='ERROR')
-        return None
-
 def is_kodi_library_episode(filepath):
     return filepath and not filepath.lower().startswith("plugin://")
 
@@ -129,8 +283,8 @@ def jump_to_end_and_wait(player):
         if total_time > 1:
             seek_time = max(0, total_time - 1)
             player.seekTime(seek_time)
-            xbmc.sleep(2000)
-            log("Habe 2 Sekunden vor Episodenende gespult und gewartet.", "DEBUG")
+            xbmc.sleep(500)
+            log("Habe ans Episodenende gespult und 0,5 Sekunden gewartet.", "DEBUG")
     except Exception as e:
         log(f"Fehler beim Vorspulen ans Ende: {repr(e)}", "ERROR")
 
@@ -145,10 +299,6 @@ def collect_episode_info():
     return info
 
 def extract_season_episode_from_path(path):
-    """
-    Extrahiert season und episode aus einem Pfad oder Dateinamen im S01E10 Format.
-    Gibt (season:int, episode:int) oder (None, None) zurück.
-    """
     if not path:
         return None, None
     match = re.search(r'[Ss](\d{1,2})[Eex](\d{1,2})', path)
@@ -157,10 +307,6 @@ def extract_season_episode_from_path(path):
     return None, None
 
 def guess_next_episode_path(current_path, direction="next"):
-    """
-    Versucht anhand des Dateinamens oder Pfads (SxxExx) die nächste oder vorherige Episode zu finden.
-    Nur als Fallback für Streams!
-    """
     season, episode = extract_season_episode_from_path(current_path)
     if season is None or episode is None:
         return None
@@ -170,20 +316,49 @@ def guess_next_episode_path(current_path, direction="next"):
     else:
         next_season, next_episode = season, episode - 1
 
-    # Am Anfang/Ende der Staffel: Staffelwechsel versuchen!
-    # Annahme: SxxE{0 oder max}
     def build_pattern(s, e):
         return re.sub(r'([Ss])(\d{1,2})([Eex])(\d{1,2})',
                       r'\1{:02d}\3{:02d}'.format(s, e),
                       current_path, count=1)
 
-    # Test: Gibt es SxxE(episode +/- 1)?
     test_path = build_pattern(next_season, next_episode)
 
     if test_path != current_path:
-        log(f"Versuche staffelübergreifend: {test_path}", "INFO")
+        log(f"Versuche staffelübergreifend per Dateiname: {test_path}", "INFO")
         return test_path
     return None
+
+def fast_mark_as_watched(tvshowtitle, season, episode):
+    try:
+        episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
+        if episodeid:
+            set_episode_playcount(episodeid, 1)
+            log("Fast mark as watched (Up Next Style) erfolgreich.", "DEBUG")
+            return True
+        else:
+            log("Fast mark as watched: Keine episodeid gefunden.", "WARNING")
+    except Exception as e:
+        log(f"Fehler bei fast mark as watched: {repr(e)}", "ERROR")
+    return False
+
+def fast_jump_in_playlist(direction="next"):
+    try:
+        playlist = xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
+        pos = playlist.getposition()
+        if pos == -1:
+            return False
+        if direction == "next" and pos + 1 < playlist.size():
+            xbmc.executebuiltin(f"Playlist.PlayOffset(Video, {pos+1})")
+            log("Playlist-Jump (next) erfolgreich.", "DEBUG")
+            return True
+        elif direction == "previous" and pos - 1 >= 0:
+            xbmc.executebuiltin(f"Playlist.PlayOffset(Video, {pos-1})")
+            log("Playlist-Jump (previous) erfolgreich.", "DEBUG")
+            return True
+        return False
+    except Exception as e:
+        log(f"Fehler beim Playlist-Jump: {repr(e)}", "ERROR")
+        return False
 
 def main():
     try:
@@ -204,27 +379,33 @@ def main():
         episode = info["episode"]
         current_file = info["file"]
 
+        # --- SCHNELLSTE METHODE: Playlist-Jump ---
+        # (funktioniert nur, wenn aktuelle Wiedergabe Teil einer Playlist ist)
+        fastjump_success = fast_jump_in_playlist(direction)
+        if fastjump_success:
+            # Playcount/Status setzen, falls möglich
+            if direction == "next" and is_kodi_library_episode(current_file):
+                fast_mark_as_watched(tvshowtitle, season, episode)
+            elif direction == "previous" and is_kodi_library_episode(current_file):
+                episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
+                if episodeid:
+                    set_episode_playcount(episodeid, 0)
+            return  # fertig, alles erledigt!
+
+        # --- FALLBACK: Library/Episoden-Findung wie zuvor ---
         episode_path = None
-
-        # --- 1. Kodi-Library: staffelübergreifend ---
         if tvshowtitle and season.isdigit() and episode.isdigit():
-            episode_path = get_episode_from_kodi_library(tvshowtitle, season, episode, direction)
+            episode_path = find_episode(tvshowtitle, int(season), int(episode), direction)
             if episode_path:
-                log(f"Episode ({direction}) aus Kodi-Library: {episode_path}", level='INFO')
+                log(f"Episode ({direction}) via Kodi-Library gefunden: {episode_path}", level='INFO')
 
-        # --- 2. Playlist ---
-        if not episode_path:
-            episode_path = get_episode_from_playlist(direction)
-            if episode_path:
-                log(f"Episode ({direction}) aus Playlist: {episode_path}", level='INFO')
-
-        # --- 3. Staffelübergreifender Fallback für Streams: SxxExx im Pfad suchen ---
+        # --- Weiterer Fallback: SxxExx im Pfad suchen ---
         if not episode_path:
             episode_path = guess_next_episode_path(current_file, direction)
             if episode_path and episode_path != current_file:
                 log(f"Episode ({direction}) staffelübergreifend per Dateinamen geraten: {episode_path}", level='INFO')
 
-        # --- Kein Treffer? ---
+        # Kein Treffer?
         if not episode_path:
             log(f"{direction.capitalize()} Episode konnte nicht gefunden werden.", level='ERROR')
             label = "Nächste" if direction == "next" else "Vorherige"
@@ -232,20 +413,20 @@ def main():
             show_error_dialog(msg)
             return
 
-        # --- Status-Handling ---
+        # --- Markieren (Fallback) ---
         if direction == "next":
-            jump_to_end_and_wait(player)
+            marked = False
             if is_kodi_library_episode(current_file):
-                episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
-                if episodeid:
-                    set_episode_playcount(episodeid, 1)  # Gesehen
+                marked = fast_mark_as_watched(tvshowtitle, season, episode)
+            if not marked:
+                jump_to_end_and_wait(player)
         elif direction == "previous":
             if is_kodi_library_episode(current_file):
                 episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
                 if episodeid:
-                    set_episode_playcount(episodeid, 0)  # Ungesehen
+                    set_episode_playcount(episodeid, 0)
 
-        # --- Episode abspielen ---
+        # --- Episode abspielen (Fallback) ---
         try:
             player.play(episode_path)
             log(f"Gestartet: {episode_path}", level='INFO')
