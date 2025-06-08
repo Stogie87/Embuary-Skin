@@ -129,8 +129,8 @@ def jump_to_end_and_wait(player):
         if total_time > 1:
             seek_time = max(0, total_time - 1)
             player.seekTime(seek_time)
-            xbmc.sleep(1500)
-            log("Habe 1 Sekunde vor Episodenende gespult und gewartet.", "DEBUG")
+            xbmc.sleep(2000)
+            log("Habe 2 Sekunden vor Episodenende gespult und gewartet.", "DEBUG")
     except Exception as e:
         log(f"Fehler beim Vorspulen ans Ende: {repr(e)}", "ERROR")
 
