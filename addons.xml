@@ -83,7 +83,7 @@
 <addon id="script.episodejumper"
        name="Episode Jumper"
        version="1.0.2"
-       provider-name="DeinName">
+       provider-name="Stogie87">
     <extension point="xbmc.python.script" library="main.py">
         <provides>executable</provides>
     </extension>
@@ -98,7 +98,7 @@
         </description>
         <platform>all</platform>
 	<source>https://github.com/Stogie87/Embuary-Skin</source>
-        <author>Stogie</author>
+        <author>Stogie87</author>
 	<assets>
         	<icon>resources/icon.png</icon>
 	</assets>
