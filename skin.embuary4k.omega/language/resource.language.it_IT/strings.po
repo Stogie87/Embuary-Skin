@@ -1,8 +1,8 @@
 # XBMC Media Center language file
-# Addon Name: Embuary 4K
-# Addon id: skin.embuary4k.omega
-# Addon Provider: Teddyknuddel, Stogie
-# 
+# Addon Name: embuary
+# Addon id: skin.embuary
+# Addon Provider: sualfred
+# Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: skin.ftv pvr mod\n"
@@ -2156,7 +2156,7 @@ msgid "Kb/s"
 msgstr ""
 
 msgctxt "#32013"
-msgid "Playback time"
+msgid "DV metadata"
 msgstr ""
 
 msgctxt "#32014"
@@ -2164,7 +2164,7 @@ msgid "Processor"
 msgstr ""
 
 msgctxt "#32015"
-msgid "Metadata"
+msgid "Version"
 msgstr ""
 
 msgctxt "#32016"
@@ -2344,7 +2344,7 @@ msgid "Position of the codec logos in the PlayerProcessInfo"
 msgstr ""
 
 msgctxt "#32062"
-msgid "Position of the codec logos when video starts"
+msgid "Show codec logos when video starts"
 msgstr ""
 
 msgctxt "#32063"
@@ -2357,6 +2357,10 @@ msgstr ""
 
 msgctxt "#32065"
 msgid "VS10 mode"
+msgstr ""
+
+msgctxt "#32066"
+msgid "Coloured title lines in PlayerProcessInfo"
 msgstr ""
 
 msgctxt "#32067"
@@ -2393,8 +2397,20 @@ msgstr ""
 
 msgctxt "#42001"
 msgid "Next Episode"
-msgstr "Next Episode"
+msgstr ""
 
 msgctxt "#42002"
 msgid "Previous Episode"
-msgstr "Previous Episode"
+msgstr ""
+
+msgctxt "#42003"
+msgid "Codec Logo Style"
+msgstr ""
+
+msgctxt "#42004"
+msgid "Codec Logo Size"
+msgstr ""
+
+msgctxt "#42005"
+msgid "Show Codec Logo Background"
+msgstr ""

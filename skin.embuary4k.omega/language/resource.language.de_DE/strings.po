@@ -2476,9 +2476,13 @@ msgid "Previous Episode"
 msgstr "Vorherige Episode"
 
 msgctxt "#42003"
-msgid "Logo Style"
-msgstr "Logo Stil"
+msgid "Codec Logo Style"
+msgstr "Codec-Logo Stil"
 
 msgctxt "#42004"
 msgid "Codec Logo Size"
-msgstr "Codec Logo Größe"
+msgstr "Codec-Logo Größe"
+
+msgctxt "#42005"
+msgid "Show Codec Logo Background"
+msgstr "Codec-Logo Hintergrund anzeigen"

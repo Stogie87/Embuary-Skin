@@ -1,11 +1,12 @@
-[B]Version 21.1.2[/B]
-- Included Logo Resizer
-- Added Golden Logos
+[B]Version 21.1.3[/B]
+- Included Logo Resizer by Stogie87
+- Added Golden Logos by Teddyknuddel
+- Added Codec Logo Background Switcher by Stogie87
 
 [B]Version 21.1.2[/B]
-- Introduce Codec Logo Style-Switcher
-- Added new Codec Logo Styles
-- Resized Codec Logos
+- Introduce Codec Logo Style-Switcher by Stogie87
+- Added new Codec Logo Styles by Teddyknuddel
+- Resized Codec Logos by Teddyknuddel
 
 [B]Version 21.1.1[/B]
 - Fixed the position of video and audio codec logos in the Video OSD
