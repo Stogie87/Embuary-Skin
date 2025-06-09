@@ -319,11 +319,9 @@
 						<label>$LOCALIZE[31165]</label>
 						<onup>SetFocus(100)</onup>
 					</control>
-					<control type="button" id="34">
+					<control type="togglebutton" id="34">
 						<width>250</width>
 						<label>$LOCALIZE[19174]</label>
-    <selected>Skin.HasSetting(toggle_34)</selected>
-    <onclick>Skin.ToggleSetting(toggle_34)</onclick>
 						<altlabel>$LOCALIZE[19173]</altlabel>
 						<include>DarkGreyButton</include>
 						<label>$LOCALIZE[15067]</label>

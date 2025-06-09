@@ -37,13 +37,12 @@
 					<onclick>PlayerControl(Rewind)</onclick>
 					<visible>Player.SeekEnabled</visible>
 				</control>
-				<control type="button" id="603">
+				<control type="togglebutton" id="603">
 					<include content="PlayerButtons">
 						<param name="type" value="play"/>
 						<param name="alt" value="pause"/>
 					</include>
-					<selected>Skin.HasSetting(toggle_603)</selected>
-    <onclick>Skin.ToggleSetting(toggle_603)</onclick>
+					<selected>!Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.Seeking</selected>
 					<onclick condition="Player.Paused">close</onclick>
 					<onclick>PlayerControl(Play)</onclick>
 					<visible>!VideoPlayer.Content(livetv) | PVR.CanRecordPlayingChannel</visible>
