@@ -2,7 +2,8 @@
 - Included Logo Resizer by Stogie87
 - Added Golden Logos by Teddyknuddel
 - Added Codec Logo Background Switcher by Stogie87
-- switched old togglebutton-logic to button-logic
+- switched old togglebutton-logic to button-logic by Stogie87
+- Fixed Kodi Reset Button does not disappear in power menu by Stogie87
 
 [B]Version 21.1.2[/B]
 - Introduce Codec Logo Style-Switcher by Stogie87

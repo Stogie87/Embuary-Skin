@@ -220,7 +220,7 @@
 						<label>$LOCALIZE[31412]</label>
 						<label2>&#xf708;</label2>
 						<onclick>RestartApp()</onclick>
-						<visible>System.CanReboot + [!Skin.HasSetting(HidePowerReboot) | Window.IsVisible(loginscreen)]</visible>
+						<visible>System.CanReboot + [!Skin.HasSetting(HideKodiReset) | Window.IsVisible(loginscreen)]</visible>
 						<vibible>[System.HasAddon(service.libreelec.settings) | System.HasAddon(service.coreelec.settings)]</vibible>
 						<property name="color">turquoise</property>
 					</item>
