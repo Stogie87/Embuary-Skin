@@ -53,9 +53,11 @@
 						<height>61</height>
 						<texture border="65,0,65,0" colordiffuse="context_color">dialogs/context/top.png</texture>
 					</control>
-					<control type="togglebutton" id="4">
+					<control type="button" id="4">
 						<include content="ContextButton"/>
 						<label>$LOCALIZE[580]: $LOCALIZE[584]</label>
+    <selected>Skin.HasSetting(toggle_4)</selected>
+    <onclick>Skin.ToggleSetting(toggle_4)</onclick>
 						<altlabel>$LOCALIZE[580]: $LOCALIZE[585]</altlabel>
 					</control>
 					<control type="button" id="3">

@@ -2,6 +2,7 @@
 - Included Logo Resizer by Stogie87
 - Added Golden Logos by Teddyknuddel
 - Added Codec Logo Background Switcher by Stogie87
+- switched old togglebutton-logic to button-logic
 
 [B]Version 21.1.2[/B]
 - Introduce Codec Logo Style-Switcher by Stogie87

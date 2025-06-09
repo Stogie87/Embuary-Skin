@@ -323,12 +323,13 @@
 						<onclick>PlayerControl(Previous)</onclick>
 						<visible>!VideoPlayer.Content(livetv) + !String.StartsWith(Player.Filenameandpath,pvr://)</visible>
 					</control>
-					<control type="togglebutton" id="6103">
+					<control type="button" id="6103">
 						<include content="PlayerButtons">
 							<param name="type" value="play"/>
 							<param name="alt" value="pause"/>
 						</include>
-						<selected>!Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.Seeking</selected>
+						<selected>Skin.HasSetting(toggle_6103)</selected>
+    <onclick>Skin.ToggleSetting(toggle_6103)</onclick>
 						<onclick>PlayerControl(Play)</onclick>
 						<visible>!VideoPlayer.Content(livetv) | PVR.CanRecordPlayingChannel</visible>
 					</control>

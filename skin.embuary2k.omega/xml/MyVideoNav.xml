@@ -75,9 +75,11 @@
 					<control type="button" id="10">
 						<include content="ContextButton"/>
 					</control>
-					<control type="togglebutton" id="4">
+					<control type="button" id="4">
 						<include content="ContextButton"/>
 						<label>$LOCALIZE[580]: $LOCALIZE[584]</label>
+    <selected>Skin.HasSetting(toggle_4)</selected>
+    <onclick>Skin.ToggleSetting(toggle_4)</onclick>
 						<altlabel>$LOCALIZE[580]: $LOCALIZE[585]</altlabel>
 					</control>
 					<control type="button" id="3">
