@@ -6,7 +6,6 @@ import json
 import sys
 import traceback
 import re
-import time
 
 # HIER die Zeit in Sekunden einstellen, wie lange nach Pause gewartet werden soll:
 PAUSE_BEFORE_JUMP_SEC = 0.2   # z.B. 1.5 für 1,5 Sekunden
@@ -29,9 +28,6 @@ def show_error_dialog(message):
     xbmcgui.Dialog().notification("Episode Jumper", message, xbmcgui.NOTIFICATION_ERROR)
 
 def get_tvshowid_by_title(tvshowtitle):
-    """
-    Ermittelt die eindeutige TVShowID zur Serie.
-    """
     try:
         query = {
             "jsonrpc": "2.0",
@@ -49,9 +45,6 @@ def get_tvshowid_by_title(tvshowtitle):
     return None
 
 def get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, direction="next"):
-    """
-    Sucht die nächste/vorherige Episode anhand der TVShowID (UpNext-Methode, robust!)
-    """
     try:
         query = {
             "jsonrpc": "2.0",
@@ -85,9 +78,6 @@ def get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, directi
         return None
 
 def get_episode_from_kodi_library(tvshowtitle, season, episode, direction="next"):
-    """
-    Fallback: Sucht nächste/vorherige Episode nur anhand des Titels.
-    """
     try:
         query = {
             "jsonrpc": "2.0",
@@ -158,10 +148,16 @@ def set_episode_playcount(episodeid, playcount):
             },
             "id": 1
         }
-        xbmc.executeJSONRPC(json.dumps(query))
+        result = xbmc.executeJSONRPC(json.dumps(query))
+        # Prüfe, ob kein Fehler im Resultat steht
+        if '"error"' in result:
+            log(f"SetEpisodeDetails Fehler: {result}", "ERROR")
+            return False
         log(f"Setze playcount für episodeid {episodeid} auf {playcount}", "INFO")
+        return True
     except Exception as e:
         log(f"Fehler beim Setzen des playcount: {repr(e)}", "ERROR")
+        return False
 
 def get_episode_from_playlist(direction="next"):
     try:
@@ -299,11 +295,13 @@ def main():
 
         # --- Status-Handling ---
         if direction == "next":
-            jump_to_end_and_wait(player)
+            marked = False
             if is_kodi_library_episode(current_file):
                 episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
                 if episodeid:
-                    set_episode_playcount(episodeid, 1)
+                    marked = set_episode_playcount(episodeid, 1)
+            if not marked:
+                jump_to_end_and_wait(player)  # Fallback wenn Playcount nicht gesetzt werden konnte
         elif direction == "previous":
             if is_kodi_library_episode(current_file):
                 episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
