@@ -47,12 +47,12 @@
 						<width>100%</width>
 						<height>122</height>
 						<texture border="65,0,65,0" colordiffuse="context_color">dialogs/context/top.png</texture>
-					</control>
-					<control type="togglebutton" id="4">
-						<include content="ContextButton"/>
-						<label>$LOCALIZE[580]: $LOCALIZE[584]</label>
-						<altlabel>$LOCALIZE[580]: $LOCALIZE[585]</altlabel>
-						<visible>Control.IsEnabled(4)</visible>
+					</control>					
+					<control type="button" id="4">
+    						<include content="ContextButton"/>
+    						<label>$VAR[SortLabel]</label>
+    						<visible>Control.IsEnabled(4)</visible>
+    						<onclick>Skin.ToggleSetting(sort_mode)</onclick>
 					</control>
 					<control type="button" id="3">
 						<include content="ContextButton"/>

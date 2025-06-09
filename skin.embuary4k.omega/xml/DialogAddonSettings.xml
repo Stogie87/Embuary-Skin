@@ -83,9 +83,9 @@
 						<ondown>1000</ondown>
 						<onback>1100</onback>
 					</control>
-					<control type="togglebutton" id="10">
-						<alttexturefocus/>
-						<include>SettingsButtonSidePanel</include>
+					<control type="button" id="10">
+    						<include>SettingsButtonSidePanel</include>
+    						<onclick>Skin.ToggleSetting(settings_sidepanel)</onclick>
 					</control>
 				</control>
 				<control type="group">

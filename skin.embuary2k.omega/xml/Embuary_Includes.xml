@@ -1873,4 +1873,20 @@
     		<left>177</left>
 	</include>
 
+	<!-- Replaced ToggleButtons -->
+
+	<variable name="SortLabel">
+    		<value condition="Skin.HasSetting(sort_mode)">$LOCALIZE[580]: $LOCALIZE[585]</value>
+    		<value>$LOCALIZE[580]: $LOCALIZE[584]</value>
+	</variable>
+
+	<variable name="SettingsButtonTexture">
+    		<value condition="Skin.HasSetting(settings_sidepanel)">
+        	    settings_sidepanel_active.png
+    		</value>
+    		<value>
+        	    settings_sidepanel.png
+    		</value>
+	</variable>
+
 </includes>
