@@ -965,19 +965,19 @@
 		</include>
 		<control type="radiobutton" id="$PARAM[id]02">
     			<include>SettingsButton</include>
-    			<onclick condition="System.AddonIsEnabled(service.upnext)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.upnext,enable=false)</onclick>
-   			<onclick condition="System.HasAddon(service.upnext) + !System.AddonIsEnabled(service.upnext)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.upnext,enable=true)</onclick>
-    			<onclick condition="!System.HasAddon(service.upnext)">InstallAddon(service.upnext)</onclick>
-    			<selected>System.AddonIsEnabled(service.upnext)</selected>
-    			<label>Up Next</label>
-		</control>
-		<control type="radiobutton" id="$PARAM[id]03">
-    			<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.episodejumper)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.episodejumper,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.episodejumper) + !System.AddonIsEnabled(script.episodejumper)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.episodejumper,enable=true)</onclick>
     			<onclick condition="!System.HasAddon(script.episodejumper)">InstallAddon(script.episodejumper)</onclick>
     			<selected>System.AddonIsEnabled(script.episodejumper)</selected>
     			<label>Episode Jumper</label>
+		</control>
+		<control type="radiobutton" id="$PARAM[id]03">
+    			<include>SettingsButton</include>
+    			<onclick condition="System.AddonIsEnabled(service.upnext)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.upnext,enable=false)</onclick>
+   			<onclick condition="System.HasAddon(service.upnext) + !System.AddonIsEnabled(service.upnext)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.upnext,enable=true)</onclick>
+    			<onclick condition="!System.HasAddon(service.upnext)">InstallAddon(service.upnext)</onclick>
+    			<selected>System.AddonIsEnabled(service.upnext)</selected>
+    			<label>Up Next</label>
 		</control>
 		<control type="radiobutton" id="$PARAM[id]04">
     		<include>SettingsButton</include>
