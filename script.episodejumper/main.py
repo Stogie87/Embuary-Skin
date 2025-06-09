@@ -6,6 +6,10 @@ import json
 import sys
 import traceback
 import re
+import time
+
+# HIER die Zeit in Sekunden einstellen, wie lange nach Pause gewartet werden soll:
+PAUSE_BEFORE_JUMP_SEC = 0.2   # z.B. 1.5 für 1,5 Sekunden
 
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
@@ -24,10 +28,65 @@ def log(msg, level='INFO'):
 def show_error_dialog(message):
     xbmcgui.Dialog().notification("Episode Jumper", message, xbmcgui.NOTIFICATION_ERROR)
 
+def get_tvshowid_by_title(tvshowtitle):
+    """
+    Ermittelt die eindeutige TVShowID zur Serie.
+    """
+    try:
+        query = {
+            "jsonrpc": "2.0",
+            "method": "VideoLibrary.GetTVShows",
+            "params": {"filter": {"field": "title", "operator": "is", "value": tvshowtitle}},
+            "id": 1
+        }
+        response = xbmc.executeJSONRPC(json.dumps(query))
+        data = json.loads(response)
+        shows = data.get("result", {}).get("tvshows", [])
+        if shows:
+            return shows[0]["tvshowid"]
+    except Exception as e:
+        log(f"Fehler beim Ermitteln der TVShowID: {repr(e)}", level='ERROR')
+    return None
+
+def get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, direction="next"):
+    """
+    Sucht die nächste/vorherige Episode anhand der TVShowID (UpNext-Methode, robust!)
+    """
+    try:
+        query = {
+            "jsonrpc": "2.0",
+            "method": "VideoLibrary.GetEpisodes",
+            "params": {
+                "filter": {"field": "tvshowid", "operator": "is", "value": tvshowid},
+                "properties": ["file", "season", "episode", "playcount"],
+                "sort": {"order": "ascending", "method": "season", "ignorearticle": True}
+            },
+            "id": 1
+        }
+        query['params']['sort'] = {
+            "order": "ascending",
+            "method": "episode",
+            "ignorearticle": True
+        }
+        response = xbmc.executeJSONRPC(json.dumps(query))
+        data = json.loads(response)
+        episodes = data.get("result", {}).get("episodes", [])
+        episodes = sorted(episodes, key=lambda x: (int(x["season"]), int(x["episode"])))
+        for idx, ep in enumerate(episodes):
+            if int(ep["season"]) == int(season) and int(ep["episode"]) == int(episode):
+                next_idx = idx + 1 if direction == "next" else idx - 1
+                if 0 <= next_idx < len(episodes):
+                    return episodes[next_idx]["file"]
+                else:
+                    return None
+        return None
+    except Exception as e:
+        log(f"Fehler beim Abrufen der Episode (TVShowID): {repr(e)}", level='ERROR')
+        return None
+
 def get_episode_from_kodi_library(tvshowtitle, season, episode, direction="next"):
     """
-    Liefert den Dateipfad der nächsten/vorherigen Episode aus der Kodi Library.
-    Funktioniert staffelübergreifend.
+    Fallback: Sucht nächste/vorherige Episode nur anhand des Titels.
     """
     try:
         query = {
@@ -40,7 +99,6 @@ def get_episode_from_kodi_library(tvshowtitle, season, episode, direction="next"
             },
             "id": 1
         }
-        # Zusätzlich nach Episode sortieren!
         query['params']['sort'] = {
             "order": "ascending",
             "method": "episode",
@@ -129,10 +187,18 @@ def jump_to_end_and_wait(player):
         if total_time > 1:
             seek_time = max(0, total_time - 1)
             player.seekTime(seek_time)
-            xbmc.sleep(2000)
-            log("Habe 2 Sekunden vor Episodenende gespult und gewartet.", "DEBUG")
+            xbmc.sleep(1500)
+            log("Habe 1,5 Sekunden vor Episodenende gespult und gewartet.", "DEBUG")
     except Exception as e:
         log(f"Fehler beim Vorspulen ans Ende: {repr(e)}", "ERROR")
+
+def pause_and_wait(player, seconds):
+    try:
+        player.pause()
+        log(f"Playback pausiert, warte {seconds} Sekunden...", "DEBUG")
+        xbmc.sleep(int(seconds * 1000))
+    except Exception as e:
+        log(f"Fehler beim Pausieren: {repr(e)}", "ERROR")
 
 def collect_episode_info():
     info = {
@@ -145,10 +211,6 @@ def collect_episode_info():
     return info
 
 def extract_season_episode_from_path(path):
-    """
-    Extrahiert season und episode aus einem Pfad oder Dateinamen im S01E10 Format.
-    Gibt (season:int, episode:int) oder (None, None) zurück.
-    """
     if not path:
         return None, None
     match = re.search(r'[Ss](\d{1,2})[Eex](\d{1,2})', path)
@@ -157,10 +219,6 @@ def extract_season_episode_from_path(path):
     return None, None
 
 def guess_next_episode_path(current_path, direction="next"):
-    """
-    Versucht anhand des Dateinamens oder Pfads (SxxExx) die nächste oder vorherige Episode zu finden.
-    Nur als Fallback für Streams!
-    """
     season, episode = extract_season_episode_from_path(current_path)
     if season is None or episode is None:
         return None
@@ -170,14 +228,11 @@ def guess_next_episode_path(current_path, direction="next"):
     else:
         next_season, next_episode = season, episode - 1
 
-    # Am Anfang/Ende der Staffel: Staffelwechsel versuchen!
-    # Annahme: SxxE{0 oder max}
     def build_pattern(s, e):
         return re.sub(r'([Ss])(\d{1,2})([Eex])(\d{1,2})',
                       r'\1{:02d}\3{:02d}'.format(s, e),
                       current_path, count=1)
 
-    # Test: Gibt es SxxE(episode +/- 1)?
     test_path = build_pattern(next_season, next_episode)
 
     if test_path != current_path:
@@ -206,19 +261,29 @@ def main():
 
         episode_path = None
 
-        # --- 1. Kodi-Library: staffelübergreifend ---
-        if tvshowtitle and season.isdigit() and episode.isdigit():
+        # --- Vor Sprung: Pause und Wartezeit ---
+        pause_and_wait(player, PAUSE_BEFORE_JUMP_SEC)
+
+        # --- 1. Versuch: Nach TVShowID suchen (robusteste Methode) ---
+        tvshowid = get_tvshowid_by_title(tvshowtitle)
+        if tvshowid and season.isdigit() and episode.isdigit():
+            episode_path = get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, direction)
+            if episode_path:
+                log(f"Episode ({direction}) per TVShowID gefunden: {episode_path}", level='INFO')
+
+        # --- 2. Fallback: Kodi-Library nach Name durchsuchen ---
+        if not episode_path and tvshowtitle and season.isdigit() and episode.isdigit():
             episode_path = get_episode_from_kodi_library(tvshowtitle, season, episode, direction)
             if episode_path:
-                log(f"Episode ({direction}) aus Kodi-Library: {episode_path}", level='INFO')
+                log(f"Episode ({direction}) aus Kodi-Library (per Name): {episode_path}", level='INFO')
 
-        # --- 2. Playlist ---
+        # --- 3. Playlist ---
         if not episode_path:
             episode_path = get_episode_from_playlist(direction)
             if episode_path:
                 log(f"Episode ({direction}) aus Playlist: {episode_path}", level='INFO')
 
-        # --- 3. Staffelübergreifender Fallback für Streams: SxxExx im Pfad suchen ---
+        # --- 4. Staffelübergreifender Fallback für Streams: SxxExx im Pfad suchen ---
         if not episode_path:
             episode_path = guess_next_episode_path(current_file, direction)
             if episode_path and episode_path != current_file:
@@ -238,12 +303,12 @@ def main():
             if is_kodi_library_episode(current_file):
                 episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
                 if episodeid:
-                    set_episode_playcount(episodeid, 1)  # Gesehen
+                    set_episode_playcount(episodeid, 1)
         elif direction == "previous":
             if is_kodi_library_episode(current_file):
                 episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
                 if episodeid:
-                    set_episode_playcount(episodeid, 0)  # Ungesehen
+                    set_episode_playcount(episodeid, 0)
 
         # --- Episode abspielen ---
         try:
