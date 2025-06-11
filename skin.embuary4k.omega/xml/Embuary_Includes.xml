@@ -1811,66 +1811,285 @@
 
 	<include name="BarPosition_100">
     		<left>17</left>
+		<top>135</top>
 	</include>
 	<include name="BarPosition_110">
     		<left>25</left>
+		<top>141</top>
 	</include>
 	<include name="BarPosition_120">
     		<left>33</left>
+		<top>147</top>
 	</include>
 	<include name="BarPosition_130">
     		<left>41</left>
+		<top>153</top>
 	</include>
 	<include name="BarPosition_140">
     		<left>49</left>
+		<top>159</top>
 	</include>
 	<include name="BarPosition_150">
     		<left>57</left>
+		<top>165</top>
 	</include>
 	<include name="BarPosition_160">
     		<left>65</left>
+		<top>171</top>
 	</include>
 	<include name="BarPosition_170">
     		<left>73</left>
+		<top>177</top>
 	</include>
 	<include name="BarPosition_180">
     		<left>81</left>
+		<top>183</top>
 	</include>
 	<include name="BarPosition_190">
     		<left>89</left>
+		<top>189</top>
 	</include>
 	<include name="BarPosition_200">
     		<left>97</left>
+		<top>195</top>
 	</include>
 	<include name="BarPosition_210">
     		<left>105</left>
+		<top>201</top>
 	</include>
 	<include name="BarPosition_220">
     		<left>113</left>
+		<top>207</top>
 	</include>
 	<include name="BarPosition_230">
     		<left>121</left>
+		<top>213</top>
 	</include>
 	<include name="BarPosition_240">
     		<left>129</left>
+		<top>219</top>
 	</include>
 	<include name="BarPosition_250">
     		<left>137</left>
+		<top>225</top>
 	</include>
 	<include name="BarPosition_260">
     		<left>145</left>
+		<top>231</top>
 	</include>
 	<include name="BarPosition_270">
     		<left>153</left>
+		<top>237</top>
 	</include>
 	<include name="BarPosition_280">
     		<left>161</left>
+		<top>243</top>
 	</include>
 	<include name="BarPosition_290">
     		<left>169</left>
+		<top>249</top>
 	</include>
 	<include name="BarPosition_300">
     		<left>177</left>
+		<top>255</top>
+	</include>
+
+	<!-- Codec Logo VideoPosition -->
+
+	<include name="VideoPosition_100">
+    		<top>75</top>
+	</include>
+	<include name="VideoPosition_110">
+    		<top>76</top>
+	</include>
+	<include name="VideoPosition_120">
+    		<top>77</top>
+	</include>
+	<include name="VideoPosition_130">
+    		<top>78</top>
+	</include>
+	<include name="VideoPosition_140">
+    		<top>79</top>
+	</include>
+	<include name="VideoPosition_150">
+    		<top>80</top>
+	</include>
+	<include name="VideoPosition_160">
+    		<top>81</top>
+	</include>
+	<include name="VideoPosition_170">
+    		<top>82</top>
+	</include>
+	<include name="VideoPosition_180">
+    		<top>83</top>
+	</include>
+	<include name="VideoPosition_190">
+    		<top>84</top>
+	</include>
+	<include name="VideoPosition_200">
+    		<top>85</top>
+	</include>
+	<include name="VideoPosition_210">
+    		<top>86</top>
+	</include>
+	<include name="VideoPosition_220">
+    		<top>87</top>
+	</include>
+	<include name="VideoPosition_230">
+    		<top>88</top>
+	</include>
+	<include name="VideoPosition_240">
+    		<top>89</top>
+	</include>
+	<include name="VideoPosition_250">
+    		<top>90</top>
+	</include>
+	<include name="VideoPosition_260">
+    		<top>91</top>
+	</include>
+	<include name="VideoPosition_270">
+    		<top>92</top>
+	</include>
+	<include name="VideoPosition_280">
+    		<top>93</top>
+	</include>
+	<include name="VideoPosition_290">
+    		<top>94</top>
+	</include>
+	<include name="VideoPosition_300">
+    		<top>95</top>
+	</include>
+
+	<!-- Codec Logo AudioPosition -->
+
+	<include name="AudioPosition_100">
+    		<top>145</top>
+	</include>
+	<include name="AudioPosition_110">
+    		<top>150</top>
+	</include>
+	<include name="AudioPosition_120">
+    		<top>155</top>
+	</include>
+	<include name="AudioPosition_130">
+    		<top>160</top>
+	</include>
+	<include name="AudioPosition_140">
+    		<top>165</top>
+	</include>
+	<include name="AudioPosition_150">
+    		<top>170</top>
+	</include>
+	<include name="AudioPosition_160">
+    		<top>175</top>
+	</include>
+	<include name="AudioPosition_170">
+    		<top>180</top>
+	</include>
+	<include name="AudioPosition_180">
+    		<top>185</top>
+	</include>
+	<include name="AudioPosition_190">
+    		<top>190</top>
+	</include>
+	<include name="AudioPosition_200">
+    		<top>195</top>
+	</include>
+	<include name="AudioPosition_210">
+    		<top>200</top>
+	</include>
+	<include name="AudioPosition_220">
+    		<top>205</top>
+	</include>
+	<include name="AudioPosition_230">
+    		<top>210</top>
+	</include>
+	<include name="AudioPosition_240">
+    		<top>215</top>
+	</include>
+	<include name="AudioPosition_250">
+    		<top>220</top>
+	</include>
+	<include name="AudioPosition_260">
+    		<top>225</top>
+	</include>
+	<include name="AudioPosition_270">
+    		<top>230</top>
+	</include>
+	<include name="AudioPosition_280">
+    		<top>235</top>
+	</include>
+	<include name="AudioPosition_290">
+    		<top>240</top>
+	</include>
+	<include name="AudioPosition_300">
+    		<top>245</top>
+	</include>
+
+	<!-- Codec Logo AudioBackgroundPosition -->
+
+	<include name="AudioBackgroundPosition_100">
+    		<top>130</top>
+	</include>
+	<include name="AudioBackgroundPosition_110">
+    		<top>134</top>
+	</include>
+	<include name="AudioBackgroundPosition_120">
+    		<top>138</top>
+	</include>
+	<include name="AudioBackgroundPosition_130">
+    		<top>142</top>
+	</include>
+	<include name="AudioBackgroundPosition_140">
+    		<top>146</top>
+	</include>
+	<include name="AudioBackgroundPosition_150">
+    		<top>150</top>
+	</include>
+	<include name="AudioBackgroundPosition_160">
+    		<top>154</top>
+	</include>
+	<include name="AudioBackgroundPosition_170">
+    		<top>158</top>
+	</include>
+	<include name="AudioBackgroundPosition_180">
+    		<top>162</top>
+	</include>
+	<include name="AudioBackgroundPosition_190">
+    		<top>166</top>
+	</include>
+	<include name="AudioBackgroundPosition_200">
+    		<top>170</top>
+	</include>
+	<include name="AudioBackgroundPosition_210">
+    		<top>174</top>
+	</include>
+	<include name="AudioBackgroundPosition_220">
+    		<top>178</top>
+	</include>
+	<include name="AudioBackgroundPosition_230">
+    		<top>182</top>
+	</include>
+	<include name="AudioBackgroundPosition_240">
+    		<top>186</top>
+	</include>
+	<include name="AudioBackgroundPosition_250">
+    		<top>190</top>
+	</include>
+	<include name="AudioBackgroundPosition_260">
+    		<top>194</top>
+	</include>
+	<include name="AudioBackgroundPosition_270">
+    		<top>198</top>
+	</include>
+	<include name="AudioBackgroundPosition_280">
+    		<top>202</top>
+	</include>
+	<include name="AudioBackgroundPosition_290">
+    		<top>206</top>
+	</include>
+	<include name="AudioBackgroundPosition_300">
+    		<top>210</top>
 	</include>
 
 	<!-- Replaced ToggleButtons -->
