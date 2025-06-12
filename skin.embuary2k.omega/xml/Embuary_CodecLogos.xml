@@ -5,7 +5,7 @@
             <left>25</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-                <top>50</top>
+                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG1_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -36,7 +36,7 @@
             </control>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-                <top>50</top>
+                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG2_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -1439,7 +1439,7 @@
             <left>25</left>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-               <top>50</top>
+               <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG1_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -1470,7 +1470,7 @@
             </control>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-               <top>50</top>
+               <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG2_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -2888,7 +2888,7 @@
 	    <include content="CodecLogoLeftCenter_300" condition="String.IsEqual(Skin.String(codeclogos_scale),300)" />
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-               <top>50</top>
+               <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG1_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -2919,7 +2919,7 @@
             </control>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-               <top>50</top>
+               <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG2_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -4342,7 +4342,7 @@
 	    <include content="CodecLogoLeftCenter_300" condition="String.IsEqual(Skin.String(codeclogos_scale),300)" />
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-               <top>50</top>
+               <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG1_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -4373,7 +4373,7 @@
             </control>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-               <top>50</top>
+               <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG2_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -5791,7 +5791,7 @@
 	    <include content="CodecLogoLeftRight_300" condition="String.IsEqual(Skin.String(codeclogos_scale),300)" />
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-               <top>50</top>
+               <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG1_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -5822,7 +5822,7 @@
             </control>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-               <top>50</top>
+               <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG2_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -7245,7 +7245,7 @@
 	    <include content="CodecLogoLeftRight_300" condition="String.IsEqual(Skin.String(codeclogos_scale),300)" />
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-               <top>50</top>
+               <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG1_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -7276,7 +7276,7 @@
             </control>
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
-               <top>50</top>
+               <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG2_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -8678,7 +8678,7 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                   <top>50</top>
+                   <top>60</top>
 		    <left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG1_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
@@ -8720,7 +8720,7 @@
         <definition>
             <control type="group" id="$PARAM[groupId]">
                 <control type="image" id="$PARAM[imageId]">
-                   <top>50</top>
+                   <top>60</top>
 		    <left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="CodecLogoBG2_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
