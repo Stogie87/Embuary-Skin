@@ -33,7 +33,8 @@
 	<include file="Embuary_SkinSettings.xml" />
 	<include file="Embuary_Sidebar.xml" />
 	<include file="Embuary_Overlays.xml" />
-    <include file="Embuary_CodecLogos.xml"/>
+    	<include file="Embuary_CodecLogos.xml"/>
+	<include file="Includes_Flags.xml"/>
 	<include file="script-skinshortcuts-includes.xml" />
 
 	<!-- General -->

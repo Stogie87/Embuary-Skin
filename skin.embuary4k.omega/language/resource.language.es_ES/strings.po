@@ -2414,3 +2414,7 @@ msgstr ""
 msgctxt "#42005"
 msgid "Show Codec Logo Background"
 msgstr ""
+
+msgctxt "#42006"
+msgid "Codec Logo Flag-Style"
+msgstr ""

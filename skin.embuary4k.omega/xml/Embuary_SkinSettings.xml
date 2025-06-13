@@ -780,35 +780,42 @@
 		</control>
 		
 		<!-- Codec logos -->
+
 		<include content="SkinSettingsHeadlineLabel">
 			<param name="id" value="$PARAM[id]40"/>
 			<param name="label" value="$LOCALIZE[32063]"/>
 		</include>
 		<control type="button" id="$PARAM[id]41">
     		<include>SettingsButton</include>
+    			<onclick>RunScript(special://skin/scripts/script.codec_flag_styles.py)</onclick>
+    			<label>$LOCALIZE[42006]</label>
+			<label2>$INFO[Skin.String(codeclogos_flag_name)]</label2>
+		</control>
+		<control type="button" id="$PARAM[id]42">
+    		<include>SettingsButton</include>
     			<onclick>RunScript(special://skin/scripts/script.codec_styles.py)</onclick>
     			<label>$LOCALIZE[42003]</label>
 			<label2>$INFO[Skin.String(codeclogos_name)]</label2>
 		</control>
-		<control type="button" id="$PARAM[id]42">
+		<control type="button" id="$PARAM[id]43">
     		<include>SettingsButton</include>
     			<onclick>RunScript(special://skin/scripts/logo_resizer.py)</onclick>
     			<label>$LOCALIZE[42004]</label>
 			<label2>$INFO[Skin.String(codeclogos_scale)]%</label2>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]43">
+		<control type="radiobutton" id="$PARAM[id]44">
     			<include>SettingsButton</include>
     			<onclick>Skin.ToggleSetting(show_codec_background)</onclick>
     			<selected>Skin.HasSetting(show_codec_background)</selected>
     			<label>$LOCALIZE[42005]</label>
 		</control>
-		<control type="button" id="$PARAM[id]44">
+		<control type="button" id="$PARAM[id]45">
     		<include>SettingsButton</include>
     			<onclick>RunScript(special://skin/scripts/script.osd_codec_logo_timer.py)</onclick>
     			<label2>$VAR[OSDCodecLogosStartupTimerLabel]</label2>
     			<label>$LOCALIZE[32071]</label>
 		</control>
-		<control type="button" id="$PARAM[id]45">
+		<control type="button" id="$PARAM[id]46">
 			<include>SettingsButton</include>
 			<onclick condition="!Skin.HasSetting(osd.useleftCodecStartupLogos) + !Skin.HasSetting(osd.usecenterCodecStartupLogos) + !Skin.HasSetting(osd.userightCodecStartupLogos)">Skin.ToggleSetting(osd.useleftCodecStartupLogos)</onclick>
 			<onclick condition="Skin.HasSetting(osd.useleftCodecStartupLogos)">Skin.ToggleSetting(osd.usecenterCodecStartupLogos)</onclick>
@@ -819,7 +826,7 @@
 			<label2>$VAR[OSDCodecLogosStartupLabel]</label2>
 			<label>$LOCALIZE[32062]</label>
 		</control>
-		<control type="button" id="$PARAM[id]46">
+		<control type="button" id="$PARAM[id]47">
 			<include>SettingsButton</include>
 			<onclick condition="!Skin.HasSetting(ppi.useleftCodecLogos) + !Skin.HasSetting(ppi.usecenterCodecLogos) + !Skin.HasSetting(ppi.userightCodecLogos)">Skin.ToggleSetting(ppi.useleftCodecLogos)</onclick>
 			<onclick condition="Skin.HasSetting(ppi.useleftCodecLogos)">Skin.ToggleSetting(ppi.usecenterCodecLogos)</onclick>
@@ -830,7 +837,7 @@
 			<label2>$VAR[PPICodecLogosLabel]</label2>
 			<label>$LOCALIZE[32061]</label>
 		</control>
-		<control type="button" id="$PARAM[id]47">
+		<control type="button" id="$PARAM[id]48">
 			<include>SettingsButton</include>
 			<onclick condition="!Skin.HasSetting(osd.useleftCodecLogos) + !Skin.HasSetting(osd.usecenterCodecLogos) + !Skin.HasSetting(osd.userightCodecLogos)">Skin.ToggleSetting(osd.useleftCodecLogos)</onclick>
 			<onclick condition="Skin.HasSetting(osd.useleftCodecLogos)">Skin.ToggleSetting(osd.usecenterCodecLogos)</onclick>
