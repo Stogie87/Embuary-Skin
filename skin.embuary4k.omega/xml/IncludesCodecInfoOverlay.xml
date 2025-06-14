@@ -2,7 +2,7 @@
 <includes>
 	<include name="CodecInfoOverlayBottomRight">
 		<control type="group">
-			<top>2030</top>			
+			<top>2040</top>			
 			<left>0</left> <!-- Start ganz links -->
 			<width>3840</width> <!-- Volle 4K-Bildschirmbreite -->
 			<height>120</height>
@@ -14,7 +14,7 @@
 				<width>3840</width>
 				<height>120</height>
 				<aspectratio>stretch</aspectratio>
-				<texture colordiffuse="80FFFFFF">common/corner.png</texture>
+				<texture colordiffuse="80FFFFFF">common/noise.png</texture>
 			</control>
 
 			<!-- Titel des fokussierten Videos -->
