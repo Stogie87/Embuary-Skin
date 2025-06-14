@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="CodecInfoOverlayBottomRight">
+		<control type="group">
+			<top>1320</top>
+			<left>0</left> <!-- Start ganz links -->
+			<width>2560</width> <!-- Volle 2K-Bildschirmbreite -->
+			<height>120</height>
+
+			<!-- Hintergrund über die komplette Breite -->
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>2560</width>
+				<height>120</height>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="80FFFFFF">common/corner.png</texture>
+			</control>
+
+			<!-- Titel des fokussierten Videos -->
+
+			<control type="label">
+				<top>40</top>
+				<left>70</left>
+				<width>1200</width>
+				<height>50</height>
+				<font>Font30</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<align>left</align>
+			</control>
+
+			<!-- Flaggen rechtsbündig -->
+
+			<control type="group">
+				<left>2000</left>
+				<width>120</width>
+				<height>120</height>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideoresolution_colorful</include>
+			</control>
+
+			<control type="group">
+				<left>2130</left>
+				<width>120</width>
+				<height>120</height>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideocodec_colorful</include>
+			</control>
+
+			<control type="group">
+				<left>2260</left>
+				<width>120</width>
+				<height>120</height>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiochannels_colorful</include>
+			</control>
+
+			<control type="group">
+				<left>2390</left>
+				<width>120</width>
+				<height>120</height>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiocodec_colorful</include>
+			</control>
+		</control>
+	</include>
+</includes>

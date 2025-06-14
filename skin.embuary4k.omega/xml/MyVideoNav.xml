@@ -108,5 +108,10 @@
 		<include content="SidePanel">
 			<param name="onright">70</param>
 		</include>
+
+		<!-- Codec Overlay -->
+
+		<include>CodecInfoOverlayBottomRight</include>
+
 	</controls>
 </window>

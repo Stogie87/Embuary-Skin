@@ -1727,4 +1727,32 @@
     		</value>
 	</variable>
 
+	<!-- HomeMediaInfoBar -->
+
+	<include name="HomeMediaInfoBar">
+		<definition>
+			<control type="group">
+				<top>60</top>
+				<left>70</left>
+				<right>70</right>
+				<height>60</height>
+				<visible>!String.IsEmpty(ListItem.Label)</visible>
+				<control type="label">
+					<width>100%</width>
+					<height>30</height>
+					<align>left</align>
+					<font>Font13</font>
+					<textcolor>grey</textcolor>
+					<label>
+						$INFO[ListItem.VideoResolution,, • ]
+						$INFO[ListItem.VideoCodec,, • ]
+						$INFO[ListItem.AudioCodec,, • ]
+						$INFO[ListItem.AudioChannels,, • ]
+						$INFO[ListItem.AudioLanguage]
+					</label>
+				</control>
+			</control>
+		</definition>
+	</include>
+
 </includes>

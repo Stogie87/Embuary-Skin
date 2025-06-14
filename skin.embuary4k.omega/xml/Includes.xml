@@ -36,6 +36,7 @@
     	<include file="Embuary_CodecLogos.xml"/>
 	<include file="Includes_Flags.xml"/>
 	<include file="script-skinshortcuts-includes.xml" />
+	<include file="IncludesCodecInfoOverlay.xml"/>
 
 	<!-- General -->
 	<expression name="HasArtwork">[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(landscape)) | [!String.IsEmpty(ListItem.Art(thumb)) + !String.StartsWith(ListItem.Art(thumb),Default)]]</expression>
