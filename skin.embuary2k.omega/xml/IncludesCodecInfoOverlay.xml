@@ -33,7 +33,7 @@
 			<!-- Flaggen rechtsbündig -->
 
 			<control type="group">
-				<left>2000</left>
+				<left>1970</left>
 				<width>120</width>
 				<height>120</height>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
@@ -41,7 +41,7 @@
 			</control>
 
 			<control type="group">
-				<left>2130</left>
+				<left>2110</left>
 				<width>120</width>
 				<height>120</height>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
@@ -49,7 +49,7 @@
 			</control>
 
 			<control type="group">
-				<left>2260</left>
+				<left>2250</left>
 				<width>120</width>
 				<height>120</height>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>

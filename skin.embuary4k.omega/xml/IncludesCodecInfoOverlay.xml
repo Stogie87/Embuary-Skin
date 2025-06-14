@@ -2,7 +2,7 @@
 <includes>
 	<include name="CodecInfoOverlayBottomRight">
 		<control type="group">
-			<top>2000</top>			
+			<top>2050</top>			
 			<left>0</left> <!-- Start ganz links -->
 			<width>3840</width> <!-- Volle 4K-Bildschirmbreite -->
 			<height>180</height>
