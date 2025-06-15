@@ -1,5 +1,49 @@
 <includes>
 
+  <!-- Codec Flags -->
+  <control type="group">
+    <top>295</top>
+    <left>105</left>
+    <width>60</width>
+    <height>60</height>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiochannels_colorful</include>
+  </control>
+  <control type="group">
+    <top>295</top>
+    <left>165</left>
+    <width>60</width>
+    <height>60</height>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiocodec_colorful</include>
+  </control>
+  <control type="group">
+    <top>295</top>
+    <left>5</left>
+    <width>60</width>
+    <height>60</height>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideocodec_colorful</include>
+  </control>
+  <control type="group">
+    <top>5</top>
+    <left>5</left>
+    <width>60</width>
+    <height>60</height>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideoresolution_colorful</include>
+  </control>
+  <control type="group">
+    <top>5</top>
+    <left>165</left>
+    <width>60</width>
+    <height>60</height>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagshdr_type_colorful</include>
+  </control>
+  <!-- Codec Flags Ende -->
+
+
   <!-- COLORFUL - AUDIOCHANNELS -->
   <include name="colorful_audiochannels_0">
     <control type="image">
@@ -65,67 +109,6 @@
     <control type="image">
       <texture>flags/colorful/audiochannels/fallback.png</texture>
       <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-
-  <!-- PosterStaticFlagsaudiochannels_colorful -->
-  <include name="PosterStaticFlagsaudiochannels_colorful">
-    <control type="group" top="300" left="135">
-        <control type="image">
-            <texture>flags/colorful/audiochannels/0.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,0)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiochannels/1.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,1)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiochannels/10.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,10)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiochannels/2.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,2)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiochannels/3.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,3)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiochannels/4.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,4)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiochannels/5.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,5)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiochannels/6.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,6)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiochannels/7.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,7)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiochannels/8.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,8)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiochannels/fallback.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,fallback)</visible>
-        </control>
     </control>
   </include>
 
@@ -392,232 +375,6 @@
     <control type="image">
       <texture>flags/colorful/audiocodec/wmav2.png</texture>
       <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-
-  <!-- PosterStaticFlagsaudiocodec_colorful -->
-  <include name="PosterStaticFlagsaudiocodec_colorful">
-    <control type="group" top="300" left="180">
-        <control type="image">
-            <texture>flags/colorful/audiocodec/aac.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/ac3.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,ac3)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/atmos.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,atmos)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/cook.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,cook)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dca.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dca)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dolbydigital.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dolbydigital)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dolbypro.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dolbypro)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dolbyprologic.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dolbyprologic)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dolbytruehd.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dolbytruehd)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dts-x.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dts-x)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dts.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dts)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dts_x.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dts_x)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dtshd_hra.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_hra)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dtshd_ma.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_ma)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dtshdma.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dtshdma)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dtsma.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dtsma)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dtsx.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dtsx)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/eac3.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,eac3)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/flac.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,flac)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/m4a.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,m4a)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/mp1.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp1)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/mp2.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp2)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/mp3.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp3)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/mp3float.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp3float)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/mp42.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp42)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/mp43.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp43)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/mp4v.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp4v)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/mpeg audio.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mpeg audio)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/ogg.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,ogg)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/opus.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,opus)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/pcm.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,pcm)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/pcm_bluray.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,pcm_bluray)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/pcm_s16be.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s16be)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/pcm_s16le.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s16le)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/pcm_s24le.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s24le)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/pcm_u8.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,pcm_u8)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/truehd.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,truehd)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/vc-1.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,vc-1)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/vorbis.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,vorbis)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/wma.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wma)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/wma2.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wma2)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/wma3.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wma3)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/wmapro.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wmapro)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/wmav2.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wmav2)</visible>
-        </control>
     </control>
   </include>
 
@@ -1139,9 +896,384 @@
     </control>
   </include>
 
+  <!-- COLORFUL - VIDEORESOLUTION -->
+  <include name="colorful_videoresolution_1080">
+    <control type="image">
+      <texture>flags/colorful/videoresolution/1080.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_videoresolution_2160">
+    <control type="image">
+      <texture>flags/colorful/videoresolution/2160.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_videoresolution_288">
+    <control type="image">
+      <texture>flags/colorful/videoresolution/288.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_videoresolution_480">
+    <control type="image">
+      <texture>flags/colorful/videoresolution/480.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_videoresolution_4K">
+    <control type="image">
+      <texture>flags/colorful/videoresolution/4K.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_videoresolution_540">
+    <control type="image">
+      <texture>flags/colorful/videoresolution/540.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_videoresolution_576">
+    <control type="image">
+      <texture>flags/colorful/videoresolution/576.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_videoresolution_720">
+    <control type="image">
+      <texture>flags/colorful/videoresolution/720.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- COLORFUL - HDR_TYPE -->
+  <include name="colorful_hdr_type_dolbyvision">
+    <control type="image">
+      <texture>flags/colorful/hdr_type/dolbyvision.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_hdr_type_hdr">
+    <control type="image">
+      <texture>flags/colorful/hdr_type/hdr.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_hdr_type_hdr10">
+    <control type="image">
+      <texture>flags/colorful/hdr_type/hdr10.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_hdr_type_hdr10plus">
+    <control type="image">
+      <texture>flags/colorful/hdr_type/hdr10plus.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_hdr_type_hlg">
+    <control type="image">
+      <texture>flags/colorful/hdr_type/hlg.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_hdr_type_sdr">
+    <control type="image">
+      <texture>flags/colorful/hdr_type/sdr.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsaudiochannels_colorful -->
+  <include name="PosterStaticFlagsaudiochannels_colorful">
+    <control type="group" top="295" left="105">
+        <control type="image">
+            <texture>flags/colorful/audiochannels/0.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,0)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiochannels/1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiochannels/10.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,10)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiochannels/2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiochannels/3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiochannels/4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiochannels/5.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,5)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiochannels/6.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,6)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiochannels/7.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,7)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiochannels/8.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,8)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiochannels/fallback.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,fallback)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsaudiocodec_colorful -->
+  <include name="PosterStaticFlagsaudiocodec_colorful">
+    <control type="group" top="295" left="165">
+        <control type="image">
+            <texture>flags/colorful/audiocodec/aac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/ac3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ac3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/atmos.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,atmos)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/cook.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,cook)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dca.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dca)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dolbydigital.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbydigital)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dolbypro.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbypro)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dolbyprologic.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbyprologic)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dolbytruehd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbytruehd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dts-x.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts-x)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dts.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dts_x.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts_x)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dtshd_hra.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_hra)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dtshd_ma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_ma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dtshdma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtshdma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dtsma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtsma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/dtsx.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtsx)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/eac3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,eac3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/flac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,flac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/m4a.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,m4a)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/mp1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/mp2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/mp3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/mp3float.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp3float)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/mp42.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp42)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/mp43.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp43)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/mp4v.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp4v)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/mpeg audio.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mpeg audio)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/ogg.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ogg)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/opus.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,opus)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/pcm.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/pcm_bluray.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_bluray)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/pcm_s16be.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s16be)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/pcm_s16le.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s16le)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/pcm_s24le.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s24le)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/pcm_u8.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_u8)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/truehd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,truehd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/vc-1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,vc-1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/vorbis.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,vorbis)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/wma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/wma2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wma2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/wma3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wma3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/wmapro.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmapro)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/audiocodec/wmav2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmav2)</visible>
+        </control>
+    </control>
+  </include>
+
   <!-- PosterStaticFlagsvideocodec_colorful -->
   <include name="PosterStaticFlagsvideocodec_colorful">
-    <control type="group" top="300" left="5">
+    <control type="group" top="295" left="5">
         <control type="image">
             <texture>flags/colorful/videocodec/3d.png</texture>
             <aspectratio>keep</aspectratio>
@@ -1153,9 +1285,9 @@
             <visible>String.IsEqual(ListItem.Videocodec,3dbd)</visible>
         </control>
         <control type="image">
-            <texture>flags/colorful/videocodec/4K.png</texture>
+            <texture>flags/colorful/videocodec/4k.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,4K)</visible>
+            <visible>String.IsEqual(ListItem.Videocodec,4k)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/videocodec/asf.png</texture>
@@ -1575,56 +1707,6 @@
     </control>
   </include>
 
-  <!-- COLORFUL - VIDEORESOLUTION -->
-  <include name="colorful_videoresolution_1080">
-    <control type="image">
-      <texture>flags/colorful/videoresolution/1080.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videoresolution_2160">
-    <control type="image">
-      <texture>flags/colorful/videoresolution/2160.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videoresolution_288">
-    <control type="image">
-      <texture>flags/colorful/videoresolution/288.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videoresolution_480">
-    <control type="image">
-      <texture>flags/colorful/videoresolution/480.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videoresolution_4K">
-    <control type="image">
-      <texture>flags/colorful/videoresolution/4K.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videoresolution_540">
-    <control type="image">
-      <texture>flags/colorful/videoresolution/540.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videoresolution_576">
-    <control type="image">
-      <texture>flags/colorful/videoresolution/576.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videoresolution_720">
-    <control type="image">
-      <texture>flags/colorful/videoresolution/720.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-
   <!-- PosterStaticFlagsvideoresolution_colorful -->
   <include name="PosterStaticFlagsvideoresolution_colorful">
     <control type="group" top="5" left="5">
@@ -1649,7 +1731,7 @@
             <visible>String.IsEqual(ListItem.Videoresolution,480) | String.IsEqual(ListItem.Videoresolution,480p)</visible>
         </control>
         <control type="image">
-            <texture>flags/colorful/videoresolution/4K.png</texture>
+            <texture>flags/colorful/videoresolution/4k.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videoresolution,4K) | String.IsEqual(ListItem.Videoresolution,2160) | String.IsEqual(ListItem.Videoresolution,2160p)</visible>
         </control>
@@ -1667,6 +1749,42 @@
             <texture>flags/colorful/videoresolution/720.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videoresolution,720) | String.IsEqual(ListItem.Videoresolution,720p)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagshdr_type_colorful -->
+  <include name="PosterStaticFlagshdr_type_colorful">
+    <control type="group" top="5" left="165">
+        <control type="image">
+            <texture>flags/colorful/hdr_type/dolbyvision.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,dolbyvision)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/hdr_type/hdr.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/hdr_type/hdr10.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/hdr_type/hdr10plus.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10plus)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/hdr_type/hlg.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hlg)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/hdr_type/sdr.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEmpty(ListItem.HdrType)</visible>
         </control>
     </control>
   </include>
@@ -1730,62 +1848,6 @@
     <control type="image">
       <texture>flags/standard/audiochannels/8.png</texture>
       <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-
-  <!-- PosterStaticFlagsaudiochannels_standard -->
-  <include name="PosterStaticFlagsaudiochannels_standard">
-    <control type="group" top="300" left="135">
-        <control type="image">
-            <texture>flags/standard/audiochannels/0.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,0)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiochannels/1.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,1)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiochannels/10.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,10)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiochannels/2.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,2)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiochannels/3.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,3)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiochannels/4.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,4)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiochannels/5.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,5)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiochannels/6.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,6)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiochannels/7.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,7)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiochannels/8.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiochannels,8)</visible>
-        </control>
     </control>
   </include>
 
@@ -1980,172 +2042,6 @@
     <control type="image">
       <texture>flags/standard/audiocodec/wmav2.png</texture>
       <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-
-  <!-- PosterStaticFlagsaudiocodec_standard -->
-  <include name="PosterStaticFlagsaudiocodec_standard">
-    <control type="group" top="300" left="180">
-        <control type="image">
-            <texture>flags/standard/audiocodec/aac.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/ac3.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,ac3)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/atmos.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,atmos)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dca.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dca)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dolbydigital.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dolbydigital)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dolbypro.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dolbypro)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dolbytruehd.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dolbytruehd)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dts.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dts)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dts_hra.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dts_hra)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dts_x.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dts_x)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dtshd_hra.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_hra)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dtshd_ma.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_ma)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dtsma.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dtsma)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/eac3.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,eac3)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/flac.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,flac)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/m4a.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,m4a)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/mp1.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp1)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/mp2.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp2)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/mp3.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp3)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/mp3float.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp3float)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/mp4.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp4)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/ogg.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,ogg)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/opus.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,opus)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/pcm.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,pcm)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/pcm_s16le.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s16le)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/pcm_s24le.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s24le)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/truehd.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,truehd)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/vorbis.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,vorbis)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/wma.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wma)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/wmahd.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wmahd)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/wmapro.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wmapro)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/wmav2.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wmav2)</visible>
-        </control>
     </control>
   </include>
 
@@ -2391,9 +2287,319 @@
     </control>
   </include>
 
+  <!-- STANDARD - VIDEORESOLUTION -->
+  <include name="standard_videoresolution_1080">
+    <control type="image">
+      <texture>flags/standard/videoresolution/1080.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_videoresolution_2160">
+    <control type="image">
+      <texture>flags/standard/videoresolution/2160.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_videoresolution_288">
+    <control type="image">
+      <texture>flags/standard/videoresolution/288.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_videoresolution_480">
+    <control type="image">
+      <texture>flags/standard/videoresolution/480.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_videoresolution_4k">
+    <control type="image">
+      <texture>flags/standard/videoresolution/4k.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_videoresolution_540">
+    <control type="image">
+      <texture>flags/standard/videoresolution/540.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_videoresolution_576">
+    <control type="image">
+      <texture>flags/standard/videoresolution/576.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_videoresolution_720">
+    <control type="image">
+      <texture>flags/standard/videoresolution/720.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- STANDARD - HDR_TYPE -->
+  <include name="standard_hdr_type_dolbyvision">
+    <control type="image">
+      <texture>flags/standard/hdr_type/dolbyvision.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_hdr_type_hdr">
+    <control type="image">
+      <texture>flags/standard/hdr_type/hdr.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_hdr_type_hdr10">
+    <control type="image">
+      <texture>flags/standard/hdr_type/hdr10.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_hdr_type_hdr10plus">
+    <control type="image">
+      <texture>flags/standard/hdr_type/hdr10plus.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_hdr_type_hlg">
+    <control type="image">
+      <texture>flags/standard/hdr_type/hlg.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_hdr_type_sdr">
+    <control type="image">
+      <texture>flags/standard/hdr_type/sdr.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsaudiochannels_standard -->
+  <include name="PosterStaticFlagsaudiochannels_standard">
+    <control type="group" top="295" left="105">
+        <control type="image">
+            <texture>flags/standard/audiochannels/0.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,0)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiochannels/1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiochannels/10.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,10)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiochannels/2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiochannels/3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiochannels/4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiochannels/5.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,5)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiochannels/6.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,6)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiochannels/7.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,7)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiochannels/8.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,8)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsaudiocodec_standard -->
+  <include name="PosterStaticFlagsaudiocodec_standard">
+    <control type="group" top="295" left="165">
+        <control type="image">
+            <texture>flags/standard/audiocodec/aac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/ac3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ac3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/atmos.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,atmos)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/dca.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dca)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/dolbydigital.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbydigital)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/dolbypro.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbypro)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/dolbytruehd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbytruehd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/dts.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/dts_hra.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts_hra)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/dts_x.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts_x)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/dtshd_hra.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_hra)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/dtshd_ma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_ma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/dtsma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtsma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/eac3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,eac3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/flac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,flac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/m4a.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,m4a)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/mp1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/mp2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/mp3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/mp3float.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp3float)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/mp4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/ogg.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ogg)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/opus.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,opus)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/pcm.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/pcm_s16le.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s16le)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/pcm_s24le.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s24le)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/truehd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,truehd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/vorbis.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,vorbis)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/wma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/wmahd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmahd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/wmapro.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmapro)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/wmav2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmav2)</visible>
+        </control>
+    </control>
+  </include>
+
   <!-- PosterStaticFlagsvideocodec_standard -->
   <include name="PosterStaticFlagsvideocodec_standard">
-    <control type="group" top="300" left="5">
+    <control type="group" top="295" left="5">
         <control type="image">
             <texture>flags/standard/videocodec/asf.png</texture>
             <aspectratio>keep</aspectratio>
@@ -2597,56 +2803,6 @@
     </control>
   </include>
 
-  <!-- STANDARD - VIDEORESOLUTION -->
-  <include name="standard_videoresolution_1080">
-    <control type="image">
-      <texture>flags/standard/videoresolution/1080.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videoresolution_2160">
-    <control type="image">
-      <texture>flags/standard/videoresolution/2160.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videoresolution_288">
-    <control type="image">
-      <texture>flags/standard/videoresolution/288.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videoresolution_480">
-    <control type="image">
-      <texture>flags/standard/videoresolution/480.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videoresolution_4k">
-    <control type="image">
-      <texture>flags/standard/videoresolution/4k.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videoresolution_540">
-    <control type="image">
-      <texture>flags/standard/videoresolution/540.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videoresolution_576">
-    <control type="image">
-      <texture>flags/standard/videoresolution/576.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videoresolution_720">
-    <control type="image">
-      <texture>flags/standard/videoresolution/720.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-
   <!-- PosterStaticFlagsvideoresolution_standard -->
   <include name="PosterStaticFlagsvideoresolution_standard">
     <control type="group" top="5" left="5">
@@ -2673,7 +2829,7 @@
         <control type="image">
             <texture>flags/standard/videoresolution/4k.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videoresolution,4k)</visible>
+            <visible>String.IsEqual(ListItem.Videoresolution,4K) | String.IsEqual(ListItem.Videoresolution,2160) | String.IsEqual(ListItem.Videoresolution,2160p)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/videoresolution/540.png</texture>
@@ -2689,6 +2845,42 @@
             <texture>flags/standard/videoresolution/720.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videoresolution,720) | String.IsEqual(ListItem.Videoresolution,720p)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagshdr_type_standard -->
+  <include name="PosterStaticFlagshdr_type_standard">
+    <control type="group" top="5" left="165">
+        <control type="image">
+            <texture>flags/standard/hdr_type/dolbyvision.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,dolbyvision)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/hdr_type/hdr.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/hdr_type/hdr10.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/hdr_type/hdr10plus.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10plus)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/hdr_type/hlg.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hlg)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/hdr_type/sdr.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEmpty(ListItem.HdrType)</visible>
         </control>
     </control>
   </include>

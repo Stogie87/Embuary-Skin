@@ -32,6 +32,14 @@
 
 			<!-- Flaggen rechtsbündig -->
 
+  			<control type="group">
+    				<left>1830</left>
+    				<width>120</width>
+    				<height>120</height>
+    				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>
+    				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagshdr_type_colorful</include>
+  			</control>
+
 			<control type="group">
 				<left>1970</left>
 				<width>120</width>
