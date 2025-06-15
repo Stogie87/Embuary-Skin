@@ -1784,7 +1784,7 @@
         <control type="image">
             <texture>flags/colorful/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEmpty(ListItem.HdrType)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
         </control>
     </control>
   </include>
@@ -2880,7 +2880,7 @@
         <control type="image">
             <texture>flags/standard/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEmpty(ListItem.HdrType)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
         </control>
     </control>
   </include>
