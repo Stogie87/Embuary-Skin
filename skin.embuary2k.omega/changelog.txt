@@ -2,6 +2,7 @@
 - Added Codec Logo Flags by Stogie87
 - Added Codec Logo Flag-Style-Switcher by Stogie87
 - Added Codec Logo Bottom-Infobar by Stogie87
+- Added Estuary Codec Logo Flags
 
 [B]Version 21.1.3[/B]
 - Included Logo Resizer by Stogie87

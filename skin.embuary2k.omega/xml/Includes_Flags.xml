@@ -6,40 +6,45 @@
     <left>105</left>
     <width>60</width>
     <height>60</height>
-    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiochannels_colorful</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiochannels_estuary</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
   </control>
   <control type="group">
     <top>295</top>
     <left>165</left>
     <width>60</width>
     <height>60</height>
-    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiocodec_colorful</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiocodec_estuary</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
   </control>
   <control type="group">
     <top>295</top>
     <left>5</left>
     <width>60</width>
     <height>60</height>
-    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideocodec_colorful</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideocodec_estuary</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
   </control>
   <control type="group">
     <top>5</top>
     <left>5</left>
     <width>60</width>
     <height>60</height>
-    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideoresolution_colorful</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideoresolution_estuary</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
   </control>
   <control type="group">
     <top>5</top>
     <left>165</left>
     <width>60</width>
     <height>60</height>
-    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagshdr_type_colorful</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagshdr_type_estuary</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>
   </control>
   <!-- Codec Flags Ende -->
 
@@ -167,21 +172,9 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="colorful_audiocodec_dts-x">
-    <control type="image">
-      <texture>flags/colorful/audiocodec/dts-x.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="colorful_audiocodec_dts">
     <control type="image">
       <texture>flags/colorful/audiocodec/dts.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_audiocodec_dts_x">
-    <control type="image">
-      <texture>flags/colorful/audiocodec/dts_x.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -224,12 +217,6 @@
   <include name="colorful_audiocodec_flac">
     <control type="image">
       <texture>flags/colorful/audiocodec/flac.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_audiocodec_m4a">
-    <control type="image">
-      <texture>flags/colorful/audiocodec/m4a.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -278,12 +265,6 @@
   <include name="colorful_audiocodec_mpeg_audio">
     <control type="image">
       <texture>flags/colorful/audiocodec/mpeg audio.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_audiocodec_ogg">
-    <control type="image">
-      <texture>flags/colorful/audiocodec/ogg.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -379,27 +360,15 @@
   </include>
 
   <!-- COLORFUL - VIDEOCODEC -->
-  <include name="colorful_videocodec_3d">
-    <control type="image">
-      <texture>flags/colorful/videocodec/3d.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videocodec_3dbd">
-    <control type="image">
-      <texture>flags/colorful/videocodec/3dbd.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videocodec_4K">
-    <control type="image">
-      <texture>flags/colorful/videocodec/4K.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="colorful_videocodec_asf">
     <control type="image">
       <texture>flags/colorful/videocodec/asf.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="colorful_videocodec_av1">
+    <control type="image">
+      <texture>flags/colorful/videocodec/av1.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -439,18 +408,6 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="colorful_videocodec_default">
-    <control type="image">
-      <texture>flags/colorful/videocodec/default.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videocodec_defaultsource">
-    <control type="image">
-      <texture>flags/colorful/videocodec/defaultsource.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="colorful_videocodec_div2">
     <control type="image">
       <texture>flags/colorful/videocodec/div2.png</texture>
@@ -460,12 +417,6 @@
   <include name="colorful_videocodec_div3">
     <control type="image">
       <texture>flags/colorful/videocodec/div3.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videocodec_div3_bak">
-    <control type="image">
-      <texture>flags/colorful/videocodec/div3_bak.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -559,12 +510,6 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="colorful_videocodec_hdtv_">
-    <control type="image">
-      <texture>flags/colorful/videocodec/hdtv_.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="colorful_videocodec_hev1">
     <control type="image">
       <texture>flags/colorful/videocodec/hev1.png</texture>
@@ -586,12 +531,6 @@
   <include name="colorful_videocodec_m2ts">
     <control type="image">
       <texture>flags/colorful/videocodec/m2ts.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videocodec_microsoft">
-    <control type="image">
-      <texture>flags/colorful/videocodec/microsoft.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -739,12 +678,6 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="colorful_videocodec_set">
-    <control type="image">
-      <texture>flags/colorful/videocodec/set.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="colorful_videocodec_theora">
     <control type="image">
       <texture>flags/colorful/videocodec/theora.png</texture>
@@ -790,12 +723,6 @@
   <include name="colorful_videocodec_vp8">
     <control type="image">
       <texture>flags/colorful/videocodec/vp8.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videocodec_vp9">
-    <control type="image">
-      <texture>flags/colorful/videocodec/vp9.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -859,21 +786,9 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="colorful_videocodec_wmvhd_info">
-    <control type="image">
-      <texture>flags/colorful/videocodec/wmvhd_info.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="colorful_videocodec_wvc1">
     <control type="image">
       <texture>flags/colorful/videocodec/wvc1.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videocodec_x264-2">
-    <control type="image">
-      <texture>flags/colorful/videocodec/x264-2.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -886,12 +801,6 @@
   <include name="colorful_videocodec_xvid">
     <control type="image">
       <texture>flags/colorful/videocodec/xvid.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="colorful_videocodec_xvid2">
-    <control type="image">
-      <texture>flags/colorful/videocodec/xvid2.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -1094,19 +1003,9 @@
             <visible>String.IsEqual(ListItem.Audiocodec,dolbytruehd)</visible>
         </control>
         <control type="image">
-            <texture>flags/colorful/audiocodec/dts-x.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dts-x)</visible>
-        </control>
-        <control type="image">
             <texture>flags/colorful/audiocodec/dts.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Audiocodec,dts)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/dts_x.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dts_x)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/audiocodec/dtshd_hra.png</texture>
@@ -1142,11 +1041,6 @@
             <texture>flags/colorful/audiocodec/flac.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Audiocodec,flac)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/m4a.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,m4a)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/audiocodec/mp1.png</texture>
@@ -1187,11 +1081,6 @@
             <texture>flags/colorful/audiocodec/mpeg audio.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Audiocodec,mpeg audio)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/audiocodec/ogg.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,ogg)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/audiocodec/opus.png</texture>
@@ -1275,24 +1164,14 @@
   <include name="PosterStaticFlagsvideocodec_colorful">
     <control type="group" top="295" left="5">
         <control type="image">
-            <texture>flags/colorful/videocodec/3d.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,3d)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/videocodec/3dbd.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,3dbd)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/videocodec/4k.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,4k)</visible>
-        </control>
-        <control type="image">
             <texture>flags/colorful/videocodec/asf.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,asf)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/colorful/videocodec/av1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,av1)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/videocodec/avc.png</texture>
@@ -1325,16 +1204,6 @@
             <visible>String.IsEqual(ListItem.Videocodec,bluray3d)</visible>
         </control>
         <control type="image">
-            <texture>flags/colorful/videocodec/default.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,default)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/videocodec/defaultsource.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,defaultsource)</visible>
-        </control>
-        <control type="image">
             <texture>flags/colorful/videocodec/div2.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,div2)</visible>
@@ -1343,11 +1212,6 @@
             <texture>flags/colorful/videocodec/div3.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,div3)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/videocodec/div3_bak.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,div3_bak)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/videocodec/div4.png</texture>
@@ -1425,11 +1289,6 @@
             <visible>String.IsEqual(ListItem.Videocodec,hdtv)</visible>
         </control>
         <control type="image">
-            <texture>flags/colorful/videocodec/hdtv_.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,hdtv_)</visible>
-        </control>
-        <control type="image">
             <texture>flags/colorful/videocodec/hev1.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,hev1)</visible>
@@ -1448,11 +1307,6 @@
             <texture>flags/colorful/videocodec/m2ts.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,m2ts)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/videocodec/microsoft.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,microsoft)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/videocodec/mkv.png</texture>
@@ -1575,11 +1429,6 @@
             <visible>String.IsEqual(ListItem.Videocodec,sdtv)</visible>
         </control>
         <control type="image">
-            <texture>flags/colorful/videocodec/set.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,set)</visible>
-        </control>
-        <control type="image">
             <texture>flags/colorful/videocodec/theora.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,theora)</visible>
@@ -1618,11 +1467,6 @@
             <texture>flags/colorful/videocodec/vp8.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,vp8)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/videocodec/vp9.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,vp9)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/videocodec/web-dl.png</texture>
@@ -1675,19 +1519,9 @@
             <visible>String.IsEqual(ListItem.Videocodec,wmvhd)</visible>
         </control>
         <control type="image">
-            <texture>flags/colorful/videocodec/wmvhd_info.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,wmvhd_info)</visible>
-        </control>
-        <control type="image">
             <texture>flags/colorful/videocodec/wvc1.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,wvc1)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/videocodec/x264-2.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,x264-2)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/videocodec/x264.png</texture>
@@ -1698,11 +1532,6 @@
             <texture>flags/colorful/videocodec/xvid.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,xvid)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/colorful/videocodec/xvid2.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,xvid2)</visible>
         </control>
     </control>
   </include>
@@ -1783,6 +1612,1455 @@
         </control>
         <control type="image">
             <texture>flags/colorful/hdr_type/sdr.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- ESTUARY - AUDIOCHANNELS -->
+  <include name="estuary_audiochannels_0">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/0.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiochannels_1">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiochannels_10">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/10.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiochannels_2">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiochannels_3">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiochannels_4">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiochannels_5">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/5.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiochannels_6">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/6.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiochannels_7">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/7.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiochannels_8">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/8.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiochannels_fallback">
+    <control type="image">
+      <texture>flags/estuary/audiochannels/fallback.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- ESTUARY - AUDIOCODEC -->
+  <include name="estuary_audiocodec_aac">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/aac.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_aac_latm">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/aac_latm.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_ac3">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/ac3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_aif">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/aif.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_aifc">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/aifc.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_aiff">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/aiff.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_alac">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/alac.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_ape">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/ape.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_atmos">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/atmos.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_avi">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/avi.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_cdda">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/cdda.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_dca">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/dca.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_dolbydigital">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/dolbydigital.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_dolbypro">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/dolbypro.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_dolbytruehd">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/dolbytruehd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_dts-x">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/dts-x.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_dts">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/dts.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_dts_hra">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/dts_hra.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_dtshd_hra">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/dtshd_hra.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_dtshd_ma">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/dtshd_ma.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_dtsma">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/dtsma.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_eac3">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/eac3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_fallback">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/fallback.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_flac">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/flac.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_m4a">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/m4a.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_mp1">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/mp1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_mp2">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/mp2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_mp3">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/mp3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_mp3float">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/mp3float.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_mp4">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/mp4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_mpc">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/mpc.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_ogg">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/ogg.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_opus">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/opus.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_pcm">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/pcm.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_pcm_bluray">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/pcm_bluray.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_pcm_s16le">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/pcm_s16le.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_pcm_s24le">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/pcm_s24le.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_ra">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/ra.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_sacd">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/sacd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_theora">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/theora.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_truehd">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/truehd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_vorbis">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/vorbis.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_wav">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/wav.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_wavpack">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/wavpack.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_wma">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/wma.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_wmahd">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/wmahd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_wmapro">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/wmapro.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_audiocodec_wmav2">
+    <control type="image">
+      <texture>flags/estuary/audiocodec/wmav2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- ESTUARY - VIDEOCODEC -->
+  <include name="estuary_videocodec_3gp">
+    <control type="image">
+      <texture>flags/estuary/videocodec/3gp.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_3iv2">
+    <control type="image">
+      <texture>flags/estuary/videocodec/3iv2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_3ivx">
+    <control type="image">
+      <texture>flags/estuary/videocodec/3ivx.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_avc">
+    <control type="image">
+      <texture>flags/estuary/videocodec/avc.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_avc1">
+    <control type="image">
+      <texture>flags/estuary/videocodec/avc1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_div2">
+    <control type="image">
+      <texture>flags/estuary/videocodec/div2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_div3">
+    <control type="image">
+      <texture>flags/estuary/videocodec/div3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_div4">
+    <control type="image">
+      <texture>flags/estuary/videocodec/div4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_divx_4">
+    <control type="image">
+      <texture>flags/estuary/videocodec/divx 4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_divx">
+    <control type="image">
+      <texture>flags/estuary/videocodec/divx.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_divx4">
+    <control type="image">
+      <texture>flags/estuary/videocodec/divx4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_dvb">
+    <control type="image">
+      <texture>flags/estuary/videocodec/dvb.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_dx50">
+    <control type="image">
+      <texture>flags/estuary/videocodec/dx50.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_fallback">
+    <control type="image">
+      <texture>flags/estuary/videocodec/fallback.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_flash">
+    <control type="image">
+      <texture>flags/estuary/videocodec/flash.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_flv">
+    <control type="image">
+      <texture>flags/estuary/videocodec/flv.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_fmp4">
+    <control type="image">
+      <texture>flags/estuary/videocodec/fmp4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_h_262">
+    <control type="image">
+      <texture>flags/estuary/videocodec/h.262.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_h_264">
+    <control type="image">
+      <texture>flags/estuary/videocodec/h.264.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_h_265">
+    <control type="image">
+      <texture>flags/estuary/videocodec/h.265.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_h262">
+    <control type="image">
+      <texture>flags/estuary/videocodec/h262.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_h264">
+    <control type="image">
+      <texture>flags/estuary/videocodec/h264.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_h265">
+    <control type="image">
+      <texture>flags/estuary/videocodec/h265.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_hdmv">
+    <control type="image">
+      <texture>flags/estuary/videocodec/hdmv.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_hdpr">
+    <control type="image">
+      <texture>flags/estuary/videocodec/hdpr.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_hevc">
+    <control type="image">
+      <texture>flags/estuary/videocodec/hevc.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_microsoft">
+    <control type="image">
+      <texture>flags/estuary/videocodec/microsoft.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_mp4">
+    <control type="image">
+      <texture>flags/estuary/videocodec/mp4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_mp42">
+    <control type="image">
+      <texture>flags/estuary/videocodec/mp42.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_mp43">
+    <control type="image">
+      <texture>flags/estuary/videocodec/mp43.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_mp4v">
+    <control type="image">
+      <texture>flags/estuary/videocodec/mp4v.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_mpeg1">
+    <control type="image">
+      <texture>flags/estuary/videocodec/mpeg1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_mpeg1video">
+    <control type="image">
+      <texture>flags/estuary/videocodec/mpeg1video.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_mpeg2">
+    <control type="image">
+      <texture>flags/estuary/videocodec/mpeg2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_mpeg2video">
+    <control type="image">
+      <texture>flags/estuary/videocodec/mpeg2video.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_mpeg4">
+    <control type="image">
+      <texture>flags/estuary/videocodec/mpeg4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_mpg4">
+    <control type="image">
+      <texture>flags/estuary/videocodec/mpg4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_quicktime">
+    <control type="image">
+      <texture>flags/estuary/videocodec/quicktime.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_rv30">
+    <control type="image">
+      <texture>flags/estuary/videocodec/rv30.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_rv40">
+    <control type="image">
+      <texture>flags/estuary/videocodec/rv40.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_vc-1">
+    <control type="image">
+      <texture>flags/estuary/videocodec/vc-1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_vc1">
+    <control type="image">
+      <texture>flags/estuary/videocodec/vc1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_vp6f">
+    <control type="image">
+      <texture>flags/estuary/videocodec/vp6f.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_vp9">
+    <control type="image">
+      <texture>flags/estuary/videocodec/vp9.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_wmv">
+    <control type="image">
+      <texture>flags/estuary/videocodec/wmv.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_wmv2">
+    <control type="image">
+      <texture>flags/estuary/videocodec/wmv2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_wmv3">
+    <control type="image">
+      <texture>flags/estuary/videocodec/wmv3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_wmva">
+    <control type="image">
+      <texture>flags/estuary/videocodec/wmva.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_wmvhd">
+    <control type="image">
+      <texture>flags/estuary/videocodec/wmvhd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_wvc1">
+    <control type="image">
+      <texture>flags/estuary/videocodec/wvc1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_x264">
+    <control type="image">
+      <texture>flags/estuary/videocodec/x264.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_x265">
+    <control type="image">
+      <texture>flags/estuary/videocodec/x265.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videocodec_xvid">
+    <control type="image">
+      <texture>flags/estuary/videocodec/xvid.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- ESTUARY - VIDEORESOLUTION -->
+  <include name="estuary_videoresolution_1080">
+    <control type="image">
+      <texture>flags/estuary/videoresolution/1080.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videoresolution_2160">
+    <control type="image">
+      <texture>flags/estuary/videoresolution/2160.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videoresolution_288">
+    <control type="image">
+      <texture>flags/estuary/videoresolution/288.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videoresolution_480">
+    <control type="image">
+      <texture>flags/estuary/videoresolution/480.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videoresolution_4K">
+    <control type="image">
+      <texture>flags/estuary/videoresolution/4K.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videoresolution_540">
+    <control type="image">
+      <texture>flags/estuary/videoresolution/540.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videoresolution_576">
+    <control type="image">
+      <texture>flags/estuary/videoresolution/576.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videoresolution_720">
+    <control type="image">
+      <texture>flags/estuary/videoresolution/720.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_videoresolution_8k">
+    <control type="image">
+      <texture>flags/estuary/videoresolution/8k.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- ESTUARY - HDR_TYPE -->
+  <include name="estuary_hdr_type_3d">
+    <control type="image">
+      <texture>flags/estuary/hdr_type/3d.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_hdr_type_dolbyvision">
+    <control type="image">
+      <texture>flags/estuary/hdr_type/dolbyvision.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_hdr_type_hdr">
+    <control type="image">
+      <texture>flags/estuary/hdr_type/hdr.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_hdr_type_hdr10">
+    <control type="image">
+      <texture>flags/estuary/hdr_type/hdr10.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_hdr_type_hdr10plus">
+    <control type="image">
+      <texture>flags/estuary/hdr_type/hdr10plus.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_hdr_type_hdrplus">
+    <control type="image">
+      <texture>flags/estuary/hdr_type/hdrplus.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_hdr_type_hlg">
+    <control type="image">
+      <texture>flags/estuary/hdr_type/hlg.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="estuary_hdr_type_sdr">
+    <control type="image">
+      <texture>flags/estuary/hdr_type/sdr.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsaudiochannels_estuary -->
+  <include name="PosterStaticFlagsaudiochannels_estuary">
+    <control type="group" top="295" left="105">
+        <control type="image">
+            <texture>flags/estuary/audiochannels/0.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,0)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiochannels/1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiochannels/10.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,10)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiochannels/2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiochannels/3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiochannels/4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiochannels/5.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,5)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiochannels/6.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,6)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiochannels/7.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,7)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiochannels/8.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,8)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiochannels/fallback.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,fallback)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsaudiocodec_estuary -->
+  <include name="PosterStaticFlagsaudiocodec_estuary">
+    <control type="group" top="295" left="165">
+        <control type="image">
+            <texture>flags/estuary/audiocodec/aac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/aac_latm.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac_latm)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/ac3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ac3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/aif.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aif)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/aifc.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aifc)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/aiff.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aiff)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/alac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,alac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/ape.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ape)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/atmos.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,atmos)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/avi.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,avi)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/cdda.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,cdda)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/dca.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dca)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/dolbydigital.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbydigital)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/dolbypro.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbypro)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/dolbytruehd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbytruehd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/dts-x.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts-x)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/dts.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/dts_hra.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts_hra)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/dtshd_hra.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_hra)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/dtshd_ma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_ma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/dtsma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtsma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/eac3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,eac3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/fallback.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,fallback)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/flac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,flac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/m4a.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,m4a)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/mp1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/mp2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/mp3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/mp3float.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp3float)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/mp4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/mpc.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mpc)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/ogg.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ogg)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/opus.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,opus)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/pcm.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/pcm_bluray.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_bluray)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/pcm_s16le.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s16le)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/pcm_s24le.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s24le)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/ra.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ra)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/sacd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,sacd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/theora.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,theora)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/truehd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,truehd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/vorbis.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,vorbis)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/wav.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wav)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/wavpack.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wavpack)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/wma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/wmahd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmahd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/wmapro.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmapro)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/audiocodec/wmav2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmav2)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsvideocodec_estuary -->
+  <include name="PosterStaticFlagsvideocodec_estuary">
+    <control type="group" top="295" left="5">
+        <control type="image">
+            <texture>flags/estuary/videocodec/3gp.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,3gp)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/3iv2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,3iv2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/3ivx.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,3ivx)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/avc.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,avc)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/avc1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,avc1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/div2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,div2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/div3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,div3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/div4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,div4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/divx 4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,divx 4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/divx.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,divx)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/divx4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,divx4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/dvb.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,dvb)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/dx50.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,dx50)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/fallback.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,fallback)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/flash.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,flash)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/flv.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,flv)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/fmp4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,fmp4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/h.262.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,h.262)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/h.264.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,h.264)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/h.265.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,h.265)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/h262.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,h262)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/h264.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,h264)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/h265.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,h265)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/hdmv.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,hdmv)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/hdpr.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,hdpr)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/hevc.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,hevc)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/microsoft.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,microsoft)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/mp4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mp4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/mp42.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mp42)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/mp43.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mp43)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/mp4v.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mp4v)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/mpeg1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/mpeg1video.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg1video)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/mpeg2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/mpeg2video.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg2video)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/mpeg4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/mpg4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpg4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/quicktime.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,quicktime)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/rv30.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,rv30)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/rv40.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,rv40)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/vc-1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,vc-1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/vc1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,vc1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/vp6f.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,vp6f)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/vp9.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,vp9)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/wmv.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wmv)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/wmv2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wmv2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/wmv3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wmv3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/wmva.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wmva)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/wmvhd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wmvhd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/wvc1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wvc1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/x264.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,x264)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/x265.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,x265)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videocodec/xvid.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,xvid)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsvideoresolution_estuary -->
+  <include name="PosterStaticFlagsvideoresolution_estuary">
+    <control type="group" top="5" left="5">
+        <control type="image">
+            <texture>flags/estuary/videoresolution/1080.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,1080) | String.IsEqual(ListItem.Videoresolution,1080p)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videoresolution/2160.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,2160)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videoresolution/288.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,288)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videoresolution/480.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,480) | String.IsEqual(ListItem.Videoresolution,480p)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videoresolution/4k.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,4K) | String.IsEqual(ListItem.Videoresolution,2160) | String.IsEqual(ListItem.Videoresolution,2160p)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videoresolution/540.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,540)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videoresolution/576.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,576) | String.IsEqual(ListItem.Videoresolution,576p)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videoresolution/720.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,720) | String.IsEqual(ListItem.Videoresolution,720p)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/videoresolution/8k.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,8k)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagshdr_type_estuary -->
+  <include name="PosterStaticFlagshdr_type_estuary">
+    <control type="group" top="5" left="165">
+        <control type="image">
+            <texture>flags/estuary/hdr_type/dolbyvision.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,dolbyvision)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/hdr_type/hdr.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/hdr_type/hdr10.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/hdr_type/hdr10plus.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10plus)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/hdr_type/hlg.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hlg)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/estuary/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
         </control>
@@ -1876,39 +3154,9 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="standard_audiocodec_dolbydigital">
-    <control type="image">
-      <texture>flags/standard/audiocodec/dolbydigital.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_audiocodec_dolbypro">
-    <control type="image">
-      <texture>flags/standard/audiocodec/dolbypro.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_audiocodec_dolbytruehd">
-    <control type="image">
-      <texture>flags/standard/audiocodec/dolbytruehd.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="standard_audiocodec_dts">
     <control type="image">
       <texture>flags/standard/audiocodec/dts.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_audiocodec_dts_hra">
-    <control type="image">
-      <texture>flags/standard/audiocodec/dts_hra.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_audiocodec_dts_x">
-    <control type="image">
-      <texture>flags/standard/audiocodec/dts_x.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -1930,6 +3178,12 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
+  <include name="standard_audiocodec_dtsx">
+    <control type="image">
+      <texture>flags/standard/audiocodec/dtsx.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
   <include name="standard_audiocodec_eac3">
     <control type="image">
       <texture>flags/standard/audiocodec/eac3.png</texture>
@@ -1939,18 +3193,6 @@
   <include name="standard_audiocodec_flac">
     <control type="image">
       <texture>flags/standard/audiocodec/flac.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_audiocodec_m4a">
-    <control type="image">
-      <texture>flags/standard/audiocodec/m4a.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_audiocodec_mp1">
-    <control type="image">
-      <texture>flags/standard/audiocodec/mp1.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -1972,18 +3214,6 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="standard_audiocodec_mp4">
-    <control type="image">
-      <texture>flags/standard/audiocodec/mp4.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_audiocodec_ogg">
-    <control type="image">
-      <texture>flags/standard/audiocodec/ogg.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="standard_audiocodec_opus">
     <control type="image">
       <texture>flags/standard/audiocodec/opus.png</texture>
@@ -1993,6 +3223,12 @@
   <include name="standard_audiocodec_pcm">
     <control type="image">
       <texture>flags/standard/audiocodec/pcm.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_audiocodec_pcm_bluray">
+    <control type="image">
+      <texture>flags/standard/audiocodec/pcm_bluray.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -2026,21 +3262,9 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="standard_audiocodec_wmahd">
-    <control type="image">
-      <texture>flags/standard/audiocodec/wmahd.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="standard_audiocodec_wmapro">
     <control type="image">
       <texture>flags/standard/audiocodec/wmapro.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_audiocodec_wmav2">
-    <control type="image">
-      <texture>flags/standard/audiocodec/wmav2.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -2049,6 +3273,12 @@
   <include name="standard_videocodec_asf">
     <control type="image">
       <texture>flags/standard/videocodec/asf.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="standard_videocodec_av1">
+    <control type="image">
+      <texture>flags/standard/videocodec/av1.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -2112,12 +3342,6 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="standard_videocodec_h265">
-    <control type="image">
-      <texture>flags/standard/videocodec/h265.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="standard_videocodec_hddvd">
     <control type="image">
       <texture>flags/standard/videocodec/hddvd.png</texture>
@@ -2145,12 +3369,6 @@
   <include name="standard_videocodec_hevc">
     <control type="image">
       <texture>flags/standard/videocodec/hevc.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videocodec_hvc1">
-    <control type="image">
-      <texture>flags/standard/videocodec/hvc1.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -2184,12 +3402,6 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="standard_videocodec_mp4v">
-    <control type="image">
-      <texture>flags/standard/videocodec/mp4v.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="standard_videocodec_mpeg1video">
     <control type="image">
       <texture>flags/standard/videocodec/mpeg1video.png</texture>
@@ -2202,27 +3414,9 @@
       <aspectratio>keep</aspectratio>
     </control>
   </include>
-  <include name="standard_videocodec_mpeg4">
-    <control type="image">
-      <texture>flags/standard/videocodec/mpeg4.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videocodec_msmpeg4">
-    <control type="image">
-      <texture>flags/standard/videocodec/msmpeg4.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
   <include name="standard_videocodec_sdtv">
     <control type="image">
       <texture>flags/standard/videocodec/sdtv.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videocodec_svq3">
-    <control type="image">
-      <texture>flags/standard/videocodec/svq3.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -2235,12 +3429,6 @@
   <include name="standard_videocodec_vc-1">
     <control type="image">
       <texture>flags/standard/videocodec/vc-1.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videocodec_vc1">
-    <control type="image">
-      <texture>flags/standard/videocodec/vc1.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -2271,12 +3459,6 @@
   <include name="standard_videocodec_wvc1">
     <control type="image">
       <texture>flags/standard/videocodec/wvc1.png</texture>
-      <aspectratio>keep</aspectratio>
-    </control>
-  </include>
-  <include name="standard_videocodec_x264">
-    <control type="image">
-      <texture>flags/standard/videocodec/x264.png</texture>
       <aspectratio>keep</aspectratio>
     </control>
   </include>
@@ -2455,34 +3637,9 @@
             <visible>String.IsEqual(ListItem.Audiocodec,dca)</visible>
         </control>
         <control type="image">
-            <texture>flags/standard/audiocodec/dolbydigital.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dolbydigital)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dolbypro.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dolbypro)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dolbytruehd.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dolbytruehd)</visible>
-        </control>
-        <control type="image">
             <texture>flags/standard/audiocodec/dts.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Audiocodec,dts)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dts_hra.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dts_hra)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/dts_x.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,dts_x)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/audiocodec/dtshd_hra.png</texture>
@@ -2500,6 +3657,11 @@
             <visible>String.IsEqual(ListItem.Audiocodec,dtsma)</visible>
         </control>
         <control type="image">
+            <texture>flags/standard/audiocodec/dtsx.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtsx)</visible>
+        </control>
+        <control type="image">
             <texture>flags/standard/audiocodec/eac3.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Audiocodec,eac3)</visible>
@@ -2508,16 +3670,6 @@
             <texture>flags/standard/audiocodec/flac.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Audiocodec,flac)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/m4a.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,m4a)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/mp1.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp1)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/audiocodec/mp2.png</texture>
@@ -2535,16 +3687,6 @@
             <visible>String.IsEqual(ListItem.Audiocodec,mp3float)</visible>
         </control>
         <control type="image">
-            <texture>flags/standard/audiocodec/mp4.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,mp4)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/ogg.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,ogg)</visible>
-        </control>
-        <control type="image">
             <texture>flags/standard/audiocodec/opus.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Audiocodec,opus)</visible>
@@ -2553,6 +3695,11 @@
             <texture>flags/standard/audiocodec/pcm.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Audiocodec,pcm)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/audiocodec/pcm_bluray.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_bluray)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/audiocodec/pcm_s16le.png</texture>
@@ -2580,19 +3727,9 @@
             <visible>String.IsEqual(ListItem.Audiocodec,wma)</visible>
         </control>
         <control type="image">
-            <texture>flags/standard/audiocodec/wmahd.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wmahd)</visible>
-        </control>
-        <control type="image">
             <texture>flags/standard/audiocodec/wmapro.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Audiocodec,wmapro)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/audiocodec/wmav2.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,wmav2)</visible>
         </control>
     </control>
   </include>
@@ -2604,6 +3741,11 @@
             <texture>flags/standard/videocodec/asf.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,asf)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/standard/videocodec/av1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,av1)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/videocodec/avc1.png</texture>
@@ -2656,11 +3798,6 @@
             <visible>String.IsEqual(ListItem.Videocodec,h264)</visible>
         </control>
         <control type="image">
-            <texture>flags/standard/videocodec/h265.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,h265)</visible>
-        </control>
-        <control type="image">
             <texture>flags/standard/videocodec/hddvd.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,hddvd)</visible>
@@ -2684,11 +3821,6 @@
             <texture>flags/standard/videocodec/hevc.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,hevc)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/videocodec/hvc1.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,hvc1)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/videocodec/iso.png</texture>
@@ -2716,11 +3848,6 @@
             <visible>String.IsEqual(ListItem.Videocodec,mp4)</visible>
         </control>
         <control type="image">
-            <texture>flags/standard/videocodec/mp4v.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,mp4v)</visible>
-        </control>
-        <control type="image">
             <texture>flags/standard/videocodec/mpeg1video.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,mpeg1video)</visible>
@@ -2731,24 +3858,9 @@
             <visible>String.IsEqual(ListItem.Videocodec,mpeg2video)</visible>
         </control>
         <control type="image">
-            <texture>flags/standard/videocodec/mpeg4.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,mpeg4)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/videocodec/msmpeg4.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,msmpeg4)</visible>
-        </control>
-        <control type="image">
             <texture>flags/standard/videocodec/sdtv.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,sdtv)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/videocodec/svq3.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,svq3)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/videocodec/tv.png</texture>
@@ -2759,11 +3871,6 @@
             <texture>flags/standard/videocodec/vc-1.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,vc-1)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/videocodec/vc1.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,vc1)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/videocodec/vorbis.png</texture>
@@ -2789,11 +3896,6 @@
             <texture>flags/standard/videocodec/wvc1.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.Videocodec,wvc1)</visible>
-        </control>
-        <control type="image">
-            <texture>flags/standard/videocodec/x264.png</texture>
-            <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Videocodec,x264)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/videocodec/xvid.png</texture>

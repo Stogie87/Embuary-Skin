@@ -288,11 +288,12 @@
 
 					<control type="group">
     						<top>2</top>
-    						<left>165</left>
+    						<left>170</left>
     						<width>60</width>
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideoresolution_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideoresolution_estuary</include>
 					</control>
 					<control type="group">
     						<top>295</top>
@@ -301,14 +302,16 @@
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiochannels_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiochannels_estuary</include>
 					</control>
 					<control type="group">
    	 					<top>295</top>
-    						<left>165</left>
+    						<left>170</left>
     						<width>60</width>
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiocodec_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiocodec_estuary</include>
 					</control>
 					<control type="group">
     						<top>295</top>
@@ -317,6 +320,7 @@
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideocodec_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideocodec_estuary</include>
 					</control>
   					<control type="group">
     						<top>2</top>
@@ -325,6 +329,7 @@
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagshdr_type_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagshdr_type_estuary</include>
   					</control>
 
 					<!-- Codec Flags Ende -->
@@ -521,11 +526,12 @@
 
 					<control type="group">
     						<top>2</top>
-    						<left>805</left>
+    						<left>810</left>
     						<width>60</width>
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideoresolution_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideoresolution_estuary</include>
 					</control>
 					<control type="group">
     						<top>105</top>
@@ -534,14 +540,16 @@
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiochannels_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiochannels_estuary</include>
 					</control>
 					<control type="group">
    	 					<top>105</top>
-    						<left>805</left>
+    						<left>810</left>
     						<width>60</width>
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiocodec_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiocodec_estuary</include>
 					</control>
 					<control type="group">
     						<top>105</top>
@@ -550,6 +558,7 @@
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideocodec_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideocodec_estuary</include>
 					</control>
   					<control type="group">
     						<top>2</top>
@@ -558,6 +567,7 @@
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagshdr_type_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagshdr_type_estuary</include>
   					</control>
 					
 					<!-- Codec Flags Ende -->
@@ -668,11 +678,12 @@
 
 					<control type="group">
     						<top>2</top>
-    						<left>355</left>
+    						<left>360</left>
     						<width>60</width>
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideoresolution_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideoresolution_estuary</include>
 					</control>
 					<control type="group">
     						<top>185</top>
@@ -681,14 +692,16 @@
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiochannels_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiochannels_estuary</include>
 					</control>
 					<control type="group">
    	 					<top>185</top>
-    						<left>355</left>
+    						<left>360</left>
     						<width>60</width>
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiocodec_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiocodec_estuary</include>
 					</control>
 					<control type="group">
     						<top>185</top>
@@ -697,6 +710,7 @@
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideocodec_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideocodec_estuary</include>
 					</control>
   					<control type="group">
     						<top>2</top>
@@ -705,6 +719,7 @@
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagshdr_type_colorful</include>
+						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagshdr_type_estuary</include>
   					</control>
 
 					<!-- Codec Flags Ende -->

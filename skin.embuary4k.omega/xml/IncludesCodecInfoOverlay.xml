@@ -38,6 +38,7 @@
     				<height>120</height>
     				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>
     				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagshdr_type_colorful</include>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagshdr_type_estuary</include>
   			</control>
 
 			<control type="group">
@@ -46,6 +47,7 @@
 				<height>120</height>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideoresolution_colorful</include>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideoresolution_estuary</include>
 			</control>
 
 			<control type="group">
@@ -54,6 +56,7 @@
 				<height>120</height>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideocodec_colorful</include>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideocodec_estuary</include>
 			</control>
 
 			<control type="group">
@@ -62,6 +65,7 @@
 				<height>120</height>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiochannels_colorful</include>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiochannels_estuary</include>
 			</control>
 
 			<control type="group">
@@ -70,6 +74,7 @@
 				<height>120</height>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiocodec_colorful</include>
+				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiocodec_estuary</include>
 			</control>
 		</control>
 	</include>

@@ -2,6 +2,7 @@
 - Added Codec Logo Flags by Stogie87
 - Added Codec Logo Flag-Style-Switcher by Stogie87
 - Added Codec Logo Bottom-Infobar by Stogie87
+- Added Estuary Codec Logo Flags
 
 [B]Version 21.1.3[/B]
 - Included Logo Resizer by Stogie87
@@ -44,8 +45,8 @@
 
 [B]Version 19.0.2[/B]
 - Changes by Teddyknuddel
-- Added 4k Resolution
-- Compatibility for Kodi 21 (Omega)
+- Added 2K Resolution
+- Compatibility for Kodi 21 (Omega) 
 
 [B]Version 18.8.8[/B]
 - Added support for new Artist Slideshow version
