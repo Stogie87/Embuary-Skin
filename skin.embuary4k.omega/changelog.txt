@@ -1,3 +1,10 @@
+[B]Version 21.1.5[/B]
+- Added Codec Logo Flags to Biglist Layout by Stogie87
+- Added Codec Logo Flags to Square Layout by Stogie87
+- Removed PosterView in Music Content by Stogie87
+- Fixed Cast Block in Episode-View by Stogie87
+- Removed List-View from Movie-Content
+
 [B]Version 21.1.4[/B]
 - Added Codec Logo Flags by Stogie87
 - Added Codec Logo Flag-Style-Switcher by Stogie87

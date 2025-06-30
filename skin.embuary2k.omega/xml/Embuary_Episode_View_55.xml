@@ -174,16 +174,19 @@
 						<param name="height" value="438"/>
 					</include>
 				</control>
+				<control type="group">
+					<top>900</top>
+					<!-- Cast -->
+					<include content="CastWidget">
+						<param name="visible" value="Integer.IsGreater(Container(2000).NumItems,0)"/>
+						<param name="id" value="1000"/>
+						<param name="onup" value="55"/>
+						<param name="ondown" value="noop"/>
+						<param name="onback" value="55"/>
+						<param name="content" value="$VAR[View_Cast_Content]"/>
+					</include>
+				</control>
 			</control>
-			<!-- Cast -->
-			<include content="CastWidget">
-				<param name="visible" value="Integer.IsGreater(Container(2000).NumItems,0)"/>
-				<param name="id" value="1000"/>
-				<param name="onup" value="55"/>
-				<param name="ondown" value="noop"/>
-				<param name="onback" value="55"/>
-				<param name="content" value="$VAR[View_Cast_Content]"/>
-			</include>
 		</control>
 	</include>
 </includes>

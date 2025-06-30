@@ -160,26 +160,32 @@
 	</expression>
 
 	<expression name="PosterViewVisible">[
-    [Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(actors) | Container.Content(directors) | String.StartsWith(Container.FolderPath,plugin://script.embuary.helper/?info=getgenre) | [[String.StartsWith(Container.Folderpath,pvr://channels/tv) | String.StartsWith(Container.Folderpath,pvr://recordings/tv)] + String.IsEqual(Skin.String(EPGar),2to3)]]
-    + !String.Contains(Container.Folderpath,setid)
-    + ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
-    |
-    [
-        !Container.Content(seasons)
-        + !Container.Content(episodes)
-        + !Container.Content(movies)
-        + !Container.Content(sets)
-        + !Container.Content(tvshows)
-        + !Container.Content(videos)
-        + !Window.IsVisible(MyPVRSearch.xml)
-        + !Window.IsVisible(MyPVRTimers.xml)
-        + !Window.IsVisible(MyPVRguide.xml)
-        + !String.StartsWith(Container.Folderpath,androidapp://)
-        + !String.StartsWith(Container.FolderPath,pvr://channels/radio/)
-        + !Container.Content(games)
-    ]
-    | Window.IsVisible(MyPics.xml)
-    ]
+    		[
+        		Container.Content(movies) |
+        		Container.Content(tvshows) |
+        		Container.Content(sets) |
+        		Container.Content(actors) |
+        		Container.Content(directors) |
+        		String.StartsWith(Container.FolderPath,plugin://script.embuary.helper/?info=getgenre) |
+        		[[String.StartsWith(Container.Folderpath,pvr://channels/tv) | String.StartsWith(Container.Folderpath,pvr://recordings/tv)] + String.IsEqual(Skin.String(EPGar),2to3)] |
+        		[String.StartsWith(Container.FolderPath,plugin://plugin.video.jellyfin) + !String.Contains(Container.FolderPath,/music)]
+    		]
+    			+ !String.Contains(Container.Folderpath,setid)
+    			+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
+    			+ !String.IsEqual(Container.Content,episodes)
+    			+ !String.IsEqual(Container.Content,seasons)
+    			+ !String.Contains(Container.FolderPath,/season)
+    			+ !String.IsEqual(Container.Content,music)
+    			+ !String.IsEqual(Container.Content,songs)
+    			+ !String.IsEqual(Container.Content,albums)
+    			+ !String.IsEqual(Container.Content,artists)
+    			+ !String.IsEqual(Container.Content,musicvideos)
+    			+ !String.StartsWith(Container.FolderPath,musicdb://)
+    			+ !String.StartsWith(Container.FolderPath,plugin://music)
+    			+ !String.StartsWith(Container.FolderPath,videodb://musicvideos)
+		|
+    		Window.IsVisible(MyPics.xml)
+		]
 	</expression>
 
 	<expression name="SquareViewVisible">[
@@ -203,28 +209,26 @@
 
 	<expression name="SeasonViewVisible">[
 		Container.Content(seasons)
-		+ [!String.StartsWith(Container.FolderPath,plugin://) | String.StartsWith(Container.FolderPath,plugin://plugin.video.emby)]
 		]
 	</expression>
 
 	<expression name="ListViewVisible">[
 		[
-			!Container.Content(seasons)
+			!Container.Content(movies)
+			+ !Container.Content(tvshows)
+			+ !Container.Content(seasons)
 			+ !Container.Content(episodes)
 			+ !String.Contains(Container.FolderPath,setid)
-			+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
+			+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet)]
+			+ !String.StartsWith(Container.FolderPath,plugin://plugin.video.jellyfin)
 			+ !Window.IsVisible(MyPVRguide.xml)
 		]
-		| [Container.Content(episodes) + String.StartsWith(Container.FolderPath,plugin://) + !String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + !String.StartsWith(Container.FolderPath,plugin://plugin.video.plexbmc) + !String.StartsWith(Container.FolderPath,plugin://script.embuary) + !String.StartsWith(plugin.video.plexkodiconnect)]
-		| [Container.Content(seasons) + String.StartsWith(Container.FolderPath,plugin://) + !String.StartsWith(Container.FolderPath,plugin://plugin.video.emby)]
 		| Window.IsVisible(MyPics.xml)
-		]
-	</expression>
+	]</expression>
 
 	<expression name="EpisodeViewVisible">[
 		Container.Content(episodes)
 		+ !Window.IsVisible(pictures)
-		+ [!String.StartsWith(Container.FolderPath,plugin://) | String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) | String.StartsWith(Container.FolderPath,plugin://script.embuary) | String.StartsWith(Container.FolderPath,plugin://plugin.video.plexbmc) | String.StartsWith(plugin.video.plexkodiconnect)]
 		]
 	</expression>
 
