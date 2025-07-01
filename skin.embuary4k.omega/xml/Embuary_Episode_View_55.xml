@@ -21,15 +21,7 @@
 					<height>435</height>
 					<width>2800</width>
 					<!-- thumb -->
-				<!-- Staffelposter -->
-				<control type="image">
-					<top>0</top>
-					<left>70</left>
-					<width>280</width>
-					<height>450</height>
-					<texture fallback="DefaultVideoCover.png">$INFO[ListItem.Art(season.poster)]</texture>
-					<visible>!String.IsEmpty(ListItem.Art(season.poster))</visible>
-				</control>
+					<include>MetaPoster</include>
 					<!-- meta -->
 					<control type="group">
 						<visible>!ListItem.IsParentFolder</visible>
