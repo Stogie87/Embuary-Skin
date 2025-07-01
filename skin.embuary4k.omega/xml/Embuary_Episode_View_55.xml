@@ -15,13 +15,21 @@
 			<!-- Meta -->
 			<control type="group">
 				<width>3840</width>
-				<height>1940</height>
+				<height>1920</height>
 				<control type="group">
 					<top>128</top>
 					<height>435</height>
-					<width>1920</width>
+					<width>2800</width>
 					<!-- thumb -->
-					<include>MetaPoster</include>
+				<!-- Staffelposter -->
+				<control type="image">
+					<top>0</top>
+					<left>70</left>
+					<width>280</width>
+					<height>450</height>
+					<texture fallback="DefaultVideoCover.png">$INFO[ListItem.Art(season.poster)]</texture>
+					<visible>!String.IsEmpty(ListItem.Art(season.poster))</visible>
+				</control>
 					<!-- meta -->
 					<control type="group">
 						<visible>!ListItem.IsParentFolder</visible>
@@ -135,7 +143,7 @@
 						<control type="textbox">
 							<top>296</top>
 							<width>144%</width>
-							<height max="85">auto</height>
+							<height max="120">auto</height>
 							<align>justify</align>
 							<aligny>top</aligny>
 							<label>$VAR[SetViewPlot]</label>
@@ -144,7 +152,7 @@
 						</control>
 						<!-- video meta-->
 						<control type="group">
-							<top>390</top>
+							<top>425</top>
 							<height>40</height>
 							<include>MetaMediaInfo</include>
 						</control>
@@ -152,12 +160,12 @@
 					<!-- logo -->
 					<control type="group">
 					<top>-7</top>
-					<right>-640</right>
+					<left>3840</left>
  					<include>MetaClearlogo</include>
 					</control>
 				</control>
 				<control type="group">
-					<top>534</top>
+					<top>559</top>
 					<!-- Episodes -->
 					<include content="WideWidget">
 						<param name="id" value="55"/>
@@ -175,7 +183,7 @@
 					</include>
 				</control>
 				<control type="group">
-					<top>900</top>
+					<top>925</top>
 					<!-- Cast -->
 					<include content="CastWidget">
 						<param name="visible" value="Integer.IsGreater(Container(2000).NumItems,0)"/>

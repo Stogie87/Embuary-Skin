@@ -121,13 +121,13 @@
 					<onleft condition="!Window.IsVisible(musicplaylist)">900</onleft>
 					<defaultcontrol always="true">0</defaultcontrol>
 					<focusposition>1</focusposition>
-					<movement>1</movement>
+					<movement>4</movement>
 					<orientation>vertical</orientation>
 					<viewtype label="$LOCALIZE[537]">list</viewtype>
 					<pagecontrol>17</pagecontrol>
 					<include>ScrollTime</include>
 					<preloaditems>4</preloaditems>
-					<itemlayout height="305" width="2560">
+					<itemlayout height="305" width="3840">
 						<control type="group">
 							<left>70</left>
 							<right>70</right>
@@ -140,7 +140,7 @@
 							</include>
 						</control>
 					</itemlayout>
-					<focusedlayout height="305" width="2560">
+					<focusedlayout height="305" width="3840">
 						<include content="SetPropertyOnFocus">
 							<param name="id" value="$PARAM[id]"/>
 						</include>

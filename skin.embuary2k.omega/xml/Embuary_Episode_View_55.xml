@@ -14,8 +14,8 @@
 			<itemgap>-80</itemgap>
 			<!-- Meta -->
 			<control type="group">
-				<width>3840</width>
-				<height>1940</height>
+				<width>2560</width>
+				<height>1920</height>
 				<control type="group">
 					<top>128</top>
 					<height>435</height>

@@ -121,7 +121,7 @@
 					<onleft condition="!Window.IsVisible(musicplaylist)">900</onleft>
 					<defaultcontrol always="true">0</defaultcontrol>
 					<focusposition>1</focusposition>
-					<movement>1</movement>
+					<movement>2</movement>
 					<orientation>vertical</orientation>
 					<viewtype label="$LOCALIZE[537]">list</viewtype>
 					<pagecontrol>17</pagecontrol>

@@ -19,7 +19,7 @@
 				<control type="group">
 					<top>128</top>
 					<height>435</height>
-					<width>1920</width>
+					<width>2800</width>
 					<!-- poster -->
 					<include>MetaPoster</include>
 					<!-- meta -->
@@ -164,13 +164,13 @@
 						<!-- logo -->
 						<control type="group">
                         			<top>-7</top>
-                        			<right>-640</right>
+                        			<left>3840</left>
                         			<include>MetaClearlogo</include>
                     				</control>
 				</control>
 				<control type="group">
 					<top>524</top>
-					<width>2560</width>
+					<width>3840</width>
 					<!-- Seasons -->
 					<include content="PosterWidget">
 						<param name="id" value="54"/>
