@@ -17,8 +17,7 @@
 				<texture colordiffuse="80FFFFFF">common/noise.png</texture>
 			</control>
 
-			<!-- Poster des fokussierten Videos links -->
-
+			<!-- Episode/Film mit eigenem Poster -->
 			<control type="image">
 				<top>10</top>
 				<left>10</left>
@@ -26,6 +25,29 @@
 				<height>100</height>
 				<aspectratio>keep</aspectratio>
 				<texture fallback="DefaultVideoCover.png">$INFO[ListItem.Art(poster)]</texture>
+				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+			</control>
+
+			<!-- Fallback: Staffelposter hat Priorität -->
+			<control type="image">
+				<top>10</top>
+				<left>10</left>
+				<width>70</width>
+				<height>100</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultVideoCover.png">$INFO[ListItem.Art(season.poster)]</texture>
+				<visible>String.IsEmpty(ListItem.Art(poster)) + !String.IsEmpty(ListItem.Art(season.poster))</visible>
+			</control>
+
+			<!-- Fallback: Serienposter nur wenn kein Seasonposter -->
+			<control type="image">
+				<top>10</top>
+				<left>10</left>
+				<width>70</width>
+				<height>100</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="DefaultVideoCover.png">$INFO[ListItem.Art(tvshow.poster)]</texture>
+				<visible>String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(season.poster)) + !String.IsEmpty(ListItem.Art(tvshow.poster))</visible>
 			</control>
 
 			<!-- Titel des fokussierten Videos -->
