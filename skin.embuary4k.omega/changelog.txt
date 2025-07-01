@@ -4,6 +4,7 @@
 - Removed PosterView in Music Content by Stogie87
 - Fixed Cast Block in Episode-View by Stogie87
 - Removed List-View from Movie-Content
+- Added Title-Poster to CodecInfoOverlay by Stogie87
 
 [B]Version 21.1.4[/B]
 - Added Codec Logo Flags by Stogie87
