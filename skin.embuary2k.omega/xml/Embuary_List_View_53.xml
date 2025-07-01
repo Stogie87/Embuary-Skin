@@ -32,7 +32,7 @@
 					<onleft condition="Window.IsVisible(MyPlaylist.xml)">100</onleft>
 					<onleft condition="!Window.IsVisible(MyPlaylist.xml)">900</onleft>
 					<defaultcontrol always="true">0</defaultcontrol>
-					<focusposition>4</focusposition>
+					<focusposition>3</focusposition>
 					<movement>6</movement>
 					<orientation>vertical</orientation>
 					<viewtype label="535">list</viewtype>
