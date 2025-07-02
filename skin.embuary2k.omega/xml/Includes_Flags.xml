@@ -8,6 +8,7 @@
     <height>60</height>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiochannels_colorful</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiochannels_estuary</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/metropolis)">PosterStaticFlagsaudiochannels_metropolis</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
   </control>
   <control type="group">
@@ -17,6 +18,7 @@
     <height>60</height>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsaudiocodec_colorful</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsaudiocodec_estuary</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/metropolis)">PosterStaticFlagsaudiocodec_metropolis</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
   </control>
   <control type="group">
@@ -26,6 +28,7 @@
     <height>60</height>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideocodec_colorful</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideocodec_estuary</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/metropolis)">PosterStaticFlagsvideocodec_metropolis</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
   </control>
   <control type="group">
@@ -35,6 +38,7 @@
     <height>60</height>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagsvideoresolution_colorful</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagsvideoresolution_estuary</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/metropolis)">PosterStaticFlagsvideoresolution_metropolis</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
   </control>
   <control type="group">
@@ -44,6 +48,7 @@
     <height>60</height>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful)">PosterStaticFlagshdr_type_colorful</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary)">PosterStaticFlagshdr_type_estuary</include>
+    <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/metropolis)">PosterStaticFlagshdr_type_metropolis</include>
     <include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>
   </control>
   <!-- Codec Flags Ende -->
@@ -3061,6 +3066,1729 @@
         </control>
         <control type="image">
             <texture>flags/estuary/hdr_type/sdr.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- METROPOLIS - AUDIOCHANNELS -->
+  <include name="metropolis_audiochannels_0">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/0.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiochannels_1">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiochannels_10">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/10.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiochannels_2">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiochannels_3">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiochannels_4">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiochannels_5">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/5.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiochannels_6">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/6.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiochannels_7">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/7.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiochannels_8">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/8.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiochannels_fallback">
+    <control type="image">
+      <texture>flags/metropolis/audiochannels/fallback.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- METROPOLIS - AUDIOCODEC -->
+  <include name="metropolis_audiocodec_a_aac">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/a_aac.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_a_ac3">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/a_ac3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_a_flac">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/a_flac.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_a_vorbis">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/a_vorbis.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_aac">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/aac.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_aac_latm">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/aac_latm.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_ac-3">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/ac-3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_ac3">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/ac3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_aif">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/aif.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_aifc">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/aifc.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_alac">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/alac.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_ape">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/ape.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_avc">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/avc.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_cook">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/cook.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dca">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dca.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dd20">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dd20.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dd40">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dd40.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dd41">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dd41.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dd51">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dd51.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dd71">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dd71.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dolby20">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dolby20.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dolbydigital">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dolbydigital.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dolbypro">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dolbypro.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dolbyprologic">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dolbyprologic.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dolbytruehd">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dolbytruehd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dts">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dts.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dts51">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dts51.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dts71">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dts71.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dts_hra">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dts_hra.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dts_ma">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dts_ma.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dtshd">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dtshd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dtshd_hra">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dtshd_hra.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dtshd_ma">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dtshd_ma.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dtsma-1">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dtsma-1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dtsma">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dtsma.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_dtsma2">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/dtsma2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_eac3">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/eac3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_flac">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/flac.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_hddts">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/hddts.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_lpcm">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/lpcm.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_mono">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/mono.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_mp1">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/mp1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_mp2">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/mp2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_mp3">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/mp3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_mp3_info">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/mp3_info.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_mp3float">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/mp3float.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_mpeg_audio">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/mpeg audio.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_ogg">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/ogg.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_opus">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/opus.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_pcm">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/pcm.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_pcm_bluray">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/pcm_bluray.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_pcm_s16le">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/pcm_s16le.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_pcm_s24le">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/pcm_s24le.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_pcm_u8">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/pcm_u8.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_sbr">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/sbr.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_truehd">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/truehd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_vorbis">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/vorbis.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_wav">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/wav.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_wavpack">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/wavpack.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_wma">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/wma.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_wma2">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/wma2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_wma3">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/wma3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_wmahd">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/wmahd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_wmapro">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/wmapro.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_audiocodec_wmav2">
+    <control type="image">
+      <texture>flags/metropolis/audiocodec/wmav2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- METROPOLIS - VIDEOCODEC -->
+  <include name="metropolis_videocodec_3iv2">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/3iv2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_avc1">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/avc1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_avchd">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/avchd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_bd3d">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/bd3d.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_bluray">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/bluray.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_div2">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/div2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_div3">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/div3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_div3_bak">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/div3_bak.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_div4">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/div4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_divx_3_low">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/divx 3 low.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_divx_4">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/divx 4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_divx">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/divx.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_dvd">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/dvd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_dvsd">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/dvsd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_dx50">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/dx50.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_flv">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/flv.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_flv2">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/flv2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_fmp4">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/fmp4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_fourcc">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/fourcc.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_h_264">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/h.264.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_h_265">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/h.265.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_h264">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/h264.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_h265">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/h265.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_hddvd">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/hddvd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_hdtv">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/hdtv.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_hevc">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/hevc.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_microsoft">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/microsoft.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mp42">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mp42.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mp43">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mp43.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mp4v">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mp4v.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mpeg_video">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mpeg video.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mpeg-4_visual">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mpeg-4 visual.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mpeg">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mpeg.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mpeg1">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mpeg1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mpeg1video">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mpeg1video.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mpeg2">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mpeg2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mpeg2video">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mpeg2video.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mpeg4">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mpeg4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_mpg4">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/mpg4.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_msmpeg4v1">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/msmpeg4v1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_msmpeg4v2">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/msmpeg4v2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_quicktime">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/quicktime.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_r5">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/r5.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_screener">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/screener.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_sdtv">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/sdtv.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_sorenson_3">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/sorenson 3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_svq3">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/svq3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_v_mpeg2">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/v_mpeg2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_vc-1">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/vc-1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_vc1">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/vc1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_vorbis">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/vorbis.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_vp6f">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/vp6f.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_vp8">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/vp8.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_vp9">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/vp9.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_webtv">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/webtv.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_wmv">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/wmv.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_wmv2">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/wmv2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_wmv3">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/wmv3.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_wmvhd">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/wmvhd.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_wvc1">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/wvc1.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_x_264">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/x.264.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_x264">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/x264.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_xvid">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/xvid.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videocodec_xvid2">
+    <control type="image">
+      <texture>flags/metropolis/videocodec/xvid2.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- METROPOLIS - VIDEORESOLUTION -->
+  <include name="metropolis_videoresolution_1080">
+    <control type="image">
+      <texture>flags/metropolis/videoresolution/1080.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videoresolution_2160">
+    <control type="image">
+      <texture>flags/metropolis/videoresolution/2160.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videoresolution_480">
+    <control type="image">
+      <texture>flags/metropolis/videoresolution/480.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videoresolution_4K">
+    <control type="image">
+      <texture>flags/metropolis/videoresolution/4K.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videoresolution_540">
+    <control type="image">
+      <texture>flags/metropolis/videoresolution/540.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videoresolution_576">
+    <control type="image">
+      <texture>flags/metropolis/videoresolution/576.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videoresolution_720">
+    <control type="image">
+      <texture>flags/metropolis/videoresolution/720.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_videoresolution_8K">
+    <control type="image">
+      <texture>flags/metropolis/videoresolution/8K.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- METROPOLIS - HDR_TYPE -->
+  <include name="metropolis_hdr_type_dolbyvision">
+    <control type="image">
+      <texture>flags/metropolis/hdr_type/dolbyvision.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_hdr_type_hdr10">
+    <control type="image">
+      <texture>flags/metropolis/hdr_type/hdr10.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_hdr_type_hdr10plus">
+    <control type="image">
+      <texture>flags/metropolis/hdr_type/hdr10plus.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_hdr_type_hlg">
+    <control type="image">
+      <texture>flags/metropolis/hdr_type/hlg.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+  <include name="metropolis_hdr_type_sdr">
+    <control type="image">
+      <texture>flags/metropolis/hdr_type/sdr.png</texture>
+      <aspectratio>keep</aspectratio>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsaudiochannels_metropolis -->
+  <include name="PosterStaticFlagsaudiochannels_metropolis">
+    <control type="group" top="295" left="105">
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/0.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,0)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/10.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,10)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/5.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,5)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/6.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,6)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/7.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,7)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/8.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,8)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiochannels/fallback.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiochannels,fallback)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsaudiocodec_metropolis -->
+  <include name="PosterStaticFlagsaudiocodec_metropolis">
+    <control type="group" top="295" left="165">
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/a_aac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,a_aac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/a_ac3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,a_ac3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/a_flac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,a_flac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/a_vorbis.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,a_vorbis)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/aac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/aac_latm.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac_latm)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/ac-3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ac-3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/ac3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ac3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/aif.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aif)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/aifc.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,aifc)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/alac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,alac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/ape.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ape)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/avc.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,avc)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/cook.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,cook)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dca.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dca)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dd20.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dd20)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dd40.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dd40)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dd41.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dd41)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dd51.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dd51)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dd71.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dd71)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dolby20.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolby20)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dolbydigital.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbydigital)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dolbypro.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbypro)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dolbyprologic.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbyprologic)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dolbytruehd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dolbytruehd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dts.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dts51.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts51)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dts71.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts71)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dts_hra.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts_hra)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dts_ma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dts_ma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dtshd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtshd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dtshd_hra.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_hra)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dtshd_ma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtshd_ma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dtsma-1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtsma-1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dtsma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtsma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/dtsma2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,dtsma2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/eac3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,eac3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/flac.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,flac)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/hddts.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,hddts)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/lpcm.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,lpcm)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/mono.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mono)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/mp1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/mp2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/mp3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/mp3_info.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp3_info)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/mp3float.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mp3float)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/mpeg audio.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,mpeg audio)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/ogg.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,ogg)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/opus.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,opus)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/pcm.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/pcm_bluray.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_bluray)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/pcm_s16le.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s16le)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/pcm_s24le.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_s24le)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/pcm_u8.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,pcm_u8)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/sbr.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,sbr)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/truehd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,truehd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/vorbis.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,vorbis)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/wav.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wav)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/wavpack.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wavpack)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/wma.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wma)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/wma2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wma2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/wma3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wma3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/wmahd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmahd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/wmapro.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmapro)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/audiocodec/wmav2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Audiocodec,wmav2)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsvideocodec_metropolis -->
+  <include name="PosterStaticFlagsvideocodec_metropolis">
+    <control type="group" top="295" left="5">
+        <control type="image">
+            <texture>flags/metropolis/videocodec/3iv2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,3iv2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/avc1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,avc1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/avchd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,avchd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/bd3d.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,bd3d)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/bluray.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,bluray)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/div2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,div2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/div3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,div3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/div3_bak.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,div3_bak)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/div4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,div4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/divx 3 low.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,divx 3 low)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/divx 4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,divx 4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/divx.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,divx)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/dvd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,dvd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/dvsd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,dvsd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/dx50.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,dx50)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/flv.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,flv)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/flv2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,flv2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/fmp4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,fmp4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/fourcc.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,fourcc)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/h.264.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,h.264)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/h.265.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,h.265)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/h264.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,h264)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/h265.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,h265)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/hddvd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,hddvd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/hdtv.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,hdtv)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/hevc.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,hevc)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/microsoft.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,microsoft)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mp42.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mp42)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mp43.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mp43)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mp4v.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mp4v)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mpeg video.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg video)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mpeg-4 visual.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg-4 visual)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mpeg.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mpeg1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mpeg1video.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg1video)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mpeg2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mpeg2video.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg2video)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mpeg4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpeg4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/mpg4.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,mpg4)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/msmpeg4v1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,msmpeg4v1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/msmpeg4v2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,msmpeg4v2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/quicktime.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,quicktime)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/r5.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,r5)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/screener.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,screener)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/sdtv.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,sdtv)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/sorenson 3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,sorenson 3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/svq3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,svq3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/v_mpeg2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,v_mpeg2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/vc-1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,vc-1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/vc1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,vc1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/vorbis.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,vorbis)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/vp6f.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,vp6f)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/vp8.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,vp8)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/vp9.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,vp9)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/webtv.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,webtv)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/wmv.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wmv)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/wmv2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wmv2)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/wmv3.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wmv3)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/wmvhd.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wmvhd)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/wvc1.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,wvc1)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/x.264.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,x.264)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/x264.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,x264)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/xvid.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,xvid)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videocodec/xvid2.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videocodec,xvid2)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagsvideoresolution_metropolis -->
+  <include name="PosterStaticFlagsvideoresolution_metropolis">
+    <control type="group" top="5" left="5">
+        <control type="image">
+            <texture>flags/metropolis/videoresolution/1080.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,1080) | String.IsEqual(ListItem.Videoresolution,1080p)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videoresolution/2160.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,2160)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videoresolution/480.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,480) | String.IsEqual(ListItem.Videoresolution,480p)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videoresolution/4k.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,4K) | String.IsEqual(ListItem.Videoresolution,2160) | String.IsEqual(ListItem.Videoresolution,2160p)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videoresolution/540.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,540)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videoresolution/576.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,576) | String.IsEqual(ListItem.Videoresolution,576p)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videoresolution/720.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,720) | String.IsEqual(ListItem.Videoresolution,720p)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/videoresolution/8k.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.Videoresolution,8k)</visible>
+        </control>
+    </control>
+  </include>
+
+  <!-- PosterStaticFlagshdr_type_metropolis -->
+  <include name="PosterStaticFlagshdr_type_metropolis">
+    <control type="group" top="5" left="165">
+        <control type="image">
+            <texture>flags/metropolis/hdr_type/dolbyvision.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,dolbyvision)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/hdr_type/hdr10.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/hdr_type/hdr10plus.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10plus)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/hdr_type/hlg.png</texture>
+            <aspectratio>keep</aspectratio>
+            <visible>String.IsEqual(ListItem.HdrType,hlg)</visible>
+        </control>
+        <control type="image">
+            <texture>flags/metropolis/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
             <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
         </control>

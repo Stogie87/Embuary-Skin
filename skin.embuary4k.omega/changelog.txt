@@ -6,6 +6,7 @@
 - Removed List-View from Movie-Content by Stogie87
 - Added Title-Poster to CodecInfoOverlay by Stogie87
 - Fixed Incorrect Scrolling in Episodes and Widgets by Stogie87
+- Added another Codec Logo Flag-Style
 
 [B]Version 21.1.4[/B]
 - Added Codec Logo Flags by Stogie87
