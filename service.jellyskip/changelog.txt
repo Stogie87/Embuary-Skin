@@ -1,10 +1,12 @@
 [B]Version 1.0.1[/B]
-- Added language support by Stogie
-- Improved segment detection and timing tolerance for skip dialogue by Stogie
-- Prevented duplicate or too rapid closing of skip dialogue by Stogie
-- Added minimum visible time for skip button by Stogie
-- Enhanced stability during player seeks and rapid playback Events by Stogie
-- Improved logging and error handling by Stogie
+- Added language support by Stogie87
+- Improved segment detection and timing tolerance for skip dialogue by Stogie87
+- Prevented duplicate or too rapid closing of skip dialogue by Stogie87
+- Added minimum visible time for skip button by Stogie87
+- Enhanced stability during player seeks and rapid playback Events by Stogie87
+- Improved logging and error handling by Stogie87
+- Integrated Episode Jumper logic for better Outro skip by Stogie87
+- Added dynamic button focus color using skin focus color by Stogie87
 
 [B]Version 1.0.0[/B]
-- Initial release
+- Initial release by SgtJalau

@@ -6,13 +6,11 @@
     <controls>
         <control type="group" id="9001">
             <animation type="WindowOpen" reversible="false">
-                <effect type="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450"
-                        reversible="false"/>
+                <effect type="slide" start="0,400" end="0,0" tween="cubic" easing="out" delay="0" time="450" reversible="false"/>
                 <effect type="fade" start="0" end="100" delay="0" time="350" reversible="false"/>
             </animation>
             <animation type="WindowClose" reversible="false">
-                <effect type="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="0" time="450"
-                        reversible="false"/>
+                <effect type="slide" start="0,0" end="0,400" tween="cubic" easing="out" delay="0" time="450" reversible="false"/>
                 <effect type="fade" start="100" end="0" delay="0" time="350" reversible="false"/>
             </animation>
             <align>right</align>
@@ -34,8 +32,8 @@
                     <textcolor>FFFFFFFF</textcolor>
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <shadowcolor>00000000</shadowcolor>
-                    <texturenofocus>button-nofo.png</texturenofocus>
-                    <texturefocus>button-fo.png</texturefocus>
+                    <texturenofocus border="4">button-nofo.png</texturenofocus>
+                    <texturefocus border="4" colordiffuse="$VAR[ButtonAccentColor]">button-fo.png</texturefocus>
                     <textoffsetx>10</textoffsetx>
                 </control>
             </control>
