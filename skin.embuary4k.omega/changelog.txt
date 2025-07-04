@@ -1,3 +1,6 @@
+[B]Version 21.1.6[/B]
+- Added option to install/remove Jellyskip (developed by SgtJalau)
+
 [B]Version 21.1.5[/B]
 - Added Codec Logo Flags to Biglist Layout by Stogie87
 - Added Codec Logo Flags to Square Layout by Stogie87
