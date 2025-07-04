@@ -1,0 +1,5 @@
+[B]Version 21.1.4[/B]
+- Added language support by Stogie
+
+[B]Version 1.0.0[/B]
+- Initial release

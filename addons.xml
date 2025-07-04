@@ -224,6 +224,31 @@
     </extension>
 </addon>
 
+<addon id="service.jellyskip" name="Jellyskip" version="1.0.1" provider-name="Jalau">
+	<requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+	</requires>
+	<extension point="xbmc.service" library="resources/lib/service.py"/>
+	<extension point="xbmc.python.script" library="addon.py">
+		<provides>executable</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">Interact with Jellyfin Media Segments</summary>
+		<description lang="en">Skip Jellyfin media segements with the click of a button</description>
+		<license>GNU General Public License, v2</license>
+		<language></language>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+		</assets>
+		<news>Initial release</news>
+	</extension>
+</addon>
+
 <addon id="skin.embuary2k.omega" version="21.1.5" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
 		<import addon="script.embuary.helper" version="2.0.8"/>
