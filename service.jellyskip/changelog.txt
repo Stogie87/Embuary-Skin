@@ -1,5 +1,10 @@
-[B]Version 21.1.4[/B]
+[B]Version 1.0.1[/B]
 - Added language support by Stogie
+- Improved segment detection and timing tolerance for skip dialogue by Stogie
+- Prevented duplicate or too rapid closing of skip dialogue by Stogie
+- Added minimum visible time for skip button by Stogie
+- Enhanced stability during player seeks and rapid playback Events by Stogie
+- Improved logging and error handling by Stogie
 
 [B]Version 1.0.0[/B]
 - Initial release

@@ -1,20 +1,20 @@
-import xbmc, xbmcaddon
+import xbmc
+import xbmcaddon
 import helper.utils as utils
 
 from skip_dialogue import SkipSegmentDialogue
 from jellyfin.jellyfin_grabber import JellyfinHack
-from skip_dialogue import SkipSegmentDialogue
 from helper import LazyLogger
-
 from jellyfin.media_segments import MediaSegmentItem
+import time
 
 addonInfo = xbmcaddon.Addon().getAddonInfo
 addonPath = utils.translate_path(addonInfo('path'))
 
 LOG = LazyLogger(__name__)
-
 SECOND_PADDING = 1
-
+MIN_DIALOGUE_VISIBLE = 2    # Mindestanzeigezeit in Sekunden für Dialog
+POSITION_TOLERANCE = 1.5    # Toleranzzeitfenster für Segmenterkennung
 
 class DialogueHandler:
 
@@ -22,128 +22,115 @@ class DialogueHandler:
         self.dialogue = None
         self.scheduled_thread = None
         self.last_item = None
+        self.dialogue_opened_at = 0
 
     def schedule_skip_gui(self, item: MediaSegmentItem, current_seconds):
-        """
-        Schedule the dialogue to open at the start of the upcoming segment.
-        If the segment has already started, opens the dialogue immediately.
+        try:
+            if not item:
+                LOG.warn("schedule_skip_gui: No item provided.")
+                return
 
-        :param item: the segment item to schedule
-        :param current_seconds: the current playback time in seconds
-        :return: None
-        """
+            self.cancel_scheduled()
 
-        if not item:
-            return
+            if self.last_item and not self.is_last_item_segment() and self.dialogue:
+                LOG.info(f"Closing dialogue for {self.last_item.get_segment_type_display()} at {self.last_item.get_start_seconds()} as it is not currently playing")
+                self.close_gui()
 
-        # Cancel any existing scheduled thread
-        self.cancel_scheduled()
+            if item.get_end_seconds() < current_seconds - POSITION_TOLERANCE:
+                LOG.info(f"schedule_skip_gui: Already past segment {item}")
+                return
 
-        if self.last_item and not self.is_last_item_segment() and self.dialogue:
-            # The last segment item is not currently playing, but our dialogue is still open possibly due to a seek
-            LOG.info(f"Closing dialogue for {self.last_item.get_segment_type_display()} at {self.last_item.get_start_seconds()} as it is not currently playing")
-            self.dialogue.close()
-            self.dialogue = None
-
-        if item.get_end_seconds() < current_seconds:
-            # We are past the segment, no need to schedule
-            return
-
-        if item.get_start_seconds() < current_seconds:
-            self.open_gui(item)
-        else:
-            seconds_till_start = item.get_start_seconds() - current_seconds
-            self.scheduled_thread = utils.run_threaded(self.on_gui_scheduled, delay=seconds_till_start + SECOND_PADDING,
-                                                       kwargs={'item': item})
-            LOG.info(
-                f"Scheduled dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} in {seconds_till_start} seconds")
+            if item.get_start_seconds() - POSITION_TOLERANCE <= current_seconds <= item.get_end_seconds() + POSITION_TOLERANCE:
+                self.open_gui(item)
+            else:
+                seconds_till_start = item.get_start_seconds() - current_seconds
+                try:
+                    self.scheduled_thread = utils.run_threaded(
+                        self.on_gui_scheduled,
+                        delay=max(0, seconds_till_start) + SECOND_PADDING,
+                        kwargs={'item': item}
+                    )
+                    LOG.info(f"Scheduled dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} in {seconds_till_start} seconds")
+                except Exception as e:
+                    LOG.error(f"Failed to schedule threaded dialogue: {e}")
+        except Exception as e:
+            LOG.error(f"schedule_skip_gui failed: {e}")
 
     def on_gui_scheduled(self, item: MediaSegmentItem):
-        """
-        Open the dialogue for the scheduled segment item. This is called by the scheduled thread.
-        :param item: the segment item to open the dialogue for
-        :return: None
-        """
-
-        player = xbmc.Player()
-        current_seconds = player.getTime()
-
-        LOG.info(
-            f"Opening scheduled dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as within segment")
-
-        if item.get_start_seconds() <= current_seconds <= item.get_end_seconds() - SECOND_PADDING:
-            self.open_gui(item)
-            return
-
-        # We are not within the segment
-        LOG.info(f"Skipping dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as not within segment")
+        try:
+            player = xbmc.Player()
+            current_seconds = player.getTime()
+            LOG.info(f"Opening scheduled dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as within segment")
+            if item.get_start_seconds() - POSITION_TOLERANCE <= current_seconds <= item.get_end_seconds() + POSITION_TOLERANCE:
+                self.open_gui(item)
+                return
+            LOG.info(f"Skipping dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as not within segment ({current_seconds})")
+        except Exception as e:
+            LOG.error(f"on_gui_scheduled failed: {e}")
 
     def cancel_scheduled(self):
-        """
-        Cancel the scheduled dialogue thread if it is running
-        :return: None
-        """
-
-        if self.scheduled_thread:
-            self.scheduled_thread.cancel()
-            self.scheduled_thread = None
-            LOG.info("Cancelled existing scheduled dialogue")
+        try:
+            if self.scheduled_thread:
+                self.scheduled_thread.cancel()
+                self.scheduled_thread = None
+                LOG.info("Cancelled existing scheduled dialogue")
+        except Exception as e:
+            LOG.error(f"cancel_scheduled failed: {e}")
 
     def close_gui(self):
-        """
-        Close the dialogue if it is open / stored
-        :return: None
-        """
-        if self.dialogue:
-            self.dialogue.close()
-            self.dialogue = None
+        try:
+            if self.dialogue:
+                now = time.time()
+                if now - self.dialogue_opened_at < MIN_DIALOGUE_VISIBLE:
+                    time_to_wait = MIN_DIALOGUE_VISIBLE - (now - self.dialogue_opened_at)
+                    LOG.info(f"Delaying close of dialogue by {time_to_wait:.2f}s to ensure min visible time")
+                    time.sleep(max(0.1, time_to_wait))
+                self.dialogue.close()
+                self.dialogue = None
+                self.dialogue_opened_at = 0
+        except Exception as e:
+            LOG.error(f"close_gui failed: {e}")
 
     def is_last_item(self, item: MediaSegmentItem):
-        """
-        Check if the last segment item is the same as the current segment item
-        :param item:
-        :return:
-        """
-        if not self.last_item or not item:
+        try:
+            if not self.last_item or not item:
+                return False
+            return self.last_item == item
+        except Exception as e:
+            LOG.error(f"is_last_item failed: {e}")
             return False
-
-        return self.last_item == item
 
     def is_last_item_segment(self):
-        """
-        Check if the last item segment is currently playing (player within the segment duration)
-        :return: bool - True if the last segment item is currently playing (player within the segment duration)
-        """
-
-        player = xbmc.Player()
-
-        if not self.last_item:
+        try:
+            player = xbmc.Player()
+            if not self.last_item:
+                return False
+            current_seconds = player.getTime()
+            return (
+                self.last_item.get_start_seconds() - POSITION_TOLERANCE <= current_seconds <= self.last_item.get_end_seconds() + POSITION_TOLERANCE
+            )
+        except Exception as e:
+            LOG.error(f"is_last_item_segment failed: {e}")
             return False
 
-        current_seconds = player.getTime()
-        return self.last_item.get_start_seconds() <= current_seconds <= self.last_item.get_end_seconds()
-
     def open_gui(self, item: MediaSegmentItem):
-        """
-        Open the dialogue for the segment item. If the segment is the same as the last segment, the dialogue is skipped.
-        If the user already declined the dialogue, we don't want to show it again for the same segment.
+        try:
+            if self.is_last_item(item) and self.dialogue:
+                LOG.info(f"Skipping dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as it is the same as the last item and already open")
+                return
 
-        :param item: the segment item to open the dialogue for
-        :return: None
-        """
-
-        if self.is_last_item(item):
-            LOG.info(f"Skipping dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as it is the same as the last item")
-            return
-
-        self.last_item = item
-        LOG.info(f"Opening dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()}")
-        self.close_gui()
-        dialog = SkipSegmentDialogue('script-dialog.xml', addonPath, seek_time_seconds=item.get_end_seconds(),
-                                     segment_type=item.get_segment_type_display())
-        self.dialogue = dialog
-        dialog.doModal()
-        del dialog
-
+            self.last_item = item
+            LOG.info(f"Opening dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()}")
+            self.close_gui()
+            dialog = SkipSegmentDialogue('script-dialog.xml', addonPath, seek_time_seconds=item.get_end_seconds(), segment_type=item.get_segment_type_display())
+            self.dialogue = dialog
+            self.dialogue_opened_at = time.time()
+            try:
+                dialog.doModal()
+            except Exception as e:
+                LOG.error(f"doModal failed: {e}")
+            del dialog
+        except Exception as e:
+            LOG.error(f"open_gui failed: {e}")
 
 dialogue_handler = DialogueHandler()
