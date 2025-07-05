@@ -236,11 +236,9 @@
         <platform>all</platform>
         <summary lang="en">Interact with Jellyfin Media Segments</summary>
         <summary lang="de">Interagiere mit Jellyfin-Mediensegmenten</summary>
-        <description lang="de">
-            Jellyskip ist ein Kodi-Plugin, das während der Wiedergabe von Serienepisoden aus Jellyfin automatisch einen „Intro überspringen“- und „Outro überspringen“-Button anzeigt. Die Segmenterkennung erfolgt zuverlässig über Jellyfin-Metadaten. Per Knopfdruck kannst du direkt zum Segmentende oder zur nächsten Folge springen. Das Design des Buttons passt sich dynamisch den gewählten Skin-Farben an und unterstützt mehrere Sprachen.
+        <description lang="de">Jellyskip ist ein Kodi-Plugin, das während der Wiedergabe von Serienepisoden aus Jellyfin automatisch einen „Intro überspringen“- und „Outro überspringen“-Button anzeigt. Die Segmenterkennung erfolgt zuverlässig über Jellyfin-Metadaten. Per Knopfdruck kannst du direkt zum Segmentende oder zur nächsten Folge springen. Das Design des Buttons passt sich dynamisch den gewählten Skin-Farben an und unterstützt mehrere Sprachen.
         </description>
-        <description lang="en">
-            Jellyskip is a Kodi plugin that automatically displays “Skip Intro” and “Skip Outro” buttons for TV episodes from Jellyfin. Segment detection is reliable using Jellyfin metadata. With a single button press, you can jump to the segment end or directly to the next episode. The button design dynamically adapts to your skin’s color settings and supports multiple languages.
+        <description lang="en">Jellyskip is a Kodi plugin that automatically displays “Skip Intro” and “Skip Outro” buttons for TV episodes from Jellyfin. Segment detection is reliable using Jellyfin metadata. With a single button press, you can jump to the segment end or directly to the next episode. The button design dynamically adapts to your skin’s color settings and supports multiple languages.
         </description>
         <license>GNU General Public License, v2</license>
         <language></language>
