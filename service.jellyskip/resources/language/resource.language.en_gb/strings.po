@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"Language: en_gb\n"
+
+msgctxt "#1000"
+msgid "Jellyskip Settings"
+msgstr "Jellyskip Settings"
+
+msgctxt "#1001"
+msgid "Enable plugin"
+msgstr "Enable plugin"
+
+msgctxt "#1002"
+msgid "Show 'Skip intro' button"
+msgstr "Show 'Skip intro' button"
+
+msgctxt "#1003"
+msgid "Show 'Skip outro' button"
+msgstr "Show 'Skip outro' button"

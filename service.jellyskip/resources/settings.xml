@@ -1,7 +1,8 @@
 <settings>
-    <category label="Jellyskip Settings">
-        <setting id="enabled" type="bool" label="Enable Jellyskip" default="true" />
-        <setting id="skip_intro" type="bool" label="Skip intro segments" default="true" />
-        <setting id="skip_outro" type="bool" label="Skip outro segments" default="true" />
+    <category label="1000">
+        <setting id="enabled" type="bool" label="1001" default="true" />
+        <setting id="skip_intro" type="bool" label="1002" default="true" />
+        <setting id="skip_outro" type="bool" label="1003" default="true" />
     </category>
 </settings>
+

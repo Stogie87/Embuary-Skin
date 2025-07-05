@@ -1,5 +1,6 @@
 [B]Version 1.0.2[/B]
 - Added settings menu to enable/disable skip function by Stogie87
+- Added language support for settings menu
 
 [B]Version 1.0.1[/B]
 - Added language support by Stogie87
