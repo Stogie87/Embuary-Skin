@@ -1,3 +1,6 @@
+[B]Version 1.0.2[/B]
+- Added settings menu to enable/disable skip function by Stogie87
+
 [B]Version 1.0.1[/B]
 - Added language support by Stogie87
 - Improved segment detection and timing tolerance for skip dialogue by Stogie87

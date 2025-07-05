@@ -15,6 +15,13 @@ SECOND_PADDING = 1
 MIN_DIALOGUE_VISIBLE = 2    # Mindestanzeigezeit in Sekunden für Dialog
 POSITION_TOLERANCE = 1.5    # Toleranzzeitfenster für Segmenterkennung
 
+def get_settings():
+    addon = xbmcaddon.Addon()
+    enabled = addon.getSettingBool("enabled")
+    skip_intro = addon.getSettingBool("skip_intro")
+    skip_outro = addon.getSettingBool("skip_outro")
+    return enabled, skip_intro, skip_outro
+
 class DialogueHandler:
 
     def __init__(self):
@@ -25,6 +32,20 @@ class DialogueHandler:
 
     def schedule_skip_gui(self, item: MediaSegmentItem, current_seconds):
         try:
+            # --- Settings-Auswertung ---
+            enabled, skip_intro, skip_outro = get_settings()
+            if not enabled:
+                LOG.info("schedule_skip_gui: Plugin deaktiviert – kein Dialog.")
+                return
+            if item:
+                seg_type = item.get_segment_type_display().lower()
+                if seg_type == "intro" and not skip_intro:
+                    LOG.info("schedule_skip_gui: Intro-Skip deaktiviert – kein Dialog.")
+                    return
+                if seg_type == "outro" and not skip_outro:
+                    LOG.info("schedule_skip_gui: Outro-Skip deaktiviert – kein Dialog.")
+                    return
+
             if not item:
                 LOG.warn("schedule_skip_gui: No item provided.")
                 return
@@ -62,6 +83,20 @@ class DialogueHandler:
 
     def on_gui_scheduled(self, item: MediaSegmentItem):
         try:
+            # --- Settings-Auswertung auch hier ---
+            enabled, skip_intro, skip_outro = get_settings()
+            if not enabled:
+                LOG.info("on_gui_scheduled: Plugin deaktiviert – kein Dialog.")
+                return
+            if item:
+                seg_type = item.get_segment_type_display().lower()
+                if seg_type == "intro" and not skip_intro:
+                    LOG.info("on_gui_scheduled: Intro-Skip deaktiviert – kein Dialog.")
+                    return
+                if seg_type == "outro" and not skip_outro:
+                    LOG.info("on_gui_scheduled: Outro-Skip deaktiviert – kein Dialog.")
+                    return
+
             player = xbmc.Player()
             current_seconds = player.getTime()
             LOG.info(f"Opening scheduled dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as within segment")

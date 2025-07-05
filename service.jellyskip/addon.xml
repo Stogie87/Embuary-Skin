@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="service.jellyskip" name="Jellyskip" version="1.0.1" provider-name="Jalau">
+<addon id="service.jellyskip" name="Jellyskip" version="1.0.2" provider-name="Jalau">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
+
     <extension point="xbmc.service" library="resources/lib/service.py"/>
+
     <extension point="xbmc.python.script" library="addon.py">
         <provides>executable</provides>
     </extension>
+
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <summary lang="en">Interact with Jellyfin Media Segments</summary>
         <summary lang="de">Interagiere mit Jellyfin-Mediensegmenten</summary>
-        <description lang="de">Jellyskip ist ein Kodi-Plugin, das während der Wiedergabe von Serienepisoden aus Jellyfin automatisch einen „Intro überspringen“- und „Outro überspringen“-Button anzeigt. Die Segmenterkennung erfolgt zuverlässig über Jellyfin-Metadaten. Per Knopfdruck kannst du direkt zum Segmentende oder zur nächsten Folge springen. Das Design des Buttons passt sich dynamisch den gewählten Skin-Farben an und unterstützt mehrere Sprachen.
-        </description>
-        <description lang="en">Jellyskip is a Kodi plugin that automatically displays “Skip Intro” and “Skip Outro” buttons for TV episodes from Jellyfin. Segment detection is reliable using Jellyfin metadata. With a single button press, you can jump to the segment end or directly to the next episode. The button design dynamically adapts to your skin’s color settings and supports multiple languages.
-        </description>
+        <description lang="de">Jellyskip ist ein Kodi-Plugin, das während der Wiedergabe von Serienepisoden aus Jellyfin automatisch einen „Intro überspringen“- und „Outro überspringen“-Button anzeigt. Die Segmenterkennung erfolgt zuverlässig über Jellyfin-Metadaten. Per Knopfdruck kannst du direkt zum Segmentende oder zur nächsten Folge springen. Das Design des Buttons passt sich dynamisch den gewählten Skin-Farben an und unterstützt mehrere Sprachen.</description>
+        <description lang="en">Jellyskip is a Kodi plugin that automatically displays “Skip Intro” and “Skip Outro” buttons for TV episodes from Jellyfin. Segment detection is reliable using Jellyfin metadata. With a single button press, you can jump to the segment end or directly to the next episode. The button design dynamically adapts to your skin’s color settings and supports multiple languages.</description>
         <license>GNU General Public License, v2</license>
-        <language></language>
+        <settings>resources/settings.xml</settings>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
@@ -24,6 +25,6 @@
             <screenshot>resources/screenshot-02.jpg</screenshot>
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
-        <news>Initial release</news>
+        <news>Added multilingual support and refined settings handling.</news>
     </extension>
 </addon>
