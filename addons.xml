@@ -225,28 +225,38 @@
 </addon>
 
 <addon id="service.jellyskip" name="Jellyskip" version="1.0.1" provider-name="Jalau">
-	<requires>
+    <requires>
         <import addon="xbmc.python" version="3.0.0"/>
-	</requires>
-	<extension point="xbmc.service" library="resources/lib/service.py"/>
-	<extension point="xbmc.python.script" library="addon.py">
-		<provides>executable</provides>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<platform>all</platform>
-		<summary lang="en">Interact with Jellyfin Media Segments</summary>
-		<description lang="en">Skip Jellyfin media segements with the click of a button</description>
-		<license>GNU General Public License, v2</license>
-		<language></language>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-			<screenshot>resources/screenshot-01.jpg</screenshot>
-			<screenshot>resources/screenshot-02.jpg</screenshot>
-			<screenshot>resources/screenshot-03.jpg</screenshot>
-		</assets>
-		<news>Initial release</news>
-	</extension>
+    </requires>
+    <extension point="xbmc.service" library="resources/lib/service.py"/>
+    <extension point="xbmc.python.script" library="addon.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">Interact with Jellyfin Media Segments</summary>
+        <summary lang="de">Interagiere mit Jellyfin-Mediensegmenten</summary>
+        <description lang="en">
+            Jellyskip is a Kodi plugin that automatically displays “Skip Intro” and “Skip Outro” buttons for TV episodes from Jellyfin.
+            Segment detection is reliable using Jellyfin metadata. With a single button press, you can jump to the segment end or directly to the next episode.
+            The button design dynamically adapts to your skin’s color settings and supports multiple languages.
+        </description>
+        <description lang="de">
+            Jellyskip ist ein Kodi-Plugin, das während der Wiedergabe von Serienepisoden aus Jellyfin automatisch
+            einen „Intro überspringen“- und „Outro überspringen“-Button anzeigt. Die Segmenterkennung erfolgt zuverlässig über Jellyfin-Metadaten.
+            Per Knopfdruck kannst du direkt zum Segmentende oder zur nächsten Folge springen. Das Design des Buttons passt sich dynamisch den gewählten Skin-Farben an und unterstützt mehrere Sprachen.
+        </description>
+        <license>GNU General Public License, v2</license>
+        <language></language>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+            <screenshot>resources/screenshot-01.jpg</screenshot>
+            <screenshot>resources/screenshot-02.jpg</screenshot>
+            <screenshot>resources/screenshot-03.jpg</screenshot>
+        </assets>
+        <news>Initial release</news>
+    </extension>
 </addon>
 
 <addon id="skin.embuary2k.omega" version="21.1.6" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">

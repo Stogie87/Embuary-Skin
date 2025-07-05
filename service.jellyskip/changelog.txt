@@ -7,6 +7,8 @@
 - Improved logging and error handling by Stogie87
 - Integrated Episode Jumper logic for better Outro skip by Stogie87
 - Added dynamic button focus color using skin focus color by Stogie87
+- Skip button is now shown again when re-entering a segment after skipping by Stogie87
+- Changed Logo by Stogie87
 
 [B]Version 1.0.0[/B]
 - Initial release by SgtJalau

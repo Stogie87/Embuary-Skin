@@ -1,12 +1,11 @@
 import xbmc
 import xbmcaddon
 import helper.utils as utils
+import time
 
 from skip_dialogue import SkipSegmentDialogue
-from jellyfin.jellyfin_grabber import JellyfinHack
 from helper import LazyLogger
 from jellyfin.media_segments import MediaSegmentItem
-import time
 
 addonInfo = xbmcaddon.Addon().getAddonInfo
 addonPath = utils.translate_path(addonInfo('path'))
@@ -32,9 +31,14 @@ class DialogueHandler:
 
             self.cancel_scheduled()
 
+            # Prüfe ob wir gerade außerhalb des Segments sind und resette das Flag, damit ein erneuter Eintritt den Dialog wieder anzeigt
             if self.last_item and not self.is_last_item_segment() and self.dialogue:
                 LOG.info(f"Closing dialogue for {self.last_item.get_segment_type_display()} at {self.last_item.get_start_seconds()} as it is not currently playing")
                 self.close_gui()
+
+            # --- NEU: Setze last_item zurück, wenn nicht mehr im Segment ---
+            if self.last_item and not self.is_last_item_segment():
+                self.last_item = None
 
             if item.get_end_seconds() < current_seconds - POSITION_TOLERANCE:
                 LOG.info(f"schedule_skip_gui: Already past segment {item}")
@@ -88,6 +92,10 @@ class DialogueHandler:
                 self.dialogue.close()
                 self.dialogue = None
                 self.dialogue_opened_at = 0
+
+                # --- NEU: last_item resetten, damit ein erneuter Eintritt das Segment erneut triggert
+                self.last_item = None
+
         except Exception as e:
             LOG.error(f"close_gui failed: {e}")
 
@@ -115,6 +123,7 @@ class DialogueHandler:
 
     def open_gui(self, item: MediaSegmentItem):
         try:
+            # Dialog soll immer erneut getriggert werden, wenn man wieder im Segment ist
             if self.is_last_item(item) and self.dialogue:
                 LOG.info(f"Skipping dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as it is the same as the last item and already open")
                 return
