@@ -14,7 +14,6 @@ ACTION_BACK = 92
 MIN_REMAINING_SECONDS = 5
 LOG = LazyLogger(__name__)
 
-# -- Start: Robuste Episode-Jumper-Logik (direkt eingebaut) --
 PAUSE_BEFORE_JUMP_SEC = 0.2
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
@@ -30,7 +29,7 @@ def log(msg, level='INFO'):
     xbmc.log(f'[{ADDON_ID}] {msg}', LOGLEVELS.get(level.upper(), xbmc.LOGINFO))
 
 def show_error_dialog(message):
-    xbmcgui.Dialog().notification("Episode Jumper", message, xbmcgui.NOTIFICATION_ERROR)
+    xbmcgui.Dialog().notification("Jellyskipper", message, xbmcgui.NOTIFICATION_ERROR)
 
 def get_tvshowid_by_title(tvshowtitle):
     try:
