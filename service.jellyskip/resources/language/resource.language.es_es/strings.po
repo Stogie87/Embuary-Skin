@@ -1,0 +1,20 @@
+msgid ""
+msgstr ""
+"Language: es_es\n"
+
+msgctxt "#1000"
+msgid "Jellyskip Settings"
+msgstr "Configuración de Jellyskip"
+
+msgctxt "#1001"
+msgid "Enable plugin"
+msgstr "Habilitar complemento"
+
+msgctxt "#1002"
+msgid "Show 'Skip intro' button"
+msgstr "Mostrar botón 'Saltar introducción'"
+
+msgctxt "#1003"
+msgid "Show 'Skip outro' button"
+msgstr "Mostrar botón 'Saltar outro'"
+

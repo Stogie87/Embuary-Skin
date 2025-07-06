@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"Language: tr_tr\n"
+
+msgctxt "#1000"
+msgid "Jellyskip Settings"
+msgstr "Jellyskip Ayarları"
+
+msgctxt "#1001"
+msgid "Enable plugin"
+msgstr "Eklentiyi etkinleştir"
+
+msgctxt "#1002"
+msgid "Show 'Skip intro' button"
+msgstr "'Girişi atla' düğmesini göster"
+
+msgctxt "#1003"
+msgid "Show 'Skip outro' button"
+msgstr "'Kapanışı atla' düğmesini göster"

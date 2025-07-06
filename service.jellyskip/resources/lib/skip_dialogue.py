@@ -29,7 +29,7 @@ def log(msg, level='INFO'):
     xbmc.log(f'[{ADDON_ID}] {msg}', LOGLEVELS.get(level.upper(), xbmc.LOGINFO))
 
 def show_error_dialog(message):
-    xbmcgui.Dialog().notification("Jellyskipper", message, xbmcgui.NOTIFICATION_ERROR)
+    xbmcgui.Dialog().notification("Jellyskip", message, xbmcgui.NOTIFICATION_ERROR)
 
 def get_tvshowid_by_title(tvshowtitle):
     try:

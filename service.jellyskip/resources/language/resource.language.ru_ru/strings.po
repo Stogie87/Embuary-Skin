@@ -1,0 +1,19 @@
+msgid ""
+msgstr ""
+"Language: ru_ru\n"
+
+msgctxt "#1000"
+msgid "Jellyskip Settings"
+msgstr "Настройки Jellyskip"
+
+msgctxt "#1001"
+msgid "Enable plugin"
+msgstr "Включить плагин"
+
+msgctxt "#1002"
+msgid "Show 'Skip intro' button"
+msgstr "Показать кнопку 'Пропустить интро'"
+
+msgctxt "#1003"
+msgid "Show 'Skip outro' button"
+msgstr "Показать кнопку 'Пропустить аутро'"
