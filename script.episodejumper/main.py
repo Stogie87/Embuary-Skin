@@ -288,8 +288,7 @@ def main():
         # --- Kein Treffer? ---
         if not episode_path:
             log(f"{direction.capitalize()} Episode konnte nicht gefunden werden.", level='ERROR')
-            label = "Nächste" if direction == "next" else "Vorherige"
-            msg = f"{label} Episode konnte nicht gefunden werden. Vermutlich ist das {'Staffel-' if season else ''}Finale erreicht."
+            msg = "Keine vorherige Episode gefunden." if direction == "previous" else "Keine weitere Episode gefunden."
             show_error_dialog(msg)
             return
 
