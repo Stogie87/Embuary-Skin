@@ -25,6 +25,76 @@ LOGLEVELS = {
     'FATAL': xbmc.LOGFATAL
 }
 
+def get_localized_error_message(code):
+    language = xbmc.getLanguage(xbmc.ISO_639_1)[:2]
+
+    translations = {
+        "no_playback": {
+            "de": "Kein aktives Playback – keine Episode kann gestartet werden.",
+            "en": "No active playback – cannot start episode.",
+            "fr": "Aucune lecture active – impossible de lancer l'épisode.",
+            "es": "No hay reproducción activa: no se puede iniciar el episodio.",
+            "it": "Nessuna riproduzione attiva: impossibile avviare l'episodio.",
+            "tr": "Etkin bir oynatma yok – bölüm başlatılamıyor.",
+            "ru": "Нет активного воспроизведения — не удаётся запустить эпизод."
+        },
+        "play_error": {
+            "de": "Fehler beim Starten der Episode.",
+            "en": "Error starting the episode.",
+            "fr": "Erreur lors du démarrage de l'épisode.",
+            "es": "Error al iniciar el episodio.",
+            "it": "Errore durante l'avvio dell'episodio.",
+            "tr": "Bölüm başlatılırken hata oluştu.",
+            "ru": "Ошибка при запуске эпизода."
+        },
+        "unexpected_error": {
+            "de": "Unerwarteter Fehler. Siehe Logdatei für Details.",
+            "en": "Unexpected error. See log file for details.",
+            "fr": "Erreur inattendue. Voir le journal pour plus de détails.",
+            "es": "Error inesperado. Consulta el registro para más detalles.",
+            "it": "Errore imprevisto. Vedi il file di log per i dettagli.",
+            "tr": "Beklenmeyen hata. Ayrıntılar için günlük dosyasına bakın.",
+            "ru": "Неожиданная ошибка. См. журнал для подробностей."
+        }
+    }
+
+    return (
+        translations.get(code, {}).get(language)
+        or translations.get(code, {}).get("en")
+        or "Error"
+    )
+
+def get_localized_episode_not_found_message(direction):
+    language = xbmc.getLanguage(xbmc.ISO_639_1)[:2]
+
+    translations = {
+        "next": {
+            "de": "Keine weitere Episode gefunden.",
+            "fr": "Aucun autre épisode trouvé.",
+            "es": "No se encontró otro episodio.",
+            "it": "Nessun altro episodio trovato.",
+            "tr": "Başka bölüm bulunamadı.",
+            "ru": "Другой эпизод не найден.",
+            "en": "No further episode found."
+        },
+        "previous": {
+            "de": "Keine vorherige Episode gefunden.",
+            "fr": "Aucun épisode précédent trouvé.",
+            "es": "No se encontró el episodio anterior.",
+            "it": "Nessun episodio precedente trovato.",
+            "tr": "Önceki bölüm bulunamadı.",
+            "ru": "Предыдущий эпизод не найден.",
+            "en": "No previous episode found."
+        }
+    }
+
+    return (
+            translations.get(direction, {}).get(language)
+            or translations.get(direction, {}).get("en")
+            or "Episode not found."
+    )
+
+
 def log(msg, level='INFO'):
     xbmc.log(f'[{ADDON_ID}] {msg}', LOGLEVELS.get(level.upper(), xbmc.LOGINFO))
 
@@ -245,7 +315,7 @@ def skip_to_next_episode():
         player = xbmc.Player()
         if not player.isPlaying():
             log("Kein aktives Playback. Keine Episode kann gestartet werden.", level='WARNING')
-            show_error_dialog("Kein aktives Playback – keine Episode kann gestartet werden.")
+            show_error_dialog(get_localized_error_message("no_playback"))
             return
 
         info = collect_episode_info()
@@ -281,7 +351,7 @@ def skip_to_next_episode():
 
         if not episode_path:
             log(f"{direction.capitalize()} Episode konnte nicht gefunden werden.", level='ERROR')
-            msg = "Keine vorherige Episode gefunden." if direction == "previous" else "Keine weitere Episode gefunden."
+            msg = get_localized_episode_not_found_message(direction)
             show_error_dialog(msg)
             return
 
@@ -300,12 +370,12 @@ def skip_to_next_episode():
             log(f"Gestartet: {episode_path}", level='INFO')
         except Exception as e:
             log(f"Fehler beim Starten der Episode: {repr(e)}", level='ERROR')
-            show_error_dialog("Fehler beim Starten der Episode.")
+            show_error_dialog(get_localized_error_message("play_error"))
 
     except Exception as e:
         tb = traceback.format_exc()
         log(f"Exception im skip_to_next_episode: {repr(e)}\n{tb}", level='ERROR')
-        show_error_dialog("Unerwarteter Fehler beim Überspringen. Siehe Logdatei.")
+        show_error_dialog(get_localized_error_message("unexpected_error"))
 
 # -- Ende: Robuste Episode-Jumper-Logik --
 

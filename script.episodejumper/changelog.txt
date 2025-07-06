@@ -1,3 +1,6 @@
+[B]Version 1.0.3[/B]
+- Improved multilingual error messages and skip button labels
+
 [B]Version 1.0.2[/B]
 - Improved Sorting and Episode Detection
 - Enhanced Robustness

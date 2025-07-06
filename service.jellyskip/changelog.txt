@@ -1,6 +1,9 @@
+[B]Version 1.0.3[/B]
+- Improved multilingual error messages and skip button labels by Stogie87
+
 [B]Version 1.0.2[/B]
 - Added settings menu to enable/disable skip function by Stogie87
-- Added language support for settings menu
+- Added language support for settings menu by Stogie87
 
 [B]Version 1.0.1[/B]
 - Added language support by Stogie87
