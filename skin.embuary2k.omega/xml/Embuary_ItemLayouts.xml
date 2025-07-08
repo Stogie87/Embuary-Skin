@@ -521,6 +521,7 @@
 						<visible>!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner)) | !String.IsEmpty(ListItem.Art(fanart)) | !String.IsEmpty(ListItem.Art(tvshow.fanart))</visible>
 					</control>
 					<control type="image">
+						<left>20</left>
 						<width>780</width>
 						<height>163</height>
 						<texture background="true">$VAR[ListItemClearlogo]</texture>
