@@ -456,7 +456,7 @@
 				<visible>$PARAM[visible]</visible>
 				<include content="WidgetLabels">
 					<param name="top">175</param>
-					<param name="width">880</param>
+					<param name="width">780</param>
 					<param name="id">$PARAM[id]</param>
 					<param name="mainlabel">$PARAM[mainlabel]</param>
 					<param name="sublabel">$PARAM[sublabel]</param>
@@ -470,15 +470,15 @@
 					<height>163</height>
 					<control type="image">
 						<top>-2</top>
-						<left>-2</left>
-						<width>886</width>
+						<left>27</left>
+						<width>768</width>
 						<height>169</height>
 						<texture border="20,20,20,20">items/shadow.png</texture>
 					</control>
 					<control type="image">
-						<left>-12</left>
 						<top>-7</top>
-						<width>904</width>
+						<left>20</left>
+						<width>780</width>
 						<height>187</height>
 						<texture border="20,20,20,20" colordiffuse="$VAR[AccentColor]">items/focus.png</texture>
 						<aspectratio>stretch</aspectratio>
@@ -486,14 +486,15 @@
 						<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
 					</control>
 					<control type="image">
-						<width>880</width>
+						<width>780</width>
 						<height>163</height>
 						<texture colordiffuse="$VAR[ThumbFallbackColor]">common/white.jpg</texture>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
 						<visible>![!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner)) | !String.IsEmpty(ListItem.Art(fanart)) | !String.IsEmpty(ListItem.Art(tvshow.fanart))]</visible>
 					</control>
 					<control type="image">
-						<width>880</width>
+						<left>30</left>
+						<width>760</width>
 						<height>163</height>
 						<texture colordiffuse="thumb_background">common/white.jpg</texture>
 						<aspectratio scalediffuse="false">stretch</aspectratio>
@@ -501,8 +502,8 @@
 					</control>
 					<control type="textbox">
 						<top>10</top>
-						<left>10</left>
-						<width>860</width>
+						<left>30</left>
+						<width>780</width>
 						<height>143</height>
 						<font>Light24</font>
 						<textcolor>white</textcolor>
@@ -512,14 +513,15 @@
 						<visible>![!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner)) | !String.IsEmpty(ListItem.Art(fanart)) | !String.IsEmpty(ListItem.Art(tvshow.fanart))]</visible>
 					</control>
 					<control type="image">
-						<width>880</width>
+						<left>30</left>
+						<width>760</width>
 						<height>163</height>
 						<texture background="true">$VAR[IconBanner]</texture>
 						<aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
 						<visible>!String.IsEmpty(ListItem.Art(banner)) | !String.IsEmpty(ListItem.Art(tvshow.banner)) | !String.IsEmpty(ListItem.Art(fanart)) | !String.IsEmpty(ListItem.Art(tvshow.fanart))</visible>
 					</control>
 					<control type="image">
-						<width>880</width>
+						<width>780</width>
 						<height>163</height>
 						<texture background="true">$VAR[ListItemClearlogo]</texture>
 						<aspectratio scalediffuse="false">keep</aspectratio>
@@ -531,7 +533,7 @@
 
 					<control type="group">
     						<top>2</top>
-    						<left>810</left>
+    						<left>720</left>
     						<width>60</width>
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
@@ -541,7 +543,7 @@
 					</control>
 					<control type="group">
     						<top>105</top>
-    						<left>745</left>
+    						<left>645</left>
     						<width>60</width>
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
@@ -551,7 +553,7 @@
 					</control>
 					<control type="group">
    	 					<top>105</top>
-    						<left>810</left>
+    						<left>720</left>
     						<width>60</width>
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
@@ -561,7 +563,7 @@
 					</control>
 					<control type="group">
     						<top>105</top>
-    						<left>5</left>
+    						<left>40</left>
     						<width>60</width>
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
@@ -571,7 +573,7 @@
 					</control>
   					<control type="group">
     						<top>2</top>
-    						<left>5</left>
+    						<left>40</left>
     						<width>60</width>
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>
@@ -583,7 +585,8 @@
 					<!-- Codec Flags Ende -->
 
 					<control type="group">
-						<width>880</width>
+					<left>30</left>
+						<width>760</width>
 						<height>163</height>
 						<include content="ListitemActionOverlay">
 							<param name="focused" value="$PARAM[focused]"/>
@@ -594,7 +597,7 @@
 					</control>
 					<include content="Progress">
 						<param name="top" value="159"/>
-						<param name="width" value="880"/>
+						<param name="width" value="800"/>
 					</include>
 				</control>
 			</control>

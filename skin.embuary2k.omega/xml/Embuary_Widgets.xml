@@ -774,7 +774,7 @@
 		<definition>
 			<control type="group" id="$PARAM[id]1">
 				<width>100%</width>
-				<height>2160</height>
+				<height>1440</height>
 				<control id="$PARAM[id]" type="panel">
 					<include>FocusBounce</include>
 					<width>auto</width>

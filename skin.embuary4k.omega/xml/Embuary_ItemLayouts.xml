@@ -531,7 +531,7 @@
 
 					<control type="group">
     						<top>2</top>
-    						<left>810</left>
+    						<left>805</left>
     						<width>60</width>
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideoresolution_standard</include>
@@ -541,7 +541,7 @@
 					</control>
 					<control type="group">
     						<top>105</top>
-    						<left>745</left>
+    						<left>730</left>
     						<width>60</width>
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiochannels_standard</include>
@@ -551,7 +551,7 @@
 					</control>
 					<control type="group">
    	 					<top>105</top>
-    						<left>810</left>
+    						<left>805</left>
     						<width>60</width>
     						<height>60</height>
 						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsaudiocodec_standard</include>
@@ -561,7 +561,7 @@
 					</control>
 					<control type="group">
     						<top>105</top>
-    						<left>5</left>
+    						<left>15</left>
     						<width>60</width>
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagsvideocodec_standard</include>
@@ -571,7 +571,7 @@
 					</control>
   					<control type="group">
     						<top>2</top>
-    						<left>5</left>
+    						<left>15</left>
     						<width>60</width>
     						<height>60</height>
     						<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard)">PosterStaticFlagshdr_type_standard</include>

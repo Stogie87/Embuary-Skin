@@ -9,8 +9,9 @@
 			<control id="58" type="panel">
 				<visible>$EXP[BannerViewVisible]</visible>
 				<include>FocusBounce</include>
-				<width>auto</width>
+				<width>2560</width>
 				<height>1440</height>
+				<itemgap>20</itemgap>
 				<onright condition="Control.IsVisible(7000)">SetFocus(7000)</onright>
 				<onright condition="!Control.IsVisible(7000) + Control.IsVisible(17)">17</onright>
 				<onright>noop</onright>
@@ -23,9 +24,8 @@
 				<defaultcontrol always="true">0</defaultcontrol>
 				<viewtype label="$LOCALIZE[20020]">panel</viewtype>
 				<pagecontrol>17</pagecontrol>
-				<itemlayout condition="!Skin.HasSetting(HideBannerLabels) | !Window.IsVisible(myvideonav.xml)" width="900" height="229">
+				<itemlayout condition="!Skin.HasSetting(HideBannerLabels) | !Window.IsVisible(myvideonav.xml)" width="800" height="229">
 					<control type="group">
-						<left>70</left>
 						<top>115</top>
 						<include content="BannerLayout">
 							<param name="mainlabel" value="$VAR[MainListLabel]$INFO[ListItem.Year, - ]" />
@@ -35,12 +35,11 @@
 						</include>
 					</control>
 				</itemlayout>
-				<focusedlayout condition="!Skin.HasSetting(HideBannerLabels) | !Window.IsVisible(myvideonav.xml)" width="900" height="229">
+				<focusedlayout condition="!Skin.HasSetting(HideBannerLabels) | !Window.IsVisible(myvideonav.xml)" width="800" height="229">
 					<include content="SetPropertyOnFocus">
 						<param name="id" value="58"/>
 					</include>
 					<control type="group">
-						<left>70</left>
 						<top>115</top>
 						<include content="BannerLayout">
 							<param name="mainlabel" value="$VAR[MainListLabel]$INFO[ListItem.Year, - ]" />
@@ -51,9 +50,8 @@
 						</include>
 					</control>
 				</focusedlayout>
-				<itemlayout condition="Skin.HasSetting(HideBannerLabels) + Window.IsVisible(myvideonav.xml)" width="900" height="183">
+				<itemlayout condition="Skin.HasSetting(HideBannerLabels) + Window.IsVisible(myvideonav.xml)" width="800" height="183">
 					<control type="group">
-						<left>70</left>
 						<top>92</top>
 						<include content="BannerLayout">
 							<param name="mainlabel" value="" />
@@ -64,12 +62,11 @@
 						</include>
 					</control>
 				</itemlayout>
-				<focusedlayout condition="Skin.HasSetting(HideBannerLabels) + Window.IsVisible(myvideonav.xml)" width="900" height="183">
+				<focusedlayout condition="Skin.HasSetting(HideBannerLabels) + Window.IsVisible(myvideonav.xml)" width="800" height="183">
 					<include content="SetPropertyOnFocus">
 						<param name="id" value="58"/>
 					</include>
 					<control type="group">
-						<left>70</left>
 						<top>92</top>
 						<include content="BannerLayout">
 							<param name="mainlabel" value="" />
