@@ -10,7 +10,7 @@
 				<visible>$EXP[BannerViewVisible]</visible>
 				<include>FocusBounce</include>
 				<width>auto</width>
-				<height>2160</height>
+				<height>1440</height>
 				<onright condition="Control.IsVisible(7000)">SetFocus(7000)</onright>
 				<onright condition="!Control.IsVisible(7000) + Control.IsVisible(17)">17</onright>
 				<onright>noop</onright>

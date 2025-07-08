@@ -27,8 +27,8 @@
 		<scrolltime tween="linear" easing="inout">200</scrolltime>
 	</include>
 	<include name="FullscreenDimensions">
-		<width>3840</width>
-		<height>2160</height>
+		<width>2560</width>
+		<height>1440</height>
 	</include>
 	<!-- Hidden object -->
 	<include name="HiddenObject">

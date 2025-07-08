@@ -7,8 +7,8 @@
 		<!-- Dialog -->
 		<control type="grouplist" id="500">
 			<include>Window_OpenClose</include>
-			<width>3820</width>
-			<height>2160</height>
+			<width>2560</width>
+			<height>1440</height>
 			<orientation>vertical</orientation>
 			<usecontrolcoords>true</usecontrolcoords>
 			<include>ScrollTime</include>
