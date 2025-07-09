@@ -46,6 +46,24 @@ TIMEZONE = 'local'
 
 ########################
 
+
+def _arrow_safe_get(value, *args, **kwargs):
+    if isinstance(value, bytes):
+        try:
+            value = value.decode('utf-8')
+        except Exception:
+            value = value.decode('latin-1', errors='ignore')
+    if not isinstance(value, str):
+        try:
+            value = str(value)
+        except Exception:
+            value = ''
+    try:
+        return arrow.get(value, *args, **kwargs)
+    except Exception:
+        return arrow.get('1970-01-01')  # Fallback to avoid crashing
+
+
 def log(txt,loglevel=DEBUG,json=False,force=False):
     if force:
         loglevel = INFO
@@ -106,6 +124,16 @@ def remove_quotes(label):
 
 
 def get_date(date_time):
+    try:
+        if isinstance(date_time, bytes):
+            date_time = date_time.decode('utf-8', errors='ignore')
+        if not isinstance(date_time, str):
+            date_time = str(date_time)
+        date_time_obj = datetime.datetime.strptime(date_time.strip(), '%Y-%m-%d %H:%M:%S')
+        return date_time_obj.date()
+    except Exception:
+        return datetime.date(1970, 1, 1)
+
     date_time_obj = datetime.datetime.strptime(date_time, '%Y-%m-%d %H:%M:%S')
     date_obj = date_time_obj.date()
 
@@ -165,31 +193,34 @@ def date_year(value):
         return value
 
     try:
-        year = str(arrow.get(value).year)
-
+        year = str(_arrow_safe_get(value).year)
     except Exception:
-        pass
+        year = value
 
     return year
-    
-def date_format(value,date='short'):
+
+def date_format(value, date='short'):
     if not value:
         return value
 
     try:
-        date_time = arrow.get(value)
-        value = date_time.strftime(xbmc.getRegion('date%s' % date))
-
+        date_time = _arrow_safe_get(value)
+        try:
+            region_format = xbmc.getRegion('date%s' % date)
+            value = date_time.strftime(region_format)
+        except Exception:
+            value = date_time.strftime('%Y-%m-%d')
     except Exception:
         pass
 
     return value
 
-
 def date_delta(date):
-    date = arrow.get(date, 'YYYY-MM-DD').date()
-    return date - datetime.date.today()
-
+    try:
+        date_obj = _arrow_safe_get(date, 'YYYY-MM-DD').date()
+        return date_obj - datetime.date.today()
+    except Exception:
+        return ''
 
 def date_weekday(date=None):
     if not date:
@@ -198,25 +229,26 @@ def date_weekday(date=None):
 
     try:
         weekdays = (xbmc.getLocalizedString(11), xbmc.getLocalizedString(12), xbmc.getLocalizedString(13), xbmc.getLocalizedString(14), xbmc.getLocalizedString(15), xbmc.getLocalizedString(16), xbmc.getLocalizedString(17))
-        date = arrow.get(date).date()
+        date = _arrow_safe_get(date).date()
         weekday = date.weekday()
         return weekdays[weekday], weekday
 
     except Exception:
         return '', ''
 
-
 def utc_to_local(value):
-    conv_date = arrow.get(value).to(TIMEZONE)
-    conv_date_str = conv_date.strftime('%Y-%m-%d')
+    try:
+        conv_date = _arrow_safe_get(value).to(TIMEZONE)
+        conv_date_str = conv_date.strftime('%Y-%m-%d')
 
-    if xbmc.getRegion('time').startswith('%I'):
-        conv_time_str = conv_date.strftime('%I:%M %p')
-    else:
-        conv_time_str = conv_date.strftime('%H:%M')
+        if xbmc.getRegion('time').startswith('%I'):
+            conv_time_str = conv_date.strftime('%I:%M %p')
+        else:
+            conv_time_str = conv_date.strftime('%H:%M')
 
-    return conv_date_str, conv_time_str
-
+        return conv_date_str, conv_time_str
+    except Exception:
+        return '', ''
 
 def get_bool(value,string='true'):
     try:
@@ -229,6 +261,13 @@ def get_bool(value,string='true'):
 
 
 def get_joined_items(item):
+    try:
+        if isinstance(item, list) and len(item) > 0:
+            return ' / '.join(str(x) for x in item)
+    except Exception:
+        pass
+    return ''
+
     if len(item) > 0:
         item = ' / '.join(item)
     else:
@@ -237,6 +276,13 @@ def get_joined_items(item):
 
 
 def get_first_item(item):
+    try:
+        if isinstance(item, list) and len(item) > 0:
+            return item[0]
+    except Exception:
+        pass
+    return ''
+
     if len(item) > 0:
         item = item[0]
     else:
@@ -283,7 +329,10 @@ def json_call(method,properties=None,sort=None,query_filter=None,limit=None,para
     except NameError:
         pass
 
-    return json.loads(result)
+    try:
+        return json.loads(result)
+    except Exception:
+        return {}
 
 
 def set_plugincontent(content=None,category=None):
