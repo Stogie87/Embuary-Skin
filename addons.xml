@@ -254,19 +254,7 @@
     </extension>
 </addon>
 
-<addon id="service.jellysync"
-       name="Jellysync"
-       version="1.0.1"
-       provider-name="Stogie87">
-    <extension point="xbmc.service" library="service.py" start="startup"/>
-    <requires>
-        <import addon="xbmc.python" version="3.0.0"/>
-    </requires>
-    <summary>Synchronisiert den Gesehen-Status mit Jellyfin</summary>
-    <description>Synchronisiert manuelle Gesehen-Status-Änderungen in Kodi mit dem Jellyfin-Server.</description>
-</addon>
-
-<addon id="skin.embuary2k.omega" version="21.1.7" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
+<addon id="skin.embuary2k.omega" version="21.1.6" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
 		<import addon="script.embuary.helper" version="2.0.8"/>
 		<import addon="script.embuary.info" version="2.0.8"/>
@@ -314,7 +302,7 @@
 	</extension>
 </addon>
 
-<addon id="skin.embuary4k.omega" version="21.1.7" name="Embuary 4K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
+<addon id="skin.embuary4k.omega" version="21.1.6" name="Embuary 4K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
 		<import addon="script.embuary.helper" version="2.0.8"/>
 		<import addon="script.embuary.info" version="2.0.8"/>

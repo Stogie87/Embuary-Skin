@@ -988,21 +988,13 @@
 		</control>
 		<control type="radiobutton" id="$PARAM[id]04">
     			<include>SettingsButton</include>
-    			<onclick condition="System.AddonIsEnabled(service.jellysync)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.jellysync,enable=false)</onclick>
-   			<onclick condition="System.HasAddon(service.jellysync) + !System.AddonIsEnabled(service.jellysync)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.jellysync,enable=true)</onclick>
-    			<onclick condition="!System.HasAddon(service.jellysync)">InstallAddon(service.jellysync)</onclick>
-    			<selected>System.AddonIsEnabled(service.jellysync)</selected>
-    			<label>Jellysync</label>
-		</control>
-		<control type="radiobutton" id="$PARAM[id]05">
-    			<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(service.upnext)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.upnext,enable=false)</onclick>
    			<onclick condition="System.HasAddon(service.upnext) + !System.AddonIsEnabled(service.upnext)">RunScript(script.embuary.helper,action=toggleaddons,addonid=service.upnext,enable=true)</onclick>
     			<onclick condition="!System.HasAddon(service.upnext)">InstallAddon(service.upnext)</onclick>
     			<selected>System.AddonIsEnabled(service.upnext)</selected>
     			<label>Up Next</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]06">
+		<control type="radiobutton" id="$PARAM[id]05">
     		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.artistslideshow)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.artistslideshow,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.artistslideshow) + !System.AddonIsEnabled(script.artistslideshow)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.artistslideshow,enable=true)</onclick>
@@ -1010,7 +1002,7 @@
     			</onclick><selected>System.AddonIsEnabled(script.artistslideshow)</selected>
     			<label>Artist Slideshow</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]07">
+		<control type="radiobutton" id="$PARAM[id]06">
     		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.cu.lrclyrics)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.cu.lrclyrics,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.cu.lrclyrics) + !System.AddonIsEnabled(script.cu.lrclyrics)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.cu.lrclyrics,enable=true)</onclick>
@@ -1018,7 +1010,7 @@
     			<selected>System.AddonIsEnabled(script.cu.lrclyrics)</selected>
     			<label>CU LRC Lyrics</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]08">
+		<control type="radiobutton" id="$PARAM[id]07">
     		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(plugin.video.youtube)">RunScript(script.embuary.helper,action=toggleaddons,addonid=plugin.video.youtube,enable=false)</onclick>
     			<onclick condition="System.HasAddon(plugin.video.youtube) + !System.AddonIsEnabled(plugin.video.youtube)">RunScript(script.embuary.helper,action=toggleaddons,addonid=plugin.video.youtube,enable=true)</onclick>
@@ -1026,7 +1018,7 @@
     			<selected>System.AddonIsEnabled(plugin.video.youtube)</selected>
     			<label>YouTube</label>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]09">
+		<control type="radiobutton" id="$PARAM[id]08">
     		<include>SettingsButton</include>
     			<onclick condition="System.AddonIsEnabled(script.metadata.editor)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.metadata.editor,enable=false)</onclick>
     			<onclick condition="System.HasAddon(script.metadata.editor) + !System.AddonIsEnabled(script.metadata.editor)">RunScript(script.embuary.helper,action=toggleaddons,addonid=script.metadata.editor,enable=true)</onclick>
