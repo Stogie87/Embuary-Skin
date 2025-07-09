@@ -133,34 +133,30 @@ def touch_file(filepath):
 
 
 def winprop(key, value=None, clear=False, window_id=10000):
+    if not key:
+        xbmc.log("[ %s ] winprop: empty or None key, skipping property operation." % ADDON_ID, xbmc.LOGWARNING)
+        return
+
     window = xbmcgui.Window(window_id)
 
     if clear:
         window.clearProperty(key.replace('.json', '').replace('.bool', ''))
-
     elif value is not None:
-
         if key.endswith('.json'):
             key = key.replace('.json', '')
             value = json.dumps(value)
-
         elif key.endswith('.bool'):
             key = key.replace('.bool', '')
             value = 'true' if value else 'false'
-
         window.setProperty(key, value)
-
     else:
         result = window.getProperty(key.replace('.json', '').replace('.bool', ''))
-
         if result:
             if key.endswith('.json'):
                 result = json.loads(result)
             elif key.endswith('.bool'):
                 result = result in ('true', '1')
-
         return result
-
 
 def get_channeldetails(channel_name):
     channel_details = {}
