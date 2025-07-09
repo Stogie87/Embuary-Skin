@@ -1,3 +1,6 @@
+[B]Version 21.1.7[/B]
+– Added Python plugin for Jellyfin seen/unseen sync by Stogie87
+
 [B]Version 21.1.6[/B]
 - Added option to install/remove Jellyskip (developed by SgtJalau)
 
