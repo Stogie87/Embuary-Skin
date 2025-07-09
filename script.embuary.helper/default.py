@@ -2,7 +2,7 @@
 
 ########################
 
-import sys  # FEHLTE
+import sys
 import xbmcgui
 import xbmcaddon
 
@@ -19,7 +19,7 @@ DIALOG = xbmcgui.Dialog()
 class Main:
     def __init__(self):
         self.action = False
-        self.params = {}  # FEHLTE
+        self.params = {}
         self._parse_argv()
 
         if self.action:
@@ -28,25 +28,25 @@ class Main:
             DIALOG.ok(ADDON.getLocalizedString(32000), ADDON.getLocalizedString(32001))
 
     def _parse_argv(self):
-        # Kodi übergibt bei Skriptaufrufen üblicherweise sys.argv[1] als Query-String.
-        if len(sys.argv) > 1 and sys.argv[1]:
-            import urllib.parse
-            args = sys.argv[1]
-            params = dict(urllib.parse.parse_qsl(args))
-            for k, v in params.items():
-                if k.lower() == 'action':
-                    self.action = v.lower()
-                else:
-                    self.params[k.lower()] = v
+        args = sys.argv
+
+        for arg in args:
+            if arg == ADDON_ID:
+                continue
+            if arg.startswith('action='):
+                self.action = arg[7:].lower()
+            else:
+                try:
+                    self.params[arg.split("=")[0].lower()] = "=".join(arg.split("=")[1:]).strip()
+                except Exception:
+                    self.params = {}
 
     def getactions(self):
-        # Direkt aus dem globalen Namensraum aufrufbar machen, falls Funktion existiert
         if self.action in globals():
             util = globals()[self.action]
             util(self.params)
         else:
-            DIALOG.ok(ADDON.getLocalizedString(32000), "Ungültige Aktion: %s" % self.action)
-
+            DIALOG.ok("Fehler", f"Ungültige Aktion: {self.action}")
 
 if __name__ == '__main__':
     Main()
