@@ -23,7 +23,7 @@
     </extension>
 </addon>
 
-<addon id="script.embuary.helper" name="Embuary Helper" version="2.0.8" provider-name="sualfred">
+<addon id="script.embuary.helper" name="Embuary Helper" version="2.0.9" provider-name="sualfred, Stogie">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.pil" version="1.1.7"/>
@@ -49,7 +49,7 @@
     </extension>
 </addon>
 
-<addon id="script.embuary.info" name="Embuary Info" version="2.0.8" provider-name="sualfred">
+<addon id="script.embuary.info" name="Embuary Info" version="2.0.9" provider-name="sualfred, Stogie">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.requests" version="2.9.1"/>
@@ -105,7 +105,7 @@
     </extension>
 </addon>
 
-<addon id="script.module.arrow" name="arrow" version="1.3.1" provider-name="Stogie">
+<addon id="script.module.arrow" name="arrow" version="1.3.2" provider-name="Stogie">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.dateutil" version="2.8.2" />
@@ -256,8 +256,8 @@
 
 <addon id="skin.embuary2k.omega" version="21.1.6" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
-		<import addon="script.embuary.helper" version="2.0.8"/>
-		<import addon="script.embuary.info" version="2.0.8"/>
+		<import addon="script.embuary.helper" version="2.0.9"/>
+		<import addon="script.embuary.info" version="2.0.9"/>
 		<import addon="resource.uisounds.embuary" version="0.0.4"/>
 		<import addon="plugin.program.autocompletion" version="1.0.1"/>
 		<import addon="script.skinshortcuts" version="2.0.3"/>
@@ -304,8 +304,8 @@
 
 <addon id="skin.embuary4k.omega" version="21.1.6" name="Embuary 4K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
-		<import addon="script.embuary.helper" version="2.0.8"/>
-		<import addon="script.embuary.info" version="2.0.8"/>
+		<import addon="script.embuary.helper" version="2.0.9"/>
+		<import addon="script.embuary.info" version="2.0.9"/>
 		<import addon="resource.uisounds.embuary" version="0.0.4"/>
 		<import addon="plugin.program.autocompletion" version="1.0.1"/>
 		<import addon="script.skinshortcuts" version="2.0.3"/>

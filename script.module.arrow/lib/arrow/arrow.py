@@ -1879,5 +1879,16 @@ class Arrow:
         return date.day == calendar.monthrange(date.year, date.month)[1]
 
 
-Arrow.min = Arrow.fromdatetime(dt_datetime.min)
-Arrow.max = Arrow.fromdatetime(dt_datetime.max)
+try:
+    Arrow.min = Arrow.fromdatetime(dt_datetime.min)
+except Exception as e:
+    import warnings
+    warnings.warn(f"Arrow.min konnte nicht gesetzt werden: {e}")
+    Arrow.min = None
+
+try:
+    Arrow.max = Arrow.fromdatetime(dt_datetime.max)
+except Exception as e:
+    import warnings
+    warnings.warn(f"Arrow.max konnte nicht gesetzt werden: {e}")
+    Arrow.max = None

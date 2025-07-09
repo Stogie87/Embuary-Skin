@@ -3,8 +3,6 @@
 
 ########################
 
-from __future__ import division
-
 import xbmc
 import xbmcaddon
 import xbmcgui
@@ -30,12 +28,10 @@ def blurimg(params):
               radius=params.get('radius', None)
               )
 
-
 def playcinema(params):
     CinemaMode(dbid=params.get('dbid'),
                dbtype=params.get('type')
                )
-
 
 ''' Dialogs
 '''
@@ -50,14 +46,12 @@ def createcontext(params):
 
         if label == '':
             break
-
         elif label != 'none' and label != '-':
             selectionlist.append(label)
             indexlist.append(i)
 
     if selectionlist:
         index = DIALOG.contextmenu(selectionlist)
-
         if index > -1:
             value = xbmc.getInfoLabel('Window(%s).Property(Context.%d.Builtin)' % (window, indexlist[index]))
             for builtin in value.split(splitby):
@@ -71,7 +65,6 @@ def createcontext(params):
         else:
             execute('ClearProperty(Context.%d.Builtin)' % i)
             execute('ClearProperty(Context.%d.Label)' % i)
-
 
 def createselect(params):
     selectionlist = []
@@ -89,7 +82,6 @@ def createselect(params):
 
         if label == '':
             break
-
         elif label != 'none' and label != '-':
             li_item = xbmcgui.ListItem(label=label, label2=label2)
             li_item.setArt({'icon': icon})
@@ -98,7 +90,6 @@ def createselect(params):
 
     if selectionlist:
         index = DIALOG.select(headertxt, selectionlist, preselect=preselect, useDetails=usedetails)
-
         if index > -1:
             value = xbmc.getInfoLabel('Window(%s).Property(Dialog.%d.Builtin)' % (window, indexlist[index]))
             for builtin in value.split(splitby):
@@ -117,7 +108,6 @@ def createselect(params):
             execute('ClearProperty(Dialog.%d.Label2)' % i)
             execute('ClearProperty(Dialog.%d.Icon)' % i)
 
-
 def splitandcreateselect(params):
     headertxt = remove_quotes(params.get('header', ''))
     seperator = remove_quotes(params.get('seperator', ' / '))
@@ -128,7 +118,6 @@ def splitandcreateselect(params):
 
     if selectionlist:
         index = DIALOG.select(headertxt, selectionlist)
-
         if index > -1:
             value = xbmc.getInfoLabel('Window(%s).Property(Dialog.Builtin)' % window)
             value = value.replace('???', selectionlist[index])
@@ -141,12 +130,10 @@ def splitandcreateselect(params):
     else:
         execute('ClearProperty(Dialog.Builtin)')
 
-
 def dialogok(params):
     headertxt = remove_quotes(params.get('header', ''))
     bodytxt = remove_quotes(params.get('message', ''))
     DIALOG.ok(headertxt, bodytxt)
-
 
 def dialogyesno(params):
     headertxt = remove_quotes(params.get('header', ''))
@@ -161,25 +148,20 @@ def dialogyesno(params):
         for action in noactions:
             execute(action)
 
-
 def textviewer(params):
     headertxt = remove_quotes(params.get('header', ''))
     bodytxt = remove_quotes(params.get('message', ''))
     DIALOG.textviewer(headertxt, bodytxt)
 
-
-''' Functions
-'''
+''' Functions '''
 def restartservice(params):
     execute('NotifyAll(%s, restart)' % ADDON_ID)
-
 
 def calc(params):
     prop = remove_quotes(params.get('prop', 'CalcResult'))
     formula = remove_quotes(params.get('do'))
     result = eval(str(formula))
     winprop(prop, str(result))
-
 
 def settimer(params):
     actions = remove_quotes(params.get('do'))
@@ -201,18 +183,15 @@ def settimer(params):
         if delay:
             xbmc.sleep(int(delay))
 
-
 def encode(params):
     string = remove_quotes(params.get('string'))
     prop = params.get('prop', 'EncodedString')
     winprop(prop, url_quote(string))
 
-
 def decode(params):
     string = remove_quotes(params.get('string'))
     prop = params.get('prop', 'DecodedString')
     winprop(prop, url_unquote(string))
-
 
 def getaddonsetting(params):
     addon_id = params.get('addon')
@@ -221,10 +200,9 @@ def getaddonsetting(params):
 
     try:
         setting = xbmcaddon.Addon(addon_id).getSetting(addon_setting)
-        winprop(prop,str(setting))
+        winprop(prop, str(setting))
     except Exception:
         winprop(prop, clear=True)
-
 
 def togglekodisetting(params):
     settingname = params.get('setting', '')
@@ -233,7 +211,6 @@ def togglekodisetting(params):
     json_call('Settings.SetSettingValue',
               params={'setting': '%s' % settingname, 'value': value}
               )
-
 
 def getkodisetting(params):
     setting = params.get('setting')
@@ -257,11 +234,10 @@ def getkodisetting(params):
         if result.startswith('[') and result.endswith(']'):
            result = result[1:-1]
 
-        winprop(setting,result)
+        winprop(setting, result)
 
     except Exception:
         winprop(setting, clear=True)
-
 
 def setkodisetting(params):
     settingname = params.get('setting', '')
@@ -279,13 +255,11 @@ def setkodisetting(params):
               params={'setting': '%s' % settingname, 'value': value}
               )
 
-
 def toggleaddons(params):
     addonid = params.get('addonid').split('+')
     enable = get_bool(params.get('enable'))
 
     for addon in addonid:
-
         try:
             json_call('Addons.SetAddonEnabled',
                       params={'addonid': '%s' % addon, 'enabled': enable}
@@ -294,24 +268,20 @@ def toggleaddons(params):
         except Exception:
             pass
 
-
 def playsfx(params):
     xbmc.playSFX(remove_quotes(params.get('path', '')))
 
-
 def stopsfx(params):
     xbmc.stopSFX()
-
 
 def imginfo(params):
     prop = remove_quotes(params.get('prop', 'img'))
     img = remove_quotes(params.get('img'))
     if img:
-        width,height,ar = image_info(img)
+        width, height, ar = image_info(img)
         winprop(prop + '.width', str(width))
         winprop(prop + '.height', str(height))
         winprop(prop + '.ar', str(ar))
-
 
 def playitem(params):
     clear_playlists()

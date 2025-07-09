@@ -13,51 +13,51 @@ from resources.lib.helper import *
 ########################
 
 LISTING = {
-          'index': [
-              {'name': ADDON.getLocalizedString(32011), 'browse': 'folder', 'content': 'mixed'},
-              {'name': xbmc.getLocalizedString(342), 'browse': 'folder', 'content': 'movie'},
-              {'name': xbmc.getLocalizedString(20343), 'browse': 'folder', 'content': 'tvshow'},
-              {'name': ADDON.getLocalizedString(32036), 'browse': 'widgets', 'content': 'seasonal'}
-              ],
-          'mixed': [
-              {'name': ADDON.getLocalizedString(32013), 'info': 'getinprogress'},
-              {'name': ADDON.getLocalizedString(32009), 'info': 'getbygenre'}
-              ],
-          'movie': [
-              {'name': ADDON.getLocalizedString(32013), 'info': 'getinprogress'},
-              {'name': xbmc.getLocalizedString(20382), 'info': 'getbyargs', 'filter_args': '{"field": "playcount", "operator": "lessthan", "value": "1"}', 'limit': '50', 'sort_args': '{"order": "descending", "method": "dateadded"}'},
-              {'name': ADDON.getLocalizedString(32007), 'info': 'getsimilar'},
-              {'name': ADDON.getLocalizedString(32014), 'info': 'getsimilar', 'pos': '0'},
-              {'name': ADDON.getLocalizedString(32009), 'info': 'getbygenre'},
-              {'name': xbmc.getLocalizedString(135), 'info': 'getgenre'},
-              {'name': ADDON.getLocalizedString(32012), 'info': 'getbyargs', 'limit': '50', 'sort_args': '{"order": "descending", "method": "rating"}'},
-              {'name': xbmc.getLocalizedString(16101), 'info': 'getbyargs', 'filter_args': '{"field": "playcount", "operator": "lessthan", "value": "1"}', 'sort_args': '{"order": "ascending", "method": "title"}'},
-              {'name': xbmc.getLocalizedString(590), 'info': 'getbyargs', 'sort_args': '{"method": "random"}', 'limit': '50'}
-              ],
-          'tvshow': [
-              {'name': ADDON.getLocalizedString(32013), 'info': 'getinprogress'},
-              {'name': ADDON.getLocalizedString(32008), 'info': 'getnextup'},
-              {'name': ADDON.getLocalizedString(32015), 'info': 'getnewshows'},
-              {'name': ADDON.getLocalizedString(32010), 'info': 'getnewshows', 'showall': 'true'},
-              {'name': ADDON.getLocalizedString(32007), 'info': 'getsimilar'},
-              {'name': ADDON.getLocalizedString(32014), 'info': 'getsimilar', 'pos': '0'},
-              {'name': ADDON.getLocalizedString(32009), 'info': 'getbygenre'},
-              {'name': xbmc.getLocalizedString(135), 'info': 'getgenre'},
-              {'name': ADDON.getLocalizedString(32012), 'info': 'getbyargs', 'limit': '50', 'sort_args': '{"order": "descending", "method": "rating"}'},
-              {'name': xbmc.getLocalizedString(16101), 'info': 'getbyargs', 'filter_args': '{"field": "numwatched", "operator": "lessthan", "value": "1"}', 'sort_args': '{"order": "ascending", "method": "title"}'},
-              {'name': xbmc.getLocalizedString(590), 'info': 'getbyargs', 'sort_args': '{"method": "random"}', 'limit': '50'}
-              ],
-          'seasonal': [
-              {'name': ADDON.getLocalizedString(32032), 'info': 'getseasonal', 'list': 'xmas'},
-              {'name': ADDON.getLocalizedString(32032) + ' (' + xbmc.getLocalizedString(342) + ')', 'info': 'getseasonal', 'list': 'xmas', 'type': 'movie'},
-              {'name': ADDON.getLocalizedString(32032) + ' (' + xbmc.getLocalizedString(20343) + ')', 'info': 'getseasonal', 'list': 'xmas', 'type': 'tvshow'},
-              {'name': ADDON.getLocalizedString(32033) + ' (Halloween)', 'info': 'getseasonal', 'list': 'horror'},
-              {'name': ADDON.getLocalizedString(32033) + ' (Halloween - ' + xbmc.getLocalizedString(342) + ')', 'info': 'getseasonal', 'list': 'horror', 'type': 'movie'},
-              {'name': ADDON.getLocalizedString(32033) + ' (Halloween - ' + xbmc.getLocalizedString(20343) + ')', 'info': 'getseasonal', 'list': 'horror', 'type': 'tvshow'},
-              {'name': ADDON.getLocalizedString(32034) + ' (Star Wars)', 'info': 'getseasonal', 'list': 'starwars'},
-              {'name': ADDON.getLocalizedString(32035) + ' (Star Trek)', 'info': 'getseasonal', 'list': 'startrek'}
-              ]
-          }
+    'index': [
+        {'name': ADDON.getLocalizedString(32011), 'browse': 'folder', 'content': 'mixed'},
+        {'name': xbmc.getLocalizedString(342), 'browse': 'folder', 'content': 'movie'},
+        {'name': xbmc.getLocalizedString(20343), 'browse': 'folder', 'content': 'tvshow'},
+        {'name': ADDON.getLocalizedString(32036), 'browse': 'widgets', 'content': 'seasonal'}
+    ],
+    'mixed': [
+        {'name': ADDON.getLocalizedString(32013), 'info': 'getinprogress'},
+        {'name': ADDON.getLocalizedString(32009), 'info': 'getbygenre'}
+    ],
+    'movie': [
+        {'name': ADDON.getLocalizedString(32013), 'info': 'getinprogress'},
+        {'name': xbmc.getLocalizedString(20382), 'info': 'getbyargs', 'filter_args': '{"field": "playcount", "operator": "lessthan", "value": "1"}', 'limit': '50', 'sort_args': '{"order": "descending", "method": "dateadded"}'},
+        {'name': ADDON.getLocalizedString(32007), 'info': 'getsimilar'},
+        {'name': ADDON.getLocalizedString(32014), 'info': 'getsimilar', 'pos': '0'},
+        {'name': ADDON.getLocalizedString(32009), 'info': 'getbygenre'},
+        {'name': xbmc.getLocalizedString(135), 'info': 'getgenre'},
+        {'name': ADDON.getLocalizedString(32012), 'info': 'getbyargs', 'limit': '50', 'sort_args': '{"order": "descending", "method": "rating"}'},
+        {'name': xbmc.getLocalizedString(16101), 'info': 'getbyargs', 'filter_args': '{"field": "playcount", "operator": "lessthan", "value": "1"}', 'sort_args': '{"order": "ascending", "method": "title"}'},
+        {'name': xbmc.getLocalizedString(590), 'info': 'getbyargs', 'sort_args': '{"method": "random"}', 'limit': '50'}
+    ],
+    'tvshow': [
+        {'name': ADDON.getLocalizedString(32013), 'info': 'getinprogress'},
+        {'name': ADDON.getLocalizedString(32008), 'info': 'getnextup'},
+        {'name': ADDON.getLocalizedString(32015), 'info': 'getnewshows'},
+        {'name': ADDON.getLocalizedString(32010), 'info': 'getnewshows', 'showall': 'true'},
+        {'name': ADDON.getLocalizedString(32007), 'info': 'getsimilar'},
+        {'name': ADDON.getLocalizedString(32014), 'info': 'getsimilar', 'pos': '0'},
+        {'name': ADDON.getLocalizedString(32009), 'info': 'getbygenre'},
+        {'name': xbmc.getLocalizedString(135), 'info': 'getgenre'},
+        {'name': ADDON.getLocalizedString(32012), 'info': 'getbyargs', 'limit': '50', 'sort_args': '{"order": "descending", "method": "rating"}'},
+        {'name': xbmc.getLocalizedString(16101), 'info': 'getbyargs', 'filter_args': '{"field": "numwatched", "operator": "lessthan", "value": "1"}', 'sort_args': '{"order": "ascending", "method": "title"}'},
+        {'name': xbmc.getLocalizedString(590), 'info': 'getbyargs', 'sort_args': '{"method": "random"}', 'limit': '50'}
+    ],
+    'seasonal': [
+        {'name': ADDON.getLocalizedString(32032), 'info': 'getseasonal', 'list': 'xmas'},
+        {'name': ADDON.getLocalizedString(32032) + ' (' + xbmc.getLocalizedString(342) + ')', 'info': 'getseasonal', 'list': 'xmas', 'type': 'movie'},
+        {'name': ADDON.getLocalizedString(32032) + ' (' + xbmc.getLocalizedString(20343) + ')', 'info': 'getseasonal', 'list': 'xmas', 'type': 'tvshow'},
+        {'name': ADDON.getLocalizedString(32033) + ' (Halloween)', 'info': 'getseasonal', 'list': 'horror'},
+        {'name': ADDON.getLocalizedString(32033) + ' (Halloween - ' + xbmc.getLocalizedString(342) + ')', 'info': 'getseasonal', 'list': 'horror', 'type': 'movie'},
+        {'name': ADDON.getLocalizedString(32033) + ' (Halloween - ' + xbmc.getLocalizedString(20343) + ')', 'info': 'getseasonal', 'list': 'horror', 'type': 'tvshow'},
+        {'name': ADDON.getLocalizedString(32034) + ' (Star Wars)', 'info': 'getseasonal', 'list': 'starwars'},
+        {'name': ADDON.getLocalizedString(32035) + ' (Star Trek)', 'info': 'getseasonal', 'list': 'startrek'}
+    ]
+}
 
 ########################
 
@@ -137,7 +137,7 @@ class PluginListing(object):
             else:
                 category_label = None
 
-            if content_type == None and item.get('type') in ['tvshow','movie']:
+            if content_type is None and item.get('type') in ['tvshow','movie']:
                 dbtype = item.get('type')
             else:
                 dbtype = content_type
@@ -192,7 +192,12 @@ class PluginListing(object):
     def _add_item(self,label,url):
         icon = 'special://home/addons/' + ADDON_ID + '/resources/icon.png'
         list_item = xbmcgui.ListItem(label=label, offscreen=True)
-        list_item.setInfo('video', {'title': label, 'mediatype': 'video'})
+
+        # Korrektur: InfoTagVideo statt setInfo
+        info_tag = list_item.getVideoInfoTag()
+        info_tag.setTitle(label)
+        info_tag.setMediaType('video')
+
         list_item.setArt({'icon': 'DefaultFolder.png','thumb': icon})
         self.li.append((url, list_item, True))
         set_plugincontent(content='videos', category=self.plugin_category)

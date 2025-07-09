@@ -1,21 +1,16 @@
 #!/usr/bin/python
 
-########################
-
 import xbmc
 import xbmcgui
 
-from time import gmtime, strftime
 from resources.lib.json_map import *
 from resources.lib.helper import *
 
-########################
-
-def add_items(li,json_query,type,searchstring=None):
+def add_items(li, json_query, type, searchstring=None):
     for item in json_query:
         if type == 'movie':
             handle_movies(li, item, searchstring)
-        elif type ==  'tvshow':
+        elif type == 'tvshow':
             handle_tvshows(li, item, searchstring)
         elif type == 'season':
             handle_seasons(li, item)
@@ -26,344 +21,459 @@ def add_items(li,json_query,type,searchstring=None):
         elif type == 'cast':
             handle_cast(li, item)
 
+def handle_movies(li, item, searchstring=None):
+    genre = item.get('genre', [])
+    if not isinstance(genre, list):
+        genre = [genre]
+    studio = item.get('studio', [])
+    if not isinstance(studio, list):
+        studio = [studio]
+    country = item.get('country', [])
+    if not isinstance(country, list):
+        country = [country]
+    director = item.get('director', [])
+    if not isinstance(director, list):
+        director = [director]
+    writer = item.get('writer', [])
+    if not isinstance(writer, list):
+        writer = [writer]
 
-def handle_movies(li,item,searchstring=None):
-    genre = item.get('genre', '')
-    studio = item.get('studio', '')
-    country = item.get('country', '')
-    director = item.get('director', '')
-    writer = item.get('writer', '')
+    li_item = xbmcgui.ListItem(label=item.get('title', ''), offscreen=True)
+    info_tag = li_item.getVideoInfoTag()
+    info_tag.setTitle(item.get('title', ''))
+    info_tag.setOriginalTitle(item.get('originaltitle', ''))
+    info_tag.setSortTitle(item.get('sorttitle', ''))
+    info_tag.setYear(int(item.get('year', 0)))
+    info_tag.setGenres(genre)
+    info_tag.setStudios(studio)
+    info_tag.setCountries(country)
+    info_tag.setDirectors(director)
+    info_tag.setWriters(writer)
+    info_tag.setPlot(item.get('plot', ''))
+    info_tag.setPlotOutline(item.get('plotoutline', ''))
+    info_tag.setIMDBNumber(item.get('imdbnumber', ''))
 
-    li_item = xbmcgui.ListItem(item['title'], offscreen=True)
-    li_item.setInfo(type='Video', infoLabels={'title': item['title'],
-                                              'originaltitle': item['originaltitle'],
-                                              'sorttitle': item['sorttitle'],
-                                              'year': item['year'],
-                                              'genre': get_joined_items(genre),
-                                              'studio': get_joined_items(studio),
-                                              'country': get_joined_items(country),
-                                              'director': get_joined_items(director),
-                                              'writer': get_joined_items(writer),
-                                              'plot': item['plot'],
-                                              'plotoutline': item['plotoutline'],
-                                              'dbid': item['movieid'],
-                                              'imdbnumber': item['imdbnumber'],
-                                              'tagline': item['tagline'],
-                                              'tag': item['tag'],
-                                              'rating': str(float(item['rating'])),
-                                              'userrating': str(float(item['userrating'])),
-                                              'votes': item['votes'],
-                                              'mpaa': item['mpaa'],
-                                              'lastplayed': item['lastplayed'],
-                                              'mediatype': 'movie',
-                                              'trailer': item['trailer'],
-                                              'dateadded': item['dateadded'],
-                                              'premiered': item['premiered'],
-                                              'path': item['file'],
-                                              'playcount': item['playcount'],
-                                              'set': item['set'],
-                                              'setid': item['setid'],
-                                              'top250': item['top250']
-                                              })
+    taglist = item.get('tag', [])
+    if not isinstance(taglist, list):
+        taglist = [taglist]
+    info_tag.setTags(taglist)
 
-    if 'cast' in item:
-        cast_actors = _get_cast(item['cast'])
-        li_item.setCast(item['cast'])
-        _set_unique_properties(li_item,cast_actors[0],'cast')
+    try:
+        rating = float(item.get('rating', 0))
+        votes = int(item.get('votes', 0))
+        if rating > 10:
+            rating /= 10
+        info_tag.setRating(rating, votes)
+    except Exception:
+        pass
 
-    _set_ratings(li_item,item['ratings'])
+    try:
+        userrating = int(float(item.get('userrating', 0)))
+        info_tag.setUserRating(userrating)
+    except Exception:
+        pass
 
-    _set_unique_properties(li_item,genre,'genre')
-    _set_unique_properties(li_item,studio,'studio')
-    _set_unique_properties(li_item,country,'country')
-    _set_unique_properties(li_item,director,'director')
-    _set_unique_properties(li_item,writer,'writer')
+    info_tag.setLastPlayed(item.get('lastplayed', ''))
+    info_tag.setMediaType('movie')
+    info_tag.setTrailer(item.get('trailer', ''))
+    info_tag.setDateAdded(item.get('dateadded', ''))
+    info_tag.setPremiered(item.get('premiered', ''))
+    info_tag.setPath(item.get('file', ''))
+    info_tag.setPlaycount(item.get('playcount', 0))
+    info_tag.setSet(item.get('set', ''))
+    info_tag.setSetId(item.get('setid', ''))
+    info_tag.setTop250(item.get('top250', 0))
 
-    li_item.setProperty('resumetime', str(item['resume']['position']))
-    li_item.setProperty('totaltime', str(item['resume']['total']))
+    resume = item.get('resume', {})
+    if 'position' in resume and 'total' in resume:
+        info_tag.setResumePoint(resume.get('position', 0), resume.get('total', 0))
 
-    li_item.setArt(item['art'])
-    li_item.setArt({'icon': 'DefaultVideo.png'})
+    li_item.setProperty('tagline', item.get('tagline', ''))
+    li_item.setProperty('mpaa', item.get('mpaa', ''))
 
-    hasVideo = False
-    for key, value in iter(list(item['streamdetails'].items())):
-        for stream in value:
-            if 'video' in key:
-                hasVideo = True
-            li_item.addStreamInfo(key, stream)
+    # Cast als einfache Property (Kodi hat keine xbmc.Actor mehr)
+    if 'cast' in item and isinstance(item['cast'], list):
+        cast_names = [c.get('name', '').strip() for c in item['cast'] if c.get('name')]
+        if cast_names:
+            li_item.setProperty('cast', ', '.join(cast_names))
+            # Zusätzlich andere Cast-Properties, falls gewünscht
+            first_cast = cast_names[0]
+            li_item.setProperty('cast.0', first_cast)
 
-    if not hasVideo: # if duration wasnt in the streaminfo try adding the scraped one
-        stream = {'duration': item['runtime']}
-        li_item.addStreamInfo('video', stream)
+    # Ratings und andere Properties über Helper, wenn noch benötigt
+    _set_ratings(li_item, item.get('ratings', {}))
+    _set_unique_properties(li_item, genre, 'genre')
+    _set_unique_properties(li_item, studio, 'studio')
+    _set_unique_properties(li_item, country, 'country')
+    _set_unique_properties(li_item, director, 'director')
+    _set_unique_properties(li_item, writer, 'writer')
+
+    art = item.get('art', {})
+    if not art.get('icon'):
+        art['icon'] = 'DefaultVideo.png'
+    li_item.setArt(art)
+
+    has_video = False
+    streamdetails = item.get('streamdetails', {})
+    if streamdetails:
+        for key, streams in streamdetails.items():
+            for stream in streams:
+                if key == "video":
+                    has_video = True
+                    video_detail = xbmc.VideoStreamDetail()
+                    video_detail.setLanguage(stream.get('language', ''))
+                    video_detail.setCodec(stream.get('codec', ''))
+                    video_detail.setWidth(stream.get('width', 0))
+                    video_detail.setHeight(stream.get('height', 0))
+                    video_detail.setDuration(stream.get('duration', 0))
+                    video_detail.setStereoMode(stream.get('stereo_mode', ''))
+                    video_detail.setAspect(stream.get('aspect', 0))
+                    info_tag.addVideoStream(video_detail)
+                elif key == "audio":
+                    audio_detail = xbmc.AudioStreamDetail()
+                    audio_detail.setLanguage(stream.get('language', ''))
+                    audio_detail.setCodec(stream.get('codec', ''))
+                    audio_detail.setChannels(stream.get('channels', 2))
+                    info_tag.addAudioStream(audio_detail)
+                elif key == "subtitle":
+                    subtitle_detail = xbmc.SubtitleStreamDetail()
+                    subtitle_detail.setLanguage(stream.get('language', ''))
+                    info_tag.addSubtitleStream(subtitle_detail)
+    if not has_video:
+        video_detail = xbmc.VideoStreamDetail()
+        video_detail.setDuration(item.get('runtime', 0))
+        info_tag.addVideoStream(video_detail)
 
     if searchstring:
         li_item.setProperty('searchstring', searchstring)
 
-    li.append((item['file'], li_item, False))
+    li.append((item.get('file', ''), li_item, False))
 
 
-def handle_tvshows(li,item,searchstring=None):
-    genre = item.get('genre', '')
-    studio = item.get('studio', '')
-    dbid = item['tvshowid']
-    season = item['season']
-    episode = item['episode']
-    watchedepisodes = item['watchedepisodes']
-    unwatchedepisodes = get_unwatched(episode,watchedepisodes)
+def handle_tvshows(li, item, searchstring=None):
+    genre = item.get('genre', [])
+    if not isinstance(genre, list):
+        genre = [genre]
+    studio = item.get('studio', [])
+    if not isinstance(studio, list):
+        studio = [studio]
+
+    dbid = item.get('tvshowid', '')
+    season = item.get('season', 0)
+    episode = item.get('episode', 0)
+    watchedepisodes = item.get('watchedepisodes', 0)
+    unwatchedepisodes = get_unwatched(episode, watchedepisodes)
 
     if not condition('Window.IsVisible(movieinformation)'):
         folder = True
-        item['file'] = 'videodb://tvshows/titles/%s/' % dbid
+        filepath = f'videodb://tvshows/titles/{dbid}/'
     else:
         folder = False
-        item['file'] = 'plugin://script.embuary.helper/?action=folderjump&type=tvshow&dbid=%s' % dbid
+        filepath = f'plugin://script.embuary.helper/?action=folderjump&type=tvshow&dbid={dbid}'
 
-    li_item = xbmcgui.ListItem(item['title'], offscreen=True)
-    li_item.setInfo(type='Video', infoLabels={'title': item['title'],
-                                              'year': item['year'],
-                                              'tvshowtitle': item['title'],
-                                              'sorttitle': item['sorttitle'],
-                                              'originaltitle': item['originaltitle'],
-                                              'genre': get_joined_items(genre),
-                                              'studio': get_joined_items(studio),
-                                              'plot': item['plot'],
-                                              'rating': str(float(item['rating'])),
-                                              'userrating': str(float(item['userrating'])),
-                                              'votes': item['votes'],
-                                              'premiered': item['premiered'],
-                                              'mpaa': item['mpaa'],
-                                              'tag': item['tag'],
-                                              'mediatype': 'tvshow',
-                                              'dbid': dbid,
-                                              'season': season,
-                                              'episode': episode,
-                                              'imdbnumber': item['imdbnumber'],
-                                              'lastplayed': item['lastplayed'],
-                                              'path': item['file'],
-                                              'duration': item['runtime'],
-                                              'dateadded': item['dateadded'],
-                                              'playcount': item['playcount']
-                                              })
+    li_item = xbmcgui.ListItem(label=item.get('title', ''), offscreen=True)
+    info_tag = li_item.getVideoInfoTag()
+    info_tag.setTitle(item.get('title', ''))
+    info_tag.setYear(int(item.get('year', 0)))
+    info_tag.setSortTitle(item.get('sorttitle', ''))
+    info_tag.setOriginalTitle(item.get('originaltitle', ''))
+    info_tag.setGenres(genre)
+    info_tag.setStudios(studio)
+    info_tag.setPlot(item.get('plot', ''))
+    try:
+        rating = float(item.get('rating', 0))
+        votes = int(item.get('votes', 0))
+        if rating > 10:
+            rating /= 10
+        info_tag.setRating(rating, votes)
+    except Exception:
+        pass
+    try:
+        userrating = int(float(item.get('userrating', 0)))
+        info_tag.setUserRating(userrating)
+    except Exception:
+        pass
+    info_tag.setPremiered(item.get('premiered', ''))
+    taglist = item.get('tag', [])
+    if not isinstance(taglist, list):
+        taglist = [taglist]
+    info_tag.setTags(taglist)
+    info_tag.setMediaType('tvshow')
+    info_tag.setIMDBNumber(item.get('imdbnumber', ''))
+    info_tag.setLastPlayed(item.get('lastplayed', ''))
+    info_tag.setPath(filepath)
+    info_tag.setDuration(item.get('runtime', 0))
+    info_tag.setDateAdded(item.get('dateadded', ''))
+    info_tag.setPlaycount(item.get('playcount', 0))
+    info_tag.setSeason(season)
+    info_tag.setEpisode(episode)
 
-    if 'cast' in item:
-        cast_actors = _get_cast(item['cast'])
-        li_item.setCast(item['cast'])
-        _set_unique_properties(li_item,cast_actors[0],'cast')
+    li_item.setProperty('mpaa', item.get('mpaa', ''))
 
-    _set_ratings(li_item,item['ratings'])
+    if 'cast' in item and isinstance(item['cast'], list):
+        cast_names = [c.get('name', '').strip() for c in item['cast'] if c.get('name')]
+        if cast_names:
+            li_item.setProperty('cast', ', '.join(cast_names))
+            li_item.setProperty('cast.0', cast_names[0])
 
-    _set_unique_properties(li_item,genre,'genre')
-    _set_unique_properties(li_item,studio,'studio')
+    _set_ratings(li_item, item.get('ratings', {}))
+    _set_unique_properties(li_item, genre, 'genre')
+    _set_unique_properties(li_item, studio, 'studio')
 
     li_item.setProperty('totalseasons', str(season))
     li_item.setProperty('totalepisodes', str(episode))
     li_item.setProperty('watchedepisodes', str(watchedepisodes))
     li_item.setProperty('unwatchedepisodes', str(unwatchedepisodes))
+    li_item.setProperty('showtitle', item.get('title', ''))
 
-    li_item.setArt(item['art'])
-    li_item.setArt({'icon': 'DefaultVideo.png'})
+    art = item.get('art', {})
+    if not art.get('icon'):
+        art['icon'] = 'DefaultVideo.png'
+    li_item.setArt(art)
 
     if searchstring:
         li_item.setProperty('searchstring', searchstring)
 
-    li.append((item['file'], li_item, folder))
+    li.append((filepath, li_item, folder))
 
 
-def handle_seasons(li,item):
-    tvshowdbid = item['tvshowid']
-    season = item['season']
-    episode = item['episode']
-    watchedepisodes = item['watchedepisodes']
-    unwatchedepisodes = get_unwatched(episode,watchedepisodes)
+def handle_seasons(li, item):
+    tvshowdbid = item.get('tvshowid', '')
+    season = item.get('season', 0)
+    episode = item.get('episode', 0)
+    watchedepisodes = item.get('watchedepisodes', 0)
+    unwatchedepisodes = get_unwatched(episode, watchedepisodes)
 
     if season == 0:
-        title = '%s' % (xbmc.getLocalizedString(20381))
+        title = xbmc.getLocalizedString(20381)  # Specials
         special = 'true'
     else:
-        title = '%s %s' % (xbmc.getLocalizedString(20373), season)
+        title = f"{xbmc.getLocalizedString(20373)} {season}"  # Season
         special = 'false'
 
     if not condition('Window.IsVisible(movieinformation)'):
         folder = True
-        file = 'videodb://tvshows/titles/%s/%s/' % (tvshowdbid, season)
+        filepath = f'videodb://tvshows/titles/{tvshowdbid}/{season}/'
     else:
         folder = False
-        file = 'plugin://script.embuary.helper/?action=folderjump&type=season&dbid=%s&season=%s' % (tvshowdbid, season)
+        filepath = f'plugin://script.embuary.helper/?action=folderjump&type=season&dbid={tvshowdbid}&season={season}'
 
-    li_item = xbmcgui.ListItem(title, offscreen=True)
-    li_item.setInfo(type='Video', infoLabels={'title': title,
-                                              'season': season,
-                                              'episode': episode,
-                                              'tvshowtitle': item['showtitle'],
-                                              'playcount': item['playcount'],
-                                              'mediatype': 'season',
-                                              'dbid': item['seasonid']
-                                              })
+    li_item = xbmcgui.ListItem(label=title, offscreen=True)
+    info_tag = li_item.getVideoInfoTag()
+    info_tag.setTitle(title)
+    info_tag.setSeason(season)
+    info_tag.setEpisode(episode)
+    info_tag.setPlaycount(item.get('playcount', 0))
+    info_tag.setMediaType('season')
+    info_tag.setDbId(item.get('seasonid', ''))
 
-    li_item.setArt(item['art'])
-    li_item.setArt({'icon': 'DefaultVideo.png',
-                    'fanart': item['art'].get('tvshow.fanart', '')
-                    })
+    li_item.setProperty('showtitle', item.get('showtitle', ''))
+
+    art = item.get('art', {})
+    if not art.get('icon'):
+        art['icon'] = 'DefaultVideo.png'
+    if 'tvshow.fanart' not in art:
+        art['fanart'] = ''
+    li_item.setArt(art)
 
     li_item.setProperty('watchedepisodes', str(watchedepisodes))
     li_item.setProperty('unwatchedepisodes', str(unwatchedepisodes))
     li_item.setProperty('isspecial', special)
     li_item.setProperty('season_label', item.get('label', ''))
+    li_item.setProperty('mpaa', item.get('mpaa', ''))
 
-    li.append((file, li_item, folder))
+    li.append((filepath, li_item, folder))
 
 
-def handle_episodes(li,item):
-    director = item.get('director', '')
-    writer = item.get('writer', '')
+def handle_episodes(li, item):
+    director = item.get('director', [])
+    if not isinstance(director, list):
+        director = [director]
+    writer = item.get('writer', [])
+    if not isinstance(writer, list):
+        writer = [writer]
 
-    if item['episode'] < 10:
-      label = '0%s. %s' % (item['episode'], item['title'])
+    episode_num = int(item.get('episode', 0))
+    season_num = item.get('season', '0')
+
+    if episode_num < 10:
+        label = f"0{episode_num}. {item.get('title', '')}"
     else:
-      label = '%s. %s' % (item['episode'], item['title'])
+        label = f"{episode_num}. {item.get('title', '')}"
 
-    if item['season'] == '0':
-      label = 'S' + label
+    if season_num == '0':
+        label = 'S' + label
     else:
-      label = '%sx%s' % (item['season'], label)
+        label = f"{season_num}x{label}"
 
-    li_item = xbmcgui.ListItem(label, offscreen=True)
-    li_item.setInfo(type='Video', infoLabels={'title': item['title'],
-                                              'episode': item['episode'],
-                                              'season': item['season'],
-                                              'premiered': item['firstaired'],
-                                              'dbid': item['episodeid'],
-                                              'plot': item['plot'],
-                                              'tvshowtitle': item['showtitle'],
-                                              'originaltitle': item['originaltitle'],
-                                              'lastplayed': item['lastplayed'],
-                                              'rating': str(float(item['rating'])),
-                                              'userrating': str(float(item['userrating'])),
-                                              'votes': item['votes'],
-                                              'playcount': item['playcount'],
-                                              'director': get_joined_items(director),
-                                              'writer': get_joined_items(writer),
-                                              'path': item['file'],
-                                              'dateadded': item['dateadded'],
-                                              'mediatype': 'episode'
-                                              })
+    li_item = xbmcgui.ListItem(label=label, offscreen=True)
+    info_tag = li_item.getVideoInfoTag()
 
-    if 'cast' in item:
-        cast_actors = _get_cast(item['cast'])
-        li_item.setCast(item['cast'])
-        _set_unique_properties(li_item,cast_actors[0],'cast')
+    info_tag.setTitle(item.get('title', ''))
+    info_tag.setEpisode(episode_num)
+    info_tag.setSeason(season_num)
+    info_tag.setPremiered(item.get('firstaired', ''))
+    info_tag.setDbId(item.get('episodeid', ''))
+    info_tag.setPlot(item.get('plot', ''))
+    info_tag.setOriginalTitle(item.get('originaltitle', ''))
+    info_tag.setLastPlayed(item.get('lastplayed', ''))
 
-    _set_ratings(li_item,item['ratings'])
+    try:
+        rating = float(item.get('rating', 0))
+        votes = int(item.get('votes', 0))
+        if rating > 10:
+            rating /= 10
+        info_tag.setRating(rating, votes)
+    except Exception:
+        pass
+    try:
+        userrating = int(float(item.get('userrating', 0)))
+        info_tag.setUserRating(userrating)
+    except Exception:
+        pass
 
-    _set_unique_properties(li_item,director,'director')
-    _set_unique_properties(li_item,writer,'writer')
+    info_tag.setPlaycount(item.get('playcount', 0))
+    info_tag.setDirectors(director)
+    info_tag.setWriters(writer)
+    info_tag.setPath(item.get('file', ''))
+    info_tag.setDateAdded(item.get('dateadded', ''))
+    info_tag.setMediaType('episode')
 
-    li_item.setProperty('resumetime', str(item['resume']['position']))
-    li_item.setProperty('totaltime', str(item['resume']['total']))
+    resume = item.get('resume', {})
+    if 'position' in resume and 'total' in resume:
+        info_tag.setResumePoint(resume.get('position', 0), resume.get('total', 0))
+
+    li_item.setProperty('showtitle', item.get('showtitle', ''))
+    li_item.setProperty('mpaa', item.get('mpaa', ''))
     li_item.setProperty('season_label', item.get('season_label', ''))
 
-    li_item.setArt({'icon': 'DefaultTVShows.png',
-                    'fanart': item['art'].get('tvshow.fanart', ''),
-                    'poster': item['art'].get('tvshow.poster', ''),
-                    'banner': item['art'].get('tvshow.banner', ''),
-                    'clearlogo': item['art'].get('tvshow.clearlogo') or item['art'].get('tvshow.logo') or '',
-                    'landscape': item['art'].get('tvshow.landscape', ''),
-                    'clearart': item['art'].get('tvshow.clearart', '')
-                    })
-    li_item.setArt(item['art'])
+    art = item.get('art', {})
+    # Set Art mit Defaults falls nicht vorhanden
+    li_item.setArt({
+        'icon': 'DefaultTVShows.png',
+        'fanart': art.get('tvshow.fanart', ''),
+        'poster': art.get('tvshow.poster', ''),
+        'banner': art.get('tvshow.banner', ''),
+        'clearlogo': art.get('tvshow.clearlogo') or art.get('tvshow.logo') or '',
+        'landscape': art.get('tvshow.landscape', ''),
+        'clearart': art.get('tvshow.clearart', '')
+    })
 
-    hasVideo = False
-    for key, value in iter(list(item['streamdetails'].items())):
-        for stream in value:
-            if 'video' in key:
-                hasVideo = True
-            li_item.addStreamInfo(key, stream)
+    has_video = False
+    streamdetails = item.get('streamdetails', {})
+    if streamdetails:
+        for key, streams in streamdetails.items():
+            for stream in streams:
+                if key == "video":
+                    has_video = True
+                    video_detail = xbmc.VideoStreamDetail()
+                    video_detail.setLanguage(stream.get('language', ''))
+                    video_detail.setCodec(stream.get('codec', ''))
+                    video_detail.setWidth(stream.get('width', 0))
+                    video_detail.setHeight(stream.get('height', 0))
+                    video_detail.setDuration(stream.get('duration', 0))
+                    video_detail.setStereoMode(stream.get('stereo_mode', ''))
+                    video_detail.setAspect(stream.get('aspect', 0))
+                    info_tag.addVideoStream(video_detail)
+                elif key == "audio":
+                    audio_detail = xbmc.AudioStreamDetail()
+                    audio_detail.setLanguage(stream.get('language', ''))
+                    audio_detail.setCodec(stream.get('codec', ''))
+                    audio_detail.setChannels(stream.get('channels', 2))
+                    info_tag.addAudioStream(audio_detail)
+                elif key == "subtitle":
+                    subtitle_detail = xbmc.SubtitleStreamDetail()
+                    subtitle_detail.setLanguage(stream.get('language', ''))
+                    info_tag.addSubtitleStream(subtitle_detail)
+    if not has_video:
+        video_detail = xbmc.VideoStreamDetail()
+        video_detail.setDuration(item.get('runtime', 0))
+        info_tag.addVideoStream(video_detail)
 
-    if not hasVideo: # if duration wasnt in the streaminfo try adding the scraped one
-        stream = {'duration': item['runtime']}
-        li_item.addStreamInfo('video', stream)
-
-    if item['season'] == '0':
+    if season_num == '0':
         li_item.setProperty('IsSpecial', 'true')
 
-    li.append((item['file'], li_item, False))
+    if 'cast' in item and isinstance(item['cast'], list):
+        cast_names = [c.get('name', '').strip() for c in item['cast'] if c.get('name')]
+        if cast_names:
+            li_item.setProperty('cast', ', '.join(cast_names))
+            li_item.setProperty('cast.0', cast_names[0])
+
+    _set_ratings(li_item, item.get('ratings', {}))
+    _set_unique_properties(li_item, director, 'director')
+    _set_unique_properties(li_item, writer, 'writer')
+
+    li.append((item.get('file', ''), li_item, False))
 
 
-def handle_cast(li,item):
-    li_item = xbmcgui.ListItem(item['name'], offscreen=True)
-    li_item.setLabel(item['name'])
-    li_item.setLabel2(item['role'])
-    li_item.setProperty('role', item['role'])
-
-    li_item.setArt({'icon': 'DefaultActor.png',
-                    'thumb': item.get('thumbnail', '')
-                    })
-
+def handle_cast(li, item):
+    li_item = xbmcgui.ListItem(label=item.get('name', ''), offscreen=True)
+    li_item.setLabel(item.get('name', ''))
+    li_item.setLabel2(item.get('role', ''))
+    li_item.setProperty('role', item.get('role', ''))
+    li_item.setArt({'icon': 'DefaultActor.png', 'thumb': item.get('thumbnail', '')})
     li.append(('', li_item, False))
 
 
-def handle_genre(li,item):
-    li_item = xbmcgui.ListItem(item['label'], offscreen=True)
-    li_item.setInfo(type='Video', infoLabels={'title': item['label'],
-                                              'dbid': str(item['genreid']),
-                                              'path': item['url']
-                                              })
+def handle_genre(li, item):
+    li_item = xbmcgui.ListItem(label=item.get('label', ''), offscreen=True)
+    info_tag = li_item.getVideoInfoTag()
+    info_tag.setTitle(item.get('label', ''))
+    info_tag.setDbId(item.get('genreid', ''))
+    info_tag.setPath(item.get('url', ''))
+    info_tag.setMediaType('genre')
+    art = item.get('art', {})
+    if not art.get('icon'):
+        art['icon'] = 'DefaultGenre.png'
+    li_item.setArt(art)
+    li.append((item.get('url', ''), li_item, True))
 
-    li_item.setArt(item['art'])
-    li_item.setArt({'icon': 'DefaultGenre.png'})
 
-    li.append((item['url'], li_item, True))
-
-
-def get_unwatched(episode,watchedepisodes):
-    if episode > watchedepisodes:
-        unwatchedepisodes = episode - watchedepisodes
-        return unwatchedepisodes
-    else:
+def get_unwatched(episode, watchedepisodes):
+    try:
+        episode = int(episode)
+        watchedepisodes = int(watchedepisodes)
+        return max(episode - watchedepisodes, 0)
+    except Exception:
         return 0
 
 
 def _get_cast(castData):
     listcast = []
     listcastandrole = []
-
     for castmember in castData:
-        listcast.append(castmember['name'])
-        listcastandrole.append((castmember['name'], castmember['role']))
-
+        listcast.append(castmember.get('name', ''))
+        listcastandrole.append((castmember.get('name', ''), castmember.get('role', '')))
     return [listcast, listcastandrole]
 
 
-def _set_unique_properties(li_item,item,prop):
+def _set_unique_properties(li_item, item, prop):
     try:
         i = 0
         for value in item:
-            li_item.setProperty('%s.%s' % (prop,i), value)
+            li_item.setProperty(f'{prop}.{i}', str(value))
             i += 1
     except Exception:
         pass
-
     return li_item
 
 
-def _set_ratings(li_item,item):
-    for key in item:
+def _set_ratings(li_item, ratings):
+    if not isinstance(ratings, dict):
+        return li_item
+    for key in ratings:
         try:
-            rating = item[key]['rating']
-            votes = item[key]['votes'] or 0
-            default = True if key == 'default' or len(item) == 1 else False
-
-            ''' Kodi only supports floats up to 10.0. But Rotten Tomatoes is using 0-100.
-                To get the values correctly set it's required to transform the value.
-            '''
+            rating = ratings[key].get('rating', 0)
+            votes = ratings[key].get('votes', 0) or 0
+            rating = float(rating)
+            votes = int(votes)
             if rating > 100:
-                raise Exception
-            elif rating > 10:
-                rating = rating / 10
-
-            li_item.setRating(key, float(rating), votes, default)
-
+                continue
+            if rating > 10:
+                rating /= 10
+            # setRating auf ListItem existiert nicht mehr -> als Property speichern
+            li_item.setProperty(f'rating.{key}.value', str(rating))
+            li_item.setProperty(f'rating.{key}.votes', str(votes))
         except Exception:
             pass
-
     return li_item

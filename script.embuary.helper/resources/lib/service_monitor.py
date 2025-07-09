@@ -16,12 +16,13 @@ from resources.lib.player_monitor import PlayerMonitor
 
 ########################
 
-NOTIFICATION_METHOD = ['VideoLibrary.OnUpdate',
-                       'VideoLibrary.OnScanFinished',
-                       'VideoLibrary.OnCleanFinished',
-                       'AudioLibrary.OnUpdate',
-                       'AudioLibrary.OnScanFinished'
-                       ]
+NOTIFICATION_METHOD = [
+    'VideoLibrary.OnUpdate',
+    'VideoLibrary.OnScanFinished',
+    'VideoLibrary.OnCleanFinished',
+    'AudioLibrary.OnUpdate',
+    'AudioLibrary.OnScanFinished'
+]
 
 ########################
 
@@ -37,7 +38,7 @@ class Service(xbmc.Monitor):
         else:
             self.keep_alive()
 
-    def onNotification(self,sender,method,data):
+    def onNotification(self, sender, method, data):
         if ADDON_ID in sender and 'restart' in method:
             self.restart = True
 
@@ -67,7 +68,7 @@ class Service(xbmc.Monitor):
 
         if self.restart:
             log('Service: Applying changes', force=True)
-            xbmc.sleep(500) # Give Kodi time to set possible changed skin settings. Just to be sure to bypass race conditions on slower systems.
+            xbmc.sleep(500)  # Give Kodi time to set possible changed skin settings. Just to be sure to bypass race conditions on slower systems.
             DIALOG.notification(ADDON_ID, ADDON.getLocalizedString(32006))
             self.__init__()
 
@@ -91,25 +92,23 @@ class Service(xbmc.Monitor):
         widget_refresh = 0
         get_backgrounds = 200
 
+        arts = {}  # <-- Fix: initialisiere arts
+
         while not self.abortRequested() and not self.restart:
 
-            ''' Only run timed tasks if screensaver is inactive to avoid keeping NAS/servers awake
-            '''
+            ''' Only run timed tasks if screensaver is inactive to avoid keeping NAS/servers awake '''
             if not self.screensaver:
 
-                ''' Grab fanarts
-                '''
-                if get_backgrounds >= 200:
+                ''' Grab fanarts '''
+                if get_backgrounds >= 200 or not arts:
                     log('Start new fanart grabber process')
                     arts = self.grabfanart()
                     get_backgrounds = 0
-
                 else:
                     get_backgrounds += service_interval
 
-                ''' Set background properties
-                '''
-                if background_interval >= 10:
+                ''' Set background properties '''
+                if background_interval >= 10 and arts:
                     if arts.get('all'):
                         self.setfanart('EmbuaryBackground', arts['all'])
                     if arts.get('videos'):
@@ -130,15 +129,13 @@ class Service(xbmc.Monitor):
                 else:
                     background_interval += service_interval
 
-                ''' Blur backgrounds
-                '''
+                ''' Blur backgrounds '''
                 if condition('Skin.HasSetting(BlurEnabled)'):
                     radius = xbmc.getInfoLabel('Skin.String(BlurRadius)') or ADDON.getSetting('blur_radius')
                     saturation = xbmc.getInfoLabel('Skin.String(BlurSaturation)') or '1.0'
                     ImageBlur(radius=radius, saturation=saturation)
 
-                ''' Refresh widgets
-                '''
+                ''' Refresh widgets '''
                 if widget_refresh >= 600:
                     reload_widgets(instant=True)
                     widget_refresh = 0
@@ -158,6 +155,7 @@ class Service(xbmc.Monitor):
         arts['artists'] = []
         arts['all'] = []
         arts['videos'] = []
+        arts['music'] = []  # Music as own group (optional/future-proof)
 
         for item in ['movies', 'tvshows', 'artists', 'musicvideos']:
             dbtype = 'Video' if item != 'artists' else 'Audio'
@@ -172,6 +170,8 @@ class Service(xbmc.Monitor):
                         data = {'title': result.get('label', '')}
                         data.update(result['art'])
                         arts[item].append(data)
+                        if item == 'artists':
+                            arts['music'].append(data)  # falls du Music getrennt brauchst
 
             except KeyError:
                 pass
@@ -184,7 +184,7 @@ class Service(xbmc.Monitor):
 
         return arts
 
-    def setfanart(self,key,items):
+    def setfanart(self, key, items):
         arts = random.choice(items)
         winprop(key, arts.get('fanart', ''))
         for item in ['clearlogo', 'landscape', 'banner', 'poster', 'discart', 'title']:

@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # coding: utf-8
 
-#################################################################################################
-
 import xbmc
 import xbmcgui
 import xbmcvfs
@@ -12,10 +10,8 @@ import os
 from resources.lib.helper import *
 from resources.lib.json_map import *
 
-#################################################################################################
-
 class CinemaMode(object):
-    def __init__(self,dbid,dbtype):
+    def __init__(self, dbid, dbtype):
         self.trailer_count = xbmc.getInfoLabel('Skin.String(TrailerCount)') if xbmc.getInfoLabel('Skin.String(TrailerCount)') != '0' else False
         self.intro_path = xbmc.getInfoLabel('Skin.String(IntroPath)')
 
@@ -43,85 +39,75 @@ class CinemaMode(object):
         if self.trailer_count:
             movies = self.get_trailers()
             for trailer in movies:
-
-                trailer_title = '%s (%s)' % (trailer['title'], xbmc.getLocalizedString(20410))
+                trailer_title = f"{trailer['title']} ({xbmc.getLocalizedString(20410)})"
                 trailer_rating = str(round(trailer['rating'], 1))
                 trailer_thumb = trailer['art'].get('landscape') or trailer['art'].get('fanart') or trailer['art'].get('poster', '')
 
-                listitem = xbmcgui.ListItem(trailer_title, offscreen=True)
-                listitem.setInfo('video', {'Title': trailer_title,
-                                           'mediatype': 'video',
-                                           'plot': trailer.get('plot', ''),
-                                           'year': trailer.get('year', ''),
-                                           'mpaa': trailer.get('mpaa', ''),
-                                           'rating': trailer_rating
-                                           })
+                listitem = xbmcgui.ListItem(label=trailer_title, offscreen=True)
+                info_tag = listitem.getVideoInfoTag()
+                info_tag.setTitle(trailer_title)
+                info_tag.setMediaType("video")
+                info_tag.setPlot(trailer.get('plot', ''))
+                info_tag.setYear(trailer.get('year', 0))
+                info_tag.setMpaa(trailer.get('mpaa', ''))
+                info_tag.setRating(trailer.get('rating', 0.0))
 
-                listitem.setArt({'thumb': trailer_thumb,
-                                 'clearlogo': trailer['art'].get('clearlogo') or trailer['art'].get('logo') or ''
-                                 })
+                listitem.setArt({
+                    'thumb': trailer_thumb,
+                    'clearlogo': trailer['art'].get('clearlogo') or trailer['art'].get('logo') or ''
+                })
 
                 VIDEOPLAYLIST.add(url=trailer['trailer'], listitem=listitem, index=index)
-                log('Play with cinema mode: Adding trailer %s' % trailer_title)
-
+                log(f'Play with cinema mode: Adding trailer {trailer_title}')
                 index += 1
 
         if self.intro_path:
             intro = self.get_intros()
             if intro:
-                listitem = xbmcgui.ListItem('Intro', offscreen=True)
-                listitem.setInfo('video', {'Title': 'Intro',
-                                           'mediatype': 'video'}
-                                           )
+                listitem = xbmcgui.ListItem(label='Intro', offscreen=True)
+                info_tag = listitem.getVideoInfoTag()
+                info_tag.setTitle("Intro")
+                info_tag.setMediaType("video")
 
-                listitem.setArt({'thumb':'special://home/addons/script.embuary.helper/resources/trailer.jpg'})
+                listitem.setArt({'thumb': 'special://home/addons/script.embuary.helper/resources/trailer.jpg'})
 
                 VIDEOPLAYLIST.add(url=intro, listitem=listitem, index=index)
-                log('Play with cinema mode: Adding intro %s' % intro)
-
+                log(f'Play with cinema mode: Adding intro {intro}')
                 index += 1
 
-
         json_call('Playlist.Add',
-                  item={'%sid' % self.dbtype: int(self.dbid)},
-                  params={'playlistid': 1}
-                  )
+                  item={f'{self.dbtype}id': int(self.dbid)},
+                  params={'playlistid': 1})
 
         log('Play with cinema mode: Grab your popcorn')
-
         execute('Dialog.Close(all,true)')
 
         json_call('Player.Open',
-                item={'playlistid': 1, 'position': 0},
-                options={'shuffled': False}
-                )
+                  item={'playlistid': 1, 'position': 0},
+                  options={'shuffled': False})
 
     def get_trailers(self):
         movies = json_call('VideoLibrary.GetMovies',
                            properties=JSON_MAP['movie_properties'],
-                           query_filter={'and': [{'field': 'playcount', 'operator': 'lessthan', 'value': '1'}, {'field': 'hastrailer', 'operator': 'true', 'value': []}]},
-                           sort={'method': 'random'}, limit=int(self.trailer_count)
-                           )
+                           query_filter={'and': [
+                               {'field': 'playcount', 'operator': 'lessthan', 'value': '1'},
+                               {'field': 'hastrailer', 'operator': 'true', 'value': []}
+                           ]},
+                           sort={'method': 'random'},
+                           limit=int(self.trailer_count))
 
         try:
-            movies = movies['result']['movies']
+            return movies['result']['movies']
         except KeyError:
             log('Play with cinema mode: No unwatched movies with available trailer found')
-            return
-
-        return movies
+            return []
 
     def get_intros(self):
         dirs, files = xbmcvfs.listdir(self.intro_path)
-        intros = []
-
-        for file in files:
-            if file.endswith(('.mp4', '.mkv', '.mpg', '.mpeg', '.avi', '.wmv', '.mov')):
-                intros.append(file)
+        intros = [f for f in files if f.lower().endswith(('.mp4', '.mkv', '.mpg', '.mpeg', '.avi', '.wmv', '.mov'))]
 
         if intros:
-            url = os.path.join(self.intro_path, random.choice(intros))
-            return url
+            return os.path.join(self.intro_path, random.choice(intros))
 
         log('Play with cinema mode: No intros found')
-        return
+        return None

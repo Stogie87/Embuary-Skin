@@ -2,6 +2,7 @@
 
 ########################
 
+import sys                    # <--- Hinzufügen!
 import xbmcplugin
 import urllib.parse as urlparse
 
@@ -32,11 +33,10 @@ class Main:
             args = path[1:]
             self.params = dict(urlparse.parse_qsl(args))
 
-            ''' workaround to get the correct values for titles with special characters
-            '''
-            if ('title=\'\"' and '\"\'') in args:
-                start_pos=args.find('title=\'\"')
-                end_pos=args.find('\"\'')
+            # Workaround für spezielle Titelzeichen:
+            if "title='\"" in args and "\"'" in args:
+                start_pos = args.find("title='\"")
+                end_pos = args.find("\"'")
                 clean_title = args[start_pos+8:end_pos]
                 self.params['title'] = clean_title
 
@@ -45,23 +45,23 @@ class Main:
 
     def listing(self):
         li = list()
-        PluginListing(self.params,li)
+        PluginListing(self.params, li)
         self._additems(li)
 
     def getinfos(self):
         li = list()
-        plugin = PluginContent(self.params,li)
-        self._execute(plugin,self.info)
+        plugin = PluginContent(self.params, li)
+        self._execute(plugin, self.info)
         self._additems(li)
 
     def actions(self):
         plugin = PluginActions(self.params)
-        self._execute(plugin,self.action)
+        self._execute(plugin, self.action)
 
-    def _execute(self,plugin,action):
-        getattr(plugin,action.lower())()
+    def _execute(self, plugin, action):
+        getattr(plugin, action.lower())()
 
-    def _additems(self,li):
+    def _additems(self, li):
         xbmcplugin.addDirectoryItems(int(sys.argv[1]), li)
         xbmcplugin.endOfDirectory(handle=int(sys.argv[1]))
 
