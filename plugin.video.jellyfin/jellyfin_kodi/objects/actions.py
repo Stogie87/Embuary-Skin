@@ -374,7 +374,23 @@ class Actions(object):
         # Cast
         actors = API.get_actors()
         if actors:
-            info_tag.setCast(actors)
+            cast = []
+            for actor in actors:
+                name = ""
+                if isinstance(actor, dict):
+                    name = actor.get("name", "")
+                else:
+                    name = str(actor)
+                if name and name.strip():
+                    xbmc_actor = xbmc.Actor(name)
+                    if isinstance(actor, dict):
+                        xbmc_actor.setRole(actor.get("role", ""))
+                        xbmc_actor.setOrder(actor.get("order", 0))
+                    cast.append(xbmc_actor)
+                else:
+                    LOG.debug("SKIP EMPTY ACTOR: %r", actor)
+            if cast:
+                info_tag.setCast(cast)
 
         # Streams sicher abfragen
         streams = obj.get("Streams", {})
