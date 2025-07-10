@@ -4,8 +4,10 @@
 ########################
 
 import routing
+import xbmc
+import xbmcaddon
 from xbmcgui import ListItem
-from xbmcplugin import *
+import xbmcplugin
 from datetime import date
 
 from resources.lib.helper import *
@@ -13,6 +15,8 @@ from resources.lib.tmdb import *
 from resources.lib.trakt import *
 from resources.lib.localdb import *
 from resources.lib.nextaired import *
+
+ADDON = xbmcaddon.Addon()
 
 ########################
 
@@ -84,7 +88,7 @@ DISCOVER_INDEX = {
     ],
     'tv': [
         { 'name': ADDON.getLocalizedString(32051), 'option': 'all' },
-        { 'name': ADDON.getLocalizedString(32054), 'option': 'year', 'parmam': 'first_air_date_year' },
+        { 'name': ADDON.getLocalizedString(32054), 'option': 'year', 'param': 'first_air_date_year' },
         { 'name': ADDON.getLocalizedString(32055), 'option': 'genre', 'param': 'with_genres' }
     ]
 }
@@ -174,8 +178,6 @@ def _nextaired(day):
     if day == 'week':
         next_aired_results = sort_dict(next_aired_results, 'airing')
 
-    #log(next_aired_results,force=True,json=True)
-
     for i in next_aired_results:
         try:
 
@@ -192,7 +194,7 @@ def _nextaired(day):
             plot = i.get('overview') or xbmc.getLocalizedString(19055)
 
             overview = [date_format(airing_date) + ' ' + airing_time, plot]
-            overview ='[CR]'.join(filter(None, overview))
+            overview = '[CR]'.join(filter(None, overview))
 
             thumb = IMAGEPATH + i.get('still_path') if i.get('still_path') else ''
             if not thumb:
@@ -201,18 +203,20 @@ def _nextaired(day):
             li_item = ListItem(label)
             li_item.setArt(i.get('localart'))
             li_item.setArt({'icon': 'DefaultVideo.png', 'thumb': thumb})
-            li_item.setInfo('video', {'title': i.get('name') or xbmc.getLocalizedString(13205),
-                                      'tvshowtitle': i.get('showtitle') or xbmc.getLocalizedString(13205),
-                                      'plot': overview,
-                                      'premiered': airing_date,
-                                      'season': season,
-                                      'episode': episode,
-                                      'status': i.get('status', ''),
-                                      'country': i.get('country', ''),
-                                      'studio': i.get('network', ''),
-                                      'duration': i.get('runtime', 0),
-                                      'mediatype': 'episode'}
-                                      )
+
+            # Kodi Omega: setInfo entfernt, stattdessen setProperty
+            li_item.setProperty('Title', i.get('name') or xbmc.getLocalizedString(13205))
+            li_item.setProperty('TVShowTitle', i.get('showtitle') or xbmc.getLocalizedString(13205))
+            li_item.setProperty('Plot', overview)
+            li_item.setProperty('Premiered', airing_date)
+            li_item.setProperty('Season', season)
+            li_item.setProperty('Episode', episode)
+            li_item.setProperty('Status', i.get('status', ''))
+            li_item.setProperty('Country', i.get('country', ''))
+            li_item.setProperty('Studio', i.get('network', ''))
+            li_item.setProperty('Duration', str(i.get('runtime', 0)))
+            li_item.setProperty('MediaType', 'episode')
+
             li_item.setProperty('AirDay', i['weekday'])
             li_item.setProperty('AirTime', airing_time)
             li_item.setProperty('IsPlayable', 'false')
@@ -220,7 +224,7 @@ def _nextaired(day):
             xbmcplugin.addDirectoryItem(plugin.handle, plugin.url_for(dialog, 'tv', 'tmdb', i['show_id']), li_item)
 
         except Exception as error:
-            pass
+            xbmc.log(f"Fehler in _nextaired: {error}", xbmc.LOGERROR)
 
     if day == 'week':
         category = INDEX_MENU['nextaired']['menu'][0]['name']

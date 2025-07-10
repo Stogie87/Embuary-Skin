@@ -1,0 +1,990 @@
+# Jellyfin for Kodi language file
+# Addon Name: Jellyfin for Kodi
+# Addon id: plugin.video.jellyfin
+# Addon Provider: angelblue05
+msgid ""
+msgstr ""
+"Project-Id-Version: Jellyfin for Kodi\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2022-12-25 22:51+0000\n"
+"Last-Translator: DuaLee <cony.j.lee@gmail.com>\n"
+"Language-Team: Korean <https://translate.jellyfin.org/projects/jellyfin/"
+"jellyfin-kodi/ko/>\n"
+"Language: ko_kr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.14.1\n"
+
+msgctxt "#29999"
+msgid "Jellyfin for Kodi"
+msgstr "Kodi를 위한 Jellyfin"
+
+msgctxt "#30000"
+msgid "Server address"
+msgstr "서버 주소"
+
+msgctxt "#30001"
+msgid "Server name"
+msgstr "서버 이름"
+
+msgctxt "#30002"
+msgid "Force HTTP playback"
+msgstr "강제 HTTP 재생"
+
+msgctxt "#30003"
+msgid "Login method"
+msgstr "로그인 방식"
+
+msgctxt "#30004"
+msgid "Log level"
+msgstr "로그 레벨"
+
+msgctxt "#30016"
+msgid "Device name"
+msgstr "장치 이름"
+
+msgctxt "#30022"
+msgid "Advanced"
+msgstr "고급"
+
+msgctxt "#30024"
+msgid "Username"
+msgstr "사용자 이름"
+
+msgctxt "#30091"
+msgid "Confirm file deletion"
+msgstr "파일 삭제 확인"
+
+msgctxt "#30114"
+msgid "Offer delete after playback"
+msgstr "재생 후 삭제 제안"
+
+msgctxt "#30115"
+msgid "For Episodes"
+msgstr "에피소드"
+
+msgctxt "#30116"
+msgid "For Movies"
+msgstr "영화"
+
+msgctxt "#30157"
+msgid "Enable enhanced artwork (i.e. cover art)"
+msgstr "향상된 아트워크(i.e. cover art) 활성화"
+
+msgctxt "#30160"
+msgid "Video quality"
+msgstr "비디오 품질"
+
+msgctxt "#30170"
+msgid "Recently Added TV Shows"
+msgstr "최근 추가된 TV쇼"
+
+msgctxt "#30171"
+msgid "In Progress TV Shows"
+msgstr "방영 중인 TV쇼"
+
+msgctxt "#30174"
+msgid "Recently Added Movies"
+msgstr "최근 추가된 영화"
+
+msgctxt "#30175"
+msgid "Recently Added Episodes"
+msgstr "최근 추가된 에피소드"
+
+msgctxt "#30177"
+msgid "In Progress Movies"
+msgstr "상영 중인 영화"
+
+msgctxt "#30178"
+msgid "In Progress Episodes"
+msgstr "진행 중인 에피소드"
+
+msgctxt "#30179"
+msgid "Next Episodes"
+msgstr "다음 에피소드"
+
+msgctxt "#30180"
+msgid "Favorite Movies"
+msgstr "즐겨찾는 영화"
+
+msgctxt "#30181"
+msgid "Favorite Shows"
+msgstr "즐겨찾는 쇼"
+
+msgctxt "#30182"
+msgid "Favorite Episodes"
+msgstr "즐겨찾는 에피소드"
+
+msgctxt "#30185"
+msgid "Boxsets"
+msgstr "박스셋"
+
+msgctxt "#30189"
+msgid "Unwatched Movies"
+msgstr "시청하지 않은 영화"
+
+msgctxt "#30229"
+msgid "Random Items"
+msgstr "무작위 항목"
+
+msgctxt "#30230"
+msgid "Recommended Items"
+msgstr "추천하는 항목"
+
+msgctxt "#30235"
+msgid "Interface"
+msgstr "인터페이스"
+
+msgctxt "#30239"
+msgid "Reset local Kodi database"
+msgstr "로컬 Kodi 데이터베이스 초기화"
+
+msgctxt "#30249"
+msgid "Enable welcome message"
+msgstr "환영 메세지 활성화"
+
+msgctxt "#30251"
+msgid "Recently added Home Videos"
+msgstr "최근 추가된 홈 비디오"
+
+msgctxt "#30252"
+msgid "Recently added Photos"
+msgstr "최근 추가된 사진"
+
+msgctxt "#30253"
+msgid "Favourite Home Videos"
+msgstr "즐겨찾는 홈 비디오"
+
+msgctxt "#30254"
+msgid "Favourite Photos"
+msgstr "즐겨찾는 사진"
+
+msgctxt "#30255"
+msgid "Favourite Albums"
+msgstr "즐겨찾는 앨범"
+
+msgctxt "#30256"
+msgid "Recently added Music videos"
+msgstr "최근 추가된 뮤직비디오"
+
+msgctxt "#30257"
+msgid "In progress Music videos"
+msgstr "진행 중인 뮤직비디오"
+
+msgctxt "#30258"
+msgid "Unwatched Music videos"
+msgstr "시청하지 않은 뮤직비디오"
+
+msgctxt "#30302"
+msgid "Movies"
+msgstr "영화"
+
+msgctxt "#30305"
+msgid "TV Shows"
+msgstr "TV쇼"
+
+msgctxt "#30401"
+msgid "Jellyfin options"
+msgstr "Jellyfin 옵션"
+
+msgctxt "#30402"
+msgid "Jellyfin transcode"
+msgstr "Jellyfin 트랜스코드"
+
+msgctxt "#30405"
+msgid "Add to favorites"
+msgstr "즐겨찾기에 추가"
+
+msgctxt "#30406"
+msgid "Remove from favorites"
+msgstr "즐겨찾기에서 삭제"
+
+msgctxt "#30408"
+msgid "Settings"
+msgstr "설정"
+
+msgctxt "#30409"
+msgid "Delete from Jellyfin"
+msgstr "Jellyfin에서 삭제"
+
+msgctxt "#30410"
+msgid "Refresh this item"
+msgstr "이 항목 리프레시"
+
+msgctxt "#30412"
+msgid "Transcode"
+msgstr "트랜스코드"
+
+msgctxt "#30500"
+msgid "Verify connection"
+msgstr "연결 확인"
+
+msgctxt "#30504"
+msgid "Use alternate device name"
+msgstr "대체 장치 이름 사용"
+
+msgctxt "#30506"
+msgid "Sync"
+msgstr "동기화"
+
+msgctxt "#30507"
+msgid "Enable notification if update count is greater than"
+msgstr "업그레이드 카운트가 이 이상이 되면 알림"
+
+msgctxt "#30509"
+msgid "Enable music library"
+msgstr "음악 라이브러리 활성화"
+
+msgctxt "#30511"
+msgid "Playback mode"
+msgstr "재생모드"
+
+msgctxt "#30512"
+msgid "Enable artwork caching"
+msgstr "아트워크 캐싱 활성화"
+
+msgctxt "#30515"
+msgid "Paging - max items requested (default: 15)"
+msgstr "페이징 - 요청된 항목 최댓값 (기본값: 15)"
+
+msgctxt "#30516"
+msgid "Playback"
+msgstr "재생"
+
+msgctxt "#30517"
+msgid "Network credentials"
+msgstr "네트워크 자격증명"
+
+msgctxt "#30518"
+msgid "Enable cinema mode"
+msgstr "시네마모드 활성화"
+
+msgctxt "#30519"
+msgid "Ask to play trailers"
+msgstr "예고편을 재생할지 묻기"
+
+msgctxt "#30520"
+msgid "Skip the delete confirmation (use at your own risk)"
+msgstr "삭제 확인창 건너띄기 (자신의 책임하에 사용하십시오)"
+
+msgctxt "#30521"
+msgid "Jump back on resume (in seconds)"
+msgstr "시청중인 곳으로 복귀 (초)"
+
+msgctxt "#30522"
+msgid "Transcode H265/HEVC"
+msgstr "H.265/HEVC 트랜스코드"
+
+msgctxt "#30527"
+msgid "Ignore specials in next episodes"
+msgstr "다음 에피소드에 특별편 무시"
+
+msgctxt "#30528"
+msgid "Permanent users"
+msgstr "영구적인 사용자"
+
+msgctxt "#30529"
+msgid "Startup delay (in seconds)"
+msgstr "시작 시 지연 (초)"
+
+msgctxt "#30530"
+msgid "Enable server restart message"
+msgstr "서버 재시작 메세지 활성화"
+
+msgctxt "#30531"
+msgid "Enable new content"
+msgstr "새로운 콘텐츠 활성화"
+
+msgctxt "#30532"
+msgid "Duration of the video library pop up"
+msgstr "영상 라이브러리 갱신 팝업 창 표시 시간"
+
+msgctxt "#30533"
+msgid "Duration of the music library pop up"
+msgstr "음악 라이브러리 갱신 팝업 창 표시 시간"
+
+msgctxt "#30534"
+msgid "Notifications (in seconds)"
+msgstr "알림 (초)"
+
+msgctxt "#30535"
+msgid "Generate a new device Id"
+msgstr "새로운 장치 ID 생성"
+
+msgctxt "#30536"
+msgid "Allow the screensaver during syncs"
+msgstr "동기화 중 화면보호기 허용"
+
+msgctxt "#30537"
+msgid "Transcode Hi10P"
+msgstr "Hi10P 트랜스코드"
+
+msgctxt "#30539"
+msgid "Login"
+msgstr "로그인"
+
+msgctxt "#30540"
+msgid "Manual login"
+msgstr "직접 로그인"
+
+msgctxt "#30543"
+msgid "Username or email"
+msgstr "사용자 이름 또는 이메일"
+
+msgctxt "#30545"
+msgid "Enable server offline"
+msgstr "서버 오프라인 활성"
+
+msgctxt "#30547"
+msgid "Display message"
+msgstr "메세지 표시"
+
+msgctxt "#30602"
+msgid "Password"
+msgstr "비밀번호"
+
+msgctxt "#30605"
+msgid "Sign in"
+msgstr "로그인"
+
+msgctxt "#30606"
+msgid "Cancel"
+msgstr "취소"
+
+msgctxt "#30607"
+msgid "Select main server"
+msgstr "메인 서버 선택"
+
+msgctxt "#30608"
+msgid "Username or password cannot be empty"
+msgstr "사용자 이름 또는 비밀번호는 공란일 수 없습니다"
+
+msgctxt "#30609"
+msgid "Unable to connect to the selected server"
+msgstr "선택한 서버에 연결할 수 없습니다"
+
+msgctxt "#30610"
+msgid "Connect to"
+msgstr "연결 대상"
+
+msgctxt "#30611"
+msgid "Manually add server"
+msgstr "직접 서버 입력"
+
+msgctxt "#30612"
+msgid "Please sign in"
+msgstr "로그인하십시오"
+
+msgctxt "#30613"
+msgid "Change Jellyfin Connect user"
+msgstr "Jellyfin 연결 사용자 변경"
+
+msgctxt "#30614"
+msgid "Connect to server"
+msgstr "서버에 연결"
+
+msgctxt "#30615"
+msgid "Host"
+msgstr "호스트"
+
+msgctxt "#30616"
+msgid "Connect"
+msgstr "연결"
+
+msgctxt "#30617"
+msgid "Server or port cannot be empty"
+msgstr "서버 또는 포트는 공란일 수 없습니다"
+
+msgctxt "#33000"
+msgid "Welcome"
+msgstr "환영합니다"
+
+msgctxt "#33006"
+msgid "Server is restarting"
+msgstr "서버 재시작 중"
+
+msgctxt "#33009"
+msgid "Invalid username or password"
+msgstr "잘못된 사용자이름 또는 패스워드"
+
+msgctxt "#33013"
+msgid "Choose the audio stream"
+msgstr "오디오 스트림 선택"
+
+msgctxt "#33014"
+msgid "Choose the subtitles stream"
+msgstr "자막 스트림 선택"
+
+msgctxt "#33015"
+msgid "Delete file from Jellyfin?"
+msgstr "Jellyfin에서 파일을 삭제하시겠습니까?"
+
+msgctxt "#33016"
+msgid "Play trailers?"
+msgstr "예고편을 재생하시겠습니까?"
+
+msgctxt "#33018"
+msgid "Gathering boxsets"
+msgstr "박스셋 수집 중"
+
+msgctxt "#33021"
+msgid "Gathering:"
+msgstr "수집 중:"
+
+msgctxt "#33022"
+msgid "Detected the database needs to be recreated for this version of Jellyfin for Kodi. Proceed?"
+msgstr "이 버전의 Jellyfin for Kodi를 위한 데이터베이스가 재 생성되어야합니다. 계속하시겠습니까?"
+
+msgctxt "#33023"
+msgid "Jellyfin for Kodi will not work correctly until the database is reset."
+msgstr "데이터베이스가 재설정되는 동안 Jellyfin for Kodi가 제대로 동작하지 않을 수 있습니다."
+
+msgctxt "#33025"
+msgid "Completed in:"
+msgstr "예상 시간:"
+
+msgctxt "#33033"
+msgid "A new device Id has been generated. Kodi will now restart."
+msgstr "새로운 장치 ID가 생성되었습니다. Kodi를 재시작합니다."
+
+msgctxt "#33035"
+msgid "Caution! If you choose Native mode, certain Jellyfin features will be missing, such as: Jellyfin cinema mode, direct stream/transcode options and parental access schedule."
+msgstr ""
+"주의! 네이티브 모드를 선택하면 Jellyfin 시네마 모드, 다이렉트 스트림/트랜스 코딩 옵션 및 보호자 액세스 일정과 같은 특정 "
+"Jellyfin 기능이 누락됩니다."
+
+msgctxt "#33036"
+msgid "Add-on (default)"
+msgstr "애드온 (기본값)"
+
+msgctxt "#33037"
+msgid "Native (direct paths)"
+msgstr "네이티브 (직접 경로)"
+
+msgctxt "#33039"
+msgid "Enable music library?"
+msgstr "음악 라이브러리를 활성화하시겠습니까?"
+
+msgctxt "#33047"
+msgid "Kodi can't locate file:"
+msgstr "Kodi 파일을 찾을 수 없음:"
+
+msgctxt "#33048"
+msgid "You may need to verify your network credentials in the add-on settings or use the Jellyfin path substitution to format your path correctly (Jellyfin dashboard > library). Stop syncing?"
+msgstr ""
+"싱크기능이 동작하지 않습니까? 애드-온 설정에서 네트워크 자격 증명이 필요 할 수 있거나 Jellyfin 대체 경로(path)를 이용하여 "
+"경로(path) 형식을 올바르게 지정하십시오.(Jellyfin dashboard > library)?"
+
+msgctxt "#33049"
+msgid "New"
+msgstr "신규"
+
+msgctxt "#33054"
+msgid "Add user to session"
+msgstr "세션에 사용자 추가"
+
+msgctxt "#33058"
+msgid "Perform local database reset"
+msgstr "로컬 데이터베이스 초기화"
+
+msgctxt "#33060"
+msgid "Sync theme media"
+msgstr "테마 미디어 동기화"
+
+msgctxt "#33061"
+msgid "Add/Remove user from the session"
+msgstr "세션에서 사용자 추가/제거"
+
+msgctxt "#33062"
+msgid "Add user"
+msgstr "사용자 추가"
+
+msgctxt "#33063"
+msgid "Remove user"
+msgstr "사용자 제거"
+
+msgctxt "#33064"
+msgid "Remove user from the session"
+msgstr "세션에서 사용자 제거"
+
+msgctxt "#33074"
+msgid "Are you sure you want to reset your local Kodi database?"
+msgstr "정말로 로컬 Kodi 데이터베이스를 초기화하시겠습니까?"
+
+msgctxt "#33086"
+msgid "Remove all cached artwork?"
+msgstr "정말로 모든 아트워크 캐시를 제거하시겠습니까?"
+
+msgctxt "#33087"
+msgid "Reset all Jellyfin add-on settings?"
+msgstr "모든 Jellyfin 애드온 설정을 초기화하시겠습니까?"
+
+msgctxt "#33088"
+msgid "Database reset has completed, Kodi will now restart to apply the changes."
+msgstr "데이터베이스 초기화가 완료되었습니다. 변경사항을 적용하기 위해 Kodi를 재시작합니다."
+
+msgctxt "#33089"
+msgid "Enter folder name for backup"
+msgstr "백업을 위한 폴더 이름을 입력하십시오"
+
+msgctxt "#33090"
+msgid "Replace existing backup?"
+msgstr "기존 백업을 덮어씌우시겠습니까?"
+
+msgctxt "#33091"
+msgid "Created backup at:"
+msgstr "백업 생성된 날짜:"
+
+msgctxt "#33092"
+msgid "Create a backup"
+msgstr "백업 생성"
+
+msgctxt "#33093"
+msgid "Backup folder"
+msgstr "백업 폴더"
+
+msgctxt "#33097"
+msgid "Important, cleanonupdate was removed in your advanced settings to prevent conflict with Jellyfin for Kodi. Kodi will restart now."
+msgstr ""
+"중요 cleanonupdate는 KODI와 jellyfin과의 충돌을 방지하기 위해 고급 설정에서 제거되었습니다. KODI가 지금 "
+"재시작됩니다."
+
+msgctxt "#33098"
+msgid "Refresh boxsets"
+msgstr "박스셋 갱신"
+
+msgctxt "#33099"
+msgid "Install the server plugin Kodi Sync Queue to automatically apply Jellyfin library updates at startup. This setting can be found in the add-on settings > sync options > Enable Kodi Sync Queue."
+msgstr ""
+"시작시 Jellyfin 라이브러리를 자동으로 업데이트하기 위해 Kodi 컴패니언 플러그인을 설치합니다. 이 설정은 애드온 설정 -> "
+"동기화 옵션 -> Kodi 컴패니언 활성화 에서도 찾아볼 수 있습니다."
+
+msgctxt "#33101"
+msgid "Since you are using native playback mode with music enabled, do you want to import music rating from files?"
+msgstr "음악이 활성화된 상태에서 네이티브 재생 모드를 사용하고 있으므로 파일에서 음악 평점을 가져오겠습니까?"
+
+msgctxt "#33102"
+msgid "Resume the previous sync?"
+msgstr "이전 동기화를 재개하시겠습니까?"
+
+msgctxt "#33104"
+msgid "Find more info in the github wiki/Create-and-restore-from-backup."
+msgstr "github wiki/Create-and-restore-from-backup에서 더 많은 정보를 확인할 수 있습니다."
+
+msgctxt "#33105"
+msgid "Enable the context menu"
+msgstr "context 메뉴 활성"
+
+msgctxt "#33106"
+msgid "Enable the option to transcode"
+msgstr "트랜스코드 옵션 활성화"
+
+msgctxt "#33107"
+msgid "Users added to the session (no space between users). (eg username,username2)"
+msgstr "세션에 추가할 사용자 (양식 예시:username1,username2)"
+
+msgctxt "#33108"
+msgid "Notifications are delayed during video playback (except live tv)."
+msgstr "비디오 재생 중 알림이 지연됨 (예외 실시간 TV)."
+
+msgctxt "#33109"
+msgid "Plugin"
+msgstr "플러그인"
+
+msgctxt "#33110"
+msgid "Restart Kodi to take effect."
+msgstr "적용을 위해 Kodi를 재시작합니다."
+
+msgctxt "#33111"
+msgid "Reset the local database to apply the playback mode change."
+msgstr "재생 모드 설정을 적용하기 위해 로컬 데이터베이스를 초기화합니다."
+
+msgctxt "#33112"
+msgid "Applies to Native and Add-on playback mode"
+msgstr "네이티브와 애드-온 재생 모드에 적용"
+
+msgctxt "#33113"
+msgid "Applies to Add-on playback mode only"
+msgstr "애드-온 재생 모드에만 적용"
+
+msgctxt "#33114"
+msgid "Enable external subtitles"
+msgstr "외부 자막 활성화"
+
+msgctxt "#33115"
+msgid "Adjust for remote connection"
+msgstr ""
+
+msgctxt "#33116"
+msgid "Compress artwork (reduces quality)"
+msgstr "아트워크 압축 (품질 저하)"
+
+msgctxt "#33118"
+msgid "You've change the playback mode. Kodi needs to be reset to apply the change, would you like to do this now?"
+msgstr "재생 모드를 변경했습니다. 변경 사항을 적용하려면 Kodi를 재설정해야합니다. 지금 설정 하시겠습니까?"
+
+msgctxt "#33119"
+msgid "Something went wrong during the sync. You'll be able to restore progress when restarting Kodi. If the problem persists, please report on the Jellyfin for Kodi forums, with your Kodi log."
+msgstr ""
+"동기화 중에 문제가 발생했습니다. Kodi를 다시 시작할 때 진행 상황을 복원 할 수 있습니다. 문제가 지속되면 Kodi 로그와 함께 "
+"Jellyfin - Kodi 포럼에보고하세요."
+
+msgctxt "#33120"
+msgid "Select the libraries to add"
+msgstr "추가할 라이브러리 선택"
+
+msgctxt "#33121"
+msgid "All"
+msgstr "모든"
+
+msgctxt "#33122"
+msgid "Restart Kodi to resume where you left off."
+msgstr "Kodi를 다시 시작하여 중단 한 부분을 다시 시작하십시오."
+
+msgctxt "#33123"
+msgid "Sync library to Kodi"
+msgstr "Kodi에 라이브러리 동기화"
+
+msgctxt "#33124"
+msgid "Include people (slow)"
+msgstr "출연진 포함 (느림)"
+
+msgctxt "#33128"
+msgid "Failed to retrieve latest content updates. No content updates will be applied until Kodi is restarted. If this issue persists, please report on the Jellyfin for Kodi forums, with your Kodi log."
+msgstr ""
+"최신 콘텐츠 업데이트를 검색하지 못했습니다. Kodi를 다시 시작할 때까지 콘텐츠 업데이트가 적용되지 않습니다. 이 문제가 지속되면 "
+"Kodi 로그와 함께 Jellyfin - Kodi 포럼에보고하십시오."
+
+msgctxt "#33129"
+msgid "You can sync libraries by launching the Jellyfin add-on > Add libraries."
+msgstr "Jellyfin 애드-온을 실행하여 라이브러리를 동기화 할 수 있습니다. > 라이브러리 추가."
+
+msgctxt "#33130"
+msgid "Select the source"
+msgstr "소스 선택"
+
+msgctxt "#33131"
+msgid "Refreshing boxsets"
+msgstr "박스셋 갱신중"
+
+msgctxt "#33132"
+msgid "Repair library"
+msgstr "라이브러리 복구"
+
+msgctxt "#33133"
+msgid "Remove library from Kodi"
+msgstr "Kodi에서 라이브러리 제거"
+
+msgctxt "#33134"
+msgid "Add server"
+msgstr "서버 추가"
+
+msgctxt "#33135"
+msgid "Kodi will now restart to apply a small patch for your Kodi version."
+msgstr "작은 패치를 적용하기 위해 Kodi가 다시 시작됩니다."
+
+msgctxt "#33136"
+msgid "Update library"
+msgstr "라이브러리 업데이트"
+
+msgctxt "#33137"
+msgid "Enable Kodi Sync Queue"
+msgstr "Kodi 컴패니언 활성화"
+
+msgctxt "#33138"
+msgid "You can update your library manually rather than rely on the server plugin Kodi Sync Queue. Launch the add-on and update libraries (or per library). To remove content, you'll need to repair the library."
+msgstr ""
+"서버 플러그인 Kodi Sync Queue에 의존하지 않고 라이브러리를 수동으로 업데이트 할 수 있습니다. 애드-온을 실행하고 "
+"라이브러리를 업데이트합니다.(또는 라이브러리 별) 콘텐츠를 제거하려면 라이브러리를 복구해야합니다."
+
+msgctxt "#33139"
+msgid "Update libraries"
+msgstr "라이브러리 업데이트"
+
+msgctxt "#33140"
+msgid "Repair libraries"
+msgstr "라이브러리 복구"
+
+msgctxt "#33141"
+msgid "Remove server"
+msgstr "서버 제거"
+
+msgctxt "#33142"
+msgid "Something went wrong. Try again later."
+msgstr "오류가 발생했습니다. 나중에 다시 시도하십시오."
+
+msgctxt "#33143"
+msgid "Enable the option to delete"
+msgstr "삭제 옵션 활성"
+
+msgctxt "#33144"
+msgid "Removing library"
+msgstr "라이브러리 제거"
+
+msgctxt "#33145"
+msgid "Please make sure your Samba (smb) share of your Jellyfin server is accessible to your Kodi installation and that you have path substitution configured on your server. Otherwise, Kodi may fail to locate your files."
+msgstr ""
+"Jellyfin 서버의 Samba (smb) 공유가 Kodi 설치에 액세스 할 수 있고 서버에 대체 경로가 구성되어 있는지 확인하십시오. "
+"그렇지 않으면 Kodi가 파일을 찾지 못할 수 있습니다."
+
+msgctxt "#33146"
+msgid "Unable to connect to Jellyfin."
+msgstr "Jellyfin에 연결할 수 없습니다."
+
+msgctxt "#33147"
+msgid "Your access to Jellyfin is restricted."
+msgstr "당신의 Jellyfin 접근은 제한되었습니다."
+
+msgctxt "#33148"
+msgid "Your access to this server is restricted."
+msgstr "당신의 서버에 대한 접근은 제한되었습니다."
+
+msgctxt "#33149"
+msgid "Unable to connect to this server."
+msgstr "서버 연결에 실패했습니다."
+
+msgctxt "#33150"
+msgid "Update server information"
+msgstr "서버 정보 업데이트"
+
+msgctxt "#33151"
+msgid "Reconnect to the same server that was previously loaded. If you want to use a different server, reset your local database, including your user information."
+msgstr "이전에 로드된 동일한 서버에 다시 연결됨. 다른 서버를 이용하려면 사용자 정보를 포함하여 로컬 데이터베이스를 재설정하십시오."
+
+msgctxt "#33152"
+msgid "Unable to locate TV Tunes in Kodi."
+msgstr "Kodi에서 TV Tunes를 찾을 수 없습니다."
+
+msgctxt "#33153"
+msgid "Your Jellyfin theme media has been synced to Kodi"
+msgstr "Jellyfin 테마 미디어가 Kodi에 동기화되었습니다"
+
+msgctxt "#33154"
+msgid "Add libraries"
+msgstr "라이브러리 추가"
+
+msgctxt "#33155"
+msgid "The currently applied patch for Jellyfin for Kodi is corrupted! Please post to the Jellyfin for Kodi forums if this issue persists. This will need to be fixed as soon as possible."
+msgstr ""
+"현재 적용된 Jellyfin - Kodi 패치가 손상되었습니다! 이 문제가 계속되면 Jellyfin - Kodi 포럼에 게시하십시오. 이 "
+"문제는 가능한 한 빨리 수정되야 합니다."
+
+msgctxt "#33156"
+msgid "A patch has been applied!"
+msgstr "패치가 적용되었습니다!"
+
+msgctxt "#33157"
+msgid "Audio only"
+msgstr "오디오만"
+
+msgctxt "#33158"
+msgid "Subtitles only"
+msgstr "자막만"
+
+msgctxt "#33159"
+msgid "Enable audio/subtitles selection"
+msgstr "오디오/자막 선택 활성화"
+
+msgctxt "#33160"
+msgid "To avoid errors, please update Jellyfin for Kodi to version: "
+msgstr "에러를 피하기위해, Jellyfin for Kodi를 다음 버전으로 업데이트하십시오: "
+
+msgctxt "#33162"
+msgid "Reset the music library?"
+msgstr "음악 라이브러리를 초기화하시겠습니까?"
+
+msgctxt "#33164"
+msgid "Mask sensitive information in log (does not apply to kodi logging)"
+msgstr "로그에서 민감한 정보 마스킹 (Kodi 로그에는 적용되지 않음)"
+
+msgctxt "#33165"
+msgid "Failed to create backup"
+msgstr "백업 생성 실패"
+
+msgctxt "#33166"
+msgid "(dynamic)"
+msgstr "(다이나믹)"
+
+msgctxt "#33167"
+msgid "Recently added"
+msgstr "최근 추가됨"
+
+msgctxt "#33168"
+msgid "Favourites"
+msgstr "즐겨찾기"
+
+msgctxt "#33169"
+msgid "In Progress"
+msgstr "진행 중"
+
+msgctxt "#33170"
+msgid "Unwatched"
+msgstr "시청하지 않음"
+
+msgctxt "#33171"
+msgid "By first letter"
+msgstr "첫 글자로"
+
+msgctxt "#33172"
+msgid "You have {number} updates pending. This may take a little while before seeing new content. It might be faster to update your libraries via launching the Jellyfin add-on > update libraries. Proceed anyway?"
+msgstr ""
+"라이브러리 업데이트가 {number} 개 있습니다. 새 콘텐츠를 보기까지 다소 시간이 걸릴 수 있습니다. Jellyfin 애드-온 > "
+"라이브러리 업데이트를 실행하여 라이브러리를 업데이트하는 것이 더 빠를 수 있습니다. 진행할까요?"
+
+msgctxt "#33173"
+msgid "Forget about the previous sync? This is not recommended."
+msgstr "이전 동기화를 잊어 버리셨습니까? 이것은 권장되지 않습니다."
+
+msgctxt "#33174"
+msgid "Paging - download threads (default: 3)"
+msgstr "페이징 - 다운로드 스레드 (기본값: 3)"
+
+msgctxt "#33175"
+msgid "Paging tip: Each download thread requests your max items value from Jellyfin at the same time."
+msgstr "페이징 팁: 각 다운로드 스레드는 동시에 당신의 최대 항목값을 Jellyfin에 요청합니다."
+
+msgctxt "#33176"
+msgid "Update or repair your libraries to apply the changes below."
+msgstr "아래 변경사항을 적용하려면 라이브러리를 업데이트 또는 수리하십시오."
+
+msgctxt "#33177"
+msgid "Display the progress bar if update count greater than"
+msgstr "업그레이드 카운트가 이 이상이 되면 진행바를 표시합니다"
+
+msgctxt "#33178"
+msgid "Processing updates"
+msgstr "업데이트 처리"
+
+msgctxt "#33179"
+msgid "Force transcode"
+msgstr "강제 트랜스코드"
+
+msgctxt "#33180"
+msgid "Restart Jellyfin for Kodi"
+msgstr "Jellyfin for Kodi 재시작"
+
+msgctxt "#33181"
+msgid "Restarting to apply the patch"
+msgstr "패치를 적용하기 위해 재시작"
+
+msgctxt "#33182"
+msgid "Play with cinema mode"
+msgstr "시네마 모드로 재생"
+
+msgctxt "#33183"
+msgid "Enable the option to play with cinema mode"
+msgstr "시네마모드로 재생 옵션 활성화"
+
+msgctxt "#33184"
+msgid "Remove libraries"
+msgstr "라이브러리 제거"
+
+msgctxt "#33185"
+msgid "Enable sync during playback (may cause some lag)"
+msgstr "재생중에 동기화 활성화 (약간의 렉을 유발할 수 있습니다.)"
+
+msgctxt "#33186"
+msgid "The Kodi Sync Queue speeds up the start up sync. Other syncs are triggered by server events."
+msgstr "Kodi 컴패니언은 시작시 동기화를 빠르게 해줍니다. 다른 동기화는 서버 이벤트에 의해 발생합니다."
+
+msgctxt "#33191"
+msgid "Restart Jellyfin for Kodi to apply this change?"
+msgstr "변경사항을 적용하기위해 Jellyfin for Kodi를 재시작하시겠습니까?"
+
+msgctxt "#33193"
+msgid "Restarting..."
+msgstr "재시작 중…"
+
+msgctxt "#33194"
+msgid "Manage libraries"
+msgstr "라이브러리 관리"
+
+msgctxt "#33195"
+msgid "Enable Jellyfin for Kodi"
+msgstr "Jellyfin for Kodi 활성화"
+
+msgctxt "#33196"
+msgid "Advanced options"
+msgstr "고급 옵션"
+
+msgctxt "#33197"
+msgid "A sync is already running, please wait until it completes and try again."
+msgstr "동기화가 이미 진행중입니다. 완료될때까지 기다리고 다시 시도해 주십시오."
+
+msgctxt "#30164"
+msgid "Audio max channels"
+msgstr "오디오 최대 채널"
+
+msgctxt "#30165"
+msgid "Allow burned subtitles"
+msgstr "자막을 화면에 입힘을 허용"
+
+msgctxt "#30524"
+msgid "Transcode VC-1"
+msgstr "VC-1 트랜스코드"
+
+msgctxt "#30523"
+msgid "Transcode MPEG2"
+msgstr "MPEG2 트랜스코드"
+
+msgctxt "#30163"
+msgid "Audio bitrate"
+msgstr "오디오 비트레이트"
+
+msgctxt "#30162"
+msgid "Preferred audio codec"
+msgstr "선호하는 오디오 코덱"
+
+msgctxt "#30161"
+msgid "Preferred video codec"
+msgstr "선호하는 비디오 코덱"
+
+msgctxt "#30160"
+msgid "Max stream bitrate"
+msgstr "최대 스트림 비트레이트"
+
+msgctxt "#33161"
+msgid "Update password"
+msgstr "암호 업데이트"
+
+msgctxt "#33115"
+msgid "Transcode options"
+msgstr "트랜스코드 옵션"
+
+msgctxt "#33198"
+msgid "Select the libraries to update"
+msgstr "업데이트할 라이브러리 선택"
+
+msgctxt "#33199"
+msgid "Select the libraries to repair"
+msgstr "복구할 라이브러리 선택"
+
+msgctxt "#33201"
+msgid "Max artwork resolution"
+msgstr "아트워크 최대 해상도"
+
+msgctxt "#33200"
+msgid "Select the libraries to remove"
+msgstr "제거할 라이브러리를 선택"
+
+msgctxt "#33163"
+msgid "Disabled/Media default"
+msgstr "비활성됨/기본 미디어"
+
+msgctxt "#30526"
+msgid "Transcode AV1"
+msgstr "AV1 트랜스코드"
+
+msgctxt "#30525"
+msgid "Transcode VP9"
+msgstr "VP9 트랜스코드"
+
+msgctxt "#33125"
+msgid "Enable remote control"
+msgstr "외부 리모콘 켜다"
+
+msgctxt "#33202"
+msgid "Transcode H265/HEVC RExt"
+msgstr "코덱변화 H265/HEVC RExt"

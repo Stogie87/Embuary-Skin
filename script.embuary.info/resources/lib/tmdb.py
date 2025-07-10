@@ -10,7 +10,6 @@ import datetime
 import urllib.request as urllib
 from urllib.parse import urlencode
 
-
 from resources.lib.helper import *
 from resources.lib.omdb import *
 from resources.lib.localdb import *
@@ -147,7 +146,6 @@ def tmdb_select_dialog(list,call):
         default_img = 'DefaultVideo.png'
         img = 'poster_path'
         label = 'name'
-        label2 = 'first_air_date'
         label2 = 'tmdb_get_year(item.get("first_air_date", ""))'
 
     else:
@@ -319,11 +317,11 @@ def tmdb_handle_person(item):
     return list_item
 
 
-def tmdb_handle_movie(item,local_items=None,full_info=False,mediatype='movie'):
-    icon = IMAGEPATH + item['poster_path'] if item['poster_path'] is not None else ''
-    backdrop = IMAGEPATH + item['backdrop_path'] if item['backdrop_path'] is not None else ''
+def tmdb_handle_movie(item, local_items=None, full_info=False, mediatype='movie'):
+    icon = IMAGEPATH + item['poster_path'] if item.get('poster_path') else ''
+    backdrop = IMAGEPATH + item['backdrop_path'] if item.get('backdrop_path') else ''
 
-    label = item['title'] or item['original_title']
+    label = item['title'] or item.get('original_title', '')
     originaltitle = item.get('original_title', '')
     imdbnumber = item.get('imdb_id', '')
     collection = item.get('belongs_to_collection', '')
@@ -338,26 +336,39 @@ def tmdb_handle_movie(item,local_items=None,full_info=False,mediatype='movie'):
     is_local = True if dbid > 0 else False
 
     list_item = xbmcgui.ListItem(label=label)
-    list_item.setInfo('video', {'title': label,
-                                'originaltitle': originaltitle,
-                                'dbid': dbid,
-                                'playcount': local_info['playcount'],
-                                'imdbnumber': imdbnumber,
-                                'rating': item.get('vote_average', ''),
-                                'votes': item.get('vote_count', ''),
-                                'premiered': premiered,
-                                'mpaa': tmdb_get_cert(item),
-                                'tagline': item.get('tagline', ''),
-                                'duration': duration,
-                                'status': item.get('status', ''),
-                                'plot': tmdb_fallback_info(item, 'overview'),
-                                'director': tmdb_join_items_by(item.get('crew', ''), key_is='job', value_is='Director'),
-                                'writer': tmdb_join_items_by(item.get('crew', ''), key_is='department', value_is='Writing'),
-                                'country': tmdb_join_items(item.get('production_countries', '')),
-                                'genre': tmdb_join_items(item.get('genres', '')),
-                                'studio': tmdb_join_items(item.get('production_companies', '')),
-                                'mediatype': mediatype}
-                                 )
+    info = list_item.getVideoInfoTag()
+    info.setTitle(label)
+    info.setOriginalTitle(originaltitle)
+    info.setDbId(dbid)
+    info.setPlaycount(local_info['playcount'])
+    info.setIMDBNumber(imdbnumber)
+    try:
+        info.setRating(float(item.get('vote_average', 0)))
+    except Exception:
+        pass
+    info.setPremiered(premiered)
+    info.setMpaa(tmdb_get_cert(item))
+    if duration:
+        try:
+            info.setDuration(int(duration))
+        except Exception:
+            pass
+    info.setPlot(tmdb_fallback_info(item, 'overview'))
+    list_item.setProperty('genre', tmdb_join_items(item.get('genres', '')))
+    info.setMediaType(mediatype)
+    # Cast
+    cast_list = []
+    for actor in item.get('cast', []):
+        cast_list.append(xbmc.Actor(actor['name'], actor.get('character', '')))
+    info.setCast(cast_list)
+    # Properties für Felder, die nicht mehr als InfoTagVideo-Setter existieren
+    list_item.setProperty('tagline', item.get('tagline', ''))
+    list_item.setProperty('status', item.get('status', ''))
+    list_item.setProperty('votes', str(item.get('vote_count', '')))
+    list_item.setProperty('director', tmdb_join_items_by(item.get('crew', ''), key_is='job', value_is='Director'))
+    list_item.setProperty('writer', tmdb_join_items_by(item.get('crew', ''), key_is='department', value_is='Writing'))
+    list_item.setProperty('studio', tmdb_join_items(item.get('production_companies', '')))
+    list_item.setProperty('country', tmdb_join_items(item.get('production_countries', '')))
     list_item.setArt({'icon': 'DefaultVideo.png', 'thumb': icon, 'poster': icon, 'fanart': backdrop})
     list_item.setProperty('role', item.get('character', ''))
     list_item.setProperty('budget', format_currency(item.get('budget')))
@@ -378,10 +389,11 @@ def tmdb_handle_movie(item,local_items=None,full_info=False,mediatype='movie'):
         if collection:
             list_item.setProperty('collection', collection['name'])
             list_item.setProperty('collection_id', str(collection['id']))
-            list_item.setProperty('collection_poster', IMAGEPATH + collection['poster_path'] if collection['poster_path'] is not None else '')
-            list_item.setProperty('collection_fanart', IMAGEPATH + collection['backdrop_path'] if collection['backdrop_path'] is not None else '')
+            list_item.setProperty('collection_poster', IMAGEPATH + collection['poster_path'] if collection.get('poster_path') else '')
+            list_item.setProperty('collection_fanart', IMAGEPATH + collection['backdrop_path'] if collection.get('backdrop_path') else '')
 
     return list_item, is_local
+
 
 
 def tmdb_handle_tvshow(item,local_items=None,full_info=False,mediatype='tvshow'):
@@ -404,24 +416,35 @@ def tmdb_handle_tvshow(item,local_items=None,full_info=False,mediatype='tvshow')
     is_local = True if dbid > 0 else False
 
     list_item = xbmcgui.ListItem(label=label)
-    list_item.setInfo('video', {'title': label,
-                                'originaltitle': originaltitle,
-                                'dbid': dbid,
-                                'playcount': local_info['playcount'],
-                                'status': item.get('status', ''),
-                                'rating': item.get('vote_average', ''),
-                                'votes': item.get('vote_count', ''),
-                                'imdbnumber': imdbnumber,
-                                'premiered': premiered,
-                                'mpaa': tmdb_get_cert(item),
-                                'season': str(item.get('number_of_seasons', '')),
-                                'episode': str(item.get('number_of_episodes', '')),
-                                'plot': tmdb_fallback_info(item, 'overview'),
-                                'director': tmdb_join_items(item.get('created_by', '')),
-                                'genre': tmdb_join_items(item.get('genres', '')),
-                                'studio': tmdb_join_items(item.get('networks', '')),
-                                'mediatype': mediatype}
-                                )
+    info = list_item.getVideoInfoTag()
+    info.setTitle(label)
+    info.setOriginalTitle(originaltitle)
+    info.setDbId(dbid)
+    info.setPlaycount(local_info['playcount'])
+    info.setStatus(item.get('status', ''))  # Falls InfoTagVideo das nicht mehr kann, dann unten als Property!
+    try:
+        info.setRating(float(item.get('vote_average', 0)))
+    except Exception:
+        pass
+    info.setIMDBNumber(imdbnumber)
+    info.setPremiered(premiered)
+    info.setMpaa(tmdb_get_cert(item))
+    info.setSeason(str(item.get('number_of_seasons', '')))
+    info.setEpisode(str(item.get('number_of_episodes', '')))
+    info.setPlot(tmdb_fallback_info(item, 'overview'))
+    info.setDirector(tmdb_join_items(item.get('created_by', '')))
+    list_item.setProperty('genre', tmdb_join_items(item.get('genres', '')))
+    info.setStudio(tmdb_join_items(item.get('networks', '')))
+    info.setMediaType(mediatype)
+    # Cast
+    cast_list = []
+    for actor in item.get('cast', []):
+        cast_list.append(xbmc.Actor(actor['name'], actor.get('character', '')))
+    info.setCast(cast_list)
+    # Properties statt nicht existierender InfoTagVideo-Methoden
+    list_item.setProperty('tagline', item.get('tagline', ''))
+    list_item.setProperty('status', item.get('status', ''))
+    list_item.setProperty('votes', str(item.get('vote_count', '')))
     list_item.setArt({'icon': 'DefaultVideo.png', 'thumb': icon, 'poster': icon, 'fanart': backdrop})
     list_item.setProperty('TotalEpisodes', str(local_info['episodes']))
     list_item.setProperty('WatchedEpisodes', str(local_info['watchedepisodes']))
@@ -471,18 +494,24 @@ def tmdb_handle_season(item,tvshow_details,full_info=False):
         episodes_count += 1
 
     list_item = xbmcgui.ListItem(label=tvshow_label)
-    list_item.setInfo('video', {'title': item['name'],
-                                'tvshowtitle': tvshow_label,
-                                'premiered': item.get('air_date', ''),
-                                'episode': episodes_count,
-                                'season': season_nr,
-                                'plot': item.get('overview', ''),
-                                'genre': tmdb_join_items(tvshow_details.get('genres', '')),
-                                'rating': tvshow_details.get('vote_average', ''),
-                                'votes': tvshow_details.get('vote_count', ''),
-                                'mpaa': tmdb_get_cert(tvshow_details),
-                                'mediatype': 'season'}
-                                )
+    info = list_item.getVideoInfoTag()
+    info.setTitle(item['name'])
+    info.setTvShowTitle(tvshow_label)
+    info.setPremiered(item.get('air_date', ''))
+    info.setEpisode(episodes_count)
+    info.setSeason(season_nr)
+    info.setPlot(item.get('overview', ''))
+    info.setGenre(tmdb_join_items(tvshow_details.get('genres', '')))
+    try:
+        info.setRating(float(tvshow_details.get('vote_average', 0)))
+    except Exception:
+        pass
+    info.setMpaa(tmdb_get_cert(tvshow_details))
+    info.setMediaType('season')
+    # Properties statt nicht existierender InfoTagVideo-Methoden
+    list_item.setProperty('tagline', item.get('tagline', ''))
+    list_item.setProperty('status', item.get('status', ''))
+    list_item.setProperty('votes', str(tvshow_details.get('vote_count', '')))
     list_item.setArt({'icon': 'DefaultVideo.png', 'thumb': icon, 'poster': icon, 'fanart': backdrop})
     list_item.setProperty('TotalEpisodes', str(episodes_count))
     list_item.setProperty('id', str(tvshow_details['id']))
