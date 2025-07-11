@@ -560,10 +560,9 @@
 			</visible>
 		</control>
 		<control type="button" id="6601">
-			<include>HeaderButton</include>
-			<label>$LOCALIZE[1036]</label>
-			<onclick>ActivateWindow(favourites)</onclick>
-			<visible>!Window.Is(favourites)</visible>
+    			<include>HeaderButton</include>
+    			<label>$LOCALIZE[1036]</label>
+    			<onclick>RunScript(special://skin/scripts/script.favourites.py)</onclick>
 		</control>
 		<control type="button" id="6606">
 			<include>HeaderButton</include>

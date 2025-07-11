@@ -224,7 +224,7 @@ class MusicArtwork(object):
         # set default details
         if not details.get("artist"):
             details["artist"] = artist
-        if details["art"].get("thumb"):
+        if "art" in details and details["art"].get("thumb"):
             details["art"]["artistthumb"] = details["art"]["thumb"]
 
         # always store results in cache and return results
