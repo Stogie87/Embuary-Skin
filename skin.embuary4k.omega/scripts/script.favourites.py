@@ -31,6 +31,17 @@ def load_favourites():
 
     return items
 
+def save_favourites(favs):
+    # Speichert die Liste der verbliebenen Favoriten zurück
+    root = ET.Element("favourites")
+    for fav in favs:
+        elem = ET.SubElement(root, "favourite", name=fav.name)
+        if fav.thumb:
+            elem.set("thumb", fav.thumb)
+        elem.text = fav.path
+    tree = ET.ElementTree(root)
+    tree.write(FAVOURITES_PATH, encoding="utf-8", xml_declaration=True)
+
 def classify_favourite(item: FavouriteItem):
     path = item.path.lower()
 
@@ -55,30 +66,27 @@ def classify_favourite(item: FavouriteItem):
     return "Andere"
 
 def extract_artist_from_name_or_path(name, path, thumb=None):
-    # 1. Aus Titel-String
     if " - " in name:
         parts = name.split(" - ", 1)
         return parts[0].strip(), parts[1].strip()
 
-    # 2. Aus Thumb (z. B. /Music/Artist/Album/folder.jpg)
     if thumb:
         parts = thumb.replace("\\", "/").split("/")
         if len(parts) >= 3:
             return parts[-3], name
 
-    # 3. Aus Pfad: /Music/Artist/Album/track.mp3
-    path_parts = path.replace("\\", "/").split("/")
-    if len(path_parts) >= 3:
-        return path_parts[-3], name
+    parts = path.replace("\\", "/").split("/")
+    if len(parts) >= 3:
+        return parts[-3], name
 
-    return "", name  # fallback
+    return "", name
 
 def create_listitem(fav: FavouriteItem, category: str):
     label = fav.name
 
     if category in ["Musiktitel", "Musikalben"]:
         artist, title = extract_artist_from_name_or_path(fav.name, fav.path, fav.thumb)
-        if artist:
+        if artist and artist != title:
             label = f"{artist} – {title}"
         else:
             label = title
@@ -130,8 +138,15 @@ def show_favourites():
     if item_index == -1:
         return
 
-    action = items[item_index].path.strip()
-    xbmc.executebuiltin(action)
+    selected_item = items[item_index]
+
+    action = xbmcgui.Dialog().select("Aktion wählen", ["Wiedergabe starten", "Aus Favoriten entfernen", "Abbrechen"])
+    if action == 0:
+        xbmc.executebuiltin(selected_item.path.strip())
+    elif action == 1:
+        all_favs.remove(selected_item)
+        save_favourites(all_favs)
+        xbmcgui.Dialog().notification("Favorit entfernt", selected_item.name, xbmcgui.NOTIFICATION_INFO, 2000)
 
 if __name__ == '__main__':
     show_favourites()
