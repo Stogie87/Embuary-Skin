@@ -1,5 +1,6 @@
 [B]Version 21.1.6[/B]
 - Added workaround to launch favourites via Python script by Stogie87
+- Added favourite layout switch option by Stogie87
 - Added option to install/remove Jellyskip (developed by SgtJalau)
 
 [B]Version 21.1.5[/B]

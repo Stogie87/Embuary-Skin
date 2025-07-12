@@ -1,0 +1,102 @@
+<window type="dialog">
+    <defaultcontrol>9000</defaultcontrol>
+    <controls>
+        <!-- Hintergrund, exakt mittig für 4K, nach 30% oben und wieder 15% runter -->
+        <control type="image">
+            <left>1270</left>
+            <top>456</top>        <!-- 132 + 324 -->
+            <width>1300</width>
+            <height>600</height>
+            <texture border="50">common/corner.png</texture>
+            <colordiffuse>D0000000</colordiffuse>
+        </control>
+
+        <!-- Kategorienliste (vertikal, links im Hintergrund) -->
+        <control type="list" id="9000">
+            <left>1200</left>
+            <top>486</top>        <!-- 162 + 324 -->
+            <width>350</width>
+            <height>720</height>
+            <orientation>vertical</orientation>
+            <onright>9001</onright>
+            <itemlayout width="420" height="90">
+                <control type="label">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>420</width>
+                    <height>90</height>
+                    <font>Font36</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout width="420" height="90">
+                <control type="label">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>420</width>
+                    <height>90</height>
+                    <font>Font36_Bold</font>
+                    <textcolor>selected</textcolor>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </focusedlayout>
+        </control>
+
+        <!-- Kategorie-Titel, mittig oben im Hintergrund -->
+        <control type="label" id="9002">
+            <left>1640</left>
+            <top>486</top>        <!-- 162 + 324 -->
+            <width>560</width>
+            <height>80</height>
+            <font>Font36_Bold</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+        </control>
+
+        <!-- Horizontale Favoritenliste, rechts im Hintergrund -->
+        <control type="list" id="9001">
+            <left>1560</left>
+            <top>586</top>        <!-- 262 + 324 -->
+            <width>956</width>
+            <height>350</height>
+            <orientation>horizontal</orientation>
+            <itemlayout width="156" height="336">
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>132</width>
+                    <height>288</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture>$INFO[ListItem.Icon]</texture>
+                </control>
+            </itemlayout>
+            <focusedlayout width="176" height="336">
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>156</width>
+                    <height>336</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture>$INFO[ListItem.Icon]</texture>
+                </control>
+            </focusedlayout>
+        </control>
+
+        <!-- Titel des selektierten Items, mittig unter der Favoritenliste -->
+        <control type="label">
+            <left>1560</left>
+            <top>951</top>        <!-- 627 + 324 -->
+            <width>1050</width>
+            <height>60</height>
+            <font>Font24</font>
+            <textcolor>FFBBBBBB</textcolor>
+            <align>left</align>
+            <aligny>left</aligny>
+            <label>$INFO[Container(9001).ListItem.Label]</label>
+        </control>
+    </controls>
+</window>

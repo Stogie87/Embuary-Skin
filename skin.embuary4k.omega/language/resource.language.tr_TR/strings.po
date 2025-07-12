@@ -2418,3 +2418,47 @@ msgstr ""
 msgctxt "#42006"
 msgid "Codec Logo Flag-Style"
 msgstr ""
+
+msgctxt "#42007"
+msgid "Favourites View:"
+msgstr "Favoriler Görünümü:"
+
+msgctxt "#42008"
+msgid "vertical"
+msgstr "Dikey"
+
+msgctxt "#42009"
+msgid "horizontal"
+msgstr "Yatay"
+
+msgctxt "#42010"
+msgid "Select Favourites Category"
+msgstr "Favori kategorisini seç"
+
+msgctxt "#42011"
+msgid "Play"
+msgstr "Oynat"
+
+msgctxt "#42012"
+msgid "Remove from Favourites"
+msgstr "Favorilerden kaldır"
+
+msgctxt "#42013"
+msgid "Cancel"
+msgstr "İptal"
+
+msgctxt "#42014"
+msgid "Favourite removed"
+msgstr "Favori kaldırıldı"
+
+msgctxt "#42015"
+msgid "No favourites found"
+msgstr "Favori bulunamadı"
+
+msgctxt "#42016"
+msgid "No recognisable favourites found"
+msgstr "Tanınabilir favori bulunamadı"
+
+msgctxt "#42017"
+msgid "Select action"
+msgstr "Eylem seç"

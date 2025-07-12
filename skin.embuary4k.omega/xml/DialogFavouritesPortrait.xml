@@ -1,0 +1,115 @@
+<window type="dialog">
+    <defaultcontrol>9001</defaultcontrol>
+    <controls>
+        <!-- Hintergrund, exakt mittig für 4K -->
+        <control type="image">
+            <left>1270</left>
+            <top>406</top>
+            <width>1300</width>
+            <height>700</height>
+            <texture border="50">common/corner.png</texture>
+            <colordiffuse>D0000000</colordiffuse>
+        </control>
+
+        <!-- Kategorienliste (horizontal, oben im Hintergrund) -->
+        <control type="list" id="9000">
+            <left>1280</left>
+            <top>431</top>
+            <width>1300</width>
+            <height>80</height>
+            <orientation>horizontal</orientation>
+            <onright>9000</onright>
+            <onleft>9000</onleft>
+            <ondown>9001</ondown>
+            <itemlayout width="210" height="80">
+                <control type="label">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>210</width>
+                    <height>80</height>
+                    <font>Font36</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </itemlayout>
+            <focusedlayout width="210" height="80">
+                <control type="label">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>210</width>
+                    <height>80</height>
+                    <font>Font36_Bold</font>
+                    <textcolor>selected</textcolor>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+            </focusedlayout>
+        </control>
+
+        <!-- Kategorie-Titel, mittig oben im Hintergrund -->
+        <control type="label" id="9002">
+            <left>1610</left>
+            <top>506</top>
+            <width>560</width>
+            <height>60</height>
+            <font>Font36_Bold</font>
+            <textcolor>FFFFFFFF</textcolor>
+            <align>center</align>
+            <aligny>center</aligny>
+            <visible>false</visible>
+        </control>
+
+        <!-- Vertikale Favoritenliste, unter den Tabs -->
+        <control type="list" id="9001">
+            <left>1320</left>
+            <top>536</top>
+            <width>1100</width>
+            <height>510</height>
+            <orientation>vertical</orientation>
+            <onup>9000</onup>
+            <itemlayout width="80" height="170">
+                <control type="image">
+                    <left>0</left>
+                    <top>5</top>
+                    <width>70</width>
+                    <height>150</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture>$INFO[ListItem.Icon]</texture>
+                </control>
+                <control type="label">
+                    <left>80</left>
+                    <top>30</top>
+                    <width>970</width>
+                    <height>80</height>
+                    <font>Font32</font>
+                    <textcolor>FFFFFFFF</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+                    <scroll>true</scroll>
+                </control>
+            </itemlayout>
+            <focusedlayout width="80" height="170">
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>75</width>
+                    <height>160</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture>$INFO[ListItem.Icon]</texture>
+                </control>
+                <control type="label">
+                    <left>90</left>
+                    <top>25</top>
+                    <width>970</width>
+                    <height>90</height>
+                    <font>Font32_Bold</font>
+                    <textcolor>selected</textcolor>
+                    <align>left</align>
+                    <label>$INFO[ListItem.Label]</label>
+                    <scroll>true</scroll>
+                </control>
+            </focusedlayout>
+        </control>
+    </controls>
+</window>

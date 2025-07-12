@@ -2418,3 +2418,47 @@ msgstr ""
 msgctxt "#42006"
 msgid "Codec Logo Flag-Style"
 msgstr ""
+
+msgctxt "#42007"
+msgid "Favourites View:"
+msgstr "Favourites View:"
+
+msgctxt "#42008"
+msgid "vertical"
+msgstr "vertical"
+
+msgctxt "#42009"
+msgid "horizontal"
+msgstr "horizontal"
+
+msgctxt "#42010"
+msgid "Select Favourites Category"
+msgstr "Select Favourites Category"
+
+msgctxt "#42011"
+msgid "Play"
+msgstr "Play"
+
+msgctxt "#42012"
+msgid "Remove from Favourites"
+msgstr "Remove from Favourites"
+
+msgctxt "#42013"
+msgid "Cancel"
+msgstr "Cancel"
+
+msgctxt "#42014"
+msgid "Favourite removed"
+msgstr "Favourite removed"
+
+msgctxt "#42015"
+msgid "No favourites found"
+msgstr "No favourites found"
+
+msgctxt "#42016"
+msgid "No recognisable favourites found"
+msgstr "No recognisable favourites found"
+
+msgctxt "#42017"
+msgid "Select action"
+msgstr "Select action"
