@@ -18,21 +18,17 @@ def load_favourites():
     if not os.path.exists(FAVOURITES_PATH):
         xbmc.log("[Embuary-Favourites] favourites.xml not found", xbmc.LOGWARNING)
         return []
-
     tree = ET.parse(FAVOURITES_PATH)
     root = tree.getroot()
     items = []
-
     for fav in root.findall("favourite"):
         name = fav.get("name")
         thumb = fav.get("thumb", "DefaultAudio.png")
         path = fav.text.strip()
         items.append(FavouriteItem(name, thumb, path))
-
     return items
 
 def save_favourites(favs):
-    # Speichert die Liste der verbliebenen Favoriten zurück
     root = ET.Element("favourites")
     for fav in favs:
         elem = ET.SubElement(root, "favourite", name=fav.name)
@@ -44,53 +40,39 @@ def save_favourites(favs):
 
 def classify_favourite(item: FavouriteItem):
     path = item.path.lower()
-
-    if any(x in path for x in ["/movies/", "videodb://movies/", "/movie/"]) \
-       or ("plugin.video.jellyfin" in path and "mode=play" in path and "tvshow" not in path):
+    if any(x in path for x in ["/movies/", "videodb://movies/", "/movie/"]) or ("plugin.video.jellyfin" in path and "mode=play" in path and "tvshow" not in path):
         return "Filme"
-
-    if any(x in path for x in ["/tvshows/", "/shows/", "videodb://tvshows/", "/series/", "/show/"]) \
-       or ("plugin.video.jellyfin" in path and "tvshow" in path):
+    if any(x in path for x in ["/tvshows/", "/shows/", "videodb://tvshows/", "/series/", "/show/"]) or ("plugin.video.jellyfin" in path and "tvshow" in path):
         return "Serien"
-
     if any(x in path for x in ["/artist/", "musicdb://artists/", "/musicartists"]):
         return "Interpreten"
-
     if any(x in path for x in ["/album/", "musicdb://albums/", "/albums/", "/music/albums"]):
         return "Musikalben"
-
-    if any(x in path for x in ["/track/", "/song/", "musicdb://songs/", "/file/music/", ".mp3", ".flac"]) \
-       or ("plugin.audio.jellyfin" in path and "track" in path):
+    if any(x in path for x in ["/track/", "/song/", "musicdb://songs/", "/file/music/", ".mp3", ".flac"]) or ("plugin.audio.jellyfin" in path and "track" in path):
         return "Musiktitel"
-
     return "Andere"
 
 def extract_artist_from_name_or_path(name, path, thumb=None):
     if " - " in name:
         parts = name.split(" - ", 1)
         return parts[0].strip(), parts[1].strip()
-
     if thumb:
         parts = thumb.replace("\\", "/").split("/")
         if len(parts) >= 3:
             return parts[-3], name
-
     parts = path.replace("\\", "/").split("/")
     if len(parts) >= 3:
         return parts[-3], name
-
     return "", name
 
 def create_listitem(fav: FavouriteItem, category: str):
     label = fav.name
-
     if category in ["Musiktitel", "Musikalben"]:
         artist, title = extract_artist_from_name_or_path(fav.name, fav.path, fav.thumb)
         if artist and artist != title:
             label = f"{artist} – {title}"
         else:
             label = title
-
     li = xbmcgui.ListItem(label=label)
     li.setArt({
         "thumb": fav.thumb,
@@ -100,6 +82,27 @@ def create_listitem(fav: FavouriteItem, category: str):
     li.setProperty("IsPlayable", "true")
     li.setPath(fav.path)
     return li
+
+class FavouritesPosterDialog(xbmcgui.WindowXMLDialog):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args)
+        self.items = kwargs.get("items", [])
+        self.selected = -1
+
+    def onInit(self):
+        list_control = self.getControl(9000)
+        list_control.reset()
+        for li in self.items:
+            list_control.addItem(li)
+        # WICHTIG: Fokus und Selektion explizit setzen!
+        self.setFocusId(9000)
+        if list_control.size() > 0:
+            list_control.selectItem(0)
+
+    def onClick(self, controlId):
+        if controlId == 9000:
+            self.selected = self.getControl(9000).getSelectedPosition()
+            self.close()
 
 def show_favourites():
     all_favs = load_favourites()
@@ -115,38 +118,34 @@ def show_favourites():
         "Musiktitel": [],
         "Andere": []
     }
-
     for fav in all_favs:
         category = classify_favourite(fav)
         grouped[category].append(fav)
-
     ordered = [k for k in ["Filme", "Serien", "Interpreten", "Musikalben", "Musiktitel", "Andere"] if grouped[k]]
     if not ordered:
         xbmcgui.Dialog().notification("Embuary", "Keine erkennbaren Favoriten gefunden", xbmcgui.NOTIFICATION_INFO, 3000)
         return
-
     cat_index = xbmcgui.Dialog().select("Favoriten-Kategorie", ordered)
     if cat_index == -1:
         return
-
     selected_cat = ordered[cat_index]
     items = grouped[selected_cat]
     listitems = [create_listitem(i, selected_cat) for i in items]
-    labels = [i.getLabel() for i in listitems]
-    item_index = xbmcgui.Dialog().select(f"{selected_cat}", labels)
-
-    if item_index == -1:
-        return
-
-    selected_item = items[item_index]
-
-    action = xbmcgui.Dialog().select("Aktion wählen", ["Wiedergabe starten", "Aus Favoriten entfernen", "Abbrechen"])
-    if action == 0:
-        xbmc.executebuiltin(selected_item.path.strip())
-    elif action == 1:
-        all_favs.remove(selected_item)
-        save_favourites(all_favs)
-        xbmcgui.Dialog().notification("Favorit entfernt", selected_item.name, xbmcgui.NOTIFICATION_INFO, 2000)
+    # Dialog anzeigen:
+    skin_path = translatePath("special://skin/xml/")
+    win = FavouritesPosterDialog("DialogFavourites.xml", skin_path, "default", items=listitems)
+    win.doModal()
+    sel = win.selected
+    del win
+    if sel is not None and sel >= 0 and sel < len(items):
+        selected_item = items[sel]
+        action = xbmcgui.Dialog().select("Aktion wählen", ["Wiedergabe starten", "Aus Favoriten entfernen", "Abbrechen"])
+        if action == 0:
+            xbmc.executebuiltin(selected_item.path.strip())
+        elif action == 1:
+            all_favs.remove(selected_item)
+            save_favourites(all_favs)
+            xbmcgui.Dialog().notification("Favorit entfernt", selected_item.name, xbmcgui.NOTIFICATION_INFO, 2000)
 
 if __name__ == '__main__':
     show_favourites()

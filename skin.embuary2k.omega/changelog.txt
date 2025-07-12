@@ -1,7 +1,5 @@
-[B]Version 21.1.7[/B]
-- Added workaround to launch favourites via Python script by Stogie87
-
 [B]Version 21.1.6[/B]
+- Added workaround to launch favourites via Python script by Stogie87
 - Added option to install/remove Jellyskip (developed by SgtJalau)
 
 [B]Version 21.1.5[/B]

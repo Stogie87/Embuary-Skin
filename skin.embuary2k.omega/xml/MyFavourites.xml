@@ -1,0 +1,92 @@
+<window type="dialog" id="10060">
+    <defaultcontrol>9000</defaultcontrol>
+    <allowoverlay>yes</allowoverlay>
+    <backgroundcolor>00000000</backgroundcolor>
+
+    <controls>
+        <!-- Hintergrundbild -->
+        <control type="image">
+            <left>0</left>
+            <top>0</top>
+            <width>1920</width>
+            <height>1080</height>
+            <aspectratio>stretch</aspectratio>
+            <texture colordiffuse="D0FFFFFF">common/corner.png</texture>
+        </control>
+
+        <!-- Überschrift -->
+        <control type="label">
+            <label>Favoriten</label>
+            <top>80</top>
+            <left>100</left>
+            <width>1720</width>
+            <height>50</height>
+            <align>center</align>
+            <font>Font_Title</font>
+            <textcolor>white</textcolor>
+        </control>
+
+        <!-- Favoritenliste -->
+        <control type="list" id="9000">
+            <top>160</top>
+            <left>100</left>
+            <width>1720</width>
+            <height>800</height>
+            <orientation>vertical</orientation>
+            <onup>9000</onup>
+            <ondown>9000</ondown>
+
+            <itemlayout height="160">
+                <control type="image">
+                    <left>10</left>
+                    <top>10</top>
+                    <width>100</width>
+                    <height>140</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture>$INFO[ListItem.Art(poster)]</texture>
+                </control>
+                <control type="label">
+                    <left>130</left>
+                    <top>50</top>
+                    <width>1200</width>
+                    <height>60</height>
+                    <font>Font30</font>
+                    <label>$INFO[ListItem.Label]</label>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="group">
+                    <left>1450</left>
+                    <top>10</top>
+                    <include>CodecInfoOverlayBottomRight</include>
+                </control>
+            </itemlayout>
+
+            <focusedlayout height="160">
+                <control type="image">
+                    <left>10</left>
+                    <top>10</top>
+                    <width>100</width>
+                    <height>140</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture border="5">thumb_focus.png</texture>
+                </control>
+                <control type="label">
+                    <left>130</left>
+                    <top>50</top>
+                    <width>1200</width>
+                    <height>60</height>
+                    <font>Font30</font>
+                    <label>$INFO[ListItem.Label]</label>
+                    <textcolor>white</textcolor>
+                </control>
+                <control type="group">
+                    <left>1450</left>
+                    <top>10</top>
+                    <include>CodecInfoOverlayBottomRight</include>
+                </control>
+            </focusedlayout>
+
+            <onselect>noop</onselect>
+        </control>
+    </controls>
+</window>

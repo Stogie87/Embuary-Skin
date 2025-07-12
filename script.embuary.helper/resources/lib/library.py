@@ -34,9 +34,15 @@ def handle_movies(li, item, searchstring=None):
     info_tag.setOriginalTitle(item['originaltitle'])
     info_tag.setSortTitle(item['sorttitle'])
     info_tag.setYear(item['year'])
+    info_tag.setGenres([g for g in genre] if isinstance(genre, list) else [genre])
+    info_tag.setStudios([s for s in studio] if isinstance(studio, list) else [studio])
+    info_tag.setCountries([c for c in country] if isinstance(country, list) else [country])
+    info_tag.setDirectors([d for d in director] if isinstance(director, list) else [director])
+    info_tag.setWriters([w for w in writer] if isinstance(writer, list) else [writer])
     info_tag.setPlot(item['plot'])
     info_tag.setPlotOutline(item['plotoutline'])
     info_tag.setIMDBNumber(item['imdbnumber'])
+    info_tag.setTags(item['tag'] if isinstance(item['tag'], list) else [item['tag']])
     info_tag.setRating(float(item['rating']), votes=int(item['votes']))
     info_tag.setUserRating(int(float(item['userrating'])))
     info_tag.setLastPlayed(item['lastplayed'])
@@ -52,14 +58,6 @@ def handle_movies(li, item, searchstring=None):
     info_tag.setResumePoint(item['resume']['position'], item['resume']['total'])
     li_item.setProperty('tagline', item.get('tagline', ''))
     li_item.setProperty('mpaa', item.get('mpaa', ''))
-
-    # Omega: Felder als Property statt InfoTagVideo-Setter
-    li_item.setProperty('genre', ', '.join(genre) if isinstance(genre, list) else genre)
-    li_item.setProperty('studio', ', '.join(studio) if isinstance(studio, list) else studio)
-    li_item.setProperty('country', ', '.join(country) if isinstance(country, list) else country)
-    li_item.setProperty('director', ', '.join(director) if isinstance(director, list) else director)
-    li_item.setProperty('writer', ', '.join(writer) if isinstance(writer, list) else writer)
-    li_item.setProperty('tag', ', '.join(item['tag']) if isinstance(item.get('tag', ''), list) else item.get('tag', ''))
 
     if 'cast' in item and isinstance(item['cast'], list):
         cast_list = []
@@ -141,10 +139,13 @@ def handle_tvshows(li, item, searchstring=None):
     info_tag.setYear(item['year'])
     info_tag.setSortTitle(item['sorttitle'])
     info_tag.setOriginalTitle(item['originaltitle'])
+    info_tag.setGenres([g for g in genre] if isinstance(genre, list) else [genre])
+    info_tag.setStudios([s for s in studio] if isinstance(studio, list) else [studio])
     info_tag.setPlot(item['plot'])
     info_tag.setRating(float(item['rating']), votes=int(item['votes']))
     info_tag.setUserRating(int(float(item['userrating'])))
     info_tag.setPremiered(item['premiered'])
+    info_tag.setTags(item['tag'] if isinstance(item['tag'], list) else [item['tag']])
     info_tag.setMediaType('tvshow')
     info_tag.setIMDBNumber(item['imdbnumber'])
     info_tag.setLastPlayed(item['lastplayed'])
@@ -155,11 +156,6 @@ def handle_tvshows(li, item, searchstring=None):
     info_tag.setSeason(season)
     info_tag.setEpisode(episode)
     li_item.setProperty('mpaa', item.get('mpaa', ''))
-
-    # Omega: Felder als Property statt InfoTagVideo-Setter
-    li_item.setProperty('genre', ', '.join(genre) if isinstance(genre, list) else genre)
-    li_item.setProperty('studio', ', '.join(studio) if isinstance(studio, list) else studio)
-    li_item.setProperty('tag', ', '.join(item['tag']) if isinstance(item.get('tag', ''), list) else item.get('tag', ''))
 
     if 'cast' in item and isinstance(item['cast'], list):
         cast_list = []
@@ -258,16 +254,14 @@ def handle_episodes(li, item):
     info_tag.setRating(float(item.get('rating', 0)), votes=int(item.get('votes', 0)))
     info_tag.setUserRating(int(float(item['userrating'])))
     info_tag.setPlaycount(item['playcount'])
+    info_tag.setDirectors([d for d in director] if isinstance(director, list) else [director])
+    info_tag.setWriters([w for w in writer] if isinstance(writer, list) else [writer])
     info_tag.setPath(item['file'])
     info_tag.setDateAdded(item['dateadded'])
     info_tag.setMediaType('episode')
     info_tag.setResumePoint(item['resume']['position'], item['resume']['total'])
     li_item.setProperty('showtitle', item['showtitle'])
     li_item.setProperty('mpaa', item.get('mpaa', ''))
-
-    # Omega: Felder als Property statt InfoTagVideo-Setter
-    li_item.setProperty('director', ', '.join(director) if isinstance(director, list) else director)
-    li_item.setProperty('writer', ', '.join(writer) if isinstance(writer, list) else writer)
 
     if 'cast' in item and isinstance(item['cast'], list):
         cast_list = []
@@ -376,6 +370,7 @@ def _set_unique_properties(li_item, item, prop):
     return li_item
 
 def _set_ratings(li_item, item):
+    info_tag = li_item.getVideoInfoTag()
     for key in item:
         try:
             rating = item[key]['rating']
@@ -384,7 +379,9 @@ def _set_ratings(li_item, item):
                 raise Exception
             elif rating > 10:
                 rating = rating / 10
-            li_item.setRating(key, float(rating), votes)
+            # key entspricht dem Rating-Typ, z. B. 'imdb', 'tmdb', 'user' etc.
+            # Kodi Omega erwartet das 3. Argument für den Rating-Typ.
+            info_tag.setRating(float(rating), int(votes), key)
         except Exception:
             pass
     return li_item
