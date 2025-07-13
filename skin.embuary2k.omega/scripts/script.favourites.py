@@ -103,7 +103,7 @@ def create_listitem(fav: FavouriteItem, category: str):
     li.setPath(fav.path)
     return li
 
-# --- Portrait Dialog: jetzt korrektes Handling für Links/Rechts (1/2) ---
+# --- Portrait Dialog ---
 class FavouritesPortraitDialog(xbmcgui.WindowXMLDialog):
     def __init__(self, *args, **kwargs):
         super().__init__(*args)
@@ -150,6 +150,9 @@ class FavouritesPortraitDialog(xbmcgui.WindowXMLDialog):
 
     def onAction(self, action):
         if self.closed:
+            return
+        if action in (10, 92):  # ACTION_PREVIOUS_MENU, ACTION_NAV_BACK
+            self.close()
             return
         try:
             cat_ctrl = self.get_safe_control(9000)
@@ -275,6 +278,9 @@ class FavouritesLandscapeDialog(xbmcgui.WindowXMLDialog):
     def onAction(self, action):
         if self.closed:
             return
+        if action in (10, 92):  # ACTION_PREVIOUS_MENU, ACTION_NAV_BACK
+            self.close()
+            return
         try:
             cat_ctrl = self.get_safe_control(9000)
             fav_ctrl = self.get_safe_control(9001)
@@ -366,35 +372,38 @@ def _set_ratings(li_item, item):
 
 # --- Hauptdialog-Funktion ---
 def show_favourites():
-    all_favs = load_favourites()
-    if not all_favs:
-        xbmcgui.Dialog().notification("Embuary", localize(STRID_NO_FAVS, "Keine Favoriten gefunden"), xbmcgui.NOTIFICATION_INFO, 3000)
-        return
+    while True:
+        all_favs = load_favourites()
+        if not all_favs:
+            xbmcgui.Dialog().notification("Embuary", localize(STRID_NO_FAVS, "Keine Favoriten gefunden"), xbmcgui.NOTIFICATION_INFO, 3000)
+            return
 
-    grouped = {cat: [] for cat in CATEGORIES}
-    grouped["Andere"] = []
-    for fav in all_favs:
-        category = classify_favourite(fav)
-        if category in grouped:
-            grouped[category].append(fav)
+        grouped = {cat: [] for cat in CATEGORIES}
+        grouped["Andere"] = []
+        for fav in all_favs:
+            category = classify_favourite(fav)
+            if category in grouped:
+                grouped[category].append(fav)
+            else:
+                grouped["Andere"].append(fav)
+
+        skin_path = translatePath("special://skin/xml/")
+        view = xbmc.getInfoLabel('Skin.String(favourites_view)').lower() or "portrait"
+
+        items_by_type = {cat: [create_listitem(i, cat) for i in grouped[cat]] for cat in CATEGORIES}
+        items_by_type["Andere"] = [create_listitem(i, "Andere") for i in grouped["Andere"]]
+
+        if view == "portrait":
+            win = FavouritesPortraitDialog("DialogFavouritesPortrait.xml", skin_path, "default", items_by_type=items_by_type)
         else:
-            grouped["Andere"].append(fav)
+            win = FavouritesLandscapeDialog("DialogFavouritesLandscape.xml", skin_path, "default", items_by_type=items_by_type)
+        win.selected = None
+        win.doModal()
+        sel = win.selected
+        del win
+        if not sel:
+            return  # Fenster wurde explizit geschlossen
 
-    skin_path = translatePath("special://skin/xml/")
-    view = xbmc.getInfoLabel('Skin.String(favourites_view)').lower() or "portrait"
-
-    items_by_type = {cat: [create_listitem(i, cat) for i in grouped[cat]] for cat in CATEGORIES}
-    items_by_type["Andere"] = [create_listitem(i, "Andere") for i in grouped["Andere"]]
-
-    if view == "portrait":
-        win = FavouritesPortraitDialog("DialogFavouritesPortrait.xml", skin_path, "default", items_by_type=items_by_type)
-    else:
-        win = FavouritesLandscapeDialog("DialogFavouritesLandscape.xml", skin_path, "default", items_by_type=items_by_type)
-    win.selected = None
-    win.doModal()
-    sel = win.selected
-    del win
-    if sel:
         cat, idx = sel
         items = grouped[cat]
         if idx < 0 or idx >= len(items):
@@ -406,12 +415,21 @@ def show_favourites():
              localize(STRID_REMOVE, "Aus Favoriten entfernen"),
              localize(STRID_CANCEL, "Abbrechen")]
         )
+        if action == -1:
+            return  # Dialog wurde per ESC/BACK geschlossen – Schleife und Fenster beenden!
         if action == 0:
             xbmc.executebuiltin(selected_item.path.strip())
+            return
         elif action == 1:
             all_favs.remove(selected_item)
             save_favourites(all_favs)
-            xbmcgui.Dialog().notification(localize(STRID_REMOVED, "Favorit entfernt"), selected_item.name, xbmcgui.NOTIFICATION_INFO, 2000)
+            xbmcgui.Dialog().notification(localize(STRID_REMOVED, "Favorit entfernt"), selected_item.name,
+                                          xbmcgui.NOTIFICATION_INFO, 2000)
+            continue
+        elif action == 2:
+            continue
+        else:
+            return
 
 if __name__ == '__main__':
     show_favourites()
