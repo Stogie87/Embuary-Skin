@@ -335,12 +335,13 @@ class Monitor(xbmc.Monitor):
 
 
 class Listener(threading.Thread):
+
+    stop_thread = False
+
     def __init__(self, monitor):
         self.monitor = monitor
-        self.stop_thread = False
-        threading.Thread.__init__(self)
-    ...
 
+        threading.Thread.__init__(self)
 
     def run(self):
         """Detect the resume dialog for widgets.

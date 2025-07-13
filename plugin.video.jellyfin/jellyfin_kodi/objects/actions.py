@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from __future__ import division, absolute_import, print_function, unicode_literals
 
+#################################################################################################
+
 import threading
 import sys
 import json
@@ -19,11 +21,17 @@ from ..helper.utils import translate_path
 
 from .obj import Objects
 
+#################################################################################################
+
 LOG = LazyLogger(__name__)
+
+#################################################################################################
+
 
 class Actions(object):
 
     def __init__(self, server_id=None, api_client=None):
+
         self.server_id = server_id or None
         if not api_client:
             LOG.debug("No api client provided, attempting to use config file")
@@ -35,67 +43,98 @@ class Actions(object):
             try:
                 with open(addon_data, "rb") as infile:
                     data = json.load(infile)
+
                     server_data = data["Servers"][0]
                     api_client.config.data["auth.server"] = server_data.get("address")
                     api_client.config.data["auth.server-name"] = server_data.get("Name")
                     api_client.config.data["auth.user_id"] = server_data.get("UserId")
-                    api_client.config.data["auth.token"] = server_data.get("AccessToken")
+                    api_client.config.data["auth.token"] = server_data.get(
+                        "AccessToken"
+                    )
             except Exception as e:
                 LOG.warning("Addon appears to not be configured yet: {}".format(e))
+
         self.api_client = api_client
         self.server = self.api_client.config.data["auth.server"]
+
         self.stack = []
 
     def get_playlist(self, item):
+
         if item["Type"] == "Audio":
             return xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
+
         return xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
 
     def play(self, item, db_id=None, transcode=False, playlist=False):
+        """Play requested item"""
         listitem = xbmcgui.ListItem()
         LOG.info("[ play/%s ] %s", item["Id"], item["Name"])
+
         transcode = transcode or settings("playFromTranscode.bool")
         play = playutils.PlayUtils(
             item, transcode, self.server_id, self.server, self.api_client
         )
         source = play.select_source(play.get_sources())
         play.set_external_subs(source, listitem)
+
         self.set_playlist(item, listitem, db_id, transcode)
+
         self.stack[0][1].setPath(self.stack[0][0])
+
         if len(sys.argv) > 1:
             xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, self.stack[0][1])
 
     def set_playlist(self, item, listitem, db_id=None, transcode=False):
+        """Verify seektime, set intros, set main item and set additional parts.
+        Detect the seektime for video type content.
+        Verify the default video action set in Kodi for accurate resume behavior.
+        """
+
         if item["MediaType"] in ("Video", "Audio"):
             resume = item["UserData"].get("PlaybackPositionTicks")
+
             if resume and transcode:
                 choice = self.resume_dialog(
                     api.API(item, self.server).adjust_resume((resume or 0) / 10000000.0)
                 )
+
                 if choice is None:
                     raise Exception("User backed out of resume dialog.")
+
                 item["resumePlayback"] = bool(choice)
+
         if settings("enableCinema.bool") and not item["resumePlayback"]:
             self._set_intros(item)
+
         self.set_listitem(item, listitem, db_id, None)
         playutils.set_properties(item, item["PlaybackInfo"]["Method"], self.server_id)
         self.stack.append([item["PlaybackInfo"]["Path"], listitem])
+
         if item.get("PartCount"):
             self._set_additional_parts(item["Id"])
 
     def _set_intros(self, item):
+        """if we have any play them when the movie/show is not being resumed."""
         intros = self.api_client.get_intros(item["Id"])
+
         if intros["Items"]:
             enabled = True
+
             if settings("askCinema") == "true":
+
                 resp = dialog("yesno", "{jellyfin}", translate(33016))
                 if not resp:
+
                     enabled = False
                     LOG.info("Skip trailers.")
+
             if enabled:
                 for intro in intros["Items"]:
+
                     listitem = xbmcgui.ListItem()
                     LOG.info("[ intro/%s ] %s", intro["Id"], intro["Name"])
+
                     play = playutils.PlayUtils(
                         intro, False, self.server_id, self.server, self.api_client
                     )
@@ -105,14 +144,19 @@ class Actions(object):
                     playutils.set_properties(
                         intro, intro["PlaybackInfo"]["Method"], self.server_id
                     )
+
                     self.stack.append([intro["PlaybackInfo"]["Path"], listitem])
+
                 window("jellyfin.skip.%s" % intro["Id"], value="true")
 
     def _set_additional_parts(self, item_id):
+        """Create listitems and add them to the stack of playlist."""
         parts = self.api_client.get_additional_parts(item_id)
         for part in parts["Items"]:
+
             listitem = xbmcgui.ListItem()
             LOG.info("[ part/%s ] %s", part["Id"], part["Name"])
+
             play = playutils.PlayUtils(
                 part, False, self.server_id, self.server, self.api_client
             )
@@ -123,100 +167,135 @@ class Actions(object):
             playutils.set_properties(
                 part, part["PlaybackInfo"]["Method"], self.server_id
             )
+
             self.stack.append([part["PlaybackInfo"]["Path"], listitem])
 
     def play_playlist(
         self, items, clear=True, seektime=None, audio=None, subtitle=None
     ):
+        """Play a list of items. Creates a new playlist. Add additional items as plugin listing."""
         item = items["Items"][0]
         playlist = self.get_playlist(item)
         player = xbmc.Player()
+
         if clear:
             if player.isPlaying():
                 player.stop()
+
             xbmc.executebuiltin("ActivateWindow(busydialognocancel)")
             playlist.clear()
             index = 0
         else:
-            index = max(playlist.getposition(), 0) + 1
+            index = max(playlist.getposition(), 0) + 1  # Can return -1
+
         listitem = xbmcgui.ListItem()
         LOG.info("[ playlist/%s ] %s", item["Id"], item["Name"])
+
+        # Automatically resume if the item is in progress (casting from server)
         resume = item["UserData"].get("PlaybackPositionTicks")
         item["resumePlayback"] = bool(resume)
+
         play = playutils.PlayUtils(
             item, False, self.server_id, self.server, self.api_client
         )
         source = play.select_source(play.get_sources())
         play.set_external_subs(source, listitem)
+
         item["PlaybackInfo"]["AudioStreamIndex"] = (
             audio or item["PlaybackInfo"]["AudioStreamIndex"]
         )
         item["PlaybackInfo"]["SubtitleStreamIndex"] = subtitle or item[
             "PlaybackInfo"
         ].get("SubtitleStreamIndex")
+
         self.set_listitem(item, listitem, None, True if seektime else False)
         listitem.setPath(item["PlaybackInfo"]["Path"])
         playutils.set_properties(item, item["PlaybackInfo"]["Method"], self.server_id)
+
         playlist.add(item["PlaybackInfo"]["Path"], listitem, index)
+
         if clear:
             xbmc.executebuiltin("Dialog.Close(busydialognocancel)")
             player.play(playlist, startpos=index)
+
         index += 1
+
         server_address = item["PlaybackInfo"]["ServerAddress"]
         token = item["PlaybackInfo"]["Token"]
+
         for item in items["Items"][1:]:
             listitem = xbmcgui.ListItem()
             LOG.info("[ playlist/%s ] %s", item["Id"], item["Name"])
+
             self.set_listitem(item, listitem, None, False)
             path = "{}/Audio/{}/stream.mp3?static=true&api_key={}".format(
                 server_address, item["Id"], token
             )
             listitem.setPath(path)
+
             play = playutils.PlayUtils(
                 item, False, self.server_id, self.server, self.api_client
             )
             source = play.select_source(play.get_sources())
             play.set_external_subs(source, listitem)
+
             playutils.set_properties(
                 item, item["PlaybackInfo"]["Method"], self.server_id
             )
+
             playlist.add(path, listitem, index)
             index += 1
 
     def set_listitem(self, item, listitem, db_id=None, seektime=None, intro=False):
+
         objects = Objects()
         API = api.API(item, self.server)
+
         if item["Type"] in ("MusicArtist", "MusicAlbum", "Audio"):
+
             obj = objects.map(item, "BrowseAudio")
             obj["DbId"] = db_id
             obj["Artwork"] = API.get_all_artwork(
                 objects.map(item, "ArtworkMusic"), True
             )
             self.listitem_music(obj, listitem, item)
+
         elif item["Type"] in ("Photo", "PhotoAlbum"):
+
             obj = objects.map(item, "BrowsePhoto")
             obj["Artwork"] = API.get_all_artwork(objects.map(item, "Artwork"))
             self.listitem_photo(obj, listitem, item)
+
         elif item["Type"] in ("TvChannel",):
+
             obj = objects.map(item, "BrowseChannel")
             obj["Artwork"] = API.get_all_artwork(objects.map(item, "Artwork"))
             self.listitem_channel(obj, listitem, item)
+
         else:
             obj = objects.map(item, "BrowseVideo")
             obj["DbId"] = db_id
             obj["Artwork"] = API.get_all_artwork(
                 objects.map(item, "ArtworkParent"), True
             )
+
             if intro:
                 obj["Artwork"]["Primary"] = "&KodiCinemaMode=true"
+
             self.listitem_video(obj, listitem, item, seektime, intro)
+
             if "PlaybackInfo" in item:
+
                 if seektime:
                     item["PlaybackInfo"]["CurrentPosition"] = obj["Resume"]
+
                 if "SubtitleUrl" in item["PlaybackInfo"]:
+
                     LOG.info("[ subtitles ] %s", item["PlaybackInfo"]["SubtitleUrl"])
                     listitem.setSubtitles([item["PlaybackInfo"]["SubtitleUrl"]])
+
                 if item["Type"] == "Episode":
+
                     item["PlaybackInfo"]["CurrentEpisode"] = objects.map(item, "UpNext")
                     item["PlaybackInfo"]["CurrentEpisode"]["art"] = {
                         "tvshow.poster": obj["Artwork"].get("Series.Primary"),
@@ -227,10 +306,14 @@ class Actions(object):
                         item["PlaybackInfo"]["CurrentEpisode"]["art"][
                             "tvshow.fanart"
                         ] = obj["Artwork"]["Backdrop"][0]
+
         listitem.setContentLookup(False)
 
     def listitem_video(self, obj, listitem, item, seektime=None, intro=False):
+        """Set listitem for video content. That also include streams."""
         API = api.API(item, self.server)
+        is_video = obj["MediaType"] in ("Video", "Audio")  # audiobook
+
         obj["Genres"] = " / ".join(obj["Genres"] or [])
         obj["Studios"] = [
             API.validate_studio(studio) for studio in (obj["Studios"] or [])
@@ -286,155 +369,169 @@ class Actions(object):
         self.set_artwork(obj["Artwork"], listitem, obj["Type"])
 
         if intro or obj["Type"] == "Trailer":
-            listitem.setArt({"poster": ""})  # Clear poster for intros/trailers
-
-        listitem.setArt({
-            "icon": "DefaultVideo.png",
-            "thumb": obj["Artwork"]["Primary"],
-        })
-
-        if obj.get("Premiere"):
-            obj["Premiere"] = obj["Premiere"].split("T")[0]
-        if obj.get("DatePlayed"):
-            obj["DatePlayed"] = obj["DatePlayed"].split(".")[0].replace("T", " ")
-
-        def safe_int(value, default=0):
-            try:
-                return int(value)
-            except (TypeError, ValueError):
-                return default
-
-        info = listitem.getVideoInfoTag()
-        info.setTitle(obj.get("Title", "") or "")
-        info.setOriginalTitle(obj.get("Title", "") or "")
-        info.setSortTitle(obj.get("SortTitle", "") or "")
-        info.setTvShowTitle(obj.get("SeriesName", "") or "")
-        info.setSeason(safe_int(obj.get("Season", 0)))
-        info.setEpisode(safe_int(obj.get("Index", 0)))
-        info.setYear(safe_int(obj.get("Year", 0)))
-        info.setRating(float(obj.get("Rating", 0) or 0))
-        info.setVotes(safe_int(obj.get("Votes", 0)))
-        studios = [obj.get("Studios", "")] if obj.get("Studios", "") else []
-        info.setStudios(studios)
-        info.setMpaa(obj.get("Mpaa", "") or "")
-        info.setPlaycount(safe_int(obj.get("PlayCount", 0)))
-        info.setPlot(obj.get("Plot", "") or "")
-        info.setPlotOutline(obj.get("ShortPlot", "") or "")
-        info.setGenres(obj.get("Genres", "").split(" / ") if obj.get("Genres") else [])
-        info.setDirectors(obj.get("Directors", "").split(" / ") if obj.get("Directors") else [])
-        info.setWriters(obj.get("Writers", "").split(" / ") if obj.get("Writers") else [])
-        info.setCountries(obj.get("Countries", "").split(" / ") if obj.get("Countries") else [])
-        info.setLastPlayed(obj.get("DatePlayed", "") or "")
-        info.setDateAdded(obj.get("DateAdded", "") or "")
-        info.setIMDBNumber(obj.get("UniqueId", "") or "")
-        info.setDuration(safe_int(obj.get("Runtime", 0)))
-        info.setPremiered(obj.get("Premiere", "") or "")
-        info.setDbId(safe_int(obj.get("DbId", 0)))
-
-        # Actors
-        pass
-
-        # Video streams
-        for track in obj["Streams"]["video"]:
-            vstream = xbmc.VideoStreamDetail()
-            vstream.setCodec(track.get("codec", ""))
-            vstream.setWidth(safe_int(track.get("width", 0)))
-            vstream.setHeight(safe_int(track.get("height", 0)))
-            vstream.setAspect(float(track.get("aspect", 0.0) or 0.0))
-            vstream.setDuration(safe_int(obj.get("Runtime", 0)))
-            if track.get("hdrtype"):
-                listitem.setProperty("HDRType", track["hdrtype"])
-            info.addVideoStream(vstream)
-
-        # Audio streams
-        for track in obj["Streams"]["audio"]:
-            astream = xbmc.AudioStreamDetail()
-            astream.setCodec(track.get("codec", ""))
-            astream.setChannels(safe_int(track.get("channels", 0)))
-            info.addAudioStream(astream)
-
-        # Falls du mehrere Subtitle-Dateien hast:
-        if obj["Streams"]["subtitle"]:
-            # Prüfen, ob 'path' im Track ist:
-            listitem.setSubtitles([track["path"] for track in obj["Streams"]["subtitle"] if "path" in track])
-
-        listitem.setLabel(obj["Title"])
-        listitem.setContentLookup(False)
-        # Nur noch ResumePoint – KEINE Properties mehr für totaltime/resumetime!
-        if obj["Resume"] and obj["Runtime"]:
-            info.setResumePoint(obj["Resume"], obj["Runtime"])
-        listitem.setProperty("IsPlayable", "true")
-        listitem.setProperty("IsFolder", "false")
-        listitem.setProperty("Overlay", str(safe_int(obj.get("Overlay", 6))))
-
-        # "StartPercent" für Skins ist optional, kein Muss
-        if obj["Resume"] and item.get("resumePlayback") and obj["Runtime"]:
-            listitem.setProperty("StartPercent", str(((obj["Resume"] / obj["Runtime"]) * 100) - 0.40))
-        else:
-            listitem.setProperty("StartPercent", "0")
-
-        if obj["Type"] == "Season":
-            listitem.setProperty("NumEpisodes", str(obj["RecursiveCount"]))
-            listitem.setProperty("WatchedEpisodes", str(obj["RecursiveCount"] - obj["Unwatched"]))
-            listitem.setProperty("UnWatchedEpisodes", str(obj["Unwatched"]))
-            listitem.setProperty("IsFolder", "true")
-        elif obj["Type"] == "Series":
-            listitem.setProperty("TotalSeasons", str(obj["ChildCount"]))
-            listitem.setProperty("TotalEpisodes", str(obj["RecursiveCount"]))
-            listitem.setProperty("WatchedEpisodes", str(obj["RecursiveCount"] - obj["Unwatched"]))
-            listitem.setProperty("UnWatchedEpisodes", str(obj["Unwatched"]))
-            listitem.setProperty("IsFolder", "true")
-        elif obj["Type"] == "BoxSet":
-            listitem.setProperty("IsFolder", "true")
-
-    # Der Rest der Methoden bleibt identisch.
-    def listitem_channel(self, obj, listitem, item):
-        API = api.API(item, self.server)
-
-        obj["Title"] = "%s - %s" % (obj["Title"], obj["ProgramName"])
-        obj["Runtime"] = round(float((obj["Runtime"] or 0) / 10000000.0), 6)
-        obj["PlayCount"] = API.get_playcount(obj["Played"], obj["PlayCount"]) or 0
-        obj["Overlay"] = 7 if obj["Played"] else 6
-        obj["Artwork"]["Primary"] = (
-            obj["Artwork"]["Primary"]
-            or "special://home/addons/plugin.video.jellyfin/resources/icon.png"
-        )
-        obj["Artwork"]["Thumb"] = (
-            obj["Artwork"]["Thumb"]
-            or "special://home/addons/plugin.video.jellyfin/resources/fanart.png"
-        )
-        obj["Artwork"]["Backdrop"] = obj["Artwork"]["Backdrop"] or [
-            "special://home/addons/plugin.video.jellyfin/resources/fanart.png"
-        ]
+            listitem.setArt(
+                {"poster": ""}
+            )  # Clear the poster value for intros / trailers to prevent issues in skins
 
         listitem.setArt(
             {
-                "icon": obj["Artwork"]["Thumb"],
+                "icon": "DefaultVideo.png",
                 "thumb": obj["Artwork"]["Primary"],
             }
         )
-        self.set_artwork(obj["Artwork"], listitem, obj["Type"])
 
-        if obj["Artwork"]["Primary"]:
-            listitem.setArt({"thumb": obj["Artwork"]["Primary"]})
-        if not obj["Artwork"]["Backdrop"]:
-            listitem.setArt({"fanart": obj["Artwork"]["Primary"]})
+        if obj["Premiere"]:
+            obj["Premiere"] = obj["Premiere"].split("T")[0]
 
-        # Nur setzen, wenn Resume/Runtime vorhanden und Kanal überhaupt Infos unterstützt
-        if obj.get("Resume") and obj.get("Runtime"):
-            info = listitem.getVideoInfoTag()
-            info.setResumePoint(obj["Resume"], obj["Runtime"])
+        if obj["DatePlayed"]:
+            obj["DatePlayed"] = obj["DatePlayed"].split(".")[0].replace("T", " ")
 
-        listitem.setProperty("IsPlayable", "true")
-        listitem.setProperty("IsFolder", "false")
+        # === InfoTagVideo: Nur erlaubte Methoden verwenden ===
+        info_tag = listitem.getVideoInfoTag()
+        info_tag.setTitle(obj["Title"])
+        info_tag.setOriginalTitle(obj["Title"])
+        info_tag.setSortTitle(obj["SortTitle"])
+        info_tag.setPlot(obj["Plot"])
+        info_tag.setDuration(int(obj["Runtime"]) if obj["Runtime"] is not None else 0)
+        info_tag.setYear(int(obj["Year"]) if obj["Year"] is not None else 0)
+        info_tag.setIMDBNumber(obj.get("UniqueId", ""))
+        info_tag.setPremiered(obj["Premiere"])
+        info_tag.setVotes(int(obj["Votes"]) if obj["Votes"] is not None else 0)
+        info_tag.setPlaycount(int(obj["PlayCount"]) if obj["PlayCount"] is not None else 0)
+        info_tag.setMpaa(obj["Mpaa"])
+        info_tag.setLastPlayed(obj["DatePlayed"])
+        info_tag.setFirstAired(obj["Premiere"])
+        cast = API.get_actors()
+        if cast and isinstance(cast, list):
+            info_tag.setCast(cast)
+        if obj["Type"] == "Episode":
+            info_tag.setMediaType("episode")
+            info_tag.setTvShowTitle(obj["SeriesName"])
+            info_tag.setSeason(int(obj["Season"]) if obj["Season"] is not None else 0)
+            info_tag.setEpisode(int(obj["Index"]) if obj["Index"] is not None else 0)
+        elif obj["Type"] == "Season":
+            info_tag.setMediaType("season")
+            info_tag.setTvShowTitle(obj["SeriesName"])
+            info_tag.setSeason(int(obj["Index"]) if obj["Index"] is not None else 0)
+        elif obj["Type"] == "Series":
+            info_tag.setMediaType("tvshow")
+            info_tag.setTvShowTitle(obj["Title"])
+        elif obj["Type"] == "Movie":
+            info_tag.setMediaType("movie")
+        elif obj["Type"] == "MusicVideo":
+            info_tag.setMediaType("musicvideo")
+            info_tag.setAlbum(obj["Album"])
+            info_tag.setArtist(obj["Artists"] or [])
+        elif obj["Type"] == "BoxSet":
+            info_tag.setMediaType("set")
+        else:
+            info_tag.setMediaType("video")
 
-        listitem.setLabel(obj["Title"])
-        listitem.setInfo("video", {
+        # Die restlichen Metadaten weiterhin mit setInfo setzen!
+        metadata = {
             "title": obj["Title"],
             "originaltitle": obj["Title"],
+            "sorttitle": obj["SortTitle"],
+            "country": obj["Countries"],
+            "genre": obj["Genres"],
+            "year": obj["Year"],
+            "rating": obj["Rating"],
             "playcount": obj["PlayCount"],
             "overlay": obj["Overlay"],
-        })
+            "director": obj["Directors"],
+            "mpaa": obj["Mpaa"],
+            "plot": obj["Plot"],
+            "plotoutline": obj["ShortPlot"],
+            "studio": obj["Studios"],
+            "tagline": obj["Tagline"],
+            "writer": obj["Writers"],
+            "premiered": obj["Premiere"],
+            "votes": obj["Votes"],
+            "dateadded": obj["DateAdded"],
+            "aired": obj["Year"],
+            "date": obj["FileDate"],
+            "dbid": obj["DbId"],
+        }
+        if obj["Premiere"]:
+            metadata["date"] = obj["Premiere"]
+
+        if obj["Type"] == "Episode":
+            metadata.update(
+                {
+                    "mediatype": "episode",
+                    "tvshowtitle": obj["SeriesName"],
+                    "season": obj["Season"] or 0,
+                    "sortseason": obj["Season"] or 0,
+                    "episode": obj["Index"] or 0,
+                    "sortepisode": obj["Index"] or 0,
+                    "lastplayed": obj["DatePlayed"],
+                    "duration": obj["Runtime"],
+                    "aired": obj["Premiere"],
+                }
+            )
+        elif obj["Type"] == "Season":
+            metadata.update(
+                {
+                    "mediatype": "season",
+                    "tvshowtitle": obj["SeriesName"],
+                    "season": obj["Index"] or 0,
+                    "sortseason": obj["Index"] or 0,
+                }
+            )
+            listitem.setProperty("NumEpisodes", str(obj["RecursiveCount"]))
+            listitem.setProperty(
+                "WatchedEpisodes", str(obj["RecursiveCount"] - obj["Unwatched"])
+            )
+            listitem.setProperty("UnWatchedEpisodes", str(obj["Unwatched"]))
+            listitem.setProperty("IsFolder", "true")
+        elif obj["Type"] == "Series":
+            metadata.update(
+                {
+                    "mediatype": "tvshow",
+                    "tvshowtitle": obj["Title"],
+                }
+            )
+            listitem.setProperty("TotalSeasons", str(obj["ChildCount"]))
+            listitem.setProperty("TotalEpisodes", str(obj["RecursiveCount"]))
+            listitem.setProperty(
+                "WatchedEpisodes", str(obj["RecursiveCount"] - obj["Unwatched"])
+            )
+            listitem.setProperty("UnWatchedEpisodes", str(obj["Unwatched"]))
+            listitem.setProperty("IsFolder", "true")
+        elif obj["Type"] == "Movie":
+            metadata.update(
+                {
+                    "mediatype": "movie",
+                    "imdbnumber": obj["UniqueId"],
+                    "lastplayed": obj["DatePlayed"],
+                    "duration": obj["Runtime"],
+                }
+            )
+        elif obj["Type"] == "MusicVideo":
+            metadata.update(
+                {
+                    "mediatype": "musicvideo",
+                    "album": obj["Album"],
+                    "artist": obj["Artists"] or [],
+                    "lastplayed": obj["DatePlayed"],
+                    "duration": obj["Runtime"],
+                }
+            )
+        elif obj["Type"] == "BoxSet":
+            metadata["mediatype"] = "set"
+            listitem.setProperty("IsFolder", "true")
+        else:
+            metadata.update(
+                {
+                    "mediatype": "video",
+                    "lastplayed": obj["DatePlayed"],
+                    "year": obj["Year"],
+                    "duration": obj["Runtime"],
+                }
+            )
+
+        listitem.setInfo("video", metadata)
+        listitem.setLabel(obj["Title"])
         listitem.setContentLookup(False)
 
     def listitem_music(self, obj, listitem, item):
@@ -549,7 +646,9 @@ class Actions(object):
         listitem.setContentLookup(False)
 
     def set_artwork(self, artwork, listitem, media):
+
         if media == "Episode":
+
             art = {
                 "poster": "Series.Primary",
                 "tvshow.poster": "Series.Primary",
@@ -565,11 +664,12 @@ class Actions(object):
                 "fanart": "Backdrop",
             }
         elif media in ("Artist", "Audio", "MusicAlbum"):
+
             art = {
                 "clearlogo": "Logo",
                 "discart": "Disc",
                 "fanart": "Backdrop",
-                "fanart_image": "Backdrop",
+                "fanart_image": "Backdrop",  # in case
                 "thumb": "Primary",
             }
         else:
@@ -583,7 +683,9 @@ class Actions(object):
                 "thumb": "Primary",
                 "fanart": "Backdrop",
             }
+
         for k_art, e_art in art.items():
+
             if e_art == "Backdrop":
                 self._set_art(
                     listitem, k_art, artwork[e_art][0] if artwork[e_art] else " "
@@ -593,6 +695,7 @@ class Actions(object):
 
     def _set_art(self, listitem, art, path):
         LOG.debug(" [ art/%s ] %s", art, path)
+
         if art in (
             "fanart_image",
             "small_poster",
@@ -605,40 +708,51 @@ class Actions(object):
             "discart",
             "tvshow.poster",
         ):
+
             listitem.setProperty(art, path)
         else:
             listitem.setArt({art: path})
 
     def resume_dialog(self, seektime):
+        """Base resume dialog based on Kodi settings."""
         LOG.info("Resume dialog called.")
         XML_PATH = (
             xbmcaddon.Addon("plugin.video.jellyfin").getAddonInfo("path"),
             "default",
             "1080i",
         )
+
         dialog = resume.ResumeDialog("script-jellyfin-resume.xml", *XML_PATH)
         dialog.set_resume_point(
             "Resume from %s" % str(timedelta(seconds=seektime)).split(".")[0]
         )
         dialog.doModal()
+
         if dialog.is_selected():
-            if not dialog.get_selected():
+            if not dialog.get_selected():  # Start from beginning selected.
                 return False
-        else:
+        else:  # User backed out
             LOG.info("User exited without a selection.")
             return
+
         return True
 
+
 class PlaylistWorker(threading.Thread):
+
     def __init__(self, server_id, items, *args):
+
         self.server_id = server_id
         self.items = items
         self.args = args
         threading.Thread.__init__(self)
+
     def run(self):
         Actions(self.server_id).play_playlist(self.items, *self.args)
 
+
 def on_update(data, server):
+    """Only for manually marking as watched/unwatched"""
     try:
         kodi_id = data["item"]["id"]
         media = data["item"]["type"]
@@ -646,22 +760,38 @@ def on_update(data, server):
         LOG.info(" [ update/%s ] kodi_id: %s media: %s", playcount, kodi_id, media)
     except (KeyError, TypeError):
         LOG.debug("Invalid playstate update")
+
         return
+
     from .. import database
+
     item = database.get_item(kodi_id, media)
+
     if item:
+
         if not window("jellyfin.skip.%s.bool" % item[0]):
             server.jellyfin.item_played(item[0], playcount)
+
         window("jellyfin.skip.%s" % item[0], clear=True)
 
+
 def on_play(data, server):
+    """Setup progress for jellyfin playback."""
     player = xbmc.Player()
+
     try:
         kodi_id = None
+
         if player.isPlayingVideo():
+
+            """Seems to misbehave when playback is not terminated prior to playing new content.
+            The kodi id remains that of the previous title. Maybe onPlay happens before
+            this information is updated. Added a failsafe further below.
+            """
             item = player.getVideoInfoTag()
             kodi_id = item.getDbId()
             media = item.getMediaType()
+
         if (
             kodi_id is None
             or int(kodi_id) == -1
@@ -669,22 +799,32 @@ def on_play(data, server):
             and "id" in data["item"]
             and data["item"]["id"] != kodi_id
         ):
+
             item = data["item"]
             kodi_id = item["id"]
             media = item["type"]
+
         LOG.info(" [ play ] kodi_id: %s media: %s", kodi_id, media)
+
     except (KeyError, TypeError):
         LOG.debug("Invalid playstate update")
+
         return
+
     if settings("useDirectPaths") == "1" or media == "song":
         from .. import database
+
         item = database.get_item(kodi_id, media)
+
         if item:
+
             try:
                 file = player.getPlayingFile()
             except Exception as error:
                 LOG.exception(error)
+
                 return
+
             item = server.jellyfin.get_item(item[0])
             item["PlaybackInfo"] = {"Path": file}
             playutils.set_properties(
@@ -692,19 +832,28 @@ def on_play(data, server):
                 "DirectStream" if settings("useDirectPaths") == "0" else "DirectPlay",
             )
 
+
 def special_listener():
+    """Corner cases that needs to be listened to.
+    This is run in a loop within monitor.py
+    """
     player = xbmc.Player()
     is_playing = player.isPlaying()
     count = int(window("jellyfin.external_count") or 0)
+
     if is_playing and not window("jellyfin.external_check"):
         time = player.getTime()
-        if time > 1:
+
+        if time > 1:  # Not external player.
+
             window("jellyfin.external_check", value="true")
             window("jellyfin.external_count", value="0")
         elif count == 120:
+
             LOG.info("External player detected.")
             window("jellyfin.external.bool", True)
             window("jellyfin.external_check.bool", True)
             window("jellyfin.external_count", value="0")
+
         elif time == 0:
             window("jellyfin.external_count", value=str(count + 1))

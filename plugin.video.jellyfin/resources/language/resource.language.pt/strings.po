@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-10-22 14:41+0000\n"
+"PO-Revision-Date: 2025-06-29 23:10+0000\n"
 "Last-Translator: Blackspirits <blackspirits@gmail.com>\n"
 "Language-Team: Portuguese <https://translate.jellyfin.org/projects/jellyfin/"
 "jellyfin-kodi/pt/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.7.2\n"
+"X-Generator: Weblate 5.11.4\n"
 
 msgctxt "#30000"
 msgid "Server address"
@@ -97,7 +97,7 @@ msgstr "Episódios em andamento"
 
 msgctxt "#30170"
 msgid "Recently Added TV Shows"
-msgstr "Programas de TV adicionados recentemente"
+msgstr "Séries adicionadas recentemente"
 
 msgctxt "#30171"
 msgid "In Progress TV Shows"
@@ -153,11 +153,11 @@ msgstr "Reiniciar base de dados Kodi local"
 
 msgctxt "#30251"
 msgid "Recently added Home Videos"
-msgstr "Recentemente adicionado a Videos Caseiros"
+msgstr "Vídeos caseiros adicionados recentemente"
 
 msgctxt "#30252"
 msgid "Recently added Photos"
-msgstr "Fotos adicionadas recentemente"
+msgstr "Fotografias adicionadas recentemente"
 
 msgctxt "#30249"
 msgid "Enable welcome message"
@@ -301,7 +301,7 @@ msgstr "Conecte-se ao servidor"
 
 msgctxt "#30616"
 msgid "Connect"
-msgstr "Conectar"
+msgstr "Ligar"
 
 msgctxt "#33014"
 msgid "Choose the subtitles stream"
@@ -589,7 +589,7 @@ msgstr "Transcodificar AV1"
 
 msgctxt "#30527"
 msgid "Ignore specials in next episodes"
-msgstr "Ignorar especiais nos próximos episódios"
+msgstr "Ignorar especiais na secção \"Próximos episódios\""
 
 msgctxt "#30528"
 msgid "Permanent users"
@@ -673,7 +673,7 @@ msgstr "Alterar usuário do Jellyfin Connect"
 
 msgctxt "#30605"
 msgid "Sign in"
-msgstr "Inscrever-se"
+msgstr "Iniciar sessão"
 
 msgctxt "#30615"
 msgid "Host"
@@ -1005,3 +1005,27 @@ msgstr ""
 msgctxt "#33201"
 msgid "Max artwork resolution"
 msgstr "Resolução máxima da arte"
+
+msgctxt "#33203"
+msgid "Manage path replacements"
+msgstr "Gerir substituição de caminhos"
+
+msgctxt "#33204"
+msgid "Finish"
+msgstr "Terminar"
+
+msgctxt "#33205"
+msgid "New Path Replacement"
+msgstr "Novo caminho de substituição"
+
+msgctxt "#33206"
+msgid "Remote Path"
+msgstr "Caminho remoto"
+
+msgctxt "#33207"
+msgid "Local Path"
+msgstr "Caminho local"
+
+msgctxt "#30538"
+msgid "Max days in next episodes"
+msgstr "Número máximo de dias na secção \"Próximos episódios\""

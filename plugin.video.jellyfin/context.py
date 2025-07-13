@@ -14,11 +14,12 @@ LOG = LazyLogger(__name__)
 
 
 if __name__ == "__main__":
+
     LOG.debug("--->[ context ]")
 
     try:
         Context()
     except Exception as error:
-        LOG.exception("Exception during Context initialization: %s", error)
+        LOG.exception(error)
 
     LOG.info("---<[ context ]")

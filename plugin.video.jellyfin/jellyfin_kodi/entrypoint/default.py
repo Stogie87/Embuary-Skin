@@ -920,18 +920,27 @@ def get_next_episodes(item_id, limit):
         if not library:
             return
 
-    result = JSONRPC("VideoLibrary.GetTVShows").execute(
-        {
-            "sort": {"order": "descending", "method": "lastplayed"},
-            "filter": {
-                "and": [
-                    {"operator": "true", "field": "inprogress", "value": ""},
-                    {"operator": "is", "field": "tag", "value": "%s" % library},
-                ]
-            },
-            "properties": ["title", "studio", "mpaa", "file", "art"],
-        }
-    )
+    max_days = settings("maxDaysInNextEpisodes")
+    params = {
+        "sort": {"order": "descending", "method": "lastplayed"},
+        "filter": {
+            "and": [
+                {"operator": "true", "field": "inprogress", "value": ""},
+                {"operator": "is", "field": "tag", "value": "%s" % library},
+            ]
+        },
+        "properties": ["title", "studio", "mpaa", "file", "art"],
+    }
+    if max_days != 0:
+        params["filter"]["and"].append(
+            {
+                "operator": "inthelast",
+                "field": "lastplayed",
+                "value": "%s days" % max_days,
+            }
+        )
+
+    result = JSONRPC("VideoLibrary.GetTVShows").execute(params)
 
     try:
         items = result["result"]["tvshows"]
@@ -1020,127 +1029,75 @@ def get_next_episodes(item_id, limit):
 
 
 def create_listitem(item):
-    """Listitem based on jsonrpc items. Zukunftssicher mit InfoTag-API."""
-    title = item.get("title", "")
+    """Listitem based on jsonrpc items."""
+    title = item["title"]
     label2 = ""
     li = xbmcgui.ListItem(title)
     li.setProperty("IsPlayable", "true")
 
-    # InfoTag-API verwenden
-    info_tag = li.getVideoInfoTag()
+    metadata = {
+        "Title": title,
+        "duration": str(item["runtime"] / 60),
+        "Plot": item["plot"],
+        "Playcount": item["playcount"],
+    }
 
-    info_tag.setTitle(title)
-    info_tag.setPlot(item.get("plot", ""))
-    if "year" in item:
-        try:
-            info_tag.setYear(int(item["year"]))
-        except Exception:
-            pass
     if "showtitle" in item:
-        info_tag.setTvShowTitle(item["showtitle"])
+        metadata["TVshowTitle"] = item["showtitle"]
         label2 = item["showtitle"]
+
     if "episodeid" in item:
-        info_tag.setMediaType("episode")
-        li.setProperty("dbid", str(item["episodeid"]))
+        # Listitem of episode
+        metadata["mediatype"] = "episode"
+        metadata["dbid"] = item["episodeid"]
+
+    # TODO: Review once Krypton is RC - probably no longer needed if there's dbid
     if "episode" in item:
-        try:
-            info_tag.setEpisode(int(item["episode"]))
-        except Exception:
-            pass
+        episode = item["episode"]
+        metadata["Episode"] = episode
+
     if "season" in item:
-        try:
-            info_tag.setSeason(int(item["season"]))
-        except Exception:
-            pass
-    if "firstaired" in item:
-        info_tag.setPremiered(item["firstaired"])
-    if "rating" in item:
-        try:
-            info_tag.setRating(float(item["rating"]))
-        except Exception:
-            pass
-    if "director" in item:
-        info_tag.setDirectors(item["director"])
-    if "writer" in item:
-        info_tag.setWriters(item["writer"])
-    if "duration" in item:
-        try:
-            info_tag.setDuration(int(float(item["runtime"]) / 60))
-        except Exception:
-            pass
+        season = item["season"]
+        metadata["Season"] = season
 
-    # Cast
-    if "cast" in item:
-        actors = []
-        for person in item["cast"]:
-            name = person.get("name", "")
-            role = person.get("role", "")
-            actors.append(xbmc.Actor(name, role, 0, person.get("thumbnail", "")))
-        info_tag.setCast(actors)
-
-    # Episodennummer als Label2
-    season = item.get("season")
-    episode = item.get("episode")
     if season and episode:
         episodeno = "s%.2de%.2d" % (season, episode)
         li.setProperty("episodeno", episodeno)
         label2 = "%s - %s" % (label2, episodeno) if label2 else episodeno
 
+    if "firstaired" in item:
+        metadata["Premiered"] = item["firstaired"]
+
+    if "rating" in item:
+        metadata["Rating"] = str(round(float(item["rating"]), 1))
+
+    if "director" in item:
+        metadata["Director"] = " / ".join(item["director"])
+
+    if "writer" in item:
+        metadata["Writer"] = " / ".join(item["writer"])
+
+    if "cast" in item:
+        cast = []
+        castandrole = []
+        for person in item["cast"]:
+            name = person["name"]
+            cast.append(name)
+            castandrole.append((name, person["role"]))
+        metadata["Cast"] = cast
+        metadata["CastAndRole"] = castandrole
+
     li.setLabel2(label2)
+    li.setInfo(type="Video", infoLabels=metadata)
+    li.setProperty("resumetime", str(item["resume"]["position"]))
+    li.setProperty("totaltime", str(item["resume"]["total"]))
+    li.setArt(item["art"])
+    li.setProperty("dbid", str(item["episodeid"]))
+    li.setProperty("fanart_image", item["art"].get("tvshow.fanart", ""))
 
-    # Resume-Properties
-    if "resume" in item:
-        resume = item["resume"]
-        li.setProperty("resumetime", str(resume.get("position", 0)))
-        li.setProperty("totaltime", str(resume.get("total", 0)))
-
-    # Artwork
-    if "art" in item:
-        li.setArt(item["art"])
-        li.setProperty("fanart_image", item["art"].get("tvshow.fanart", ""))
-
-    # Streams
-    if "streamdetails" in item:
-        for key, value in item["streamdetails"].items():
-            for stream in value:
-                # Nur für Video: addVideoStream
-                if key == "video":
-                    try:
-                        vstream = xbmc.VideoStreamDetail(
-                            width=stream.get("width"),
-                            height=stream.get("height"),
-                            aspect=stream.get("aspect"),
-                            duration=stream.get("duration"),
-                            codec=stream.get("codec"),
-                            language=stream.get("language"),
-                            channels=stream.get("channels"),
-                            bitrate=stream.get("bitrate"),
-                            stereo_mode=stream.get("stereomode"),
-                        )
-                        info_tag.addVideoStream(vstream)
-                    except Exception:
-                        pass
-                # Für Audio: addAudioStream (wenn benötigt)
-                elif key == "audio":
-                    try:
-                        astream = xbmc.AudioStreamDetail(
-                            codec=stream.get("codec"),
-                            language=stream.get("language"),
-                            channels=stream.get("channels"),
-                            bitrate=stream.get("bitrate"),
-                        )
-                        info_tag.addAudioStream(astream)
-                    except Exception:
-                        pass
-                # Für Untertitel: addSubtitleStream (wenn benötigt)
-                elif key == "subtitle":
-                    try:
-                        sstream = xbmc.SubtitleStreamDetail(
-                            language=stream.get("language"),
-                        )
-                        info_tag.addSubtitleStream(sstream)
-                    except Exception:
-                        pass
+    for key, value in item["streamdetails"].items():
+        for stream in value:
+            li.addStreamInfo(key, stream)
 
     return li
 

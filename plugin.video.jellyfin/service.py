@@ -4,6 +4,7 @@ from __future__ import division, absolute_import, print_function, unicode_litera
 #################################################################################################
 
 import threading
+
 import xbmc
 
 from jellyfin_kodi.entrypoint.service import Service
@@ -26,8 +27,7 @@ class ServiceManager(threading.Thread):
     exception = None
 
     def __init__(self):
-        super(ServiceManager, self).__init__()
-        self.daemon = True  # Ensures thread exits with Kodi
+        threading.Thread.__init__(self)
 
     def run(self):
         service = None
@@ -40,7 +40,7 @@ class ServiceManager(threading.Thread):
 
             service.service()
         except Exception as error:
-            LOG.exception("Exception in ServiceManager: %s", error)
+            LOG.exception(error)
 
             if service is not None:
                 # TODO: fix this properly as to not match on str()
@@ -60,6 +60,7 @@ if __name__ == "__main__":
     while True:
         if not settings("enableAddon.bool"):
             LOG.warning("Jellyfin for Kodi is not enabled.")
+
             break
 
         try:
@@ -67,12 +68,12 @@ if __name__ == "__main__":
             session.start()
             session.join()  # Block until the thread exits.
 
-            if session.exception and "RestartService" in str(session.exception):
+            if "RestartService" in str(session.exception):
                 continue
 
         except Exception as error:
             """Issue initializing the service."""
-            LOG.exception("Error initializing ServiceManager: %s", error)
+            LOG.exception(error)
 
         break
 

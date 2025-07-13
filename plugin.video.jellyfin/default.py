@@ -14,12 +14,12 @@ LOG = LazyLogger(__name__)
 
 
 if __name__ == "__main__":
+
     LOG.debug("--->[ default ]")
 
     try:
         Events()
     except Exception as error:
-        LOG.exception("Exception during Events initialization: %s", error)
+        LOG.exception(error)
 
     LOG.info("---<[ default ]")
-

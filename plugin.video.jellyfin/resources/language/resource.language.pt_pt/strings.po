@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Jellyfin for Kodi\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2024-04-17 19:58+0000\n"
+"PO-Revision-Date: 2025-06-29 23:10+0000\n"
 "Last-Translator: Blackspirits <blackspirits@gmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://translate.jellyfin.org/"
 "projects/jellyfin/jellyfin-kodi/pt_PT/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.4.2\n"
+"X-Generator: Weblate 5.11.4\n"
 
 msgctxt "#29999"
 msgid "Jellyfin for Kodi"
@@ -79,7 +79,7 @@ msgstr "Qualidade de Vídeo"
 
 msgctxt "#30170"
 msgid "Recently Added TV Shows"
-msgstr "Programas TV adicionados recentemente"
+msgstr "Séries adicionadas recentemente"
 
 msgctxt "#30171"
 msgid "In Progress TV Shows"
@@ -87,11 +87,11 @@ msgstr "Programas TV em curso"
 
 msgctxt "#30174"
 msgid "Recently Added Movies"
-msgstr "Filmes Adicionados Recentemente"
+msgstr "Filmes adicionados recentemente"
 
 msgctxt "#30175"
 msgid "Recently Added Episodes"
-msgstr "Episódios Adicionados Recentemente"
+msgstr "Episódios adicionados recentemente"
 
 msgctxt "#30177"
 msgid "In Progress Movies"
@@ -103,7 +103,7 @@ msgstr "Episódios Em Progresso"
 
 msgctxt "#30179"
 msgid "Next Episodes"
-msgstr "Próximos Episódios"
+msgstr "Próximos episódios"
 
 msgctxt "#30180"
 msgid "Favorite Movies"
@@ -147,7 +147,7 @@ msgstr "Ativar mensagem de boas-vindas"
 
 msgctxt "#30251"
 msgid "Recently added Home Videos"
-msgstr "Vídeos Caseiros adicionados recentemente"
+msgstr "Vídeos caseiros adicionados recentemente"
 
 msgctxt "#30252"
 msgid "Recently added Photos"
@@ -183,7 +183,7 @@ msgstr "Filmes"
 
 msgctxt "#30305"
 msgid "TV Shows"
-msgstr "Programas TV"
+msgstr "Séries"
 
 msgctxt "#30401"
 msgid "Jellyfin options"
@@ -279,7 +279,7 @@ msgstr "Transcodificar H.265/HEVC"
 
 msgctxt "#30527"
 msgid "Ignore specials in next episodes"
-msgstr "Ignorar Espaciais ao usar Próximo Episódio"
+msgstr "Ignorar especiais na secção \"Próximos episódios\""
 
 msgctxt "#30528"
 msgid "Permanent users"
@@ -359,7 +359,7 @@ msgstr "Selecionar servidor principal"
 
 msgctxt "#30608"
 msgid "Username or password cannot be empty"
-msgstr "Nome de utilizador ou email não pode estar vazio"
+msgstr "O nome de utilizador ou a palavra-passe não pode estar vazio"
 
 msgctxt "#30609"
 msgid "Unable to connect to the selected server"
@@ -1012,3 +1012,27 @@ msgstr "Habilitar controle remoto"
 msgctxt "#33202"
 msgid "Transcode H265/HEVC RExt"
 msgstr "Transcodificação H265/HEVC RExt"
+
+msgctxt "#33203"
+msgid "Manage path replacements"
+msgstr "Gerir substituição de caminhos"
+
+msgctxt "#33204"
+msgid "Finish"
+msgstr "Terminar"
+
+msgctxt "#33205"
+msgid "New Path Replacement"
+msgstr "Novo caminho de substituição"
+
+msgctxt "#33207"
+msgid "Local Path"
+msgstr "Caminho local"
+
+msgctxt "#33206"
+msgid "Remote Path"
+msgstr "Caminho remoto"
+
+msgctxt "#30538"
+msgid "Max days in next episodes"
+msgstr "Número máximo de dias na secção \"Próximos episódios\""

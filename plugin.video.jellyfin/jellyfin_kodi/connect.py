@@ -37,20 +37,23 @@ class Connect(object):
 
         if server_id is None and credentials["Servers"]:
             credentials["Servers"] = [credentials["Servers"][0]]
+
         elif credentials["Servers"]:
+
             for server in credentials["Servers"]:
+
                 if server["Id"] == server_id:
                     credentials["Servers"] = [server]
-                    break
 
         server_select = server_id is None and not settings("SyncInstallRunDone.bool")
         new_credentials = self.register_client(
             credentials, options, server_id, server_select
         )
 
-        for i, server in enumerate(servers):
+        for server in servers:
             if server["Id"] == new_credentials["Servers"][0]["Id"]:
-                servers[i] = new_credentials["Servers"][0]
+                server = new_credentials["Servers"][0]
+
                 break
         else:
             servers = new_credentials["Servers"]
@@ -61,7 +64,7 @@ class Connect(object):
         try:
             Jellyfin(server_id).start(True)
         except ValueError as error:
-            LOG.error("Error starting Jellyfin: %s", error)
+            LOG.error(error)
 
     def get_ssl(self):
         """Returns boolean value.
@@ -71,20 +74,21 @@ class Connect(object):
 
     def get_client(self, server_id=None):
         """Get Jellyfin client."""
-        client_instance = Jellyfin(server_id)
-        client_instance.config.app(
+        client = Jellyfin(server_id)
+        client.config.app(
             "Kodi", self.info["Version"], self.info["DeviceName"], self.info["DeviceId"]
         )
-        client_instance.config.data["http.user_agent"] = (
+        client.config.data["http.user_agent"] = (
             "Jellyfin-Kodi/%s" % self.info["Version"]
         )
-        client_instance.config.data["auth.ssl"] = self.get_ssl()
+        client.config.data["auth.ssl"] = self.get_ssl()
 
-        return client_instance
+        return client
 
     def register_client(
         self, credentials=None, options=None, server_id=None, server_selection=False
     ):
+
         client = self.get_client(server_id)
         self.client = client
         self.connect_manager = client.auth
@@ -99,8 +103,10 @@ class Connect(object):
                 client.callback_ws = event
 
                 if server_id is None:  # Only assign for default server
+
                     client.callback = event
                     self.get_user(client)
+
                     settings("serverName", client.config.data["auth.server-name"])
                     settings("server", client.config.data["auth.server"])
 
@@ -134,13 +140,17 @@ class Connect(object):
             return self.register_client(state["Credentials"], options, server_id, False)
 
         except RuntimeError as error:
-            LOG.exception("RuntimeError in register_client: %s", error)
+
+            LOG.exception(error)
             xbmc.executebuiltin("Addon.OpenSettings(%s)" % addon_id())
+
             raise Exception("User sign in interrupted")
 
         except HTTPException as error:
-            if getattr(error, 'status', None) == "ServerUnreachable":
+
+            if error.status == "ServerUnreachable":
                 event("ServerUnreachable", {"ServerId": server_id})
+
             return client.get_credentials()
 
     def get_user(self, client):
@@ -149,13 +159,16 @@ class Connect(object):
         settings("username", self.user["Name"])
 
         if "PrimaryImageTag" in self.user:
-            server_address = client.auth.get_server_info(client.auth.server_id)["address"]
+            server_address = client.auth.get_server_info(client.auth.server_id)[
+                "address"
+            ]
             window(
                 "JellyfinUserImage",
                 api.API(self.user, server_address).get_user_artwork(self.user["Id"]),
             )
 
     def select_servers(self, state=None):
+
         state = state or self.connect_manager.connect({"enableAutoLogin": False})
         user = {}
 
@@ -172,6 +185,7 @@ class Connect(object):
         if dialog.is_server_selected():
             LOG.debug("Server selected: %s", dialog.get_server())
             return dialog.get_server()
+
         elif dialog.is_manual_server():
             LOG.debug("Adding manual server")
             try:
@@ -209,8 +223,11 @@ class Connect(object):
             raise RuntimeError("Server is not connected")
 
     def login(self):
+
         users = self.connect_manager.get_public_users()
-        server = self.connect_manager.get_server_info(self.connect_manager.server_id)["address"]
+        server = self.connect_manager.get_server_info(self.connect_manager.server_id)[
+            "address"
+        ]
 
         if not users:
             try:
@@ -226,7 +243,7 @@ class Connect(object):
             user = dialog.get_user()
             username = user["Name"]
 
-            if user.get("HasPassword", False):
+            if user["HasPassword"]:
                 LOG.debug("User has password, present manual login")
                 try:
                     return self.login_manual(username)
@@ -234,6 +251,7 @@ class Connect(object):
                     pass
             else:
                 return self.connect_manager.login(server, username)
+
         elif dialog.is_manual_login():
             try:
                 return self.login_manual()
@@ -280,9 +298,10 @@ class Connect(object):
         Jellyfin(server_id).close()
         credentials = get_credentials()
 
-        for i, server in enumerate(credentials["Servers"]):
+        for server in credentials["Servers"]:
             if server["Id"] == server_id:
-                del credentials["Servers"][i]
+                credentials["Servers"].remove(server)
+
                 break
 
         save_credentials(credentials)

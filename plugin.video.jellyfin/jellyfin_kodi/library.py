@@ -31,7 +31,9 @@ TARGET_DB_VERSION = 1
 
 ##################################################################################################
 
+
 class Library(threading.Thread):
+
     started = False
     stop_thread = False
     suspend = False
@@ -41,6 +43,7 @@ class Library(threading.Thread):
     total_updates = 0
 
     def __init__(self, monitor):
+
         self.direct_path = settings("useDirectPaths") == "1"
         self.progress_display = int(settings("syncProgress") or 50)
         self.monitor = monitor
@@ -60,6 +63,7 @@ class Library(threading.Thread):
         self.writer_threads = {"updated": [], "userdata": [], "removed": []}
         self.database_lock = threading.Lock()
         self.music_database_lock = threading.Lock()
+
         threading.Thread.__init__(self)
 
     def __new_queues__(self):
@@ -77,20 +81,28 @@ class Library(threading.Thread):
         }
 
     def run(self):
+
         LOG.info("--->[ library ]")
+
         if not self.startup():
             self.stop_client()
+
         window("jellyfin_startup.bool", True)
+
         while not self.stop_thread:
+
             try:
                 self.service()
             except LibraryException:
                 break
             except Exception as error:
                 LOG.exception(error)
+
                 break
+
             if self.monitor.waitForAbort(2):
                 break
+
         LOG.info("---<[ library ]")
 
     def test_databases(self):
@@ -120,17 +132,21 @@ class Library(threading.Thread):
 
     @stop
     def service(self):
+        """If error is encountered, it will rerun this function.
+        Start new "daemon threads" to process library updates.
+        (actual daemon thread is not supported in Kodi)
+        """
         self.download_threads = [
-            thread for thread in self.download_threads if not getattr(thread, "is_done", False)
+            thread for thread in self.download_threads if not thread.is_done
         ]
         self.writer_threads["updated"] = [
-            thread for thread in self.writer_threads["updated"] if not getattr(thread, "is_done", False)
+            thread for thread in self.writer_threads["updated"] if not thread.is_done
         ]
         self.writer_threads["userdata"] = [
-            thread for thread in self.writer_threads["userdata"] if not getattr(thread, "is_done", False)
+            thread for thread in self.writer_threads["userdata"] if not thread.is_done
         ]
         self.writer_threads["removed"] = [
-            thread for thread in self.writer_threads["removed"] if not getattr(thread, "is_done", False)
+            thread for thread in self.writer_threads["removed"] if not thread.is_done
         ]
 
         if (
@@ -148,11 +164,13 @@ class Library(threading.Thread):
             self.worker_notify()
 
         if self.pending_refresh:
-            window("jellyfin_sync.bool", True)  # Korrigiert: konsistent .bool
+            window("jellyfin_sync.bool", True)
 
             if self.total_updates > self.progress_display:
                 queue_size = self.worker_queue_size()
+
                 if self.progress_updates is None:
+
                     self.progress_updates = xbmcgui.DialogProgressBG()
                     self.progress_updates.create(
                         translate("addon_name"), translate(33178)
@@ -191,6 +209,7 @@ class Library(threading.Thread):
                     )
 
             if not settings("dbSyncScreensaver.bool") and self.screensaver is None:
+
                 xbmc.executebuiltin("InhibitIdleShutdown(true)")
                 self.screensaver = get_screensaver()
                 set_screensaver(value="")
@@ -205,13 +224,15 @@ class Library(threading.Thread):
             self.pending_refresh = False
             self.save_last_sync()
             self.total_updates = 0
-            window("jellyfin_sync.bool", clear=True)  # Korrigiert
+            window("jellyfin_sync", clear=True)
 
             if self.progress_updates:
+
                 self.progress_updates.close()
                 self.progress_updates = None
 
             if not settings("dbSyncScreensaver.bool") and self.screensaver is not None:
+
                 xbmc.executebuiltin("InhibitIdleShutdown(false)")
                 set_screensaver(value=self.screensaver)
                 self.screensaver = None
@@ -222,6 +243,7 @@ class Library(threading.Thread):
                 xbmc.executebuiltin("Container.Refresh")
             else:  # Update widgets
                 xbmc.executebuiltin("UpdateLibrary(video)")
+
                 if xbmc.getCondVisibility("Window.IsMedia"):
                     xbmc.executebuiltin("Container.Refresh")
 
@@ -669,6 +691,9 @@ class Library(threading.Thread):
 
 
 class UpdateWorker(threading.Thread):
+
+    is_done = False
+
     def __init__(
         self, queue, notify, lock, database, server=None, direct_path=None, *args
     ):
@@ -680,7 +705,6 @@ class UpdateWorker(threading.Thread):
         self.args = args
         self.server = server
         self.direct_path = direct_path
-        self.is_done = False  # Instanzattribut!
         threading.Thread.__init__(self)
 
     def run(self):
@@ -750,6 +774,8 @@ class UpdateWorker(threading.Thread):
 
 class UserDataWorker(threading.Thread):
 
+    is_done = False
+
     def __init__(self, queue, lock, database, server, direct_path):
 
         self.queue = queue
@@ -812,11 +838,14 @@ class UserDataWorker(threading.Thread):
 
 
 class SortWorker(threading.Thread):
+
+    is_done = False
+
     def __init__(self, queue, output, *args):
+
         self.queue = queue
         self.output = output
         self.args = args
-        self.is_done = False    # Nur im __init__!
         threading.Thread.__init__(self)
 
     def run(self):
@@ -861,13 +890,16 @@ class SortWorker(threading.Thread):
 
 
 class RemovedWorker(threading.Thread):
+
+    is_done = False
+
     def __init__(self, queue, lock, database, server, direct_path):
+
         self.queue = queue
         self.lock = lock
         self.database = Database(database)
         self.server = server
         self.direct_path = direct_path
-        self.is_done = False   # HIER, im __init__!
         threading.Thread.__init__(self)
 
     def run(self):
@@ -926,12 +958,15 @@ class RemovedWorker(threading.Thread):
 
 
 class NotifyWorker(threading.Thread):
+
+    is_done = False
+
     def __init__(self, queue, player):
+
         self.queue = queue
         self.video_time = int(settings("newvideotime")) * 1000
         self.music_time = int(settings("newmusictime")) * 1000
         self.player = player
-        self.is_done = False   # HIER, im __init__!
         threading.Thread.__init__(self)
 
     def run(self):
