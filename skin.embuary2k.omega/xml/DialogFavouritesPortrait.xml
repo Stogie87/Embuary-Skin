@@ -3,19 +3,19 @@
     <controls>
         <!-- Hintergrund, exakt mittig für 2560x1440 -->
         <control type="image">
-            <left>630</left>
+            <left>580</left>
             <top>270</top>
-            <width>1300</width>
-            <height>700</height>
+            <width>1400</width>
+            <height>740</height>
             <texture border="50">common/corner.png</texture>
-            <colordiffuse>D0000000</colordiffuse>
+            <colordiffuse>AAFFFFFF</colordiffuse>
         </control>
 
         <!-- Kategorienliste (horizontal, oben im Hintergrund) -->
         <control type="list" id="9000">
-            <left>640</left>
+            <left>620</left>
             <top>295</top>
-            <width>1300</width>
+            <width>1320</width>
             <height>80</height>
             <orientation>horizontal</orientation>
             <onright>9000</onright>
@@ -57,57 +57,57 @@
             <textcolor>FFFFFFFF</textcolor>
             <align>center</align>
             <aligny>center</aligny>
-	    <visible>false</visible>
+            <visible>false</visible>
         </control>
 
         <!-- Vertikale Favoritenliste, unter den Tabs -->
         <control type="list" id="9001">
-            <left>680</left>
+            <left>670</left>
             <top>400</top>
-            <width>1100</width>
-            <height>510</height>
+            <width>1200</width>
+            <height>555</height>
             <orientation>vertical</orientation>
             <onup>9000</onup>
-            <itemlayout width="80" height="170">
+            <itemlayout width="1100" height="180">
                 <control type="image">
                     <left>0</left>
-                    <top>5</top>
-                    <width>70</width>
-                    <height>150</height>
+                    <top>7</top>
+                    <width>110</width>
+                    <height>165</height>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[ListItem.Icon]</texture>
                 </control>
                 <control type="label">
-                    <left>80</left>
-                    <top>30</top>
-                    <width>970</width>
-                    <height>80</height>
+                    <left>130</left>
+                    <top>53</top>
+                    <width>1100</width>
+                    <height>50</height>
                     <font>Font32</font>
                     <textcolor>FFFFFFFF</textcolor>
                     <align>left</align>
                     <label>$INFO[ListItem.Label]</label>
-		    <scroll>true</scroll>
+                    <scroll>true</scroll>
                 </control>
             </itemlayout>
-            <focusedlayout width="80" height="170">
+            <focusedlayout width="1100" height="190">
                 <control type="image">
                     <left>0</left>
                     <top>0</top>
-                    <width>75</width>
-                    <height>160</height>
+                    <width>120</width>
+                    <height>180</height>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[ListItem.Icon]</texture>
                 </control>
                 <control type="label">
-                    <left>90</left>
-                    <top>25</top>
-                    <width>970</width>
-                    <height>90</height>
+                    <left>140</left>
+                    <top>52</top>
+                    <width>1090</width>
+                    <height>60</height>
                     <font>Font32_Bold</font>
                     <textcolor>selected</textcolor>
                     <align>left</align>
                     <label>$INFO[ListItem.Label]</label>
-		    <scroll>true</scroll>
+                    <scroll>true</scroll>
                 </control>
             </focusedlayout>
         </control>

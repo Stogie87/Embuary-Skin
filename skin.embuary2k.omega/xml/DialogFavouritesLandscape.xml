@@ -3,17 +3,17 @@
     <controls>
         <!-- Hintergrund, exakt mittig für 2560x1440 -->
         <control type="image">
-            <left>630</left>
+            <left>580</left>
             <top>270</top>
-            <width>1300</width>
+            <width>1400</width>
             <height>600</height>
             <texture border="50">common/corner.png</texture>
-            <colordiffuse>D0000000</colordiffuse>
+            <colordiffuse>AAFFFFFF</colordiffuse>
         </control>
 
         <!-- Kategorienliste (vertikal, links im Hintergrund) -->
         <control type="list" id="9000">
-            <left>560</left>
+            <left>510</left>
             <top>300</top>
             <width>350</width>
             <height>720</height>
@@ -59,27 +59,27 @@
 
         <!-- Horizontale Favoritenliste, rechts im Hintergrund -->
         <control type="list" id="9001">
-            <left>920</left>
+            <left>850</left>
             <top>400</top>
-            <width>956</width>
-            <height>350</height>
+            <width>1100</width> <!-- Angepasst für mehr Abstand -->
+            <height>340</height>
             <orientation>horizontal</orientation>
-            <itemlayout width="156" height="336">
+            <itemlayout width="216" height="288"> <!-- 192 + 24 Abstand -->
                 <control type="image">
-                    <left>0</left>
+                    <left>24</left> <!-- Mehr Abstand links -->
                     <top>0</top>
-                    <width>132</width>
+                    <width>192</width>
                     <height>288</height>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[ListItem.Icon]</texture>
                 </control>
             </itemlayout>
-            <focusedlayout width="176" height="336">
+            <focusedlayout width="228" height="318">
                 <control type="image">
-                    <left>0</left>
+                    <left>16</left> <!-- Mehr Abstand im Fokus -->
                     <top>0</top>
-                    <width>156</width>
-                    <height>336</height>
+                    <width>212</width>
+                    <height>318</height>
                     <aspectratio>scale</aspectratio>
                     <texture>$INFO[ListItem.Icon]</texture>
                 </control>
@@ -88,14 +88,15 @@
 
         <!-- Titel des selektierten Items, mittig unter der Favoritenliste -->
         <control type="label">
-            <left>920</left>
+            <left>870</left>
             <top>765</top>
-            <width>1050</width>
+            <width>1070</width>
             <height>60</height>
             <font>Font24</font>
             <textcolor>FFBBBBBB</textcolor>
             <align>left</align>
             <aligny>left</aligny>
+            <scroll>true</scroll>
             <label>$INFO[Container(9001).ListItem.Label]</label>
         </control>
     </controls>
