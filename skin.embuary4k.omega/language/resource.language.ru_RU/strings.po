@@ -2425,11 +2425,11 @@ msgstr "Вид избранного:"
 
 msgctxt "#42008"
 msgid "vertical"
-msgstr "Вертикально"
+msgstr "Вертикальное окно"
 
 msgctxt "#42009"
 msgid "horizontal"
-msgstr "Горизонтально"
+msgstr "Горизонтальное окно"
 
 msgctxt "#42010"
 msgid "Select Favourites Category"

@@ -2497,11 +2497,11 @@ msgstr "Favoriten-Ansicht:"
 
 msgctxt "#42008"
 msgid "vertical"
-msgstr "Vertikal"
+msgstr "Vertikales Fenster"
 
 msgctxt "#42009"
 msgid "horizontal"
-msgstr "Horizontal"
+msgstr "Horizontales Fenster"
 
 msgctxt "#42010"
 msgid "Select Favourites Category"

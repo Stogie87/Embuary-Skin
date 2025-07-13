@@ -2425,11 +2425,11 @@ msgstr "Favoriler Görünümü:"
 
 msgctxt "#42008"
 msgid "vertical"
-msgstr "Dikey"
+msgstr "Dikey pencere"
 
 msgctxt "#42009"
 msgid "horizontal"
-msgstr "Yatay"
+msgstr "Yatay pencere"
 
 msgctxt "#42010"
 msgid "Select Favourites Category"
