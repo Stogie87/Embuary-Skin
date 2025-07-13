@@ -531,6 +531,32 @@ class Actions(object):
             )
 
         listitem.setInfo("video", metadata)
+        if is_video:
+            for track in obj["Streams"]["video"]:
+                listitem.addStreamInfo(
+                    "video",
+                    {
+                        "codec": track.get("codec"),
+                        "width": track.get("width"),
+                        "height": track.get("height"),
+                        "aspect": track.get("aspect"),
+                        "duration": int(obj["Runtime"]) if obj["Runtime"] is not None else 0,
+                        "hdrtype": track.get("hdrtype"),
+                    }
+                )
+            for track in obj["Streams"]["audio"]:
+                listitem.addStreamInfo(
+                    "audio",
+                    {
+                        "codec": track.get("codec"),
+                        "channels": track.get("channels"),
+                    }
+                )
+            for track in obj["Streams"]["subtitle"]:
+                listitem.addStreamInfo(
+                    "subtitle", {"language": track}
+                )
+
         listitem.setLabel(obj["Title"])
         listitem.setContentLookup(False)
 
