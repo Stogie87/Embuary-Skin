@@ -229,7 +229,7 @@ class FavouritesPortraitDialog(xbmcgui.WindowXMLDialog):
         except Exception as e:
             xbmc.log(f"[Embuary-Favourites] update_vertical_list Exception: {e}", xbmc.LOGERROR)
 
-# --- Landscape bleibt wie gehabt ---
+# --- Landscape Dialog ---
 class FavouritesLandscapeDialog(xbmcgui.WindowXMLDialog):
     def __init__(self, *args, **kwargs):
         super().__init__(*args)
@@ -354,21 +354,33 @@ class FavouritesLandscapeDialog(xbmcgui.WindowXMLDialog):
         except Exception as e:
             xbmc.log(f"[Embuary-Favourites] update_horizontal_list Exception: {e}", xbmc.LOGERROR)
 
-# --- Ratings-Korrektur: InfoTagVideo statt ListItem.setRating ---
-def _set_ratings(li_item, item):
-    info_tag = li_item.getVideoInfoTag()
-    for key in item:
-        try:
-            rating = item[key]['rating']
-            votes = item[key]['votes'] or 0
-            if rating > 100:
-                raise Exception
-            elif rating > 10:
-                rating = rating / 10
-            info_tag.setRating(float(rating), int(votes), key)
-        except Exception:
-            pass
-    return li_item
+# --- Standard Dialog ---
+class FavouritesStandardDialog(xbmcgui.WindowXMLDialog):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args)
+        self.closed = False
+
+    def close(self):
+        self.closed = True
+        super().close()
+
+    def onInit(self):
+        pass
+
+    def onFocus(self, controlId):
+        pass
+
+    def onAction(self, action):
+        if action in (10, 92):  # ACTION_PREVIOUS_MENU, ACTION_NAV_BACK
+            self.close()
+        else:
+            super().onAction(action)
+
+    def onClick(self, controlId):
+        pass
+
+    def update_standard_list(self, cat_index):
+        pass
 
 # --- Hauptdialog-Funktion ---
 def show_favourites():
@@ -390,19 +402,37 @@ def show_favourites():
         skin_path = translatePath("special://skin/xml/")
         view = xbmc.getInfoLabel('Skin.String(favourites_view)').lower() or "portrait"
 
-        items_by_type = {cat: [create_listitem(i, cat) for i in grouped[cat]] for cat in CATEGORIES}
-        items_by_type["Andere"] = [create_listitem(i, "Andere") for i in grouped["Andere"]]
+        if view != "standard":
+            items_by_type = {cat: [create_listitem(i, cat) for i in grouped[cat]] for cat in CATEGORIES}
+            items_by_type["Andere"] = [create_listitem(i, "Andere") for i in grouped["Andere"]]
+        else:
+            items_by_type = {cat: [] for cat in CATEGORIES}
+            items_by_type["Andere"] = []
 
         if view == "portrait":
-            win = FavouritesPortraitDialog("DialogFavouritesPortrait.xml", skin_path, "default", items_by_type=items_by_type)
+            win = FavouritesPortraitDialog("DialogFavouritesPortrait.xml", skin_path, "default",
+                                           items_by_type=items_by_type)
+        elif view == "landscape":
+            win = FavouritesLandscapeDialog("DialogFavouritesLandscape.xml", skin_path, "default",
+                                            items_by_type=items_by_type)
+        elif view == "standard":
+            win = FavouritesStandardDialog("MyFavourites.xml", skin_path, "default")
+            win.doModal()
+            del win
+            return
         else:
-            win = FavouritesLandscapeDialog("DialogFavouritesLandscape.xml", skin_path, "default", items_by_type=items_by_type)
+            win = FavouritesPortraitDialog("DialogFavouritesPortrait.xml", skin_path, "default",
+                                           items_by_type=items_by_type)
+
         win.selected = None
         win.doModal()
         sel = win.selected
         del win
         if not sel:
             return  # Fenster wurde explizit geschlossen
+
+        if view == "standard":
+            return
 
         cat, idx = sel
         items = grouped[cat]

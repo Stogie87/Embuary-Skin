@@ -8,17 +8,24 @@ def get_localized_text(key):
 def toggle_favourites_view():
     # Hole aktuelle Ansicht
     view = xbmc.getInfoLabel('Skin.String(favourites_view)').lower()
-    # Umschalten
-    new_view = "landscape" if view == "portrait" else "portrait"
-    xbmc.executebuiltin(f'Skin.SetString(favourites_view,{new_view})')
-    # Lokalisierte Bezeichnung holen und als neue Variable setzen
-    if new_view == "landscape":
-        text = get_localized_text(42009)  # horizontal
-    else:
+    # Zyklisches Umschalten zwischen landscape → portrait → standard
+    if view == "landscape":
+        new_view = "portrait"
         text = get_localized_text(42008)  # vertikal
+    elif view == "portrait":
+        new_view = "standard"
+        text = get_localized_text(42018)  # standard
+    else:  # standard oder ungültig
+        new_view = "landscape"
+        text = get_localized_text(42009)  # horizontal
+
+    xbmc.executebuiltin(f'Skin.SetString(favourites_view,{new_view})')
     xbmc.executebuiltin(f'Skin.SetString(favourites_view_localized,{text})')
-    # Optionale Notification
     xbmcgui.Dialog().notification(get_localized_text(42007), f"{get_localized_text(42007)} {text}", xbmcgui.NOTIFICATION_INFO, 1500)
+
+    # Optional: Direkt zu MyFavourites.xml wechseln, falls Standard gewählt wird
+    if new_view == "standard":
+        xbmc.executebuiltin('ActivateWindow(MyFavourites.xml)')
 
 if __name__ == '__main__':
     toggle_favourites_view()

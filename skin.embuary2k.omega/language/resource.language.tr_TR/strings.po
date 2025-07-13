@@ -2462,3 +2462,7 @@ msgstr "Tanınabilir favori bulunamadı"
 msgctxt "#42017"
 msgid "Select action"
 msgstr "Eylem seç"
+
+msgctxt "#42018"
+msgid "standard"
+msgstr "Standart"

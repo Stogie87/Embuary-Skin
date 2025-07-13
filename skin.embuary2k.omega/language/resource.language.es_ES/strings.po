@@ -2462,3 +2462,7 @@ msgstr "No se encontraron favoritos reconocibles"
 msgctxt "#42017"
 msgid "Select action"
 msgstr "Seleccionar acción"
+
+msgctxt "#42018"
+msgid "standard"
+msgstr "Estándar"

@@ -1,3 +1,6 @@
+[B]Version 21.1.7[/B]
+- Added standard favorite view
+
 [B]Version 21.1.6[/B]
 - Added workaround to launch favourites via Python script by Stogie87
 - Added favourite layout switch option by Stogie87

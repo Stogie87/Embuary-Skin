@@ -2421,44 +2421,48 @@ msgstr ""
 
 msgctxt "#42007"
 msgid "Favourites View:"
-msgstr "Favourites View:"
+msgstr ""
 
 msgctxt "#42008"
 msgid "vertical"
-msgstr "vertical"
+msgstr ""
 
 msgctxt "#42009"
 msgid "horizontal"
-msgstr "horizontal"
+msgstr ""
 
 msgctxt "#42010"
 msgid "Select Favourites Category"
-msgstr "Select Favourites Category"
+msgstr ""
 
 msgctxt "#42011"
 msgid "Play"
-msgstr "Play"
+msgstr ""
 
 msgctxt "#42012"
 msgid "Remove from Favourites"
-msgstr "Remove from Favourites"
+msgstr ""
 
 msgctxt "#42013"
 msgid "Cancel"
-msgstr "Cancel"
+msgstr ""
 
 msgctxt "#42014"
 msgid "Favourite removed"
-msgstr "Favourite removed"
+msgstr ""
 
 msgctxt "#42015"
 msgid "No favourites found"
-msgstr "No favourites found"
+msgstr ""
 
 msgctxt "#42016"
 msgid "No recognisable favourites found"
-msgstr "No recognisable favourites found"
+msgstr ""
 
 msgctxt "#42017"
 msgid "Select action"
-msgstr "Select action"
+msgstr ""
+
+msgctxt "#42018"
+msgid "standard"
+msgstr ""
