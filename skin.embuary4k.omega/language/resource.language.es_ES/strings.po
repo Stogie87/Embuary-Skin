@@ -2425,11 +2425,11 @@ msgstr "Vista de Favoritos:"
 
 msgctxt "#42008"
 msgid "vertical"
-msgstr "Ventana vertical"
+msgstr "Vertical"
 
 msgctxt "#42009"
 msgid "horizontal"
-msgstr "Ventana horizontal"
+msgstr "Horizontal"
 
 msgctxt "#42010"
 msgid "Select Favourites Category"
@@ -2466,3 +2466,7 @@ msgstr "Seleccionar acción"
 msgctxt "#42018"
 msgid "standard"
 msgstr "Estándar"
+
+msgctxt "#42019"
+msgid "Show Logo Separator"
+msgstr "Mostrar separador de logotipos"

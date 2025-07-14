@@ -817,13 +817,19 @@
     			<selected>Skin.HasSetting(show_codec_background)</selected>
     			<label>$LOCALIZE[42005]</label>
 		</control>
-		<control type="button" id="$PARAM[id]45">
+		<control type="radiobutton" id="$PARAM[id]45">
+    			<include>SettingsButton</include>
+    			<onclick>Skin.ToggleSetting(show_seperator)</onclick>
+    			<selected>Skin.HasSetting(show_seperator)</selected>
+    			<label>$LOCALIZE[42019]</label>
+		</control>
+		<control type="button" id="$PARAM[id]46">
     		<include>SettingsButton</include>
     			<onclick>RunScript(special://skin/scripts/script.osd_codec_logo_timer.py)</onclick>
     			<label2>$VAR[OSDCodecLogosStartupTimerLabel]</label2>
     			<label>$LOCALIZE[32071]</label>
 		</control>
-		<control type="button" id="$PARAM[id]46">
+		<control type="button" id="$PARAM[id]47">
 			<include>SettingsButton</include>
 			<onclick condition="!Skin.HasSetting(osd.useleftCodecStartupLogos) + !Skin.HasSetting(osd.usecenterCodecStartupLogos) + !Skin.HasSetting(osd.userightCodecStartupLogos)">Skin.ToggleSetting(osd.useleftCodecStartupLogos)</onclick>
 			<onclick condition="Skin.HasSetting(osd.useleftCodecStartupLogos)">Skin.ToggleSetting(osd.usecenterCodecStartupLogos)</onclick>
@@ -834,7 +840,7 @@
 			<label2>$VAR[OSDCodecLogosStartupLabel]</label2>
 			<label>$LOCALIZE[32062]</label>
 		</control>
-		<control type="button" id="$PARAM[id]47">
+		<control type="button" id="$PARAM[id]48">
 			<include>SettingsButton</include>
 			<onclick condition="!Skin.HasSetting(ppi.useleftCodecLogos) + !Skin.HasSetting(ppi.usecenterCodecLogos) + !Skin.HasSetting(ppi.userightCodecLogos)">Skin.ToggleSetting(ppi.useleftCodecLogos)</onclick>
 			<onclick condition="Skin.HasSetting(ppi.useleftCodecLogos)">Skin.ToggleSetting(ppi.usecenterCodecLogos)</onclick>
@@ -845,7 +851,7 @@
 			<label2>$VAR[PPICodecLogosLabel]</label2>
 			<label>$LOCALIZE[32061]</label>
 		</control>
-		<control type="button" id="$PARAM[id]48">
+		<control type="button" id="$PARAM[id]49">
 			<include>SettingsButton</include>
 			<onclick condition="!Skin.HasSetting(osd.useleftCodecLogos) + !Skin.HasSetting(osd.usecenterCodecLogos) + !Skin.HasSetting(osd.userightCodecLogos)">Skin.ToggleSetting(osd.useleftCodecLogos)</onclick>
 			<onclick condition="Skin.HasSetting(osd.useleftCodecLogos)">Skin.ToggleSetting(osd.usecenterCodecLogos)</onclick>

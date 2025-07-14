@@ -673,7 +673,7 @@
                     <width>160</width>
                     <height>1.5</height>
                     <texture colordiffuse="80FFFFFF">common/selectedwhite.png</texture>
-			<visible>Skin.HasSetting(show_codec_background)</visible>
+			<visible>Skin.HasSetting(show_codec_background) + Skin.HasSetting(show_seperator)</visible>
                 </control>
             </control>
             <control type="group">
@@ -2107,7 +2107,7 @@
                     <width>160</width>
                     <height>1.5</height>
                     <texture colordiffuse="80FFFFFF">common/selectedwhite.png</texture>
-			<visible>Skin.HasSetting(show_codec_background)</visible>
+			<visible>Skin.HasSetting(show_codec_background) + Skin.HasSetting(show_seperator)</visible>
                 </control>
             </control>
             <control type="group">
@@ -3556,7 +3556,7 @@
                     <width>160</width>
                     <height>1.5</height>
                     <texture colordiffuse="80FFFFFF">common/selectedwhite.png</texture>
-			<visible>Skin.HasSetting(show_codec_background)</visible>
+			<visible>Skin.HasSetting(show_codec_background) + Skin.HasSetting(show_seperator)</visible>
                 </control>
             </control>
             <control type="group">
@@ -5010,7 +5010,7 @@
                     <width>160</width>
                     <height>1.5</height>
                     <texture colordiffuse="80FFFFFF">common/selectedwhite.png</texture>
-			<visible>Skin.HasSetting(show_codec_background)</visible>
+			<visible>Skin.HasSetting(show_codec_background) + Skin.HasSetting(show_seperator)</visible>
                 </control>
             </control>
             <control type="group">
@@ -6459,7 +6459,7 @@
                     <width>160</width>
                     <height>1.5</height>
                     <texture colordiffuse="80FFFFFF">common/selectedwhite.png</texture>
-			<visible>Skin.HasSetting(show_codec_background)</visible>
+			<visible>Skin.HasSetting(show_codec_background) + Skin.HasSetting(show_seperator)</visible>
                 </control>
             </control>
             <control type="group">
@@ -7913,7 +7913,7 @@
                     <width>160</width>
                     <height>1.5</height>
                     <texture colordiffuse="80FFFFFF">common/selectedwhite.png</texture>
-			<visible>Skin.HasSetting(show_codec_background)</visible>
+			<visible>Skin.HasSetting(show_codec_background) + Skin.HasSetting(show_seperator)</visible>
                 </control>
             </control>
             <control type="group">
@@ -9501,7 +9501,7 @@
                     <visible>$PARAM[visible]</visible>
                     <texture>$PARAM[texture]</texture>
                     <colordiffuse>$PARAM[colordiffuse]</colordiffuse>
-			<visible>Skin.HasSetting(show_codec_background)</visible>
+			<visible>Skin.HasSetting(show_codec_background) + Skin.HasSetting(show_seperator)</visible>
                 </control>
             </control>
         </definition>

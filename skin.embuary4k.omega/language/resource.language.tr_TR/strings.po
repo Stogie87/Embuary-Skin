@@ -2425,11 +2425,11 @@ msgstr "Favoriler Görünümü:"
 
 msgctxt "#42008"
 msgid "vertical"
-msgstr "Dikey pencere"
+msgstr "Dikey"
 
 msgctxt "#42009"
 msgid "horizontal"
-msgstr "Yatay pencere"
+msgstr "Yatay"
 
 msgctxt "#42010"
 msgid "Select Favourites Category"
@@ -2466,3 +2466,7 @@ msgstr "Eylem seç"
 msgctxt "#42018"
 msgid "standard"
 msgstr "Standart"
+
+msgctxt "#42019"
+msgid "Show Logo Separator"
+msgstr "Logo ayırıcıyı göster"

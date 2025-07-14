@@ -1,5 +1,7 @@
 [B]Version 21.1.7[/B]
-- Added standard favorite view
+- Added standard Favourite View by Stogie87
+- Added option to disable logo separator by Stogie87
+- Added modern Codec Logo Flag-Style
 
 [B]Version 21.1.6[/B]
 - Added workaround to launch favourites via Python script by Stogie87

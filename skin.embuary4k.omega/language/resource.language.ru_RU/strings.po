@@ -2425,11 +2425,11 @@ msgstr "Вид избранного:"
 
 msgctxt "#42008"
 msgid "vertical"
-msgstr "Вертикальное окно"
+msgstr "Вертикально"
 
 msgctxt "#42009"
 msgid "horizontal"
-msgstr "Горизонтальное окно"
+msgstr "Горизонтально"
 
 msgctxt "#42010"
 msgid "Select Favourites Category"
@@ -2466,3 +2466,7 @@ msgstr "Выберите действие"
 msgctxt "#42018"
 msgid "standard"
 msgstr "Стандарт"
+
+msgctxt "#42019"
+msgid "Show Logo Separator"
+msgstr "Показать разделитель логотипов"

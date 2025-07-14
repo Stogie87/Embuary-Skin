@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <styles>
-    	<style>standard_logos</style>
-    	<style>alternative_logos</style>
-    	<style>colorful_logos</style>
-	<style>golden_logos</style>
-	<style>exclusive_logos</style>
+    	<style>standard</style>
+    	<style>alternative</style>
+    	<style>colorful</style>
+	<style>golden</style>
+	<style>exclusive</style>
 </styles>

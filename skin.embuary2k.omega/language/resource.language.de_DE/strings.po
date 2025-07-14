@@ -2497,11 +2497,11 @@ msgstr "Favoriten-Ansicht:"
 
 msgctxt "#42008"
 msgid "vertical"
-msgstr "Vertikales Fenster"
+msgstr "Vertikal"
 
 msgctxt "#42009"
 msgid "horizontal"
-msgstr "Horizontales Fenster"
+msgstr "Horizontal"
 
 msgctxt "#42010"
 msgid "Select Favourites Category"
@@ -2538,3 +2538,7 @@ msgstr "Aktion wählen"
 msgctxt "#42018"
 msgid "standard"
 msgstr "Standard"
+
+msgctxt "#42019"
+msgid "Show Logo Separator"
+msgstr "Logo-Trenner anzeigen"
