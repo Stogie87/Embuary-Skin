@@ -564,7 +564,7 @@ class Actions(object):
                 listitem.addStreamInfo(
                     "subtitle", {"language": track}
                 )
-
+        listitem.setProperty("IsPlayable", "true")
         listitem.setLabel(obj["Title"])
         listitem.setContentLookup(False)
 
