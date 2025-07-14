@@ -403,7 +403,15 @@ class Actions(object):
         info_tag.setFirstAired(obj["Premiere"])
         cast = API.get_actors()
         if cast and isinstance(cast, list):
-            info_tag.setCast(cast)
+            xbmc_cast = []
+            for actor in cast:
+                if isinstance(actor, dict):
+                    # Kodi 20+: xbmc.Actor(name, role)
+                    xbmc_actor = xbmc.Actor(actor.get("name", ""), actor.get("role", ""))
+                    xbmc_cast.append(xbmc_actor)
+                elif isinstance(actor, str):
+                    xbmc_cast.append(xbmc.Actor(actor, ""))
+            info_tag.setCast(xbmc_cast)
         if obj["Type"] == "Episode":
             info_tag.setMediaType("episode")
             info_tag.setTvShowTitle(obj["SeriesName"])
