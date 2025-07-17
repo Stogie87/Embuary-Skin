@@ -61,12 +61,12 @@
                             <control type="textbox">
                                 <top>115</top>
                                 <width>100%</width>
-                                <height max="235">auto</height>
+                                <height max="240">auto</height>
                                 <align>justify</align>
                                 <aligny>top</aligny>
                                 <label>$VAR[SetViewPlot]</label>
                                 <font>Light24</font>
-                                <autoscroll>false</autoscroll>
+                                <autoscroll>true</autoscroll>
                             </control>
                             <!-- video meta-->
                             <control type="group">

@@ -50,6 +50,12 @@
 					</control>
 				</control>
 				<!-- embuary context -->
+				<control type="button" id="2000">
+    					<include content="ContextButton"/>
+    					<label>$LOCALIZE[20410]</label> <!-- 20410 = Trailer -->
+    					<onclick>PlayMedia($INFO[ListItem.Trailer])</onclick>
+    					<visible>!String.IsEmpty(ListItem.Trailer)</visible>
+				</control>
 				<control type="button" id="1999">
 					<include content="ContextButton"/>
 					<label>$LOCALIZE[31326]</label>
