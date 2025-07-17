@@ -2470,3 +2470,12 @@ msgstr "Standard"
 msgctxt "#42019"
 msgid "Show Logo Separator"
 msgstr "Afficher le séparateur de logos"
+
+msgctxt "#42020"
+msgid "Cinema"
+msgstr "Cinéma"
+
+msgctxt "#42021"
+msgid "Show Codec Info Overlay"
+msgstr "Afficher la superposition des infos codec"
+

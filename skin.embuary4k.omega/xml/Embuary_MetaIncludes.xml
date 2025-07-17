@@ -1164,6 +1164,15 @@
 			<aspectratio align="right">keep</aspectratio>
 		</control>
 	</include>
+	<include name="MetaClearlogoSmall">
+		<control type="image">
+			<right>70</right>
+			<width>280</width>
+			<height>109</height>
+			<texture background="true">$VAR[ListItemClearlogo]</texture>
+			<aspectratio align="right">keep</aspectratio>
+		</control>
+	</include>
 	<include name="MetaPlayerClearlogo">
 		<control type="image">
 			<right>70</right>

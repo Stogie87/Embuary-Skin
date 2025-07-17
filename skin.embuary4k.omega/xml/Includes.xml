@@ -37,6 +37,7 @@
 	<include file="Includes_Flags.xml"/>
 	<include file="script-skinshortcuts-includes.xml" />
 	<include file="IncludesCodecInfoOverlay.xml"/>
+	<include file="Embuary_Movie_View_60.xml" />
 
 	<!-- General -->
 	<expression name="HasArtwork">[!String.IsEmpty(ListItem.Art(poster)) | !String.IsEmpty(ListItem.Art(tvshow.poster)) | !String.IsEmpty(ListItem.Art(landscape)) | [!String.IsEmpty(ListItem.Art(thumb)) + !String.StartsWith(ListItem.Art(thumb),Default)]]</expression>
@@ -188,6 +189,35 @@
 		]
 	</expression>
 
+	<expression name="MovieViewVisible">[
+    		[
+        		Container.Content(movies) |
+        		Container.Content(tvshows) |
+        		Container.Content(sets) |
+        		Container.Content(actors) |
+        		Container.Content(directors) |
+        		String.StartsWith(Container.FolderPath,plugin://script.embuary.helper/?info=getgenre) |
+        		[[String.StartsWith(Container.Folderpath,pvr://channels/tv) | String.StartsWith(Container.Folderpath,pvr://recordings/tv)] + String.IsEqual(Skin.String(EPGar),2to3)] |
+        		[String.StartsWith(Container.FolderPath,plugin://plugin.video.jellyfin) + !String.Contains(Container.FolderPath,/music)]
+    		]
+    			+ !String.Contains(Container.Folderpath,setid)
+    			+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
+    			+ !String.IsEqual(Container.Content,episodes)
+    			+ !String.IsEqual(Container.Content,seasons)
+    			+ !String.Contains(Container.FolderPath,/season)
+    			+ !String.IsEqual(Container.Content,music)
+    			+ !String.IsEqual(Container.Content,songs)
+    			+ !String.IsEqual(Container.Content,albums)
+    			+ !String.IsEqual(Container.Content,artists)
+    			+ !String.IsEqual(Container.Content,musicvideos)
+    			+ !String.StartsWith(Container.FolderPath,musicdb://)
+    			+ !String.StartsWith(Container.FolderPath,plugin://music)
+    			+ !String.StartsWith(Container.FolderPath,videodb://musicvideos)
+		|
+    		Window.IsVisible(MyPics.xml)
+		]
+	</expression>
+
 	<expression name="SquareViewVisible">[
 		[
 			!Container.Content(seasons)
@@ -278,5 +308,3 @@
 	</expression>
 
 </includes>
-
-

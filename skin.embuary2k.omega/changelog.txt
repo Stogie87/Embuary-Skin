@@ -1,3 +1,7 @@
+[B]Version 21.1.8[/B]
+- Added Cinema View by Stogie87
+- Added button to disable CodecInfoOverlay by Stogie87
+
 [B]Version 21.1.7[/B]
 - Added standard Favourite View by Stogie87
 - Added option to disable logo separator by Stogie87

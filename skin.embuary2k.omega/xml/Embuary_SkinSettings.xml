@@ -41,18 +41,24 @@
     			<onclick>RunScript(special://skin/scripts/script.favourites.toggleview.py)</onclick>
     			<label2>$INFO[Skin.String(favourites_view_localized)]</label2>
 		</control>
+		<control type="radiobutton" id="$PARAM[id]05">
+			<include>SettingsButton</include>
+			<onclick>Skin.ToggleSetting(CodecInfoOverlayBottomRight)</onclick>
+			<selected>Skin.HasSetting(CodecInfoOverlayBottomRight)</selected>
+			<label>$LOCALIZE[42021]</label>
+		</control>
 		<!-- sidepanel -->
 		<include content="SkinSettingsHeadlineLabel">
-			<param name="id" value="$PARAM[id]05"/>
+			<param name="id" value="$PARAM[id]06"/>
 			<param name="label" value="$LOCALIZE[31134]"/>
 		</include>
-		<control type="button" id="$PARAM[id]06">
+		<control type="button" id="$PARAM[id]07">
 			<include>SettingsButton</include>
 			<label>$LOCALIZE[31244]</label>
 			<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=sidepanel)</onclick>
 			<enable>!Skin.HasSetting(SidePanelMainMenu)</enable>
 		</control>
-		<control type="radiobutton" id="$PARAM[id]07">
+		<control type="radiobutton" id="$PARAM[id]08">
 			<include>SettingsButton</include>
 			<onclick>Skin.ToggleSetting(SidePanelMainMenu)</onclick>
 			<selected>Skin.HasSetting(SidePanelMainMenu)</selected>
@@ -60,22 +66,22 @@
 		</control>
 		<!-- widget limits -->
 		<include content="SkinSettingsHeadlineLabel">
-			<param name="id" value="$PARAM[id]08"/>
+			<param name="id" value="$PARAM[id]09"/>
 			<param name="label" value="$LOCALIZE[31286] (1-25)"/>
 		</include>
-		<control type="button" id="$PARAM[id]09">
+		<control type="button" id="$PARAM[id]10">
 			<include>SettingsButton</include>
 			<onclick>Skin.SetNumeric(poster_widget_limit)</onclick>
 			<label>$LOCALIZE[31099] '$LOCALIZE[20021]'</label>
 			<label2>$VAR[PosterWidgetLimit]</label2>
 		</control>
-		<control type="button" id="$PARAM[id]10">
+		<control type="button" id="$PARAM[id]11">
 			<include>SettingsButton</include>
 			<onclick>Skin.SetNumeric(wide_widget_limit)</onclick>
 			<label>$LOCALIZE[31099] '$LOCALIZE[31004]'</label>
 			<label2>$VAR[WideWidgetLimit]</label2>
 		</control>
-		<control type="button" id="$PARAM[id]11">
+		<control type="button" id="$PARAM[id]12">
 			<include>SettingsButton</include>
 			<onclick>Skin.SetNumeric(square_widget_limit)</onclick>
 			<label>$LOCALIZE[31099] '$LOCALIZE[31005]'</label>
@@ -83,10 +89,10 @@
 		</control>
 		<!-- widget limits -->
 		<include content="SkinSettingsHeadlineLabel">
-			<param name="id" value="$PARAM[id]12"/>
+			<param name="id" value="$PARAM[id]13"/>
 			<param name="label" value="$LOCALIZE[31391]"/>
 		</include>
-		<control type="button" id="$PARAM[id]13">
+		<control type="button" id="$PARAM[id]14">
 			<include>SettingsButton</include>
 			<onclick condition="Skin.HasSetting(EmbuaryInitMessage)">Skin.ToggleSetting(EmbuaryInitMessage)</onclick>
 			<onclick>ActivateWindow(1119)</onclick>

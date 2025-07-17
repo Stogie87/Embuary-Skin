@@ -2542,3 +2542,11 @@ msgstr "Standard"
 msgctxt "#42019"
 msgid "Show Logo Separator"
 msgstr "Logo-Trenner anzeigen"
+
+msgctxt "#42020"
+msgid "Cinema"
+msgstr "Kino"
+
+msgctxt "#42021"
+msgid "Show Codec Info Overlay"
+msgstr "Zeige Codec Info Overlay"
