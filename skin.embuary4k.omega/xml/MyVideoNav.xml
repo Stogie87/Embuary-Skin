@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="true">51</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
-	<views>50,51,52,53,54,59,55,56,58,60</views>
+	<views>60,51,54,56,55,50,52,53,59,58</views>
 	<menucontrol>6666</menucontrol>
 	<include content="PropertyIncludes">
 		<param name="ShowHeader" value="true"/>

@@ -1299,6 +1299,13 @@
 	<include name="AvailableViews">
 		<param name="id">41</param>
 		<definition>
+			<control type="radiobutton" id="$PARAM[id]17">
+    				<include content="ContextButton"/>
+    				<label>$LOCALIZE[42020]</label>
+    				<onclick>Container.SetViewMode(60)</onclick>
+    				<selected>Control.IsVisible(60)</selected>
+    				<visible>$EXP[MovieViewVisible]</visible>
+			</control>
 			<control type="radiobutton" id="$PARAM[id]02">
 				<include content="ContextButton"/>
 				<label>$LOCALIZE[20021]</label>
@@ -1411,13 +1418,6 @@
 				<onclick>Container.SetViewMode(59)</onclick>
 				<selected>Control.IsVisible(59) + [!Skin.HasSetting(ViewEpisodeToggle) | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(tvchannels)]</selected>
 				<visible>$EXP[EpisodeViewVisible] | Window.IsVisible(MyPVRRecordings.xml) | Window.IsVisible(tvchannels)</visible>
-			</control>
-			<control type="radiobutton" id="$PARAM[id]17">
-    				<include content="ContextButton"/>
-    				<label>$LOCALIZE[42020]</label>
-    				<onclick>Container.SetViewMode(60)</onclick>
-    				<selected>Control.IsVisible(60)</selected>
-    				<visible>$EXP[MovieViewVisible]</visible>
 			</control>
 		</definition>
 	</include>
