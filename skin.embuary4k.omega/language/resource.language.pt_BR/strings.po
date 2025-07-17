@@ -2472,8 +2472,8 @@ msgid "Show Logo Separator"
 msgstr ""
 
 msgctxt "#42020"
-msgid "Cinema"
-msgstr ""
+msgid "Collection"
+msgstr "Collection"
 
 msgctxt "#42021"
 msgid "Show Codec Info Overlay"

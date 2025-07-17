@@ -2472,8 +2472,8 @@ msgid "Show Logo Separator"
 msgstr "Показать разделитель логотипов"
 
 msgctxt "#42020"
-msgid "Cinema"
-msgstr "Кино"
+msgid "Collection"
+msgstr "Коллекция"
 
 msgctxt "#42021"
 msgid "Show Codec Info Overlay"
