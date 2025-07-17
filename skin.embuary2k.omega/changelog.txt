@@ -3,6 +3,7 @@
 - Added button to disable CodecInfoOverlay by Stogie87
 - Small Adjustments Slide-View
 - Added Trailer-Button in DialogContextMenu
+- Re-added classic List-View
 
 [B]Version 21.1.7[/B]
 - Added standard Favourite View by Stogie87
