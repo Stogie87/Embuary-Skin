@@ -4,6 +4,7 @@
 - Small Adjustments Slide-View
 - Added Trailer-Button in DialogContextMenu
 - Re-added classic List-View
+- Added Codec Logo Flags to Collection View by Stogie87
 
 [B]Version 21.1.7[/B]
 - Added standard Favourite View by Stogie87
