@@ -272,6 +272,16 @@ def quick_end_seek(player):
         log(f"Fehler beim Vorspulen ans Ende: {repr(e)}", "ERROR")
 
 
+def quick_start_seek(player):
+    """Springt zum Anfang der Episode"""
+    try:
+        player.seekTime(0)  # Zum Anfang springen
+        xbmc.sleep(300)  # Kurze Wartezeit für Kodi
+        log("Zum Anfang der Episode gesprungen.", "DEBUG")
+    except Exception as e:
+        log(f"Fehler beim Zurückspringen zum Anfang: {repr(e)}", "ERROR")
+
+
 def mark_episode_watched(tvshowtitle, season, episode):
     """Synchrone, aber optimierte Funktion zum Markieren einer Episode als gesehen"""
     try:
@@ -442,8 +452,10 @@ def main():
                 # Nur schnell zum Ende springen bei nicht-Bibliotheks-Dateien
                 quick_end_seek(player)
 
-        # --- Für "previous" bleibt es einfach ---
+        # --- Für "previous" - zum Anfang springen und ungesehen markieren ---
         elif direction == "previous" and is_kodi_library_episode(current_file):
+            # Zum Anfang der Episode springen, damit sie als ungesehen markiert wird
+            quick_start_seek(player)
             episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
             if episodeid:
                 # Diese Änderung ist schnell genug, daher nicht asynchron
