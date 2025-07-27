@@ -261,6 +261,35 @@ def is_kodi_library_episode(filepath):
     return filepath and not filepath.lower().startswith("plugin://")
 
 
+def quick_end_seek(player):
+    """Schnellere Version, die nur zum Ende springt, ohne lange zu warten"""
+    try:
+        total_time = player.getTotalTime()
+        if total_time > 1:
+            seek_time = max(0, total_time - 0.5)  # Fast am Ende
+            player.seekTime(seek_time)
+            # Kurze Wartezeit um sicherzustellen, dass Kodi das als Ende erkennt
+            xbmc.sleep(300)  # 300ms sollten ausreichen statt 1500ms
+            log("Zum Ende der Episode gesprungen.", "DEBUG")
+    except Exception as e:
+        log(f"Fehler beim Vorspulen ans Ende: {repr(e)}", "ERROR")
+
+
+def mark_episode_watched(tvshowtitle, season, episode):
+    """Synchrone, aber optimierte Funktion zum Markieren einer Episode als gesehen"""
+    try:
+        if tvshowtitle and season.isdigit() and episode.isdigit():
+            episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
+            if episodeid:
+                success = set_episode_playcount(episodeid, 1)
+                log(f"Playcount synchron gesetzt: {success}", "INFO")
+                return success
+        return False
+    except Exception as e:
+        log(f"Fehler beim Setzen des Playcount: {repr(e)}", "ERROR")
+        return False
+
+
 def jump_to_end_and_wait(player):
     try:
         total_time = player.getTotalTime()
@@ -402,14 +431,19 @@ def skip_to_next_episode():
             show_error_dialog(msg)
             return
 
-        # Status-Handling (weiterhin wichtig)
-        marked = False
+        # Verbessertes Status-Handling
         if is_kodi_library_episode(current_file):
-            episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
-            if episodeid:
-                marked = set_episode_playcount(episodeid, 1)
-        if not marked:
-            jump_to_end_and_wait(player)  # Fallback wenn Playcount nicht gesetzt werden konnte
+            # 1. Zum Ende der Episode springen
+            quick_end_seek(player)
+            # 2. Sicherstellen, dass Episode als gesehen markiert wird
+            marked = mark_episode_watched(tvshowtitle, season, episode)
+            if not marked:
+                # Fallback: Warten um sicherzustellen, dass Kodi die Episode als gesehen erkennt
+                log("Fallback-Methode: Warte um Episode als gesehen zu markieren", "INFO")
+                xbmc.sleep(300)
+        else:
+            # Nur schnell zum Ende springen bei nicht-Bibliotheks-Dateien
+            quick_end_seek(player)
 
         # Episode abspielen mit optimierter Methode
         try:
@@ -593,7 +627,24 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
                 # Nur für Outro: Robuste Episodejumper-Logik direkt starten!
                 if str(self.segment_type).lower() == "outro":
                     LOG.info("Starting skip_to_next_episode for outro")
-                    # Dialog schließen BEVOR wir zur nächsten Episode springen
+
+                    # Episodeninfo sammeln, bevor Dialog geschlossen wird
+                    info = collect_episode_info()
+                    tvshowtitle = info["tvshowtitle"]
+                    season = info["season"]
+                    episode = info["episode"]
+
+                    # Sicherstellen, dass aktuelle Episode als gesehen markiert wird
+                    if is_kodi_library_episode(current_file):
+                        # Zum Ende der Episode springen und kurz warten für UI-Effekt
+                        quick_end_seek(self.player)
+                        # Episode direkt als gesehen markieren
+                        marked = mark_episode_watched(tvshowtitle, season, episode)
+                        if not marked:
+                            LOG.info("Fallback-Methode für Playcount bei Outro")
+                            xbmc.sleep(300)  # Kurze Wartezeit
+
+                    # Dialog schließen NACHDEM wir Episode als gesehen markiert haben
                     if not self.closing:
                         self.closing = True
                         self.close()
@@ -601,22 +652,11 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
                     # Wenn wir die nächste Episode vorgeladen haben, verwenden wir diesen Pfad
                     if self.next_episode_path:
                         LOG.info(f"Verwende vorgeladene Episode: {self.next_episode_path}")
-
-                        # Status-Handling für aktuelle Episode
-                        info = collect_episode_info()
-                        tvshowtitle = info["tvshowtitle"]
-                        season = info["season"]
-                        episode = info["episode"]
-
-                        if is_kodi_library_episode(current_file):
-                            episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
-                            if episodeid:
-                                set_episode_playcount(episodeid, 1)
-
                         # Optimierte Episode starten
                         play_episode_via_kodi_command(self.next_episode_path)
                     else:
-                        # Ansonsten normale Suche
+                        # Ansonsten normale Suche, aber mit optimierter Funktion
+                        LOG.info("Keine vorgeladene Episode gefunden, starte Suche")
                         skip_to_next_episode()
                     return
 
