@@ -6,9 +6,10 @@ import json
 import sys
 import traceback
 import re
+import threading
 
 # HIER die Zeit in Sekunden einstellen, wie lange nach Pause gewartet werden soll:
-PAUSE_BEFORE_JUMP_SEC = 0.2   # z.B. 1.5 für 1,5 Sekunden
+PAUSE_BEFORE_JUMP_SEC = 0.2  # z.B. 1.5 für 1,5 Sekunden
 
 ADDON = xbmcaddon.Addon()
 ADDON_ID = ADDON.getAddonInfo('id')
@@ -20,6 +21,7 @@ LOGLEVELS = {
     'DEBUG': xbmc.LOGDEBUG,
     'FATAL': xbmc.LOGFATAL
 }
+
 
 def get_localized_error_message(code):
     language = xbmc.getLanguage(xbmc.ISO_639_1)[:2]
@@ -60,6 +62,7 @@ def get_localized_error_message(code):
             or "Error"
     )
 
+
 def get_localized_episode_not_found_message(direction):
     language = xbmc.getLanguage(xbmc.ISO_639_1)[:2]
 
@@ -90,11 +93,14 @@ def get_localized_episode_not_found_message(direction):
             or "Episode not found."
     )
 
+
 def log(msg, level='INFO'):
     xbmc.log(f'[{ADDON_ID}] {msg}', LOGLEVELS.get(level.upper(), xbmc.LOGINFO))
 
+
 def show_error_dialog(message):
     xbmcgui.Dialog().notification("Episode Jumper", message, xbmcgui.NOTIFICATION_ERROR)
+
 
 def get_tvshowid_by_title(tvshowtitle):
     try:
@@ -112,6 +118,7 @@ def get_tvshowid_by_title(tvshowtitle):
     except Exception as e:
         log(f"Fehler beim Ermitteln der TVShowID: {repr(e)}", level='ERROR')
     return None
+
 
 def get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, direction="next"):
     try:
@@ -146,6 +153,7 @@ def get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, directi
         log(f"Fehler beim Abrufen der Episode (TVShowID): {repr(e)}", level='ERROR')
         return None
 
+
 def get_episode_from_kodi_library(tvshowtitle, season, episode, direction="next"):
     try:
         query = {
@@ -179,6 +187,7 @@ def get_episode_from_kodi_library(tvshowtitle, season, episode, direction="next"
         log(f"Fehler beim Abrufen der Episode: {repr(e)}", level='ERROR')
         return None
 
+
 def get_episodeid_from_kodi_library(tvshowtitle, season, episode):
     try:
         query = {
@@ -206,6 +215,7 @@ def get_episodeid_from_kodi_library(tvshowtitle, season, episode):
         log(f"Fehler beim Abrufen der episodeid: {repr(e)}", level='ERROR')
         return None
 
+
 def set_episode_playcount(episodeid, playcount):
     try:
         query = {
@@ -218,7 +228,6 @@ def set_episode_playcount(episodeid, playcount):
             "id": 1
         }
         result = xbmc.executeJSONRPC(json.dumps(query))
-        # Prüfe, ob kein Fehler im Resultat steht
         if '"error"' in result:
             log(f"SetEpisodeDetails Fehler: {result}", "ERROR")
             return False
@@ -227,6 +236,7 @@ def set_episode_playcount(episodeid, playcount):
     except Exception as e:
         log(f"Fehler beim Setzen des playcount: {repr(e)}", "ERROR")
         return False
+
 
 def get_episode_from_playlist(direction="next"):
     try:
@@ -243,19 +253,40 @@ def get_episode_from_playlist(direction="next"):
         log(f"Fehler beim Playlist-Check: {repr(e)}", level='ERROR')
         return None
 
+
 def is_kodi_library_episode(filepath):
     return filepath and not filepath.lower().startswith("plugin://")
 
-def jump_to_end_and_wait(player):
+
+def quick_end_seek(player):
+    """Schnellere Version, die nur zum Ende springt, ohne zu warten"""
     try:
         total_time = player.getTotalTime()
         if total_time > 1:
-            seek_time = max(0, total_time - 1)
+            seek_time = max(0, total_time - 0.5)  # Fast am Ende
             player.seekTime(seek_time)
-            xbmc.sleep(1500)
-            log("Habe 1,5 Sekunden vor Episodenende gespult und gewartet.", "DEBUG")
+            log("Zum Ende der Episode gesprungen.", "DEBUG")
     except Exception as e:
         log(f"Fehler beim Vorspulen ans Ende: {repr(e)}", "ERROR")
+
+
+def mark_episode_watched_later(tvshowtitle, season, episode):
+    """Setzt den Playcount asynchron im Hintergrund"""
+
+    def mark_watched():
+        try:
+            xbmc.sleep(500)  # Kurze Verzögerung, um den Episodenwechsel zu priorisieren
+            if tvshowtitle and season.isdigit() and episode.isdigit():
+                episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
+                if episodeid:
+                    success = set_episode_playcount(episodeid, 1)
+                    log(f"Playcount asynchron gesetzt: {success}", "INFO")
+        except Exception as e:
+            log(f"Fehler beim asynchronen Setzen des Playcount: {repr(e)}", "ERROR")
+
+    # Starte den Prozess im Hintergrund
+    threading.Thread(target=mark_watched).start()
+
 
 def pause_and_wait(player, seconds):
     try:
@@ -264,6 +295,7 @@ def pause_and_wait(player, seconds):
         xbmc.sleep(int(seconds * 1000))
     except Exception as e:
         log(f"Fehler beim Pausieren: {repr(e)}", "ERROR")
+
 
 def collect_episode_info():
     info = {
@@ -275,6 +307,7 @@ def collect_episode_info():
     log(f"Aktuelle Wiedergabe: {info}", level='DEBUG')
     return info
 
+
 def extract_season_episode_from_path(path):
     if not path:
         return None, None
@@ -282,6 +315,7 @@ def extract_season_episode_from_path(path):
     if match:
         return int(match.group(1)), int(match.group(2))
     return None, None
+
 
 def guess_next_episode_path(current_path, direction="next"):
     season, episode = extract_season_episode_from_path(current_path)
@@ -305,6 +339,26 @@ def guess_next_episode_path(current_path, direction="next"):
         return test_path
     return None
 
+
+def play_episode_via_kodi_command(episode_path):
+    """Optimierte Version zum Starten einer Episode über Kodi-Befehle"""
+    try:
+        # Sehr schnelle Version
+        xbmc.executebuiltin("PlayerControl(Stop)")
+        xbmc.sleep(150)  # Noch weiter reduziert
+
+        xbmc.executebuiltin("Dialog.Close(all,true)")
+        xbmc.sleep(50)  # Weiter verkürzt
+
+        # Neue Episode starten
+        xbmc.executebuiltin(f'PlayMedia("{episode_path}")')
+        log(f"Episode über hochoptimierten Kodi-Befehl gestartet: {episode_path}", level='INFO')
+        return True
+    except Exception as e:
+        log(f"Fehler beim Ausführen des Kodi-Befehls: {e}", level='ERROR')
+        return False
+
+
 def main():
     try:
         direction = "next"
@@ -326,33 +380,45 @@ def main():
 
         episode_path = None
 
-        # --- Vor Sprung: Pause und Wartezeit ---
-        pause_and_wait(player, PAUSE_BEFORE_JUMP_SEC)
+        # --- Vorbereitende Schritte und optimiertes Pause-Handling ---
+        xbmc.executebuiltin("Dialog.Close(all,true)")
 
-        # --- 1. Versuch: Nach TVShowID suchen (robusteste Methode) ---
-        tvshowid = get_tvshowid_by_title(tvshowtitle)
-        if tvshowid and season.isdigit() and episode.isdigit():
-            episode_path = get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, direction)
-            if episode_path:
-                log(f"Episode ({direction}) per TVShowID gefunden: {episode_path}", level='INFO')
+        # Kürzere Pause
+        if PAUSE_BEFORE_JUMP_SEC > 0:
+            player.pause()
+            xbmc.sleep(int(PAUSE_BEFORE_JUMP_SEC * 300))  # Noch weiter verkürzte Wartezeit
+            player.pause()  # Pause wieder aufheben
 
-        # --- 2. Fallback: Kodi-Library nach Name durchsuchen ---
-        if not episode_path and tvshowtitle and season.isdigit() and episode.isdigit():
-            episode_path = get_episode_from_kodi_library(tvshowtitle, season, episode, direction)
-            if episode_path:
-                log(f"Episode ({direction}) aus Kodi-Library (per Name): {episode_path}", level='INFO')
+        # --- Optimierte Episoden-Suche ---
 
-        # --- 3. Playlist ---
+        # Playlist zuerst prüfen (am schnellsten)
+        episode_path = get_episode_from_playlist(direction)
+        if episode_path:
+            log(f"Episode ({direction}) aus Playlist: {episode_path}", level='INFO')
+
+        # Alternativ-Suche nur wenn nötig
         if not episode_path:
-            episode_path = get_episode_from_playlist(direction)
-            if episode_path:
-                log(f"Episode ({direction}) aus Playlist: {episode_path}", level='INFO')
+            # Alle anderen Methoden parallel versuchen
+            if tvshowtitle and season.isdigit() and episode.isdigit():
+                # TVShowID-Methode
+                tvshowid = get_tvshowid_by_title(tvshowtitle)
+                if tvshowid:
+                    episode_path = get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, direction)
+                    if episode_path:
+                        log(f"Episode ({direction}) per TVShowID gefunden: {episode_path}", level='INFO')
 
-        # --- 4. Staffelübergreifender Fallback für Streams: SxxExx im Pfad suchen ---
-        if not episode_path:
-            episode_path = guess_next_episode_path(current_file, direction)
-            if episode_path and episode_path != current_file:
-                log(f"Episode ({direction}) staffelübergreifend per Dateinamen geraten: {episode_path}", level='INFO')
+                # Wenn immer noch nicht gefunden, weitere Methoden probieren
+                if not episode_path:
+                    episode_path = get_episode_from_kodi_library(tvshowtitle, season, episode, direction)
+                    if episode_path:
+                        log(f"Episode ({direction}) aus Kodi-Library (per Name): {episode_path}", level='INFO')
+
+            # Letzter Fallback
+            if not episode_path:
+                episode_path = guess_next_episode_path(current_file, direction)
+                if episode_path and episode_path != current_file:
+                    log(f"Episode ({direction}) staffelübergreifend per Dateinamen geraten: {episode_path}",
+                        level='INFO')
 
         # --- Kein Treffer? ---
         if not episode_path:
@@ -361,25 +427,34 @@ def main():
             show_error_dialog(msg)
             return
 
-        # --- Status-Handling ---
+        # --- Optimiertes Status-Handling für "next" ---
         if direction == "next":
-            marked = False
+            # Bei Bibliotheks-Episoden: Playcount asynchron im Hintergrund setzen
             if is_kodi_library_episode(current_file):
-                episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
-                if episodeid:
-                    marked = set_episode_playcount(episodeid, 1)
-            if not marked:
-                jump_to_end_and_wait(player)  # Fallback wenn Playcount nicht gesetzt werden konnte
-        elif direction == "previous":
-            if is_kodi_library_episode(current_file):
-                episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
-                if episodeid:
-                    set_episode_playcount(episodeid, 0)
+                # Zum Ende der Episode springen (für die UI-Erfahrung)
+                quick_end_seek(player)
+                # Starte den asynchronen Prozess zum Markieren als angesehen
+                mark_episode_watched_later(tvshowtitle, season, episode)
+            else:
+                # Nur schnell zum Ende springen bei nicht-Bibliotheks-Dateien
+                quick_end_seek(player)
 
-        # --- Episode abspielen ---
+        # --- Für "previous" bleibt es einfach ---
+        elif direction == "previous" and is_kodi_library_episode(current_file):
+            episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
+            if episodeid:
+                # Diese Änderung ist schnell genug, daher nicht asynchron
+                set_episode_playcount(episodeid, 0)
+
+        # --- Episode abspielen mit hochoptimierter Methode ---
         try:
-            player.play(episode_path)
-            log(f"Gestartet: {episode_path}", level='INFO')
+            success = play_episode_via_kodi_command(episode_path)
+
+            # Fallback nur wenn nötig
+            if not success:
+                player.play(episode_path)
+                log(f"Episode über Fallback-Methode gestartet: {episode_path}", level='INFO')
+
         except Exception as e:
             log(f"Fehler beim Starten der Episode: {repr(e)}", level='ERROR')
             show_error_dialog(get_localized_error_message("play_error"))
@@ -388,6 +463,7 @@ def main():
         tb = traceback.format_exc()
         log(f"Exception im Skript: {repr(e)}\n{tb}", level='ERROR')
         show_error_dialog(get_localized_error_message("unexpected_error"))
+
 
 if __name__ == '__main__':
     main()

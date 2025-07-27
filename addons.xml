@@ -443,7 +443,7 @@ CI &amp; build changes
 
 <addon id="script.episodejumper"
        name="Episode Jumper"
-       version="1.0.3"
+       version="1.0.4"
        provider-name="Stogie87">
     <extension point="xbmc.python.script" library="main.py">
         <provides>executable</provides>
@@ -833,7 +833,7 @@ v1.1.25
     </extension>
 </addon>
 
-<addon id="service.jellyskip" name="Jellyskip" version="1.0.3" provider-name="Jalau & Stogie87">
+<addon id="service.jellyskip" name="Jellyskip" version="1.0.4" provider-name="Jalau & Stogie87">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>

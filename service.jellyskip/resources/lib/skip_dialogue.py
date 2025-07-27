@@ -25,6 +25,7 @@ LOGLEVELS = {
     'FATAL': xbmc.LOGFATAL
 }
 
+
 def get_localized_error_message(code):
     language = xbmc.getLanguage(xbmc.ISO_639_1)[:2]
 
@@ -59,10 +60,11 @@ def get_localized_error_message(code):
     }
 
     return (
-        translations.get(code, {}).get(language)
-        or translations.get(code, {}).get("en")
-        or "Error"
+            translations.get(code, {}).get(language)
+            or translations.get(code, {}).get("en")
+            or "Error"
     )
+
 
 def get_localized_episode_not_found_message(direction):
     language = xbmc.getLanguage(xbmc.ISO_639_1)[:2]
@@ -98,8 +100,10 @@ def get_localized_episode_not_found_message(direction):
 def log(msg, level='INFO'):
     xbmc.log(f'[{ADDON_ID}] {msg}', LOGLEVELS.get(level.upper(), xbmc.LOGINFO))
 
+
 def show_error_dialog(message):
     xbmcgui.Dialog().notification("Jellyskip", message, xbmcgui.NOTIFICATION_ERROR)
+
 
 def get_tvshowid_by_title(tvshowtitle):
     try:
@@ -117,6 +121,7 @@ def get_tvshowid_by_title(tvshowtitle):
     except Exception as e:
         log(f"Fehler beim Ermitteln der TVShowID: {repr(e)}", level='ERROR')
     return None
+
 
 def get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, direction="next"):
     try:
@@ -151,6 +156,7 @@ def get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, directi
         log(f"Fehler beim Abrufen der Episode (TVShowID): {repr(e)}", level='ERROR')
         return None
 
+
 def get_episode_from_kodi_library(tvshowtitle, season, episode, direction="next"):
     try:
         query = {
@@ -184,6 +190,7 @@ def get_episode_from_kodi_library(tvshowtitle, season, episode, direction="next"
         log(f"Fehler beim Abrufen der Episode: {repr(e)}", level='ERROR')
         return None
 
+
 def get_episodeid_from_kodi_library(tvshowtitle, season, episode):
     try:
         query = {
@@ -211,6 +218,7 @@ def get_episodeid_from_kodi_library(tvshowtitle, season, episode):
         log(f"Fehler beim Abrufen der episodeid: {repr(e)}", level='ERROR')
         return None
 
+
 def set_episode_playcount(episodeid, playcount):
     try:
         query = {
@@ -232,6 +240,7 @@ def set_episode_playcount(episodeid, playcount):
         log(f"Fehler beim Setzen des playcount: {repr(e)}", "ERROR")
         return False
 
+
 def get_episode_from_playlist(direction="next"):
     try:
         playlist = xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
@@ -247,8 +256,10 @@ def get_episode_from_playlist(direction="next"):
         log(f"Fehler beim Playlist-Check: {repr(e)}", level='ERROR')
         return None
 
+
 def is_kodi_library_episode(filepath):
     return filepath and not filepath.lower().startswith("plugin://")
+
 
 def jump_to_end_and_wait(player):
     try:
@@ -261,6 +272,7 @@ def jump_to_end_and_wait(player):
     except Exception as e:
         log(f"Fehler beim Vorspulen ans Ende: {repr(e)}", "ERROR")
 
+
 def pause_and_wait(player, seconds):
     try:
         player.pause()
@@ -268,6 +280,7 @@ def pause_and_wait(player, seconds):
         xbmc.sleep(int(seconds * 1000))
     except Exception as e:
         log(f"Fehler beim Pausieren: {repr(e)}", "ERROR")
+
 
 def collect_episode_info():
     info = {
@@ -279,6 +292,7 @@ def collect_episode_info():
     log(f"Aktuelle Wiedergabe: {info}", level='DEBUG')
     return info
 
+
 def extract_season_episode_from_path(path):
     if not path:
         return None, None
@@ -286,6 +300,7 @@ def extract_season_episode_from_path(path):
     if match:
         return int(match.group(1)), int(match.group(2))
     return None, None
+
 
 def guess_next_episode_path(current_path, direction="next"):
     season, episode = extract_season_episode_from_path(current_path)
@@ -309,9 +324,29 @@ def guess_next_episode_path(current_path, direction="next"):
         return test_path
     return None
 
-def skip_to_next_episode():
+
+def play_episode_via_kodi_command(episode_path):
+    """Optimierte Version zum Starten einer Episode über Kodi-Befehle"""
     try:
-        direction = "next"
+        # Verkürzte Wartezeiten
+        xbmc.executebuiltin("PlayerControl(Stop)")
+        xbmc.sleep(250)  # von 500ms auf 250ms reduziert
+
+        xbmc.executebuiltin("Dialog.Close(all,true)")
+        xbmc.sleep(100)  # von 200ms auf 100ms reduziert
+
+        # Neue Episode starten
+        xbmc.executebuiltin(f'PlayMedia("{episode_path}")')
+        log(f"Episode über optimierten Kodi-Befehl gestartet: {episode_path}", level='INFO')
+        return True
+    except Exception as e:
+        log(f"Fehler beim Ausführen des Kodi-Befehls: {e}", level='ERROR')
+        return False
+
+
+def skip_to_next_episode():
+    """Optimierte, schnellere Version zum Springen zur nächsten Episode"""
+    try:
         player = xbmc.Player()
         if not player.isPlaying():
             log("Kein aktives Playback. Keine Episode kann gestartet werden.", level='WARNING')
@@ -324,50 +359,67 @@ def skip_to_next_episode():
         episode = info["episode"]
         current_file = info["file"]
 
+        # Vorbereitende Schritte schon mal ausführen
+        xbmc.executebuiltin("Dialog.Close(all,true)")
+
+        # Schnellere Pausenzeit
+        if PAUSE_BEFORE_JUMP_SEC > 0:
+            player.pause()
+            xbmc.sleep(int(PAUSE_BEFORE_JUMP_SEC * 500))  # Verkürzte Wartezeit
+            player.pause()  # Pause wieder aufheben
+
+        # Optimierte Episode-Suche - schnellste Methoden zuerst
         episode_path = None
 
-        pause_and_wait(player, PAUSE_BEFORE_JUMP_SEC)
+        # Methode 1: Playlist (am schnellsten)
+        episode_path = get_episode_from_playlist("next")
+        if episode_path:
+            log(f"Episode (next) aus Playlist: {episode_path}", level='INFO')
 
-        tvshowid = get_tvshowid_by_title(tvshowtitle)
-        if tvshowid and season.isdigit() and episode.isdigit():
-            episode_path = get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, direction)
-            if episode_path:
-                log(f"Episode ({direction}) per TVShowID gefunden: {episode_path}", level='INFO')
-
+        # Methode 2: TVShowID (wenn Playlist leer ist)
         if not episode_path and tvshowtitle and season.isdigit() and episode.isdigit():
-            episode_path = get_episode_from_kodi_library(tvshowtitle, season, episode, direction)
-            if episode_path:
-                log(f"Episode ({direction}) aus Kodi-Library (per Name): {episode_path}", level='INFO')
+            tvshowid = get_tvshowid_by_title(tvshowtitle)
+            if tvshowid:
+                episode_path = get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode, "next")
+                if episode_path:
+                    log(f"Episode (next) per TVShowID gefunden: {episode_path}", level='INFO')
 
-        if not episode_path:
-            episode_path = get_episode_from_playlist(direction)
+        # Methode 3: Name (Fallback)
+        if not episode_path and tvshowtitle and season.isdigit() and episode.isdigit():
+            episode_path = get_episode_from_kodi_library(tvshowtitle, season, episode, "next")
             if episode_path:
-                log(f"Episode ({direction}) aus Playlist: {episode_path}", level='INFO')
+                log(f"Episode (next) aus Kodi-Library (per Name): {episode_path}", level='INFO')
 
+        # Methode 4: Dateiname-Muster (letzter Fallback)
         if not episode_path:
-            episode_path = guess_next_episode_path(current_file, direction)
+            episode_path = guess_next_episode_path(current_file, "next")
             if episode_path and episode_path != current_file:
-                log(f"Episode ({direction}) staffelübergreifend per Dateinamen geraten: {episode_path}", level='INFO')
+                log(f"Episode (next) staffelübergreifend per Dateinamen geraten: {episode_path}", level='INFO')
 
         if not episode_path:
-            log(f"{direction.capitalize()} Episode konnte nicht gefunden werden.", level='ERROR')
-            msg = get_localized_episode_not_found_message(direction)
+            log("Next Episode konnte nicht gefunden werden.", level='ERROR')
+            msg = get_localized_episode_not_found_message("next")
             show_error_dialog(msg)
             return
 
-        # --- Status-Handling ---
+        # Status-Handling (weiterhin wichtig)
         marked = False
         if is_kodi_library_episode(current_file):
             episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
             if episodeid:
                 marked = set_episode_playcount(episodeid, 1)
         if not marked:
-            jump_to_end_and_wait(player)
+            jump_to_end_and_wait(player)  # Fallback wenn Playcount nicht gesetzt werden konnte
 
-        # --- Episode abspielen ---
+        # Episode abspielen mit optimierter Methode
         try:
-            player.play(episode_path)
-            log(f"Gestartet: {episode_path}", level='INFO')
+            success = play_episode_via_kodi_command(episode_path)
+
+            # Fallback zur ursprünglichen Methode, falls die verbesserte fehlschlägt
+            if not success:
+                player.play(episode_path)
+                log(f"Episode über Fallback-Methode gestartet: {episode_path}", level='INFO')
+
         except Exception as e:
             log(f"Fehler beim Starten der Episode: {repr(e)}", level='ERROR')
             show_error_dialog(get_localized_error_message("play_error"))
@@ -376,6 +428,7 @@ def skip_to_next_episode():
         tb = traceback.format_exc()
         log(f"Exception im skip_to_next_episode: {repr(e)}\n{tb}", level='ERROR')
         show_error_dialog(get_localized_error_message("unexpected_error"))
+
 
 # -- Ende: Robuste Episode-Jumper-Logik --
 
@@ -386,11 +439,52 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
             self.seek_time_seconds = seek_time_seconds
             self.segment_type = segment_type
             self.player = xbmc.Player()
+            self.closing = False  # Flag zum Vermeiden von Doppel-Schließung
+
+            # Vorausladen der nächsten Episode, wenn es sich um ein Outro handelt
+            self.next_episode_path = None
+            if str(segment_type).lower() == "outro":
+                utils.run_threaded(self.preload_next_episode, delay=0.2, kwargs={})
         except Exception as e:
             LOG.error(f"Init failed: {e}")
             self.seek_time_seconds = 0
             self.segment_type = ""
             self.player = None
+            self.closing = False
+            self.next_episode_path = None
+
+    def preload_next_episode(self):
+        """Sucht die nächste Episode im Voraus"""
+        try:
+            info = collect_episode_info()
+            tvshowtitle = info["tvshowtitle"]
+            season = info["season"]
+            episode = info["episode"]
+            current_file = info["file"]
+
+            # Schnelle Prüfung: Playlist
+            self.next_episode_path = get_episode_from_playlist("next")
+
+            # TVShowID-Methode
+            if not self.next_episode_path and tvshowtitle and season.isdigit() and episode.isdigit():
+                tvshowid = get_tvshowid_by_title(tvshowtitle)
+                if tvshowid:
+                    self.next_episode_path = get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode,
+                                                                                       "next")
+
+            # Weitere Fallbacks nur bei Bedarf
+            if not self.next_episode_path and tvshowtitle and season.isdigit() and episode.isdigit():
+                self.next_episode_path = get_episode_from_kodi_library(tvshowtitle, season, episode, "next")
+
+            if not self.next_episode_path:
+                self.next_episode_path = guess_next_episode_path(current_file, "next")
+
+            if self.next_episode_path:
+                LOG.info(f"Nächste Episode vorgeladen: {self.next_episode_path}")
+
+        except Exception as e:
+            LOG.error(f"Preload next episode failed: {e}")
+            self.next_episode_path = None
 
     def onInit(self):
         try:
@@ -403,7 +497,7 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
             }
             segment_translations = {
                 "intro": {
-                    "de": "Intro", "fr": "l’intro", "es": "la introducción", "it": "l’introduzione", "en": "Intro"
+                    "de": "Intro", "fr": "l'intro", "es": "la introducción", "it": "l'introduzione", "en": "Intro"
                 },
                 "ads": {
                     "de": "Werbung", "fr": "la pub", "es": "los anuncios", "en": "Ads"
@@ -449,16 +543,20 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
 
     def on_automatic_close(self):
         try:
-            self.close()
-            LOG.info("JellySkip: Auto closing dialogue")
-            xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
+            if not self.closing:  # Vermeiden doppelter Schließung
+                self.closing = True
+                self.close()
+                LOG.info("JellySkip: Auto closing dialogue")
+                xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
         except Exception as e:
             LOG.error(f"on_automatic_close failed: {e}")
 
     def onAction(self, action):
         try:
             if action == ACTION_PREVIOUS_MENU or action == ACTION_BACK:
-                self.close()
+                if not self.closing:
+                    self.closing = True
+                    self.close()
         except Exception as e:
             LOG.error(f"onAction failed: {e}")
 
@@ -472,11 +570,16 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
         try:
             if not self.player or not self.player.isPlaying():
                 LOG.warn("onClick: Player not playing, closing dialog")
-                self.close()
+                if not self.closing:
+                    self.closing = True
+                    self.close()
                 return
 
             if control == OK_BUTTON:
                 try:
+                    # Aktuellen Dateipfad speichern für späteren Vergleich
+                    current_file = self.player.getPlayingFile() if self.player.isPlayingVideo() else ""
+
                     total_time = self.player.getTotalTime()
                     remaining_seconds = total_time - self.seek_time_seconds
 
@@ -489,8 +592,41 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
 
                 # Nur für Outro: Robuste Episodejumper-Logik direkt starten!
                 if str(self.segment_type).lower() == "outro":
-                    skip_to_next_episode()
+                    LOG.info("Starting skip_to_next_episode for outro")
+                    # Dialog schließen BEVOR wir zur nächsten Episode springen
+                    if not self.closing:
+                        self.closing = True
+                        self.close()
 
-            self.close()
+                    # Wenn wir die nächste Episode vorgeladen haben, verwenden wir diesen Pfad
+                    if self.next_episode_path:
+                        LOG.info(f"Verwende vorgeladene Episode: {self.next_episode_path}")
+
+                        # Status-Handling für aktuelle Episode
+                        info = collect_episode_info()
+                        tvshowtitle = info["tvshowtitle"]
+                        season = info["season"]
+                        episode = info["episode"]
+
+                        if is_kodi_library_episode(current_file):
+                            episodeid = get_episodeid_from_kodi_library(tvshowtitle, season, episode)
+                            if episodeid:
+                                set_episode_playcount(episodeid, 1)
+
+                        # Optimierte Episode starten
+                        play_episode_via_kodi_command(self.next_episode_path)
+                    else:
+                        # Ansonsten normale Suche
+                        skip_to_next_episode()
+                    return
+
+            # Für alle anderen Fälle normal schließen
+            if not self.closing:
+                self.closing = True
+                self.close()
+
         except Exception as e:
             LOG.error(f"onClick failed: {e}")
+            if not self.closing:
+                self.closing = True
+                self.close()

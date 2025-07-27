@@ -1,3 +1,13 @@
+[B]Version 1.0.4[/B]
+- Significantly improved episode switching speed by Stogie87
+- Added preloading of next episodes during outro segments by Stogie87
+- Optimized search algorithm for faster episode detection by Stogie87
+- Implemented asynchronous playcount updating by Stogie87
+- Reduced wait times between operations by Stogie87
+- Enhanced outro skip functionality by Stogie87
+- Fixed potential issues with dialog handling by Stogie87
+- Improved overall performance and reliability by Stogie87
+
 [B]Version 1.0.3[/B]
 - Improved multilingual error messages and skip button labels by Stogie87
 
