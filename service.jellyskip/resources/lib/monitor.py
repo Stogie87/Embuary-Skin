@@ -56,6 +56,7 @@ class JellySkipMonitor(xbmc.Monitor):
         try:
             jf_hack.reset_itemid()
             dialogue_handler.cancel_scheduled()
+            self.start_tracking()  # Diese Zeile hinzufügen
         except Exception as e:
             LOG.error(f"_event_handler_player_start failed: {e}")
 
