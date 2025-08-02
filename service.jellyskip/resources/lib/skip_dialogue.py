@@ -607,6 +607,7 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
                 if not self.closing:
                     self.closing = True
                     self.close()
+                    xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
                 return
 
             if control == OK_BUTTON:
@@ -648,6 +649,7 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
                     if not self.closing:
                         self.closing = True
                         self.close()
+                        xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
 
                     # Wenn wir die nächste Episode vorgeladen haben, verwenden wir diesen Pfad
                     if self.next_episode_path:
@@ -660,13 +662,15 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
                         skip_to_next_episode()
                     return
 
-            # Für alle anderen Fälle normal schließen
-            if not self.closing:
-                self.closing = True
-                self.close()
+                # Für alle anderen Fälle normal schließen
+                if not self.closing:
+                    self.closing = True
+                    self.close()
+                    xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
 
         except Exception as e:
             LOG.error(f"onClick failed: {e}")
             if not self.closing:
                 self.closing = True
                 self.close()
+                xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")

@@ -1,5 +1,7 @@
 [B]Version 1.0.5[/B]
 - Implemented universal player event handling by Stogie87
+- Fixed issue where intro/outro buttons weren't always showing up at episode start by Stogie87
+- Improved button handling to ensure buttons reappear after using skip functionality by Stogie87
 
 [B]Version 1.0.4[/B]
 - Significantly improved episode switching speed by Stogie87
