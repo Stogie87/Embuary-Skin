@@ -833,7 +833,7 @@ v1.1.25
     </extension>
 </addon>
 
-<addon id="service.jellyskip" name="Jellyskip" version="1.0.4" provider-name="Jalau & Stogie87">
+<addon id="service.jellyskip" name="Jellyskip" version="1.0.5" provider-name="Jalau & Stogie87">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>

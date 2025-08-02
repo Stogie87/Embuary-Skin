@@ -70,9 +70,9 @@ class JellySkipMonitor(xbmc.Monitor):
     EVENTS_MAP = {
         'Other.UserDataChanged': jf_hack.event_handler_jellyfin_userdatachanged,
         'Other.Jellyskip.DialogueClosed': _event_handler_jellyskip_dialogue_closed,
-        # 'Player.OnPause': _event_handler_player_change_playback,
+        'Player.OnPause': _event_handler_player_change_playback,
         'Player.OnResume': _event_handler_player_change_playback,
-        # 'Player.OnSpeedChanged': _event_handler_player_change_playback,
+        'Player.OnSpeedChanged': _event_handler_player_change_playback,
         'Player.OnSeek': _event_handler_player_change_playback,
         'Player.OnStop': _event_handler_player_stop,
         'Player.OnPlay': _event_handler_player_start,
@@ -90,6 +90,16 @@ class JellySkipMonitor(xbmc.Monitor):
             sender = utils.from_bytes(sender)
             method = utils.from_bytes(method)
             data = utils.from_bytes(data) if data else ''
+
+            # NEU: Universeller Handler für alle Player-Events
+            if method.startswith('Player.'):
+                LOG.info(f"Player Event erkannt: {method}")
+                if method not in self.EVENTS_MAP:
+                    LOG.info(f"Zusätzliches Player-Event abgefangen: {method}")
+                    # Trigger start_tracking für jedes Player-Event
+                    if self.player and self.player.isPlayingVideo():
+                        self.start_tracking()
+
             handler = JellySkipMonitor.EVENTS_MAP.get(method)
             if not handler:
                 LOG.debug(f"No handler for method {method}")
