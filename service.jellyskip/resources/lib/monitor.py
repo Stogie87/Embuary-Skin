@@ -47,6 +47,9 @@ class JellySkipMonitor(xbmc.Monitor):
         try:
             jf_hack.reset_itemid()
             dialogue_handler.cancel_scheduled()
+            if hasattr(self, 'outro_check_timer') and self.outro_check_timer:
+                self.outro_check_timer.cancel()
+                self.outro_check_timer = None
             LOG.info('JellySkipMonitor: reset itemid')
         except Exception as e:
             LOG.error(f"_event_handler_player_stop failed: {e}")
@@ -63,8 +66,24 @@ class JellySkipMonitor(xbmc.Monitor):
     def _event_handler_jellyskip_dialogue_closed(self, **_kwargs):
         LOG.info('JellySkipMonitor: player dialogue closed event')
         try:
-            # User closed dialogue, now we want to start tracking only the next upcoming segment
+            # 1. Sofort tracking für das nächste Segment starten
             self.start_tracking(only_upcoming=True)
+
+            # 2. Zusätzlich: Timer für erneute Überprüfung vor dem erwarteten Outro setzen
+            player = xbmc.Player()
+            if player.isPlayingVideo():
+                total_time = player.getTotalTime()
+                current_time = player.getTime()
+                # 30 Sekunden vor Ende erneut prüfen (oder früher, falls Video kürzer ist)
+                time_till_outro_check = max(1, total_time - current_time - 30)
+
+                # Timer für erneute Überprüfung setzen
+                self.outro_check_timer = utils.run_threaded(  # Hier Timer speichern
+                    self.ensure_outro_tracking,
+                    delay=time_till_outro_check,
+                    kwargs={}
+                )
+                LOG.info(f"Scheduled outro check in {time_till_outro_check} seconds")
         except Exception as e:
             LOG.error(f"_event_handler_jellyskip_dialogue_closed failed: {e}")
 
@@ -82,6 +101,34 @@ class JellySkipMonitor(xbmc.Monitor):
 
     def stop(self):
         LOG.info('Stopping JellySkipMonitor')
+
+    def ensure_outro_tracking(self):
+        """Spezielle Methode um sicherzustellen, dass das Outro-Segment erkannt wird"""
+        try:
+            if not self.player or not self.player.isPlayingVideo():
+                LOG.info("Player nicht mehr aktiv, Outro-Check übersprungen")
+                return
+
+            # Prüfen, ob wir uns nahe am Ende befinden
+            total_time = self.player.getTotalTime()
+            current_time = self.player.getTime()
+
+            # Wenn noch mehr als 35 Sekunden bis zum Ende, erneut timer setzen
+            if total_time - current_time > 35:
+                LOG.info(f"Noch {total_time - current_time} Sekunden bis Ende, verschiebe Outro-Check")
+                time_till_outro_check = max(1, total_time - current_time - 30)
+                self.outro_check_timer = utils.run_threaded(
+                    self.ensure_outro_tracking,
+                    delay=time_till_outro_check,
+                    kwargs={}
+                )
+                return
+
+            LOG.info("Performing scheduled outro check")
+            # Hier explizit only_upcoming=False setzen, um alle Segmente zu prüfen
+            self.start_tracking(only_upcoming=False)
+        except Exception as e:
+            LOG.error(f"ensure_outro_tracking failed: {e}")
 
     def onNotification(self, sender, method, data=None):
         """

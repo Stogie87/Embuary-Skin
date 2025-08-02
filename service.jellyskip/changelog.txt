@@ -1,3 +1,12 @@
+[B]Version 1.0.6[/B]
+- Added robust outro detection system ensuring outro dialogs appear reliably even after skipping intros by Stogie87
+- Optimized episode transitions with improved loading times through episode preloading by Stogie87
+- Enhanced thread safety and resource management for better stability by Stogie87
+- Improved dialog control for smoother user experience without UI blocking by Stogie87
+- Implemented prioritized episode search methods for faster next episode detection by Stogie87
+- Added improved error handling for exceptional situations like prematurely ended playback by Stogie87
+
+
 [B]Version 1.0.5[/B]
 - Implemented universal player event handling by Stogie87
 - Fixed issue where intro/outro buttons weren't always showing up at episode start by Stogie87

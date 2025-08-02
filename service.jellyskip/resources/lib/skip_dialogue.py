@@ -470,6 +470,7 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
 
     def __init__(self, xmlFile, resourcePath, seek_time_seconds, segment_type):
         try:
+            # super().__init__(xmlFile, resourcePath)  # Python 3-style Initialisierung, falls benötigt
             self.seek_time_seconds = seek_time_seconds
             self.segment_type = segment_type
             self.player = xbmc.Player()
@@ -488,34 +489,50 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
             self.next_episode_path = None
 
     def preload_next_episode(self):
-        """Sucht die nächste Episode im Voraus"""
+        """Sucht die nächste Episode im Voraus mit verbesserter Performance"""
         try:
+            # Frühe Prüfung, ob Dialog noch relevant ist
+            if self.closing or not self.player or not self.player.isPlayingVideo():
+                LOG.info("Preload abgebrochen - Dialog bereits geschlossen oder kein Video")
+                return
+
             info = collect_episode_info()
             tvshowtitle = info["tvshowtitle"]
             season = info["season"]
             episode = info["episode"]
             current_file = info["file"]
 
-            # Schnelle Prüfung: Playlist
-            self.next_episode_path = get_episode_from_playlist("next")
+            # Optimierte Suche: Priorisierte Reihenfolge für bessere Performance
+            methods = [
+                # 1. Playlist (am schnellsten)
+                lambda: get_episode_from_playlist("next"),
 
-            # TVShowID-Methode
-            if not self.next_episode_path and tvshowtitle and season.isdigit() and episode.isdigit():
-                tvshowid = get_tvshowid_by_title(tvshowtitle)
-                if tvshowid:
-                    self.next_episode_path = get_episode_from_kodi_library_by_tvshowid(tvshowid, season, episode,
-                                                                                       "next")
+                # 2. TVShowID (wenn verfügbar)
+                lambda: (get_episode_from_kodi_library_by_tvshowid(get_tvshowid_by_title(tvshowtitle), season, episode,
+                                                                   "next")
+                         if tvshowtitle and season.isdigit() and episode.isdigit() and get_tvshowid_by_title(
+                    tvshowtitle) else None),
 
-            # Weitere Fallbacks nur bei Bedarf
-            if not self.next_episode_path and tvshowtitle and season.isdigit() and episode.isdigit():
-                self.next_episode_path = get_episode_from_kodi_library(tvshowtitle, season, episode, "next")
+                # 3. Kodi-Library nach Namen
+                lambda: (get_episode_from_kodi_library(tvshowtitle, season, episode, "next")
+                         if tvshowtitle and season.isdigit() and episode.isdigit() else None),
 
-            if not self.next_episode_path:
-                self.next_episode_path = guess_next_episode_path(current_file, "next")
+                # 4. Dateiname-Muster (letzter Fallback)
+                lambda: guess_next_episode_path(current_file, "next")
+            ]
 
-            if self.next_episode_path:
-                LOG.info(f"Nächste Episode vorgeladen: {self.next_episode_path}")
+            # Methoden der Reihe nach probieren bis eine erfolgreich ist
+            for method in methods:
+                if self.closing:  # Zwischenprüfung, ob Dialog noch relevant ist
+                    return
 
+                path = method()
+                if path:
+                    self.next_episode_path = path
+                    LOG.info(f"Nächste Episode vorgeladen: {self.next_episode_path}")
+                    return
+
+            LOG.info("Keine nächste Episode gefunden beim Vorladen")
         except Exception as e:
             LOG.error(f"Preload next episode failed: {e}")
             self.next_episode_path = None
@@ -577,13 +594,37 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
 
     def on_automatic_close(self):
         try:
-            if not self.closing:  # Vermeiden doppelter Schließung
+            # Thread-sicheres Setzen des closing-Flags
+            if hasattr(self, 'closing') and not self.closing:
                 self.closing = True
-                self.close()
-                LOG.info("JellySkip: Auto closing dialogue")
                 xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
+
+                # Dialog auf dem Haupt-Thread schließen
+                utils.run_threaded(self._safe_close, delay=0.05, kwargs={})
         except Exception as e:
             LOG.error(f"on_automatic_close failed: {e}")
+
+    def _safe_close(self):
+        """Sichere Methode zum Schließen des Dialogs auf dem Haupt-Thread"""
+        try:
+            self.close()
+            LOG.info("Dialog sicher geschlossen")
+        except Exception as e:
+            LOG.error(f"_safe_close failed: {e}")
+
+    def show_status_notification(self, message, success=True):
+        """Zeigt kurze Status-Benachrichtigung ohne Dialog-Unterbrechung"""
+        try:
+            icon = xbmcgui.NOTIFICATION_INFO if success else xbmcgui.NOTIFICATION_WARNING
+            xbmcgui.Dialog().notification(
+                "JellySkip",
+                message,
+                icon,
+                time=1500,  # Kurze Anzeigezeit
+                sound=False  # Kein Sound für bessere UX
+            )
+        except Exception as e:
+            LOG.error(f"Status notification failed: {e}")
 
     def onAction(self, action):
         try:
@@ -607,7 +648,7 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
                 if not self.closing:
                     self.closing = True
                     self.close()
-                    xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
+                xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
                 return
 
             if control == OK_BUTTON:
@@ -625,9 +666,9 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
                 except Exception as e:
                     LOG.error(f"Seek failed: {e}")
 
-                # Nur für Outro: Robuste Episodejumper-Logik direkt starten!
+                # Nur für Outro: Optimierte Episodejumper-Logik
                 if str(self.segment_type).lower() == "outro":
-                    LOG.info("Starting skip_to_next_episode for outro")
+                    LOG.info("Starting optimized episode transition for outro")
 
                     # Episodeninfo sammeln, bevor Dialog geschlossen wird
                     info = collect_episode_info()
@@ -635,29 +676,29 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
                     season = info["season"]
                     episode = info["episode"]
 
-                    # Sicherstellen, dass aktuelle Episode als gesehen markiert wird
-                    if is_kodi_library_episode(current_file):
-                        # Zum Ende der Episode springen und kurz warten für UI-Effekt
-                        quick_end_seek(self.player)
-                        # Episode direkt als gesehen markieren
-                        marked = mark_episode_watched(tvshowtitle, season, episode)
-                        if not marked:
-                            LOG.info("Fallback-Methode für Playcount bei Outro")
-                            xbmc.sleep(300)  # Kurze Wartezeit
-
-                    # Dialog schließen NACHDEM wir Episode als gesehen markiert haben
+                    # Dialog schließen BEVOR wir zur nächsten Episode wechseln
+                    # um Verzögerungen in der UI zu vermeiden
                     if not self.closing:
                         self.closing = True
                         self.close()
                         xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
 
-                    # Wenn wir die nächste Episode vorgeladen haben, verwenden wir diesen Pfad
+                    # Aktuelle Episode als gesehen markieren im Hintergrund
+                    if is_kodi_library_episode(current_file):
+                        # Schnelle Methode zum Markieren als gesehen
+                        quick_end_seek(self.player)
+                        utils.run_threaded(
+                            lambda: mark_episode_watched(tvshowtitle, season, episode),
+                            delay=0.1,
+                            kwargs={}
+                        )
+
+                    # Wenn wir die nächste Episode vorgeladen haben, direkt verwenden
                     if self.next_episode_path:
                         LOG.info(f"Verwende vorgeladene Episode: {self.next_episode_path}")
-                        # Optimierte Episode starten
                         play_episode_via_kodi_command(self.next_episode_path)
                     else:
-                        # Ansonsten normale Suche, aber mit optimierter Funktion
+                        # Fallback zur Standardsuche
                         LOG.info("Keine vorgeladene Episode gefunden, starte Suche")
                         skip_to_next_episode()
                     return
@@ -666,11 +707,11 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
                 if not self.closing:
                     self.closing = True
                     self.close()
-                    xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
+                xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
 
         except Exception as e:
             LOG.error(f"onClick failed: {e}")
             if not self.closing:
                 self.closing = True
                 self.close()
-                xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
+            xbmc.executebuiltin("NotifyAll(service.jellyskip, Jellyskip.DialogueClosed, {})")
