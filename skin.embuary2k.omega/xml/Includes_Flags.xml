@@ -970,7 +970,7 @@
         <control type="image">
             <texture>flags/colorful/audiocodec/aac.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac) | String.IsEqual(ListItem.Audiocodec,aac_latm)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/audiocodec/ac3.png</texture>
@@ -2479,7 +2479,7 @@
         <control type="image">
             <texture>flags/estuary/audiocodec/aac.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac) | String.IsEqual(ListItem.Audiocodec,aac_latm)</visible>
         </control>
         <control type="image">
             <texture>flags/estuary/audiocodec/aac_latm.png</texture>
@@ -4092,7 +4092,7 @@
         <control type="image">
             <texture>flags/metropolis/audiocodec/aac.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac) | String.IsEqual(ListItem.Audiocodec,aac_latm)</visible>
         </control>
         <control type="image">
             <texture>flags/metropolis/audiocodec/aac_latm.png</texture>
@@ -5747,7 +5747,7 @@
         <control type="image">
             <texture>flags/modern/audiocodec/aac.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac) | String.IsEqual(ListItem.Audiocodec,aac_latm)</visible>
         </control>
         <control type="image">
             <texture>flags/modern/audiocodec/ac3.png</texture>
@@ -6998,7 +6998,7 @@
         <control type="image">
             <texture>flags/standard/audiocodec/aac.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.Audiocodec,aac)</visible>
+            <visible>String.IsEqual(ListItem.Audiocodec,aac) | String.IsEqual(ListItem.Audiocodec,aac_latm)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/audiocodec/ac3.png</texture>

@@ -1,3 +1,6 @@
+[B]Version 21.1.9[/B]
+- Updated visibility of AAC codec logos by Stogie87
+
 [B]Version 21.1.8[/B]
 - Added new Collection View by Stogie87
 - Added button to disable CodecInfoOverlay by Stogie87
