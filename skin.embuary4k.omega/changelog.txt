@@ -1,3 +1,8 @@
+[B]Version 21.1.10[/B]
+- Added HDR flag fallback for Jellyfin Sonstige/Other libraries by Stogie87
+- Added local movie database lookup script for missing HDR streamdetails by Stogie87
+- Added fallback HDR flags to Movie View and CodecInfoOverlay by Stogie87
+
 [B]Version 21.1.9[/B]
 - Updated visibility of AAC codec logos by Stogie87
 

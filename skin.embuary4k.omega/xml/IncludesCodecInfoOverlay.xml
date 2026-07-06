@@ -76,6 +76,13 @@
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/modern)">PosterStaticFlagshdr_type_modern</include>
   			</control>
 
+			<!-- HDR fallback from matching local Kodi movie DB item -->
+			<include content="FallbackHdrTypeFlagFromLookup">
+				<param name="left" value="3040"/>
+				<param name="width" value="120"/>
+				<param name="height" value="120"/>
+			</include>
+
 			<control type="group">
 				<left>3190</left>
 				<width>120</width>
@@ -121,4 +128,203 @@
 			</control>
 		</control>
 	</include>
+
+	<include name="FallbackHdrTypeFlagFromLookup">
+		<param name="top">0</param>
+		<param name="left">0</param>
+		<param name="width">60</param>
+		<param name="height">60</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="group">
+				<top>$PARAM[top]</top>
+				<left>$PARAM[left]</left>
+				<width>$PARAM[width]</width>
+				<height>$PARAM[height]</height>
+				<visible>$PARAM[visible]</visible>
+				<visible>String.IsEqual(ListItem.DBType,movie)</visible>
+				<visible>String.IsEmpty(ListItem.HdrType)</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(EmbuaryHDRFallback.HdrType))</visible>
+
+				<!-- Dolby Vision -->
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/standard/hdr_type/dolbyvision.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),dolbyvision)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/colorful/hdr_type/dolbyvision.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),dolbyvision)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/estuary/hdr_type/dolbyvision.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),dolbyvision)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/metropolis/hdr_type/dolbyvision.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/metropolis) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),dolbyvision)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/modern/hdr_type/dolbyvision.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/modern) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),dolbyvision)</visible>
+				</control>
+
+				<!-- HDR10+ -->
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/standard/hdr_type/hdr10plus.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10plus)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/colorful/hdr_type/hdr10plus.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10plus)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/estuary/hdr_type/hdr10plus.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10plus)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/metropolis/hdr_type/hdr10plus.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/metropolis) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10plus)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/modern/hdr_type/hdr10plus.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/modern) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10plus)</visible>
+				</control>
+
+				<!-- HDR10 -->
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/standard/hdr_type/hdr10.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/colorful/hdr_type/hdr10.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/estuary/hdr_type/hdr10.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/metropolis/hdr_type/hdr10.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/metropolis) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/modern/hdr_type/hdr10.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/modern) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10)</visible>
+				</control>
+
+				<!-- HLG -->
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/standard/hdr_type/hlg.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hlg)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/colorful/hdr_type/hlg.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hlg)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/estuary/hdr_type/hlg.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hlg)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/metropolis/hdr_type/hlg.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/metropolis) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hlg)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/modern/hdr_type/hlg.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/modern) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hlg)</visible>
+				</control>
+
+				<!-- Generic HDR -->
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/standard/hdr_type/hdr.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/standard) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/colorful/hdr_type/hdr.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/colorful) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/estuary/hdr_type/hdr.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/estuary) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr)</visible>
+				</control>
+				<control type="image">
+					<width>$PARAM[width]</width>
+					<height>$PARAM[height]</height>
+					<texture>flags/modern/hdr_type/hdr.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>String.StartsWith(Skin.String(codeclogos_flag_path),flags/modern) + String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr)</visible>
+				</control>
+			</control>
+		</definition>
+	</include>
+
 </includes>

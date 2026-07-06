@@ -1008,11 +1008,14 @@
 		<onclick condition="String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + !String.IsEmpty(ListItem.Property(id))">RunScript(plugin.video.embycon,0,?mode=TOGGLE_WATCHED&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 		<onclick condition="![String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + !String.IsEmpty(ListItem.Property(id))]">ToggleWatched</onclick>
 	</include>
+
 	<include name="SetPropertyOnFocus">
 		<control type="button">
 			<texturefocus></texturefocus>
 			<texturenofocus></texturenofocus>
+
 			<onfocus>ClearProperty(FocusBounce,home)</onfocus>
+
 			<onfocus condition="String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,season) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow)">SetProperty(ListItemDBID,$INFO[Container($PARAM[id]).ListItem.DBID],home)</onfocus>
 			<onfocus condition="String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,season) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) | String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow)">SetProperty(ListItemDBType,$INFO[Container($PARAM[id]).ListItem.DBType],home)</onfocus>
 			<onfocus condition="!String.IsEmpty(Container($PARAM[id]).ListItem.Year)">SetProperty(ListItemYear,$INFO[Container($PARAM[id]).ListItem.Year],home)</onfocus>
@@ -1020,13 +1023,33 @@
 			<onfocus condition="!String.IsEmpty(Container($PARAM[id]).ListItem.Title)">SetProperty(ListItemTitle,$ESCINFO[Container($PARAM[id]).ListItem.Title],home)</onfocus>
 			<onfocus condition="!String.IsEmpty(Container($PARAM[id]).ListItem.TvShowTitle)">SetProperty(ListItemTitle,$ESCINFO[Container($PARAM[id]).ListItem.TvShowTitle],home)</onfocus>
 
+			<!-- Additional focus properties for HDR fallback lookup -->
+			<onfocus condition="!String.IsEmpty(Container($PARAM[id]).ListItem.Label)">SetProperty(ListItemLabel,$ESCINFO[Container($PARAM[id]).ListItem.Label],home)</onfocus>
+			<onfocus condition="!String.IsEmpty(Container($PARAM[id]).ListItem.HdrType)">SetProperty(ListItemHdrType,$INFO[Container($PARAM[id]).ListItem.HdrType],home)</onfocus>
+			<onfocus condition="!String.IsEmpty(Container($PARAM[id]).ListItem.VideoResolution)">SetProperty(ListItemVideoResolution,$INFO[Container($PARAM[id]).ListItem.VideoResolution],home)</onfocus>
+			<onfocus condition="!String.IsEmpty(Container($PARAM[id]).ListItem.VideoCodec)">SetProperty(ListItemVideoCodec,$INFO[Container($PARAM[id]).ListItem.VideoCodec],home)</onfocus>
+
 			<onfocus condition="[!String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) + !String.IsEqual(Container($PARAM[id]).ListItem.DBType,season) + !String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) + !String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow)] | String.IsEqual(Container($PARAM[id]).ListItem.Label,$LOCALIZE[20366])">ClearProperty(ListItemDBID,home)</onfocus>
 			<onfocus condition="[!String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) + !String.IsEqual(Container($PARAM[id]).ListItem.DBType,season) + !String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) + !String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow)] | String.IsEqual(Container($PARAM[id]).ListItem.Label,$LOCALIZE[20366])">ClearProperty(ListItemDBType,home)</onfocus>
 			<onfocus condition="String.IsEmpty(Container($PARAM[id]).ListItem.Year)">ClearProperty(ListItemYear,home)</onfocus>
 			<onfocus condition="String.IsEmpty(Container($PARAM[id]).ListItem.Imdbnumber)">ClearProperty(ListItemImdbnumber,home)</onfocus>
 			<onfocus condition="String.IsEmpty(Container($PARAM[id]).ListItem.Title) + String.IsEmpty(Container($PARAM[id]).ListItem.TvShowTitle)">ClearProperty(ListItemTitle,home)</onfocus>
+
+			<onfocus condition="String.IsEmpty(Container($PARAM[id]).ListItem.Label)">ClearProperty(ListItemLabel,home)</onfocus>
+			<onfocus condition="String.IsEmpty(Container($PARAM[id]).ListItem.HdrType)">ClearProperty(ListItemHdrType,home)</onfocus>
+			<onfocus condition="String.IsEmpty(Container($PARAM[id]).ListItem.VideoResolution)">ClearProperty(ListItemVideoResolution,home)</onfocus>
+			<onfocus condition="String.IsEmpty(Container($PARAM[id]).ListItem.VideoCodec)">ClearProperty(ListItemVideoCodec,home)</onfocus>
+
+			<!-- Clear stale fallback for non-movie items -->
+			<onfocus condition="Window.IsVisible(myvideonav.xml) + !String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie)">ClearProperty(EmbuaryHDRFallback.HdrType,home)</onfocus>
+			<onfocus condition="Window.IsVisible(myvideonav.xml) + !String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie)">ClearProperty(EmbuaryHDRFallback.Source,home)</onfocus>
+			<onfocus condition="Window.IsVisible(myvideonav.xml) + !String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie)">ClearProperty(EmbuaryHDRFallback.Debug,home)</onfocus>
+
+			<!-- Run HDR DB fallback lookup for movie items -->
+			<onfocus condition="Window.IsVisible(myvideonav.xml) + String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie)">RunScript(special://skin/scripts/script.hdr_fallback_lookup.py)</onfocus>
 		</control>
 	</include>
+
 	<include name="PropertyIncludes">
 		<param name="ShowHeader">false</param>
 		<definition>
