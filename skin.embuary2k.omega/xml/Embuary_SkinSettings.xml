@@ -37,7 +37,7 @@
 		<control type="button" id="04">
     			<include>SettingsButton</include>
     			<label>$LOCALIZE[42007]</label>
-    			<selected>String.Equals(Skin.String(favourites_view),landscape)</selected>
+    			<selected>String.IsEqual(Skin.String(favourites_view),landscape)</selected>
     			<onclick>RunScript(special://skin/scripts/script.favourites.toggleview.py)</onclick>
     			<label2>$INFO[Skin.String(favourites_view_localized)]</label2>
 		</control>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
 	<onload>Dialog.Close(fullscreeninfo)</onload>
+	<onload>SetFocus(603)</onload>
 	<defaultcontrol always="true">603</defaultcontrol>
+	<onback>Dialog.Close(musicosd,true)</onback>
+	<onback>AlarmClock(ExitMusicFullscreen,Action(FullScreen),00:00,silent)</onback>
 	<include>PropertyIncludes</include>
 	<controls>
 		<!--Bottom-->
@@ -10,10 +13,13 @@
 			<control type="grouplist" id="600">
 				<orientation>horizontal</orientation>
 				<height>50</height>
-				<bottom>20</bottom>
-				<left>298</left>
-				<right>20</right>
+				<bottom>22</bottom>
+				<left>310</left>
+				<right>30</right>
 				<itemgap>5</itemgap>
+				<!-- Back exits music fullscreen instead of only closing this OSD dialog -->
+				<onback>Dialog.Close(musicosd,true)</onback>
+				<onback>AlarmClock(ExitMusicFullscreen,Action(FullScreen),00:00,silent)</onback>
 				<control type="button" id="601">
 					<include content="PlayerButtons">
 						<param name="type" value="previous"/>
@@ -33,7 +39,6 @@
 						<param name="alt" value="pause"/>
 					</include>
 					<selected>!Player.Paused + !Player.Forwarding + !Player.Rewinding + !Player.Seeking</selected>
-					<onclick condition="Player.Paused">close</onclick>
 					<onclick>PlayerControl(Play)</onclick>
 				</control>
 				<control type="button" id="604">
@@ -87,7 +92,7 @@
 					<onclick>Dialog.Close(all,true)</onclick>
 					<onclick condition="Integer.IsGreater(Playlist.Length(video),1) + !Integer.IsGreater(Playlist.Length(music),1)">ActivateWindow(videoplaylist)</onclick>
 					<onclick condition="!Integer.IsGreater(Playlist.Length(video),1) + Integer.IsGreater(Playlist.Length(music),1)">ActivateWindow(musicplaylist)</onclick>
-					<visible>Integer.IsGreater(Playlist.Length(music),1) | Integer.IsGreater(Playlist.Lenght(video),1)</visible>
+					<visible>Integer.IsGreater(Playlist.Length(music),1) | Integer.IsGreater(Playlist.Length(video),1)</visible>
 				</control>
 				<control type="button" id="613">
 					<include content="PlayerButtons">

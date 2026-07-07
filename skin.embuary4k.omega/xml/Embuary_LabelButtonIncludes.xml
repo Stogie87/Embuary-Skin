@@ -166,6 +166,27 @@
 			<texturenofocus />
 		</definition>
 	</include>
+
+	<include name="SettingsItemCommon">
+		<param name="height">50</param>
+		<param name="width">100%</param>
+		<param name="textoffsetx">20</param>
+		<definition>
+			<include content="DialogSettingsButton">
+				<param name="height" value="$PARAM[height]"/>
+				<param name="width" value="$PARAM[width]"/>
+				<param name="textoffsetx" value="$PARAM[textoffsetx]"/>
+			</include>
+		</definition>
+	</include>
+	<include name="DefSettingsButton">
+		<width>100%</width>
+		<height>20</height>
+		<lefttexture/>
+		<righttexture/>
+		<overlaytexture/>
+	</include>
+
 	<!-- Skin settings headline -->
 	<include name="SkinSettingsHeadlineLabel">
 		<param name="visible">true</param>

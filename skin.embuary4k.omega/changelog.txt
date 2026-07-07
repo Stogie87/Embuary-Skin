@@ -1,3 +1,10 @@
+[B]Version 21.1.11[/B]
+- Fixed missing playback buttons in Music OSD / Music Visualisation by Stogie87
+- Improved Music OSD focus, navigation and button behavior by Stogie87
+- Adjusted Music OSD layout to better match the Embuary skin by Stogie87
+- Added improved Dolby Vision MEL/FEL and source/output information in Player Process Info by Stogie87
+- Other small code fixes by Stogie87
+
 [B]Version 21.1.10[/B]
 - Added HDR flag fallback for Jellyfin Sonstige/Other libraries by Stogie87
 - Added local movie database lookup script for missing HDR streamdetails by Stogie87

@@ -141,7 +141,7 @@
 				<onclick condition="System.HasAddon(script.kodi.windows.update)">RunScript(script.kodi.windows.update)</onclick>
 				<onclick condition="System.HasAddon(script.kodi.android.update)">RunScript(script.kodi.android.update)</onclick>
 				<onclick condition="System.Platform.Windows + !System.HasAddon(script.kodi.windows.update)">InstallAddon(script.kodi.windows.update)</onclick>
-				<onclick condition="System.Platform.Android + !System.HasAddon(script.kodi.Android.update)">InstallAddon(script.kodi.android.update)</onclick>
+				<onclick condition="System.Platform.Android + !System.HasAddon(script.kodi.android.update)">InstallAddon(script.kodi.android.update)</onclick>
 				<visible>System.Platform.Android | System.Platform.Windows</visible>
 			</item>
 			<item>

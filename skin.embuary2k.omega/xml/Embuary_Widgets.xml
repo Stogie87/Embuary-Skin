@@ -724,7 +724,7 @@
 					<orientation>horizontal</orientation>
 					<preloaditems>4</preloaditems>
 					<movement>7</movement>
-					<ondown>$PARAM[ondown]</ondown>s
+					<ondown>$PARAM[ondown]</ondown>
 					<onright>SetProperty(BounceRight,1,home)</onright>
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>
@@ -839,7 +839,7 @@
 					<orientation>horizontal</orientation>
 					<preloaditems>4</preloaditems>
 					<movement>6</movement>
-					<ondown>$PARAM[ondown]</ondown>s
+					<ondown>$PARAM[ondown]</ondown>
 					<onright>SetProperty(BounceRight,1,home)</onright>
 					<include content="Bounce_Right">
 						<param name="id">$PARAM[id]</param>

@@ -1083,6 +1083,48 @@
 		<value condition="Integer.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)"></value>
 		<value condition="Integer.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),8)">.8</value>
 	</variable>
+
+	<variable name="DVCurrentProfileShortVar">
+		<value condition="String.Contains(Player.Process(video.dovi.profile),4)">DV P4$VAR[DVProfileExtVar]</value>
+		<value condition="String.Contains(Player.Process(video.dovi.profile),5)">DV P5$VAR[DVProfileExtVar]</value>
+		<value condition="String.Contains(Player.Process(video.dovi.profile),7)">DV P7$VAR[DVProfileExtVar]</value>
+		<value condition="String.Contains(Player.Process(video.dovi.profile),8)">DV P8$VAR[DVProfileExtVar]</value>
+	</variable>
+	<variable name="DVSourceProfileShortVar">
+		<value condition="String.Contains(Player.Process(video.source.dovi.profile),4)">DV P4</value>
+		<value condition="String.Contains(Player.Process(video.source.dovi.profile),5)">DV P5</value>
+		<value condition="String.Contains(Player.Process(video.source.dovi.profile),7)">DV P7</value>
+		<value condition="String.Contains(Player.Process(video.source.dovi.profile),8)">DV P8</value>
+	</variable>
+	<variable name="DVELShortVar">
+		<value condition="String.Contains(Player.Process(video.dovi.el.type),minimum)">MEL</value>
+		<value condition="String.Contains(Player.Process(video.dovi.el.type),full)">FEL</value>
+		<value condition="String.IsEqual(Player.Process(video.dovi.el.type),none)">no EL</value>
+	</variable>
+	<variable name="DVSourceELShortVar">
+		<value condition="String.Contains(Player.Process(video.source.dovi.el.type),minimum)">MEL</value>
+		<value condition="String.Contains(Player.Process(video.source.dovi.el.type),full)">FEL</value>
+		<value condition="String.IsEqual(Player.Process(video.source.dovi.el.type),none)">no EL</value>
+	</variable>
+	<variable name="DVProfileDetailVar">
+		<value condition="!String.IsEqual(Player.Process(video.source.dovi.profile),0) + !String.IsEqual(Player.Process(video.source.dovi.profile),Player.Process(video.dovi.profile))">$VAR[DVCurrentProfileShortVar] [COLOR dialog_fg_70](source: $VAR[DVSourceProfileShortVar])[/COLOR]</value>
+		<value>$VAR[DVCurrentProfileShortVar]</value>
+	</variable>
+	<variable name="DVELCompareVar">
+		<value condition="!String.IsEqual(Player.Process(video.source.dovi.profile),0) + !String.IsEqual(Player.Process(video.source.dovi.el.type),Player.Process(video.dovi.el.type))"> [COLOR dialog_fg_70](source: $VAR[DVSourceELShortVar])[/COLOR]</value>
+	</variable>
+	<variable name="DVELDetailVar">
+		<value>$VAR[DVELShortVar]$VAR[DVELCompareVar]</value>
+	</variable>
+	<variable name="DVELPresentDetailVar">
+		<value condition="!String.IsEqual(Player.Process(video.source.dovi.profile),0) + !String.IsEqual(Player.Process(video.source.dovi.el.present),Player.Process(video.dovi.el.present))">$VAR[ELPresentVar] [COLOR dialog_fg_70](source: $VAR[ELSourcePresentVar])[/COLOR]</value>
+		<value>$VAR[ELPresentVar]</value>
+	</variable>
+	<variable name="DVHDRSummaryVar">
+		<value condition="String.IsEqual(Player.Process(video.dovi.has.config),1)">$INFO[Player.Process(video.source.hdr.type)] $VAR[DVCurrentProfileShortVar] $VAR[DVELShortVar] $VAR[VideoConvVar]</value>
+		<value>$INFO[Player.Process(video.source.hdr.type)]</value>
+	</variable>
+
 	<variable name="DVELVar">
 		<value condition="String.Contains(Player.Process(video.dovi.el.type),minimum)">[COLOR orange] MEL[/COLOR]</value>
 		<value condition="String.Contains(Player.Process(video.dovi.el.type),full)">[COLOR palegreen] FEL[/COLOR]</value>

@@ -151,7 +151,7 @@
 			<left>8</left>
 			<top>9</top>
 			<height>30</height>
-			<control type="image">>
+			<control type="image">
 				<texture>items/hdr_overlay.png</texture>
 				<aspectratio align="left" aligny="top">keep</aspectratio>
 			</control>

@@ -14,7 +14,7 @@
 			<param name="visible">Player.Caching | !String.IsEmpty(PVR.ChannelNumberInput)</param>
 			<param name="colordiffuse" value="AA000000"/>
 			<param name="id" value="99"/>
-		</include>1
+		</include>
 		<!-- busy spinner -->
 		<control type="group" id="99">
 			<visible>Player.Caching + !Window.IsVisible(busydialog)</visible>
@@ -528,7 +528,7 @@
                 <param name="groupId">70</param>
                 <param name="imageId">71</param>
                 <param name="visible">String.Contains(Player.Process(amlogic.vs10.mode),HLG)</param>
-                <param name="texture">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HLG.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
@@ -859,7 +859,7 @@
                 <param name="groupId">70</param>
                 <param name="imageId">71</param>
                 <param name="visible">String.Contains(Player.Process(amlogic.vs10.mode),HLG)</param>
-                <param name="texture">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HLG.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			
@@ -1190,7 +1190,7 @@
                 <param name="groupId">70</param>
                 <param name="imageId">71</param>
                 <param name="visible">String.Contains(Player.Process(amlogic.vs10.mode),HLG)</param>
-                <param name="texture">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HLG.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
 			

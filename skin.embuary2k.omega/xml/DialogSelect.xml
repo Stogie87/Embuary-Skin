@@ -212,7 +212,7 @@
 							<onup>noop</onup>
 							<onleft>200</onleft>
 							<onright condition="Integer.IsGreater(Container(6).NumItems,6)">60</onright>
-							<onright condition="!Integer.IsGreater(Numitems,6)">200</onright>
+							<onright condition="!Integer.IsGreater(Container(6).NumItems,6)">200</onright>
 							<ondown>200</ondown>
 							<pagecontrol>60</pagecontrol>
 							<scrolltime>200</scrolltime>

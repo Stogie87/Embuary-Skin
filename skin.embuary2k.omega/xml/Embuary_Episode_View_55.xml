@@ -102,7 +102,7 @@
 									<visible>!String.IsEmpty(ListItem.Plot)</visible>
 									<label>$LOCALIZE[207]</label>
 									<property name="icon">&#xf9a9;</property>
-									<onclick>RunScript(script.embuary.helper,action=textviewer,header='$ESCINFO[ListItem.TVShowTitle]',message='$ESCVAR[TinyInfoDialogPlot]')</onclick>>
+									<onclick>RunScript(script.embuary.helper,action=textviewer,header='$ESCINFO[ListItem.TVShowTitle]',message='$ESCVAR[TinyInfoDialogPlot]')</onclick>
 								</item>
 								<item>
 									<label>$LOCALIZE[16101]</label>

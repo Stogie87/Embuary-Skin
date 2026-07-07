@@ -321,7 +321,7 @@
 					<include content="ContextButton"/>
 					<label>VS10 SDR</label>
 					<selected>Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),3)</selected>
-					<onclick>Action(vs10.sdr)</onclick>#
+					<onclick>Action(vs10.sdr)</onclick>
 					<onclick>close</onclick>
 				</control>
 				<control type="button" id="903">

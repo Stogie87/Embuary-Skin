@@ -211,12 +211,14 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>320</left>
-                    <top>67</top>
-                    <label>$INFO[Player.Process(video.source.hdr.type)] $VAR[DVProfileVar]$VAR[DVELVar]$VAR[VideoConvVar]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
+		    <left>320</left>
+		    <top>67</top>
+		    <width>650</width>
+		    <label>$VAR[DVHDRSummaryVar]</label>
+		    <font>font_tiny</font>
+		    <textcolor>dialog_fg_90</textcolor>
+		    <scroll>true</scroll>
+		</control>				
                 
                 <control type="label">
                     <top>107</top>
@@ -746,12 +748,14 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>453</left>
-                    <top>67</top>
-                    <label>$INFO[Player.Process(video.dovi.profile)]$INFO[Player.Process(video.dovi.bl.signal.compatibility),.]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
+		    <left>453</left>
+		    <top>67</top>
+		    <width>350</width>
+		    <label>$VAR[DVProfileDetailVar]</label>
+		    <font>font_tiny</font>
+		    <textcolor>dialog_fg_90</textcolor>
+		    <scroll>true</scroll>
+		</control>				
                 
                 <control type="label">
                     <top>107</top>
@@ -812,21 +816,13 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>455</left>
-                    <top>227</top>
-                    <label>$VAR[ELPresentVar]</label>
-                    <font>font_tiny_iconic</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>
-                <control type="label">
-                    <left>547</left>
-                    <top>227</top>
-                    <label>$VAR[ELSourcePresentVar]</label>
-                    <font>font_tiny_iconic</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                    <visible>!String.IsEqual(Player.Process(video.source.dovi.el.present),Player.Process(video.dovi.el.present))</visible>
-                    <visible>!String.IsEqual(Player.Process(video.source.dovi.profile),0)</visible>
-                </control>				
+		    <left>455</left>
+		    <top>227</top>
+		    <width>260</width>
+		    <label>$VAR[DVELPresentDetailVar]</label>
+		    <font>font_tiny_iconic</font>
+		    <textcolor>dialog_fg_90</textcolor>
+		</control>				
                 
                 <control type="label">
                     <top>267</top>
@@ -835,30 +831,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>447</left>
-                    <top>267</top>
-                    <label>$VAR[DVELVar]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>
-                <control type="label">
-                    <left>455</left>
-                    <top>267</top>
-                    <label>$VAR[DVELVar1]</label>
-                    <font>font_tiny_iconic</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                    <visible>!String.Contains(Player.Process(video.dovi.el.type),minimum)</visible>
-                    <visible>!String.Contains(Player.Process(video.dovi.el.type),full)</visible>
-                </control>
-                <control type="label">
-                    <left>547</left>
-                    <top>267</top>
-                    <label>$VAR[ELSourcePresentVar]</label>
-                    <font>font_tiny_iconic</font>
-                    <visible>!String.IsEqual(Player.Process(video.source.dovi.el.type),Player.Process(video.dovi.el.type))</visible>
-                    <visible>!String.IsEqual(Player.Process(video.source.dovi.profile),0)</visible>
-                </control>
-            </control>
+		    <left>447</left>
+		    <top>267</top>
+		    <width>360</width>
+		    <label>$VAR[DVELDetailVar]</label>
+		    <font>font_tiny</font>
+		    <textcolor>dialog_fg_90</textcolor>
+		    <scroll>true</scroll>
+		</control>
+		</control>
             
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.dovi.has.header),1)</visible>
