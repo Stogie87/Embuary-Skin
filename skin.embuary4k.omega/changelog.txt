@@ -1,10 +1,11 @@
-[B]Version 21.1.14[/B]
+[B]Version 21.1.15[/B]
+- Added Embuary-style SDR flag logo by Stogie87
 
+[B]Version 21.1.14[/B]
 - Added SDR flag fallback for missing HDR metadata by Stogie87
 - Improved HDR/SDR flag visibility across multiple views by Stogie87
 
 [B]Version 21.1.13[/B]
-
 - Added HDR flag support for Jellyfin Other/Sonstige libraries by Stogie87
 - Improved per-item HDR detection for Jellyfin plugin content by Stogie87
 - Updated HDR flag handling across multiple views by Stogie87
