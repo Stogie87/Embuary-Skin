@@ -139,7 +139,7 @@ v3.0.0 (2024-04-17)
   </extension>
 </addon>
 
-<addon id="plugin.video.jellyfin" name="Jellyfin" version="2.1.1" provider-name="Jellyfin Contributors; Stogie87">
+<addon id="plugin.video.jellyfin" name="Jellyfin" version="2.1.1" provider-name="Jellyfin Contributors, Stogie87">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" version="2.22.0+matrix.1" />
