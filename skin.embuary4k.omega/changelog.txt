@@ -1,5 +1,5 @@
 [B]Version 21.1.15[/B]
-- Added Embuary-style SDR flag logo by Stogie87
+- Added Estuary-style SDR flag logo by Stogie87
 
 [B]Version 21.1.14[/B]
 - Added SDR flag fallback for missing HDR metadata by Stogie87
