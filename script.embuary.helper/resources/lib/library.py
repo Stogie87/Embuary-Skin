@@ -96,6 +96,12 @@ def handle_movies(li, item, searchstring=None):
                 video_detail.setDuration(stream.get('duration', 0))
                 video_detail.setStereoMode(stream.get('stereo_mode', ''))
                 video_detail.setAspect(stream.get('aspect', 0))
+                hdr_type = stream.get('hdrtype') or stream.get('hdrType') or stream.get('hdr_type') or ''
+                if hdr_type:
+                    try:
+                        video_detail.setHDRType(hdr_type)
+                    except AttributeError:
+                        pass
                 info_tag.addVideoStream(video_detail)
             elif key == "audio":
                 audio_detail = xbmc.AudioStreamDetail()
@@ -305,6 +311,12 @@ def handle_episodes(li, item):
                 video_detail.setDuration(stream.get('duration', 0))
                 video_detail.setStereoMode(stream.get('stereo_mode', ''))
                 video_detail.setAspect(stream.get('aspect', 0))
+                hdr_type = stream.get('hdrtype') or stream.get('hdrType') or stream.get('hdr_type') or ''
+                if hdr_type:
+                    try:
+                        video_detail.setHDRType(hdr_type)
+                    except AttributeError:
+                        pass
                 info_tag.addVideoStream(video_detail)
             elif key == "audio":
                 audio_detail = xbmc.AudioStreamDetail()

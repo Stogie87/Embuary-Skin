@@ -384,7 +384,7 @@ CI &amp; build changes
     </extension>
 </addon>
 
-<addon id="script.embuary.helper" name="Embuary Helper" version="2.0.11" provider-name="sualfred, Stogie">
+<addon id="script.embuary.helper" name="Embuary Helper" version="2.0.12" provider-name="sualfred, Stogie">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.pil" version="1.1.7"/>
