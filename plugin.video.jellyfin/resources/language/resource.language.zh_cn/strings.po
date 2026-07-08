@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Jellyfin for Kodi\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2025-06-14 16:01+0000\n"
-"Last-Translator: 無情天 <kofzhanganguo@126.com>\n"
+"PO-Revision-Date: 2026-07-03 03:37+0000\n"
+"Last-Translator: wabisabi926 <wabisabi926@foxmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://"
 "translate.jellyfin.org/projects/jellyfin/jellyfin-kodi/zh_Hans/>\n"
 "Language: zh_cn\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11.4\n"
+"X-Generator: Weblate 5.15.1\n"
 
 msgctxt "#29999"
 msgid "Jellyfin for Kodi"
-msgstr "Kodi版Jellyfin插件"
+msgstr "Kodi 版 Jellyfin 插件"
 
 msgctxt "#30000"
 msgid "Server address"
@@ -71,7 +71,7 @@ msgstr "关于电影"
 
 msgctxt "#30157"
 msgid "Enable enhanced artwork (i.e. cover art)"
-msgstr "启用增强型艺术作品（即封面艺术照）"
+msgstr "启用增强型艺术作品（如封面艺术照）"
 
 msgctxt "#30160"
 msgid "Video quality"
@@ -95,27 +95,27 @@ msgstr "新增剧集"
 
 msgctxt "#30177"
 msgid "In Progress Movies"
-msgstr "正在进行的电影"
+msgstr "正在观看的电影"
 
 msgctxt "#30178"
 msgid "In Progress Episodes"
-msgstr "正在进行的剧集"
+msgstr "正在观看的剧集"
 
 msgctxt "#30179"
 msgid "Next Episodes"
-msgstr "下一个剧集"
+msgstr "下一集"
 
 msgctxt "#30180"
 msgid "Favorite Movies"
-msgstr "最爱的电影"
+msgstr "收藏的电影"
 
 msgctxt "#30181"
 msgid "Favorite Shows"
-msgstr "最爱的节目"
+msgstr "收藏的节目"
 
 msgctxt "#30182"
 msgid "Favorite Episodes"
-msgstr "最爱的剧集"
+msgstr "收藏的剧集"
 
 msgctxt "#30185"
 msgid "Boxsets"
@@ -123,7 +123,7 @@ msgstr "合集"
 
 msgctxt "#30189"
 msgid "Unwatched Movies"
-msgstr "未观看的影片"
+msgstr "未观看的电影"
 
 msgctxt "#30229"
 msgid "Random Items"
@@ -131,11 +131,11 @@ msgstr "随机播放"
 
 msgctxt "#30230"
 msgid "Recommended Items"
-msgstr "推荐"
+msgstr "推荐内容"
 
 msgctxt "#30235"
 msgid "Interface"
-msgstr "接口"
+msgstr "界面"
 
 msgctxt "#30239"
 msgid "Reset local Kodi database"
@@ -155,27 +155,27 @@ msgstr "最近添加的照片"
 
 msgctxt "#30253"
 msgid "Favourite Home Videos"
-msgstr "最喜欢的家庭视频"
+msgstr "收藏的家庭视频"
 
 msgctxt "#30254"
 msgid "Favourite Photos"
-msgstr "最喜欢的照片"
+msgstr "收藏的照片"
 
 msgctxt "#30255"
 msgid "Favourite Albums"
-msgstr "最喜欢的相册"
+msgstr "收藏的相册"
 
 msgctxt "#30256"
 msgid "Recently added Music videos"
-msgstr "最近添加的MTV"
+msgstr "最近添加的 MV"
 
 msgctxt "#30257"
 msgid "In progress Music videos"
-msgstr "正在播放的MTV"
+msgstr "正在观看的 MV"
 
 msgctxt "#30258"
 msgid "Unwatched Music videos"
-msgstr "未观看的MTV"
+msgstr "未观看的 MV"
 
 msgctxt "#30302"
 msgid "Movies"
@@ -187,7 +187,7 @@ msgstr "电视剧"
 
 msgctxt "#30401"
 msgid "Jellyfin options"
-msgstr "Jellyfin 选项"
+msgstr "Jellyfin 设置"
 
 msgctxt "#30402"
 msgid "Jellyfin transcode"
@@ -243,7 +243,7 @@ msgstr "播放模式"
 
 msgctxt "#30512"
 msgid "Enable artwork caching"
-msgstr "启用封面缓存"
+msgstr "启用艺术图缓存"
 
 msgctxt "#30515"
 msgid "Paging - max items requested (default: 15)"
@@ -271,7 +271,7 @@ msgstr "跳过删除确认（使用风险自担）"
 
 msgctxt "#30521"
 msgid "Jump back on resume (in seconds)"
-msgstr "继续播放时回跳 (秒)"
+msgstr "恢复播放时回退（秒）"
 
 msgctxt "#30522"
 msgid "Transcode H265/HEVC"
@@ -287,11 +287,11 @@ msgstr "永久用户"
 
 msgctxt "#30529"
 msgid "Startup delay (in seconds)"
-msgstr "启动延迟（以秒为单位）"
+msgstr "启动延迟 （秒）"
 
 msgctxt "#30530"
 msgid "Enable server restart message"
-msgstr "启用服务器重新启动消息"
+msgstr "启用服务器重启提示"
 
 msgctxt "#30531"
 msgid "Enable new content"
@@ -299,15 +299,15 @@ msgstr "启用新内容"
 
 msgctxt "#30532"
 msgid "Duration of the video library pop up"
-msgstr "视频库弹出的持续时间"
+msgstr "视频库弹窗显示时长"
 
 msgctxt "#30533"
 msgid "Duration of the music library pop up"
-msgstr "音乐库弹出的持续时间"
+msgstr "音乐库弹窗显示时长"
 
 msgctxt "#30534"
 msgid "Notifications (in seconds)"
-msgstr "通知（以秒为单位）"
+msgstr "通知（秒）"
 
 msgctxt "#30535"
 msgid "Generate a new device Id"
@@ -347,7 +347,7 @@ msgstr "密码"
 
 msgctxt "#30605"
 msgid "Sign in"
-msgstr "登入"
+msgstr "登录"
 
 msgctxt "#30606"
 msgid "Cancel"
@@ -375,7 +375,7 @@ msgstr "手动添加服务器"
 
 msgctxt "#30612"
 msgid "Please sign in"
-msgstr "请登录"
+msgstr "请先登录"
 
 msgctxt "#30613"
 msgid "Change Jellyfin Connect user"
@@ -443,7 +443,9 @@ msgstr "已生成新设备 ID。Kodi 现在将重新启动。"
 
 msgctxt "#33035"
 msgid "Caution! If you choose Native mode, certain Jellyfin features will be missing, such as: Jellyfin cinema mode, direct stream/transcode options and parental access schedule."
-msgstr "谨慎！如果选择本机模式，某些 Jellyfin 功能将丢失，例如：Jellyfin影院模式、直接流/转码选项和家长访问计划。"
+msgstr ""
+"谨慎！如果选择原生模式，某些 Jellyfin 功能将丢失，例如：Jellyfin 影院模式、直"
+"接流/转码选项和家长访问计划。"
 
 msgctxt "#33036"
 msgid "Add-on (default)"
@@ -451,7 +453,7 @@ msgstr "插件模式（默认）"
 
 msgctxt "#33037"
 msgid "Native (direct paths)"
-msgstr "原生（直接路径）"
+msgstr "原生模式（直接路径）"
 
 msgctxt "#33039"
 msgid "Enable music library?"
@@ -503,7 +505,7 @@ msgstr "是否确认删除本地 Kodi 数据库？"
 
 msgctxt "#33086"
 msgid "Remove all cached artwork?"
-msgstr "是否删除缓存的图片？"
+msgstr "是否删除缓存的艺术图？"
 
 msgctxt "#33087"
 msgid "Reset all Jellyfin add-on settings?"
@@ -543,11 +545,13 @@ msgstr "刷新合集"
 
 msgctxt "#33099"
 msgid "Install the server plugin Kodi Sync Queue to automatically apply Jellyfin library updates at startup. This setting can be found in the add-on settings > sync options > Enable Kodi Sync Queue."
-msgstr "安装服务器插件Kodi 同步 自动应用Jellyfin 库更新启动。此设置可在加载项设置 > 同步选项 > 启用 Kodi 助手中找到。"
+msgstr ""
+"安装服务端插件「Kodi 同步队列（Kodi Sync Queue）」，即可在启动时自动同步 "
+"Jellyfin 媒体库更新。该开关路径：插件设置 → 同步选项 → 启用 Kodi 同步队列。"
 
 msgctxt "#33101"
 msgid "Since you are using native playback mode with music enabled, do you want to import music rating from files?"
-msgstr "由于您使用的是启用音乐的本机播放模式，是否要从文件导入音乐分级？"
+msgstr "由于您使用的是启用音乐的本机播放模式，是否需要从媒体文件导入音乐评分？"
 
 msgctxt "#33102"
 msgid "Resume the previous sync?"
@@ -567,7 +571,7 @@ msgstr "启用转码选项"
 
 msgctxt "#33107"
 msgid "Users added to the session (no space between users). (eg username,username2)"
-msgstr "添加到会话的用户（用户之间没有空格）。（例如用户名，用户名2）"
+msgstr "添加到会话的用户（用户之间没有空格）。（例如用户名，用户名 2）"
 
 msgctxt "#33108"
 msgid "Notifications are delayed during video playback (except live tv)."
@@ -603,16 +607,17 @@ msgstr "调整远程连接"
 
 msgctxt "#33116"
 msgid "Compress artwork (reduces quality)"
-msgstr "压缩图稿（降低质量）"
+msgstr "压缩艺术图（降低质量）"
 
 msgctxt "#33118"
-msgid "You've change the playback mode. Kodi needs to be reset to apply the change, would you like to do this now?"
+msgid "You've changed the playback mode. Kodi needs to be reset to apply the change, would you like to do this now?"
 msgstr "您已更改播放模式。Kodi 需要重置以应用更改，是否要立即执行此操作？"
 
 msgctxt "#33119"
 msgid "Something went wrong during the sync. You'll be able to restore progress when restarting Kodi. If the problem persists, please report on the Jellyfin for Kodi forums, with your Kodi log."
 msgstr ""
-"同步过程中出现问题。重新启动 Kodi 时，您将能够恢复进度。如果问题仍然存在，请在Kodi论坛的Jellyfin上报告，并附上您的 Kodi 日志。"
+"同步过程中出现问题。重新启动 Kodi 时，您将能够恢复进度。如果问题仍然存在，请"
+"在 Kodi 论坛的 Jellyfin 上报告，并附上您的 Kodi 日志。"
 
 msgctxt "#33120"
 msgid "Select the libraries to add"
@@ -657,7 +662,7 @@ msgstr "修复媒体库"
 
 msgctxt "#33133"
 msgid "Remove library from Kodi"
-msgstr "从Kodi中移除库"
+msgstr "从 Kodi 中移除库"
 
 msgctxt "#33134"
 msgid "Add server"
@@ -705,15 +710,17 @@ msgstr "正在移除媒体库"
 
 msgctxt "#33145"
 msgid "Please make sure your Samba (smb) share of your Jellyfin server is accessible to your Kodi installation and that you have path substitution configured on your server. Otherwise, Kodi may fail to locate your files."
-msgstr "请保证Jellyfin服务器的Samba共享可以在Kodi的安装位置访问，并且已在服务器上配置路径替换。否则，Kodi可能无法定位你的文件。"
+msgstr ""
+"请保证 Jellyfin 服务器的 Samba 共享可以在 Kodi 的安装位置访问，并且已在服务器"
+"上配置路径替换。否则，Kodi 可能无法定位你的文件。"
 
 msgctxt "#33146"
 msgid "Unable to connect to Jellyfin."
-msgstr "无法连接到Jellyfin服务器。"
+msgstr "无法连接到 Jellyfin 服务器。"
 
 msgctxt "#33147"
 msgid "Your access to Jellyfin is restricted."
-msgstr "您对Jellyfin服务器的访问受限。"
+msgstr "您对 Jellyfin 服务器的访问受限。"
 
 msgctxt "#33148"
 msgid "Your access to this server is restricted."
@@ -745,7 +752,9 @@ msgstr "添加媒体库"
 
 msgctxt "#33155"
 msgid "The currently applied patch for Jellyfin for Kodi is corrupted! Please post to the Jellyfin for Kodi forums if this issue persists. This will need to be fixed as soon as possible."
-msgstr "当前Kodi中应用的Jellyfin更新已损坏！如果一直存在这一问题，请到Jellyfin for Kodi论坛发帖。这需要被尽快修复。"
+msgstr ""
+"当前 Jellyfin for Kodi 所用补丁已损坏！若问题持续，请前往 Jellyfin for Kodi "
+"官方论坛发帖反馈，该问题需尽快修复。"
 
 msgctxt "#33156"
 msgid "A patch has been applied!"
@@ -793,7 +802,7 @@ msgstr "最喜欢的"
 
 msgctxt "#33169"
 msgid "In Progress"
-msgstr "正在播放"
+msgstr "正在观看"
 
 msgctxt "#33170"
 msgid "Unwatched"
@@ -905,7 +914,7 @@ msgstr "更新密码"
 
 msgctxt "#33201"
 msgid "Max artwork resolution"
-msgstr "最大艺术作品分辨率"
+msgstr "最大艺术图分辨率"
 
 msgctxt "#33115"
 msgid "Transcode options"
@@ -949,11 +958,11 @@ msgstr "已禁用/媒体默认值"
 
 msgctxt "#30526"
 msgid "Transcode AV1"
-msgstr "转码AV1"
+msgstr "转码 AV1"
 
 msgctxt "#30525"
 msgid "Transcode VP9"
-msgstr "转码VP9"
+msgstr "转码 VP9"
 
 msgctxt "#33202"
 msgid "Transcode H265/HEVC RExt"
@@ -986,3 +995,239 @@ msgstr "本地路径"
 msgctxt "#30538"
 msgid "Max days in next episodes"
 msgstr "下一集的最长天数"
+
+msgctxt "#33208"
+msgid "360"
+msgstr "360"
+
+msgctxt "#33209"
+msgid "480"
+msgstr "480"
+
+msgctxt "#33210"
+msgid "600"
+msgstr "600"
+
+msgctxt "#33211"
+msgid "720"
+msgstr "720"
+
+msgctxt "#33212"
+msgid "1080"
+msgstr "1080"
+
+msgctxt "#33213"
+msgid "Unlimited [default]"
+msgstr "无限制 [默认]"
+
+msgctxt "#33214"
+msgid "0.5 Mbps"
+msgstr "0.5 Mbps"
+
+msgctxt "#33215"
+msgid "1.0 Mbps"
+msgstr "1.0 Mbps"
+
+msgctxt "#33216"
+msgid "1.5 Mbps"
+msgstr "1.5 Mbps"
+
+msgctxt "#33217"
+msgid "2.0 Mbps"
+msgstr "2.0 Mbps"
+
+msgctxt "#33218"
+msgid "2.5 Mbps"
+msgstr "2.5 Mbps"
+
+msgctxt "#33219"
+msgid "3.0 Mbps"
+msgstr "3.0 Mbps"
+
+msgctxt "#33220"
+msgid "4.0 Mbps"
+msgstr "4.0 Mbps"
+
+msgctxt "#33221"
+msgid "5.0 Mbps"
+msgstr "5.0 Mbps"
+
+msgctxt "#33222"
+msgid "6.0 Mbps"
+msgstr "6.0 Mbps"
+
+msgctxt "#33223"
+msgid "7.0 Mbps"
+msgstr "7.0 Mbps"
+
+msgctxt "#33224"
+msgid "8.0 Mbps"
+msgstr "8.0 Mbps"
+
+msgctxt "#33225"
+msgid "9.0 Mbps"
+msgstr "9.0 Mbps"
+
+msgctxt "#33227"
+msgid "12.0 Mbps"
+msgstr "12.0 Mbps"
+
+msgctxt "#33228"
+msgid "14.0 Mbps"
+msgstr "14.0 Mbps"
+
+msgctxt "#33229"
+msgid "16.0 Mbps"
+msgstr "16.0 Mbps"
+
+msgctxt "#33230"
+msgid "18.0 Mbps"
+msgstr "18.0 Mbps"
+
+msgctxt "#33231"
+msgid "20.0 Mbps"
+msgstr "20.0 Mbps"
+
+msgctxt "#33232"
+msgid "25.0 Mbps"
+msgstr "25.0 Mbps"
+
+msgctxt "#33233"
+msgid "30.0 Mbps"
+msgstr "30.0 Mbps"
+
+msgctxt "#33234"
+msgid "35.0 Mbps"
+msgstr "35.0 Mbps"
+
+msgctxt "#33235"
+msgid "40.0 Mbps"
+msgstr "40.0 Mbps"
+
+msgctxt "#33236"
+msgid "100.0 Mbps"
+msgstr "100.0 Mbps"
+
+msgctxt "#33237"
+msgid "1000.0 Mbps [default]"
+msgstr "1000.0 Mbps [默认]"
+
+msgctxt "#33238"
+msgid "Maximum"
+msgstr "最大"
+
+msgctxt "#33239"
+msgid "96"
+msgstr "96"
+
+msgctxt "#33240"
+msgid "128"
+msgstr "128"
+
+msgctxt "#33241"
+msgid "160"
+msgstr "160"
+
+msgctxt "#33242"
+msgid "192"
+msgstr "192"
+
+msgctxt "#33243"
+msgid "256"
+msgstr "256"
+
+msgctxt "#33244"
+msgid "320"
+msgstr "320"
+
+msgctxt "#33245"
+msgid "384"
+msgstr "384"
+
+msgctxt "#33226"
+msgid "10.0 Mbps"
+msgstr "10.0 Mbps"
+
+msgctxt "#30618"
+msgid "Quick Connect"
+msgstr "快速连接"
+
+msgctxt "#30619"
+msgid "Enter this code in the Jellyfin app or web interface:"
+msgstr "在 Jellyfin 应用程序或 Web 界面中输入此代码："
+
+msgctxt "#30620"
+msgid "Waiting for authorization..."
+msgstr "正在等待授权..."
+
+msgctxt "#30621"
+msgid "Quick Connect is not available on this server"
+msgstr "快速连接在该服务器上不可用"
+
+msgctxt "#30622"
+msgid "Quick Connect timed out. Please try again."
+msgstr "快速连接超时，请重试。"
+
+msgctxt "#33246"
+msgid "Segment Skipping"
+msgstr "片段跳过"
+
+msgctxt "#33247"
+msgid "Enable segment skipping"
+msgstr "启用片段跳过"
+
+msgctxt "#33248"
+msgid "Skip mode"
+msgstr "跳过模式"
+
+msgctxt "#33249"
+msgid "Auto skip"
+msgstr "自动跳过"
+
+msgctxt "#33250"
+msgid "Show skip button"
+msgstr "显示跳过按钮"
+
+msgctxt "#33251"
+msgid "Ask every time"
+msgstr "每次都询问"
+
+msgctxt "#33252"
+msgid "Introduction"
+msgstr "片头"
+
+msgctxt "#33253"
+msgid "Credits"
+msgstr "片尾"
+
+msgctxt "#33254"
+msgid "Recap"
+msgstr "前情提要"
+
+msgctxt "#33255"
+msgid "Preview"
+msgstr "预告"
+
+msgctxt "#33256"
+msgid "Skip"
+msgstr "跳过"
+
+msgctxt "#33257"
+msgid "Skip intro?"
+msgstr "跳过片头？"
+
+msgctxt "#33258"
+msgid "Skip credits?"
+msgstr "跳过片尾？"
+
+msgctxt "#33259"
+msgid "Commercial"
+msgstr "广告"
+
+msgctxt "#33260"
+msgid "Press SELECT to skip"
+msgstr "按「选择」键跳过"
+
+msgctxt "#33261"
+msgid "Off"
+msgstr "关闭"

@@ -1598,32 +1598,32 @@
         <control type="image">
             <texture>flags/colorful/hdr_type/dolbyvision.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,dolbyvision)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,dolbyvision) | String.IsEqual(ListItem.Property(hdrtype),dolbyvision) | String.IsEqual(ListItem.Property(HdrType),dolbyvision) | String.IsEqual(ListItem.Property(hdr_type),dolbyvision)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/hdr_type/hdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr) | String.IsEqual(ListItem.Property(hdrtype),hdr) | String.IsEqual(ListItem.Property(HdrType),hdr) | String.IsEqual(ListItem.Property(hdr_type),hdr)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/hdr_type/hdr10.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr10)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10) | String.IsEqual(ListItem.Property(hdrtype),hdr10) | String.IsEqual(ListItem.Property(HdrType),hdr10) | String.IsEqual(ListItem.Property(hdr_type),hdr10)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/hdr_type/hdr10plus.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr10plus)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10plus) | String.IsEqual(ListItem.Property(hdrtype),hdr10plus) | String.IsEqual(ListItem.Property(HdrType),hdr10plus) | String.IsEqual(ListItem.Property(hdr_type),hdr10plus)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/hdr_type/hlg.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hlg)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hlg) | String.IsEqual(ListItem.Property(hdrtype),hlg) | String.IsEqual(ListItem.Property(HdrType),hlg) | String.IsEqual(ListItem.Property(hdr_type),hlg)</visible>
         </control>
         <control type="image">
             <texture>flags/colorful/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr)</visible>
         </control>
     </control>
   </include>
@@ -3047,32 +3047,32 @@
         <control type="image">
             <texture>flags/estuary/hdr_type/dolbyvision.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,dolbyvision)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,dolbyvision) | String.IsEqual(ListItem.Property(hdrtype),dolbyvision) | String.IsEqual(ListItem.Property(HdrType),dolbyvision) | String.IsEqual(ListItem.Property(hdr_type),dolbyvision)</visible>
         </control>
         <control type="image">
             <texture>flags/estuary/hdr_type/hdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr) | String.IsEqual(ListItem.Property(hdrtype),hdr) | String.IsEqual(ListItem.Property(HdrType),hdr) | String.IsEqual(ListItem.Property(hdr_type),hdr)</visible>
         </control>
         <control type="image">
             <texture>flags/estuary/hdr_type/hdr10.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr10)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10) | String.IsEqual(ListItem.Property(hdrtype),hdr10) | String.IsEqual(ListItem.Property(HdrType),hdr10) | String.IsEqual(ListItem.Property(hdr_type),hdr10)</visible>
         </control>
         <control type="image">
             <texture>flags/estuary/hdr_type/hdr10plus.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr10plus)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10plus) | String.IsEqual(ListItem.Property(hdrtype),hdr10plus) | String.IsEqual(ListItem.Property(HdrType),hdr10plus) | String.IsEqual(ListItem.Property(hdr_type),hdr10plus)</visible>
         </control>
         <control type="image">
             <texture>flags/estuary/hdr_type/hlg.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hlg)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hlg) | String.IsEqual(ListItem.Property(hdrtype),hlg) | String.IsEqual(ListItem.Property(HdrType),hlg) | String.IsEqual(ListItem.Property(hdr_type),hlg)</visible>
         </control>
         <control type="image">
             <texture>flags/estuary/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr)</visible>
         </control>
     </control>
   </include>
@@ -4775,27 +4775,27 @@
         <control type="image">
             <texture>flags/metropolis/hdr_type/dolbyvision.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,dolbyvision)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,dolbyvision) | String.IsEqual(ListItem.Property(hdrtype),dolbyvision) | String.IsEqual(ListItem.Property(HdrType),dolbyvision) | String.IsEqual(ListItem.Property(hdr_type),dolbyvision)</visible>
         </control>
         <control type="image">
             <texture>flags/metropolis/hdr_type/hdr10.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr10)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10) | String.IsEqual(ListItem.Property(hdrtype),hdr10) | String.IsEqual(ListItem.Property(HdrType),hdr10) | String.IsEqual(ListItem.Property(hdr_type),hdr10) | String.IsEqual(ListItem.Property(hdrtype),hdr) | String.IsEqual(ListItem.Property(HdrType),hdr) | String.IsEqual(ListItem.Property(hdr_type),hdr)</visible>
         </control>
         <control type="image">
             <texture>flags/metropolis/hdr_type/hdr10plus.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr10plus)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10plus) | String.IsEqual(ListItem.Property(hdrtype),hdr10plus) | String.IsEqual(ListItem.Property(HdrType),hdr10plus) | String.IsEqual(ListItem.Property(hdr_type),hdr10plus)</visible>
         </control>
         <control type="image">
             <texture>flags/metropolis/hdr_type/hlg.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hlg)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hlg) | String.IsEqual(ListItem.Property(hdrtype),hlg) | String.IsEqual(ListItem.Property(HdrType),hlg) | String.IsEqual(ListItem.Property(hdr_type),hlg)</visible>
         </control>
         <control type="image">
             <texture>flags/metropolis/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr)</visible>
         </control>
     </control>
   </include>
@@ -6405,32 +6405,32 @@
         <control type="image">
             <texture>flags/modern/hdr_type/dolbyvision.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,dolbyvision)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,dolbyvision) | String.IsEqual(ListItem.Property(hdrtype),dolbyvision) | String.IsEqual(ListItem.Property(HdrType),dolbyvision) | String.IsEqual(ListItem.Property(hdr_type),dolbyvision)</visible>
         </control>
         <control type="image">
             <texture>flags/modern/hdr_type/hdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr) | String.IsEqual(ListItem.Property(hdrtype),hdr) | String.IsEqual(ListItem.Property(HdrType),hdr) | String.IsEqual(ListItem.Property(hdr_type),hdr)</visible>
         </control>
         <control type="image">
             <texture>flags/modern/hdr_type/hdr10.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr10)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10) | String.IsEqual(ListItem.Property(hdrtype),hdr10) | String.IsEqual(ListItem.Property(HdrType),hdr10) | String.IsEqual(ListItem.Property(hdr_type),hdr10)</visible>
         </control>
         <control type="image">
             <texture>flags/modern/hdr_type/hdr10plus.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr10plus)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10plus) | String.IsEqual(ListItem.Property(hdrtype),hdr10plus) | String.IsEqual(ListItem.Property(HdrType),hdr10plus) | String.IsEqual(ListItem.Property(hdr_type),hdr10plus)</visible>
         </control>
         <control type="image">
             <texture>flags/modern/hdr_type/hlg.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hlg)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hlg) | String.IsEqual(ListItem.Property(hdrtype),hlg) | String.IsEqual(ListItem.Property(HdrType),hlg) | String.IsEqual(ListItem.Property(hdr_type),hlg)</visible>
         </control>
         <control type="image">
             <texture>flags/modern/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr)</visible>
         </control>
     </control>
   </include>
@@ -7336,32 +7336,32 @@
         <control type="image">
             <texture>flags/standard/hdr_type/dolbyvision.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,dolbyvision)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,dolbyvision) | String.IsEqual(ListItem.Property(hdrtype),dolbyvision) | String.IsEqual(ListItem.Property(HdrType),dolbyvision) | String.IsEqual(ListItem.Property(hdr_type),dolbyvision)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/hdr_type/hdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr) | String.IsEqual(ListItem.Property(hdrtype),hdr) | String.IsEqual(ListItem.Property(HdrType),hdr) | String.IsEqual(ListItem.Property(hdr_type),hdr)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/hdr_type/hdr10.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr10)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10) | String.IsEqual(ListItem.Property(hdrtype),hdr10) | String.IsEqual(ListItem.Property(HdrType),hdr10) | String.IsEqual(ListItem.Property(hdr_type),hdr10)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/hdr_type/hdr10plus.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hdr10plus)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hdr10plus) | String.IsEqual(ListItem.Property(hdrtype),hdr10plus) | String.IsEqual(ListItem.Property(HdrType),hdr10plus) | String.IsEqual(ListItem.Property(hdr_type),hdr10plus)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/hdr_type/hlg.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,hlg)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,hlg) | String.IsEqual(ListItem.Property(hdrtype),hlg) | String.IsEqual(ListItem.Property(HdrType),hlg) | String.IsEqual(ListItem.Property(hdr_type),hlg)</visible>
         </control>
         <control type="image">
             <texture>flags/standard/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,sdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr)</visible>
         </control>
     </control>
   </include>

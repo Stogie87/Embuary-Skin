@@ -139,7 +139,7 @@ v3.0.0 (2024-04-17)
   </extension>
 </addon>
 
-<addon id="plugin.video.jellyfin" name="Jellyfin" version="1.0.8" provider-name="Jellyfin Contributors, angelblue05, Stogie87">
+<addon id="plugin.video.jellyfin" name="Jellyfin" version="2.1.1" provider-name="Jellyfin Contributors; Stogie87">
   <requires>
     <import addon="xbmc.python" version="3.0.0" />
     <import addon="script.module.requests" version="2.22.0+matrix.1" />
@@ -164,6 +164,7 @@ v3.0.0 (2024-04-17)
         <label>30402</label>
         <visible>[[!String.IsEmpty(ListItem.DBID) + !String.IsEqual(ListItem.DBID,-1) |
 					!String.IsEmpty(ListItem.Property(jellyfinid))] + [String.IsEqual(ListItem.DBTYPE,movie) |
+					String.Contains(Container.FolderPath,livetv) |
 					String.IsEqual(ListItem.DBTYPE,episode)]] +
 					!String.IsEmpty(Window(10000).Property(jellyfin_context_transcode))</visible>
       </item>
@@ -178,42 +179,50 @@ v3.0.0 (2024-04-17)
     <source>https://github.com/jellyfin/jellyfin-kodi</source>
     <summary lang="en" />
     <description lang="en">Welcome to Jellyfin for Kodi!
-A whole new way to manage and view your
-			media library. The Jellyfin addon for Kodi combines the best of Kodi - ultra smooth
-			navigation, beautiful UIs and playback of any file under the sun, and Jellyfin - the most
-			powerful fully open source multi-client media metadata indexer and server.
+A whole new way to manage and view your media library. The Jellyfin addon for Kodi combines the best of Kodi - ultra smooth navigation, beautiful UIs and playback of any file under the sun, and Jellyfin - the most powerful fully open source multi-client media metadata indexer and server.
 
-Jellyfin
-			for Kodi is the absolute best way to enjoy the incredible Kodi playback engine combined with
-			the power of Jellyfin's centralized database. Features:
-* Direct integration with the Kodi
-			library for native Kodi speed
+Jellyfin for Kodi is the absolute best way to enjoy the incredible Kodi playback engine combined with the power of Jellyfin's centralized database. Features:
+* Direct integration with the Kodi library for native Kodi speed
 * Instant synchronization with the Jellyfin server
-*
-			Full support for Movie, TV and Music collections
-* Jellyfin Server direct stream and
-			transcoding support - use Kodi when you are away from home!</description>
-    <news>v1.0.7 (2024-12-21):
-New features and improvements
+* Full support for Movie, TV and Music collections
+* Jellyfin Server direct stream and transcoding support - use Kodi when you are away from home!</description>
+    <news>v2.1.0 (2026-07-05):
+:tada: New features and improvements
 ------------------------------------
-+ Use file browser dialog for local path (#951) @sundermann
++ fix(music): populate album duration on sync (#1147) @kontell
++ Decouple segment checking from playback reporting (#1116) @CeruleanRed
++ feat(entrypoint): accept timestamp (#1133) @Rijul-A
++ Add support for TV show trailers (#1138) @bossanova808
++ fix(browse): add sort methods inside collections (#1134) @Rijul-A
++ Add Quick Connect support (#1117) @mkopec
++ Support "GuestStar" person type in TV episode actors (#1111) @ErwinBr
 
 Bug Fixes
 ---------
-+ Use email.utils for parsing server time (#918) @oddstr13
++ Honor the cast command's StartPositionTicks as the resume position (#1154) @jeremiahrose
++ Report a track's start position as 0, not the stale player clock (#1153) @jeremiahrose
++ Honor StartIndex in remote Play commands so the selected track plays (#1152) @jeremiahrose
++ Fix: Only transcode with mp4 container when the preferred codec is av1 to avoid seeking failure (#1136) @nkestrel
++ fix(monitor): skip server_instance setup when get_device returns no sessions (#1141) @SAY-5
++ Clamp media segment skip targets before EOF (#1114) @penggongkui-job
++ Fix websocket authentication (#1121) @mcarlton00
++ Fix: Correct missing thumbnails for Guest Star actors in TV Shows (#1124) @ErwinBr
++ fix(player): re-detect audio and subs (#1115) @Rijul-A
++ queries_music: update album title when album updated in jellyfin (#1108) @csaavedra
++ music.py: fix addition of song artist different from album artist (#1107) @csaavedra
 
 Code or Repo Maintenance
 ------------------------
-+ Update Issue Forms (#959) @BotBlake
-+ Update Issue Template (#957) @BotBlake
++ Run the black formatter (#1127) @oddstr13
 
 CI &amp; build changes
 ------------------
-+ Update github/codeql-action action to v3.28.0 (#958) @renovate
-+ Update codecov/codecov-action action to v5.1.2 (#955) @renovate
-+ Update actions/upload-artifact action to v4.5.0 (#954) @renovate
-+ Update github/codeql-action action to v3.27.9 (#944) @renovate
-+ Update codecov/codecov-action action to v5.1.1 (#943) @renovate</news>
++ Update github/codeql-action action to v4.35.1 (#1120) @[renovate[bot]](https://github.com/apps/renovate)
++ Update codecov/codecov-action action to v6 (#1119) @[renovate[bot]](https://github.com/apps/renovate)
++ Update actions/upload-artifact action to v7 (#1101) @[renovate[bot]](https://github.com/apps/renovate)
++ Update codecov/codecov-action action to v5.5.3 (#1112) @[renovate[bot]](https://github.com/apps/renovate)
++ Update release-drafter/release-drafter action to v6.4.0 (#1102) @[renovate[bot]](https://github.com/apps/renovate)
++ Update github/codeql-action action to v4.34.1 (#1099) @[renovate[bot]](https://github.com/apps/renovate)</news>
     <assets>
       <icon>resources/icon.png</icon>
       <fanart>resources/fanart.png</fanart>
@@ -863,7 +872,7 @@ v1.1.25
     </extension>
 </addon>
 
-<addon id="skin.embuary2k.omega" version="21.1.12" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
+<addon id="skin.embuary2k.omega" version="21.1.13" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
 		<import addon="script.embuary.helper" version="2.0.8"/>
 		<import addon="script.embuary.info" version="2.0.8"/>
@@ -911,7 +920,7 @@ v1.1.25
 	</extension>
 </addon>
 
-<addon id="skin.embuary4k.omega" version="21.1.12" name="Embuary 4K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
+<addon id="skin.embuary4k.omega" version="21.1.13" name="Embuary 4K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
 		<import addon="script.embuary.helper" version="2.0.8"/>
 		<import addon="script.embuary.info" version="2.0.8"/>

@@ -80,10 +80,14 @@ class Actions(object):
 
         self.set_playlist(item, listitem, db_id, transcode)
 
-        self.stack[0][1].setPath(self.stack[0][0])
+        # Using playlist approach for Cinema mode
+        if len(self.stack) > 1:
+            self._play_stack()
+        else:
+            self.stack[0][1].setPath(self.stack[0][0])
 
-        if len(sys.argv) > 1:
-            xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, self.stack[0][1])
+            if len(sys.argv) > 1:
+                xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, self.stack[0][1])
 
     def set_playlist(self, item, listitem, db_id=None, transcode=False):
         """Verify seektime, set intros, set main item and set additional parts.
@@ -149,6 +153,55 @@ class Actions(object):
 
                 window("jellyfin.skip.%s" % intro["Id"], value="true")
 
+    def _play_stack(self):
+        """Play multiple items from the stack using a playlist.
+
+        This is used for Cinema Mode (intros + movie) and multi-part videos.
+        Unlike setResolvedUrl which can only handle a single file, this method
+        creates a Kodi playlist and adds all items from the stack.
+
+        The key challenge is that when called from a plugin:// URL context, Kodi
+        expects setResolvedUrl() to provide the playback URL. But setResolvedUrl
+        can only handle a single item. To work around this, we:
+        1. First cancel the plugin resolution with setResolvedUrl(False)
+        2. Then build and start our playlist independently
+        """
+        playlist = xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
+        player = xbmc.Player()
+
+        # Stop any current playback first and wait for it to fully stop
+        if player.isPlaying():
+            player.stop()
+            # Wait for playback to fully stop (up to 3 seconds)
+            for _ in range(30):
+                xbmc.sleep(100)
+                if not player.isPlaying():
+                    break
+
+        # Clear the playlist before cancelling plugin resolution
+        playlist.clear()
+
+        # Cancel the plugin resolution - this must happen after stopping playback
+        # to prevent race conditions with the previous playback session
+        if len(sys.argv) > 1:
+            xbmcplugin.setResolvedUrl(int(sys.argv[1]), False, xbmcgui.ListItem())
+
+        xbmc.executebuiltin("ActivateWindow(busydialognocancel)")
+
+        # Small delay to ensure plugin resolution is fully cancelled
+        xbmc.sleep(100)
+
+        # Add all items from the stack to the playlist
+        for index, (path, listitem) in enumerate(self.stack):
+            listitem.setPath(path)
+            playlist.add(path, listitem, index)
+            LOG.info("[ stack/%s ] %s", index, path[:60])
+
+        xbmc.executebuiltin("Dialog.Close(busydialognocancel)")
+
+        # Start playback from position 0 (the first intro)
+        player.play(playlist, startpos=0)
+
     def _set_additional_parts(self, item_id):
         """Create listitems and add them to the stack of playlist."""
         parts = self.api_client.get_additional_parts(item_id)
@@ -191,8 +244,12 @@ class Actions(object):
         listitem = xbmcgui.ListItem()
         LOG.info("[ playlist/%s ] %s", item["Id"], item["Name"])
 
-        # Automatically resume if the item is in progress (casting from server)
-        resume = item["UserData"].get("PlaybackPositionTicks")
+        # Resume from the cast command's StartPositionTicks (seektime) when it is
+        # given, otherwise the item's stored server-side position. Casting
+        # "continue from X" sends StartPositionTicks and must honor it, rather
+        # than the item's saved position (which may be stale or empty).
+        resume = seektime or item["UserData"].get("PlaybackPositionTicks")
+        item["UserData"]["PlaybackPositionTicks"] = resume
         item["resumePlayback"] = bool(resume)
 
         play = playutils.PlayUtils(
@@ -228,7 +285,7 @@ class Actions(object):
             LOG.info("[ playlist/%s ] %s", item["Id"], item["Name"])
 
             self.set_listitem(item, listitem, None, False)
-            path = "{}/Audio/{}/stream.mp3?static=true&api_key={}".format(
+            path = "{}/Audio/{}/stream.mp3?static=true&ApiKey={}".format(
                 server_address, item["Id"], token
             )
             listitem.setPath(path)
@@ -386,56 +443,6 @@ class Actions(object):
         if obj["DatePlayed"]:
             obj["DatePlayed"] = obj["DatePlayed"].split(".")[0].replace("T", " ")
 
-        # === InfoTagVideo: Nur erlaubte Methoden verwenden ===
-        info_tag = listitem.getVideoInfoTag()
-        info_tag.setTitle(obj["Title"])
-        info_tag.setOriginalTitle(obj["Title"])
-        info_tag.setSortTitle(obj["SortTitle"])
-        info_tag.setPlot(obj["Plot"])
-        info_tag.setDuration(int(obj["Runtime"]) if obj["Runtime"] is not None else 0)
-        info_tag.setYear(int(obj["Year"]) if obj["Year"] is not None else 0)
-        info_tag.setIMDBNumber(obj.get("UniqueId", ""))
-        info_tag.setPremiered(obj["Premiere"])
-        info_tag.setVotes(int(obj["Votes"]) if obj["Votes"] is not None else 0)
-        info_tag.setPlaycount(int(obj["PlayCount"]) if obj["PlayCount"] is not None else 0)
-        info_tag.setMpaa(obj["Mpaa"])
-        info_tag.setLastPlayed(obj["DatePlayed"])
-        info_tag.setFirstAired(obj["Premiere"])
-        cast = API.get_actors()
-        if cast and isinstance(cast, list):
-            xbmc_cast = []
-            for actor in cast:
-                if isinstance(actor, dict):
-                    # Kodi 20+: xbmc.Actor(name, role)
-                    xbmc_actor = xbmc.Actor(actor.get("name", ""), actor.get("role", ""))
-                    xbmc_cast.append(xbmc_actor)
-                elif isinstance(actor, str):
-                    xbmc_cast.append(xbmc.Actor(actor, ""))
-            info_tag.setCast(xbmc_cast)
-        if obj["Type"] == "Episode":
-            info_tag.setMediaType("episode")
-            info_tag.setTvShowTitle(obj["SeriesName"])
-            info_tag.setSeason(int(obj["Season"]) if obj["Season"] is not None else 0)
-            info_tag.setEpisode(int(obj["Index"]) if obj["Index"] is not None else 0)
-        elif obj["Type"] == "Season":
-            info_tag.setMediaType("season")
-            info_tag.setTvShowTitle(obj["SeriesName"])
-            info_tag.setSeason(int(obj["Index"]) if obj["Index"] is not None else 0)
-        elif obj["Type"] == "Series":
-            info_tag.setMediaType("tvshow")
-            info_tag.setTvShowTitle(obj["Title"])
-        elif obj["Type"] == "Movie":
-            info_tag.setMediaType("movie")
-        elif obj["Type"] == "MusicVideo":
-            info_tag.setMediaType("musicvideo")
-            info_tag.setAlbum(obj["Album"])
-            info_tag.setArtist(obj["Artists"] or [])
-        elif obj["Type"] == "BoxSet":
-            info_tag.setMediaType("set")
-        else:
-            info_tag.setMediaType("video")
-
-        # Die restlichen Metadaten weiterhin mit setInfo setzen!
         metadata = {
             "title": obj["Title"],
             "originaltitle": obj["Title"],
@@ -460,6 +467,8 @@ class Actions(object):
             "date": obj["FileDate"],
             "dbid": obj["DbId"],
         }
+        listitem.setCast(API.get_actors())
+
         if obj["Premiere"]:
             metadata["date"] = obj["Premiere"]
 
@@ -477,6 +486,7 @@ class Actions(object):
                     "aired": obj["Premiere"],
                 }
             )
+
         elif obj["Type"] == "Season":
             metadata.update(
                 {
@@ -492,11 +502,17 @@ class Actions(object):
             )
             listitem.setProperty("UnWatchedEpisodes", str(obj["Unwatched"]))
             listitem.setProperty("IsFolder", "true")
+
         elif obj["Type"] == "Series":
+
+            if obj["Status"] != "Ended":
+                obj["Status"] = None
+
             metadata.update(
                 {
                     "mediatype": "tvshow",
                     "tvshowtitle": obj["Title"],
+                    "status": obj["Status"],
                 }
             )
             listitem.setProperty("TotalSeasons", str(obj["ChildCount"]))
@@ -506,6 +522,7 @@ class Actions(object):
             )
             listitem.setProperty("UnWatchedEpisodes", str(obj["Unwatched"]))
             listitem.setProperty("IsFolder", "true")
+
         elif obj["Type"] == "Movie":
             metadata.update(
                 {
@@ -515,6 +532,7 @@ class Actions(object):
                     "duration": obj["Runtime"],
                 }
             )
+
         elif obj["Type"] == "MusicVideo":
             metadata.update(
                 {
@@ -525,6 +543,7 @@ class Actions(object):
                     "duration": obj["Runtime"],
                 }
             )
+
         elif obj["Type"] == "BoxSet":
             metadata["mediatype"] = "set"
             listitem.setProperty("IsFolder", "true")
@@ -538,34 +557,151 @@ class Actions(object):
                 }
             )
 
-        listitem.setInfo("video", metadata)
         if is_video:
+
+            listitem.setProperty("IsPlayable", "true")
+            listitem.setProperty("IsFolder", "false")
+
+            # setResumePoint records the resume metadata (replaces the deprecated
+            # resumetime/totaltime properties). StartOffset is what actually makes
+            # the player begin at the resume position: it feeds the player start
+            # time (CApplication) and is honored for playlist/cast playback too.
+            tag = listitem.getVideoInfoTag()
+            tag.setResumePoint(obj["Resume"] or 0, obj["Runtime"] or 0)
+            if obj["Resume"] and item.get("resumePlayback"):
+                listitem.setProperty("StartOffset", str(obj["Resume"]))
+            else:
+                listitem.setProperty("StartOffset", "0")
+                listitem.setProperty("StartPercent", "0")
+
+            primary_hdr_type = ""
+
             for track in obj["Streams"]["video"]:
+                hdr_type = (track.get("hdrtype") or "").lower().strip()
+
+                if hdr_type and not primary_hdr_type:
+                    primary_hdr_type = hdr_type
+                    listitem.setProperty("hdrtype", primary_hdr_type)
+                    listitem.setProperty("HdrType", primary_hdr_type)
+                    listitem.setProperty("hdr_type", primary_hdr_type)
+
                 listitem.addStreamInfo(
                     "video",
                     {
-                        "codec": track.get("codec"),
-                        "width": track.get("width"),
-                        "height": track.get("height"),
-                        "aspect": track.get("aspect"),
-                        "duration": int(obj["Runtime"]) if obj["Runtime"] is not None else 0,
-                        "hdrtype": track.get("hdrtype"),
-                    }
+                        "hdrtype": hdr_type,
+                        "duration": obj["Runtime"],
+                        "aspect": track["aspect"],
+                        "codec": track["codec"],
+                        "width": track["width"],
+                        "height": track["height"],
+                    },
                 )
+
+                try:
+                    video_detail = xbmc.VideoStreamDetail()
+                    video_detail.setCodec(track.get("codec") or "")
+                    video_detail.setWidth(int(track.get("width") or 0))
+                    video_detail.setHeight(int(track.get("height") or 0))
+                    video_detail.setDuration(int(obj["Runtime"] or 0))
+
+                    try:
+                        video_detail.setAspect(float(track.get("aspect") or 0))
+                    except Exception:
+                        pass
+
+                    try:
+                        video_detail.setStereoMode(track.get("3d") or "")
+                    except Exception:
+                        pass
+
+                    if hdr_type:
+                        try:
+                            video_detail.setHDRType(hdr_type)
+                        except Exception:
+                            pass
+
+                    tag.addVideoStream(video_detail)
+                except Exception:
+                    pass
+
             for track in obj["Streams"]["audio"]:
                 listitem.addStreamInfo(
-                    "audio",
-                    {
-                        "codec": track.get("codec"),
-                        "channels": track.get("channels"),
-                    }
+                    "audio", {"codec": track["codec"], "channels": track["channels"]}
                 )
+
+                try:
+                    audio_detail = xbmc.AudioStreamDetail()
+                    audio_detail.setCodec(track.get("codec") or "")
+                    audio_detail.setChannels(int(track.get("channels") or 0))
+                    tag.addAudioStream(audio_detail)
+                except Exception:
+                    pass
+
             for track in obj["Streams"]["subtitle"]:
-                listitem.addStreamInfo(
-                    "subtitle", {"language": track}
-                )
-        listitem.setProperty("IsPlayable", "true")
+                listitem.addStreamInfo("subtitle", {"language": track})
+
+                try:
+                    subtitle_detail = xbmc.SubtitleStreamDetail()
+                    subtitle_detail.setLanguage(track or "")
+                    tag.addSubtitleStream(subtitle_detail)
+                except Exception:
+                    pass
+
         listitem.setLabel(obj["Title"])
+        listitem.setInfo("video", metadata)
+        listitem.setContentLookup(False)
+
+    def listitem_channel(self, obj, listitem, item):
+        """Set listitem for channel content."""
+        API = api.API(item, self.server)
+
+        obj["Title"] = "%s - %s" % (obj["Title"], obj["ProgramName"])
+        obj["Runtime"] = round(float((obj["Runtime"] or 0) / 10000000.0), 6)
+        obj["PlayCount"] = API.get_playcount(obj["Played"], obj["PlayCount"]) or 0
+        obj["Overlay"] = 7 if obj["Played"] else 6
+        obj["Artwork"]["Primary"] = (
+            obj["Artwork"]["Primary"]
+            or "special://home/addons/plugin.video.jellyfin/resources/icon.png"
+        )
+        obj["Artwork"]["Thumb"] = (
+            obj["Artwork"]["Thumb"]
+            or "special://home/addons/plugin.video.jellyfin/resources/fanart.png"
+        )
+        obj["Artwork"]["Backdrop"] = obj["Artwork"]["Backdrop"] or [
+            "special://home/addons/plugin.video.jellyfin/resources/fanart.png"
+        ]
+
+        metadata = {
+            "title": obj["Title"],
+            "originaltitle": obj["Title"],
+            "playcount": obj["PlayCount"],
+            "overlay": obj["Overlay"],
+        }
+
+        listitem.setArt(
+            {
+                "icon": obj["Artwork"]["Thumb"],
+                "thumb": obj["Artwork"]["Primary"],
+            }
+        )
+        self.set_artwork(obj["Artwork"], listitem, obj["Type"])
+
+        if obj["Artwork"]["Primary"]:
+            listitem.setArt(
+                {
+                    "thumb": obj["Artwork"]["Primary"],
+                }
+            )
+
+        if not obj["Artwork"]["Backdrop"]:
+            listitem.setArt({"fanart": obj["Artwork"]["Primary"]})
+
+        listitem.setProperty("totaltime", str(obj["Runtime"]))
+        listitem.setProperty("IsPlayable", "true")
+        listitem.setProperty("IsFolder", "false")
+
+        listitem.setLabel(obj["Title"])
+        listitem.setInfo("video", metadata)
         listitem.setContentLookup(False)
 
     def listitem_music(self, obj, listitem, item):

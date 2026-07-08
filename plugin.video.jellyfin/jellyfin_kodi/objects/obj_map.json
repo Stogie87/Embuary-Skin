@@ -79,7 +79,9 @@
 		"Favorite": "UserData/IsFavorite",
 		"RecursiveCount": "RecursiveItemCount",
 		"JellyfinParentId": "ParentId",
-		"Status": "Status"
+		"Status": "Status",
+		"LocalTrailer": "LocalTrailerCount",
+		"Trailer": "RemoteTrailers/0/Url"
 	},
 	"Season": {
 		"Id": "Id",
@@ -188,6 +190,7 @@
 		"Year": "ProductionYear",
 		"Genres": "Genres",
 		"Bio": "Overview",
+		"Runtime": "RunTimeTicks,CumulativeRunTimeTicks",
 		"AlbumArtists": "AlbumArtists",
 		"Artists": "AlbumArtists:?$Name",
 		"ArtistItems": "ArtistItems",

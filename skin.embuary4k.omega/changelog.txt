@@ -1,3 +1,10 @@
+[B]Version 21.1.13[/B]
+
+- Added HDR flag support for Jellyfin Other/Sonstige libraries by Stogie87
+- Improved per-item HDR detection for Jellyfin plugin content by Stogie87
+- Updated HDR flag handling across multiple views by Stogie87
+- Removed old focus-based HDR fallback by Stogie87
+
 [B]Version 21.1.12[/B]
 - Added plot autoscrolling for movie and TV show views by Stogie87
 - Improved scroll speed behavior across plots, labels and menu descriptions by Stogie87

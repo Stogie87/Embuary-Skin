@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import division, absolute_import, print_function, unicode_literals
 
+import json
+
 ##################################################################################################
 
 from . import settings, LazyLogger
 from .utils import translate_path
-import json
 
 ##################################################################################################
 
@@ -57,9 +58,12 @@ class API(object):
         if "People" in self.item:
             self.get_people_artwork(self.item["People"])
 
+            # Define the types of people considered "actors" in a "cast".
+            cast_types = ["Actor", "GuestStar"]
+
             for person in self.item["People"]:
 
-                if person["Type"] == "Actor":
+                if person["Type"] in cast_types:
                     cast.append(
                         {
                             "name": person["Name"],
@@ -79,18 +83,77 @@ class API(object):
         if container:
             container = container.split(",")[0]
 
-        for track in tracks:
+        def _as_text(value):
+            if value is None:
+                return ""
 
-            if "DvProfile" in track:
-                track["hdrtype"] = "dolbyvision"
-            elif track.get("VideoRangeType", "") in ["HDR10", "HDR10Plus"]:
-                track["hdrtype"] = "hdr10"
-            elif "HLG" in track.get("VideoRangeType", ""):
-                track["hdrtype"] = "hlg"
+            try:
+                return str(value)
+            except Exception:
+                return ""
+
+        def _normalize_hdr_type(track):
+            values = [
+                track.get("hdrtype"),
+                track.get("HdrType"),
+                track.get("hdr_type"),
+                track.get("VideoRangeType"),
+                track.get("VideoRange"),
+                track.get("DisplayTitle"),
+                track.get("Profile"),
+                track.get("CodecTag"),
+                track.get("ColorTransfer"),
+                track.get("ColorPrimaries"),
+                track.get("ColorSpace"),
+            ]
+
+            text = " ".join([_as_text(value) for value in values]).lower()
+            text = text.replace("hdr 10+", "hdr10+")
+            text = text.replace("hdr-10+", "hdr10+")
+            text = text.replace("hdr_10+", "hdr10+")
+            text = text.replace("hdr 10 plus", "hdr10plus")
+            text = text.replace("hdr-10-plus", "hdr10plus")
+            text = text.replace("hdr_10_plus", "hdr10plus")
+
+            dv_profile = track.get("DvProfile")
+            has_dv_profile = dv_profile not in (None, "", 0, "0", "None", "none")
+
+            if (
+                has_dv_profile
+                or "dolbyvision" in text
+                or "dolby vision" in text
+                or "dovi" in text
+                or "dvhe" in text
+                or "dvh1" in text
+                or "doviwithhdr10" in text
+                or "doviwithhlg" in text
+            ):
+                return "dolbyvision"
+
+            if (
+                "hdr10plus" in text
+                or "hdr10+" in text
+                or "hdrplus" in text
+                or "hdr+" in text
+            ):
+                return "hdr10plus"
+
+            if "hlg" in text or "arib-std-b67" in text:
+                return "hlg"
+
+            if "hdr10" in text or "smpte2084" in text:
+                return "hdr10"
+
+            if "hdr" in text and "sdr" not in text:
+                return "hdr"
+
+            return ""
+
+        for track in tracks:
 
             track.update(
                 {
-                    "hdrtype": track.get("hdrtype", "").lower(),
+                    "hdrtype": _normalize_hdr_type(track),
                     "codec": track.get("Codec", "").lower(),
                     "profile": track.get("Profile", "").lower(),
                     "height": track.get("Height"),

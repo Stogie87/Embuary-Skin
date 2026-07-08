@@ -38,7 +38,7 @@ class Music(KodiDb):
 
     @stop
     @jellyfin_item
-    def artist(self, item, e_item):
+    def artist(self, item, e_item, library=None):
         """If item does not exist, entry will be added.
         If item exists, entry will be updated.
         """
@@ -56,7 +56,7 @@ class Music(KodiDb):
         except TypeError:
             update = False
 
-            library = self.library or find_library(self.server, item)
+            library = library or self.library or find_library(self.server, item)
             if not library:
                 # This item doesn't belong to a whitelisted library
                 return
@@ -158,6 +158,7 @@ class Music(KodiDb):
 
         obj["Rating"] = 0
         obj["LastScraped"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        obj["Runtime"] = (obj["Runtime"] or 0) / 10000000.0
         obj["Genres"] = obj["Genres"] or []
         obj["Genre"] = " / ".join(obj["Genres"])
         obj["Bio"] = API.get_overview(obj["Bio"])
@@ -182,6 +183,7 @@ class Music(KodiDb):
         self.artist_link(obj)
         self.artist_discography(obj)
         self.update_album(*values(obj, QU.update_album_obj))
+        self.update_album_duration(*values(obj, QU.update_album_duration_obj))
         self.add_genres(*values(obj, QU.add_genres_obj))
         self.artwork.add(obj["Artwork"], obj["AlbumId"], "album")
         self.item_ids.append(obj["Id"])
@@ -426,7 +428,10 @@ class Music(KodiDb):
             except TypeError:
 
                 try:
-                    self.artist(self.server.jellyfin.get_item(temp_obj["Id"]))
+                    self.artist(
+                        self.server.jellyfin.get_item(temp_obj["Id"]),
+                        library={"Id": obj["LibraryId"], "Name": obj["LibraryName"]},
+                    )
                     temp_obj["ArtistId"] = self.jellyfin_db.get_item_by_id(
                         *values(temp_obj, QUEM.get_item_obj)
                     )[0]
@@ -463,7 +468,10 @@ class Music(KodiDb):
             except TypeError:
 
                 try:
-                    self.artist(self.server.jellyfin.get_item(temp_obj["Id"]))
+                    self.artist(
+                        self.server.jellyfin.get_item(temp_obj["Id"]),
+                        library={"Id": obj["LibraryId"], "Name": obj["LibraryName"]},
+                    )
                     temp_obj["ArtistId"] = self.jellyfin_db.get_item_by_id(
                         *values(temp_obj, QUEM.get_item_obj)
                     )[0]

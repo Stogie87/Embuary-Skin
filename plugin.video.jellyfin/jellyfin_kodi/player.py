@@ -13,6 +13,7 @@ from .helper import translate, api, window, settings, dialog, event, JSONRPC
 from .jellyfin import Jellyfin
 from .helper import LazyLogger
 from .helper.utils import translate_path
+from .segments import SegmentChecker
 
 #################################################################################################
 
@@ -25,6 +26,10 @@ class Player(xbmc.Player):
 
     played = {}
     up_next = False
+    skip_segments = {}
+    skip_prompted = set()
+    skip_dialog = None
+    segment_checker = None
 
     def __init__(self):
         xbmc.Player.__init__(self)
@@ -49,13 +54,15 @@ class Player(xbmc.Player):
         Accounts for scenario where Kodi starts playback and exits immediately.
         First, ensure previous playback terminated correctly in Jellyfin.
         """
+
         self.stop_playback()
-        self.up_next = False
+        self._reset_state(restart=True)
         count = 0
         monitor = xbmc.Monitor()
 
         try:
             current_file = self.getPlayingFile()
+
         except Exception:
 
             while count < 5:
@@ -100,6 +107,8 @@ class Player(xbmc.Player):
         window("jellyfin_play.json", items)
 
         self.set_item(current_file, item)
+        # Detect current audio/subtitle state from Kodi player
+        self.detect_audio_subs(item)
         data = {
             "QueueableMediaTypes": "Video,Audio",
             "CanSeek": True,
@@ -114,8 +123,20 @@ class Player(xbmc.Player):
             "AudioStreamIndex": item["AudioStreamIndex"],
             "SubtitleStreamIndex": item["SubtitleStreamIndex"],
         }
-        item["Server"].jellyfin.session_playing(data)
+        try:
+            item["Server"].jellyfin.session_playing(data)
+        except Exception as e:
+            LOG.warning("Failed to report session playing: %s", e)
         window("jellyfin.skip.%s.bool" % item["Id"], True)
+
+        # Immediate skip check for segments starting at 0:00
+        if settings("mediaSegmentsEnabled.bool"):
+            try:
+                self._fetch_skip_segments(item)
+                current_pos = int(self.getTime())
+                self.check_skip_segments(item, current_pos)
+            except Exception:
+                pass  # Player may not be ready yet
 
         if monitor.waitForAbort(2):
             return
@@ -136,7 +157,7 @@ class Player(xbmc.Player):
                 LOG.info("Runtime is missing, Using Zero")
 
         try:
-            seektime = self.getTime()
+            self.getTime()  # confirm the player is ready; bail out if it isn't
         except Exception:  # at this point we should be playing and if not then bail out
             return
 
@@ -150,7 +171,12 @@ class Player(xbmc.Player):
         item.update(
             {
                 "File": file,
-                "CurrentPosition": item.get("CurrentPosition") or int(seektime),
+                # A fresh playback start is at 0 (or the resume point, which is
+                # already in item["CurrentPosition"]). Do NOT fall back to the live
+                # player clock here: on a track change getTime() still returns the
+                # previous track's position, which would report the new track as
+                # starting mid-way and stop clients resetting their progress bar.
+                "CurrentPosition": item.get("CurrentPosition") or 0,
                 "Muted": muted,
                 "Volume": volume,
                 "Server": Jellyfin(item["ServerId"]).get_client(),
@@ -159,6 +185,7 @@ class Player(xbmc.Player):
         )
 
         self.played[file] = item
+        window("jellyfin_playing_id", item["Id"])
         LOG.info("-->[ play/%s ] %s", item["Id"], item)
 
     def set_audio_subs(self, audio=None, subtitle=None):
@@ -316,6 +343,16 @@ class Player(xbmc.Player):
             self.report_playback()
             LOG.info("--[ seek ]")
 
+            # Check skip segments immediately after seek
+            if settings("mediaSegmentsEnabled.bool"):
+                try:
+                    current_file = self.get_playing_file()
+                    item = self.get_file_info(current_file)
+                    current_pos = int(self.getTime())
+                    self.check_skip_segments(item, current_pos)
+                except Exception:
+                    pass
+
     def report_playback(self, report=True):
         """Report playback progress to jellyfin server.
         Check if the user seek.
@@ -331,7 +368,6 @@ class Player(xbmc.Player):
             return
 
         if not report:
-
             previous = item["CurrentPosition"]
 
             try:
@@ -359,7 +395,6 @@ class Player(xbmc.Player):
                 self.next_up()
 
             if (item["CurrentPosition"] - previous) < 30:
-
                 return
 
         result = JSONRPC("Application.GetProperties").execute(
@@ -402,6 +437,8 @@ class Player(xbmc.Player):
         """Stop all playback. Check for external player for positionticks."""
         if not self.played:
             return
+
+        self._reset_state()
 
         LOG.info("Played info: %s", self.played)
 
@@ -472,3 +509,286 @@ class Player(xbmc.Player):
             window("jellyfin.external_check", clear=True)
 
         self.played.clear()
+        window("jellyfin_playing_id", clear=True)
+
+    def _fetch_skip_segments(self, item):
+        if not settings("mediaSegmentsEnabled.bool"):
+            return
+
+        item_id = item["Id"]
+        self.skip_segments.pop(item_id, None)
+        self.skip_prompted = set()
+
+        self._reset_skip_dialog()
+
+        segments = item["Server"].jellyfin.get_media_segments(item_id)
+        if segments:
+            segments = self._convert_media_segments(segments)
+
+        if segments:
+            self.skip_segments[item_id] = segments
+            LOG.info("Loaded media segments for %s: %s", item_id, list(segments.keys()))
+
+    def _convert_media_segments(self, response):
+        if not response or "Items" not in response:
+            return None
+
+        type_map = {
+            "Intro": "Introduction",
+            "Outro": "Credits",
+            "Recap": "Recap",
+            "Preview": "Preview",
+            "Commercial": "Commercial",
+        }
+
+        segments = {}
+        for item in response["Items"]:
+            seg_type = type_map.get(item.get("Type"))
+            if seg_type:
+                segments[seg_type] = {
+                    "EpisodeId": item.get("ItemId"),
+                    "Start": item.get("StartTicks", 0) / 10000000.0,
+                    "End": item.get("EndTicks", 0) / 10000000.0,
+                }
+        return segments if segments else None
+
+    def _process_segment(
+        self, item_id, segment_type, segment, current_position, skip_mode
+    ):
+        """Check if current position is within segment bounds. Returns (start, end) tuple, None if outside bounds, or False if invalid."""
+        start = segment.get("Start")
+        end = segment.get("End")
+        if start is None or end is None or end <= start:
+            return False
+
+        LOG.debug(
+            "Skip check: pos=%.1f, %s start=%.1f end=%.1f, in_segment=%s",
+            current_position,
+            segment_type,
+            start,
+            end,
+            start <= current_position <= end,
+        )
+
+        if not (start <= current_position <= end):
+            return None
+
+        return (start, end)
+
+    def check_skip_segments(self, item, current_position):
+        item_id = item["Id"]
+        segments = self.skip_segments.get(item_id)
+        if not segments:
+            return
+
+        for segment_type, segment in segments.items():
+            skip_mode = self._get_segment_skip_mode(segment_type)
+            if skip_mode == 0:  # Off
+                continue
+
+            bounds = self._process_segment(
+                item_id, segment_type, segment, current_position, skip_mode
+            )
+            if not bounds:
+                continue
+
+            start, end = bounds
+            segment_key = "%s:%s" % (item_id, segment_type)
+            LOG.debug(
+                "Skip check: IN WINDOW! segment_key=%s, already_prompted=%s",
+                segment_key,
+                segment_key in self.skip_prompted,
+            )
+            if segment_key in self.skip_prompted:
+                continue
+
+            self.skip_prompted.add(segment_key)
+            LOG.debug(
+                "Skip check: Triggering _handle_skip_segment for %s", segment_type
+            )
+
+            if segment_type == "Credits" and not self.up_next:
+                self.up_next = True
+                self.next_up()
+
+            self._handle_skip_segment(segment_type, start, end, skip_mode)
+            break
+
+    def _get_segment_skip_mode(self, segment_type):
+        """Get the skip mode for a segment type. Returns 0=Off, 1=Auto, 2=Button."""
+        setting_map = {
+            "Introduction": "skipIntroductionMode",
+            "Credits": "skipCreditsMode",
+            "Recap": "skipRecapMode",
+            "Preview": "skipPreviewMode",
+            "Commercial": "skipCommercialMode",
+        }
+        setting_key = setting_map.get(segment_type)
+        if not setting_key:
+            return 0
+        return int(settings(setting_key) or 0)
+
+    def _get_runtime_for_seek(self):
+        try:
+            total_time = float(self.getTotalTime())
+            if total_time > 0:
+                return total_time
+        except Exception:
+            pass
+
+        try:
+            current_file = self.get_playing_file()
+            if current_file and self.is_playing_file(current_file):
+                item = self.get_file_info(current_file)
+                runtime = float(item.get("Runtime") or 0)
+                if runtime > 0:
+                    return runtime
+        except Exception:
+            pass
+
+        return 0.0
+
+    def _get_safe_seek_time(self, seek_time, margin=1.0):
+        try:
+            safe_seek_time = max(0.0, float(seek_time))
+        except (TypeError, ValueError):
+            return None
+
+        runtime = self._get_runtime_for_seek()
+        if runtime > 0:
+            max_seek_time = runtime - margin
+            if max_seek_time <= 0:
+                max_seek_time = runtime
+            safe_seek_time = min(safe_seek_time, max_seek_time)
+
+        try:
+            current_position = float(self.getTime())
+            if safe_seek_time <= current_position:
+                return None
+        except Exception:
+            pass
+
+        return safe_seek_time
+
+    def _handle_skip_segment(self, segment_type, start, end, mode):
+        safe_end = self._get_safe_seek_time(end)
+        if safe_end is None or safe_end <= start:
+            return
+
+        LOG.debug(
+            "_handle_skip_segment: type=%s, mode=%d, start=%.1f, end=%.1f, safe_end=%.1f",
+            segment_type,
+            mode,
+            start,
+            end,
+            safe_end,
+        )
+
+        if mode == 1:  # Auto skip
+            self.seekTime(safe_end)
+            LOG.info("Auto-skipped %s to %.1f", segment_type, safe_end)
+            # Show notification
+            message = "Skipped %s" % segment_type
+            dialog(
+                "notification",
+                heading="Jellyfin",
+                message=message,
+                icon="{jellyfin}",
+                time=3000,
+            )
+
+        elif mode == 2:  # Show skip button
+            self._show_skip_button(segment_type, safe_end - start, safe_end)
+
+    def _show_skip_button(self, segment_type, duration, end_time):
+        LOG.debug(
+            "_show_skip_button: type=%s, duration=%.1f, end_time=%.1f",
+            segment_type,
+            duration,
+            end_time,
+        )
+        try:
+            import xbmcaddon
+            from .dialogs.skip import SkipDialog
+
+            self._reset_skip_dialog()
+
+            addon_path = xbmcaddon.Addon("plugin.video.jellyfin").getAddonInfo("path")
+            LOG.debug("_show_skip_button: addon_path=%s", addon_path)
+
+            self.skip_dialog = SkipDialog(
+                "script-jellyfin-skip.xml",
+                addon_path,
+                "default",
+                "1080i",
+            )
+            self.skip_dialog.set_skip_info(segment_type, duration)
+            LOG.debug("_show_skip_button: calling show()")
+            self.skip_dialog.show()
+            LOG.debug("_show_skip_button: show() completed")
+
+            self._skip_end_time = end_time
+            self._monitor_skip_dialog()
+        except Exception as e:
+            LOG.error("_show_skip_button error: %s", e, exc_info=True)
+
+    def _monitor_skip_dialog(self):
+        """Monitor the skip dialog and handle user input or timeout."""
+        LOG.debug("_monitor_skip_dialog: starting, end_time=%.1f", self._skip_end_time)
+        monitor = xbmc.Monitor()
+
+        # Monitor loop - check for user input or end of segment
+        while self.skip_dialog and not monitor.abortRequested():
+            # Check if user clicked skip
+            if self.skip_dialog.is_skip():
+                self.seekTime(self._skip_end_time)
+                LOG.info("User skipped to %.1f", self._skip_end_time)
+                break
+
+            # Check if user cancelled
+            if self.skip_dialog.is_cancel():
+                LOG.debug("User cancelled skip dialog")
+                break
+
+            # Check if we've passed the segment end time
+            try:
+                current_pos = self.getTime()
+                if current_pos >= self._skip_end_time:
+                    LOG.debug(
+                        "_monitor_skip_dialog: passed end_time %.1f, closing",
+                        self._skip_end_time,
+                    )
+                    break
+            except Exception:
+                break
+
+            if monitor.waitForAbort(0.2):
+                break
+
+        LOG.debug("_monitor_skip_dialog: exiting loop")
+        self._reset_skip_dialog()
+
+    def _reset_state(self, restart=False):
+        self._reset_segment_checker(restart)
+        self._reset_skip_dialog()
+
+        self.up_next = False
+        self.skip_segments = {}
+        self.skip_prompted = set()
+
+    def _reset_segment_checker(self, restart=False):
+        if self.segment_checker:
+            self.segment_checker.stop()
+
+        if restart:
+            self.segment_checker = SegmentChecker(player=self)
+            self.segment_checker.start()
+
+    def _reset_skip_dialog(self):
+        if self.skip_dialog:
+            try:
+                self.skip_dialog.close()
+            except Exception:
+                pass
+
+        self.skip_dialog = None

@@ -74,14 +74,6 @@
 				<include condition="String.StartsWith(Skin.String(codeclogos_flag_path),flags/modern)">PosterStaticFlagshdr_type_modern</include>
   			</control>
 
-			<!-- HDR fallback from matching local Kodi movie DB item -->
-			<include content="FallbackHdrTypeFlagFromLookup">
-				<param name="top" value="5"/>
-				<param name="left" value="78"/>
-				<param name="width" value="60"/>
-				<param name="height" value="60"/>
-			</include>
-
 			<!-- Codec Flags Ende -->
 
                         <!-- meta -->

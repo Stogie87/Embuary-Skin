@@ -411,10 +411,20 @@ add_video_version = """
 INSERT INTO     videoversion(idFile, idMedia, media_type, itemType, idType)
 VALUES          (?, ?, ?, ?, ?)
 """
+add_video_version_obj = [
+    "{FileId}",
+    "{MovieId}",
+    "movie",
+    "{VideoVersionItemType}",
+    40400,
+]
+get_videoversion_itemtype = """
+SELECT itemType FROM videoversiontype WHERE id = ?
+"""
+get_videoversion_itemtype_obj = ["{VideoVersionId}"]
 check_video_version = """
 SELECT COUNT(name) FROM sqlite_master WHERE type='table' AND name='videoversion'
 """
-add_video_version_obj = ["{FileId}", "{MovieId}", "movie", "0", 40400]
 add_musicvideo = """
 INSERT INTO     musicvideo(idMVideo, idFile, c00, c04, c05, c06, c07, c08, c09, c10,
                 c11, c12, premiered)
@@ -436,8 +446,8 @@ add_musicvideo_obj = [
     "{Premiere}",
 ]
 add_tvshow = """
-INSERT INTO     tvshow(idShow, c00, c01, c02, c04, c05, c08, c09, c10, c12, c13, c14, c15)
-VALUES          (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+INSERT INTO     tvshow(idShow, c00, c01, c02, c04, c05, c08, c09, c10, c12, c13, c14, c15, c16)
+VALUES          (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 """
 add_tvshow_obj = [
     "{ShowId}",
@@ -453,6 +463,7 @@ add_tvshow_obj = [
     "{Mpaa}",
     "{Studio}",
     "{SortTitle}",
+    "{Trailer}",
 ]
 add_season = """
 INSERT INTO     seasons(idSeason, idShow, season)
@@ -683,7 +694,7 @@ update_musicvideo_obj = [
 update_tvshow = """
 UPDATE      tvshow
 SET         c00 = ?, c01 = ?, c02 = ?, c04 = ?, c05 = ?, c08 = ?, c09 = ?, c10 = ?,
-            c12 = ?, c13 = ?, c14 = ?, c15 = ?
+            c12 = ?, c13 = ?, c14 = ?, c15 = ?, c16 = ?
 WHERE       idShow = ?
 """
 update_tvshow_obj = [
@@ -699,6 +710,7 @@ update_tvshow_obj = [
     "{Mpaa}",
     "{Studio}",
     "{SortTitle}",
+    "{Trailer}",
     "{ShowId}",
 ]
 update_tvshow_link = """
