@@ -1,3 +1,7 @@
+[B]Version 21.1.12[/B]
+- Added plot autoscrolling for movie and TV show views by Stogie87
+- Improved scroll speed behavior across plots, labels and menu descriptions by Stogie87
+
 [B]Version 21.1.11[/B]
 - Fixed missing playback buttons in Music OSD / Music Visualisation by Stogie87
 - Improved Music OSD focus, navigation and button behavior by Stogie87

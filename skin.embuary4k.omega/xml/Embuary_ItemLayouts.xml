@@ -1752,7 +1752,7 @@
 						<aligny>top</aligny>
 						<label fallback="19055">$INFO[ListItem.EpisodeName,, - ]$INFO[ListItem.Plot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
+						<autoscroll delay="8000" time="5000" repeat="12000">true</autoscroll>
 					</control>
 				</control>
 			</control>

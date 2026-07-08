@@ -165,34 +165,37 @@
 						</include>
 						<!-- plot -->
 						<control type="textbox">
-							<top>510</top>
-							<bottom>0</bottom>
-							<align>justify</align>
-							<aligny>top</aligny>
-							<label>$VAR[ListViewPlot]</label>
-							<font>Light24</font>
-							<visible>Window.IsVisible(MyPlaylist.xml)</visible>
-						</control>
-						<control type="textbox">
-							<top>435</top>
-							<bottom>5</bottom>
-							<align>justify</align>
-							<aligny>top</aligny>
-							<label>$VAR[ListViewPlot]</label>
-							<font>Light24</font>
-							<visible>!Window.IsVisible(MyPlaylist.xml)</visible>
-							<visible>![String.StartsWith(ListItem.Path,pvr://channels) + Integer.IsGreater(ListItem.Progress,0)] + ![!String.StartsWith(ListItem.Path,pvr://channels) + Integer.IsGreater(ListItem.PercentPlayed,0)]</visible>
-						</control>
-						<control type="textbox">
-							<top>445</top>
-							<bottom>0</bottom>
-							<align>justify</align>
-							<aligny>top</aligny>
-							<label>$VAR[ListViewPlot]</label>
-							<font>Light24</font>
-							<visible>!Window.IsVisible(MyPlaylist.xml)</visible>
-							<visible>[String.StartsWith(ListItem.Path,pvr://channels) + Integer.IsGreater(ListItem.Progress,0)] | [!String.StartsWith(ListItem.Path,pvr://channels) + Integer.IsGreater(ListItem.PercentPlayed,0)]</visible>
-						</control>
+								<top>510</top>
+								<bottom>0</bottom>
+								<align>justify</align>
+								<aligny>top</aligny>
+								<label>$VAR[ListViewPlot]</label>
+								<font>Light24</font>
+								<autoscroll delay="8000" time="5000" repeat="12000">true</autoscroll>
+								<visible>Window.IsVisible(MyPlaylist.xml)</visible>
+							</control>
+							<control type="textbox">
+								<top>435</top>
+								<bottom>5</bottom>
+								<align>justify</align>
+								<aligny>top</aligny>
+								<label>$VAR[ListViewPlot]</label>
+								<font>Light24</font>
+								<autoscroll delay="8000" time="45000" repeat="12000">true</autoscroll>
+								<visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+								<visible>![String.StartsWith(ListItem.Path,pvr://channels) + Integer.IsGreater(ListItem.Progress,0)] + ![!String.StartsWith(ListItem.Path,pvr://channels) + Integer.IsGreater(ListItem.PercentPlayed,0)]</visible>
+							</control>
+							<control type="textbox">
+								<top>445</top>
+								<bottom>0</bottom>
+								<align>justify</align>
+								<aligny>top</aligny>
+								<label>$VAR[ListViewPlot]</label>
+								<font>Light24</font>
+								<autoscroll delay="8000" time="45000" repeat="12000">true</autoscroll>
+								<visible>!Window.IsVisible(MyPlaylist.xml)</visible>
+								<visible>[String.StartsWith(ListItem.Path,pvr://channels) + Integer.IsGreater(ListItem.Progress,0)] | [!String.StartsWith(ListItem.Path,pvr://channels) + Integer.IsGreater(ListItem.PercentPlayed,0)]</visible>
+							</control>
 					</control>
 				</control>
 			</control>

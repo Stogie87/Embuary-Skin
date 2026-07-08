@@ -19,7 +19,7 @@
 		<disabledcolor>disabled</disabledcolor>
 		<selectedcolor>selected</selectedcolor>
 		<scroll>false</scroll>
-		<scrollspeed>50</scrollspeed>
+		<scrollspeed>25</scrollspeed>
 	</default>
 	<default type="fadelabel">
 		<align>left</align>

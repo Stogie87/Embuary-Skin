@@ -115,6 +115,7 @@
 			<aligny>center</aligny>
 			<align>left</align>
 			<font>Reg22</font>
+			<scrollspeed>25</scrollspeed>
 			<invalidcolor>invalid</invalidcolor>
 			<selectedcolor>$VAR[AccentColor]</selectedcolor>
 			<textcolor>text_white</textcolor>
@@ -136,6 +137,7 @@
 			<aligny>center</aligny>
 			<align>left</align>
 			<font>Reg22</font>
+			<scrollspeed>25</scrollspeed>
 			<invalidcolor>invalid</invalidcolor>
 			<selectedcolor>$VAR[AccentColor]</selectedcolor>
 			<textcolor>text_white</textcolor>
@@ -157,6 +159,7 @@
 			<aligny>center</aligny>
 			<align>left</align>
 			<font>Reg22</font>
+			<scrollspeed>25</scrollspeed>
 			<invalidcolor>invalid</invalidcolor>
 			<selectedcolor>$VAR[AccentColor]</selectedcolor>
 			<textcolor>text_white</textcolor>
