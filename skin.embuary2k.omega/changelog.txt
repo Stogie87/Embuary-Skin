@@ -1,3 +1,8 @@
+[B]Version 21.1.14[/B]
+
+- Added SDR flag fallback for missing HDR metadata by Stogie87
+- Improved HDR/SDR flag visibility across multiple views by Stogie87
+
 [B]Version 21.1.13[/B]
 
 - Added HDR flag support for Jellyfin Other/Sonstige libraries by Stogie87

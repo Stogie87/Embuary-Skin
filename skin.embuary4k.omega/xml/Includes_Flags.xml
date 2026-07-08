@@ -1623,7 +1623,7 @@
         <control type="image">
             <texture>flags/colorful/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr) | [String.IsEmpty(ListItem.HdrType) + String.IsEmpty(ListItem.Property(hdrtype)) + String.IsEmpty(ListItem.Property(HdrType)) + String.IsEmpty(ListItem.Property(hdr_type)) + !String.IsEmpty(ListItem.Videoresolution)]</visible>
         </control>
     </control>
   </include>
@@ -3072,7 +3072,7 @@
         <control type="image">
             <texture>flags/estuary/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr) | [String.IsEmpty(ListItem.HdrType) + String.IsEmpty(ListItem.Property(hdrtype)) + String.IsEmpty(ListItem.Property(HdrType)) + String.IsEmpty(ListItem.Property(hdr_type)) + !String.IsEmpty(ListItem.Videoresolution)]</visible>
         </control>
     </control>
   </include>
@@ -4795,7 +4795,7 @@
         <control type="image">
             <texture>flags/metropolis/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr) | [String.IsEmpty(ListItem.HdrType) + String.IsEmpty(ListItem.Property(hdrtype)) + String.IsEmpty(ListItem.Property(HdrType)) + String.IsEmpty(ListItem.Property(hdr_type)) + !String.IsEmpty(ListItem.Videoresolution)]</visible>
         </control>
     </control>
   </include>
@@ -6430,7 +6430,7 @@
         <control type="image">
             <texture>flags/modern/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr) | [String.IsEmpty(ListItem.HdrType) + String.IsEmpty(ListItem.Property(hdrtype)) + String.IsEmpty(ListItem.Property(HdrType)) + String.IsEmpty(ListItem.Property(hdr_type)) + !String.IsEmpty(ListItem.Videoresolution)]</visible>
         </control>
     </control>
   </include>
@@ -7361,7 +7361,7 @@
         <control type="image">
             <texture>flags/standard/hdr_type/sdr.png</texture>
             <aspectratio>keep</aspectratio>
-            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr)</visible>
+            <visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr) | [String.IsEmpty(ListItem.HdrType) + String.IsEmpty(ListItem.Property(hdrtype)) + String.IsEmpty(ListItem.Property(HdrType)) + String.IsEmpty(ListItem.Property(hdr_type)) + !String.IsEmpty(ListItem.Videoresolution)]</visible>
         </control>
     </control>
   </include>
