@@ -20,6 +20,82 @@
 					<font>Light22</font>
 					<textcolor>text_sublabel</textcolor>
 					<include>MetaLabel</include>
+					<label>DOLBY VISION   </label>
+					<visible>String.IsEqual(ListItem.HdrType,dolbyvision) | String.IsEqual(ListItem.Property(hdrtype),dolbyvision) | String.IsEqual(ListItem.Property(HdrType),dolbyvision) | String.IsEqual(ListItem.Property(hdr_type),dolbyvision) | String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),dolbyvision)</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
+					<label>HDR10+   </label>
+					<visible>String.IsEqual(ListItem.HdrType,hdr10plus) | String.IsEqual(ListItem.Property(hdrtype),hdr10plus) | String.IsEqual(ListItem.Property(HdrType),hdr10plus) | String.IsEqual(ListItem.Property(hdr_type),hdr10plus) | String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10plus)</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
+					<label>HDR10   </label>
+					<visible>String.IsEqual(ListItem.HdrType,hdr10) | String.IsEqual(ListItem.Property(hdrtype),hdr10) | String.IsEqual(ListItem.Property(HdrType),hdr10) | String.IsEqual(ListItem.Property(hdr_type),hdr10) | String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10)</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
+					<label>HLG   </label>
+					<visible>String.IsEqual(ListItem.HdrType,hlg) | String.IsEqual(ListItem.Property(hdrtype),hlg) | String.IsEqual(ListItem.Property(HdrType),hlg) | String.IsEqual(ListItem.Property(hdr_type),hlg) | String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hlg)</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
+					<label>SDR   </label>
+					<visible>String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr) | String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),sdr)</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
+					<label>HDR   </label>
+					<visible>
+						[
+							String.IsEqual(ListItem.HdrType,hdr)
+							| String.IsEqual(ListItem.Property(hdrtype),hdr)
+							| String.IsEqual(ListItem.Property(HdrType),hdr)
+							| String.IsEqual(ListItem.Property(hdr_type),hdr)
+							| String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr)
+							| [$EXP[IsHDR] | $EXP[HasHDRTag]]
+						]
+						+ !String.IsEqual(ListItem.HdrType,dolbyvision)
+						+ !String.IsEqual(ListItem.HdrType,hdr10plus)
+						+ !String.IsEqual(ListItem.HdrType,hdr10)
+						+ !String.IsEqual(ListItem.HdrType,hlg)
+						+ !String.IsEqual(ListItem.HdrType,sdr)
+						+ !String.IsEqual(ListItem.Property(hdrtype),dolbyvision)
+						+ !String.IsEqual(ListItem.Property(hdrtype),hdr10plus)
+						+ !String.IsEqual(ListItem.Property(hdrtype),hdr10)
+						+ !String.IsEqual(ListItem.Property(hdrtype),hlg)
+						+ !String.IsEqual(ListItem.Property(hdrtype),sdr)
+						+ !String.IsEqual(ListItem.Property(HdrType),dolbyvision)
+						+ !String.IsEqual(ListItem.Property(HdrType),hdr10plus)
+						+ !String.IsEqual(ListItem.Property(HdrType),hdr10)
+						+ !String.IsEqual(ListItem.Property(HdrType),hlg)
+						+ !String.IsEqual(ListItem.Property(HdrType),sdr)
+						+ !String.IsEqual(ListItem.Property(hdr_type),dolbyvision)
+						+ !String.IsEqual(ListItem.Property(hdr_type),hdr10plus)
+						+ !String.IsEqual(ListItem.Property(hdr_type),hdr10)
+						+ !String.IsEqual(ListItem.Property(hdr_type),hlg)
+						+ !String.IsEqual(ListItem.Property(hdr_type),sdr)
+						+ !String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),dolbyvision)
+						+ !String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10plus)
+						+ !String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10)
+						+ !String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hlg)
+						+ !String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),sdr)
+					</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
 					<label>[UPPERCASE]$VAR[ListItemResolution][/UPPERCASE]   </label>
 					<visible>!String.IsEmpty(ListItem.VideoResolution)</visible>
 				</control>
@@ -29,13 +105,6 @@
 					<include>MetaLabel</include>
 					<label>[UPPERCASE]$INFO[ListItem.VideoCodec][/UPPERCASE]   </label>
 					<visible>!String.IsEmpty(ListItem.VideoCodec)</visible>
-				</control>
-				<control type="label">
-					<font>Light22</font>
-					<textcolor>text_sublabel</textcolor>
-					<include>MetaLabel</include>
-					<label>[UPPERCASE]HDR[/UPPERCASE]   </label>
-					<visible>$EXP[IsHDR]</visible>
 				</control>
 				<control type="label">
 					<font>Light22</font>
@@ -143,8 +212,92 @@
 					<font>Light22</font>
 					<textcolor>text_sublabel</textcolor>
 					<include>MetaLabel</include>
-					<label>[UPPERCASE]HDR[/UPPERCASE]   </label>
-					<visible>String.Contains(Player.Filename,.HDR.) | String.Contains(Player.Filename,-HDR-) | String.Contains(Player.Filename,- HDR -) | String.Contains(Player.Filename,(HDR))</visible>
+					<label>DOLBY VISION   </label>
+					<visible>String.IsEqual(VideoPlayer.HdrType,dolbyvision) | String.IsEqual(Player.Process(videohdrtype),dolbyvision) | String.IsEqual(ListItem.HdrType,dolbyvision) | String.IsEqual(ListItem.Property(hdrtype),dolbyvision) | String.IsEqual(ListItem.Property(HdrType),dolbyvision) | String.IsEqual(ListItem.Property(hdr_type),dolbyvision) | String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),dolbyvision)</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
+					<label>HDR10+   </label>
+					<visible>String.IsEqual(VideoPlayer.HdrType,hdr10plus) | String.IsEqual(Player.Process(videohdrtype),hdr10plus) | String.IsEqual(ListItem.HdrType,hdr10plus) | String.IsEqual(ListItem.Property(hdrtype),hdr10plus) | String.IsEqual(ListItem.Property(HdrType),hdr10plus) | String.IsEqual(ListItem.Property(hdr_type),hdr10plus) | String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10plus)</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
+					<label>HDR10   </label>
+					<visible>String.IsEqual(VideoPlayer.HdrType,hdr10) | String.IsEqual(Player.Process(videohdrtype),hdr10) | String.IsEqual(ListItem.HdrType,hdr10) | String.IsEqual(ListItem.Property(hdrtype),hdr10) | String.IsEqual(ListItem.Property(HdrType),hdr10) | String.IsEqual(ListItem.Property(hdr_type),hdr10) | String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10)</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
+					<label>HLG   </label>
+					<visible>String.IsEqual(VideoPlayer.HdrType,hlg) | String.IsEqual(Player.Process(videohdrtype),hlg) | String.IsEqual(ListItem.HdrType,hlg) | String.IsEqual(ListItem.Property(hdrtype),hlg) | String.IsEqual(ListItem.Property(HdrType),hlg) | String.IsEqual(ListItem.Property(hdr_type),hlg) | String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hlg)</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
+					<label>SDR   </label>
+					<visible>String.IsEqual(VideoPlayer.HdrType,sdr) | String.IsEqual(Player.Process(videohdrtype),sdr) | String.IsEqual(ListItem.HdrType,sdr) | String.IsEqual(ListItem.Property(hdrtype),sdr) | String.IsEqual(ListItem.Property(HdrType),sdr) | String.IsEqual(ListItem.Property(hdr_type),sdr) | String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),sdr)</visible>
+				</control>
+				<control type="label">
+					<font>Light22</font>
+					<textcolor>text_sublabel</textcolor>
+					<include>MetaLabel</include>
+					<label>HDR   </label>
+					<visible>
+						[
+							String.IsEqual(VideoPlayer.HdrType,hdr)
+							| String.IsEqual(Player.Process(videohdrtype),hdr)
+							| String.IsEqual(ListItem.HdrType,hdr)
+							| String.IsEqual(ListItem.Property(hdrtype),hdr)
+							| String.IsEqual(ListItem.Property(HdrType),hdr)
+							| String.IsEqual(ListItem.Property(hdr_type),hdr)
+							| String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr)
+							| String.Contains(Player.Filename,.HDR.)
+							| String.Contains(Player.Filename,-HDR-)
+							| String.Contains(Player.Filename,- HDR -)
+							| String.Contains(Player.Filename,(HDR))
+						]
+						+ !String.IsEqual(VideoPlayer.HdrType,dolbyvision)
+						+ !String.IsEqual(VideoPlayer.HdrType,hdr10plus)
+						+ !String.IsEqual(VideoPlayer.HdrType,hdr10)
+						+ !String.IsEqual(VideoPlayer.HdrType,hlg)
+						+ !String.IsEqual(VideoPlayer.HdrType,sdr)
+						+ !String.IsEqual(Player.Process(videohdrtype),dolbyvision)
+						+ !String.IsEqual(Player.Process(videohdrtype),hdr10plus)
+						+ !String.IsEqual(Player.Process(videohdrtype),hdr10)
+						+ !String.IsEqual(Player.Process(videohdrtype),hlg)
+						+ !String.IsEqual(Player.Process(videohdrtype),sdr)
+						+ !String.IsEqual(ListItem.HdrType,dolbyvision)
+						+ !String.IsEqual(ListItem.HdrType,hdr10plus)
+						+ !String.IsEqual(ListItem.HdrType,hdr10)
+						+ !String.IsEqual(ListItem.HdrType,hlg)
+						+ !String.IsEqual(ListItem.HdrType,sdr)
+						+ !String.IsEqual(ListItem.Property(hdrtype),dolbyvision)
+						+ !String.IsEqual(ListItem.Property(hdrtype),hdr10plus)
+						+ !String.IsEqual(ListItem.Property(hdrtype),hdr10)
+						+ !String.IsEqual(ListItem.Property(hdrtype),hlg)
+						+ !String.IsEqual(ListItem.Property(hdrtype),sdr)
+						+ !String.IsEqual(ListItem.Property(HdrType),dolbyvision)
+						+ !String.IsEqual(ListItem.Property(HdrType),hdr10plus)
+						+ !String.IsEqual(ListItem.Property(HdrType),hdr10)
+						+ !String.IsEqual(ListItem.Property(HdrType),hlg)
+						+ !String.IsEqual(ListItem.Property(HdrType),sdr)
+						+ !String.IsEqual(ListItem.Property(hdr_type),dolbyvision)
+						+ !String.IsEqual(ListItem.Property(hdr_type),hdr10plus)
+						+ !String.IsEqual(ListItem.Property(hdr_type),hdr10)
+						+ !String.IsEqual(ListItem.Property(hdr_type),hlg)
+						+ !String.IsEqual(ListItem.Property(hdr_type),sdr)
+						+ !String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),dolbyvision)
+						+ !String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10plus)
+						+ !String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hdr10)
+						+ !String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),hlg)
+						+ !String.IsEqual(Window(Home).Property(EmbuaryHDRFallback.HdrType),sdr)
+					</visible>
 				</control>
 				<control type="label">
 					<font>Light22</font>

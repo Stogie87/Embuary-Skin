@@ -1,3 +1,9 @@
+[B]Version 21.1.16[/B]
+- Added default codec logo settings on first skin start by Stogie87
+- Enabled Codec Info Overlay by default by Stogie87
+- Added HDR type display to Movie and Collection media info labels by Stogie87
+- Improved view switching support for Collection views by Stogie87
+
 [B]Version 21.1.15[/B]
 - Added Estuary-style SDR flag logo by Stogie87
 

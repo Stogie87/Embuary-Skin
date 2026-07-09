@@ -143,7 +143,7 @@
 		[
 			!Container.Content(seasons)
 			+ !Container.Content(episodes)
-			+ !String.Contains(Container.Folderpath,setid)
+			+ [!String.Contains(Container.Folderpath,setid) | Container.Content(movies)]
 			+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
 			+ !Container.Content(albums)
 			+ !Container.Content(songs) + !Container.Content(actors)
@@ -171,7 +171,7 @@
         		[[String.StartsWith(Container.Folderpath,pvr://channels/tv) | String.StartsWith(Container.Folderpath,pvr://recordings/tv)] + String.IsEqual(Skin.String(EPGar),2to3)] |
         		[String.StartsWith(Container.FolderPath,plugin://plugin.video.jellyfin) + !String.Contains(Container.FolderPath,/music)]
     		]
-    			+ !String.Contains(Container.Folderpath,setid)
+    			+ [!String.Contains(Container.Folderpath,setid) | Container.Content(movies)]
     			+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
     			+ !String.IsEqual(Container.Content,episodes)
     			+ !String.IsEqual(Container.Content,seasons)
@@ -200,7 +200,7 @@
         		[[String.StartsWith(Container.Folderpath,pvr://channels/tv) | String.StartsWith(Container.Folderpath,pvr://recordings/tv)] + String.IsEqual(Skin.String(EPGar),2to3)] |
         		[String.StartsWith(Container.FolderPath,plugin://plugin.video.jellyfin) + !String.Contains(Container.FolderPath,/music)]
     		]
-    			+ !String.Contains(Container.Folderpath,setid)
+    			+ [!String.Contains(Container.Folderpath,setid) | Container.Content(movies)]
     			+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
     			+ !String.IsEqual(Container.Content,episodes)
     			+ !String.IsEqual(Container.Content,seasons)
@@ -246,7 +246,7 @@
 		[
 			!Container.Content(seasons)
 			+ !Container.Content(episodes)
-			+ !String.Contains(Container.FolderPath,setid)
+			+ [!String.Contains(Container.FolderPath,setid) | Container.Content(movies)]
 			+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
 			+ !Window.IsVisible(MyPVRguide.xml)
 		]

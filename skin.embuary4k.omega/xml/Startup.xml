@@ -2,6 +2,21 @@
 <window>
 	<onload condition="!Skin.HasSetting(FontCheck)">RunScript(script.embuary.helper,action=fontchange,locales=ja+zh+ar+he+ko+vi+bn+my+hi+ks+km+ms,font=Arial)</onload>
 	<onload condition="!Skin.HasSetting(FontCheck)">Skin.ToggleSetting(FontCheck)</onload>
+
+	<!-- Default codec logo settings -->
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_flag_name))">Skin.SetString(codeclogos_flag_name,Colorful)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_flag_path))">Skin.SetString(codeclogos_flag_path,flags/colorful)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_name))">Skin.SetString(codeclogos_name,Colorful)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_path))">Skin.SetString(codeclogos_path,codeclogos/colorful)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_scale))">Skin.SetString(codeclogos_scale,120)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet)">Skin.SetBool(show_codec_background)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet)">Skin.SetBool(CodecInfoOverlayBottomRight)</onload>
+
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + !Skin.HasSetting(osd.useleftCodecStartupLogos) + !Skin.HasSetting(osd.usecenterCodecStartupLogos) + !Skin.HasSetting(osd.userightCodecStartupLogos)">Skin.SetBool(osd.userightCodecStartupLogos)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + !Skin.HasSetting(ppi.useleftCodecLogos) + !Skin.HasSetting(ppi.usecenterCodecLogos) + !Skin.HasSetting(ppi.userightCodecLogos)">Skin.SetBool(ppi.userightCodecLogos)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + !Skin.HasSetting(osd.useleftCodecLogos) + !Skin.HasSetting(osd.usecenterCodecLogos) + !Skin.HasSetting(osd.userightCodecLogos)">Skin.SetBool(osd.userightCodecLogos)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet)">Skin.SetBool(CodecLogoDefaultsSet)</onload>
+
 	<onload>Skin.SetBool(ClearPlaylist)</onload>
 	<onload>SetProperty(startup,1,home)</onload>
 	<onload>AlarmClock(startup,ClearProperty(startup,home),00:10,silent)</onload>
