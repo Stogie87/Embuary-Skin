@@ -431,23 +431,23 @@
             <include content="Video_Audio_Background_Flag">
                 <param name="groupId">46</param>
                 <param name="imageId">47</param>
-                <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
+                <param name="visible">[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">common/corner.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
-			
+				
             <include content="Video_Background_Flag">
                 <param name="groupId">48</param>
                 <param name="imageId">49</param>
-                <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</param>
+                <param name="visible">[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">common/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
-			
+				
             <include content="Audio_Background_Flag">
                 <param name="groupId">50</param>
                 <param name="imageId">51</param>
-                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.HdrType) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">common/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
@@ -528,6 +528,39 @@
                 <param name="groupId">70</param>
                 <param name="imageId">71</param>
                 <param name="visible">String.Contains(Player.Process(amlogic.vs10.mode),HLG)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HLG.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <!-- Standard Kodi/CoreELEC HDR fallback when CPM player-process labels are unavailable -->
+            <include content="HDR10_Bypass_Flag">
+                <param name="groupId">106</param>
+                <param name="imageId">107</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HDR10.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <include content="HDR10Plus_Bypass_Flag">
+                <param name="groupId">108</param>
+                <param name="imageId">109</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10plus)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <include content="DV_Bypass_Flag">
+                <param name="groupId">110</param>
+                <param name="imageId">111</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,dolbyvision)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <include content="HLG_Bypass_Flag">
+                <param name="groupId">112</param>
+                <param name="imageId">113</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hlg)</param>
                 <param name="texture">$INFO[Skin.String(codeclogos_path)]/HLG.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
@@ -762,23 +795,23 @@
             <include content="Video_Audio_Background_Flag">
                 <param name="groupId">46</param>
                 <param name="imageId">47</param>
-                <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
+                <param name="visible">[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">common/corner.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
-			
+				
             <include content="Video_Background_Flag">
                 <param name="groupId">48</param>
                 <param name="imageId">49</param>
-                <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</param>
+                <param name="visible">[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">common/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
-			
+				
             <include content="Audio_Background_Flag">
                 <param name="groupId">50</param>
                 <param name="imageId">51</param>
-                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.HdrType) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">common/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
@@ -859,6 +892,39 @@
                 <param name="groupId">70</param>
                 <param name="imageId">71</param>
                 <param name="visible">String.Contains(Player.Process(amlogic.vs10.mode),HLG)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HLG.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <!-- Standard Kodi/CoreELEC HDR fallback when CPM player-process labels are unavailable -->
+            <include content="HDR10_Bypass_Flag">
+                <param name="groupId">106</param>
+                <param name="imageId">107</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HDR10.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <include content="HDR10Plus_Bypass_Flag">
+                <param name="groupId">108</param>
+                <param name="imageId">109</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10plus)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <include content="DV_Bypass_Flag">
+                <param name="groupId">110</param>
+                <param name="imageId">111</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,dolbyvision)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <include content="HLG_Bypass_Flag">
+                <param name="groupId">112</param>
+                <param name="imageId">113</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hlg)</param>
                 <param name="texture">$INFO[Skin.String(codeclogos_path)]/HLG.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>
@@ -1093,23 +1159,23 @@
             <include content="Video_Audio_Background_Flag">
                 <param name="groupId">46</param>
                 <param name="imageId">47</param>
-                <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
+                <param name="visible">[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">common/corner.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
-			
+				
             <include content="Video_Background_Flag">
                 <param name="groupId">48</param>
                 <param name="imageId">49</param>
-                <param name="visible">!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</param>
+                <param name="visible">[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">common/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
-			
+				
             <include content="Audio_Background_Flag">
                 <param name="groupId">50</param>
                 <param name="imageId">51</param>
-                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.HdrType) + !String.IsEmpty(VideoPlayer.AudioCodec)</param>
                 <param name="texture">common/corner_small.png</param>
                 <param name="colordiffuse">80FFFFFF</param>
             </include>
@@ -1190,6 +1256,39 @@
                 <param name="groupId">70</param>
                 <param name="imageId">71</param>
                 <param name="visible">String.Contains(Player.Process(amlogic.vs10.mode),HLG)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HLG.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <!-- Standard Kodi/CoreELEC HDR fallback when CPM player-process labels are unavailable -->
+            <include content="HDR10_Bypass_Flag">
+                <param name="groupId">106</param>
+                <param name="imageId">107</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HDR10.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <include content="HDR10Plus_Bypass_Flag">
+                <param name="groupId">108</param>
+                <param name="imageId">109</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10plus)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/HDR10Plus.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <include content="DV_Bypass_Flag">
+                <param name="groupId">110</param>
+                <param name="imageId">111</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,dolbyvision)</param>
+                <param name="texture">$INFO[Skin.String(codeclogos_path)]/Dolby_Vision.png</param>
+                <param name="colordiffuse">dialog_fg_90</param>
+            </include>
+
+            <include content="HLG_Bypass_Flag">
+                <param name="groupId">112</param>
+                <param name="imageId">113</param>
+                <param name="visible">String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hlg)</param>
                 <param name="texture">$INFO[Skin.String(codeclogos_path)]/HLG.png</param>
                 <param name="colordiffuse">dialog_fg_90</param>
             </include>

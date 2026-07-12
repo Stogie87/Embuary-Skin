@@ -4,7 +4,7 @@
         <control type="group">
             <left>25</left>
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -35,7 +35,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                 <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -66,7 +66,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.HdrType) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
 		<include content="AudioBackgroundPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="AudioBackgroundPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="AudioBackgroundPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -167,7 +167,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -267,7 +267,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,dolbyvision)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -317,7 +317,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hlg)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -497,7 +497,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10plus)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -1438,7 +1438,7 @@
             <visible>!Window.IsVisible(DialogPlayerProcessInfo.xml)</visible>
             <left>25</left>
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -1469,7 +1469,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -1500,7 +1500,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.HdrType) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
 		<include content="AudioBackgroundPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="AudioBackgroundPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="AudioBackgroundPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -1601,7 +1601,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -1701,7 +1701,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,dolbyvision)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -1751,7 +1751,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hlg)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -1931,7 +1931,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10plus)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -2887,7 +2887,7 @@
 	    <include content="CodecLogoLeftCenter_290" condition="String.IsEqual(Skin.String(codeclogos_scale),290)" />
 	    <include content="CodecLogoLeftCenter_300" condition="String.IsEqual(Skin.String(codeclogos_scale),300)" />
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -2918,7 +2918,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -2949,7 +2949,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.HdrType) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
 		<include content="AudioBackgroundPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="AudioBackgroundPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="AudioBackgroundPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -3050,7 +3050,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -3150,7 +3150,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,dolbyvision)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -3200,7 +3200,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hlg)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -3380,7 +3380,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10plus)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -4341,7 +4341,7 @@
 	    <include content="CodecLogoLeftCenter_290" condition="String.IsEqual(Skin.String(codeclogos_scale),290)" />
 	    <include content="CodecLogoLeftCenter_300" condition="String.IsEqual(Skin.String(codeclogos_scale),300)" />
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -4372,7 +4372,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -4403,7 +4403,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.HdrType) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
 		<include content="AudioBackgroundPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="AudioBackgroundPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="AudioBackgroundPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -4504,7 +4504,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -4604,7 +4604,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,dolbyvision)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -4654,7 +4654,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hlg)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -4834,7 +4834,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10plus)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -5790,7 +5790,7 @@
 	    <include content="CodecLogoLeftRight_290" condition="String.IsEqual(Skin.String(codeclogos_scale),290)" />
 	    <include content="CodecLogoLeftRight_300" condition="String.IsEqual(Skin.String(codeclogos_scale),300)" />
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -5821,7 +5821,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -5852,7 +5852,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.HdrType) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
 		<include content="AudioBackgroundPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="AudioBackgroundPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="AudioBackgroundPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -5953,7 +5953,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -6053,7 +6053,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,dolbyvision)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -6103,7 +6103,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hlg)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -6283,7 +6283,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10plus)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -7244,7 +7244,7 @@
 	    <include content="CodecLogoLeftRight_290" condition="String.IsEqual(Skin.String(codeclogos_scale),290)" />
 	    <include content="CodecLogoLeftRight_300" condition="String.IsEqual(Skin.String(codeclogos_scale),300)" />
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG1_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -7275,7 +7275,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>[!String.IsEmpty(Player.Process(video.source.hdr.type.raw)) | !String.IsEmpty(VideoPlayer.HdrType)] + String.IsEmpty(VideoPlayer.AudioCodec)</visible>
                <top>60</top>
 		<left>-8</left>
 		<include content="CodecLogoBG2_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
@@ -7306,7 +7306,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
+                <visible>String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEmpty(VideoPlayer.HdrType) + !String.IsEmpty(VideoPlayer.AudioCodec)</visible>
 		<include content="AudioBackgroundPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="AudioBackgroundPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="AudioBackgroundPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -7407,7 +7407,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 1) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -7507,7 +7507,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 3) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,dolbyvision)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -7557,7 +7557,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 4) + String.Contains(Player.Process(amlogic.vs10.mode),Bypass)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hlg)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
@@ -7737,7 +7737,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)</visible>
+                <visible>[String.IsEqual(Player.Process(video.source.hdr.type.raw), 2) + !String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision) + !String.Contains(Player.Process(amlogic.vs10.mode),SDR) + !String.Contains(Player.Process(amlogic.vs10.mode),HLG)] | [String.IsEmpty(Player.Process(video.source.hdr.type.raw)) + String.IsEqual(VideoPlayer.HdrType,hdr10plus)]</visible>
 		<include content="VideoPosition_100" condition="String.IsEqual(Skin.String(codeclogos_scale),100)" />
 		<include content="VideoPosition_110" condition="String.IsEqual(Skin.String(codeclogos_scale),110)" />
 		<include content="VideoPosition_120" condition="String.IsEqual(Skin.String(codeclogos_scale),120)" />
