@@ -165,7 +165,7 @@
 						<control type="textbox">
 							<top>246</top>
 							<width>100%</width>
-							<height>125</height>
+							<height>120</height>
 							<align>justify</align>
 							<aligny>top</aligny>
 							<label>$VAR[SetViewPlot]</label>
