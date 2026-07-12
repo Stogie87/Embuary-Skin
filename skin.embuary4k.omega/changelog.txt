@@ -1,3 +1,6 @@
+[B]Version 21.1.22[/B]
+- Fixed non-functional More buttons for Jellyfin, Emby and local library items by Stogie87
+
 [B]Version 21.1.21[/B]
 - Added SDR playback logo fallback for non-CPM builds by Stogie87
 

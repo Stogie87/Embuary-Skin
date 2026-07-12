@@ -109,7 +109,8 @@
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
 								<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-								<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
+								<onclick condition="$EXP[HasJellyfinContext] | $EXP[HasJellyfinTranscodeContext]">RunScript(special://home/addons/plugin.video.jellyfin/context.py)</onclick>
+								<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
 								<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 							</item>
 						</content>
@@ -333,7 +334,8 @@
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
 								<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-								<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
+								<onclick condition="$EXP[HasJellyfinContext] | $EXP[HasJellyfinTranscodeContext]">RunScript(special://home/addons/plugin.video.jellyfin/context.py)</onclick>
+								<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
 								<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 							</item>
 						</content>
@@ -474,7 +476,8 @@
 							<label>&#xf1d8;</label>
 							<ondown>200</ondown>
 							<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-							<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
+							<onclick condition="$EXP[HasJellyfinContext] | $EXP[HasJellyfinTranscodeContext]">RunScript(special://home/addons/plugin.video.jellyfin/context.py)</onclick>
+							<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
 							<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 						</control>
 					</control>
@@ -740,7 +743,8 @@
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
 								<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-								<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
+								<onclick condition="$EXP[HasJellyfinContext] | $EXP[HasJellyfinTranscodeContext]">RunScript(special://home/addons/plugin.video.jellyfin/context.py)</onclick>
+								<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
 								<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 							</item>
 						</content>
@@ -897,7 +901,8 @@
 							<label>&#xf1d8;</label>
 							<ondown>200</ondown>
 							<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-							<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
+							<onclick condition="$EXP[HasJellyfinContext] | $EXP[HasJellyfinTranscodeContext]">RunScript(special://home/addons/plugin.video.jellyfin/context.py)</onclick>
+							<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
 							<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 						</control>
 					</control>
@@ -1203,7 +1208,8 @@
 									<label>$LOCALIZE[31366]</label>
 									<property name="icon">&#xf1d8;</property>
 									<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-									<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
+									<onclick condition="$EXP[HasJellyfinContext] | $EXP[HasJellyfinTranscodeContext]">RunScript(special://home/addons/plugin.video.jellyfin/context.py)</onclick>
+									<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
 									<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 								</item>
 							</content>
