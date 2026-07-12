@@ -723,10 +723,10 @@
 							</include>
 						</control>
 					</control>
-					<!-- plot - identical formatting and scrolling to Episode/Slide View -->
+					<!-- plot -->
 					<control type="textbox">
 						<top>296</top>
-						<width>144%</width>
+						<width>100%</width>
 						<height max="85">auto</height>
 						<align>justify</align>
 						<aligny>top</aligny>
