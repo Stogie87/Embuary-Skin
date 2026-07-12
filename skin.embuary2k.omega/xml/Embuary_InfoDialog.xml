@@ -128,7 +128,7 @@
 						<aligny>top</aligny>
 						<label>$VAR[SetViewPlot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
+						<autoscroll delay="8000" time="5000" repeat="12000">true</autoscroll>
 					</control>
 					<!-- video meta-->
 					<control type="group">
@@ -350,9 +350,9 @@
 						<height max="135">auto</height>
 						<align>justify</align>
 						<aligny>top</aligny>
-						<label>$INFO[ListItem.Plot]</label>
+						<label>$VAR[SetViewPlot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
+						<autoscroll delay="8000" time="5000" repeat="12000">true</autoscroll>
 					</control>
 					<!-- video meta-->
 					<control type="group">
@@ -559,8 +559,34 @@
 				<top>90</top>
 				<width>100%</width>
 				<height>486</height>
-				<!-- thumb -->
-				<include>MetaThumbnail</include>
+				<!-- episode image -->
+				<control type="group">
+					<visible>!Control.HasFocus(200)</visible>
+					<include>MetaThumbnail</include>
+				</control>
+				<control type="group">
+					<visible>Control.HasFocus(200)</visible>
+					<left>70</left>
+					<control type="image">
+						<top>-2</top>
+						<left>-2</left>
+						<width>436</width>
+						<height>248</height>
+						<texture border="20,20,20,20">items/shadow.png</texture>
+					</control>
+					<control type="image">
+						<width>430</width>
+						<height>242</height>
+						<texture colordiffuse="thumb_background">common/white.jpg</texture>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+					</control>
+					<control type="image">
+						<width>430</width>
+						<height>242</height>
+						<texture background="true">$VAR[InfoDialogEpisodeThumb]</texture>
+						<aspectratio scalediffuse="false">keep</aspectratio>
+					</control>
+				</control>
 				<control type="group">
 					<top>-5</top>
 					<left>524</left>
@@ -569,7 +595,7 @@
 					<control type="label">
 						<right>440</right>
 						<height>50</height>
-						<label>$INFO[ListItem.TvShowTitle]</label>
+						<label>$VAR[InfoDialogEpisodeTVShowTitle]</label>
 						<font>Reg37</font>
 						<aligny>top</aligny>
 					</control>
@@ -577,7 +603,7 @@
 						<top>50</top>
 						<right>440</right>
 						<height>60</height>
-						<label>$VAR[ListItemSeasonEpisode]$INFO[ListItem.Title]</label>
+						<label>$VAR[InfoDialogEpisodeTitle]</label>
 						<font>Reg37</font>
 						<aligny>top</aligny>
 					</control>
@@ -586,7 +612,42 @@
 						<top>110</top>
 						<right>440</right>
 						<height>40</height>
-						<include>MetaEpisodeInfos</include>
+						<control type="group">
+							<visible>!Control.HasFocus(200)</visible>
+							<include>MetaEpisodeInfos</include>
+						</control>
+						<control type="grouplist">
+							<visible>Control.HasFocus(200)</visible>
+							<height>40</height>
+							<width>1040</width>
+							<itemgap>5</itemgap>
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<label>$INFO[Container(200).ListItem.Premiered]   </label>
+								<include>MetaLabel</include>
+								<visible>!String.IsEmpty(Container(200).ListItem.Premiered)</visible>
+							</control>
+							<control type="label">
+								<label>$VAR[InfoDialogEpisodeDuration]   </label>
+								<include>MetaLabel</include>
+								<visible>!String.IsEmpty(Container(200).ListItem.Duration)</visible>
+							</control>
+							<include content="MpaaIcon">
+								<param name="type" value="Container(200).ListItem"/>
+							</include>
+							<include content="CCIcon">
+								<param name="visible" value="!String.IsEmpty(Container(200).ListItem.SubtitleLanguage)"/>
+							</include>
+							<!-- Same MetaRating include used by Episode/Slide View -->
+							<include content="MetaRating">
+								<param name="type" value="Container(200).ListItem"/>
+							</include>
+							<control type="label">
+								<label>$VAR[InfoDialogEpisodeEndTime,$LOCALIZE[31037] ]   </label>
+								<include>MetaLabel</include>
+								<visible>!String.IsEmpty(Container(200).ListItem.EndTimeResume) | !String.IsEmpty(Container(200).ListItem.EndTime)</visible>
+							</control>
+						</control>
 					</control>
 					<!-- buttons -->
 					<control type="list" id="100">
@@ -651,24 +712,68 @@
 					<!-- genre -->
 					<control type="group">
 						<top>259</top>
-						<include>MetaGenre</include>
+						<control type="group">
+							<visible>!Control.HasFocus(200)</visible>
+							<include>MetaGenre</include>
+						</control>
+						<control type="group">
+							<visible>Control.HasFocus(200)</visible>
+							<include content="MetaGenre">
+								<param name="type" value="Container(200).ListItem"/>
+							</include>
+						</control>
 					</control>
-					<!-- plot -->
+					<!-- plot - identical formatting and scrolling to Episode/Slide View -->
 					<control type="textbox">
 						<top>296</top>
-						<width>100%</width>
-						<height max="65">auto</height>
+						<width>144%</width>
+						<height max="85">auto</height>
 						<align>justify</align>
 						<aligny>top</aligny>
-						<label>$VAR[SetViewPlot]</label>
+						<label>$VAR[InfoDialogEpisodePlot]</label>
 						<font>Light24</font>
-						<autoscroll>false</autoscroll>
+						<autoscroll delay="8000" time="5000" repeat="12000">true</autoscroll>
 					</control>
 					<!-- video meta-->
 					<control type="group">
 						<top>390</top>
 						<height>40</height>
-						<include>MetaMediaInfo</include>
+						<control type="group">
+							<visible>!Control.HasFocus(200)</visible>
+							<include>MetaMediaInfo</include>
+						</control>
+						<control type="grouplist">
+							<visible>Control.HasFocus(200)</visible>
+							<height>40</height>
+							<width>1040</width>
+							<itemgap>5</itemgap>
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<label>[UPPERCASE]$INFO[Container(200).ListItem.HdrType][/UPPERCASE]   </label>
+								<include>MetaLabel</include>
+								<visible>!String.IsEmpty(Container(200).ListItem.HdrType)</visible>
+							</control>
+							<control type="label">
+								<label>[UPPERCASE]$INFO[Container(200).ListItem.VideoResolution][/UPPERCASE]   </label>
+								<include>MetaLabel</include>
+								<visible>!String.IsEmpty(Container(200).ListItem.VideoResolution)</visible>
+							</control>
+							<control type="label">
+								<label>[UPPERCASE]$INFO[Container(200).ListItem.VideoCodec][/UPPERCASE]   </label>
+								<include>MetaLabel</include>
+								<visible>!String.IsEmpty(Container(200).ListItem.VideoCodec)</visible>
+							</control>
+							<control type="label">
+								<label>$INFO[Container(200).ListItem.AudioChannels, $LOCALIZE[10127]]   </label>
+								<include>MetaLabel</include>
+								<visible>!String.IsEmpty(Container(200).ListItem.AudioChannels)</visible>
+							</control>
+							<control type="label">
+								<label>[UPPERCASE]$INFO[Container(200).ListItem.AudioCodec][/UPPERCASE]   </label>
+								<include>MetaLabel</include>
+								<visible>!String.IsEmpty(Container(200).ListItem.AudioCodec)</visible>
+							</control>
+						</control>
 					</control>
 				</control>
 				<!-- meta -->
@@ -778,9 +883,9 @@
 				<!-- logo -->
 				<include>MetaClearlogo</include>
 			</control>
-			<!-- More from seasons %i -->
+			<!-- More from season - native Kodi episode list, identical source to Episode/Slide View -->
 			<include content="WideWidget">
-				<param name="visible" value="String.IsEmpty(Container.Pluginname) + !String.IsEmpty(ListItem.DBID) + [!String.IsEmpty(ListItem.Season) | String.StartsWith(ListItem.Episode,S) | ListItem.Property(IsSpecial)]"/>
+				<param name="visible" value="String.IsEmpty(Container.Pluginname) + !String.IsEmpty(ListItem.TVShowDBID) + [!String.IsEmpty(ListItem.Season) | String.StartsWith(ListItem.Episode,S) | ListItem.Property(IsSpecial)]"/>
 				<param name="id" value="200"/>
 				<param name="onup" value="100"/>
 				<param name="ondown" value="201"/>
@@ -791,7 +896,7 @@
 				<param name="sortby" value="episode"/>
 				<param name="sortorder" value="ascending"/>
 				<param name="icon" value="$VAR[IconEpisodeThumb]"/>
-				<param name="content" value="plugin://script.embuary.helper/?info=getseasonepisodes&amp;dbid=$INFO[ListItem.DBID]&amp;idtype=episode&amp;season=$INFO[ListItem.Season]&amp;reload=$INFO[Window(home).Property(EmbuaryWidgetUpdate)]"/>
+				<param name="content" value="videodb://tvshows/titles/$INFO[ListItem.TVShowDBID]/$INFO[ListItem.Season]/"/>
 			</include>
 			<!-- Seasons -->
 			<include content="PosterWidget">

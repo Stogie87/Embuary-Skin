@@ -1299,6 +1299,38 @@
 		<value condition="String.IsEqual(ListItem.DBType,set)">$INFO[ListItem.Plot,,[CR][CR]]$INFO[Container(2001).ListItemAbsolute(0).Label,$LOCALIZE[31192]: ]$INFO[Container(2001).ListItemAbsolute(0).Year, (,)]$INFO[Container(2001).ListItemAbsolute(1).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(1).Year, (,)]$INFO[Container(2001).ListItemAbsolute(2).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(2).Year, (,)]$INFO[Container(2001).ListItemAbsolute(3).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(3).Year, (,)]$INFO[Container(2001).ListItemAbsolute(4).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(4).Year, (,)]$INFO[Container(2001).ListItemAbsolute(5).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(5).Year, (,)]$INFO[Container(2001).ListItemAbsolute(6).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(6).Year, (,)]$INFO[Container(2001).ListItemAbsolute(7).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(7).Year, (,)]$INFO[Container(2001).ListItemAbsolute(8).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(8).Year, (,)]$INFO[Container(2001).ListItemAbsolute(9).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(9).Year, (,)]$INFO[Container(2001).ListItemAbsolute(10).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(10).Year, (,)]$INFO[Container(2001).ListItemAbsolute(11).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(11).Year, (,)]$INFO[Container(2001).ListItemAbsolute(12).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(12).Year, (,)]$INFO[Container(2001).ListItemAbsolute(13).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(13).Year, (,)]$INFO[Container(2001).ListItemAbsolute(14).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(14).Year, (,)]$INFO[Container(2001).ListItemAbsolute(15).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(15).Year, (,)]$INFO[Container(2001).ListItemAbsolute(16).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(16).Year, (,)]$INFO[Container(2001).ListItemAbsolute(17).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(17).Year, (,)]$INFO[Container(2001).ListItemAbsolute(18).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(18).Year, (,)]$INFO[Container(2001).ListItemAbsolute(19).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(19).Year, (,)]$INFO[Container(2001).ListItemAbsolute(20).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(20).Year, (,)]$INFO[Container(2001).ListItemAbsolute(21).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(21).Year, (,)]$INFO[Container(2001).ListItemAbsolute(22).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(22).Year, (,)]$INFO[Container(2001).ListItemAbsolute(23).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(23).Year, (,)]$INFO[Container(2001).ListItemAbsolute(24).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(24).Year, (,)]$INFO[Container(2001).ListItemAbsolute(25).Label,  /  ]$INFO[Container(2001).ListItemAbsolute(25).Year, (,)]</value>
 		<value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Tagline,[B],[/B][CR]]$INFO[ListItem.Plot]</value>
 	</variable>
+	<variable name="InfoDialogEpisodeTVShowTitle">
+		<value condition="Control.HasFocus(200) + !String.IsEmpty(Container(200).ListItem.TVShowTitle)">$INFO[Container(200).ListItem.TVShowTitle]</value>
+		<value>$INFO[ListItem.TVShowTitle]</value>
+	</variable>
+	<variable name="InfoDialogEpisodeTitle">
+		<value condition="Control.HasFocus(200) + String.StartsWith(Container(200).ListItem.Episode,S)">$INFO[Container(200).ListItem.Episode,, - ]$INFO[Container(200).ListItem.Title]</value>
+		<value condition="Control.HasFocus(200)">$INFO[Container(200).ListItem.Season,S,:]$INFO[Container(200).ListItem.Episode,E, - ]$INFO[Container(200).ListItem.Title]</value>
+		<value>$VAR[ListItemSeasonEpisode]$INFO[ListItem.Title]</value>
+	</variable>
+	<variable name="InfoDialogEpisodePlot">
+		<value condition="Control.HasFocus(200) + !String.IsEmpty(Container(200).ListItem.Plot)">$INFO[Container(200).ListItem.Tagline,[B],[/B][CR]]$INFO[Container(200).ListItem.Plot]</value>
+		<value condition="Control.HasFocus(200)">$LOCALIZE[19055]</value>
+		<value>$VAR[SetViewPlot]</value>
+	</variable>
+	<variable name="InfoDialogEpisodeDuration">
+		<value condition="Control.HasFocus(200) + Integer.IsGreater(Container(200).ListItem.Duration(mins),1)">$INFO[Container(200).ListItem.Duration(mins)] $LOCALIZE[31089]</value>
+		<value condition="Control.HasFocus(200) + Integer.IsEqual(Container(200).ListItem.Duration(mins),1)">$INFO[Container(200).ListItem.Duration(mins)] $LOCALIZE[31090]</value>
+		<value condition="Control.HasFocus(200)">$INFO[Container(200).ListItem.Duration]</value>
+		<value>$VAR[DurationMinutes]</value>
+	</variable>
+	<variable name="InfoDialogEpisodeThumb">
+		<value condition="!String.IsEmpty(Container(200).ListItem.Art(thumb))">$INFO[Container(200).ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(Container(200).ListItem.Art(landscape))">$INFO[Container(200).ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(Container(200).ListItem.Art(tvshow.landscape))">$INFO[Container(200).ListItem.Art(tvshow.landscape)]</value>
+		<value condition="!String.IsEmpty(Container(200).ListItem.Art(fanart))">$INFO[Container(200).ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(Container(200).ListItem.Art(tvshow.fanart))">$INFO[Container(200).ListItem.Art(tvshow.fanart)]</value>
+		<value condition="!String.StartsWith(Container(200).ListItem.Icon,Default)">$INFO[Container(200).ListItem.Icon]</value>
+	</variable>
+	<variable name="InfoDialogEpisodeEndTime">
+		<value condition="!String.IsEmpty(Container(200).ListItem.EndTimeResume)">$INFO[Container(200).ListItem.EndTimeResume]</value>
+		<value condition="!String.IsEmpty(Container(200).ListItem.EndTime)">$INFO[Container(200).ListItem.EndTime]</value>
+	</variable>
 	<variable name="ArtistInfoPlot">
 		<value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
 		<value>$LOCALIZE[19055]</value>
@@ -2088,10 +2120,6 @@
 	</variable>
 	<variable name="GenrePath21">
 		<value condition="!String.IsEmpty(Container(2000).ListItemAbsolute(21).Folderpath)">$INFO[Container(2000).ListItemAbsolute(21).Folderpath]</value>
-		<value>-</value>
-	</variable>
-	<variable name="GenrePath22">
-		<value condition="!String.IsEmpty(Container(2000).ListItemAbsolute(22).Folderpath)">$INFO[Container(2000).ListItemAbsolute(22).Folderpath]</value>
 		<value>-</value>
 	</variable>
 	<variable name="GenrePath22">
