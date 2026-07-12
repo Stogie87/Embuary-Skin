@@ -393,7 +393,7 @@ CI &amp; build changes
     </extension>
 </addon>
 
-<addon id="script.embuary.helper" name="Embuary Helper" version="2.0.12" provider-name="sualfred, Stogie">
+<addon id="script.embuary.helper" name="Embuary Helper" version="2.0.13" provider-name="sualfred, Stogie">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
         <import addon="script.module.pil" version="1.1.7"/>
@@ -872,7 +872,7 @@ v1.1.25
     </extension>
 </addon>
 
-<addon id="skin.embuary2k.omega" version="21.1.16" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
+<addon id="skin.embuary2k.omega" version="21.1.17" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
 		<import addon="script.embuary.helper" version="2.0.8"/>
 		<import addon="script.embuary.info" version="2.0.8"/>
@@ -920,7 +920,7 @@ v1.1.25
 	</extension>
 </addon>
 
-<addon id="skin.embuary4k.omega" version="21.1.16" name="Embuary 4K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
+<addon id="skin.embuary4k.omega" version="21.1.17" name="Embuary 4K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
 		<import addon="script.embuary.helper" version="2.0.8"/>
 		<import addon="script.embuary.info" version="2.0.8"/>

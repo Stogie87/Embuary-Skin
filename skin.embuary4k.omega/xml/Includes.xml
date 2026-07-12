@@ -81,7 +81,15 @@
 
 	<expression name="HasEmbyContext">[[!String.IsEmpty(ListItem.DBID) + !String.IsEqual(ListItem.DBID,-1) | !String.IsEmpty(ListItem.Property(embyid))] + !String.IsEmpty(Window(10000).Property(emby_context)) + !Skin.HasSetting(KioskMode) + !String.StartsWith(ListItem.FolderPath,plugin://plugin.video.embycon)]</expression>
 
+	<expression name="HasJellyfinContext">[[!String.IsEmpty(ListItem.DBID) + !String.IsEqual(ListItem.DBID,-1) | !String.IsEmpty(ListItem.Property(jellyfinid))] + !String.IsEmpty(Window(10000).Property(jellyfin_context)) + !Skin.HasSetting(KioskMode)]</expression>
+
+	<expression name="HasMediaServerContext">[$EXP[HasEmbyContext] | $EXP[HasJellyfinContext]]</expression>
+
 	<expression name="HasEmbyConContext">[!String.IsEmpty(ListItem.Property(id)) + String.StartsWith(ListItem.FolderPath,plugin://plugin.video.embycon)]</expression>
+
+	<expression name="IsMediaServerItemPath">[[String.StartsWith(ListItem.Path,plugin://plugin.video.emby) + !String.StartsWith(ListItem.Path,plugin://plugin.video.embycon)] | String.StartsWith(ListItem.Path,plugin://plugin.video.jellyfin)]</expression>
+
+	<expression name="IsMediaServerContainerPath">[[String.StartsWith(Container.FolderPath,plugin://plugin.video.emby) + !String.StartsWith(Container.FolderPath,plugin://plugin.video.embycon)] | String.StartsWith(Container.FolderPath,plugin://plugin.video.jellyfin)]</expression>
 
 	<expression name="HasLibraryEditButton">[!Skin.HasSetting(HideLibraryEditButtons) + !Skin.HasSetting(KioskMode) + !String.StartsWith(ListItem.Path,plugin://)]</expression>
 
@@ -111,7 +119,7 @@
 
 	<expression name="ScrollbarContainers">[Control.IsVisible(50) | Control.IsVisible(51) | Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(58) | Control.IsVisible(59)]</expression>
 
-	<expression name="IsPlugin">[String.StartsWith(Container.Folderpath,plugin://) + !String.StartsWith(Container.FolderPath,plugin://plugin.video.emby/)]</expression>
+	<expression name="IsPlugin">[String.StartsWith(Container.Folderpath,plugin://) + !$EXP[IsMediaServerContainerPath]]</expression>
 
 	<expression name="IsEmbyConSource">[String.StartsWith(Container.Folderpath,plugin://plugin.video.embycon) | Window.IsVisible(1160) | Window.IsVisible(1161) | Window.IsVisible(1162) | Window.IsVisible(1163) | Window.IsVisible(1164) | Window.IsVisible(1165) | Window.IsVisible(1166) | Window.IsVisible(1167) | Window.IsVisible(1168) | Window.IsVisible(1169)]</expression>
 

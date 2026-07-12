@@ -105,11 +105,11 @@
 								<onclick condition="String.IsEqual(ListItem.DBType,movie) + [String.IsEmpty(ListItem.IMDBNumber) | String.StartsWith(ListItem.IMDBNumber,xx)]">RunScript(script.embuary.info,call=movie,query='$ESCINFO[ListItem.Title]',year=$INFO[ListItem.Year])</onclick>
 							</item>
 							<item>
-								<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext] | $EXP[HasLibraryEditButton]</visible>
+								<visible>$EXP[HasMediaServerContext] | $EXP[HasEmbyConContext] | $EXP[HasLibraryEditButton]</visible>
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
-								<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-								<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
+								<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
+								<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
 								<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 							</item>
 						</content>
@@ -281,18 +281,18 @@
 						<content>
 							<item>
 								<visible>
-									[String.StartsWith(ListItem.Path,plugin://) + !String.StartsWith(ListItem.Path,plugin://plugin.video.emby.) + !String.IsEmpty(ListItem.Filenameandpath)]
-									| [[!String.StartsWith(ListItem.Path,plugin://) | String.StartsWith(ListItem.Path,plugin://plugin.video.emby.)] + !String.IsEmpty(ListItem.DBID)]
+									[String.StartsWith(ListItem.Path,plugin://) + !$EXP[IsMediaServerItemPath] + !String.IsEmpty(ListItem.Filenameandpath)]
+									| [[!String.StartsWith(ListItem.Path,plugin://) | $EXP[IsMediaServerItemPath]] + !String.IsEmpty(ListItem.DBID)]
 								</visible>
 								<label>$VAR[VideoInfoButton8]</label>
 								<property name="icon">$VAR[VideoInfoButton8Icon]</property>
-								<onclick condition="!String.StartsWith(ListItem.Path,plugin://) | String.StartsWith(ListItem.Path,plugin://plugin.video.emby.)">RunScript(script.embuary.helper,action=goto,path='"videodb://tvshows/titles/$INFO[ListItem.DBID]/"',target=videos)</onclick>
-								<onclick condition="String.StartsWith(ListItem.Path,plugin://) + !String.StartsWith(ListItem.Path,plugin://plugin.video.emby.)">RunScript(script.embuary.helper,action=goto,path='$ESCINFO[ListItem.Filenameandpath]',target=videos)</onclick>
+								<onclick condition="!String.StartsWith(ListItem.Path,plugin://) | $EXP[IsMediaServerItemPath]">RunScript(script.embuary.helper,action=goto,path='"videodb://tvshows/titles/$INFO[ListItem.DBID]/"',target=videos)</onclick>
+								<onclick condition="String.StartsWith(ListItem.Path,plugin://) + !$EXP[IsMediaServerItemPath]">RunScript(script.embuary.helper,action=goto,path='$ESCINFO[ListItem.Filenameandpath]',target=videos)</onclick>
 							</item>
 							<item>
 								<visible>
-									![String.StartsWith(ListItem.Path,plugin://) + !String.StartsWith(ListItem.Path,plugin://plugin.video.emby.) + !String.IsEmpty(ListItem.Filenameandpath)]
-									+ ![[!String.StartsWith(ListItem.Path,plugin://) | String.StartsWith(ListItem.Path,plugin://plugin.video.emby.)] + !String.IsEmpty(ListItem.DBID)]
+									![String.StartsWith(ListItem.Path,plugin://) + !$EXP[IsMediaServerItemPath] + !String.IsEmpty(ListItem.Filenameandpath)]
+									+ ![[!String.StartsWith(ListItem.Path,plugin://) | $EXP[IsMediaServerItemPath]] + !String.IsEmpty(ListItem.DBID)]
 								</visible>
 								<label>$VAR[VideoInfoButton8]</label>
 								<property name="icon">$VAR[VideoInfoButton8Icon]</property>
@@ -329,11 +329,11 @@
 								<onclick condition="String.IsEqual(ListItem.DBType,tvshow)">RunScript(script.embuary.info,call=tv,dbid=$INFO[ListItem.DBID])</onclick>
 							</item>
 							<item>
-								<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext] | $EXP[HasLibraryEditButton]</visible>
+								<visible>$EXP[HasMediaServerContext] | $EXP[HasEmbyConContext] | $EXP[HasLibraryEditButton]</visible>
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
-								<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-								<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
+								<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
+								<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
 								<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 							</item>
 						</content>
@@ -394,13 +394,13 @@
 						</control>
 						<control type="button" id="102">
 							<visible>
-								[String.StartsWith(ListItem.Path,plugin://) + !String.StartsWith(ListItem.Path,plugin://plugin.video.emby.) + !String.IsEmpty(ListItem.Filenameandpath)]
-								| [[!String.StartsWith(ListItem.Path,plugin://) | String.StartsWith(ListItem.Path,plugin://plugin.video.emby.)] + !String.IsEmpty(ListItem.DBID)]
+								[String.StartsWith(ListItem.Path,plugin://) + !$EXP[IsMediaServerItemPath] + !String.IsEmpty(ListItem.Filenameandpath)]
+								| [[!String.StartsWith(ListItem.Path,plugin://) | $EXP[IsMediaServerItemPath]] + !String.IsEmpty(ListItem.DBID)]
 							</visible>
 							<include>LightGreyButton</include>
 							<label>$LOCALIZE[31011]</label>
-							<onclick condition="!String.StartsWith(ListItem.Path,plugin://) | String.StartsWith(ListItem.Path,plugin://plugin.video.emby.)">RunScript(script.embuary.helper,action=goto,path='"videodb://tvshows/titles/$INFO[ListItem.DBID]/"',target=videos)</onclick>
-							<onclick condition="String.StartsWith(ListItem.Path,plugin://) + !String.StartsWith(ListItem.Path,plugin://plugin.video.emby.)">RunScript(script.embuary.helper,action=goto,path='$ESCINFO[ListItem.Filenameandpath]',target=videos)</onclick>
+							<onclick condition="!String.StartsWith(ListItem.Path,plugin://) | $EXP[IsMediaServerItemPath]">RunScript(script.embuary.helper,action=goto,path='"videodb://tvshows/titles/$INFO[ListItem.DBID]/"',target=videos)</onclick>
+							<onclick condition="String.StartsWith(ListItem.Path,plugin://) + !$EXP[IsMediaServerItemPath]">RunScript(script.embuary.helper,action=goto,path='$ESCINFO[ListItem.Filenameandpath]',target=videos)</onclick>
 							<ondown>200</ondown>
 						</control>
 						<control type="button" id="8">
@@ -433,13 +433,13 @@
 							<ondown>200</ondown>
 						</control>
 						<control type="button" id="103">
-							<visible>$EXP[HasEmbyContext] | $EXP[HasLibraryEditButton] | $EXP[HasEmbyConContext]</visible>
+							<visible>$EXP[HasMediaServerContext] | $EXP[HasLibraryEditButton] | $EXP[HasEmbyConContext]</visible>
 							<include>LightGreyButtonRound</include>
 							<font>Material24</font>
 							<label>&#xf1d8;</label>
 							<ondown>200</ondown>
-							<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-							<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
+							<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
+							<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
 							<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 						</control>
 					</control>
@@ -639,11 +639,11 @@
 								<onclick>RunScript(script.embuary.info,call=tv,query=$INFO[ListItem.TVShowTitle])</onclick>
 							</item>
 							<item>
-								<visible>$EXP[HasEmbyContext] | $EXP[HasLibraryEditButton] | $EXP[HasEmbyConContext]</visible>
+								<visible>$EXP[HasMediaServerContext] | $EXP[HasLibraryEditButton] | $EXP[HasEmbyConContext]</visible>
 								<label>$LOCALIZE[31366]</label>
 								<property name="icon">&#xf1d8;</property>
-								<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-								<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
+								<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
+								<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
 								<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 							</item>
 						</content>
@@ -750,13 +750,13 @@
 							<ondown>200</ondown>
 						</control>
 						<control type="button" id="103">
-							<visible>$EXP[HasEmbyContext] | $EXP[HasLibraryEditButton] | $EXP[HasEmbyConContext]</visible>
+							<visible>$EXP[HasMediaServerContext] | $EXP[HasLibraryEditButton] | $EXP[HasEmbyConContext]</visible>
 							<include>LightGreyButtonRound</include>
 							<font>Material24</font>
 							<label>&#xf1d8;</label>
 							<ondown>200</ondown>
-							<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-							<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
+							<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
+							<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
 							<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 						</control>
 					</control>
@@ -1058,11 +1058,11 @@
 									<onclick>RunScript(script.embuary.helper,action=textviewer,header='$ESCINFO[ListItem.Label]',message='$ESCINFO[ListItem.Property(Artist_Description)]')</onclick>
 								</item>
 								<item>
-									<visible>$EXP[HasEmbyContext] | $EXP[HasLibraryEditButton] | $EXP[HasEmbyConContext]</visible>
+									<visible>$EXP[HasMediaServerContext] | $EXP[HasLibraryEditButton] | $EXP[HasEmbyConContext]</visible>
 									<label>$LOCALIZE[31366]</label>
 									<property name="icon">&#xf1d8;</property>
-									<onclick condition="!$EXP[HasEmbyContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
-									<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
+									<onclick condition="!$EXP[HasMediaServerContext] + $EXP[HasLibraryEditButton]">SetFocus(4000)</onclick>
+									<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
 									<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 								</item>
 							</content>

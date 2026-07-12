@@ -96,8 +96,8 @@ class Service(xbmc.Monitor):
 
         while not self.abortRequested() and not self.restart:
 
-            ''' Only run timed tasks if screensaver is inactive to avoid keeping NAS/servers awake '''
-            if not self.screensaver:
+            ''' Only run timed tasks if screensaver is inactive and no media is playing '''
+            if not self.screensaver and not xbmc.Player().isPlaying():
 
                 ''' Grab fanarts '''
                 if get_backgrounds >= 200 or not arts:

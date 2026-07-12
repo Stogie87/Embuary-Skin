@@ -1,3 +1,10 @@
+[B]Version 21.1.17[/B]
+- Improved Jellyfin context menu, info dialog and navigation support by Stogie87
+- Replaced direct Emby context script calls with Kodi native context handling by Stogie87
+- Fixed HDR, Dolby Vision and VS10 metadata fallback conditions by Stogie87
+- Reduced Embuary Helper background activity during playback by Stogie87
+- Fixed EmbyCon season content path handling by Stogie87
+
 [B]Version 21.1.16[/B]
 - Added default codec logo settings on first skin start by Stogie87
 - Enabled Codec Info Overlay by default by Stogie87

@@ -148,10 +148,10 @@
 									<visible>$EXP[IsWatched]</visible>
 								</item>
 								<item>
-									<visible>$EXP[HasEmbyContext] | $EXP[HasEmbyConContext]</visible>
+									<visible>$EXP[HasMediaServerContext] | $EXP[HasEmbyConContext]</visible>
 									<label>$LOCALIZE[31366]</label>
 									<property name="icon">&#xf1d8;</property>
-									<onclick condition="$EXP[HasEmbyContext]">RunScript(special://home/addons/plugin.video.emby/context.py)</onclick>
+									<onclick condition="$EXP[HasMediaServerContext]">ContextMenu</onclick>
 									<onclick condition="$EXP[HasEmbyConContext]">RunPlugin(plugin://plugin.video.embycon?mode=SHOW_MENU&amp;item_id=$INFO[ListItem.Property(id)])</onclick>
 								</item>
 							</content>

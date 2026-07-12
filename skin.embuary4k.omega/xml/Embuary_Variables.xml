@@ -474,7 +474,7 @@
 		<value>$LOCALIZE[31259] $INFO[ListItem.Season]</value>
 	</variable>
 	<variable name="InfoDialog_Season_Content">
-		<value condition="String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + !String.IsEqual(ListItem.DBType,episode)">plugin://plugin.video.embycon/?media_type=tvshows&amp;mode=GET_CONTENT&amp;use_cache=false&amp;url=%7Bserver%7D%2F%2Femby%2FShows%2F$INFO[ListItem.Property(id)]%2FSeasons%3FuserId%3D%7Buserid%7D%26Fields%3DItemCounts%252CPrimaryImageAspectRatio%252CBasicSyncInfo%252CCanDelete%252CMediaSourceCount</value>
+		<value condition="String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + !String.IsEqual(ListItem.DBType,episode)">plugin://plugin.video.embycon/?media_type=tvshows&amp;mode=GET_CONTENT&amp;use_cache=false&amp;url=%7Bserver%7D%2Femby%2FShows%2F$INFO[ListItem.Property(id)]%2FSeasons%3FuserId%3D%7Buserid%7D%26Fields%3DItemCounts%252CPrimaryImageAspectRatio%252CBasicSyncInfo%252CCanDelete%252CMediaSourceCount</value>
 		<value condition="Integer.IsGreater(ListItem.DBID,0) + String.IsEqual(ListItem.DBType,tvshow)">plugin://script.embuary.helper/?info=getseasons&amp;dbid=$INFO[ListItem.DBID]&amp;allseasons=false</value>
 		<value condition="Integer.IsGreater(ListItem.DBID,0) + String.IsEqual(ListItem.DBType,episode)">plugin://script.embuary.helper/?info=getseasons&amp;dbid=$INFO[ListItem.DBID]&amp;idtype=episode&amp;allseasons=false</value>
 		<value>-</value>
@@ -1131,7 +1131,7 @@
 		<value condition="String.IsEqual(Player.Process(video.dovi.el.type),none)"></value>
 	</variable>
 	<variable name="DVELVar1">
-		<value condition="String.Contains(Player.Process(video.dovi.el.type),)">[COLOR tomato][/COLOR]</value>
+		<value condition="String.IsEmpty(Player.Process(video.dovi.el.type))">[COLOR tomato][/COLOR]</value>
 	</variable>
 	<variable name="RPUPresentVar">
 		<value condition="String.IsEqual(Player.Process(video.dovi.rpu.present),1)">[COLOR palegreen][/COLOR]</value>
@@ -1169,7 +1169,7 @@
 		<value condition="String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)">[COLOR palegreen][/COLOR]</value>
 		<value condition="String.Contains(Player.Process(amlogic.vs10.mode),HDR10)">[COLOR palegreen][/COLOR]</value>
 		<value condition="String.Contains(Player.Process(amlogic.vs10.mode),SDR)">[COLOR palegreen][/COLOR]</value>
-		<value condition="String.Contains(Player.Process(amlogic.vs10.mode),)">[COLOR tomato][/COLOR]</value>
+		<value>[COLOR tomato][/COLOR]</value>
 	</variable>
 	<variable name="DVTunnelVar">
 		<value condition="Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),1)">DV Tunnel</value>

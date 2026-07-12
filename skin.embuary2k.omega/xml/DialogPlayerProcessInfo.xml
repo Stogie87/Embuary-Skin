@@ -275,7 +275,7 @@
             </control>
             
             <control type="group">
-                <visible>String.Contains(Player.Process(video.hdr.type),hdr)</visible>
+                <visible>!String.IsEmpty(Player.Process(video.hdr.min.lum)) | !String.IsEmpty(Player.Process(video.hdr.max.lum)) | !String.IsEmpty(Player.Process(video.hdr.max.cll)) | !String.IsEmpty(Player.Process(video.hdr.max.fall))</visible>
                 <left>1907</left>
                 <top>293</top>				
                 
