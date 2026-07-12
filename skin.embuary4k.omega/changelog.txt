@@ -1,3 +1,10 @@
+[B]Version 21.1.18[/B]
+- Added extended Jellyfin 2.1 support by Stogie87
+- Added Jellyfin server, user and connection status information by Stogie87
+- Added Jellyfin library management, Quick Connect and settings integration by Stogie87
+- Added Jellyfin favorites widget and transcode context support by Stogie87
+- Added Jellyfin version display to system information by Stogie87
+
 [B]Version 21.1.17[/B]
 - Improved Jellyfin context menu, info dialog and navigation support by Stogie87
 - Replaced direct Emby context script calls with Kodi native context handling by Stogie87

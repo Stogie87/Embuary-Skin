@@ -198,6 +198,12 @@
 				<visible>System.HasAddon(plugin.video.emby)</visible>
 			</item>
 			<item>
+				<label>$INFO[System.AddonTitle(plugin.video.jellyfin)]</label>
+				<label2>&#xf6b3;</label2>
+				<onclick>Addon.OpenSettings(plugin.video.jellyfin)</onclick>
+				<visible>System.HasAddon(plugin.video.jellyfin)</visible>
+			</item>
+			<item>
 				<label>$INFO[System.AddonTitle(plugin.video.embycon)]</label>
 				<label2>&#xf6b3;</label2>
 				<onclick>Addon.OpenSettings(plugin.video.embycon)</onclick>

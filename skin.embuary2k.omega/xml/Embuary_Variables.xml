@@ -482,6 +482,19 @@
 	<variable name="EmbyConLabel">
 		<value condition="!Skin.HasSetting(HideEmbyConLabel)"> [COLOR text_sublabel](EmbyCon)[/COLOR]</value>
 	</variable>
+	<variable name="JellyfinConnectionInfo">
+		<value condition="!String.IsEmpty(Window(Home).Property(jellyfin_online)) + !String.IsEmpty(Window(Home).Property(plugin.video.jellyfin-username)) + !String.IsEmpty(Window(Home).Property(plugin.video.jellyfin-serverName))">[COLOR palegreen]●[/COLOR] $INFO[Window(Home).Property(plugin.video.jellyfin-username)] @ $INFO[Window(Home).Property(plugin.video.jellyfin-serverName)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(jellyfin_online)) + !String.IsEmpty(Window(Home).Property(plugin.video.jellyfin-username))">[COLOR palegreen]●[/COLOR] $INFO[Window(Home).Property(plugin.video.jellyfin-username)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(jellyfin_online))">[COLOR palegreen]●[/COLOR] $INFO[System.AddonTitle(plugin.video.jellyfin)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(plugin.video.jellyfin-username)) + !String.IsEmpty(Window(Home).Property(plugin.video.jellyfin-serverName))">[COLOR tomato]●[/COLOR] $INFO[Window(Home).Property(plugin.video.jellyfin-username)] @ $INFO[Window(Home).Property(plugin.video.jellyfin-serverName)]</value>
+		<value condition="!String.IsEmpty(Window(Home).Property(plugin.video.jellyfin-serverName))">[COLOR tomato]●[/COLOR] $INFO[Window(Home).Property(plugin.video.jellyfin-serverName)]</value>
+		<value>[COLOR tomato]●[/COLOR] $INFO[System.AddonTitle(plugin.video.jellyfin)]</value>
+	</variable>
+	<variable name="MediaServerLabel">
+		<value condition="System.HasAddon(plugin.video.emby) + System.HasAddon(plugin.video.jellyfin)">Emby / Jellyfin</value>
+		<value condition="System.HasAddon(plugin.video.jellyfin)">Jellyfin</value>
+		<value>Emby</value>
+	</variable>
 	<variable name="MediaMainlabel">
 		<value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.TVShowTitle]</value>
 		<value condition="String.IsEqual(ListItem.DBType,tvshow)">$INFO[ListItem.TVShowTitle]</value>

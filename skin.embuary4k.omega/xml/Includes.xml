@@ -83,7 +83,9 @@
 
 	<expression name="HasJellyfinContext">[[!String.IsEmpty(ListItem.DBID) + !String.IsEqual(ListItem.DBID,-1) | !String.IsEmpty(ListItem.Property(jellyfinid))] + !String.IsEmpty(Window(10000).Property(jellyfin_context)) + !Skin.HasSetting(KioskMode)]</expression>
 
-	<expression name="HasMediaServerContext">[$EXP[HasEmbyContext] | $EXP[HasJellyfinContext]]</expression>
+	<expression name="HasJellyfinTranscodeContext">[[!String.IsEmpty(ListItem.DBID) + !String.IsEqual(ListItem.DBID,-1) | !String.IsEmpty(ListItem.Property(jellyfinid))] + [String.IsEqual(ListItem.DBTYPE,movie) | String.Contains(Container.FolderPath,livetv) | String.IsEqual(ListItem.DBTYPE,episode)] + !String.IsEmpty(Window(10000).Property(jellyfin_context_transcode)) + !Skin.HasSetting(KioskMode)]</expression>
+
+	<expression name="HasMediaServerContext">[$EXP[HasEmbyContext] | $EXP[HasJellyfinContext] | $EXP[HasJellyfinTranscodeContext]]</expression>
 
 	<expression name="HasEmbyConContext">[!String.IsEmpty(ListItem.Property(id)) + String.StartsWith(ListItem.FolderPath,plugin://plugin.video.embycon)]</expression>
 

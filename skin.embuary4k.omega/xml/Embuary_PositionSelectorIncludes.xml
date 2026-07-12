@@ -624,13 +624,13 @@
 			<param name="type" value="moviehub"/>
 			<param name="label" value="$LOCALIZE[31407]"/>
 			<param name="item" value="W_Kodi_FavMovies"/>
-			<param name="visible" value="!System.HasAddon(plugin.video.emby)"/>
+			<param name="visible" value="!System.HasAddon(plugin.video.emby) + !System.HasAddon(plugin.video.jellyfin)"/>
 		</include>
 		<include content="SetWidget">
 			<param name="type" value="moviehub"/>
-			<param name="label" value="$LOCALIZE[31062]   ($LOCALIZE[31181])"/>
+			<param name="label" value="$LOCALIZE[31062]   ($VAR[MediaServerLabel])"/>
 			<param name="item" value="W_Emby_FavMovies"/>
-			<param name="visible" value="System.HasAddon(plugin.video.emby)"/>
+			<param name="visible" value="System.HasAddon(plugin.video.emby) | System.HasAddon(plugin.video.jellyfin)"/>
 		</include>
 		<include content="SetWidget">
 			<param name="type" value="moviehub"/>
@@ -736,13 +736,13 @@
 			<param name="type" value="tvshowhub"/>
 			<param name="label" value="$LOCALIZE[31408]"/>
 			<param name="item" value="W_Kodi_FavShows"/>
-			<param name="visible" value="!System.HasAddon(plugin.video.emby)"/>
+			<param name="visible" value="!System.HasAddon(plugin.video.emby) + !System.HasAddon(plugin.video.jellyfin)"/>
 		</include>
 		<include content="SetWidget">
 			<param name="type" value="tvshowhub"/>
-			<param name="label" value="$LOCALIZE[31064]   ($LOCALIZE[31181])"/>
+			<param name="label" value="$LOCALIZE[31064]   ($VAR[MediaServerLabel])"/>
 			<param name="item" value="W_Emby_FavShows"/>
-			<param name="visible" value="System.HasAddon(plugin.video.emby)"/>
+			<param name="visible" value="System.HasAddon(plugin.video.emby) | System.HasAddon(plugin.video.jellyfin)"/>
 		</include>
 		<include content="SetWidget">
 			<param name="type" value="tvshowhub"/>

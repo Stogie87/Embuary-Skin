@@ -243,6 +243,12 @@
 					<visible>ControlGroup(1000).HasFocus(95) + System.HasAddon(plugin.video.emby)</visible>
 				</control>
 				<control type="button">
+					<label>Jellyfin For Kodi $INFO[System.AddonVersion(plugin.video.jellyfin)]</label>
+					<font>Reg22_monofied</font>
+					<include>SettingsButton</include>
+					<visible>ControlGroup(1000).HasFocus(95) + System.HasAddon(plugin.video.jellyfin)</visible>
+				</control>
+				<control type="button">
 					<label>EmbyCon $INFO[System.AddonVersion(plugin.video.embycon)]</label>
 					<font>Reg22_monofied</font>
 					<include>SettingsButton</include>

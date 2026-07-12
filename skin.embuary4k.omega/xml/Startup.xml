@@ -3,6 +3,11 @@
 	<onload condition="!Skin.HasSetting(FontCheck)">RunScript(script.embuary.helper,action=fontchange,locales=ja+zh+ar+he+ko+vi+bn+my+hi+ks+km+ms,font=Arial)</onload>
 	<onload condition="!Skin.HasSetting(FontCheck)">Skin.ToggleSetting(FontCheck)</onload>
 
+	<!-- Default favourites view settings -->
+	<onload condition="!Skin.HasSetting(FavouritesViewDefaultsSet) + String.IsEmpty(Skin.String(favourites_view))">Skin.SetString(favourites_view,standard)</onload>
+	<onload condition="!Skin.HasSetting(FavouritesViewDefaultsSet) + String.IsEqual(Skin.String(favourites_view),standard) + String.IsEmpty(Skin.String(favourites_view_localized))">Skin.SetString(favourites_view_localized,Standard)</onload>
+	<onload condition="!Skin.HasSetting(FavouritesViewDefaultsSet)">Skin.SetBool(FavouritesViewDefaultsSet)</onload>
+
 	<!-- Default codec logo settings -->
 	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_flag_name))">Skin.SetString(codeclogos_flag_name,Colorful)</onload>
 	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_flag_path))">Skin.SetString(codeclogos_flag_path,flags/colorful)</onload>

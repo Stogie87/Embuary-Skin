@@ -743,6 +743,42 @@
 			<label>$LOCALIZE[31370]</label>
 			<enable>[System.HasAddon(plugin.video.emby) | System.HasAddon(plugin.video.embycon)]</enable>
 		</control>
+		<include content="SkinSettingsHeadlineLabel">
+			<param name="id" value="$PARAM[id]23"/>
+			<param name="label" value="$INFO[System.AddonTitle(plugin.video.jellyfin)]"/>
+			<param name="visible" value="System.HasAddon(plugin.video.jellyfin)"/>
+		</include>
+		<control type="button" id="$PARAM[id]24">
+			<include>SettingsButton</include>
+			<label>$INFO[System.AddonTitle(plugin.video.jellyfin)]</label>
+			<label2>$VAR[JellyfinConnectionInfo]</label2>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.jellyfin/,return)</onclick>
+			<visible>System.HasAddon(plugin.video.jellyfin)</visible>
+		</control>
+		<control type="button" id="$PARAM[id]25">
+			<include>SettingsButton</include>
+			<label>$ADDON[plugin.video.jellyfin 30618]</label>
+			<onclick>RunPlugin(plugin://plugin.video.jellyfin/?mode=login)</onclick>
+			<visible>System.HasAddon(plugin.video.jellyfin)</visible>
+		</control>
+		<control type="button" id="$PARAM[id]26">
+			<include>SettingsButton</include>
+			<label>$ADDON[plugin.video.jellyfin 33194]</label>
+			<onclick>ActivateWindow(Videos,plugin://plugin.video.jellyfin/?mode=managelibs,return)</onclick>
+			<visible>System.HasAddon(plugin.video.jellyfin)</visible>
+		</control>
+		<control type="button" id="$PARAM[id]27">
+			<include>SettingsButton</include>
+			<label>$ADDON[plugin.video.jellyfin 33139]</label>
+			<onclick>RunPlugin(plugin://plugin.video.jellyfin/?mode=updatelibs)</onclick>
+			<visible>System.HasAddon(plugin.video.jellyfin)</visible>
+		</control>
+		<control type="button" id="$PARAM[id]28">
+			<include>SettingsButton</include>
+			<label>$LOCALIZE[5]</label>
+			<onclick>Addon.OpenSettings(plugin.video.jellyfin)</onclick>
+			<visible>System.HasAddon(plugin.video.jellyfin)</visible>
+		</control>
 		<!-- PVR -->
 		<include content="SkinSettingsHeadlineLabel">
 			<param name="id" value="$PARAM[id]30"/>
