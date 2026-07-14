@@ -1,3 +1,6 @@
+[B]Version 21.1.24[/B]
+- Improved Player Process Information layouts by Stogie87
+
 [B]Version 21.1.23[/B]
 - Added extended CPM Dolby Vision playback information by Stogie87
 - Added Source PQ, L6 luminance and DV configuration details by Stogie87

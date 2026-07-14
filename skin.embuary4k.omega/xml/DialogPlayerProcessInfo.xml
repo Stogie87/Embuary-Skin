@@ -53,7 +53,7 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>420</left>
+                    <left>480</left>
                     <top>40</top>
                     <label>$INFO[Player.Process(amlogic.displaymode)]</label>
                     <font>font_tiny</font>
@@ -211,14 +211,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-		    <left>480</left>
-		    <top>100</top>
-		    <width>975</width>
-		    <label>$VAR[DVHDRSummaryVar]</label>
-		    <font>font_tiny</font>
-		    <textcolor>dialog_fg_90</textcolor>
-		    <scroll>true</scroll>
-		</control>
+                    <left>480</left>
+                    <top>100</top>
+                    <width>705</width>
+                    <align>left</align>
+                    <label>$VAR[DVHDRSummaryVar]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
+                </control>
 				
                 <!-- Color space -->
                 <control type="label">
@@ -274,19 +275,23 @@
                     <visible>String.IsEmpty(Player.Duration) | PVR.IsPlayingTV</visible>
                 </control>
             </control>
+
             <!-- Group: HDR Static Metadata -->
             <control type="group">
-                <visible>!String.IsEmpty(Player.Process(video.hdr.min.lum)) | !String.IsEmpty(Player.Process(video.hdr.max.lum)) | !String.IsEmpty(Player.Process(video.hdr.max.cll)) | !String.IsEmpty(Player.Process(video.hdr.max.fall))</visible>
+                <visible>String.Contains(Player.Process(video.hdr.type),hdr) | String.Contains(Player.Process(video.hdr.type),hlg)</visible>
+                <visible>!String.Contains(Player.Process(video.hdr.type),dolby vision)</visible>
                 <visible>!String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
-                <left>2710</left>
-                <top>0</top>				
+                <visible>!String.IsEmpty(Player.Process(video.hdr.min.lum)) | !String.IsEmpty(Player.Process(video.hdr.max.lum)) | !String.IsEmpty(Player.Process(video.hdr.max.cll)) | !String.IsEmpty(Player.Process(video.hdr.max.fall))</visible>
+                <left>2490</left>
+                <top>0</top>
+
                 <!-- HDR Static Metadata Icon -->
                 <control type="label">
                     <label></label>
                     <top>-15</top>
                     <font>font_tiny_iconic</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>				
+                </control>
                 <!-- HDR Static Metadata -->
                 <control type="label">
                     <label>[B][UPPERCASE]$LOCALIZE[32039][/UPPERCASE][/B]</label>
@@ -294,7 +299,7 @@
                     <left>54</left>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>				
+                </control>
                 <!-- HDR10 MDL -->
                 <control type="label">
                     <top>40</top>
@@ -303,22 +308,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>380</left>
+                    <left>495</left>
                     <top>40</top>
-                    <width>400</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.hdr.min.lum)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.lum)]</label>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.hdr.min.lum)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.lum)] [COLOR dialog_fg_70]$LOCALIZE[32040][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>800</left>
-                    <top>40</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
                 <!-- HDR10 MaxCLL/FALL -->
                 <control type="label">
                     <top>100</top>
@@ -327,26 +325,20 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>380</left>
+                    <left>495</left>
                     <top>100</top>
-                    <width>400</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.hdr.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.fall)]</label>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.hdr.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.fall)] [COLOR dialog_fg_70]$LOCALIZE[32040][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>800</left>
-                    <top>100</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
             </control>
+
             <!-- Group: System -->
             <control type="group">
-                <left>1420</left>				
+                <left>1275</left>				
                 <!-- System Icon -->
                 <control type="label">
                     <label></label>
@@ -568,10 +560,11 @@
                     </control>
                 </control>
             </control>
+
             <!-- Group: Audio -->
             <control type="group">
-                <left>1420</left>
-                <top>660</top>				
+                <left>1275</left>
+                <top>660</top>			
                 <!-- Audio Icon -->
                 <control type="label">
                     <label></label>
@@ -700,10 +693,11 @@
                     <visible>!VideoPlayer.HasSubtitles</visible>
                 </control>
             </control>
+
             <!-- Group: DV Configuration -->
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
-                <left>2710</left>				
+                <left>2490</left>
                 <!-- DV Configuration Icon -->
                 <control type="label">
                     <label></label>
@@ -718,7 +712,7 @@
                     <left>54</left>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>				
+                </control>
                 <!-- Metadata -->
                 <control type="label">
                     <top>40</top>
@@ -727,21 +721,26 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>680</left>
+                    <left>495</left>
                     <top>40</top>
+                    <width>825</width>
+                    <align>left</align>
                     <label>$INFO[Player.Process(video.dovi.meta.version)]$VAR[DVConfigVersionVar, [COLOR dialog_fg_70](DV v,)[/COLOR]]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
                 <!-- N/A -->
                 <control type="label">
-                    <left>680</left>
+                    <left>495</left>
                     <top>40</top>
+                    <width>825</width>
+                    <align>left</align>
                     <label>$LOCALIZE[32033]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                     <visible>!String.Contains(Player.Process(video.dovi.meta.version),CM) + String.IsEmpty(Player.Process(video.dovi.version.major))</visible>
-                </control>				
+                </control>
                 <!-- Profile -->
                 <control type="label">
                     <top>100</top>
@@ -750,15 +749,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-		    <left>680</left>
-		    <top>100</top>
-		    <width>525</width>
-		    <label>$VAR[DVProfileDetailVar]</label>
-		    <font>font_tiny</font>
-		    <textcolor>dialog_fg_90</textcolor>
-		    <scroll>true</scroll>
-		</control>
-				
+                    <left>495</left>
+                    <top>100</top>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$VAR[DVProfileDetailVar]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
+                </control>
                 <!-- Level -->
                 <control type="label">
                     <top>160</top>
@@ -767,8 +766,10 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>680</left>
+                    <left>495</left>
                     <top>160</top>
+                    <width>825</width>
+                    <align>left</align>
                     <label>$INFO[Player.Process(video.dovi.level)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
@@ -776,13 +777,15 @@
                 </control>
                 <!-- N/A -->
                 <control type="label">
-                    <left>680</left>
+                    <left>495</left>
                     <top>160</top>
+                    <width>825</width>
+                    <align>left</align>
                     <label>$LOCALIZE[32033]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                     <visible>String.Contains(Player.Process(video.dovi.level),0)</visible>
-                </control>				
+                </control>
                 <!-- RPU -->
                 <control type="label">
                     <top>220</top>
@@ -791,12 +794,14 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>682</left>
+                    <left>495</left>
                     <top>220</top>
+                    <width>825</width>
+                    <align>left</align>
                     <label>$VAR[RPUPresentVar]</label>
                     <font>font_tiny_iconic</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>				
+                </control>
                 <!-- Base Layer -->
                 <control type="label">
                     <top>280</top>
@@ -805,12 +810,14 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>682</left>
+                    <left>495</left>
                     <top>280</top>
+                    <width>825</width>
+                    <align>left</align>
                     <label>$VAR[BLPresentVar]</label>
                     <font>font_tiny_iconic</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>				
+                </control>
                 <!-- Enhancement Layer -->
                 <control type="label">
                     <top>340</top>
@@ -819,14 +826,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-		    <left>682</left>
-		    <top>340</top>
-		    <width>390</width>
-		    <label>$VAR[DVELPresentDetailVar]</label>
-		    <font>font_tiny_iconic</font>
-		    <textcolor>dialog_fg_90</textcolor>
-		</control>			
-	
+                    <left>495</left>
+                    <top>340</top>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$VAR[DVELPresentDetailVar]</label>
+                    <font>font_tiny_iconic</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
+                </control>
                 <!-- Enhancement Layer Type -->
                 <control type="label">
                     <top>400</top>
@@ -835,29 +843,30 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-		    <left>670</left>
-		    <top>400</top>
-		    <width>540</width>
-		    <label>$VAR[DVELDetailVar]</label>
-		    <font>font_tiny</font>
-		    <textcolor>dialog_fg_90</textcolor>
-		    <scroll>true</scroll>
-		</control>
-
+                    <left>495</left>
+                    <top>400</top>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$VAR[DVELDetailVar]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
+                </control>
             </control>
+
             <!-- Group: DV Levels Metadata + Without L5 Active Offsets -->
             <control type="group">
                 <visible>String.IsEqual(Player.Process(video.dovi.has.header),1)</visible>
                 <visible>String.IsEqual(Player.Process(video.dovi.has.l5),0)</visible>
                 <top>540</top>
-                <left>2710</left>				
+                <left>2490</left>
                 <!-- DV Levels Metadata Icon -->
                 <control type="label">
                     <label></label>
                     <top>-15</top>
                     <font>font_tiny_iconic</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>				
+                </control>
                 <!-- DV Levels Metadata -->
                 <control type="label">
                     <label>[B][UPPERCASE]$LOCALIZE[32038][/UPPERCASE][/B]</label>
@@ -865,7 +874,7 @@
                     <left>54</left>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>				
+                </control>
                 <!-- HDR10 MDL -->
                 <control type="label">
                     <top>40</top>
@@ -874,22 +883,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>540</left>
+                    <left>495</left>
                     <top>40</top>
-                    <width>400</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.hdr.min.lum)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.lum)]</label>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.hdr.min.lum)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.lum)] [COLOR dialog_fg_70]$LOCALIZE[32040][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>960</left>
-                    <top>40</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
                 <!-- HDR10 MaxCLL/FALL -->
                 <control type="label">
                     <top>100</top>
@@ -898,22 +900,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>540</left>
+                    <left>495</left>
                     <top>100</top>
-                    <width>400</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.hdr.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.fall)]</label>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.hdr.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.fall)] [COLOR dialog_fg_70]$LOCALIZE[32040][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>960</left>
-                    <top>100</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
                 <!-- RPU MDL -->
                 <control type="label">
                     <top>190</top>
@@ -922,9 +917,9 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>420</left>
+                    <left>495</left>
                     <top>190</top>
-                    <width>690</width>
+                    <width>825</width>
                     <align>left</align>
                     <label>$INFO[Player.Process(video.dovi.source.min.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.source.max.nits)] [COLOR dialog_fg_70]$LOCALIZE[32040] |[/COLOR] $VAR[DVSourcePQVar]</label>
                     <font>font_tiny</font>
@@ -933,21 +928,21 @@
                 </control>
                 <!-- RPU MaxCLL/FALL -->
                 <control type="label">
-                    <top>260</top>
+                    <top>250</top>
                     <label>$LOCALIZE[32042]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>420</left>
+                    <left>495</left>
                     <top>250</top>
-                    <width>690</width>
+                    <width>825</width>
                     <align>left</align>
                     <label>$INFO[Player.Process(video.dovi.l6.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l6.max.fall)] [COLOR dialog_fg_70]$LOCALIZE[32040] |[/COLOR] $VAR[DVL6LumVar]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                     <scroll>true</scroll>
-                </control>	
+                </control>
                 <!-- FLL MIN / MAX / Ø -->
                 <control type="label">
                     <top>340</top>
@@ -956,23 +951,16 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>340</left>
+                    <left>495</left>
                     <top>340</top>
-                    <width>600</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.dovi.l1.min.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.max.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.nits)]</label>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.dovi.l1.min.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.max.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.nits)] [COLOR dialog_fg_70]$LOCALIZE[32040][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>960</left>
-                    <top>340</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
-                <!-- PQ  MIN / MAX / Ø -->
+                <!-- PQ MIN / MAX / Ø -->
                 <control type="label">
                     <top>400</top>
                     <label>$LOCALIZE[32044]:</label>
@@ -980,36 +968,30 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>340</left>
+                    <left>495</left>
                     <top>400</top>
-                    <width>600</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.dovi.l1.min.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.max.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.pq)]</label>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.dovi.l1.min.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.max.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.pq)] [COLOR dialog_fg_70]$LOCALIZE[32045][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
-                <!-- 12-bit -->
-                <control type="label">
-                    <left>960</left>
-                    <top>400</top>
-                    <label>$LOCALIZE[32045]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>
-            </control>
-            <!-- Group: DV Levels Metadata + With L5 Active Offsets -->
+            </control>            
+
+	    <!-- Group: DV Levels Metadata + With L5 Active Offsets -->
             <control type="group">
                 <visible>String.Contains(Player.Process(video.hdr.type),dolby vision)</visible>
                 <visible>String.IsEqual(Player.Process(video.dovi.has.l5),1)</visible>
                 <top>540</top>
-                <left>2710</left>
+                <left>2490</left>
                 <!-- DV Levels Metadata Icon -->
                 <control type="label">
                     <label></label>
                     <top>-15</top>
                     <font>font_tiny_iconic</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>				
+                </control>
                 <!-- DV Levels Metadata -->
                 <control type="label">
                     <label>[B][UPPERCASE]$LOCALIZE[32038][/UPPERCASE][/B]</label>
@@ -1017,7 +999,7 @@
                     <left>54</left>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>				
+                </control>
                 <!-- HDR10 MDL -->
                 <control type="label">
                     <top>40</top>
@@ -1026,22 +1008,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>540</left>
+                    <left>495</left>
                     <top>40</top>
-                    <width>400</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.hdr.min.lum)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.lum)]</label>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.hdr.min.lum)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.lum)] [COLOR dialog_fg_70]$LOCALIZE[32040][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>960</left>
-                    <top>40</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
                 <!-- HDR10 MaxCLL/FALL -->
                 <control type="label">
                     <top>90</top>
@@ -1050,22 +1025,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>540</left>
+                    <left>495</left>
                     <top>90</top>
-                    <width>400</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.hdr.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.fall)]</label>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.hdr.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.fall)] [COLOR dialog_fg_70]$LOCALIZE[32040][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>960</left>
-                    <top>90</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
                 <!-- RPU MDL -->
                 <control type="label">
                     <top>160</top>
@@ -1074,9 +1042,9 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>420</left>
+                    <left>495</left>
                     <top>160</top>
-                    <width>690</width>
+                    <width>825</width>
                     <align>left</align>
                     <label>$INFO[Player.Process(video.dovi.source.min.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.source.max.nits)] [COLOR dialog_fg_70]$LOCALIZE[32040] |[/COLOR] $VAR[DVSourcePQVar]</label>
                     <font>font_tiny</font>
@@ -1091,15 +1059,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>420</left>
+                    <left>495</left>
                     <top>210</top>
-                    <width>690</width>
+                    <width>825</width>
                     <align>left</align>
                     <label>$INFO[Player.Process(video.dovi.l6.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l6.max.fall)] [COLOR dialog_fg_70]$LOCALIZE[32040] |[/COLOR] $VAR[DVL6LumVar]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                     <scroll>true</scroll>
-                </control>	
+                </control>
                 <!-- FLL MIN / MAX / Ø -->
                 <control type="label">
                     <top>280</top>
@@ -1108,23 +1076,16 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>340</left>
+                    <left>495</left>
                     <top>280</top>
-                    <width>600</width>
-                    <align>right</align>
-		    <label>$INFO[Player.Process(video.dovi.l1.min.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.max.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.nits)]</label>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.dovi.l1.min.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.max.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.nits)] [COLOR dialog_fg_70]$LOCALIZE[32040][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>960</left>
-                    <top>280</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
-                <!-- PQ  MIN / MAX / Ø -->
+                <!-- PQ MIN / MAX / Ø -->
                 <control type="label">
                     <top>330</top>
                     <label>$LOCALIZE[32044]:</label>
@@ -1132,22 +1093,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>340</left>
+                    <left>495</left>
                     <top>330</top>
-                    <width>600</width>
-                    <align>right</align>
-		    <label>$INFO[Player.Process(video.dovi.l1.min.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.max.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.pq)]</label>
+                    <width>825</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.dovi.l1.min.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.max.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.pq)] [COLOR dialog_fg_70]$LOCALIZE[32045][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
-                <!-- 12-bit -->
-                <control type="label">
-                    <left>960</left>
-                    <top>330</top>
-                    <label>$LOCALIZE[32045]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
                 <!-- L5 Active Offsets -->
                 <control type="label">
                     <top>400</top>
@@ -1156,17 +1110,18 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>340</left>
-                    <width>600</width>
-                    <align>right</align>
+                    <left>495</left>
                     <top>400</top>
-		    <label>$INFO[Player.Process(video.dovi.l5.left.offset)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l5.right.offset)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l5.top.offset)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l5.bottom.offset)]</label>
+                    <width>585</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.dovi.l5.left.offset)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l5.right.offset)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l5.top.offset)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l5.bottom.offset)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
                 <!-- Arrows: Left to right with line icon -->
                 <control type="label">
-                    <left>966</left>
+                    <left>1118</left>
                     <top>400</top>
                     <label></label>
                     <font>font_tiny_iconic</font>
@@ -1174,7 +1129,7 @@
                 </control>
                 <!-- Arrows: Top to bottom with line icon -->
                 <control type="label">
-                    <left>1056</left>
+                    <left>1208</left>
                     <top>416</top>
                     <angle>180</angle>
                     <label></label>
