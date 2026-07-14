@@ -1,3 +1,8 @@
+[B]Version 21.1.23[/B]
+- Added extended CPM Dolby Vision playback information by Stogie87
+- Added Source PQ, L6 luminance and DV configuration details by Stogie87
+- Fixed incorrect metadata separators in Player Process Info by Stogie87
+
 [B]Version 21.1.22[/B]
 - Fixed non-functional More buttons for Jellyfin, Emby and local library items by Stogie87
 

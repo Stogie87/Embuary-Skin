@@ -725,6 +725,7 @@
 			<selected>Skin.HasSetting(HidePauseOSD)</selected>
 			<onclick>Skin.ToggleSetting(HidePauseOSD)</onclick>
 		</control>
+
 		<!-- library and media -->
 		<include content="SkinSettingsHeadlineLabel">
 			<param name="id" value="$PARAM[id]20"/>
@@ -775,10 +776,17 @@
 		</control>
 		<control type="button" id="$PARAM[id]28">
 			<include>SettingsButton</include>
+			<label>$ADDON[plugin.video.jellyfin 33140]</label>
+			<onclick>RunPlugin(plugin://plugin.video.jellyfin/?mode=repairlibs)</onclick>
+			<visible>System.HasAddon(plugin.video.jellyfin)</visible>
+		</control>
+		<control type="button" id="$PARAM[id]29">
+			<include>SettingsButton</include>
 			<label>$LOCALIZE[5]</label>
 			<onclick>Addon.OpenSettings(plugin.video.jellyfin)</onclick>
 			<visible>System.HasAddon(plugin.video.jellyfin)</visible>
 		</control>
+
 		<!-- PVR -->
 		<include content="SkinSettingsHeadlineLabel">
 			<param name="id" value="$PARAM[id]30"/>

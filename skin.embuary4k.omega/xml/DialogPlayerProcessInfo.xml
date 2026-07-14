@@ -244,7 +244,7 @@
                 <control type="label">
                     <left>480</left>
                     <top>220</top>
-                    <label>$INFO[Player.Process(video.source.hdr.type)]</label>
+                    <label>$VAR[CPMSourceHDRVar]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>				
@@ -277,8 +277,9 @@
             <!-- Group: HDR Static Metadata -->
             <control type="group">
                 <visible>!String.IsEmpty(Player.Process(video.hdr.min.lum)) | !String.IsEmpty(Player.Process(video.hdr.max.lum)) | !String.IsEmpty(Player.Process(video.hdr.max.cll)) | !String.IsEmpty(Player.Process(video.hdr.max.fall))</visible>
-                <left>2860</left>
-                <top>440</top>				
+                <visible>!String.IsEqual(Player.Process(video.dovi.has.config),1)</visible>
+                <left>2710</left>
+                <top>0</top>				
                 <!-- HDR Static Metadata Icon -->
                 <control type="label">
                     <label></label>
@@ -728,7 +729,7 @@
                 <control type="label">
                     <left>680</left>
                     <top>40</top>
-                    <label>$INFO[Player.Process(video.dovi.meta.version)]</label>
+                    <label>$INFO[Player.Process(video.dovi.meta.version)]$VAR[DVConfigVersionVar, [COLOR dialog_fg_70](DV v,)[/COLOR]]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
@@ -739,7 +740,7 @@
                     <label>$LOCALIZE[32033]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                    <visible>!String.Contains(Player.Process(video.dovi.meta.version),CM)</visible>
+                    <visible>!String.Contains(Player.Process(video.dovi.meta.version),CM) + String.IsEmpty(Player.Process(video.dovi.version.major))</visible>
                 </control>				
                 <!-- Profile -->
                 <control type="label">
@@ -921,22 +922,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>540</left>
+                    <left>420</left>
                     <top>190</top>
-                    <width>400</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.dovi.source.min.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.source.max.nits)]</label>
+                    <width>690</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.dovi.source.min.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.source.max.nits)] [COLOR dialog_fg_70]$LOCALIZE[32040] |[/COLOR] $VAR[DVSourcePQVar]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>960</left>
-                    <top>190</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
                 <!-- RPU MaxCLL/FALL -->
                 <control type="label">
                     <top>260</top>
@@ -945,22 +939,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>540</left>
+                    <left>420</left>
                     <top>250</top>
-                    <width>400</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.dovi.l6.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l6.max.fall)]</label>
+                    <width>690</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.dovi.l6.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l6.max.fall)] [COLOR dialog_fg_70]$LOCALIZE[32040] |[/COLOR] $VAR[DVL6LumVar]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>960</left>
-                    <top>250</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
+                    <scroll>true</scroll>
+                </control>	
                 <!-- FLL MIN / MAX / Ø -->
                 <control type="label">
                     <top>340</top>
@@ -1043,7 +1030,7 @@
                     <top>40</top>
                     <width>400</width>
                     <align>right</align>
-                    <label>$INFO[Player.Process(video.hdr.min.lum)] [COLOR dialog_fg_70]l[/COLOR] $INFO[Player.Process(video.hdr.max.lum)]</label>
+                    <label>$INFO[Player.Process(video.hdr.min.lum)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.lum)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
@@ -1067,7 +1054,7 @@
                     <top>90</top>
                     <width>400</width>
                     <align>right</align>
-                    <label>$INFO[Player.Process(video.hdr.max.cll)] [COLOR dialog_fg_70]l[/COLOR] $INFO[Player.Process(video.hdr.max.fall)]</label>
+                    <label>$INFO[Player.Process(video.hdr.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.hdr.max.fall)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
@@ -1087,21 +1074,14 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>540</left>
+                    <left>420</left>
                     <top>160</top>
-                    <width>400</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.dovi.source.min.nits)] [COLOR dialog_fg_70]l[/COLOR] $INFO[Player.Process(video.dovi.source.max.nits)]</label>
+                    <width>690</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.dovi.source.min.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.source.max.nits)] [COLOR dialog_fg_70]$LOCALIZE[32040] |[/COLOR] $VAR[DVSourcePQVar]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>960</left>
-                    <top>160</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
                 <!-- RPU MaxCLL/FALL -->
                 <control type="label">
@@ -1111,22 +1091,15 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>540</left>
+                    <left>420</left>
                     <top>210</top>
-                    <width>400</width>
-                    <align>right</align>
-                    <label>$INFO[Player.Process(video.dovi.l6.max.cll)] [COLOR dialog_fg_70]l[/COLOR] $INFO[Player.Process(video.dovi.l6.max.fall)]</label>
+                    <width>690</width>
+                    <align>left</align>
+                    <label>$INFO[Player.Process(video.dovi.l6.max.cll)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l6.max.fall)] [COLOR dialog_fg_70]$LOCALIZE[32040] |[/COLOR] $VAR[DVL6LumVar]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>
-                <!-- cd/m² -->
-                <control type="label">
-                    <left>960</left>
-                    <top>210</top>
-                    <label>$LOCALIZE[32040]</label>
-                    <font>font_tiny</font>
-                    <textcolor>dialog_fg_90</textcolor>
-                </control>				
+                    <scroll>true</scroll>
+                </control>	
                 <!-- FLL MIN / MAX / Ø -->
                 <control type="label">
                     <top>280</top>
@@ -1139,7 +1112,7 @@
                     <top>280</top>
                     <width>600</width>
                     <align>right</align>
-                    <label>$INFO[Player.Process(video.dovi.l1.min.nits)] [COLOR dialog_fg_70]l[/COLOR] $INFO[Player.Process(video.dovi.l1.max.nits)] [COLOR dialog_fg_70]l[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.nits)]</label>
+		    <label>$INFO[Player.Process(video.dovi.l1.min.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.max.nits)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.nits)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
@@ -1163,7 +1136,7 @@
                     <top>330</top>
                     <width>600</width>
                     <align>right</align>
-                    <label>$INFO[Player.Process(video.dovi.l1.min.pq)] [COLOR dialog_fg_70]l[/COLOR] $INFO[Player.Process(video.dovi.l1.max.pq)] [COLOR dialog_fg_70]l[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.pq)]</label>
+		    <label>$INFO[Player.Process(video.dovi.l1.min.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.max.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l1.avg.pq)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
@@ -1187,7 +1160,7 @@
                     <width>600</width>
                     <align>right</align>
                     <top>400</top>
-                    <label>$INFO[Player.Process(video.dovi.l5.left.offset)] l $INFO[Player.Process(video.dovi.l5.right.offset)] l $INFO[Player.Process(video.dovi.l5.top.offset)] l $INFO[Player.Process(video.dovi.l5.bottom.offset)]</label>
+		    <label>$INFO[Player.Process(video.dovi.l5.left.offset)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l5.right.offset)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l5.top.offset)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l5.bottom.offset)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
