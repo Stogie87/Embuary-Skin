@@ -727,11 +727,14 @@
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
                 <control type="label">
-                    <left>680</left>
+                    <left>450</left>
                     <top>40</top>
+                    <width>675</width>
+                    <align>right</align>
                     <label>$INFO[Player.Process(video.dovi.meta.version)]$VAR[DVConfigVersionVar, [COLOR dialog_fg_70](DV v,)[/COLOR]]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                 </control>
                 <!-- N/A -->
                 <control type="label">
