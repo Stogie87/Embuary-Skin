@@ -1,3 +1,10 @@
+[B]Version 21.1.28[/B]
+- Fixed incorrect Skin Shortcuts localization IDs in menu and widget configuration by Stogie87
+
+[B]Version 21.1.27[/B]
+- Improved Kodi 22 Player Process Info fallbacks and display compatibility by Stogie87
+- Fixed localization references and missing language entries by Stogie87
+
 [B]Version 21.1.26[/B]
 - Optimized localization ID mappings for Kodi 22 compatibility by Stogie87
 

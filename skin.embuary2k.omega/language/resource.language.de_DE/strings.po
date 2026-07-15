@@ -1739,10 +1739,10 @@ msgid ""
 msgstr ""
 "Das aktualisierte Hub-Label wird beim nächsten Öffnen des Editors angezeigt"
 
-#: /xml/Embuary_SkinSettings.xml
+#: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31333"
-msgid "Show YouTube search results"
-msgstr "Zeige YouTube-Suchergebnisse"
+msgid "Enabled auto updating"
+msgstr "Automatische Aktualisierung aktiviert"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31334"
@@ -2169,6 +2169,11 @@ msgctxt "#31409"
 msgid "Favourite"
 msgstr "Favorit"
 
+#: /xml/Embuary_MetaIncludes.xml
+msgctxt "#31410"
+msgid "Disabled auto updating"
+msgstr "Automatische Aktualisierung deaktiviert"
+
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31411"
 msgid "OK, add found to whitelist"
@@ -2178,6 +2183,26 @@ msgstr "OK, zur Whitelist hinzufügen"
 msgctxt "#31412"
 msgid "Restart Kodi"
 msgstr "Kodi neustarten"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31413"
+msgid "Media importer"
+msgstr "Medienimport"
+
+#: /xml/DialogMediaImportInfo.xml
+msgctxt "#31414"
+msgid "Sync options"
+msgstr "Synchronisierungsoptionen"
+
+#: /xml/DialogMediaImportInfo.xml
+msgctxt "#31415"
+msgid "Provider"
+msgstr "Anbieter"
+
+#: /xml/DialogMediaImportInfo.xml
+msgctxt "#31416"
+msgid "Media type"
+msgstr "Medientyp"
 
 msgctxt "#31500"
 msgid "Display mode"
@@ -2189,7 +2214,7 @@ msgstr "Videoauflösung"
 
 msgctxt "#31502"
 msgid "Color space"
-msgstr "Farbbereich"
+msgstr "Farbraum"
 
 msgctxt "#31503"
 msgid "Mb/s"
@@ -2232,8 +2257,8 @@ msgid "Kb/s"
 msgstr "Kb/s"
 
 msgctxt "#31513"
-msgid "DV metadata"
-msgstr "DV Metadaten"
+msgid "Playback progress"
+msgstr "Wiedergabefortschritt"
 
 msgctxt "#31514"
 msgid "Processor"
@@ -2277,7 +2302,7 @@ msgstr "Pixelformat"
 
 msgctxt "#31524"
 msgid "Aspect ratio"
-msgstr "Verhältnis"
+msgstr "Seitenverhältnis"
 
 msgctxt "#31525"
 msgid "HDR10 MDL"

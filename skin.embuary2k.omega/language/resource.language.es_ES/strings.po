@@ -2156,7 +2156,7 @@ msgid "Kb/s"
 msgstr ""
 
 msgctxt "#31513"
-msgid "DV metadata"
+msgid "Playback progress"
 msgstr ""
 
 msgctxt "#31514"

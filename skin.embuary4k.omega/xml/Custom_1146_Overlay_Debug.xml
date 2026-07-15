@@ -839,16 +839,6 @@
 					<shadowcolor>FF000000</shadowcolor>
 					<font>font_flag</font>
 					<align>right</align>
-					<label>DialogFavourites.xml</label>
-					<visible>Window.IsVisible(DialogFavourites.xml)</visible>
-				</control>
-				<control type="label">
-					<height>20</height>
-					<width>auto</width>
-					<textcolor>yellow</textcolor>
-					<shadowcolor>FF000000</shadowcolor>
-					<font>font_flag</font>
-					<align>right</align>
 					<label>DialogFileStacking.xml</label>
 					<visible>Window.IsVisible(DialogFileStacking.xml)</visible>
 				</control>

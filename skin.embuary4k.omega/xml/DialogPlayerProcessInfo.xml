@@ -595,7 +595,7 @@
                 <control type="label">
                     <top>100</top>
                     <left>480</left>
-                    <label>$INFO[System.CPUTemperature] [COLOR FF404040]|[/COLOR] $INFO[System.CpuAltUsage]</label>
+                    <label>$INFO[System.CPUTemperature]$INFO[System.CpuAltUsage, [COLOR FF404040]|[/COLOR] ,]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>				
