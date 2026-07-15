@@ -751,58 +751,58 @@
 
 	<widget-groupings>
 		<node label="559">
-			<node label="32030">
+			<node label="31530">
 				<content>playlist-video</content>
 			</node>
-			<node label="32031">
+			<node label="31531">
 				<content>playlist-audio</content>
 			</node>
 		</node>
-		<node label="32030">
+		<node label="31530">
 			<content>video</content>
-			<node label="32040">
+			<node label="31540">
 				<content>playlist-video</content>
 			</node>
-			<node label="32010">
+			<node label="31510">
 				<content>addon-video</content>
 			</node>
-			<node label="32075">
+			<node label="31575">
 				<content>videosources</content>
 				<content>upnp-video</content>
 			</node>
 		</node>
-		<node label="32031">
+		<node label="31531">
 			<content>music</content>
-			<node label="32040">
+			<node label="31540">
 				<content>playlist-audio</content>
 			</node>
-			<node label="32011">
+			<node label="31511">
 				<content>addon-audio</content>
 			</node>
-			<node label="32075">
+			<node label="31575">
 				<content>musicsources</content>
 				<content>upnp-music</content>
 			</node>
 		</node>
-		<node label="32020">
+		<node label="31520">
 			<content>picturesources</content>
 		</node>
-		<node label="32007">
-			<node label="32010">
+		<node label="31507">
+			<node label="31510">
 				<shortcut label="Video add-ons" icon="DefaultAddonVideo.png" widget="addon" widgetType="video" widgetTarget="video">addons://sources/video</shortcut>
 				<content>addon-video</content>
 			</node>
-			<node label="32011">
+			<node label="31511">
 				<shortcut label="Music add-ons" icon="DefaultAddonMusic.png" widget="addon" widgetType="music" widgetTarget="music">addons://sources/audio</shortcut>
 				<content>addon-audio</content>
 			</node>
-			<node label="32012">
+			<node label="31512">
 				<shortcut label="Picure add-ons" icon="DefaultAddonPicture.png" widget="addon" widgetType="picture" widgetTarget="pictures">addons://sources/image</shortcut>
 				<content>addon-image</content>
 			</node>
 			<shortcut label="Programs" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs">addons://sources/executable</shortcut>
 		</node>
-		<node label="32006">
+		<node label="31506">
 			<content>favourite</content>
 		</node>
 		<shortcut label="1036" widget="favourites" widgetType="favourites" icon="defaultfavourites.png">favourites://</shortcut>
@@ -811,72 +811,72 @@
 	<groupings>
 		<shortcut label="Embuary Helper" icon="DefaultFolder.png">||BROWSE||script.embuary.helper</shortcut>
 		<node label="559">
-			<node label="32030">
+			<node label="31530">
 				<content>playlist-video</content>
 			</node>
-			<node label="32031">
+			<node label="31531">
 				<content>playlist-audio</content>
 			</node>
 		</node>
-		<node label="32030">
-			<node label="32040">
+		<node label="31530">
+			<node label="31540">
 				<content>playlist-video</content>
 			</node>
 			<node label="14022">
 				<content>video</content>
 			</node>
-			<node label="32010">
+			<node label="31510">
 				<content>addon-video</content>
 			</node>
-			<node label="32075">
+			<node label="31575">
 				<content>videosources</content>
 				<content>upnp-video</content>
 			</node>
 		</node>
-		<node label="32031">
-			<node label="32040">
+		<node label="31531">
+			<node label="31540">
 				<content>playlist-audio</content>
 			</node>
 			<node label="14022">
 				<content>music</content>
 			</node>
-			<node label="32011">
+			<node label="31511">
 				<content>addon-audio</content>
 			</node>
-			<node label="32075">
+			<node label="31575">
 				<content>musicsources</content>
 				<content>upnp-music</content>
 			</node>
 		</node>
-		<node label="32020">
+		<node label="31520">
 			<content>addon-image</content>
 			<content>picturesources</content>
 		</node>
-		<node label="32007">
-			<node label="32009">
+		<node label="31507">
+			<node label="31509">
 				<content>addon-program</content>
 			</node>
-			<node label="32010">
+			<node label="31510">
 				<content>addon-video</content>
 			</node>
-			<node label="32011">
+			<node label="31511">
 				<content>addon-audio</content>
 			</node>
-			<node label="32012">
+			<node label="31512">
 				<content>addon-image</content>
 			</node>
-			<shortcut label="10001" type="32021" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs">addons://sources/executable</shortcut>
-			<shortcut label="20244" type="32021" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs" condition="System.Platform.Android">androidapp://sources/apps</shortcut>
-			<shortcut label="1037" type="32014" icon="DefaultAddonVideo.png" widget="addon" widgetType="video" widgetTarget="video">addons://sources/video</shortcut>
-			<shortcut label="1038" type="32019" icon="DefaultAddonMusic.png" widget="addon" widgetType="music" widgetTarget="music">addons://sources/audio</shortcut>
-			<shortcut label="1039" type="32020" icon="DefaultAddonPicture.png" widget="addon" widgetType="picture" widgetTarget="pictures">addons://sources/image</shortcut>
+			<shortcut label="10001" type="31521" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs">addons://sources/executable</shortcut>
+			<shortcut label="20244" type="31521" icon="DefaultAddonProgram.png" widget="addon" widgetType="program" widgetTarget="programs" condition="System.Platform.Android">androidapp://sources/apps</shortcut>
+			<shortcut label="1037" type="31514" icon="DefaultAddonVideo.png" widget="addon" widgetType="video" widgetTarget="video">addons://sources/video</shortcut>
+			<shortcut label="1038" type="31519" icon="DefaultAddonMusic.png" widget="addon" widgetType="music" widgetTarget="music">addons://sources/audio</shortcut>
+			<shortcut label="1039" type="31520" icon="DefaultAddonPicture.png" widget="addon" widgetType="picture" widgetTarget="pictures">addons://sources/image</shortcut>
 		</node>
-		<node label="32006">
+		<node label="31506">
 			<content>favourite</content>
 		</node>
-		<node label="32054">
+		<node label="31554">
 			<content>commands</content>
-			<shortcut label="13391" type="32054" icon="DefaultShortcut.png">EjectTray()</shortcut>
+			<shortcut label="13391" type="31554" icon="DefaultShortcut.png">EjectTray()</shortcut>
 		</node>
 		<shortcut label="1036" icon="defaultfavourites.png">favourites://</shortcut>
 	</groupings>

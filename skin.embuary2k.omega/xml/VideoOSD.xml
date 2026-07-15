@@ -68,12 +68,12 @@
 					<visible>Player.ChapterCount | Integer.IsGreater(Playlist.Length(video),1) | Integer.IsGreater(Playlist.Length(music),1) | Player.SeekEnabled</visible>
 				</control>
 				<control type="button" id="620">
-    					<label>$LOCALIZE[42002]</label>
+    					<label>$LOCALIZE[31901]</label>
     					<onclick>RunScript(script.episodejumper,previous)</onclick>
     					<visible>System.AddonIsEnabled(script.episodejumper) + Player.HasMedia + VideoPlayer.Content(episodes)</visible>
 				</control>
 				<control type="button" id="621">
-    					<label>$LOCALIZE[42001]</label>
+    					<label>$LOCALIZE[31900]</label>
     					<onclick>RunScript(script.episodejumper,next)</onclick>
     					<visible>System.AddonIsEnabled(script.episodejumper) + Player.HasMedia + VideoPlayer.Content(episodes)</visible>
 				</control>
@@ -312,7 +312,7 @@
 				</control>
 				<control type="button" id="901">
 					<include content="ContextButton"/>
-					<label>$LOCALIZE[32064]</label>
+					<label>$LOCALIZE[31564]</label>
 					<selected>Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),5) | [[Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),0) | Integer.IsEqual(Player.Process(amlogic.vs10.mode.raw),1)] + String.Contains(Player.Process(video.hdr.type),Dolby)]</selected>
 					<onclick>Action(vs10.original)</onclick>
 					<onclick>close</onclick>

@@ -866,7 +866,7 @@ v1.1.25
     </extension>
 </addon>
 
-<addon id="skin.embuary2k.omega" version="21.1.25" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
+<addon id="skin.embuary2k.omega" version="21.1.26" name="Embuary 2K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
 		<import addon="script.embuary.helper" version="2.0.8"/>
 		<import addon="script.embuary.info" version="2.0.8"/>
@@ -914,7 +914,7 @@ v1.1.25
 	</extension>
 </addon>
 
-<addon id="skin.embuary4k.omega" version="21.1.25" name="Embuary 4K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
+<addon id="skin.embuary4k.omega" version="21.1.26" name="Embuary 4K (Omega)" provider-name="sualfred, jamal2367, Teddyknuddel, Stogie">
 	<requires>
 		<import addon="script.embuary.helper" version="2.0.8"/>
 		<import addon="script.embuary.info" version="2.0.8"/>

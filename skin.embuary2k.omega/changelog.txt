@@ -1,3 +1,6 @@
+[B]Version 21.1.26[/B]
+- Optimized localization ID mappings for Kodi 22 compatibility by Stogie87
+
 [B]Version 21.1.25[/B]
 - Improved Player Process Info compatibility across Kodi, CoreELEC and CPM builds by Stogie87
 - Fixed PPI labels, fallbacks and display issues by Stogie87

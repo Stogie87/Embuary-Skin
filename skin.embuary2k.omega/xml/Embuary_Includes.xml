@@ -1336,7 +1336,7 @@
 		<definition>
 			<control type="radiobutton" id="$PARAM[id]17">
     				<include content="ContextButton"/>
-    				<label>$LOCALIZE[42020]</label>
+    				<label>$LOCALIZE[31919]</label>
     				<onclick>Container.SetViewMode(60)</onclick>
     				<selected>Control.IsVisible(60)</selected>
     				<visible>$EXP[MovieViewVisible]</visible>
