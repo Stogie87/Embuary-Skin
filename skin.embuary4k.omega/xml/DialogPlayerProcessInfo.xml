@@ -44,13 +44,15 @@
                     <left>60</left>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>		
+                </control>	
+	
                 <!-- Display mode -->
                 <control type="label">
                     <top>40</top>
                     <label>$LOCALIZE[32000]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(amlogic.displaymode))</visible>
                 </control>
                 <control type="label">
                     <left>480</left>
@@ -58,7 +60,9 @@
                     <label>$INFO[Player.Process(amlogic.displaymode)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>				
+                    <visible>!String.IsEmpty(Player.Process(amlogic.displaymode))</visible>
+                </control>
+
                 <!-- Video mode -->
                 <control type="label">
                     <top>100</top>
@@ -69,37 +73,85 @@
                 <control type="label">
                     <left>480</left>
                     <top>100</top>
-                    <label>$INFO[Player.Process(video.width.raw)]x$INFO[Player.Process(video.height.raw)]$INFO[Player.Process(videoscantype)] $INFO[Player.Process(VideoFPS)]FPS</label>
+                    <label>$INFO[Player.Process(video.width.raw)]x$INFO[Player.Process(video.height.raw)]$INFO[Player.Process(videoscantype)] $INFO[Player.Process(videofps)] FPS</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>				
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
+                </control>
+                <control type="label">
+                    <left>480</left>
+                    <top>100</top>
+                    <label>$INFO[Player.Process(videowidth)]x$INFO[Player.Process(videoheight)]$INFO[Player.Process(videoscantype)] $INFO[Player.Process(videofps)] FPS</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.width.raw))</visible>
+                </control>
+
                 <!-- Pixel format -->
                 <control type="label">
                     <top>160</top>
                     <label>$LOCALIZE[32023]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(amlogic.pixformat))</visible>
                 </control>
                 <control type="label">
                     <left>480</left>
                     <top>160</top>
                     <label>[COLOR dialog_fg_90]$INFO[Player.Process(amlogic.pixformat)][/COLOR]$VAR[DVTunnelVar, [COLOR dialog_fg_70](,)[/COLOR]]</label>
                     <font>font_tiny</font>
-                </control>				
-                <!-- Bit depth -->
+                    <visible>!String.IsEmpty(Player.Process(amlogic.pixformat))</visible>
+                </control>
+			
+                <!-- Bit depth / source pixel format -->
                 <control type="label">
                     <top>220</top>
                     <label>$LOCALIZE[32004]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.bit.depth))</visible>
                 </control>
+
+                <control type="label">
+                    <top>220</top>
+                    <label>$LOCALIZE[32023] (Source):</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.bit.depth))</visible>
+                </control>
+
                 <control type="label">
                     <left>480</left>
                     <top>220</top>
                     <label>$INFO[Player.Process(video.bit.depth)]-bit</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>				
+                    <visible>!String.IsEmpty(Player.Process(video.bit.depth))</visible>
+                </control>
+
+                <!-- Valid source pixel format -->
+                <control type="label">
+                    <left>480</left>
+                    <top>220</top>
+                    <label>$INFO[Player.Process(pixformat)]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.bit.depth))</visible>
+                    <visible>!String.IsEmpty(Player.Process(pixformat))</visible>
+                    <visible>!String.IsEqual(Player.Process(pixformat),unknown)</visible>
+                </control>
+
+                <!-- Source pixel format unavailable -->
+                <control type="label">
+                    <left>480</left>
+                    <top>220</top>
+                    <label>$LOCALIZE[32033]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.bit.depth))</visible>
+                    <visible>String.IsEmpty(Player.Process(pixformat)) | String.IsEqual(Player.Process(pixformat),unknown)</visible>
+                </control>
+
                 <!-- Aspect ratio -->
                 <control type="label">
                     <top>280</top>
@@ -163,52 +215,109 @@
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
+
+                <!-- p3i / CPM live bitrate + p3i average bitrate -->
                 <control type="label">
                     <left>480</left>
                     <top>520</top>
                     <label>$INFO[Player.Process(video.live.mibit.rate),, $LOCALIZE[32003]] $INFO[VideoPlayer.VideoMibitRate,- [COLOR dialog_fg_70](Ø , $LOCALIZE[32003])[/COLOR]]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.live.mibit.rate))</visible>
+                </control>
+
+                <!-- CoreELEC 22 live bitrate + official Kodi average bitrate -->
+                <control type="label">
+                    <left>480</left>
+                    <top>520</top>
+                    <label>$INFO[Player.Process(videolivebitrate)] $INFO[VideoPlayer.VideoBitrate,- [COLOR dialog_fg_70](Ø , $LOCALIZE[32012])[/COLOR]]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.live.mibit.rate))</visible>
+                    <visible>!String.IsEmpty(Player.Process(videolivebitrate))</visible>
+                </control>
+
+                <!-- CoreELEC 21.3 / standard Kodi average bitrate -->
+                <control type="label">
+                    <left>480</left>
+                    <top>520</top>
+                    <label>$INFO[VideoPlayer.VideoBitrate,, $LOCALIZE[32012]]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.live.mibit.rate))</visible>
+                    <visible>String.IsEmpty(Player.Process(videolivebitrate))</visible>
+                    <visible>!String.IsEmpty(VideoPlayer.VideoBitrate)</visible>
+                </control>
+
+                <!-- No bitrate available -->
+                <control type="label">
+                    <left>480</left>
+                    <top>520</top>
+                    <label>$LOCALIZE[32033]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.live.mibit.rate))</visible>
+                    <visible>String.IsEmpty(Player.Process(videolivebitrate))</visible>
+                    <visible>String.IsEmpty(VideoPlayer.VideoBitrate)</visible>
                 </control>
             </control>
             <!-- Group: More -->
             <control type="group">
                 <top>660</top>
-                <left>60</left>				
-                <!-- More Icon -->
+                <left>60</left>
+
                 <control type="label">
                     <label></label>
                     <top>-15</top>
                     <font>font_tiny_iconic</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>				
-                <!-- More -->
+                </control>
+
                 <control type="label">
                     <label>[B][UPPERCASE]$LOCALIZE[32007][/UPPERCASE][/B]</label>
                     <top>-15</top>
                     <left>60</left>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>				
-                <!-- VS10 engine -->
+                </control>
+
+                <!-- p3i / CPM playback pipeline -->
                 <control type="label">
                     <top>40</top>
                     <label>$LOCALIZE[32006]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
                 </control>
+
+                <!-- VS10 status icon -->
                 <control type="label">
-                    <left>482</left>
+                    <left>480</left>
                     <top>40</top>
+                    <width>45</width>
                     <label>$VAR[VS10ModeVar]</label>
                     <font>font_tiny_iconic</font>
-                </control>				
-                <!-- VS10 status -->
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
+                </control>
+
+                <!-- VS10 mode text -->
+                <control type="label">
+                    <left>525</left>
+                    <top>40</top>
+                    <width>660</width>
+                    <label>$INFO[Player.Process(amlogic.vs10.mode)]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
+                </control>
+
                 <control type="label">
                     <top>100</top>
                     <label>$LOCALIZE[32048]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
                 </control>
                 <control type="label">
                     <left>480</left>
@@ -219,14 +328,15 @@
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                     <scroll>true</scroll>
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
                 </control>
-				
-                <!-- Color space -->
+
                 <control type="label">
                     <top>160</top>
                     <label>$LOCALIZE[32002]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
                 </control>
                 <control type="label">
                     <left>480</left>
@@ -234,44 +344,151 @@
                     <label>$INFO[Player.Process(amlogic.eoft_gamut)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>				
-                <!-- Media source -->
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
+                </control>
+
                 <control type="label">
                     <top>220</top>
                     <label>$LOCALIZE[32027]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
                 </control>
                 <control type="label">
                     <left>480</left>
                     <top>220</top>
+                    <width>705</width>
                     <label>$VAR[CPMSourceHDRVar]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>				
-                <!-- Playback time -->
+                    <scroll>true</scroll>
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
+                </control>
+
+                <!-- Official CoreELEC / standard Kodi playback pipeline -->
+                <control type="label">
+                    <top>40</top>
+                    <label>HDR / DV:</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.width.raw))</visible>
+                </control>
+
+                <control type="label">
+                    <left>480</left>
+                    <top>40</top>
+                    <width>705</width>
+                    <label>$INFO[VideoPlayer.HdrType]$INFO[VideoPlayer.HdrDetail, ,]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
+                    <visible>String.IsEmpty(Player.Process(video.width.raw))</visible>
+                    <visible>!String.IsEmpty(VideoPlayer.HdrType)</visible>
+                </control>
+
+                <control type="label">
+                    <left>480</left>
+                    <top>40</top>
+                    <width>705</width>
+                    <label>$INFO[Player.Process(amlogic.eoft_gamut)]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
+                    <visible>String.IsEmpty(Player.Process(video.width.raw))</visible>
+                    <visible>String.IsEmpty(VideoPlayer.HdrType)</visible>
+                    <visible>!String.IsEmpty(Player.Process(amlogic.eoft_gamut))</visible>
+                </control>
+
+                <control type="label">
+                    <left>480</left>
+                    <top>40</top>
+                    <label>$LOCALIZE[32033]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.width.raw))</visible>
+                    <visible>String.IsEmpty(VideoPlayer.HdrType)</visible>
+                    <visible>String.IsEmpty(Player.Process(amlogic.eoft_gamut))</visible>
+                </control>
+
+                <!-- Amlogic EOTF / color gamut -->
+                <control type="label">
+                    <top>100</top>
+                    <label>$LOCALIZE[32002]:</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.width.raw))</visible>
+                    <visible>!String.IsEmpty(Player.Process(amlogic.eoft_gamut))</visible>
+                </control>
+
+                <control type="label">
+                    <left>480</left>
+                    <top>100</top>
+                    <width>705</width>
+                    <label>$INFO[Player.Process(amlogic.eoft_gamut)]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
+                    <visible>String.IsEmpty(Player.Process(video.width.raw))</visible>
+                    <visible>!String.IsEmpty(Player.Process(amlogic.eoft_gamut))</visible>
+                </control>
+
+                <!-- Playback progress: p3i / CPM -->
                 <control type="label">
                     <top>280</top>
                     <label>$LOCALIZE[32013]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
                 </control>
+
                 <control type="label">
                     <left>480</left>
                     <top>280</top>
                     <label>$INFO[Player.Time] $INFO[Player.Duration,/ ,] [COLOR dialog_fg_70]$INFO[Player.Progress, (,%)][/COLOR]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
                     <visible>!String.IsEmpty(Player.Duration)</visible>
                     <visible>!PVR.IsPlayingTV</visible>
                 </control>
-                <!-- N/A -->
+
                 <control type="label">
                     <left>480</left>
                     <top>280</top>
                     <label>$LOCALIZE[32033]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.width.raw))</visible>
+                    <visible>String.IsEmpty(Player.Duration) | PVR.IsPlayingTV</visible>
+                </control>
+
+                <!-- Playback progress: official CoreELEC / standard Kodi -->
+                <control type="label">
+                    <top>160</top>
+                    <label>$LOCALIZE[32013]:</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.width.raw))</visible>
+                </control>
+
+                <control type="label">
+                    <left>480</left>
+                    <top>160</top>
+                    <label>$INFO[Player.Time] $INFO[Player.Duration,/ ,] [COLOR dialog_fg_70]$INFO[Player.Progress, (,%)][/COLOR]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.width.raw))</visible>
+                    <visible>!String.IsEmpty(Player.Duration)</visible>
+                    <visible>!PVR.IsPlayingTV</visible>
+                </control>
+
+                <control type="label">
+                    <left>480</left>
+                    <top>160</top>
+                    <label>$LOCALIZE[32033]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.width.raw))</visible>
                     <visible>String.IsEmpty(Player.Duration) | PVR.IsPlayingTV</visible>
                 </control>
             </control>
@@ -388,6 +605,7 @@
                     <label>$LOCALIZE[32036]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(amlogic.video.fps.info))</visible>
                 </control>
                 <control type="label">
                     <left>480</left>
@@ -395,13 +613,15 @@
                     <label>$INFO[Player.Process(amlogic.video.fps.info)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(amlogic.video.fps.info))</visible>
                 </control>
                 <control type="label">
                     <left>850</left>
                     <top>160</top>
-                    <label>-></label>
+                    <label>-&gt;</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(amlogic.video.fps.info))</visible>
                 </control>
                 <control type="label">
                     <left>910</left>
@@ -409,7 +629,23 @@
                     <label>$INFO[Player.Process(amlogic.video.fps.drop)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>				
+                    <visible>!String.IsEmpty(Player.Process(amlogic.video.fps.info))</visible>
+                </control>
+                <control type="label">
+                    <top>160</top>
+                    <label>Video / GUI FPS:</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(amlogic.video.fps.info))</visible>
+                </control>
+                <control type="label">
+                    <left>480</left>
+                    <top>160</top>
+                    <label>$INFO[Player.Process(videofps),, FPS] [COLOR dialog_fg_70]|[/COLOR] $INFO[System.FPS,, FPS]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(amlogic.video.fps.info))</visible>
+                </control>
                 <!-- System -->
                 <control type="label">
                     <top>220</top>
@@ -464,11 +700,31 @@
                     <label>$INFO[Player.Process(video.queue.level)]%</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.queue.level))</visible>
+                </control>
+                <control type="label">
+                    <top>340</top>
+                    <left>480</left>
+                    <label>$INFO[Player.Process(videoqueuelevel)]%</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.queue.level))</visible>
+                    <visible>!String.IsEmpty(Player.Process(videoqueuelevel))</visible>
+                </control>
+                <control type="label">
+                    <top>340</top>
+                    <left>480</left>
+                    <label>$LOCALIZE[32033]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.queue.level))</visible>
+                    <visible>String.IsEmpty(Player.Process(videoqueuelevel))</visible>
                 </control>
                 <control type="group">
                     <top>330</top>
                     <left>610</left>
                     <width>380</width>
+                    <visible>!String.IsEmpty(Player.Process(video.queue.level))</visible>
                     <control type="progress">
                         <description>BAR</description>
                         <centertop>50%</centertop>
@@ -477,8 +733,23 @@
                         <texturebg colordiffuse="panel_fg_12" border="6">progress/progress-bg.png</texturebg>
                         <midtexture colordiffuse="dialog_fg_90" border="6">progress/progress-bg.png</midtexture>
                     </control>
-                </control>				
-                <!-- Video queue data -->
+                </control>
+                <control type="group">
+                    <top>330</top>
+                    <left>610</left>
+                    <width>380</width>
+                    <visible>String.IsEmpty(Player.Process(video.queue.level))</visible>
+                    <visible>!String.IsEmpty(Player.Process(videoqueuelevel))</visible>
+                    <control type="progress">
+                        <description>BAR</description>
+                        <centertop>50%</centertop>
+                        <info>Player.Process(videoqueuelevel)</info>
+                        <include>DefSettingsButton</include>
+                        <texturebg colordiffuse="panel_fg_12" border="6">progress/progress-bg.png</texturebg>
+                        <midtexture colordiffuse="dialog_fg_90" border="6">progress/progress-bg.png</midtexture>
+                    </control>
+                </control>
+
                 <control type="label">
                     <top>400</top>
                     <label>$LOCALIZE[32009]:</label>
@@ -491,11 +762,31 @@
                     <label>$INFO[Player.Process(video.queue.data.level)]%</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(video.queue.data.level))</visible>
+                </control>
+                <control type="label">
+                    <top>400</top>
+                    <left>480</left>
+                    <label>$INFO[Player.Process(videoqueuedatalevel)]%</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.queue.data.level))</visible>
+                    <visible>!String.IsEmpty(Player.Process(videoqueuedatalevel))</visible>
+                </control>
+                <control type="label">
+                    <top>400</top>
+                    <left>480</left>
+                    <label>$LOCALIZE[32033]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(video.queue.data.level))</visible>
+                    <visible>String.IsEmpty(Player.Process(videoqueuedatalevel))</visible>
                 </control>
                 <control type="group">
                     <top>390</top>
                     <left>610</left>
                     <width>380</width>
+                    <visible>!String.IsEmpty(Player.Process(video.queue.data.level))</visible>
                     <control type="progress">
                         <description>BAR</description>
                         <centertop>50%</centertop>
@@ -504,8 +795,23 @@
                         <texturebg colordiffuse="panel_fg_12" border="6">progress/progress-bg.png</texturebg>
                         <midtexture colordiffuse="dialog_fg_90" border="6">progress/progress-bg.png</midtexture>
                     </control>
-                </control>				
-                <!-- Audio queue -->
+                </control>
+                <control type="group">
+                    <top>390</top>
+                    <left>610</left>
+                    <width>380</width>
+                    <visible>String.IsEmpty(Player.Process(video.queue.data.level))</visible>
+                    <visible>!String.IsEmpty(Player.Process(videoqueuedatalevel))</visible>
+                    <control type="progress">
+                        <description>BAR</description>
+                        <centertop>50%</centertop>
+                        <info>Player.Process(videoqueuedatalevel)</info>
+                        <include>DefSettingsButton</include>
+                        <texturebg colordiffuse="panel_fg_12" border="6">progress/progress-bg.png</texturebg>
+                        <midtexture colordiffuse="dialog_fg_90" border="6">progress/progress-bg.png</midtexture>
+                    </control>
+                </control>
+
                 <control type="label">
                     <top>460</top>
                     <label>$LOCALIZE[32010]:</label>
@@ -518,11 +824,31 @@
                     <label>$INFO[Player.Process(audio.queue.level)]%</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(audio.queue.level))</visible>
+                </control>
+                <control type="label">
+                    <top>460</top>
+                    <left>480</left>
+                    <label>$INFO[Player.Process(audioqueuelevel)]%</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(audio.queue.level))</visible>
+                    <visible>!String.IsEmpty(Player.Process(audioqueuelevel))</visible>
+                </control>
+                <control type="label">
+                    <top>460</top>
+                    <left>480</left>
+                    <label>$LOCALIZE[32033]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(audio.queue.level))</visible>
+                    <visible>String.IsEmpty(Player.Process(audioqueuelevel))</visible>
                 </control>
                 <control type="group">
                     <top>450</top>
                     <left>610</left>
                     <width>380</width>
+                    <visible>!String.IsEmpty(Player.Process(audio.queue.level))</visible>
                     <control type="progress">
                         <description>BAR</description>
                         <centertop>50%</centertop>
@@ -531,8 +857,23 @@
                         <texturebg colordiffuse="panel_fg_12" border="6">progress/progress-bg.png</texturebg>
                         <midtexture colordiffuse="dialog_fg_90" border="6">progress/progress-bg.png</midtexture>
                     </control>
-                </control>				
-                <!-- Audio queue data -->
+                </control>
+                <control type="group">
+                    <top>450</top>
+                    <left>610</left>
+                    <width>380</width>
+                    <visible>String.IsEmpty(Player.Process(audio.queue.level))</visible>
+                    <visible>!String.IsEmpty(Player.Process(audioqueuelevel))</visible>
+                    <control type="progress">
+                        <description>BAR</description>
+                        <centertop>50%</centertop>
+                        <info>Player.Process(audioqueuelevel)</info>
+                        <include>DefSettingsButton</include>
+                        <texturebg colordiffuse="panel_fg_12" border="6">progress/progress-bg.png</texturebg>
+                        <midtexture colordiffuse="dialog_fg_90" border="6">progress/progress-bg.png</midtexture>
+                    </control>
+                </control>
+
                 <control type="label">
                     <top>520</top>
                     <label>$LOCALIZE[32011]:</label>
@@ -545,15 +886,50 @@
                     <label>$INFO[Player.Process(audio.queue.data.level)]%</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <visible>!String.IsEmpty(Player.Process(audio.queue.data.level))</visible>
+                </control>
+                <control type="label">
+                    <top>520</top>
+                    <left>480</left>
+                    <label>$INFO[Player.Process(audioqueuedatalevel)]%</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(audio.queue.data.level))</visible>
+                    <visible>!String.IsEmpty(Player.Process(audioqueuedatalevel))</visible>
+                </control>
+                <control type="label">
+                    <top>520</top>
+                    <left>480</left>
+                    <label>$LOCALIZE[32033]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(audio.queue.data.level))</visible>
+                    <visible>String.IsEmpty(Player.Process(audioqueuedatalevel))</visible>
                 </control>
                 <control type="group">
                     <top>510</top>
                     <left>610</left>
                     <width>380</width>
+                    <visible>!String.IsEmpty(Player.Process(audio.queue.data.level))</visible>
                     <control type="progress">
                         <description>BAR</description>
                         <centertop>50%</centertop>
                         <info>Player.Process(audio.queue.data.level)</info>
+                        <include>DefSettingsButton</include>
+                        <texturebg colordiffuse="panel_fg_12" border="6">progress/progress-bg.png</texturebg>
+                        <midtexture colordiffuse="dialog_fg_90" border="6">progress/progress-bg.png</midtexture>
+                    </control>
+                </control>
+                <control type="group">
+                    <top>510</top>
+                    <left>610</left>
+                    <width>380</width>
+                    <visible>String.IsEmpty(Player.Process(audio.queue.data.level))</visible>
+                    <visible>!String.IsEmpty(Player.Process(audioqueuedatalevel))</visible>
+                    <control type="progress">
+                        <description>BAR</description>
+                        <centertop>50%</centertop>
+                        <info>Player.Process(audioqueuedatalevel)</info>
                         <include>DefSettingsButton</include>
                         <texturebg colordiffuse="panel_fg_12" border="6">progress/progress-bg.png</texturebg>
                         <midtexture colordiffuse="dialog_fg_90" border="6">progress/progress-bg.png</midtexture>
@@ -564,24 +940,23 @@
             <!-- Group: Audio -->
             <control type="group">
                 <left>1275</left>
-                <top>660</top>			
-                <!-- Audio Icon -->
+                <top>660</top>
+
                 <control type="label">
                     <label></label>
                     <top>-15</top>
                     <font>font_tiny_iconic</font>
                     <textcolor>dialog_fg_100</textcolor>
                 </control>
-				
-                <!-- Audio -->
+
                 <control type="label">
                     <label>[B][UPPERCASE]$LOCALIZE[32056][/UPPERCASE][/B]</label>
                     <top>-15</top>
                     <left>68</left>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_100</textcolor>
-                </control>				
-                <!-- Codec -->
+                </control>
+
                 <control type="label">
                     <top>40</top>
                     <label>$LOCALIZE[32046]:</label>
@@ -591,10 +966,13 @@
                 <control type="label">
                     <left>480</left>
                     <top>40</top>
-                    <label>[COLOR dialog_fg_90]$VAR[AudioCodecVar] $VAR[AudioChannelsVar][/COLOR] [COLOR dialog_fg_70]$VAR[AudioCodecSpatialVar][/COLOR]</label>
+                    <width>705</width>
+                    <label>$VAR[AudioCodecVar] $VAR[AudioChannelsVar] $VAR[AudioCodecSpatialVar]$INFO[Player.Process(audiodecoder), | ,]$INFO[Player.Process(audiochannelssink), (Sink: ,)]</label>
                     <font>font_tiny</font>
-                </control>				
-                <!-- Sample rate -->
+                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
+                </control>
+
                 <control type="label">
                     <top>100</top>
                     <label>$LOCALIZE[32051]:</label>
@@ -607,22 +985,80 @@
                     <label>$INFO[Player.Process(audiobitspersample),,-bit] $INFO[Player.Process(audio.sample.rate),[COLOR dialog_fg_70]/[/COLOR] , kHz]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>				
-                <!-- Bitrate -->
+                    <visible>!String.IsEmpty(Player.Process(audio.sample.rate))</visible>
+                </control>
+                <control type="label">
+                    <left>480</left>
+                    <top>100</top>
+                    <label>$INFO[Player.Process(audiobitspersample),,-bit] $INFO[Player.Process(audiosamplerate),[COLOR dialog_fg_70]/[/COLOR] , Hz]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(audio.sample.rate))</visible>
+                    <visible>!String.IsEmpty(Player.Process(audiosamplerate))</visible>
+                </control>
+                <control type="label">
+                    <left>480</left>
+                    <top>100</top>
+                    <label>$LOCALIZE[32033]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(audio.sample.rate))</visible>
+                    <visible>String.IsEmpty(Player.Process(audiosamplerate))</visible>
+                </control>
+
+                <!-- Audio bitrate -->
                 <control type="label">
                     <top>160</top>
                     <label>$LOCALIZE[32047]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                 </control>
+
+                <!-- p3i / CPM live bitrate + p3i average bitrate -->
                 <control type="label">
                     <left>480</left>
                     <top>160</top>
                     <label>$INFO[Player.Process(audio.live.kibit.rate),, $LOCALIZE[32012]] $INFO[VideoPlayer.AudioKibitRate,- [COLOR dialog_fg_70](Ø , $LOCALIZE[32012])[/COLOR]]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                </control>				
-                <!-- Audio language -->
+                    <visible>!String.IsEmpty(Player.Process(audio.live.kibit.rate))</visible>
+                </control>
+
+                <!-- CoreELEC 22 live bitrate + official Kodi average bitrate -->
+                <control type="label">
+                    <left>480</left>
+                    <top>160</top>
+                    <label>$INFO[Player.Process(audiolivebitrate)] $INFO[VideoPlayer.AudioBitrate,- [COLOR dialog_fg_70](Ø , $LOCALIZE[32012])[/COLOR]]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(audio.live.kibit.rate))</visible>
+                    <visible>!String.IsEmpty(Player.Process(audiolivebitrate))</visible>
+                </control>
+
+                <!-- CoreELEC 21.3 / standard Kodi average bitrate -->
+                <control type="label">
+                    <left>480</left>
+                    <top>160</top>
+                    <label>$INFO[VideoPlayer.AudioBitrate,, $LOCALIZE[32012]]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(audio.live.kibit.rate))</visible>
+                    <visible>String.IsEmpty(Player.Process(audiolivebitrate))</visible>
+                    <visible>!String.IsEmpty(VideoPlayer.AudioBitrate)</visible>
+                </control>
+
+                <!-- No bitrate available -->
+                <control type="label">
+                    <left>480</left>
+                    <top>160</top>
+                    <label>$LOCALIZE[32033]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(audio.live.kibit.rate))</visible>
+                    <visible>String.IsEmpty(Player.Process(audiolivebitrate))</visible>
+                    <visible>String.IsEmpty(VideoPlayer.AudioBitrate)</visible>
+                </control>
+
                 <control type="label">
                     <top>220</top>
                     <label>$LOCALIZE[32052]:</label>
@@ -641,13 +1077,14 @@
                 <control type="label">
                     <left>480</left>
                     <top>220</top>
+                    <width>705</width>
                     <label>[UPPERCASE]$INFO[VideoPlayer.AudioLanguage][/UPPERCASE] | $INFO[VideoPlayer.AudioLanguageEx]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                     <visible>!String.IsEmpty(VideoPlayer.AudioLanguage)</visible>
                     <visible>!String.IsEmpty(VideoPlayer.AudioLanguageEx)</visible>
                 </control>
-                <!-- N/A -->
                 <control type="label">
                     <left>480</left>
                     <top>220</top>
@@ -655,8 +1092,8 @@
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
                     <visible>String.IsEmpty(VideoPlayer.AudioLanguage)</visible>
-                </control>				
-                <!-- Subtitle language -->
+                </control>
+
                 <control type="label">
                     <top>280</top>
                     <label>$LOCALIZE[32053]:</label>
@@ -674,7 +1111,6 @@
                     <visible>VideoPlayer.SubtitlesEnabled</visible>
                     <visible>VideoPlayer.HasSubtitles</visible>
                 </control>
-                <!-- Disabled -->
                 <control type="label">
                     <left>480</left>
                     <top>280</top>
@@ -683,7 +1119,6 @@
                     <textcolor>dialog_fg_90</textcolor>
                     <visible>VideoPlayer.HasSubtitles + !VideoPlayer.SubtitlesEnabled</visible>
                 </control>
-                <!-- N/A -->
                 <control type="label">
                     <left>480</left>
                     <top>280</top>
@@ -773,8 +1208,9 @@
                     <label>$INFO[Player.Process(video.dovi.level)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                    <visible>!String.Contains(Player.Process(video.dovi.level),0)</visible>
+                    <visible>!String.IsEmpty(Player.Process(video.dovi.level)) + !String.IsEqual(Player.Process(video.dovi.level),0)</visible>
                 </control>
+
                 <!-- N/A -->
                 <control type="label">
                     <left>495</left>
@@ -784,7 +1220,7 @@
                     <label>$LOCALIZE[32033]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                    <visible>String.Contains(Player.Process(video.dovi.level),0)</visible>
+                    <visible>String.IsEmpty(Player.Process(video.dovi.level)) | String.IsEqual(Player.Process(video.dovi.level),0)</visible>
                 </control>
                 <!-- RPU -->
                 <control type="label">
