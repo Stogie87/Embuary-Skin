@@ -7,2475 +7,2490 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skin.ftv pvr mod\n"
 "Report-Msgid-Bugs-To: http://trac.xbmc.org/\n"
-"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2026-07-16 00:00+0200\n"
 "PO-Revision-Date: 2016-02-26 13:31+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
-"Language-Team: English (http://www.transifex.com/skinrefred/skinftv-pvr-mod/language/en/)\n"
+"Language-Team: Hungarian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
+"Language: hu_HU\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.7\n"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31000"
 msgid "Home"
-msgstr ""
+msgstr "Kezdőlap"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31001"
 msgid "Misc."
-msgstr ""
+msgstr "Egyéb"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31002"
 msgid "More like this"
-msgstr ""
+msgstr "További hasonlók"
 
 #: /xml/DialogKeyboard.xml
 msgctxt "#31003"
 msgid "Suggestions"
-msgstr ""
+msgstr "Javaslatok"
 
 #: /xml/Embuary_Wide_View_50.xml
 msgctxt "#31004"
 msgid "Wide"
-msgstr ""
+msgstr "Széles"
 
 #: /xml/Embuary_Square_View_52.xml
 msgctxt "#31005"
 msgid "Square"
-msgstr ""
+msgstr "Négyzetes"
 
 #: /xml/Embuary_Season_View_54.xml
 msgctxt "#31006"
 msgid "Season"
-msgstr ""
+msgstr "Évad"
 
 #: /xml/Embuary_Episode_View_55.xml
 msgctxt "#31007"
 msgid "Episode"
-msgstr ""
+msgstr "Epizód"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31008"
 msgid "Filter-String"
-msgstr ""
+msgstr "Szűrőszöveg"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31009"
 msgid "Watch again"
-msgstr ""
+msgstr "Megnézés újra"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31010"
 msgid "Watch now"
-msgstr ""
+msgstr "Lejátszás most"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31011"
 msgid "Browse TV show"
-msgstr ""
+msgstr "Sorozat böngészése"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31012"
 msgid "Next up"
-msgstr ""
+msgstr "Következik"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31013"
 msgid "Browse season"
-msgstr ""
+msgstr "Évad böngészése"
 
 #: /xml/Embuary_Season_View_54.xml
 msgctxt "#31014"
 msgid "Info dialog"
-msgstr ""
+msgstr "Információs ablak"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31015"
 msgid "Holiday themes"
-msgstr ""
+msgstr "Ünnepi témák"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31016"
 msgid "Enable widget bounce animation on focus"
-msgstr ""
+msgstr "Widget ugráló animációjának engedélyezése fókuszáláskor"
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31017"
 msgid "Recommended"
-msgstr ""
+msgstr "Ajánlott"
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31018"
 msgid "Because you watched"
-msgstr ""
+msgstr "Mert ezt nézted"
 
 #: /xml/MyPVRChannels.xml
 msgctxt "#31019"
 msgid "Show hidden"
-msgstr ""
+msgstr "Rejtettek megjelenítése"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31020"
 msgid "Tune in"
-msgstr ""
+msgstr "Odakapcsolás"
 
 #: /xml/DialogPVRInfo.xml
 msgctxt "#31021"
 msgid "Similar titles"
-msgstr ""
+msgstr "Hasonló címek"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31022"
 msgid "Encrypted channel"
-msgstr ""
+msgstr "Titkosított csatorna"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31023"
 msgid "Recording active"
-msgstr ""
+msgstr "Felvétel aktív"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31024"
 msgid "Timer active"
-msgstr ""
+msgstr "Időzítő aktív"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31025"
 msgid "Repeating timer"
-msgstr ""
+msgstr "Ismétlődő időzítő"
 
 #: /xml/Custom_1122_MusicHub.xml
 msgctxt "#31026"
 msgid "All music"
-msgstr ""
+msgstr "Összes zene"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31027"
 msgid "Custom shortcuts"
-msgstr ""
+msgstr "Egyéni parancsikonok"
 
 #: /xml/Custom_1120_MovieHub.xml
 msgctxt "#31028"
 msgid "Menu configuration"
-msgstr ""
+msgstr "Menü beállítása"
 
 #: /xml/Custom_1122_MusicHub.xml
 msgctxt "#31029"
 msgid "Music library"
-msgstr ""
+msgstr "Zenetár"
 
 #: /xml/Custom_1124_PVRHub.xml
 msgctxt "#31030"
 msgid "Last tuned channels"
-msgstr ""
+msgstr "Legutóbb hangolt csatornák"
 
 #: /xml/MyPVRRecordings.xml
 msgctxt "#31031"
 msgid "Folder structure"
-msgstr ""
+msgstr "Mappaszerkezet"
 
 #: /xml/MyPVRRecordings.xml
 msgctxt "#31032"
 msgid "Show deleted"
-msgstr ""
+msgstr "Töröltek megjelenítése"
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31033"
 msgid "Creator"
-msgstr ""
+msgstr "Készítő"
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31034"
 msgid "Full description"
-msgstr ""
+msgstr "Teljes leírás"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31035"
 msgid "Add-on broken"
-msgstr ""
+msgstr "Hibás kiegészítő"
 
 #: /xml/SettingsCategory.xml
 msgctxt "#31036"
 msgid "Settings mode"
-msgstr ""
+msgstr "Beállítási mód"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31037"
 msgid "Ends at"
-msgstr ""
+msgstr "Vége"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31038"
 msgid "Timeshift"
-msgstr ""
+msgstr "Időeltolás"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31039"
 msgid "Audio settings"
-msgstr ""
+msgstr "Hangbeállítások"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31040"
 msgid "Subtitle settings"
-msgstr ""
+msgstr "Feliratbeállítások"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31041"
 msgid "Stats for nerds"
-msgstr ""
+msgstr "Részletes statisztikák"
 
 #: /xml/Custom_1124_PVRHub.xml
 msgctxt "#31042"
 msgid "Live TV"
-msgstr ""
+msgstr "Élő TV"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31043"
 msgid "Muted"
-msgstr ""
+msgstr "Némítva"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31044"
 msgid "Parent folder"
-msgstr ""
+msgstr "Szülőmappa"
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31045"
 msgid "Memory usage"
-msgstr ""
+msgstr "Memóriahasználat"
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31046"
 msgid "Video decoder"
-msgstr ""
+msgstr "Videodekóder"
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31047"
 msgid "Pixel format"
-msgstr ""
+msgstr "Pixelformátum"
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31048"
 msgid "Deinterlacing method"
-msgstr ""
+msgstr "Váltottsorosság megszüntetésének módja"
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31049"
 msgid "Frames per second"
-msgstr ""
+msgstr "Képkocka/másodperc"
 
 #: /xml/script-globalsearch-main.xml
 msgctxt "#31050"
 msgid "Movies containing the actor"
-msgstr ""
+msgstr "A színészt tartalmazó filmek"
 
 #: /xml/script-globalsearch-main.xml
 msgctxt "#31051"
 msgid "Movies containing the director"
-msgstr ""
+msgstr "A rendezőt tartalmazó filmek"
 
 #: /xml/script-globalsearch-main.xml
 msgctxt "#31052"
 msgid "New search"
-msgstr ""
+msgstr "Új keresés"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31053"
 msgid "Once"
-msgstr ""
+msgstr "Egyszer"
 
 #: /xml/MusicOSD.xml
 msgctxt "#31054"
 msgid "Visualisation presets"
-msgstr ""
+msgstr "Vizualizációs előbeállítások"
 
 #: /xml/MusicOSD.xml
 msgctxt "#31055"
 msgid "Visualisation settings"
-msgstr ""
+msgstr "Vizualizációs beállítások"
 
 #: /xml/MusicOSD.xml
 msgctxt "#31056"
 msgid "Randomise fanart"
-msgstr ""
+msgstr "Véletlenszerű fanart"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31057"
 msgid "Number of favourites"
-msgstr ""
+msgstr "Kedvencek száma"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31058"
 msgid "Embuary settings"
-msgstr ""
+msgstr "Embuary beállítások"
 
 #: /xml/DialogPVRChannelManager.xml
 msgctxt "#31059"
 msgid "Toggle TV / radio"
-msgstr ""
+msgstr "TV / rádió váltása"
 
 #: /xml/SmartPlaylistEditor.xml
 msgctxt "#31060"
 msgid "Rules"
-msgstr ""
+msgstr "Szabályok"
 
 #: /xml/SmartPlaylistEditor.xml
 msgctxt "#31061"
 msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
-msgstr ""
+msgstr "Állítsd be a típust, és adj hozzá szabályokat egy intelligens lejátszási lista létrehozásához. Ezek a listák dinamikusak, és az adatbázis minden olyan médiaelemét tartalmazzák, amely megfelel a kiválasztott szabályoknak."
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31062"
 msgid "Favourite movies"
-msgstr ""
+msgstr "Kedvenc filmek"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31063"
 msgid "Kodi favourites"
-msgstr ""
+msgstr "Kodi-kedvencek"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31064"
 msgid "Favourite TV shows"
-msgstr ""
+msgstr "Kedvenc sorozatok"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31065"
 msgid "Favourite episodes"
-msgstr ""
+msgstr "Kedvenc epizódok"
 
 #: /xml/MyWeather.xml
 msgctxt "#31066"
 msgid "Location"
-msgstr ""
+msgstr "Hely"
 
 #: /xml/MyMusicPlaylistEditor.xml
 msgctxt "#31067"
 msgid "Load"
-msgstr ""
+msgstr "Betöltés"
 
 #: /xml/MyMusicPlaylistEditor.xml
 msgctxt "#31068"
 msgid "Number of tracks in current playlist"
-msgstr ""
+msgstr "Számok száma az aktuális lejátszási listában"
 
 #: /xml/Embuary_Season_View_54.xml
 msgctxt "#31069"
 msgid "Back"
-msgstr ""
+msgstr "Vissza"
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31070"
 msgid "Channel group"
-msgstr ""
+msgstr "Csatornacsoport"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31071"
 msgid "Channel guide"
-msgstr ""
+msgstr "Műsorújság"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31072"
 msgid "Local search"
-msgstr ""
+msgstr "Helyi keresés"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31073"
 msgid "EmbyCon: Search for movies"
-msgstr ""
+msgstr "EmbyCon: filmek keresése"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31074"
 msgid "EmbyCon: Search for TV shows"
-msgstr ""
+msgstr "EmbyCon: sorozatok keresése"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31075"
 msgid "EmbyCon: Search for episodes"
-msgstr ""
+msgstr "EmbyCon: epizódok keresése"
 
 #: /xml/Custom_1110_testwindow.xml
 msgctxt "#31076"
 msgid "Stop playback"
-msgstr ""
+msgstr "Lejátszás leállítása"
 
 #: /xml/script-nextup-notification-PostPlayInfo.xml
 msgctxt "#31077"
 msgid "seconds"
-msgstr ""
+msgstr "másodperc"
 
 #: /xml/script-nextup-notification-PostPlayInfo.xml
 msgctxt "#31078"
 msgid "Playback starts in"
-msgstr ""
+msgstr "A lejátszás kezdete"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31079"
 msgid "Next episode"
-msgstr ""
+msgstr "Következő epizód"
 
 #: /xml/Home.xml
 msgctxt "#31080"
 msgid "Continue watching"
-msgstr ""
+msgstr "Megtekintés folytatása"
 
 #: /xml/Home.xml
 msgctxt "#31081"
 msgid "Recently updated TV shows"
-msgstr ""
+msgstr "Nemrég frissített sorozatok"
 
 #: /xml/Custom_1124_PVRHub.xml
 msgctxt "#31082"
 msgid "Last tuned radio channels"
-msgstr ""
+msgstr "Legutóbb hangolt rádiócsatornák"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31083"
 msgid "Widgets"
-msgstr ""
+msgstr "Widgetek"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31084"
 msgid "Show custom shortcuts in Emby nodes"
-msgstr ""
+msgstr "Egyéni parancsikonok megjelenítése az Emby-csomópontokban"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31085"
 msgid "Show EmbyCon source label"
-msgstr ""
+msgstr "EmbyCon-forráscímke megjelenítése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31086"
 msgid "Default widgets"
-msgstr ""
+msgstr "Alapértelmezett widgetek"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31087"
 msgid "Show fanarts in the background"
-msgstr ""
+msgstr "Fanartok megjelenítése a háttérben"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31088"
 msgid "Show video playback in the background"
-msgstr ""
+msgstr "Videolejátszás megjelenítése a háttérben"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31089"
 msgid "minutes"
-msgstr ""
+msgstr "perc"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31090"
 msgid "minute"
-msgstr ""
+msgstr "perc"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31091"
 msgid "Welcome to Embuary"
-msgstr ""
+msgstr "Üdvözöl az Embuary"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31092"
 msgid "This skin is designed to simulate the web gui experience of Emby. In order to get everything running as it should, it's recommended to set the following Kodi options:"
-msgstr ""
+msgstr "Ez a felszín az Emby webes felületének élményét utánozza. A megfelelő működés érdekében ajánlott beállítani a következő Kodi-opciókat:"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31093"
 msgid "OK, do it for me"
-msgstr ""
+msgstr "Rendben, állítsd be"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31094"
 msgid "No, I'll keep my config"
-msgstr ""
+msgstr "Nem, megtartom a beállításaimat"
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31095"
 msgid "Pause playback"
-msgstr ""
+msgstr "Lejátszás szüneteltetése"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31096"
 msgid "Resume playback"
-msgstr ""
+msgstr "Lejátszás folytatása"
 
 #: /xml/Custom_1120_MovieHub.xml
 msgctxt "#31097"
 msgid "Movies in the Top 250"
-msgstr ""
+msgstr "Filmek a Top 250-ben"
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31098"
 msgid "TV shows in the Top 250"
-msgstr ""
+msgstr "Sorozatok a Top 250-ben"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31099"
 msgid "Widget layout"
-msgstr ""
+msgstr "Widget elrendezése"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31100"
 msgid "Position"
-msgstr ""
+msgstr "Pozíció"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31101"
 msgid "Layout"
-msgstr ""
+msgstr "Elrendezés"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31102"
 msgid "Background settings"
-msgstr ""
+msgstr "Háttérbeállítások"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31103"
 msgid "Widget settings"
-msgstr ""
+msgstr "Widgetbeállítások"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31104"
 msgid "Use own static background image"
-msgstr ""
+msgstr "Saját statikus háttérkép használata"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31105"
 msgid "Change background, header and other misc. settings of Embuary."
-msgstr ""
+msgstr "Az Embuary hátterének, fejlécének és egyéb beállításainak módosítása."
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31106"
 msgid "Configure home & side panel menu items and general widget limitations."
-msgstr ""
+msgstr "A kezdőképernyő és az oldalsó panel menüelemeinek, valamint az általános widgetkorlátozásoknak a beállítása."
 
 #: /xml/Custom_1111_PositionItemSelector.xml
 msgctxt "#31107"
 msgid "Select content"
-msgstr ""
+msgstr "Tartalom kiválasztása"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31108"
 msgid "Event log"
-msgstr ""
+msgstr "Eseménynapló"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31109"
 msgid "Header bar"
-msgstr ""
+msgstr "Fejlécsáv"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31110"
 msgid "Show current temperature (if available)"
-msgstr ""
+msgstr "Aktuális hőmérséklet megjelenítése (ha elérhető)"
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31111"
 msgid "Change location"
-msgstr ""
+msgstr "Hely módosítása"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31112"
 msgid "Kiosk mode"
-msgstr ""
+msgstr "Kioszk mód"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31113"
 msgid "Show button to change the EmbyCon user"
-msgstr ""
+msgstr "Gomb megjelenítése az EmbyCon-felhasználó váltásához"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31114"
 msgid "Show update library button"
-msgstr ""
+msgstr "Médiatár frissítése gomb megjelenítése"
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31115"
 msgid "Switch to file mode"
-msgstr ""
+msgstr "Váltás fájlmódra"
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31116"
 msgid "Unlock shares"
-msgstr ""
+msgstr "Megosztások feloldása"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31117"
 msgid "Replace device name in the header bar"
-msgstr ""
+msgstr "Eszköznév cseréje a fejlécsávban"
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31118"
 msgid "EmbyCon sources"
-msgstr ""
+msgstr "EmbyCon-források"
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31119"
 msgid "Previous group"
-msgstr ""
+msgstr "Előző csoport"
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31120"
 msgid "Next group"
-msgstr ""
+msgstr "Következő csoport"
 
 #: /xml/MusicVisualisation.xml
 msgctxt "#31121"
 msgid "Rewinding"
-msgstr ""
+msgstr "Visszatekerés"
 
 #: /xml/MusicVisualisation.xml
 msgctxt "#31122"
 msgid "Forwarding"
-msgstr ""
+msgstr "Előretekerés"
 
 #: /xml/PlayerControls.xml
 msgctxt "#31123"
 msgid "Show playlist"
-msgstr ""
+msgstr "Lejátszási lista megjelenítése"
 
 #: /xml/Settings.xml
 msgctxt "#31124"
 msgid "LibreELEC"
-msgstr ""
+msgstr "LibreELEC"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31125"
 msgid "Custom widgets"
-msgstr ""
+msgstr "Egyéni widgetek"
 
 #: /xml/MyPics.xml
 msgctxt "#31126"
 msgid "Randomise slideshow"
-msgstr ""
+msgstr "Véletlenszerű diavetítés"
 
 #: /xml/Custom_1112_MainMenuReset.xml
 msgctxt "#31127"
 msgid "Restored default widgets"
-msgstr ""
+msgstr "Alapértelmezett widgetek visszaállítva"
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31128"
 msgid "Hide broken addons"
-msgstr ""
+msgstr "Hibás kiegészítők elrejtése"
 
 #: /xml/Custom_1123_AddonHub.xml
 msgctxt "#31129"
 msgid "Update local addons"
-msgstr ""
+msgstr "Helyi kiegészítők frissítése"
 
 #: /xml/script-nextup-notification-StillWatchingInfo.xml
 msgctxt "#31130"
 msgid "Still watching?"
-msgstr ""
+msgstr "Még nézed?"
 
 #: /xml/Custom_1118_ct.xml
 msgctxt "#31131"
 msgid "Attention"
-msgstr ""
+msgstr "Figyelem"
 
 #: /xml/Custom_1118_ct.xml
 msgctxt "#31132"
 msgid "It seems that you have one ore more blacklisted plugins installed. This skin has been designed for a legal usage of Kodi and I - and all the other skin contributers - do not want be associated with such tools. Please check the kodi.tv community if you need any assistance to remove them."
-msgstr ""
+msgstr "Úgy tűnik, egy vagy több tiltólistán szereplő bővítmény van telepítve. Ezt a felszínt a Kodi jogszerű használatára tervezték, és sem én, sem a többi közreműködő nem kívánunk ilyen eszközökkel kapcsolatba kerülni. Eltávolításukhoz kérj segítséget a kodi.tv közösségétől."
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31133"
 msgid "Language filter"
-msgstr ""
+msgstr "Nyelvi szűrő"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31134"
 msgid "Side panel"
-msgstr ""
+msgstr "Oldalsó panel"
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31135"
 msgid "Restore defaults"
-msgstr ""
+msgstr "Alapértékek visszaállítása"
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31136"
 msgid "Setting changes are only applied after saving"
-msgstr ""
+msgstr "A beállítások módosításai csak mentés után lépnek érvénybe"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31137"
 msgid "Awards"
-msgstr ""
+msgstr "Díjak"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31138"
 msgid "Retail release"
-msgstr ""
+msgstr "Kereskedelmi megjelenés"
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31139"
 msgid "Do you want to apply unsaved changes?"
-msgstr ""
+msgstr "Alkalmazod a nem mentett módosításokat?"
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31140"
 msgid "Add-on settings not saved"
-msgstr ""
+msgstr "A kiegészítő beállításai nincsenek mentve"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31141"
 msgid "Rumored"
-msgstr ""
+msgstr "Pletykált"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31142"
 msgid "Planned"
-msgstr ""
+msgstr "Tervezett"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31143"
 msgid "In production"
-msgstr ""
+msgstr "Gyártás alatt"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31144"
 msgid "Post production"
-msgstr ""
+msgstr "Utómunka alatt"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31145"
 msgid "Released"
-msgstr ""
+msgstr "Megjelent"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31146"
 msgid "Canceled"
-msgstr ""
+msgstr "Törölve"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31147"
 msgid "Returning series"
-msgstr ""
+msgstr "Folytatódó sorozat"
 
 #: /xml/DialogSubtitles.xml
 msgctxt "#31148"
 msgid "Available sutbtitles"
-msgstr ""
+msgstr "Elérhető feliratok"
 
 #: /xml/DialogSubtitles.xml
 msgctxt "#31149"
 msgid "Installed subtitle services"
-msgstr ""
+msgstr "Telepített feliratszolgáltatások"
 
 #: /xml/DialogSubtitles.xml
 msgctxt "#31150"
 msgid "Local subtitles are available for this video."
-msgstr ""
+msgstr "Ehhez a videóhoz helyi feliratok érhetők el."
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31151"
 msgid "Nr."
-msgstr ""
+msgstr "Sz."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31152"
 msgid "Hub shortcuts"
-msgstr ""
+msgstr "Hub-parancsikonok"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31153"
 msgid "Hide widgets and use fullscreen panel layout for the main menu"
-msgstr ""
+msgstr "Widgetek elrejtése és teljes képernyős panel-elrendezés használata a főmenüben"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31154"
 msgid "Next aired"
-msgstr ""
+msgstr "Következő adás"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31155"
 msgid "Show library item edit buttons in info dialogs"
-msgstr ""
+msgstr "Médiatári elem szerkesztőgombjainak megjelenítése az információs ablakokban"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31156"
 msgid "No further program information available"
-msgstr ""
+msgstr "Nincs további műsorinformáció"
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31157"
 msgid "Persons named"
-msgstr ""
+msgstr "Az alábbi nevű személyek"
 
 #: /shortcuts/mainmenu.DATA.xml
 msgctxt "#31158"
 msgid "Custom item"
-msgstr ""
+msgstr "Egyéni elem"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31159"
 msgid "No label"
-msgstr ""
+msgstr "Nincs címke"
 
 #: /shortcuts/moviehub.DATA.xml
 msgctxt "#31160"
 msgid "Movies - EmbyCon"
-msgstr ""
+msgstr "Filmek – EmbyCon"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31161"
 msgid "Free receivable channel"
-msgstr ""
+msgstr "Szabadon fogható csatorna"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31162"
 msgid "Searching for updates"
-msgstr ""
+msgstr "Frissítések keresése"
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31163"
 msgid "Unmapped channels"
-msgstr ""
+msgstr "Nem hozzárendelt csatornák"
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31164"
 msgid "Mapped channels"
-msgstr ""
+msgstr "Hozzárendelt csatornák"
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31165"
 msgid "Delete group"
-msgstr ""
+msgstr "Csoport törlése"
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31166"
 msgid "Add group"
-msgstr ""
+msgstr "Csoport hozzáadása"
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31167"
 msgid "Rename group"
-msgstr ""
+msgstr "Csoport átnevezése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31168"
 msgid "Show music videos button"
-msgstr ""
+msgstr "Zenei videók gomb megjelenítése"
 
 #: /xml/Custom_1120_MovieHub.xml
 msgctxt "#31169"
 msgid "Collections"
-msgstr ""
+msgstr "Gyűjtemények"
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31170"
 msgid "Place of birth"
-msgstr ""
+msgstr "Születési hely"
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31171"
 msgid "Age"
-msgstr ""
+msgstr "Életkor"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31172"
 msgid "TV show hub"
-msgstr ""
+msgstr "Sorozathub"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31173"
 msgid "Movie hub"
-msgstr ""
+msgstr "Filmhub"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31174"
 msgid "Music hub"
-msgstr ""
+msgstr "Zenehub"
 
 #: /xml/Custom_1145_PlaylistSelect.xml
 msgctxt "#31175"
 msgid "Video playlist"
-msgstr ""
+msgstr "Videó-lejátszási lista"
 
 #: /xml/Custom_1145_PlaylistSelect.xml
 msgctxt "#31176"
 msgid "Music playlist"
-msgstr ""
+msgstr "Zenei lejátszási lista"
 
 #: /xml/MusicOSD.xml
 msgctxt "#31177"
 msgid "Disc art"
-msgstr ""
+msgstr "Lemezkép"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31178"
 msgid "Custom menu entries"
-msgstr ""
+msgstr "Egyéni menübejegyzések"
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31179"
 msgid "All TV shows"
-msgstr ""
+msgstr "Összes sorozat"
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31180"
 msgid "All movies"
-msgstr ""
+msgstr "Összes film"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31181"
 msgid "Emby node"
-msgstr ""
+msgstr "Emby-csomópont"
 
 #: /xml/Embuary_TagHubIncludes.xml
 msgctxt "#31182"
 msgid "Recommended TV shows"
-msgstr ""
+msgstr "Ajánlott sorozatok"
 
 #: /xml/Custom_1130_Emby0Hub.xml
 msgctxt "#31183"
 msgid "Recommended movies"
-msgstr ""
+msgstr "Ajánlott filmek"
 
 #: /xml/Custom_1130_Emby0Hub.xml
 msgctxt "#31184"
 msgid "Random movies"
-msgstr ""
+msgstr "Véletlenszerű filmek"
 
 #: /xml/Embuary_TagHubIncludes.xml
 msgctxt "#31185"
 msgid "Random TV shows"
-msgstr ""
+msgstr "Véletlenszerű sorozatok"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31186"
 msgid "Emby stream"
-msgstr ""
+msgstr "Emby-adatfolyam"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31187"
 msgid "Home videos & photos"
-msgstr ""
+msgstr "Otthoni videók és fényképek"
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31188"
 msgid "Filmography"
-msgstr ""
+msgstr "Filmográfia"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31189"
 msgid "collection"
-msgstr ""
+msgstr "gyűjtemény"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31190"
 msgid "Settings backup"
-msgstr ""
+msgstr "Beállítások biztonsági mentése"
 
 #: /xml/LoginScreen.xml
 msgctxt "#31191"
 msgid "Power options"
-msgstr ""
+msgstr "Energiagazdálkodási lehetőségek"
 
 #: /xml/Embuary_Set_View_56.xml
 msgctxt "#31192"
 msgid "Included movies"
-msgstr ""
+msgstr "Tartalmazott filmek"
 
 #: /xml/Custom_1123_AddonHub.xml
 msgctxt "#31193"
 msgid "Installed add-ons"
-msgstr ""
+msgstr "Telepített kiegészítők"
 
 #: /xml/Custom_1123_AddonHub.xml
 msgctxt "#31194"
 msgid "Search add-ons"
-msgstr ""
+msgstr "Kiegészítők keresése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31195"
 msgid "Use own background image path"
-msgstr ""
+msgstr "Saját háttérkép-útvonal használata"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31196"
 msgid "Ended"
-msgstr ""
+msgstr "Befejezett"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31197"
 msgid "Continuing"
-msgstr ""
+msgstr "Folytatódik"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31198"
 msgid "Hide labels"
-msgstr ""
+msgstr "Címkék elrejtése"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31199"
 msgid "Slide"
-msgstr ""
+msgstr "Dia"
 
 #: /extras/skinsettings.xml
 msgctxt "#31200"
 msgid "Custom"
-msgstr ""
+msgstr "Egyéni"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31201"
 msgid "Select position"
-msgstr ""
+msgstr "Pozíció kiválasztása"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31202"
 msgid "Menu positions"
-msgstr ""
+msgstr "Menüpozíciók"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31203"
 msgid "Default menu entries"
-msgstr ""
+msgstr "Alapértelmezett menübejegyzések"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31204"
 msgid "Reset menu to default"
-msgstr ""
+msgstr "Menü visszaállítása alaphelyzetbe"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31205"
 msgid "Change menu thumbnails"
-msgstr ""
+msgstr "Menübélyegképek módosítása"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31206"
 msgid "Thumbnail options"
-msgstr ""
+msgstr "Bélyegkép-beállítások"
 
 #: /xml/Custom_1112_MainMenuReset.xml
 msgctxt "#31207"
 msgid "Restored default main menu configuration"
-msgstr ""
+msgstr "Az alapértelmezett főmenü-beállítás visszaállítva"
 
 #: /xml/Custom_1111_PositionItemSelector.xml
 msgctxt "#31208"
 msgid "EmbyCon node"
-msgstr ""
+msgstr "EmbyCon-csomópont"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31209"
 msgid "Unwatched movies"
-msgstr ""
+msgstr "Nem látott filmek"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31210"
 msgid "Unwatched TV shows"
-msgstr ""
+msgstr "Nem látott sorozatok"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31211"
 msgid "Recently played songs"
-msgstr ""
+msgstr "Nemrég lejátszott dalok"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31212"
 msgid "Favourite artists"
-msgstr ""
+msgstr "Kedvenc előadók"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31213"
 msgid "Favourite albums"
-msgstr ""
+msgstr "Kedvenc albumok"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31214"
 msgid "Favourite songs"
-msgstr ""
+msgstr "Kedvenc dalok"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31215"
 msgid "Often played songs"
-msgstr ""
+msgstr "Gyakran lejátszott dalok"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31216"
 msgid "Reset widget configuration to default"
-msgstr ""
+msgstr "Widgetbeállítás visszaállítása alaphelyzetbe"
 
 #: /xml/Custom_1112_Reset.xml
 msgctxt "#31217"
 msgid "Build default skin configuartion"
-msgstr ""
+msgstr "Alapértelmezett felszínbeállítás létrehozása"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31218"
 msgid "Edit current configuration"
-msgstr ""
+msgstr "Aktuális beállítás szerkesztése"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31219"
 msgid "Horizontal"
-msgstr ""
+msgstr "Vízszintes"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31220"
 msgid "Vertical"
-msgstr ""
+msgstr "Függőleges"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31221"
 msgid "Use EPG thumbnails for PVR widgets (if available)"
-msgstr ""
+msgstr "EPG-bélyegképek használata PVR-widgetekhez (ha elérhetők)"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31222"
 msgid "Support at emby.media"
-msgstr ""
+msgstr "Támogatás az emby.media oldalon"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31223"
 msgid "Configure shortcuts of the power menu."
-msgstr ""
+msgstr "Az energiagazdálkodási menü parancsikonjainak beállítása."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31224"
 msgid "Power menu"
-msgstr ""
+msgstr "Energiagazdálkodási menü"
 
 #: /xml/DialogButtonMenu.xml
 msgctxt "#31225"
 msgid "EmbyCon login"
-msgstr ""
+msgstr "EmbyCon bejelentkezés"
 
 #: /xml/DialogButtonMenu.xml
 msgctxt "#31226"
 msgid "Change EmbyCon user"
-msgstr ""
+msgstr "EmbyCon-felhasználó módosítása"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31227"
 msgid "Play album"
-msgstr ""
+msgstr "Album lejátszása"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31228"
 msgid "Search result provider"
-msgstr ""
+msgstr "Keresési találatok szolgáltatója"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31229"
 msgid "Create and manage your own widgets source. Please note that each widget has to be manually assigned to the chosen window."
-msgstr ""
+msgstr "Saját widgetforrás létrehozása és kezelése. Minden widgetet manuálisan kell hozzárendelni a kiválasztott ablakhoz."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31230"
 msgid "Hide thumbnails of unwatched episodes"
-msgstr ""
+msgstr "Nem látott epizódok bélyegképeinek elrejtése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31231"
 msgid "Pause video playback while the player info screen is active"
-msgstr ""
+msgstr "Videolejátszás szüneteltetése, amíg a lejátszó információs képernyője aktív"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31232"
 msgid "Custom hub"
-msgstr ""
+msgstr "Egyéni hub"
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31233"
 msgid "Movies starring"
-msgstr ""
+msgstr "Filmek a főszereplésével"
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31234"
 msgid "TV shows starring"
-msgstr ""
+msgstr "Sorozatok a főszereplésével"
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31235"
 msgid "Directed by"
-msgstr ""
+msgstr "Rendezte"
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31236"
 msgid "Episodes starring"
-msgstr ""
+msgstr "Epizódok a főszereplésével"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31237"
 msgid "Available items starring the chosen actor"
-msgstr ""
+msgstr "A kiválasztott színésszel elérhető elemek"
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31238"
 msgid "Facts"
-msgstr ""
+msgstr "Tények"
 
 #: /shortcuts/tvshowhub.DATA.xml
 msgctxt "#31239"
 msgid "TV shows - EmbyCon"
-msgstr ""
+msgstr "Sorozatok – EmbyCon"
 
 #: /shortcuts/musichub.DATA.xml
 msgctxt "#31240"
 msgid "Artists - EmbyCon"
-msgstr ""
+msgstr "Előadók – EmbyCon"
 
 #: /shortcuts/musichub.DATA.xml
 msgctxt "#31241"
 msgid "Albums - EmbyCon"
-msgstr ""
+msgstr "Albumok – EmbyCon"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31242"
 msgid "Repositories"
-msgstr ""
+msgstr "Tárolók"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31243"
 msgid "Install from zip"
-msgstr ""
+msgstr "Telepítés ZIP-fájlból"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31244"
 msgid "Edit menu configuration"
-msgstr ""
+msgstr "Menübeállítás szerkesztése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31245"
 msgid "Edit widget configuration"
-msgstr ""
+msgstr "Widgetbeállítás szerkesztése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31246"
 msgid "Hubs"
-msgstr ""
+msgstr "Hubok"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31247"
 msgid "Menus & widgets"
-msgstr ""
+msgstr "Menük és widgetek"
 
 #: /xml/Custom_1110_PositionSelector.xml
 msgctxt "#31248"
 msgid "Reset widgets to default"
-msgstr ""
+msgstr "Widgetek visszaállítása alaphelyzetbe"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31249"
 msgid "Window configuration"
-msgstr ""
+msgstr "Ablakbeállítás"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31250"
 msgid "Automatically switch to full screen when starting playback"
-msgstr ""
+msgstr "Automatikus váltás teljes képernyőre a lejátszás indításakor"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31251"
 msgid "Add-on hub"
-msgstr ""
+msgstr "Kiegészítőhub"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31252"
 msgid "PVR hub"
-msgstr ""
+msgstr "PVR-hub"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31253"
 msgid "hub"
-msgstr ""
+msgstr "hub"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31254"
 msgid "Hide main menu and only show widgets"
-msgstr ""
+msgstr "Főmenü elrejtése és csak a widgetek megjelenítése"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31255"
 msgid "Cinema mode"
-msgstr ""
+msgstr "Mozi mód"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31256"
 msgid "On right now"
-msgstr ""
+msgstr "Most műsoron"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31257"
 msgid "Try to use an Emby styled artwork"
-msgstr ""
+msgstr "Emby-stílusú illusztráció használatának megkísérlése"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31258"
 msgid "Special"
-msgstr ""
+msgstr "Különkiadás"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31259"
 msgid "More from season"
-msgstr ""
+msgstr "Továbbiak az évadból"
 
 #: /xml/LoginScreen.xml
 msgctxt "#31260"
 msgid "Please login"
-msgstr ""
+msgstr "Kérjük, jelentkezz be"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31261"
 msgid "Main menu"
-msgstr ""
+msgstr "Főmenü"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31262"
 msgid "Audio books"
-msgstr ""
+msgstr "Hangoskönyvek"
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31263"
 msgid "Color palette"
-msgstr ""
+msgstr "Színpaletta"
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31264"
 msgid "Opacity"
-msgstr ""
+msgstr "Átlátszatlanság"
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31265"
 msgid "Current color"
-msgstr ""
+msgstr "Aktuális szín"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31266"
 msgid "Custom colors"
-msgstr ""
+msgstr "Egyéni színek"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31267"
 msgid "Accent color"
-msgstr ""
+msgstr "Kiemelőszín"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31268"
 msgid "Player element color"
-msgstr ""
+msgstr "Lejátszóelemek színe"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31269"
 msgid "Item fallback background color"
-msgstr ""
+msgstr "Elem tartalék háttérszíne"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31270"
 msgid "Button focused color"
-msgstr ""
+msgstr "Fókuszált gomb színe"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31271"
 msgid "Background opacity"
-msgstr ""
+msgstr "Háttér átlátszatlansága"
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31272"
 msgid "Set for all"
-msgstr ""
+msgstr "Beállítás mindenhol"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31273"
 msgid "Required add-ons and dependencies"
-msgstr ""
+msgstr "Szükséges kiegészítők és függőségek"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31274"
 msgid "Supported optional add-ons"
-msgstr ""
+msgstr "Támogatott választható kiegészítők"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31275"
 msgid "List of installed dependencies and supported add-ons. Missing items can be installed from here."
-msgstr ""
+msgstr "A telepített függőségek és támogatott kiegészítők listája. A hiányzó elemek innen telepíthetők."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31276"
 msgid "Dependencies & add-ons"
-msgstr ""
+msgstr "Függőségek és kiegészítők"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31277"
 msgid "Hide video OSD while playback is paused"
-msgstr ""
+msgstr "Videó OSD elrejtése, amikor a lejátszás szünetel"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31278"
 msgid "Suggestions by genre"
-msgstr ""
+msgstr "Műfaj szerinti javaslatok"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31279"
 msgid "Library tag hubs"
-msgstr ""
+msgstr "Médiatári címkehubok"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31280"
 msgid "Edit TV show widget configuration"
-msgstr ""
+msgstr "Sorozat-widgetbeállítás szerkesztése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31281"
 msgid "Edit movie widget configuration"
-msgstr ""
+msgstr "Film-widgetbeállítás szerkesztése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31282"
 msgid "EmbyCon nodes"
-msgstr ""
+msgstr "EmbyCon-csomópontok"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31283"
 msgid "Edit music widget configuration"
-msgstr ""
+msgstr "Zenei widgetbeállítás szerkesztése"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31284"
 msgid "No items found"
-msgstr ""
+msgstr "Nem találhatók elemek"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31285"
 msgid "No channels found"
-msgstr ""
+msgstr "Nem találhatók csatornák"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31286"
 msgid "Limit items of default widgets"
-msgstr ""
+msgstr "Alapértelmezett widgetek elemeinek korlátozása"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31287"
 msgid "More movies directed by"
-msgstr ""
+msgstr "További filmek ettől a rendezőtől"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31288"
 msgid "Limit"
-msgstr ""
+msgstr "Korlát"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31289"
 msgid "not configured yet"
-msgstr ""
+msgstr "még nincs beállítva"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31290"
 msgid "Config"
-msgstr ""
+msgstr "Beállítás"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31291"
 msgid "Spooky suggestions"
-msgstr ""
+msgstr "Kísérteties javaslatok"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31292"
 msgid "Holiday season suggestions"
-msgstr ""
+msgstr "Ünnepi időszak javaslatai"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31293"
 msgid "Enable suggestion widgets"
-msgstr ""
+msgstr "Javaslati widgetek engedélyezése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31294"
 msgid "Enable startup sound"
-msgstr ""
+msgstr "Indítási hang engedélyezése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31295"
 msgid "Enable holiday themes"
-msgstr ""
+msgstr "Ünnepi témák engedélyezése"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31296"
 msgid "Useful links for support, to report issues or if you want to help to translate the skin to your language."
-msgstr ""
+msgstr "Hasznos támogatási hivatkozások, hibajelentéshez vagy a felszín saját nyelvre fordításában való segítséghez."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31297"
 msgid "Support at kodi.tv"
-msgstr ""
+msgstr "Támogatás a kodi.tv oldalon"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31298"
 msgid "Support & translations"
-msgstr ""
+msgstr "Támogatás és fordítások"
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31299"
 msgid "Update Kodi"
-msgstr ""
+msgstr "Kodi frissítése"
 
 #: /xml/Embuary_HomeIncludes.xml
 msgctxt "#31300"
 msgid "My media"
-msgstr ""
+msgstr "Saját média"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31301"
 msgid "Latest movies"
-msgstr ""
+msgstr "Legújabb filmek"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31302"
 msgid "Latest TV shows"
-msgstr ""
+msgstr "Legújabb sorozatok"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31303"
 msgid "Latest albums"
-msgstr ""
+msgstr "Legújabb albumok"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31304"
 msgid "Search TV guide"
-msgstr ""
+msgstr "Keresés a műsorújságban"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31305"
 msgid "No color set"
-msgstr ""
+msgstr "Nincs beállított szín"
 
 #: /xml/script-skinshortcuts.xml
 msgctxt "#31306"
 msgid "Replace default thumbnail"
-msgstr ""
+msgstr "Alapértelmezett bélyegkép cseréje"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31307"
 msgid "More specials"
-msgstr ""
+msgstr "További különkiadások"
 
 #: /xml/script-skinshortcuts.xml
 msgctxt "#31308"
 msgid "Thumbnail aspect ratio"
-msgstr ""
+msgstr "Bélyegkép képaránya"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31309"
 msgid "scale"
-msgstr ""
+msgstr "méretezés"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31310"
 msgid "stretch"
-msgstr ""
+msgstr "nyújtás"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31311"
 msgid "keep"
-msgstr ""
+msgstr "megtartás"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31312"
 msgid "Disable 'Skin Helper Service' add-on packages"
-msgstr ""
+msgstr "„Skin Helper Service” kiegészítőcsomagok letiltása"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31313"
 msgid "Enable 'Skin Helper Service' add-on packages"
-msgstr ""
+msgstr "„Skin Helper Service” kiegészítőcsomagok engedélyezése"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31314"
 msgid "To prevent speed penalties and issues it's recommended to disable the following add-ons:[CR][CR][COLOR blue]• script.module.metadatautils[CR]• script.skin.helper.service[CR]• script.skin.helper.widgets[CR]• script.skin.helper.backgrounds[/COLOR]"
-msgstr ""
+msgstr "A sebességcsökkenés és hibák elkerülése érdekében ajánlott letiltani a következő kiegészítőket:[CR][CR][COLOR blue]• script.module.metadatautils[CR]• script.skin.helper.service[CR]• script.skin.helper.widgets[CR]• script.skin.helper.backgrounds[/COLOR]"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31315"
 msgid "Do you really want to enable them?"
-msgstr ""
+msgstr "Biztosan engedélyezed őket?"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31316"
 msgid "Do you really want to disable them?"
-msgstr ""
+msgstr "Biztosan letiltod őket?"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31317"
 msgid "Enable channel labeling for EPG thumbnails"
-msgstr ""
+msgstr "Csatornacímkék engedélyezése EPG-bélyegképeknél"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31318"
 msgid "Premiere"
-msgstr ""
+msgstr "Premier"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31319"
 msgid "Budget"
-msgstr ""
+msgstr "Költségvetés"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31320"
 msgid "Revenue"
-msgstr ""
+msgstr "Bevétel"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31321"
 msgid "Crew"
-msgstr ""
+msgstr "Stáb"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31322"
 msgid "More seasons"
-msgstr ""
+msgstr "További évadok"
 
 #: /xml/Embuary_BigList_View_59.xml
 msgctxt "#31323"
 msgid "Shuffle"
-msgstr ""
+msgstr "Véletlenszerű sorrend"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31324"
 msgid "Intro folder"
-msgstr ""
+msgstr "Bevezetők mappája"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31325"
 msgid "Number of trailers"
-msgstr ""
+msgstr "Előzetesek száma"
 
 #: /xml/DialogContextMenu.xml
 msgctxt "#31326"
 msgid "Play with cinema mode"
-msgstr ""
+msgstr "Lejátszás mozi móddal"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31327"
 msgid "Use cinema mode when starting playback via info dialog, play buttons or default widgets"
-msgstr ""
+msgstr "Mozi mód használata, ha a lejátszás az információs ablakból, lejátszásgombbal vagy alapértelmezett widgetből indul"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31328"
 msgid "Enable and disable items of the shutdown menu."
-msgstr ""
+msgstr "A leállítási menü elemeinek engedélyezése és letiltása."
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31329"
 msgid "Change the behaviour of playback and media actions."
-msgstr ""
+msgstr "A lejátszás és a médiaműveletek viselkedésének módosítása."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31330"
 msgid "Playback & media"
-msgstr ""
+msgstr "Lejátszás és média"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31331"
 msgid "Home and hubs"
-msgstr ""
+msgstr "Kezdőlap és hubok"
 
 #: /xml/DialogKeyboard.xml
 msgctxt "#31332"
 msgid "The updated hub label will be shown on the next opening of the menu editor"
-msgstr ""
+msgstr "A frissített hubcímke a menüszerkesztő következő megnyitásakor jelenik meg"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31333"
 msgid "Enabled auto updating"
-msgstr ""
+msgstr "Automatikus frissítés engedélyezve"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31334"
 msgid "More available items with"
-msgstr ""
+msgstr "További elérhető elemek ezzel:"
 
 #: /xml/PlayerControls.xml
 msgctxt "#31335"
 msgid "Eject disc"
-msgstr ""
+msgstr "Lemez kiadása"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31336"
 msgid "Show EPG thumbnail in video OSD (if available)"
-msgstr ""
+msgstr "EPG-bélyegkép megjelenítése a videó OSD-ben (ha elérhető)"
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31337"
 msgid "Upload Kodi log"
-msgstr ""
+msgstr "Kodi-napló feltöltése"
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31338"
 msgid "Running services"
-msgstr ""
+msgstr "Futó szolgáltatások"
 
 #: /xml/MusicOSD.xml
 msgctxt "#31339"
 msgid "Pan and zoom"
-msgstr ""
+msgstr "Pásztázás és nagyítás"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31340"
 msgid "Use available hubs as target"
-msgstr ""
+msgstr "Elérhető hubok használata célként"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31341"
 msgid "EPG thumbnail aspect ratio"
-msgstr ""
+msgstr "EPG-bélyegkép képaránya"
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31342"
 msgid "Embuary changelog"
-msgstr ""
+msgstr "Embuary változásnapló"
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31343"
 msgid "Add-on news"
-msgstr ""
+msgstr "Kiegészítőhírek"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31344"
 msgid "Force default icon"
-msgstr ""
+msgstr "Alapértelmezett ikon kényszerítése"
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31345"
 msgid "Skin dependencies"
-msgstr ""
+msgstr "Felszínfüggőségek"
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31346"
 msgid "On now"
-msgstr ""
+msgstr "Most műsoron"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31347"
 msgid "Use mini EPG for channels OSD"
-msgstr ""
+msgstr "Mini EPG használata a csatorna-OSD-ben"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31348"
 msgid "very dark"
-msgstr ""
+msgstr "nagyon sötét"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31349"
 msgid "darker"
-msgstr ""
+msgstr "sötétebb"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31350"
 msgid "dark"
-msgstr ""
+msgstr "sötét"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31351"
 msgid "bright"
-msgstr ""
+msgstr "világos"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31352"
 msgid "brighter"
-msgstr ""
+msgstr "világosabb"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31353"
 msgid "very bright"
-msgstr ""
+msgstr "nagyon világos"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31354"
 msgid "Blur background images"
-msgstr ""
+msgstr "Háttérképek elmosása"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31355"
 msgid "This feature is very expensive and should not be enabled on slow devices like a Raspberry Pi. It will also require some storage space on your drive, because each fanart is going to be processed and stored separately as blurred image in the Kodi userdata folder."
-msgstr ""
+msgstr "Ez a funkció nagyon erőforrás-igényes, ezért lassú eszközökön, például Raspberry Pi-n nem ajánlott. Tárhelyet is igényel, mert minden fanartot külön dolgoz fel és elmosott képként ment a Kodi userdata mappájába."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31356"
 msgid "Translate on transifex.com"
-msgstr ""
+msgstr "Fordítás a transifex.com oldalon"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31357"
 msgid "Live long and prosper"
-msgstr ""
+msgstr "Hosszú és eredményes életet"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31358"
 msgid "Enable cinema mode for"
-msgstr ""
+msgstr "Mozi mód engedélyezése ehhez:"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31359"
 msgid "Disable mouse and touch control"
-msgstr ""
+msgstr "Egér- és érintésvezérlés letiltása"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31360"
 msgid "Hide parent folder items"
-msgstr ""
+msgstr "Szülőmappa elemeinek elrejtése"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31361"
 msgid "Always select the first unwatched season/episode"
-msgstr ""
+msgstr "Mindig az első nem látott évad/epizód kiválasztása"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31362"
 msgid "Set the Embuary UI navigation sounds"
-msgstr ""
+msgstr "Embuary felhasználói felület navigációs hangjainak beállítása"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31363"
 msgid "Please keep in mind that these settings are global and will be valid for all installed skins. But don't panic, all settings can be reverted in the Kodi settings."
-msgstr ""
+msgstr "Ne feledd, hogy ezek a beállítások globálisak, és minden telepített felszínre érvényesek. Minden beállítás visszaállítható a Kodi beállításaiban."
 
 #: /xml/DialogPVRInfo.xml
 msgctxt "#31364"
 msgid "Timer"
-msgstr ""
+msgstr "Időzítő"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31365"
 msgid "Stop"
-msgstr ""
+msgstr "Leállítás"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31366"
 msgid "More"
-msgstr ""
+msgstr "Továbbiak"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31367"
 msgid "Show channel groups in the PVR hub"
-msgstr ""
+msgstr "Csatornacsoportok megjelenítése a PVR-hubban"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31368"
 msgid "Blurring strength"
-msgstr ""
+msgstr "Elmosás erőssége"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31369"
 msgid "Intro"
-msgstr ""
+msgstr "Bevezető"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31370"
 msgid "Show Emby based Rotten Tomatoes ratings (uses user ratings)"
-msgstr ""
+msgstr "Emby-alapú Rotten Tomatoes értékelések megjelenítése (felhasználói értékeléseket használ)"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31371"
 msgid "Created by"
-msgstr ""
+msgstr "Készítette"
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31372"
 msgid "Known for"
-msgstr ""
+msgstr "Ismert erről"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31373"
 msgid "male"
-msgstr ""
+msgstr "férfi"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31374"
 msgid "female"
-msgstr ""
+msgstr "nő"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31375"
 msgid "Configure menu and widget items of the hubs."
-msgstr ""
+msgstr "A hubok menü- és widgetelemeinek beállítása."
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31376"
 msgid "Home & side panel"
-msgstr ""
+msgstr "Kezdőlap és oldalsó panel"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31377"
 msgid "Use main menu entries in the side panel"
-msgstr ""
+msgstr "Főmenü-bejegyzések használata az oldalsó panelen"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31378"
 msgid "Search themoviedb.org"
-msgstr ""
+msgstr "Keresés a themoviedb.org oldalon"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31379"
 msgid "Search database"
-msgstr ""
+msgstr "Keresés az adatbázisban"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31380"
 msgid "items in database"
-msgstr ""
+msgstr "elem az adatbázisban"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31381"
 msgid "item in database"
-msgstr ""
+msgstr "elem az adatbázisban"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31382"
 msgid "Guest stars"
-msgstr ""
+msgstr "Vendégszereplők"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31383"
 msgid "Now playing in theaters"
-msgstr ""
+msgstr "Most a mozikban"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31384"
 msgid "New movies coming soon"
-msgstr ""
+msgstr "Hamarosan érkező új filmek"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31385"
 msgid "Added"
-msgstr ""
+msgstr "Hozzáadva"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31386"
 msgid "Updated"
-msgstr ""
+msgstr "Frissítve"
 
 #: /xml/Custom_1112_Reset.xml
 msgctxt "#31387"
 msgid "Movie genres"
-msgstr ""
+msgstr "Filmműfajok"
 
 #: /xml/Custom_1112_Reset.xml
 msgctxt "#31388"
 msgid "TV show genres"
-msgstr ""
+msgstr "Sorozatműfajok"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31389"
 msgid "Mixed hub"
-msgstr ""
+msgstr "Vegyes hub"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31390"
 msgid "Library tag"
-msgstr ""
+msgstr "Médiatári címke"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31391"
 msgid "Setup"
-msgstr ""
+msgstr "Beállítás"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31392"
 msgid "Rerun skin setup"
-msgstr ""
+msgstr "Felszínbeállítás újrafuttatása"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31393"
 msgid "Library tag based hubs"
-msgstr ""
+msgstr "Médiatári címkén alapuló hubok"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31394"
 msgid "not recommended"
-msgstr ""
+msgstr "nem ajánlott"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31395"
 msgid "Auto populate hubs based on library tags?"
-msgstr ""
+msgstr "Hubok automatikus feltöltése médiatári címkék alapján?"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31396"
 msgid "Turn off auto whitelisting"
-msgstr ""
+msgstr "Automatikus engedélyezőlista kikapcsolása"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31397"
 msgid "Toggle enabled tags"
-msgstr ""
+msgstr "Engedélyezett címkék váltása"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31398"
 msgid "A unique feature of Embuary is the auto generation of hubs based on existing library tags in your database (e.g. 'kids content', 'HDR videos', 'documentaries')."
-msgstr ""
+msgstr "Az Embuary egyedi funkciója, hogy az adatbázis meglévő médiatári címkéi alapján automatikusan hoz létre hubokat (például „gyerektartalom”, „HDR-videók”, „dokumentumfilmek”)."
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31399"
 msgid "Since every setup is different and some people only want to have hubs for a few available tags, you can disable the ones you don't want to have populated at any time. By default future and new tags will be whitelisted automatically."
-msgstr ""
+msgstr "Mivel minden rendszer eltérő, és egyesek csak néhány címkéhez szeretnének hubot, a nem kívánt címkék automatikus feltöltése bármikor kikapcsolható. Az új és jövőbeli címkék alapértelmezés szerint automatikusan engedélyezőlistára kerülnek."
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31400"
 msgid "Found tags"
-msgstr ""
+msgstr "Talált címkék"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31401"
 msgid "Enabled tags"
-msgstr ""
+msgstr "Engedélyezett címkék"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31402"
 msgid "To get the best out-of-box experience the skin will automatically populate shipped widgets for database items like 'in progress episodes', 'recently added movies' or suggestions based on the items you have watched."
-msgstr ""
+msgstr "A legjobb kezdeti élmény érdekében a felszín automatikusan feltölti a mellékelt widgeteket olyan adatbáziselemekkel, mint a „folyamatban lévő epizódok”, a „nemrég hozzáadott filmek” vagy a megtekintett elemek alapján készült javaslatok."
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31403"
 msgid "Important"
-msgstr ""
+msgstr "Fontos"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31404"
 msgid "For existing Embuary installations, this step must be performed to get everything working due to a recent update. Configured custom widgets are not removed and only need to be reassigned."
-msgstr ""
+msgstr "Meglévő Embuary-telepítéseknél ezt a lépést egy frissítés miatt el kell végezni. A beállított egyéni widgetek nem törlődnek, csak újra hozzá kell rendelni őket."
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31405"
 msgid "Apply shipped widgets and default configuration?"
-msgstr ""
+msgstr "Alkalmazod a mellékelt widgeteket és az alapértelmezett beállítást?"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31406"
 msgid "Edit mixed library widget configuration"
-msgstr ""
+msgstr "Vegyes médiatár widgetbeállításának szerkesztése"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31407"
 msgid "Movie watchlist"
-msgstr ""
+msgstr "Filmes megtekintési lista"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31408"
 msgid "TV show watchlist"
-msgstr ""
+msgstr "Sorozatos megtekintési lista"
 
 #: /xml/Embuary_Set_View_56.xml
 msgctxt "#31409"
 msgid "Favourite"
-msgstr ""
+msgstr "Kedvenc"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31410"
 msgid "Disabled auto updating"
-msgstr ""
+msgstr "Automatikus frissítés letiltva"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31411"
 msgid "OK, add found to whitelist"
-msgstr ""
+msgstr "Rendben, a talált elemek hozzáadása az engedélyezőlistához"
 
 #: /xml/DialogButtonMenu.xml
 msgctxt "#31412"
 msgid "Restart Kodi"
-msgstr ""
+msgstr "Kodi újraindítása"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31413"
 msgid "Media importer"
-msgstr ""
+msgstr "Médiaimportáló"
 
 #: /xml/DialogMediaImportInfo.xml
 msgctxt "#31414"
 msgid "Sync options"
-msgstr ""
+msgstr "Szinkronizálási lehetőségek"
 
 #: /xml/DialogMediaImportInfo.xml
 msgctxt "#31415"
 msgid "Provider"
-msgstr ""
+msgstr "Szolgáltató"
 
 #: /xml/DialogMediaImportInfo.xml
 msgctxt "#31416"
 msgid "Media type"
-msgstr ""
+msgstr "Médiatípus"
 
 msgctxt "#31500"
 msgid "Display mode"
-msgstr ""
+msgstr "Megjelenítési mód"
 
 msgctxt "#31501"
 msgid "Video mode"
-msgstr ""
+msgstr "Videómód"
 
 msgctxt "#31502"
 msgid "Color space"
-msgstr ""
+msgstr "Színtér"
 
 msgctxt "#31503"
 msgid "Mb/s"
-msgstr ""
+msgstr "Mb/s"
 
 msgctxt "#31504"
 msgid "Bit depth"
-msgstr ""
+msgstr "Bitmélység"
 
 msgctxt "#31505"
 msgid "Decoder"
-msgstr ""
+msgstr "Dekóder"
 
 msgctxt "#31506"
 msgid "VS10 engine"
-msgstr ""
+msgstr "VS10 motor"
 
 msgctxt "#31507"
 msgid "More"
-msgstr ""
+msgstr "Továbbiak"
 
 msgctxt "#31508"
 msgid "Video queue"
-msgstr ""
+msgstr "Videósor"
 
 msgctxt "#31509"
 msgid "Video queue data"
-msgstr ""
+msgstr "Videósor adatai"
 
 msgctxt "#31510"
 msgid "Audio queue"
-msgstr ""
+msgstr "Hangsor"
 
 msgctxt "#31511"
 msgid "Audio queue data"
-msgstr ""
+msgstr "Hangsor adatai"
 
 msgctxt "#31512"
 msgid "Kb/s"
-msgstr ""
+msgstr "Kb/s"
 
 msgctxt "#31513"
 msgid "Playback progress"
-msgstr ""
+msgstr "Lejátszási folyamat"
 
 msgctxt "#31514"
 msgid "Processor"
-msgstr ""
+msgstr "Processzor"
 
 msgctxt "#31515"
 msgid "Version"
-msgstr ""
+msgstr "Verzió"
 
 msgctxt "#31516"
 msgid "Profile"
-msgstr ""
+msgstr "Profil"
 
 msgctxt "#31517"
 msgid "Level"
-msgstr ""
+msgstr "Szint"
 
 msgctxt "#31518"
 msgid "RPU"
-msgstr ""
+msgstr "RPU"
 
 msgctxt "#31519"
 msgid "Base Layer"
-msgstr ""
+msgstr "Alapréteg"
 
 msgctxt "#31520"
 msgid "Enhancement Layer"
-msgstr ""
+msgstr "Kiegészítő réteg"
 
 msgctxt "#31521"
 msgid "Enhancement Layer Type"
-msgstr ""
+msgstr "Kiegészítő réteg típusa"
 
 msgctxt "#31522"
 msgid "Metadata"
-msgstr ""
+msgstr "Metaadatok"
 
 msgctxt "#31523"
 msgid "Pixel format"
-msgstr ""
+msgstr "Pixelformátum"
 
 msgctxt "#31524"
 msgid "Aspect ratio"
-msgstr ""
+msgstr "Képarány"
 
 msgctxt "#31525"
 msgid "HDR10 MDL"
-msgstr ""
+msgstr "HDR10 MDL"
 
 msgctxt "#31526"
 msgid "HDR10 MaxCLL/FALL"
-msgstr ""
+msgstr "HDR10 MaxCLL/FALL"
 
 msgctxt "#31527"
 msgid "Media source"
-msgstr ""
+msgstr "Médiaforrás"
 
 msgctxt "#31528"
 msgid "Unknown"
-msgstr ""
+msgstr "Ismeretlen"
 
 msgctxt "#31529"
 msgid "On"
-msgstr ""
+msgstr "Be"
 
 msgctxt "#31530"
 msgid "Off"
-msgstr ""
+msgstr "Ki"
 
 msgctxt "#31531"
 msgid "Deinterlacing"
-msgstr ""
+msgstr "Váltottsorosság megszüntetése"
 
 msgctxt "#31532"
 msgid "Player cache"
-msgstr ""
+msgstr "Lejátszó gyorsítótára"
 
 msgctxt "#31533"
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 msgctxt "#31534"
 msgid "Memory usage"
-msgstr ""
+msgstr "Memóriahasználat"
 
 msgctxt "#31535"
 msgid "Bit depth"
-msgstr ""
+msgstr "Bitmélység"
 
 msgctxt "#31536"
 msgid "AML FPS"
-msgstr ""
+msgstr "AML FPS"
 
 msgctxt "#31537"
 msgid "DV Configuration"
-msgstr ""
+msgstr "DV-konfiguráció"
 
 msgctxt "#31538"
 msgid "DV Levels Metadata"
-msgstr ""
+msgstr "DV-szintek metaadatai"
 
 msgctxt "#31539"
 msgid "HDR Static Metadata"
-msgstr ""
+msgstr "HDR statikus metaadatok"
 
 msgctxt "#31540"
 msgid "cd/m²"
-msgstr ""
+msgstr "cd/m²"
 
 msgctxt "#31541"
 msgid "RPU MDL"
-msgstr ""
+msgstr "RPU MDL"
 
 msgctxt "#31542"
 msgid "RPU MaxCLL/FALL"
-msgstr ""
+msgstr "RPU MaxCLL/FALL"
 
 msgctxt "#31543"
 msgid "FLL MIN / MAX / Ø"
-msgstr ""
+msgstr "FLL MIN / MAX / Ø"
 
 msgctxt "#31544"
 msgid "PQ  MIN / MAX / Ø"
-msgstr ""
+msgstr "PQ MIN / MAX / Ø"
 
 msgctxt "#31545"
 msgid "12-bit"
-msgstr ""
+msgstr "12 bites"
 
 msgctxt "#31546"
 msgid "Codec"
-msgstr ""
+msgstr "Kodek"
 
 msgctxt "#31547"
 msgid "Bitrate"
-msgstr ""
+msgstr "Bitráta"
 
 msgctxt "#31548"
 msgid "VS10 status"
-msgstr ""
+msgstr "VS10 állapot"
 
 msgctxt "#31551"
 msgid "Sample rate"
-msgstr ""
+msgstr "Mintavételi frekvencia"
 
 msgctxt "#31552"
 msgid "Audio language"
-msgstr ""
+msgstr "Hang nyelve"
 
 msgctxt "#31553"
 msgid "Subtitle language"
-msgstr ""
+msgstr "Felirat nyelve"
 
 msgctxt "#31554"
 msgid "Video"
-msgstr ""
+msgstr "Videó"
 
 msgctxt "#31555"
 msgid "System"
-msgstr ""
+msgstr "Rendszer"
 
 msgctxt "#31556"
 msgid "Audio"
-msgstr ""
+msgstr "Hang"
 
 msgctxt "#31557"
 msgid "Top left"
-msgstr ""
+msgstr "Bal felső"
 
 msgctxt "#31558"
 msgid "Top center"
-msgstr ""
+msgstr "Felső közép"
 
 msgctxt "#31559"
 msgid "Top right"
-msgstr ""
+msgstr "Jobb felső"
 
 msgctxt "#31560"
 msgid "Position of the codec logos in the OSD"
-msgstr ""
+msgstr "Kodeklogók helye az OSD-ben"
 
 msgctxt "#31561"
 msgid "Position of the codec logos in the PlayerProcessInfo"
-msgstr ""
+msgstr "Kodeklogók helye a PlayerProcessInfo képernyőn"
 
 msgctxt "#31562"
 msgid "Show codec logos when video starts"
-msgstr ""
+msgstr "Kodeklogók megjelenítése a videó indításakor"
 
 msgctxt "#31563"
 msgid "Codec logos"
-msgstr ""
+msgstr "Kodeklogók"
 
 msgctxt "#31564"
 msgid "Original"
-msgstr ""
+msgstr "Eredeti"
 
 msgctxt "#31565"
 msgid "VS10 mode"
-msgstr ""
+msgstr "VS10 mód"
 
 msgctxt "#31566"
 msgid "Coloured title lines in PlayerProcessInfo"
-msgstr ""
+msgstr "Színes címsorok a PlayerProcessInfo képernyőn"
 
 msgctxt "#31567"
 msgid "L5 Active Offsets"
-msgstr ""
+msgstr "L5 aktív eltolások"
 
 msgctxt "#31568"
 msgid "Version"
-msgstr ""
+msgstr "Verzió"
 
 msgctxt "#31569"
 msgid "Bit depth"
-msgstr ""
+msgstr "Bitmélység"
 
 msgctxt "#31570"
 msgid "EOTF & Gamut"
-msgstr ""
+msgstr "EOTF és színskála"
 
 msgctxt "#31571"
 msgid "Duration of the codec logos when video starts"
-msgstr ""
+msgstr "Kodeklogók megjelenítési ideje a videó indításakor"
 
 msgctxt "#31572"
 msgid "Standard"
-msgstr ""
+msgstr "Normál"
 
 msgctxt "#31575"
 msgid "second"
-msgstr ""
+msgstr "másodperc"
 
 msgctxt "#31576"
 msgid "seconds"
-msgstr ""
+msgstr "másodperc"
 
 msgctxt "#31900"
 msgid "Next Episode"
-msgstr ""
+msgstr "Következő epizód"
 
 msgctxt "#31901"
 msgid "Previous Episode"
-msgstr ""
+msgstr "Előző epizód"
 
 msgctxt "#31902"
 msgid "Codec Logo Style"
-msgstr ""
+msgstr "Kodeklogó stílusa"
 
 msgctxt "#31903"
 msgid "Codec Logo Size"
-msgstr ""
+msgstr "Kodeklogó mérete"
 
 msgctxt "#31904"
 msgid "Show Codec Logo Background"
-msgstr ""
+msgstr "Kodeklogó hátterének megjelenítése"
 
 msgctxt "#31905"
 msgid "Codec Logo Flag-Style"
-msgstr ""
+msgstr "Kodeklogó zászlóstílusa"
 
 msgctxt "#31906"
 msgid "Favourites View:"
-msgstr ""
+msgstr "Kedvencek nézete:"
 
 msgctxt "#31907"
 msgid "vertical"
-msgstr ""
+msgstr "függőleges"
 
 msgctxt "#31908"
 msgid "horizontal"
-msgstr ""
+msgstr "vízszintes"
 
 msgctxt "#31909"
 msgid "Select Favourites Category"
-msgstr ""
+msgstr "Kedvenckategória kiválasztása"
 
 msgctxt "#31910"
 msgid "Play"
-msgstr ""
+msgstr "Lejátszás"
 
 msgctxt "#31911"
 msgid "Remove from Favourites"
-msgstr ""
+msgstr "Eltávolítás a kedvencek közül"
 
 msgctxt "#31912"
 msgid "Cancel"
-msgstr ""
+msgstr "Mégse"
 
 msgctxt "#31913"
 msgid "Favourite removed"
-msgstr ""
+msgstr "Kedvenc eltávolítva"
 
 msgctxt "#31914"
 msgid "No favourites found"
-msgstr ""
+msgstr "Nem találhatók kedvencek"
 
 msgctxt "#31915"
 msgid "No recognisable favourites found"
-msgstr ""
+msgstr "Nem találhatók felismerhető kedvencek"
 
 msgctxt "#31916"
 msgid "Select action"
-msgstr ""
+msgstr "Művelet kiválasztása"
 
 msgctxt "#31917"
 msgid "standard"
-msgstr ""
+msgstr "normál"
 
 msgctxt "#31918"
 msgid "Show Logo Separator"
-msgstr ""
+msgstr "Logóelválasztó megjelenítése"
 
 msgctxt "#31919"
 msgid "Collection"
-msgstr "Collection"
+msgstr "Gyűjtemény"
 
 msgctxt "#31920"
 msgid "Show Codec Info Overlay"
-msgstr ""
+msgstr "Kodekinformációs átfedés megjelenítése"
 
+msgctxt "#31921"
+msgid "External search"
+msgstr "Külső keresés"
+
+msgctxt "#31922"
+msgid "Open add-on"
+msgstr "Kiegészítő megnyitása"
+
+msgctxt "#31923"
+msgid "Media importer settings"
+msgstr "Médiaimportáló beállításai"
+
+msgctxt "#31924"
+msgid "Search externally"
+msgstr "Keresés külső forrásban"

@@ -1,3 +1,8 @@
+[B]Version 21.1.29[/B]
+- Added complete translations for all supported languages by Stogie87
+- Fixed codec logo and flag default initialization by Stogie87
+- Fixed minor navigation and media information issues by Stogie87
+
 [B]Version 21.1.28[/B]
 - Fixed incorrect Skin Shortcuts localization IDs in menu and widget configuration by Stogie87
 

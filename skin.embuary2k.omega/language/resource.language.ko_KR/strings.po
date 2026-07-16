@@ -7,2475 +7,2490 @@ msgid ""
 msgstr ""
 "Project-Id-Version: skin.ftv pvr mod\n"
 "Report-Msgid-Bugs-To: http://trac.xbmc.org/\n"
-"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"POT-Creation-Date: 2026-07-16 00:00+0200\n"
 "PO-Revision-Date: 2016-02-26 13:31+0000\n"
 "Last-Translator: sualfred <su4lfred@gmail.com>\n"
-"Language-Team: English (http://www.transifex.com/skinrefred/skinftv-pvr-mod/language/en/)\n"
+"Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_GB\n"
+"Language: ko_KR\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.7\n"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31000"
 msgid "Home"
-msgstr ""
+msgstr "홈"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31001"
 msgid "Misc."
-msgstr ""
+msgstr "기타"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31002"
 msgid "More like this"
-msgstr ""
+msgstr "비슷한 콘텐츠 더 보기"
 
 #: /xml/DialogKeyboard.xml
 msgctxt "#31003"
 msgid "Suggestions"
-msgstr ""
+msgstr "추천"
 
 #: /xml/Embuary_Wide_View_50.xml
 msgctxt "#31004"
 msgid "Wide"
-msgstr ""
+msgstr "와이드"
 
 #: /xml/Embuary_Square_View_52.xml
 msgctxt "#31005"
 msgid "Square"
-msgstr ""
+msgstr "정사각형"
 
 #: /xml/Embuary_Season_View_54.xml
 msgctxt "#31006"
 msgid "Season"
-msgstr ""
+msgstr "시즌"
 
 #: /xml/Embuary_Episode_View_55.xml
 msgctxt "#31007"
 msgid "Episode"
-msgstr ""
+msgstr "에피소드"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31008"
 msgid "Filter-String"
-msgstr ""
+msgstr "필터 문자열"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31009"
 msgid "Watch again"
-msgstr ""
+msgstr "다시 보기"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31010"
 msgid "Watch now"
-msgstr ""
+msgstr "지금 보기"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31011"
 msgid "Browse TV show"
-msgstr ""
+msgstr "TV 프로그램 탐색"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31012"
 msgid "Next up"
-msgstr ""
+msgstr "다음 항목"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31013"
 msgid "Browse season"
-msgstr ""
+msgstr "시즌 탐색"
 
 #: /xml/Embuary_Season_View_54.xml
 msgctxt "#31014"
 msgid "Info dialog"
-msgstr ""
+msgstr "정보 대화상자"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31015"
 msgid "Holiday themes"
-msgstr ""
+msgstr "휴일 테마"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31016"
 msgid "Enable widget bounce animation on focus"
-msgstr ""
+msgstr "포커스 시 위젯 튀기기 애니메이션 사용"
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31017"
 msgid "Recommended"
-msgstr ""
+msgstr "추천"
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31018"
 msgid "Because you watched"
-msgstr ""
+msgstr "시청 기록 기반 추천"
 
 #: /xml/MyPVRChannels.xml
 msgctxt "#31019"
 msgid "Show hidden"
-msgstr ""
+msgstr "숨김 항목 표시"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31020"
 msgid "Tune in"
-msgstr ""
+msgstr "채널로 전환"
 
 #: /xml/DialogPVRInfo.xml
 msgctxt "#31021"
 msgid "Similar titles"
-msgstr ""
+msgstr "비슷한 제목"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31022"
 msgid "Encrypted channel"
-msgstr ""
+msgstr "암호화된 채널"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31023"
 msgid "Recording active"
-msgstr ""
+msgstr "녹화 중"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31024"
 msgid "Timer active"
-msgstr ""
+msgstr "타이머 활성"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31025"
 msgid "Repeating timer"
-msgstr ""
+msgstr "반복 타이머"
 
 #: /xml/Custom_1122_MusicHub.xml
 msgctxt "#31026"
 msgid "All music"
-msgstr ""
+msgstr "모든 음악"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31027"
 msgid "Custom shortcuts"
-msgstr ""
+msgstr "사용자 지정 바로가기"
 
 #: /xml/Custom_1120_MovieHub.xml
 msgctxt "#31028"
 msgid "Menu configuration"
-msgstr ""
+msgstr "메뉴 구성"
 
 #: /xml/Custom_1122_MusicHub.xml
 msgctxt "#31029"
 msgid "Music library"
-msgstr ""
+msgstr "음악 라이브러리"
 
 #: /xml/Custom_1124_PVRHub.xml
 msgctxt "#31030"
 msgid "Last tuned channels"
-msgstr ""
+msgstr "최근 선택한 채널"
 
 #: /xml/MyPVRRecordings.xml
 msgctxt "#31031"
 msgid "Folder structure"
-msgstr ""
+msgstr "폴더 구조"
 
 #: /xml/MyPVRRecordings.xml
 msgctxt "#31032"
 msgid "Show deleted"
-msgstr ""
+msgstr "삭제된 항목 표시"
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31033"
 msgid "Creator"
-msgstr ""
+msgstr "제작자"
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31034"
 msgid "Full description"
-msgstr ""
+msgstr "전체 설명"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31035"
 msgid "Add-on broken"
-msgstr ""
+msgstr "추가 기능 손상됨"
 
 #: /xml/SettingsCategory.xml
 msgctxt "#31036"
 msgid "Settings mode"
-msgstr ""
+msgstr "설정 모드"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31037"
 msgid "Ends at"
-msgstr ""
+msgstr "종료 시간"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31038"
 msgid "Timeshift"
-msgstr ""
+msgstr "타임시프트"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31039"
 msgid "Audio settings"
-msgstr ""
+msgstr "오디오 설정"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31040"
 msgid "Subtitle settings"
-msgstr ""
+msgstr "자막 설정"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31041"
 msgid "Stats for nerds"
-msgstr ""
+msgstr "상세 통계"
 
 #: /xml/Custom_1124_PVRHub.xml
 msgctxt "#31042"
 msgid "Live TV"
-msgstr ""
+msgstr "라이브 TV"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31043"
 msgid "Muted"
-msgstr ""
+msgstr "음소거됨"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31044"
 msgid "Parent folder"
-msgstr ""
+msgstr "상위 폴더"
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31045"
 msgid "Memory usage"
-msgstr ""
+msgstr "메모리 사용량"
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31046"
 msgid "Video decoder"
-msgstr ""
+msgstr "비디오 디코더"
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31047"
 msgid "Pixel format"
-msgstr ""
+msgstr "픽셀 형식"
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31048"
 msgid "Deinterlacing method"
-msgstr ""
+msgstr "디인터레이싱 방식"
 
 #: /xml/DialogPlayerProcessInfo.xml
 msgctxt "#31049"
 msgid "Frames per second"
-msgstr ""
+msgstr "초당 프레임"
 
 #: /xml/script-globalsearch-main.xml
 msgctxt "#31050"
 msgid "Movies containing the actor"
-msgstr ""
+msgstr "해당 배우가 출연한 영화"
 
 #: /xml/script-globalsearch-main.xml
 msgctxt "#31051"
 msgid "Movies containing the director"
-msgstr ""
+msgstr "해당 감독이 연출한 영화"
 
 #: /xml/script-globalsearch-main.xml
 msgctxt "#31052"
 msgid "New search"
-msgstr ""
+msgstr "새 검색"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31053"
 msgid "Once"
-msgstr ""
+msgstr "한 번"
 
 #: /xml/MusicOSD.xml
 msgctxt "#31054"
 msgid "Visualisation presets"
-msgstr ""
+msgstr "시각화 사전 설정"
 
 #: /xml/MusicOSD.xml
 msgctxt "#31055"
 msgid "Visualisation settings"
-msgstr ""
+msgstr "시각화 설정"
 
 #: /xml/MusicOSD.xml
 msgctxt "#31056"
 msgid "Randomise fanart"
-msgstr ""
+msgstr "팬아트 무작위 표시"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31057"
 msgid "Number of favourites"
-msgstr ""
+msgstr "즐겨찾기 수"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31058"
 msgid "Embuary settings"
-msgstr ""
+msgstr "Embuary 설정"
 
 #: /xml/DialogPVRChannelManager.xml
 msgctxt "#31059"
 msgid "Toggle TV / radio"
-msgstr ""
+msgstr "TV / 라디오 전환"
 
 #: /xml/SmartPlaylistEditor.xml
 msgctxt "#31060"
 msgid "Rules"
-msgstr ""
+msgstr "규칙"
 
 #: /xml/SmartPlaylistEditor.xml
 msgctxt "#31061"
 msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
-msgstr ""
+msgstr "스마트 재생목록을 만들려면 유형을 설정하고 규칙을 추가하세요. 이 재생목록은 동적으로 생성되며 선택한 규칙에 맞는 데이터베이스의 모든 미디어 항목을 포함합니다."
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31062"
 msgid "Favourite movies"
-msgstr ""
+msgstr "즐겨찾는 영화"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31063"
 msgid "Kodi favourites"
-msgstr ""
+msgstr "Kodi 즐겨찾기"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31064"
 msgid "Favourite TV shows"
-msgstr ""
+msgstr "즐겨찾는 TV 프로그램"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31065"
 msgid "Favourite episodes"
-msgstr ""
+msgstr "즐겨찾는 에피소드"
 
 #: /xml/MyWeather.xml
 msgctxt "#31066"
 msgid "Location"
-msgstr ""
+msgstr "위치"
 
 #: /xml/MyMusicPlaylistEditor.xml
 msgctxt "#31067"
 msgid "Load"
-msgstr ""
+msgstr "불러오기"
 
 #: /xml/MyMusicPlaylistEditor.xml
 msgctxt "#31068"
 msgid "Number of tracks in current playlist"
-msgstr ""
+msgstr "현재 재생목록의 트랙 수"
 
 #: /xml/Embuary_Season_View_54.xml
 msgctxt "#31069"
 msgid "Back"
-msgstr ""
+msgstr "뒤로"
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31070"
 msgid "Channel group"
-msgstr ""
+msgstr "채널 그룹"
 
 #: /xml/VideoOSD.xml
 msgctxt "#31071"
 msgid "Channel guide"
-msgstr ""
+msgstr "채널 가이드"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31072"
 msgid "Local search"
-msgstr ""
+msgstr "로컬 검색"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31073"
 msgid "EmbyCon: Search for movies"
-msgstr ""
+msgstr "EmbyCon: 영화 검색"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31074"
 msgid "EmbyCon: Search for TV shows"
-msgstr ""
+msgstr "EmbyCon: TV 프로그램 검색"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31075"
 msgid "EmbyCon: Search for episodes"
-msgstr ""
+msgstr "EmbyCon: 에피소드 검색"
 
 #: /xml/Custom_1110_testwindow.xml
 msgctxt "#31076"
 msgid "Stop playback"
-msgstr ""
+msgstr "재생 중지"
 
 #: /xml/script-nextup-notification-PostPlayInfo.xml
 msgctxt "#31077"
 msgid "seconds"
-msgstr ""
+msgstr "초"
 
 #: /xml/script-nextup-notification-PostPlayInfo.xml
 msgctxt "#31078"
 msgid "Playback starts in"
-msgstr ""
+msgstr "재생 시작까지"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31079"
 msgid "Next episode"
-msgstr ""
+msgstr "다음 에피소드"
 
 #: /xml/Home.xml
 msgctxt "#31080"
 msgid "Continue watching"
-msgstr ""
+msgstr "계속 시청"
 
 #: /xml/Home.xml
 msgctxt "#31081"
 msgid "Recently updated TV shows"
-msgstr ""
+msgstr "최근 업데이트된 TV 프로그램"
 
 #: /xml/Custom_1124_PVRHub.xml
 msgctxt "#31082"
 msgid "Last tuned radio channels"
-msgstr ""
+msgstr "최근 선택한 라디오 채널"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31083"
 msgid "Widgets"
-msgstr ""
+msgstr "위젯"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31084"
 msgid "Show custom shortcuts in Emby nodes"
-msgstr ""
+msgstr "Emby 노드에 사용자 지정 바로가기 표시"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31085"
 msgid "Show EmbyCon source label"
-msgstr ""
+msgstr "EmbyCon 소스 레이블 표시"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31086"
 msgid "Default widgets"
-msgstr ""
+msgstr "기본 위젯"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31087"
 msgid "Show fanarts in the background"
-msgstr ""
+msgstr "배경에 팬아트 표시"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31088"
 msgid "Show video playback in the background"
-msgstr ""
+msgstr "배경에 비디오 재생 표시"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31089"
 msgid "minutes"
-msgstr ""
+msgstr "분"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31090"
 msgid "minute"
-msgstr ""
+msgstr "분"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31091"
 msgid "Welcome to Embuary"
-msgstr ""
+msgstr "Embuary에 오신 것을 환영합니다"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31092"
 msgid "This skin is designed to simulate the web gui experience of Emby. In order to get everything running as it should, it's recommended to set the following Kodi options:"
-msgstr ""
+msgstr "이 스킨은 Emby 웹 인터페이스와 유사한 경험을 제공하도록 설계되었습니다. 정상 작동을 위해 다음 Kodi 옵션을 설정하는 것이 좋습니다:"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31093"
 msgid "OK, do it for me"
-msgstr ""
+msgstr "확인, 자동으로 설정"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31094"
 msgid "No, I'll keep my config"
-msgstr ""
+msgstr "아니요, 현재 구성을 유지"
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31095"
 msgid "Pause playback"
-msgstr ""
+msgstr "재생 일시정지"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31096"
 msgid "Resume playback"
-msgstr ""
+msgstr "재생 계속"
 
 #: /xml/Custom_1120_MovieHub.xml
 msgctxt "#31097"
 msgid "Movies in the Top 250"
-msgstr ""
+msgstr "Top 250 영화"
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31098"
 msgid "TV shows in the Top 250"
-msgstr ""
+msgstr "Top 250 TV 프로그램"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31099"
 msgid "Widget layout"
-msgstr ""
+msgstr "위젯 레이아웃"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31100"
 msgid "Position"
-msgstr ""
+msgstr "위치"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31101"
 msgid "Layout"
-msgstr ""
+msgstr "레이아웃"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31102"
 msgid "Background settings"
-msgstr ""
+msgstr "배경 설정"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31103"
 msgid "Widget settings"
-msgstr ""
+msgstr "위젯 설정"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31104"
 msgid "Use own static background image"
-msgstr ""
+msgstr "사용자 지정 정적 배경 이미지 사용"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31105"
 msgid "Change background, header and other misc. settings of Embuary."
-msgstr ""
+msgstr "Embuary의 배경, 헤더 바 및 기타 설정을 변경합니다."
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31106"
 msgid "Configure home & side panel menu items and general widget limitations."
-msgstr ""
+msgstr "홈 화면과 사이드 패널의 메뉴 항목 및 일반 위젯 제한을 구성합니다."
 
 #: /xml/Custom_1111_PositionItemSelector.xml
 msgctxt "#31107"
 msgid "Select content"
-msgstr ""
+msgstr "콘텐츠 선택"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31108"
 msgid "Event log"
-msgstr ""
+msgstr "이벤트 로그"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31109"
 msgid "Header bar"
-msgstr ""
+msgstr "헤더 바"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31110"
 msgid "Show current temperature (if available)"
-msgstr ""
+msgstr "현재 온도 표시(사용 가능한 경우)"
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31111"
 msgid "Change location"
-msgstr ""
+msgstr "위치 변경"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31112"
 msgid "Kiosk mode"
-msgstr ""
+msgstr "키오스크 모드"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31113"
 msgid "Show button to change the EmbyCon user"
-msgstr ""
+msgstr "EmbyCon 사용자 변경 버튼 표시"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31114"
 msgid "Show update library button"
-msgstr ""
+msgstr "라이브러리 업데이트 버튼 표시"
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31115"
 msgid "Switch to file mode"
-msgstr ""
+msgstr "파일 모드로 전환"
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31116"
 msgid "Unlock shares"
-msgstr ""
+msgstr "공유 잠금 해제"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31117"
 msgid "Replace device name in the header bar"
-msgstr ""
+msgstr "헤더 바의 장치 이름 변경"
 
 #: /xml/Custom_1121_TVShowHub.xml
 msgctxt "#31118"
 msgid "EmbyCon sources"
-msgstr ""
+msgstr "EmbyCon 소스"
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31119"
 msgid "Previous group"
-msgstr ""
+msgstr "이전 그룹"
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31120"
 msgid "Next group"
-msgstr ""
+msgstr "다음 그룹"
 
 #: /xml/MusicVisualisation.xml
 msgctxt "#31121"
 msgid "Rewinding"
-msgstr ""
+msgstr "되감는 중"
 
 #: /xml/MusicVisualisation.xml
 msgctxt "#31122"
 msgid "Forwarding"
-msgstr ""
+msgstr "빨리 감는 중"
 
 #: /xml/PlayerControls.xml
 msgctxt "#31123"
 msgid "Show playlist"
-msgstr ""
+msgstr "재생목록 표시"
 
 #: /xml/Settings.xml
 msgctxt "#31124"
 msgid "LibreELEC"
-msgstr ""
+msgstr "LibreELEC"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31125"
 msgid "Custom widgets"
-msgstr ""
+msgstr "사용자 지정 위젯"
 
 #: /xml/MyPics.xml
 msgctxt "#31126"
 msgid "Randomise slideshow"
-msgstr ""
+msgstr "슬라이드 쇼 무작위 재생"
 
 #: /xml/Custom_1112_MainMenuReset.xml
 msgctxt "#31127"
 msgid "Restored default widgets"
-msgstr ""
+msgstr "기본 위젯이 복원됨"
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31128"
 msgid "Hide broken addons"
-msgstr ""
+msgstr "손상된 추가 기능 숨기기"
 
 #: /xml/Custom_1123_AddonHub.xml
 msgctxt "#31129"
 msgid "Update local addons"
-msgstr ""
+msgstr "로컬 추가 기능 업데이트"
 
 #: /xml/script-nextup-notification-StillWatchingInfo.xml
 msgctxt "#31130"
 msgid "Still watching?"
-msgstr ""
+msgstr "계속 시청 중인가요?"
 
 #: /xml/Custom_1118_ct.xml
 msgctxt "#31131"
 msgid "Attention"
-msgstr ""
+msgstr "주의"
 
 #: /xml/Custom_1118_ct.xml
 msgctxt "#31132"
 msgid "It seems that you have one ore more blacklisted plugins installed. This skin has been designed for a legal usage of Kodi and I - and all the other skin contributers - do not want be associated with such tools. Please check the kodi.tv community if you need any assistance to remove them."
-msgstr ""
+msgstr "차단 목록에 있는 플러그인이 하나 이상 설치된 것 같습니다. 이 스킨은 Kodi의 합법적인 사용을 위해 설계되었으며 제작자와 다른 기여자는 이러한 도구와 연관되기를 원하지 않습니다. 제거 방법은 kodi.tv 커뮤니티에서 도움을 받으세요."
 
 #: /xml/AddonBrowser.xml
 msgctxt "#31133"
 msgid "Language filter"
-msgstr ""
+msgstr "언어 필터"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31134"
 msgid "Side panel"
-msgstr ""
+msgstr "사이드 패널"
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31135"
 msgid "Restore defaults"
-msgstr ""
+msgstr "기본값 복원"
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31136"
 msgid "Setting changes are only applied after saving"
-msgstr ""
+msgstr "설정 변경은 저장 후 적용됩니다"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31137"
 msgid "Awards"
-msgstr ""
+msgstr "수상 내역"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31138"
 msgid "Retail release"
-msgstr ""
+msgstr "정식 출시"
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31139"
 msgid "Do you want to apply unsaved changes?"
-msgstr ""
+msgstr "저장하지 않은 변경 사항을 적용하시겠습니까?"
 
 #: /xml/DialogAddonSettings.xml
 msgctxt "#31140"
 msgid "Add-on settings not saved"
-msgstr ""
+msgstr "추가 기능 설정이 저장되지 않음"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31141"
 msgid "Rumored"
-msgstr ""
+msgstr "소문"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31142"
 msgid "Planned"
-msgstr ""
+msgstr "계획됨"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31143"
 msgid "In production"
-msgstr ""
+msgstr "제작 중"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31144"
 msgid "Post production"
-msgstr ""
+msgstr "후반 작업 중"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31145"
 msgid "Released"
-msgstr ""
+msgstr "출시됨"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31146"
 msgid "Canceled"
-msgstr ""
+msgstr "취소됨"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31147"
 msgid "Returning series"
-msgstr ""
+msgstr "방영 재개 시리즈"
 
 #: /xml/DialogSubtitles.xml
 msgctxt "#31148"
 msgid "Available sutbtitles"
-msgstr ""
+msgstr "사용 가능한 자막"
 
 #: /xml/DialogSubtitles.xml
 msgctxt "#31149"
 msgid "Installed subtitle services"
-msgstr ""
+msgstr "설치된 자막 서비스"
 
 #: /xml/DialogSubtitles.xml
 msgctxt "#31150"
 msgid "Local subtitles are available for this video."
-msgstr ""
+msgstr "이 비디오에 로컬 자막이 있습니다."
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31151"
 msgid "Nr."
-msgstr ""
+msgstr "번호"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31152"
 msgid "Hub shortcuts"
-msgstr ""
+msgstr "허브 바로가기"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31153"
 msgid "Hide widgets and use fullscreen panel layout for the main menu"
-msgstr ""
+msgstr "위젯을 숨기고 주 메뉴에 전체 화면 패널 레이아웃 사용"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31154"
 msgid "Next aired"
-msgstr ""
+msgstr "다음 방영"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31155"
 msgid "Show library item edit buttons in info dialogs"
-msgstr ""
+msgstr "정보 대화상자에 라이브러리 항목 편집 버튼 표시"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31156"
 msgid "No further program information available"
-msgstr ""
+msgstr "추가 프로그램 정보 없음"
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31157"
 msgid "Persons named"
-msgstr ""
+msgstr "이름이 다음과 같은 인물"
 
 #: /shortcuts/mainmenu.DATA.xml
 msgctxt "#31158"
 msgid "Custom item"
-msgstr ""
+msgstr "사용자 지정 항목"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31159"
 msgid "No label"
-msgstr ""
+msgstr "레이블 없음"
 
 #: /shortcuts/moviehub.DATA.xml
 msgctxt "#31160"
 msgid "Movies - EmbyCon"
-msgstr ""
+msgstr "영화 — EmbyCon"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31161"
 msgid "Free receivable channel"
-msgstr ""
+msgstr "무료 수신 채널"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31162"
 msgid "Searching for updates"
-msgstr ""
+msgstr "업데이트 검색 중"
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31163"
 msgid "Unmapped channels"
-msgstr ""
+msgstr "매핑되지 않은 채널"
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31164"
 msgid "Mapped channels"
-msgstr ""
+msgstr "매핑된 채널"
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31165"
 msgid "Delete group"
-msgstr ""
+msgstr "그룹 삭제"
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31166"
 msgid "Add group"
-msgstr ""
+msgstr "그룹 추가"
 
 #: /xml/DialogPVRGroupManager.xml
 msgctxt "#31167"
 msgid "Rename group"
-msgstr ""
+msgstr "그룹 이름 변경"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31168"
 msgid "Show music videos button"
-msgstr ""
+msgstr "뮤직 비디오 버튼 표시"
 
 #: /xml/Custom_1120_MovieHub.xml
 msgctxt "#31169"
 msgid "Collections"
-msgstr ""
+msgstr "컬렉션"
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31170"
 msgid "Place of birth"
-msgstr ""
+msgstr "출생지"
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31171"
 msgid "Age"
-msgstr ""
+msgstr "나이"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31172"
 msgid "TV show hub"
-msgstr ""
+msgstr "TV 프로그램 허브"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31173"
 msgid "Movie hub"
-msgstr ""
+msgstr "영화 허브"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31174"
 msgid "Music hub"
-msgstr ""
+msgstr "음악 허브"
 
 #: /xml/Custom_1145_PlaylistSelect.xml
 msgctxt "#31175"
 msgid "Video playlist"
-msgstr ""
+msgstr "비디오 재생목록"
 
 #: /xml/Custom_1145_PlaylistSelect.xml
 msgctxt "#31176"
 msgid "Music playlist"
-msgstr ""
+msgstr "음악 재생목록"
 
 #: /xml/MusicOSD.xml
 msgctxt "#31177"
 msgid "Disc art"
-msgstr ""
+msgstr "디스크 아트"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31178"
 msgid "Custom menu entries"
-msgstr ""
+msgstr "사용자 지정 메뉴 항목"
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31179"
 msgid "All TV shows"
-msgstr ""
+msgstr "모든 TV 프로그램"
 
 #: /xml/Embuary_HeaderBar.xml
 msgctxt "#31180"
 msgid "All movies"
-msgstr ""
+msgstr "모든 영화"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31181"
 msgid "Emby node"
-msgstr ""
+msgstr "Emby 노드"
 
 #: /xml/Embuary_TagHubIncludes.xml
 msgctxt "#31182"
 msgid "Recommended TV shows"
-msgstr ""
+msgstr "추천 TV 프로그램"
 
 #: /xml/Custom_1130_Emby0Hub.xml
 msgctxt "#31183"
 msgid "Recommended movies"
-msgstr ""
+msgstr "추천 영화"
 
 #: /xml/Custom_1130_Emby0Hub.xml
 msgctxt "#31184"
 msgid "Random movies"
-msgstr ""
+msgstr "무작위 영화"
 
 #: /xml/Embuary_TagHubIncludes.xml
 msgctxt "#31185"
 msgid "Random TV shows"
-msgstr ""
+msgstr "무작위 TV 프로그램"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31186"
 msgid "Emby stream"
-msgstr ""
+msgstr "Emby 스트림"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31187"
 msgid "Home videos & photos"
-msgstr ""
+msgstr "홈 비디오 및 사진"
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31188"
 msgid "Filmography"
-msgstr ""
+msgstr "필모그래피"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31189"
 msgid "collection"
-msgstr ""
+msgstr "컬렉션"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31190"
 msgid "Settings backup"
-msgstr ""
+msgstr "설정 백업"
 
 #: /xml/LoginScreen.xml
 msgctxt "#31191"
 msgid "Power options"
-msgstr ""
+msgstr "전원 옵션"
 
 #: /xml/Embuary_Set_View_56.xml
 msgctxt "#31192"
 msgid "Included movies"
-msgstr ""
+msgstr "포함된 영화"
 
 #: /xml/Custom_1123_AddonHub.xml
 msgctxt "#31193"
 msgid "Installed add-ons"
-msgstr ""
+msgstr "설치된 추가 기능"
 
 #: /xml/Custom_1123_AddonHub.xml
 msgctxt "#31194"
 msgid "Search add-ons"
-msgstr ""
+msgstr "추가 기능 검색"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31195"
 msgid "Use own background image path"
-msgstr ""
+msgstr "사용자 지정 배경 이미지 경로 사용"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31196"
 msgid "Ended"
-msgstr ""
+msgstr "종영됨"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31197"
 msgid "Continuing"
-msgstr ""
+msgstr "계속 방영 중"
 
 #: /xml/MyVideoNav.xml
 msgctxt "#31198"
 msgid "Hide labels"
-msgstr ""
+msgstr "레이블 숨기기"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31199"
 msgid "Slide"
-msgstr ""
+msgstr "슬라이드"
 
 #: /extras/skinsettings.xml
 msgctxt "#31200"
 msgid "Custom"
-msgstr ""
+msgstr "사용자 지정"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31201"
 msgid "Select position"
-msgstr ""
+msgstr "위치 선택"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31202"
 msgid "Menu positions"
-msgstr ""
+msgstr "메뉴 위치"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31203"
 msgid "Default menu entries"
-msgstr ""
+msgstr "기본 메뉴 항목"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31204"
 msgid "Reset menu to default"
-msgstr ""
+msgstr "메뉴를 기본값으로 초기화"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31205"
 msgid "Change menu thumbnails"
-msgstr ""
+msgstr "메뉴 썸네일 변경"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31206"
 msgid "Thumbnail options"
-msgstr ""
+msgstr "썸네일 옵션"
 
 #: /xml/Custom_1112_MainMenuReset.xml
 msgctxt "#31207"
 msgid "Restored default main menu configuration"
-msgstr ""
+msgstr "기본 주 메뉴 구성이 복원됨"
 
 #: /xml/Custom_1111_PositionItemSelector.xml
 msgctxt "#31208"
 msgid "EmbyCon node"
-msgstr ""
+msgstr "EmbyCon 노드"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31209"
 msgid "Unwatched movies"
-msgstr ""
+msgstr "시청하지 않은 영화"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31210"
 msgid "Unwatched TV shows"
-msgstr ""
+msgstr "시청하지 않은 TV 프로그램"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31211"
 msgid "Recently played songs"
-msgstr ""
+msgstr "최근 재생한 노래"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31212"
 msgid "Favourite artists"
-msgstr ""
+msgstr "즐겨찾는 아티스트"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31213"
 msgid "Favourite albums"
-msgstr ""
+msgstr "즐겨찾는 앨범"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31214"
 msgid "Favourite songs"
-msgstr ""
+msgstr "즐겨찾는 노래"
 
 #: /xml/Embuary_EmbyConHubIncludes.xml
 msgctxt "#31215"
 msgid "Often played songs"
-msgstr ""
+msgstr "자주 재생한 노래"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31216"
 msgid "Reset widget configuration to default"
-msgstr ""
+msgstr "위젯 구성을 기본값으로 초기화"
 
 #: /xml/Custom_1112_Reset.xml
 msgctxt "#31217"
 msgid "Build default skin configuartion"
-msgstr ""
+msgstr "기본 스킨 구성 만들기"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31218"
 msgid "Edit current configuration"
-msgstr ""
+msgstr "현재 구성 편집"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31219"
 msgid "Horizontal"
-msgstr ""
+msgstr "가로"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31220"
 msgid "Vertical"
-msgstr ""
+msgstr "세로"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31221"
 msgid "Use EPG thumbnails for PVR widgets (if available)"
-msgstr ""
+msgstr "PVR 위젯에 EPG 썸네일 사용(사용 가능한 경우)"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31222"
 msgid "Support at emby.media"
-msgstr ""
+msgstr "emby.media 지원"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31223"
 msgid "Configure shortcuts of the power menu."
-msgstr ""
+msgstr "전원 메뉴의 바로가기를 구성합니다."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31224"
 msgid "Power menu"
-msgstr ""
+msgstr "전원 메뉴"
 
 #: /xml/DialogButtonMenu.xml
 msgctxt "#31225"
 msgid "EmbyCon login"
-msgstr ""
+msgstr "EmbyCon 로그인"
 
 #: /xml/DialogButtonMenu.xml
 msgctxt "#31226"
 msgid "Change EmbyCon user"
-msgstr ""
+msgstr "EmbyCon 사용자 변경"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31227"
 msgid "Play album"
-msgstr ""
+msgstr "앨범 재생"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31228"
 msgid "Search result provider"
-msgstr ""
+msgstr "검색 결과 제공자"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31229"
 msgid "Create and manage your own widgets source. Please note that each widget has to be manually assigned to the chosen window."
-msgstr ""
+msgstr "사용자 지정 위젯 소스를 만들고 관리합니다. 각 위젯은 선택한 창에 수동으로 할당해야 합니다."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31230"
 msgid "Hide thumbnails of unwatched episodes"
-msgstr ""
+msgstr "시청하지 않은 에피소드의 썸네일 숨기기"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31231"
 msgid "Pause video playback while the player info screen is active"
-msgstr ""
+msgstr "플레이어 정보 화면이 활성화된 동안 비디오 재생 일시정지"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31232"
 msgid "Custom hub"
-msgstr ""
+msgstr "사용자 지정 허브"
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31233"
 msgid "Movies starring"
-msgstr ""
+msgstr "출연 영화"
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31234"
 msgid "TV shows starring"
-msgstr ""
+msgstr "출연 TV 프로그램"
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31235"
 msgid "Directed by"
-msgstr ""
+msgstr "감독"
 
 #: /xml/Custom_1115_Search.xml
 msgctxt "#31236"
 msgid "Episodes starring"
-msgstr ""
+msgstr "출연 에피소드"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31237"
 msgid "Available items starring the chosen actor"
-msgstr ""
+msgstr "선택한 배우가 출연한 사용 가능한 항목"
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31238"
 msgid "Facts"
-msgstr ""
+msgstr "정보"
 
 #: /shortcuts/tvshowhub.DATA.xml
 msgctxt "#31239"
 msgid "TV shows - EmbyCon"
-msgstr ""
+msgstr "TV 프로그램 — EmbyCon"
 
 #: /shortcuts/musichub.DATA.xml
 msgctxt "#31240"
 msgid "Artists - EmbyCon"
-msgstr ""
+msgstr "아티스트 — EmbyCon"
 
 #: /shortcuts/musichub.DATA.xml
 msgctxt "#31241"
 msgid "Albums - EmbyCon"
-msgstr ""
+msgstr "앨범 — EmbyCon"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31242"
 msgid "Repositories"
-msgstr ""
+msgstr "저장소"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31243"
 msgid "Install from zip"
-msgstr ""
+msgstr "ZIP 파일에서 설치"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31244"
 msgid "Edit menu configuration"
-msgstr ""
+msgstr "메뉴 구성 편집"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31245"
 msgid "Edit widget configuration"
-msgstr ""
+msgstr "위젯 구성 편집"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31246"
 msgid "Hubs"
-msgstr ""
+msgstr "허브"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31247"
 msgid "Menus & widgets"
-msgstr ""
+msgstr "메뉴 및 위젯"
 
 #: /xml/Custom_1110_PositionSelector.xml
 msgctxt "#31248"
 msgid "Reset widgets to default"
-msgstr ""
+msgstr "위젯을 기본값으로 초기화"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31249"
 msgid "Window configuration"
-msgstr ""
+msgstr "창 구성"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31250"
 msgid "Automatically switch to full screen when starting playback"
-msgstr ""
+msgstr "재생 시작 시 자동으로 전체 화면으로 전환"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31251"
 msgid "Add-on hub"
-msgstr ""
+msgstr "추가 기능 허브"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31252"
 msgid "PVR hub"
-msgstr ""
+msgstr "PVR 허브"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31253"
 msgid "hub"
-msgstr ""
+msgstr "허브"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31254"
 msgid "Hide main menu and only show widgets"
-msgstr ""
+msgstr "주 메뉴를 숨기고 위젯만 표시"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31255"
 msgid "Cinema mode"
-msgstr ""
+msgstr "시네마 모드"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31256"
 msgid "On right now"
-msgstr ""
+msgstr "현재 방송 중"
 
 #: /shortcuts/overrides.xml
 msgctxt "#31257"
 msgid "Try to use an Emby styled artwork"
-msgstr ""
+msgstr "Emby 스타일 아트워크 사용 시도"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31258"
 msgid "Special"
-msgstr ""
+msgstr "스페셜"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31259"
 msgid "More from season"
-msgstr ""
+msgstr "이 시즌의 다른 콘텐츠"
 
 #: /xml/LoginScreen.xml
 msgctxt "#31260"
 msgid "Please login"
-msgstr ""
+msgstr "로그인해 주세요"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31261"
 msgid "Main menu"
-msgstr ""
+msgstr "주 메뉴"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31262"
 msgid "Audio books"
-msgstr ""
+msgstr "오디오북"
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31263"
 msgid "Color palette"
-msgstr ""
+msgstr "색상 팔레트"
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31264"
 msgid "Opacity"
-msgstr ""
+msgstr "불투명도"
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31265"
 msgid "Current color"
-msgstr ""
+msgstr "현재 색상"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31266"
 msgid "Custom colors"
-msgstr ""
+msgstr "사용자 지정 색상"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31267"
 msgid "Accent color"
-msgstr ""
+msgstr "강조 색상"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31268"
 msgid "Player element color"
-msgstr ""
+msgstr "플레이어 요소 색상"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31269"
 msgid "Item fallback background color"
-msgstr ""
+msgstr "항목 대체 배경색"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31270"
 msgid "Button focused color"
-msgstr ""
+msgstr "포커스된 버튼 색상"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31271"
 msgid "Background opacity"
-msgstr ""
+msgstr "배경 불투명도"
 
 #: /xml/script-skin_helper_service-ColorPicker.xml
 msgctxt "#31272"
 msgid "Set for all"
-msgstr ""
+msgstr "모두에 적용"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31273"
 msgid "Required add-ons and dependencies"
-msgstr ""
+msgstr "필수 추가 기능 및 종속성"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31274"
 msgid "Supported optional add-ons"
-msgstr ""
+msgstr "지원되는 선택적 추가 기능"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31275"
 msgid "List of installed dependencies and supported add-ons. Missing items can be installed from here."
-msgstr ""
+msgstr "설치된 종속성과 지원되는 추가 기능 목록입니다. 누락된 항목은 여기에서 설치할 수 있습니다."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31276"
 msgid "Dependencies & add-ons"
-msgstr ""
+msgstr "종속성 및 추가 기능"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31277"
 msgid "Hide video OSD while playback is paused"
-msgstr ""
+msgstr "재생이 일시정지된 동안 비디오 OSD 숨기기"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31278"
 msgid "Suggestions by genre"
-msgstr ""
+msgstr "장르별 추천"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31279"
 msgid "Library tag hubs"
-msgstr ""
+msgstr "라이브러리 태그 허브"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31280"
 msgid "Edit TV show widget configuration"
-msgstr ""
+msgstr "TV 프로그램 위젯 구성 편집"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31281"
 msgid "Edit movie widget configuration"
-msgstr ""
+msgstr "영화 위젯 구성 편집"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31282"
 msgid "EmbyCon nodes"
-msgstr ""
+msgstr "EmbyCon 노드"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31283"
 msgid "Edit music widget configuration"
-msgstr ""
+msgstr "음악 위젯 구성 편집"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31284"
 msgid "No items found"
-msgstr ""
+msgstr "항목을 찾을 수 없음"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31285"
 msgid "No channels found"
-msgstr ""
+msgstr "채널을 찾을 수 없음"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31286"
 msgid "Limit items of default widgets"
-msgstr ""
+msgstr "기본 위젯 항목 수 제한"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31287"
 msgid "More movies directed by"
-msgstr ""
+msgstr "이 감독의 다른 영화"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31288"
 msgid "Limit"
-msgstr ""
+msgstr "제한"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31289"
 msgid "not configured yet"
-msgstr ""
+msgstr "아직 구성되지 않음"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31290"
 msgid "Config"
-msgstr ""
+msgstr "구성"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31291"
 msgid "Spooky suggestions"
-msgstr ""
+msgstr "오싹한 추천"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31292"
 msgid "Holiday season suggestions"
-msgstr ""
+msgstr "연말연시 추천"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31293"
 msgid "Enable suggestion widgets"
-msgstr ""
+msgstr "추천 위젯 사용"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31294"
 msgid "Enable startup sound"
-msgstr ""
+msgstr "시작 사운드 사용"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31295"
 msgid "Enable holiday themes"
-msgstr ""
+msgstr "휴일 테마 사용"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31296"
 msgid "Useful links for support, to report issues or if you want to help to translate the skin to your language."
-msgstr ""
+msgstr "지원 요청, 문제 신고 또는 스킨 번역에 참여할 수 있는 유용한 링크입니다."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31297"
 msgid "Support at kodi.tv"
-msgstr ""
+msgstr "kodi.tv 지원"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31298"
 msgid "Support & translations"
-msgstr ""
+msgstr "지원 및 번역"
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31299"
 msgid "Update Kodi"
-msgstr ""
+msgstr "Kodi 업데이트"
 
 #: /xml/Embuary_HomeIncludes.xml
 msgctxt "#31300"
 msgid "My media"
-msgstr ""
+msgstr "내 미디어"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31301"
 msgid "Latest movies"
-msgstr ""
+msgstr "최신 영화"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31302"
 msgid "Latest TV shows"
-msgstr ""
+msgstr "최신 TV 프로그램"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31303"
 msgid "Latest albums"
-msgstr ""
+msgstr "최신 앨범"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31304"
 msgid "Search TV guide"
-msgstr ""
+msgstr "TV 가이드 검색"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31305"
 msgid "No color set"
-msgstr ""
+msgstr "색상 설정 안 됨"
 
 #: /xml/script-skinshortcuts.xml
 msgctxt "#31306"
 msgid "Replace default thumbnail"
-msgstr ""
+msgstr "기본 썸네일 교체"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31307"
 msgid "More specials"
-msgstr ""
+msgstr "더 많은 스페셜"
 
 #: /xml/script-skinshortcuts.xml
 msgctxt "#31308"
 msgid "Thumbnail aspect ratio"
-msgstr ""
+msgstr "썸네일 화면비"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31309"
 msgid "scale"
-msgstr ""
+msgstr "크기 조정"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31310"
 msgid "stretch"
-msgstr ""
+msgstr "늘이기"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31311"
 msgid "keep"
-msgstr ""
+msgstr "유지"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31312"
 msgid "Disable 'Skin Helper Service' add-on packages"
-msgstr ""
+msgstr "‘Skin Helper Service’ 추가 기능 패키지 사용 안 함"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31313"
 msgid "Enable 'Skin Helper Service' add-on packages"
-msgstr ""
+msgstr "‘Skin Helper Service’ 추가 기능 패키지 사용"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31314"
 msgid "To prevent speed penalties and issues it's recommended to disable the following add-ons:[CR][CR][COLOR blue]• script.module.metadatautils[CR]• script.skin.helper.service[CR]• script.skin.helper.widgets[CR]• script.skin.helper.backgrounds[/COLOR]"
-msgstr ""
+msgstr "성능 저하와 문제를 방지하려면 다음 추가 기능을 비활성화하는 것이 좋습니다:[CR][CR][COLOR blue]• script.module.metadatautils[CR]• script.skin.helper.service[CR]• script.skin.helper.widgets[CR]• script.skin.helper.backgrounds[/COLOR]"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31315"
 msgid "Do you really want to enable them?"
-msgstr ""
+msgstr "정말 사용하시겠습니까?"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31316"
 msgid "Do you really want to disable them?"
-msgstr ""
+msgstr "정말 사용하지 않으시겠습니까?"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31317"
 msgid "Enable channel labeling for EPG thumbnails"
-msgstr ""
+msgstr "EPG 썸네일에 채널 레이블 사용"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31318"
 msgid "Premiere"
-msgstr ""
+msgstr "프리미어"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31319"
 msgid "Budget"
-msgstr ""
+msgstr "예산"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31320"
 msgid "Revenue"
-msgstr ""
+msgstr "수익"
 
 #: /xml/script-embuary-video.xml
 msgctxt "#31321"
 msgid "Crew"
-msgstr ""
+msgstr "제작진"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31322"
 msgid "More seasons"
-msgstr ""
+msgstr "더 많은 시즌"
 
 #: /xml/Embuary_BigList_View_59.xml
 msgctxt "#31323"
 msgid "Shuffle"
-msgstr ""
+msgstr "무작위 재생"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31324"
 msgid "Intro folder"
-msgstr ""
+msgstr "인트로 폴더"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31325"
 msgid "Number of trailers"
-msgstr ""
+msgstr "예고편 수"
 
 #: /xml/DialogContextMenu.xml
 msgctxt "#31326"
 msgid "Play with cinema mode"
-msgstr ""
+msgstr "시네마 모드로 재생"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31327"
 msgid "Use cinema mode when starting playback via info dialog, play buttons or default widgets"
-msgstr ""
+msgstr "정보 대화상자, 재생 버튼 또는 기본 위젯에서 재생을 시작할 때 시네마 모드 사용"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31328"
 msgid "Enable and disable items of the shutdown menu."
-msgstr ""
+msgstr "종료 메뉴의 항목을 사용하거나 사용하지 않도록 설정합니다."
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31329"
 msgid "Change the behaviour of playback and media actions."
-msgstr ""
+msgstr "재생 및 미디어 동작을 변경합니다."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31330"
 msgid "Playback & media"
-msgstr ""
+msgstr "재생 및 미디어"
 
 #: /xml/SkinSettings.xml
 msgctxt "#31331"
 msgid "Home and hubs"
-msgstr ""
+msgstr "홈 및 허브"
 
 #: /xml/DialogKeyboard.xml
 msgctxt "#31332"
 msgid "The updated hub label will be shown on the next opening of the menu editor"
-msgstr ""
+msgstr "업데이트된 허브 레이블은 다음에 메뉴 편집기를 열 때 표시됩니다"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31333"
 msgid "Enabled auto updating"
-msgstr ""
+msgstr "자동 업데이트 사용"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31334"
 msgid "More available items with"
-msgstr ""
+msgstr "다음과 관련된 사용 가능한 항목 더 보기"
 
 #: /xml/PlayerControls.xml
 msgctxt "#31335"
 msgid "Eject disc"
-msgstr ""
+msgstr "디스크 꺼내기"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31336"
 msgid "Show EPG thumbnail in video OSD (if available)"
-msgstr ""
+msgstr "비디오 OSD에 EPG 썸네일 표시(사용 가능한 경우)"
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31337"
 msgid "Upload Kodi log"
-msgstr ""
+msgstr "Kodi 로그 업로드"
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31338"
 msgid "Running services"
-msgstr ""
+msgstr "실행 중인 서비스"
 
 #: /xml/MusicOSD.xml
 msgctxt "#31339"
 msgid "Pan and zoom"
-msgstr ""
+msgstr "이동 및 확대/축소"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31340"
 msgid "Use available hubs as target"
-msgstr ""
+msgstr "사용 가능한 허브를 대상으로 사용"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31341"
 msgid "EPG thumbnail aspect ratio"
-msgstr ""
+msgstr "EPG 썸네일 화면비"
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31342"
 msgid "Embuary changelog"
-msgstr ""
+msgstr "Embuary 변경 기록"
 
 #: /xml/DialogAddonInfo.xml
 msgctxt "#31343"
 msgid "Add-on news"
-msgstr ""
+msgstr "추가 기능 소식"
 
 #: /xml/Embuary_Includes.xml
 msgctxt "#31344"
 msgid "Force default icon"
-msgstr ""
+msgstr "기본 아이콘 강제 사용"
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31345"
 msgid "Skin dependencies"
-msgstr ""
+msgstr "스킨 종속성"
 
 #: /xml/DialogPVRChannelsOSD.xml
 msgctxt "#31346"
 msgid "On now"
-msgstr ""
+msgstr "현재 방송 중"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31347"
 msgid "Use mini EPG for channels OSD"
-msgstr ""
+msgstr "채널 OSD에 미니 EPG 사용"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31348"
 msgid "very dark"
-msgstr ""
+msgstr "매우 어둡게"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31349"
 msgid "darker"
-msgstr ""
+msgstr "더 어둡게"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31350"
 msgid "dark"
-msgstr ""
+msgstr "어둡게"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31351"
 msgid "bright"
-msgstr ""
+msgstr "밝게"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31352"
 msgid "brighter"
-msgstr ""
+msgstr "더 밝게"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31353"
 msgid "very bright"
-msgstr ""
+msgstr "매우 밝게"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31354"
 msgid "Blur background images"
-msgstr ""
+msgstr "배경 이미지 흐리게"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31355"
 msgid "This feature is very expensive and should not be enabled on slow devices like a Raspberry Pi. It will also require some storage space on your drive, because each fanart is going to be processed and stored separately as blurred image in the Kodi userdata folder."
-msgstr ""
+msgstr "이 기능은 많은 시스템 자원을 사용하므로 Raspberry Pi와 같은 느린 장치에서는 사용하지 않는 것이 좋습니다. 각 팬아트를 별도로 처리해 Kodi userdata 폴더에 흐린 이미지로 저장하므로 저장 공간도 필요합니다."
 
 #: /xml/SkinSettings.xml
 msgctxt "#31356"
 msgid "Translate on transifex.com"
-msgstr ""
+msgstr "transifex.com에서 번역"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31357"
 msgid "Live long and prosper"
-msgstr ""
+msgstr "장수와 번영을"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31358"
 msgid "Enable cinema mode for"
-msgstr ""
+msgstr "다음 항목에 시네마 모드 사용"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31359"
 msgid "Disable mouse and touch control"
-msgstr ""
+msgstr "마우스 및 터치 제어 사용 안 함"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31360"
 msgid "Hide parent folder items"
-msgstr ""
+msgstr "상위 폴더 항목 숨기기"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31361"
 msgid "Always select the first unwatched season/episode"
-msgstr ""
+msgstr "항상 첫 번째 미시청 시즌/에피소드 선택"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31362"
 msgid "Set the Embuary UI navigation sounds"
-msgstr ""
+msgstr "Embuary UI 탐색음 설정"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31363"
 msgid "Please keep in mind that these settings are global and will be valid for all installed skins. But don't panic, all settings can be reverted in the Kodi settings."
-msgstr ""
+msgstr "이 설정은 전역 설정이며 설치된 모든 스킨에 적용됩니다. 모든 설정은 Kodi 설정에서 되돌릴 수 있습니다."
 
 #: /xml/DialogPVRInfo.xml
 msgctxt "#31364"
 msgid "Timer"
-msgstr ""
+msgstr "타이머"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31365"
 msgid "Stop"
-msgstr ""
+msgstr "중지"
 
 #: /xml/Embuary_InfoDialog.xml
 msgctxt "#31366"
 msgid "More"
-msgstr ""
+msgstr "더 보기"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31367"
 msgid "Show channel groups in the PVR hub"
-msgstr ""
+msgstr "PVR 허브에 채널 그룹 표시"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31368"
 msgid "Blurring strength"
-msgstr ""
+msgstr "흐림 강도"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31369"
 msgid "Intro"
-msgstr ""
+msgstr "인트로"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31370"
 msgid "Show Emby based Rotten Tomatoes ratings (uses user ratings)"
-msgstr ""
+msgstr "Emby 기반 Rotten Tomatoes 평점 표시(사용자 평점 사용)"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31371"
 msgid "Created by"
-msgstr ""
+msgstr "제작"
 
 #: /xml/script-embuary-person.xml
 msgctxt "#31372"
 msgid "Known for"
-msgstr ""
+msgstr "대표작"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31373"
 msgid "male"
-msgstr ""
+msgstr "남성"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31374"
 msgid "female"
-msgstr ""
+msgstr "여성"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31375"
 msgid "Configure menu and widget items of the hubs."
-msgstr ""
+msgstr "허브의 메뉴 및 위젯 항목을 구성합니다."
 
 #: /xml/Embuary_Settings.xml
 msgctxt "#31376"
 msgid "Home & side panel"
-msgstr ""
+msgstr "홈 및 사이드 패널"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31377"
 msgid "Use main menu entries in the side panel"
-msgstr ""
+msgstr "사이드 패널에 주 메뉴 항목 사용"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31378"
 msgid "Search themoviedb.org"
-msgstr ""
+msgstr "themoviedb.org 검색"
 
 #: /xml/Embuary_Widgets.xml
 msgctxt "#31379"
 msgid "Search database"
-msgstr ""
+msgstr "데이터베이스 검색"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31380"
 msgid "items in database"
-msgstr ""
+msgstr "데이터베이스의 항목"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31381"
 msgid "item in database"
-msgstr ""
+msgstr "데이터베이스의 항목"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31382"
 msgid "Guest stars"
-msgstr ""
+msgstr "게스트 출연진"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31383"
 msgid "Now playing in theaters"
-msgstr ""
+msgstr "현재 극장 상영 중"
 
 #: /xml/Embuary_WidgetTemplates.xml
 msgctxt "#31384"
 msgid "New movies coming soon"
-msgstr ""
+msgstr "곧 개봉할 새 영화"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31385"
 msgid "Added"
-msgstr ""
+msgstr "추가됨"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31386"
 msgid "Updated"
-msgstr ""
+msgstr "업데이트됨"
 
 #: /xml/Custom_1112_Reset.xml
 msgctxt "#31387"
 msgid "Movie genres"
-msgstr ""
+msgstr "영화 장르"
 
 #: /xml/Custom_1112_Reset.xml
 msgctxt "#31388"
 msgid "TV show genres"
-msgstr ""
+msgstr "TV 프로그램 장르"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31389"
 msgid "Mixed hub"
-msgstr ""
+msgstr "혼합 허브"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31390"
 msgid "Library tag"
-msgstr ""
+msgstr "라이브러리 태그"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31391"
 msgid "Setup"
-msgstr ""
+msgstr "설정"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31392"
 msgid "Rerun skin setup"
-msgstr ""
+msgstr "스킨 설정 다시 실행"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31393"
 msgid "Library tag based hubs"
-msgstr ""
+msgstr "라이브러리 태그 기반 허브"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31394"
 msgid "not recommended"
-msgstr ""
+msgstr "권장하지 않음"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31395"
 msgid "Auto populate hubs based on library tags?"
-msgstr ""
+msgstr "라이브러리 태그를 기반으로 허브를 자동으로 채우시겠습니까?"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31396"
 msgid "Turn off auto whitelisting"
-msgstr ""
+msgstr "자동 허용 목록 끄기"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31397"
 msgid "Toggle enabled tags"
-msgstr ""
+msgstr "활성화된 태그 전환"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31398"
 msgid "A unique feature of Embuary is the auto generation of hubs based on existing library tags in your database (e.g. 'kids content', 'HDR videos', 'documentaries')."
-msgstr ""
+msgstr "Embuary의 고유 기능은 데이터베이스의 기존 라이브러리 태그(예: ‘어린이 콘텐츠’, ‘HDR 비디오’, ‘다큐멘터리’)를 기반으로 허브를 자동 생성하는 것입니다."
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31399"
 msgid "Since every setup is different and some people only want to have hubs for a few available tags, you can disable the ones you don't want to have populated at any time. By default future and new tags will be whitelisted automatically."
-msgstr ""
+msgstr "각 환경이 다르고 일부 사용자는 몇 개의 태그에만 허브를 원하므로 원하지 않는 태그는 언제든 자동 채우기에서 제외할 수 있습니다. 새 태그는 기본적으로 자동으로 허용 목록에 추가됩니다."
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31400"
 msgid "Found tags"
-msgstr ""
+msgstr "찾은 태그"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31401"
 msgid "Enabled tags"
-msgstr ""
+msgstr "활성화된 태그"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31402"
 msgid "To get the best out-of-box experience the skin will automatically populate shipped widgets for database items like 'in progress episodes', 'recently added movies' or suggestions based on the items you have watched."
-msgstr ""
+msgstr "최적의 초기 사용 환경을 위해 스킨은 ‘시청 중인 에피소드’, ‘최근 추가된 영화’ 또는 시청 기록 기반 추천과 같은 데이터베이스 항목으로 기본 위젯을 자동 채웁니다."
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31403"
 msgid "Important"
-msgstr ""
+msgstr "중요"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31404"
 msgid "For existing Embuary installations, this step must be performed to get everything working due to a recent update. Configured custom widgets are not removed and only need to be reassigned."
-msgstr ""
+msgstr "최근 업데이트로 인해 기존 Embuary 설치에서는 이 단계를 수행해야 합니다. 구성된 사용자 지정 위젯은 삭제되지 않으며 다시 할당하기만 하면 됩니다."
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31405"
 msgid "Apply shipped widgets and default configuration?"
-msgstr ""
+msgstr "기본 위젯과 기본 구성을 적용하시겠습니까?"
 
 #: /xml/Embuary_SkinSettings.xml
 msgctxt "#31406"
 msgid "Edit mixed library widget configuration"
-msgstr ""
+msgstr "혼합 라이브러리 위젯 구성 편집"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31407"
 msgid "Movie watchlist"
-msgstr ""
+msgstr "영화 관심 목록"
 
 #: /xml/DialogFavourites.xml
 msgctxt "#31408"
 msgid "TV show watchlist"
-msgstr ""
+msgstr "TV 프로그램 관심 목록"
 
 #: /xml/Embuary_Set_View_56.xml
 msgctxt "#31409"
 msgid "Favourite"
-msgstr ""
+msgstr "즐겨찾기"
 
 #: /xml/Embuary_MetaIncludes.xml
 msgctxt "#31410"
 msgid "Disabled auto updating"
-msgstr ""
+msgstr "자동 업데이트 사용 안 함"
 
 #: /xml/Custom_1119_StartUp.xml
 msgctxt "#31411"
 msgid "OK, add found to whitelist"
-msgstr ""
+msgstr "확인, 찾은 태그를 허용 목록에 추가"
 
 #: /xml/DialogButtonMenu.xml
 msgctxt "#31412"
 msgid "Restart Kodi"
-msgstr ""
+msgstr "Kodi 다시 시작"
 
 #: /xml/Embuary_Variables.xml
 msgctxt "#31413"
 msgid "Media importer"
-msgstr ""
+msgstr "미디어 가져오기"
 
 #: /xml/DialogMediaImportInfo.xml
 msgctxt "#31414"
 msgid "Sync options"
-msgstr ""
+msgstr "동기화 옵션"
 
 #: /xml/DialogMediaImportInfo.xml
 msgctxt "#31415"
 msgid "Provider"
-msgstr ""
+msgstr "제공자"
 
 #: /xml/DialogMediaImportInfo.xml
 msgctxt "#31416"
 msgid "Media type"
-msgstr ""
+msgstr "미디어 유형"
 
 msgctxt "#31500"
 msgid "Display mode"
-msgstr ""
+msgstr "표시 모드"
 
 msgctxt "#31501"
 msgid "Video mode"
-msgstr ""
+msgstr "비디오 모드"
 
 msgctxt "#31502"
 msgid "Color space"
-msgstr ""
+msgstr "색 공간"
 
 msgctxt "#31503"
 msgid "Mb/s"
-msgstr ""
+msgstr "Mb/s"
 
 msgctxt "#31504"
 msgid "Bit depth"
-msgstr ""
+msgstr "비트 심도"
 
 msgctxt "#31505"
 msgid "Decoder"
-msgstr ""
+msgstr "디코더"
 
 msgctxt "#31506"
 msgid "VS10 engine"
-msgstr ""
+msgstr "VS10 엔진"
 
 msgctxt "#31507"
 msgid "More"
-msgstr ""
+msgstr "더 보기"
 
 msgctxt "#31508"
 msgid "Video queue"
-msgstr ""
+msgstr "비디오 대기열"
 
 msgctxt "#31509"
 msgid "Video queue data"
-msgstr ""
+msgstr "비디오 대기열 데이터"
 
 msgctxt "#31510"
 msgid "Audio queue"
-msgstr ""
+msgstr "오디오 대기열"
 
 msgctxt "#31511"
 msgid "Audio queue data"
-msgstr ""
+msgstr "오디오 대기열 데이터"
 
 msgctxt "#31512"
 msgid "Kb/s"
-msgstr ""
+msgstr "Kb/s"
 
 msgctxt "#31513"
 msgid "Playback progress"
-msgstr ""
+msgstr "재생 진행률"
 
 msgctxt "#31514"
 msgid "Processor"
-msgstr ""
+msgstr "프로세서"
 
 msgctxt "#31515"
 msgid "Version"
-msgstr ""
+msgstr "버전"
 
 msgctxt "#31516"
 msgid "Profile"
-msgstr ""
+msgstr "프로필"
 
 msgctxt "#31517"
 msgid "Level"
-msgstr ""
+msgstr "레벨"
 
 msgctxt "#31518"
 msgid "RPU"
-msgstr ""
+msgstr "RPU"
 
 msgctxt "#31519"
 msgid "Base Layer"
-msgstr ""
+msgstr "기본 레이어"
 
 msgctxt "#31520"
 msgid "Enhancement Layer"
-msgstr ""
+msgstr "향상 레이어"
 
 msgctxt "#31521"
 msgid "Enhancement Layer Type"
-msgstr ""
+msgstr "향상 레이어 유형"
 
 msgctxt "#31522"
 msgid "Metadata"
-msgstr ""
+msgstr "메타데이터"
 
 msgctxt "#31523"
 msgid "Pixel format"
-msgstr ""
+msgstr "픽셀 형식"
 
 msgctxt "#31524"
 msgid "Aspect ratio"
-msgstr ""
+msgstr "화면비"
 
 msgctxt "#31525"
 msgid "HDR10 MDL"
-msgstr ""
+msgstr "HDR10 MDL"
 
 msgctxt "#31526"
 msgid "HDR10 MaxCLL/FALL"
-msgstr ""
+msgstr "HDR10 MaxCLL/FALL"
 
 msgctxt "#31527"
 msgid "Media source"
-msgstr ""
+msgstr "미디어 소스"
 
 msgctxt "#31528"
 msgid "Unknown"
-msgstr ""
+msgstr "알 수 없음"
 
 msgctxt "#31529"
 msgid "On"
-msgstr ""
+msgstr "켜짐"
 
 msgctxt "#31530"
 msgid "Off"
-msgstr ""
+msgstr "꺼짐"
 
 msgctxt "#31531"
 msgid "Deinterlacing"
-msgstr ""
+msgstr "디인터레이싱"
 
 msgctxt "#31532"
 msgid "Player cache"
-msgstr ""
+msgstr "플레이어 캐시"
 
 msgctxt "#31533"
 msgid "N/A"
-msgstr ""
+msgstr "해당 없음"
 
 msgctxt "#31534"
 msgid "Memory usage"
-msgstr ""
+msgstr "메모리 사용량"
 
 msgctxt "#31535"
 msgid "Bit depth"
-msgstr ""
+msgstr "비트 심도"
 
 msgctxt "#31536"
 msgid "AML FPS"
-msgstr ""
+msgstr "AML FPS"
 
 msgctxt "#31537"
 msgid "DV Configuration"
-msgstr ""
+msgstr "DV 구성"
 
 msgctxt "#31538"
 msgid "DV Levels Metadata"
-msgstr ""
+msgstr "DV 레벨 메타데이터"
 
 msgctxt "#31539"
 msgid "HDR Static Metadata"
-msgstr ""
+msgstr "HDR 정적 메타데이터"
 
 msgctxt "#31540"
 msgid "cd/m²"
-msgstr ""
+msgstr "cd/m²"
 
 msgctxt "#31541"
 msgid "RPU MDL"
-msgstr ""
+msgstr "RPU MDL"
 
 msgctxt "#31542"
 msgid "RPU MaxCLL/FALL"
-msgstr ""
+msgstr "RPU MaxCLL/FALL"
 
 msgctxt "#31543"
 msgid "FLL MIN / MAX / Ø"
-msgstr ""
+msgstr "FLL 최소 / 최대 / Ø"
 
 msgctxt "#31544"
 msgid "PQ  MIN / MAX / Ø"
-msgstr ""
+msgstr "PQ 최소 / 최대 / Ø"
 
 msgctxt "#31545"
 msgid "12-bit"
-msgstr ""
+msgstr "12비트"
 
 msgctxt "#31546"
 msgid "Codec"
-msgstr ""
+msgstr "코덱"
 
 msgctxt "#31547"
 msgid "Bitrate"
-msgstr ""
+msgstr "비트레이트"
 
 msgctxt "#31548"
 msgid "VS10 status"
-msgstr ""
+msgstr "VS10 상태"
 
 msgctxt "#31551"
 msgid "Sample rate"
-msgstr ""
+msgstr "샘플링 레이트"
 
 msgctxt "#31552"
 msgid "Audio language"
-msgstr ""
+msgstr "오디오 언어"
 
 msgctxt "#31553"
 msgid "Subtitle language"
-msgstr ""
+msgstr "자막 언어"
 
 msgctxt "#31554"
 msgid "Video"
-msgstr ""
+msgstr "비디오"
 
 msgctxt "#31555"
 msgid "System"
-msgstr ""
+msgstr "시스템"
 
 msgctxt "#31556"
 msgid "Audio"
-msgstr ""
+msgstr "오디오"
 
 msgctxt "#31557"
 msgid "Top left"
-msgstr ""
+msgstr "왼쪽 위"
 
 msgctxt "#31558"
 msgid "Top center"
-msgstr ""
+msgstr "위쪽 가운데"
 
 msgctxt "#31559"
 msgid "Top right"
-msgstr ""
+msgstr "오른쪽 위"
 
 msgctxt "#31560"
 msgid "Position of the codec logos in the OSD"
-msgstr ""
+msgstr "OSD의 코덱 로고 위치"
 
 msgctxt "#31561"
 msgid "Position of the codec logos in the PlayerProcessInfo"
-msgstr ""
+msgstr "PlayerProcessInfo의 코덱 로고 위치"
 
 msgctxt "#31562"
 msgid "Show codec logos when video starts"
-msgstr ""
+msgstr "비디오 시작 시 코덱 로고 표시"
 
 msgctxt "#31563"
 msgid "Codec logos"
-msgstr ""
+msgstr "코덱 로고"
 
 msgctxt "#31564"
 msgid "Original"
-msgstr ""
+msgstr "원본"
 
 msgctxt "#31565"
 msgid "VS10 mode"
-msgstr ""
+msgstr "VS10 모드"
 
 msgctxt "#31566"
 msgid "Coloured title lines in PlayerProcessInfo"
-msgstr ""
+msgstr "PlayerProcessInfo에 색상 제목 줄 사용"
 
 msgctxt "#31567"
 msgid "L5 Active Offsets"
-msgstr ""
+msgstr "L5 활성 오프셋"
 
 msgctxt "#31568"
 msgid "Version"
-msgstr ""
+msgstr "버전"
 
 msgctxt "#31569"
 msgid "Bit depth"
-msgstr ""
+msgstr "비트 심도"
 
 msgctxt "#31570"
 msgid "EOTF & Gamut"
-msgstr ""
+msgstr "EOTF 및 색 영역"
 
 msgctxt "#31571"
 msgid "Duration of the codec logos when video starts"
-msgstr ""
+msgstr "비디오 시작 시 코덱 로고 표시 시간"
 
 msgctxt "#31572"
 msgid "Standard"
-msgstr ""
+msgstr "표준"
 
 msgctxt "#31575"
 msgid "second"
-msgstr ""
+msgstr "초"
 
 msgctxt "#31576"
 msgid "seconds"
-msgstr ""
+msgstr "초"
 
 msgctxt "#31900"
 msgid "Next Episode"
-msgstr ""
+msgstr "다음 에피소드"
 
 msgctxt "#31901"
 msgid "Previous Episode"
-msgstr ""
+msgstr "이전 에피소드"
 
 msgctxt "#31902"
 msgid "Codec Logo Style"
-msgstr ""
+msgstr "코덱 로고 스타일"
 
 msgctxt "#31903"
 msgid "Codec Logo Size"
-msgstr ""
+msgstr "코덱 로고 크기"
 
 msgctxt "#31904"
 msgid "Show Codec Logo Background"
-msgstr ""
+msgstr "코덱 로고 배경 표시"
 
 msgctxt "#31905"
 msgid "Codec Logo Flag-Style"
-msgstr ""
+msgstr "코덱 로고 플래그 스타일"
 
 msgctxt "#31906"
 msgid "Favourites View:"
-msgstr ""
+msgstr "즐겨찾기 보기:"
 
 msgctxt "#31907"
 msgid "vertical"
-msgstr ""
+msgstr "세로"
 
 msgctxt "#31908"
 msgid "horizontal"
-msgstr ""
+msgstr "가로"
 
 msgctxt "#31909"
 msgid "Select Favourites Category"
-msgstr ""
+msgstr "즐겨찾기 범주 선택"
 
 msgctxt "#31910"
 msgid "Play"
-msgstr ""
+msgstr "재생"
 
 msgctxt "#31911"
 msgid "Remove from Favourites"
-msgstr ""
+msgstr "즐겨찾기에서 제거"
 
 msgctxt "#31912"
 msgid "Cancel"
-msgstr ""
+msgstr "취소"
 
 msgctxt "#31913"
 msgid "Favourite removed"
-msgstr ""
+msgstr "즐겨찾기에서 제거됨"
 
 msgctxt "#31914"
 msgid "No favourites found"
-msgstr ""
+msgstr "즐겨찾기를 찾을 수 없음"
 
 msgctxt "#31915"
 msgid "No recognisable favourites found"
-msgstr ""
+msgstr "인식 가능한 즐겨찾기를 찾을 수 없음"
 
 msgctxt "#31916"
 msgid "Select action"
-msgstr ""
+msgstr "동작 선택"
 
 msgctxt "#31917"
 msgid "standard"
-msgstr ""
+msgstr "표준"
 
 msgctxt "#31918"
 msgid "Show Logo Separator"
-msgstr ""
+msgstr "로고 구분선 표시"
 
 msgctxt "#31919"
 msgid "Collection"
-msgstr "Collection"
+msgstr "컬렉션"
 
 msgctxt "#31920"
 msgid "Show Codec Info Overlay"
-msgstr ""
+msgstr "코덱 정보 오버레이 표시"
 
+msgctxt "#31921"
+msgid "External search"
+msgstr "외부 검색"
+
+msgctxt "#31922"
+msgid "Open add-on"
+msgstr "추가 기능 열기"
+
+msgctxt "#31923"
+msgid "Media importer settings"
+msgstr "미디어 가져오기 설정"
+
+msgctxt "#31924"
+msgid "Search externally"
+msgstr "외부에서 검색"

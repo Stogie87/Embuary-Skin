@@ -1,0 +1,2496 @@
+# XBMC Media Center language file
+# Addon Name: embuary
+# Addon id: skin.embuary
+# Addon Provider: sualfred
+# Translators:
+msgid ""
+msgstr ""
+"Project-Id-Version: skin.ftv pvr mod\n"
+"Report-Msgid-Bugs-To: http://trac.xbmc.org/\n"
+"POT-Creation-Date: 2026-07-16 00:00+0200\n"
+"PO-Revision-Date: 2016-02-26 13:31+0000\n"
+"Last-Translator: sualfred <su4lfred@gmail.com>\n"
+"Language-Team: Lithuanian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: lt_LT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7\n"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31000"
+msgid "Home"
+msgstr "Pagrindinis"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31001"
+msgid "Misc."
+msgstr "Įvairūs"
+
+#: /xml/MyVideoNav.xml
+msgctxt "#31002"
+msgid "More like this"
+msgstr "Daugiau panašių"
+
+#: /xml/DialogKeyboard.xml
+msgctxt "#31003"
+msgid "Suggestions"
+msgstr "Pasiūlymai"
+
+#: /xml/Embuary_Wide_View_50.xml
+msgctxt "#31004"
+msgid "Wide"
+msgstr "Platus"
+
+#: /xml/Embuary_Square_View_52.xml
+msgctxt "#31005"
+msgid "Square"
+msgstr "Kvadratinis"
+
+#: /xml/Embuary_Season_View_54.xml
+msgctxt "#31006"
+msgid "Season"
+msgstr "Sezonas"
+
+#: /xml/Embuary_Episode_View_55.xml
+msgctxt "#31007"
+msgid "Episode"
+msgstr "Serija"
+
+#: /xml/MyVideoNav.xml
+msgctxt "#31008"
+msgid "Filter-String"
+msgstr "Filtro tekstas"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31009"
+msgid "Watch again"
+msgstr "Žiūrėti dar kartą"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31010"
+msgid "Watch now"
+msgstr "Žiūrėti dabar"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31011"
+msgid "Browse TV show"
+msgstr "Naršyti serialą"
+
+#: /xml/Embuary_InfoDialog.xml
+msgctxt "#31012"
+msgid "Next up"
+msgstr "Toliau"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31013"
+msgid "Browse season"
+msgstr "Naršyti sezoną"
+
+#: /xml/Embuary_Season_View_54.xml
+msgctxt "#31014"
+msgid "Info dialog"
+msgstr "Informacijos langas"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31015"
+msgid "Holiday themes"
+msgstr "Šventinės temos"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31016"
+msgid "Enable widget bounce animation on focus"
+msgstr "Įjungti valdiklio šoktelėjimo animaciją gavus fokusą"
+
+#: /xml/Custom_1121_TVShowHub.xml
+msgctxt "#31017"
+msgid "Recommended"
+msgstr "Rekomenduojama"
+
+#: /xml/Custom_1121_TVShowHub.xml
+msgctxt "#31018"
+msgid "Because you watched"
+msgstr "Nes žiūrėjote"
+
+#: /xml/MyPVRChannels.xml
+msgctxt "#31019"
+msgid "Show hidden"
+msgstr "Rodyti paslėptus"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31020"
+msgid "Tune in"
+msgstr "Perjungti kanalą"
+
+#: /xml/DialogPVRInfo.xml
+msgctxt "#31021"
+msgid "Similar titles"
+msgstr "Panašūs pavadinimai"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31022"
+msgid "Encrypted channel"
+msgstr "Šifruotas kanalas"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31023"
+msgid "Recording active"
+msgstr "Įrašymas aktyvus"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31024"
+msgid "Timer active"
+msgstr "Laikmatis aktyvus"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31025"
+msgid "Repeating timer"
+msgstr "Pasikartojantis laikmatis"
+
+#: /xml/Custom_1122_MusicHub.xml
+msgctxt "#31026"
+msgid "All music"
+msgstr "Visa muzika"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31027"
+msgid "Custom shortcuts"
+msgstr "Pasirinktiniai spartieji klavišai"
+
+#: /xml/Custom_1120_MovieHub.xml
+msgctxt "#31028"
+msgid "Menu configuration"
+msgstr "Meniu konfigūracija"
+
+#: /xml/Custom_1122_MusicHub.xml
+msgctxt "#31029"
+msgid "Music library"
+msgstr "Muzikos biblioteka"
+
+#: /xml/Custom_1124_PVRHub.xml
+msgctxt "#31030"
+msgid "Last tuned channels"
+msgstr "Vėliausiai pasirinkti kanalai"
+
+#: /xml/MyPVRRecordings.xml
+msgctxt "#31031"
+msgid "Folder structure"
+msgstr "Aplankų struktūra"
+
+#: /xml/MyPVRRecordings.xml
+msgctxt "#31032"
+msgid "Show deleted"
+msgstr "Rodyti ištrintus"
+
+#: /xml/DialogAddonInfo.xml
+msgctxt "#31033"
+msgid "Creator"
+msgstr "Kūrėjas"
+
+#: /xml/DialogAddonInfo.xml
+msgctxt "#31034"
+msgid "Full description"
+msgstr "Visas aprašas"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31035"
+msgid "Add-on broken"
+msgstr "Priedas sugadintas"
+
+#: /xml/SettingsCategory.xml
+msgctxt "#31036"
+msgid "Settings mode"
+msgstr "Nustatymų režimas"
+
+#: /xml/VideoOSD.xml
+msgctxt "#31037"
+msgid "Ends at"
+msgstr "Baigiasi"
+
+#: /xml/VideoOSD.xml
+msgctxt "#31038"
+msgid "Timeshift"
+msgstr "Laiko poslinkis"
+
+#: /xml/VideoOSD.xml
+msgctxt "#31039"
+msgid "Audio settings"
+msgstr "Garso nustatymai"
+
+#: /xml/VideoOSD.xml
+msgctxt "#31040"
+msgid "Subtitle settings"
+msgstr "Subtitrų nustatymai"
+
+#: /xml/VideoOSD.xml
+msgctxt "#31041"
+msgid "Stats for nerds"
+msgstr "Išsami statistika"
+
+#: /xml/Custom_1124_PVRHub.xml
+msgctxt "#31042"
+msgid "Live TV"
+msgstr "Tiesioginė TV"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31043"
+msgid "Muted"
+msgstr "Nutildyta"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31044"
+msgid "Parent folder"
+msgstr "Viršutinis aplankas"
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31045"
+msgid "Memory usage"
+msgstr "Atminties naudojimas"
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31046"
+msgid "Video decoder"
+msgstr "Vaizdo dekoderis"
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31047"
+msgid "Pixel format"
+msgstr "Pikselių formatas"
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31048"
+msgid "Deinterlacing method"
+msgstr "Išpynimo metodas"
+
+#: /xml/DialogPlayerProcessInfo.xml
+msgctxt "#31049"
+msgid "Frames per second"
+msgstr "Kadrų per sekundę"
+
+#: /xml/script-globalsearch-main.xml
+msgctxt "#31050"
+msgid "Movies containing the actor"
+msgstr "Filmai su šiuo aktoriumi"
+
+#: /xml/script-globalsearch-main.xml
+msgctxt "#31051"
+msgid "Movies containing the director"
+msgstr "Šio režisieriaus filmai"
+
+#: /xml/script-globalsearch-main.xml
+msgctxt "#31052"
+msgid "New search"
+msgstr "Nauja paieška"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31053"
+msgid "Once"
+msgstr "Vieną kartą"
+
+#: /xml/MusicOSD.xml
+msgctxt "#31054"
+msgid "Visualisation presets"
+msgstr "Vizualizacijos išankstiniai nustatymai"
+
+#: /xml/MusicOSD.xml
+msgctxt "#31055"
+msgid "Visualisation settings"
+msgstr "Vizualizacijos nustatymai"
+
+#: /xml/MusicOSD.xml
+msgctxt "#31056"
+msgid "Randomise fanart"
+msgstr "Atsitiktinis fanart"
+
+#: /xml/DialogFavourites.xml
+msgctxt "#31057"
+msgid "Number of favourites"
+msgstr "Mėgstamų skaičius"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31058"
+msgid "Embuary settings"
+msgstr "Embuary nustatymai"
+
+#: /xml/DialogPVRChannelManager.xml
+msgctxt "#31059"
+msgid "Toggle TV / radio"
+msgstr "Perjungti TV / radiją"
+
+#: /xml/SmartPlaylistEditor.xml
+msgctxt "#31060"
+msgid "Rules"
+msgstr "Taisyklės"
+
+#: /xml/SmartPlaylistEditor.xml
+msgctxt "#31061"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr "Nustatykite tipą ir pridėkite taisykles išmaniajam grojaraščiui sukurti. Šie grojaraščiai yra dinaminiai ir apima visus duomenų bazės medijos elementus, atitinkančius pasirinktas taisykles."
+
+#: /xml/DialogFavourites.xml
+msgctxt "#31062"
+msgid "Favourite movies"
+msgstr "Mėgstami filmai"
+
+#: /xml/DialogFavourites.xml
+msgctxt "#31063"
+msgid "Kodi favourites"
+msgstr "Kodi mėgstami"
+
+#: /xml/DialogFavourites.xml
+msgctxt "#31064"
+msgid "Favourite TV shows"
+msgstr "Mėgstami serialai"
+
+#: /xml/DialogFavourites.xml
+msgctxt "#31065"
+msgid "Favourite episodes"
+msgstr "Mėgstamos serijos"
+
+#: /xml/MyWeather.xml
+msgctxt "#31066"
+msgid "Location"
+msgstr "Vieta"
+
+#: /xml/MyMusicPlaylistEditor.xml
+msgctxt "#31067"
+msgid "Load"
+msgstr "Įkelti"
+
+#: /xml/MyMusicPlaylistEditor.xml
+msgctxt "#31068"
+msgid "Number of tracks in current playlist"
+msgstr "Takelių skaičius dabartiniame grojaraštyje"
+
+#: /xml/Embuary_Season_View_54.xml
+msgctxt "#31069"
+msgid "Back"
+msgstr "Atgal"
+
+#: /xml/DialogPVRChannelsOSD.xml
+msgctxt "#31070"
+msgid "Channel group"
+msgstr "Kanalų grupė"
+
+#: /xml/VideoOSD.xml
+msgctxt "#31071"
+msgid "Channel guide"
+msgstr "Programų gidas"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31072"
+msgid "Local search"
+msgstr "Vietinė paieška"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31073"
+msgid "EmbyCon: Search for movies"
+msgstr "EmbyCon: ieškoti filmų"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31074"
+msgid "EmbyCon: Search for TV shows"
+msgstr "EmbyCon: ieškoti serialų"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31075"
+msgid "EmbyCon: Search for episodes"
+msgstr "EmbyCon: ieškoti serijų"
+
+#: /xml/Custom_1110_testwindow.xml
+msgctxt "#31076"
+msgid "Stop playback"
+msgstr "Stabdyti atkūrimą"
+
+#: /xml/script-nextup-notification-PostPlayInfo.xml
+msgctxt "#31077"
+msgid "seconds"
+msgstr "sekundės"
+
+#: /xml/script-nextup-notification-PostPlayInfo.xml
+msgctxt "#31078"
+msgid "Playback starts in"
+msgstr "Atkūrimas prasidės po"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31079"
+msgid "Next episode"
+msgstr "Kita serija"
+
+#: /xml/Home.xml
+msgctxt "#31080"
+msgid "Continue watching"
+msgstr "Tęsti žiūrėjimą"
+
+#: /xml/Home.xml
+msgctxt "#31081"
+msgid "Recently updated TV shows"
+msgstr "Neseniai atnaujinti serialai"
+
+#: /xml/Custom_1124_PVRHub.xml
+msgctxt "#31082"
+msgid "Last tuned radio channels"
+msgstr "Vėliausiai pasirinktos radijo stotys"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31083"
+msgid "Widgets"
+msgstr "Valdikliai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31084"
+msgid "Show custom shortcuts in Emby nodes"
+msgstr "Rodyti pasirinktinius sparčiuosius klavišus Emby mazguose"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31085"
+msgid "Show EmbyCon source label"
+msgstr "Rodyti EmbyCon šaltinio žymą"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31086"
+msgid "Default widgets"
+msgstr "Numatytieji valdikliai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31087"
+msgid "Show fanarts in the background"
+msgstr "Rodyti fanart foną"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31088"
+msgid "Show video playback in the background"
+msgstr "Rodyti atkuriamą vaizdą fone"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31089"
+msgid "minutes"
+msgstr "minutės"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31090"
+msgid "minute"
+msgstr "minutė"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31091"
+msgid "Welcome to Embuary"
+msgstr "Sveiki atvykę į Embuary"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31092"
+msgid "This skin is designed to simulate the web gui experience of Emby. In order to get everything running as it should, it's recommended to set the following Kodi options:"
+msgstr "Ši išvaizda sukurta taip, kad primintų Emby žiniatinklio sąsają. Kad viskas veiktų tinkamai, rekomenduojama nustatyti šias Kodi parinktis:"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31093"
+msgid "OK, do it for me"
+msgstr "Gerai, nustatyti automatiškai"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31094"
+msgid "No, I'll keep my config"
+msgstr "Ne, paliksiu savo konfigūraciją"
+
+#: /xml/Embuary_HeaderBar.xml
+msgctxt "#31095"
+msgid "Pause playback"
+msgstr "Pristabdyti atkūrimą"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31096"
+msgid "Resume playback"
+msgstr "Tęsti atkūrimą"
+
+#: /xml/Custom_1120_MovieHub.xml
+msgctxt "#31097"
+msgid "Movies in the Top 250"
+msgstr "Filmai Top 250 sąraše"
+
+#: /xml/Custom_1121_TVShowHub.xml
+msgctxt "#31098"
+msgid "TV shows in the Top 250"
+msgstr "Serialai Top 250 sąraše"
+
+#: /xml/Embuary_Widgets.xml
+msgctxt "#31099"
+msgid "Widget layout"
+msgstr "Valdiklio išdėstymas"
+
+#: /xml/Embuary_Widgets.xml
+msgctxt "#31100"
+msgid "Position"
+msgstr "Padėtis"
+
+#: /xml/Embuary_Widgets.xml
+msgctxt "#31101"
+msgid "Layout"
+msgstr "Išdėstymas"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31102"
+msgid "Background settings"
+msgstr "Fono nustatymai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31103"
+msgid "Widget settings"
+msgstr "Valdiklių nustatymai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31104"
+msgid "Use own static background image"
+msgstr "Naudoti savo statinį fono vaizdą"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31105"
+msgid "Change background, header and other misc. settings of Embuary."
+msgstr "Keiskite Embuary foną, antraštės juostą ir kitus nustatymus."
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31106"
+msgid "Configure home & side panel menu items and general widget limitations."
+msgstr "Konfigūruokite pagrindinio lango ir šoninio skydelio meniu elementus bei bendrus valdiklių apribojimus."
+
+#: /xml/Custom_1111_PositionItemSelector.xml
+msgctxt "#31107"
+msgid "Select content"
+msgstr "Pasirinkti turinį"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31108"
+msgid "Event log"
+msgstr "Įvykių žurnalas"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31109"
+msgid "Header bar"
+msgstr "Antraštės juosta"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31110"
+msgid "Show current temperature (if available)"
+msgstr "Rodyti dabartinę temperatūrą (jei pasiekiama)"
+
+#: /xml/Embuary_HeaderBar.xml
+msgctxt "#31111"
+msgid "Change location"
+msgstr "Keisti vietą"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31112"
+msgid "Kiosk mode"
+msgstr "Kiosko režimas"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31113"
+msgid "Show button to change the EmbyCon user"
+msgstr "Rodyti EmbyCon naudotojo keitimo mygtuką"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31114"
+msgid "Show update library button"
+msgstr "Rodyti bibliotekos atnaujinimo mygtuką"
+
+#: /xml/AddonBrowser.xml
+msgctxt "#31115"
+msgid "Switch to file mode"
+msgstr "Perjungti į failų režimą"
+
+#: /xml/AddonBrowser.xml
+msgctxt "#31116"
+msgid "Unlock shares"
+msgstr "Atrakinti bendrinamus išteklius"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31117"
+msgid "Replace device name in the header bar"
+msgstr "Pakeisti įrenginio pavadinimą antraštės juostoje"
+
+#: /xml/Custom_1121_TVShowHub.xml
+msgctxt "#31118"
+msgid "EmbyCon sources"
+msgstr "EmbyCon šaltiniai"
+
+#: /xml/DialogPVRChannelsOSD.xml
+msgctxt "#31119"
+msgid "Previous group"
+msgstr "Ankstesnė grupė"
+
+#: /xml/DialogPVRChannelsOSD.xml
+msgctxt "#31120"
+msgid "Next group"
+msgstr "Kita grupė"
+
+#: /xml/MusicVisualisation.xml
+msgctxt "#31121"
+msgid "Rewinding"
+msgstr "Atsukama"
+
+#: /xml/MusicVisualisation.xml
+msgctxt "#31122"
+msgid "Forwarding"
+msgstr "Persukama pirmyn"
+
+#: /xml/PlayerControls.xml
+msgctxt "#31123"
+msgid "Show playlist"
+msgstr "Rodyti grojaraštį"
+
+#: /xml/Settings.xml
+msgctxt "#31124"
+msgid "LibreELEC"
+msgstr "LibreELEC"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31125"
+msgid "Custom widgets"
+msgstr "Pasirinktiniai valdikliai"
+
+#: /xml/MyPics.xml
+msgctxt "#31126"
+msgid "Randomise slideshow"
+msgstr "Atsitiktinė skaidrių demonstravimo tvarka"
+
+#: /xml/Custom_1112_MainMenuReset.xml
+msgctxt "#31127"
+msgid "Restored default widgets"
+msgstr "Numatytieji valdikliai atkurti"
+
+#: /xml/AddonBrowser.xml
+msgctxt "#31128"
+msgid "Hide broken addons"
+msgstr "Slėpti sugedusius priedus"
+
+#: /xml/Custom_1123_AddonHub.xml
+msgctxt "#31129"
+msgid "Update local addons"
+msgstr "Atnaujinti vietinius priedus"
+
+#: /xml/script-nextup-notification-StillWatchingInfo.xml
+msgctxt "#31130"
+msgid "Still watching?"
+msgstr "Ar vis dar žiūrite?"
+
+#: /xml/Custom_1118_ct.xml
+msgctxt "#31131"
+msgid "Attention"
+msgstr "Dėmesio"
+
+#: /xml/Custom_1118_ct.xml
+msgctxt "#31132"
+msgid "It seems that you have one ore more blacklisted plugins installed. This skin has been designed for a legal usage of Kodi and I - and all the other skin contributers - do not want be associated with such tools. Please check the kodi.tv community if you need any assistance to remove them."
+msgstr "Atrodo, kad įdiegtas vienas ar keli į juodąjį sąrašą įtraukti papildiniai. Ši išvaizda skirta teisėtam Kodi naudojimui, todėl nei autorius, nei kiti bendradarbiai nenori būti siejami su tokiais įrankiais. Pagalbos juos pašalinant ieškokite kodi.tv bendruomenėje."
+
+#: /xml/AddonBrowser.xml
+msgctxt "#31133"
+msgid "Language filter"
+msgstr "Kalbos filtras"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31134"
+msgid "Side panel"
+msgstr "Šoninis skydelis"
+
+#: /xml/DialogAddonSettings.xml
+msgctxt "#31135"
+msgid "Restore defaults"
+msgstr "Atkurti numatytuosius"
+
+#: /xml/DialogAddonSettings.xml
+msgctxt "#31136"
+msgid "Setting changes are only applied after saving"
+msgstr "Nustatymų pakeitimai pritaikomi tik išsaugojus"
+
+#: /xml/script-embuary-video.xml
+msgctxt "#31137"
+msgid "Awards"
+msgstr "Apdovanojimai"
+
+#: /xml/script-embuary-video.xml
+msgctxt "#31138"
+msgid "Retail release"
+msgstr "Mažmeninis leidimas"
+
+#: /xml/DialogAddonSettings.xml
+msgctxt "#31139"
+msgid "Do you want to apply unsaved changes?"
+msgstr "Taikyti neišsaugotus pakeitimus?"
+
+#: /xml/DialogAddonSettings.xml
+msgctxt "#31140"
+msgid "Add-on settings not saved"
+msgstr "Priedo nustatymai neišsaugoti"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31141"
+msgid "Rumored"
+msgstr "Gandai"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31142"
+msgid "Planned"
+msgstr "Planuojama"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31143"
+msgid "In production"
+msgstr "Gaminama"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31144"
+msgid "Post production"
+msgstr "Baigiamieji darbai"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31145"
+msgid "Released"
+msgstr "Išleista"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31146"
+msgid "Canceled"
+msgstr "Atšaukta"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31147"
+msgid "Returning series"
+msgstr "Tęsiamas serialas"
+
+#: /xml/DialogSubtitles.xml
+msgctxt "#31148"
+msgid "Available sutbtitles"
+msgstr "Galimi subtitrai"
+
+#: /xml/DialogSubtitles.xml
+msgctxt "#31149"
+msgid "Installed subtitle services"
+msgstr "Įdiegtos subtitrų paslaugos"
+
+#: /xml/DialogSubtitles.xml
+msgctxt "#31150"
+msgid "Local subtitles are available for this video."
+msgstr "Šiam vaizdo įrašui yra vietinių subtitrų."
+
+#: /xml/Embuary_Widgets.xml
+msgctxt "#31151"
+msgid "Nr."
+msgstr "Nr."
+
+#: /xml/SkinSettings.xml
+msgctxt "#31152"
+msgid "Hub shortcuts"
+msgstr "Centro spartieji klavišai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31153"
+msgid "Hide widgets and use fullscreen panel layout for the main menu"
+msgstr "Slėpti valdiklius ir pagrindiniam meniu naudoti viso ekrano skydelio išdėstymą"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31154"
+msgid "Next aired"
+msgstr "Kita transliacija"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31155"
+msgid "Show library item edit buttons in info dialogs"
+msgstr "Informacijos languose rodyti bibliotekos elemento redagavimo mygtukus"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31156"
+msgid "No further program information available"
+msgstr "Daugiau programos informacijos nėra"
+
+#: /xml/Custom_1115_Search.xml
+msgctxt "#31157"
+msgid "Persons named"
+msgstr "Asmenys vardu"
+
+#: /shortcuts/mainmenu.DATA.xml
+msgctxt "#31158"
+msgid "Custom item"
+msgstr "Pasirinktinis elementas"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31159"
+msgid "No label"
+msgstr "Be etiketės"
+
+#: /shortcuts/moviehub.DATA.xml
+msgctxt "#31160"
+msgid "Movies - EmbyCon"
+msgstr "Filmai — EmbyCon"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31161"
+msgid "Free receivable channel"
+msgstr "Nemokamas nekoduotas kanalas"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31162"
+msgid "Searching for updates"
+msgstr "Ieškoma naujinimų"
+
+#: /xml/DialogPVRGroupManager.xml
+msgctxt "#31163"
+msgid "Unmapped channels"
+msgstr "Nesusieti kanalai"
+
+#: /xml/DialogPVRGroupManager.xml
+msgctxt "#31164"
+msgid "Mapped channels"
+msgstr "Susieti kanalai"
+
+#: /xml/DialogPVRGroupManager.xml
+msgctxt "#31165"
+msgid "Delete group"
+msgstr "Trinti grupę"
+
+#: /xml/DialogPVRGroupManager.xml
+msgctxt "#31166"
+msgid "Add group"
+msgstr "Pridėti grupę"
+
+#: /xml/DialogPVRGroupManager.xml
+msgctxt "#31167"
+msgid "Rename group"
+msgstr "Pervadinti grupę"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31168"
+msgid "Show music videos button"
+msgstr "Rodyti muzikinių vaizdo įrašų mygtuką"
+
+#: /xml/Custom_1120_MovieHub.xml
+msgctxt "#31169"
+msgid "Collections"
+msgstr "Kolekcijos"
+
+#: /xml/script-embuary-person.xml
+msgctxt "#31170"
+msgid "Place of birth"
+msgstr "Gimimo vieta"
+
+#: /xml/script-embuary-person.xml
+msgctxt "#31171"
+msgid "Age"
+msgstr "Amžius"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31172"
+msgid "TV show hub"
+msgstr "Serialų centras"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31173"
+msgid "Movie hub"
+msgstr "Filmų centras"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31174"
+msgid "Music hub"
+msgstr "Muzikos centras"
+
+#: /xml/Custom_1145_PlaylistSelect.xml
+msgctxt "#31175"
+msgid "Video playlist"
+msgstr "Vaizdo grojaraštis"
+
+#: /xml/Custom_1145_PlaylistSelect.xml
+msgctxt "#31176"
+msgid "Music playlist"
+msgstr "Muzikos grojaraštis"
+
+#: /xml/MusicOSD.xml
+msgctxt "#31177"
+msgid "Disc art"
+msgstr "Disko iliustracija"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31178"
+msgid "Custom menu entries"
+msgstr "Pasirinktiniai meniu įrašai"
+
+#: /xml/Embuary_HeaderBar.xml
+msgctxt "#31179"
+msgid "All TV shows"
+msgstr "Visi serialai"
+
+#: /xml/Embuary_HeaderBar.xml
+msgctxt "#31180"
+msgid "All movies"
+msgstr "Visi filmai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31181"
+msgid "Emby node"
+msgstr "Emby mazgas"
+
+#: /xml/Embuary_TagHubIncludes.xml
+msgctxt "#31182"
+msgid "Recommended TV shows"
+msgstr "Rekomenduojami serialai"
+
+#: /xml/Custom_1130_Emby0Hub.xml
+msgctxt "#31183"
+msgid "Recommended movies"
+msgstr "Rekomenduojami filmai"
+
+#: /xml/Custom_1130_Emby0Hub.xml
+msgctxt "#31184"
+msgid "Random movies"
+msgstr "Atsitiktiniai filmai"
+
+#: /xml/Embuary_TagHubIncludes.xml
+msgctxt "#31185"
+msgid "Random TV shows"
+msgstr "Atsitiktiniai serialai"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31186"
+msgid "Emby stream"
+msgstr "Emby srautas"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31187"
+msgid "Home videos & photos"
+msgstr "Namų vaizdo įrašai ir nuotraukos"
+
+#: /xml/script-embuary-person.xml
+msgctxt "#31188"
+msgid "Filmography"
+msgstr "Filmografija"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31189"
+msgid "collection"
+msgstr "kolekcija"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31190"
+msgid "Settings backup"
+msgstr "Nustatymų atsarginė kopija"
+
+#: /xml/LoginScreen.xml
+msgctxt "#31191"
+msgid "Power options"
+msgstr "Maitinimo parinktys"
+
+#: /xml/Embuary_Set_View_56.xml
+msgctxt "#31192"
+msgid "Included movies"
+msgstr "Įtraukti filmai"
+
+#: /xml/Custom_1123_AddonHub.xml
+msgctxt "#31193"
+msgid "Installed add-ons"
+msgstr "Įdiegti priedai"
+
+#: /xml/Custom_1123_AddonHub.xml
+msgctxt "#31194"
+msgid "Search add-ons"
+msgstr "Ieškoti priedų"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31195"
+msgid "Use own background image path"
+msgstr "Naudoti savo fono vaizdų kelią"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31196"
+msgid "Ended"
+msgstr "Baigėsi"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31197"
+msgid "Continuing"
+msgstr "Tęsiama"
+
+#: /xml/MyVideoNav.xml
+msgctxt "#31198"
+msgid "Hide labels"
+msgstr "Slėpti etiketes"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31199"
+msgid "Slide"
+msgstr "Skaidrė"
+
+#: /extras/skinsettings.xml
+msgctxt "#31200"
+msgid "Custom"
+msgstr "Pasirinktinis"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31201"
+msgid "Select position"
+msgstr "Pasirinkti padėtį"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31202"
+msgid "Menu positions"
+msgstr "Meniu padėtys"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31203"
+msgid "Default menu entries"
+msgstr "Numatytieji meniu įrašai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31204"
+msgid "Reset menu to default"
+msgstr "Atkurti numatytąjį meniu"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31205"
+msgid "Change menu thumbnails"
+msgstr "Keisti meniu miniatiūras"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31206"
+msgid "Thumbnail options"
+msgstr "Miniatiūrų parinktys"
+
+#: /xml/Custom_1112_MainMenuReset.xml
+msgctxt "#31207"
+msgid "Restored default main menu configuration"
+msgstr "Numatytoji pagrindinio meniu konfigūracija atkurta"
+
+#: /xml/Custom_1111_PositionItemSelector.xml
+msgctxt "#31208"
+msgid "EmbyCon node"
+msgstr "EmbyCon mazgas"
+
+#: /xml/Embuary_EmbyConHubIncludes.xml
+msgctxt "#31209"
+msgid "Unwatched movies"
+msgstr "Nežiūrėti filmai"
+
+#: /xml/Embuary_EmbyConHubIncludes.xml
+msgctxt "#31210"
+msgid "Unwatched TV shows"
+msgstr "Nežiūrėti serialai"
+
+#: /xml/Embuary_EmbyConHubIncludes.xml
+msgctxt "#31211"
+msgid "Recently played songs"
+msgstr "Neseniai leistos dainos"
+
+#: /xml/Embuary_EmbyConHubIncludes.xml
+msgctxt "#31212"
+msgid "Favourite artists"
+msgstr "Mėgstami atlikėjai"
+
+#: /xml/Embuary_EmbyConHubIncludes.xml
+msgctxt "#31213"
+msgid "Favourite albums"
+msgstr "Mėgstami albumai"
+
+#: /xml/Embuary_EmbyConHubIncludes.xml
+msgctxt "#31214"
+msgid "Favourite songs"
+msgstr "Mėgstamos dainos"
+
+#: /xml/Embuary_EmbyConHubIncludes.xml
+msgctxt "#31215"
+msgid "Often played songs"
+msgstr "Dažnai leidžiamos dainos"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31216"
+msgid "Reset widget configuration to default"
+msgstr "Atkurti numatytąją valdiklių konfigūraciją"
+
+#: /xml/Custom_1112_Reset.xml
+msgctxt "#31217"
+msgid "Build default skin configuartion"
+msgstr "Sukurti numatytąją išvaizdos konfigūraciją"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31218"
+msgid "Edit current configuration"
+msgstr "Redaguoti dabartinę konfigūraciją"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31219"
+msgid "Horizontal"
+msgstr "Horizontaliai"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31220"
+msgid "Vertical"
+msgstr "Vertikaliai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31221"
+msgid "Use EPG thumbnails for PVR widgets (if available)"
+msgstr "Naudoti EPG miniatiūras PVR valdikliams (jei pasiekiama)"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31222"
+msgid "Support at emby.media"
+msgstr "Pagalba emby.media"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31223"
+msgid "Configure shortcuts of the power menu."
+msgstr "Konfigūruokite maitinimo meniu sparčiuosius klavišus."
+
+#: /xml/SkinSettings.xml
+msgctxt "#31224"
+msgid "Power menu"
+msgstr "Maitinimo meniu"
+
+#: /xml/DialogButtonMenu.xml
+msgctxt "#31225"
+msgid "EmbyCon login"
+msgstr "EmbyCon prisijungimas"
+
+#: /xml/DialogButtonMenu.xml
+msgctxt "#31226"
+msgid "Change EmbyCon user"
+msgstr "Keisti EmbyCon naudotoją"
+
+#: /xml/Embuary_InfoDialog.xml
+msgctxt "#31227"
+msgid "Play album"
+msgstr "Leisti albumą"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31228"
+msgid "Search result provider"
+msgstr "Paieškos rezultatų teikėjas"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31229"
+msgid "Create and manage your own widgets source. Please note that each widget has to be manually assigned to the chosen window."
+msgstr "Kurkite ir tvarkykite savo valdiklių šaltinius. Kiekvieną valdiklį reikia rankiniu būdu priskirti pasirinktam langui."
+
+#: /xml/SkinSettings.xml
+msgctxt "#31230"
+msgid "Hide thumbnails of unwatched episodes"
+msgstr "Slėpti nežiūrėtų serijų miniatiūras"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31231"
+msgid "Pause video playback while the player info screen is active"
+msgstr "Pristabdyti vaizdo atkūrimą, kol aktyvus grotuvo informacijos ekranas"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31232"
+msgid "Custom hub"
+msgstr "Pasirinktinis centras"
+
+#: /xml/Custom_1115_Search.xml
+msgctxt "#31233"
+msgid "Movies starring"
+msgstr "Filmai, kuriuose vaidina"
+
+#: /xml/Custom_1115_Search.xml
+msgctxt "#31234"
+msgid "TV shows starring"
+msgstr "Serialai, kuriuose vaidina"
+
+#: /xml/Custom_1115_Search.xml
+msgctxt "#31235"
+msgid "Directed by"
+msgstr "Režisierius"
+
+#: /xml/Custom_1115_Search.xml
+msgctxt "#31236"
+msgid "Episodes starring"
+msgstr "Serijos, kuriose vaidina"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31237"
+msgid "Available items starring the chosen actor"
+msgstr "Galimi elementai su pasirinktu aktoriumi"
+
+#: /xml/script-embuary-person.xml
+msgctxt "#31238"
+msgid "Facts"
+msgstr "Faktai"
+
+#: /shortcuts/tvshowhub.DATA.xml
+msgctxt "#31239"
+msgid "TV shows - EmbyCon"
+msgstr "Serialai — EmbyCon"
+
+#: /shortcuts/musichub.DATA.xml
+msgctxt "#31240"
+msgid "Artists - EmbyCon"
+msgstr "Atlikėjai — EmbyCon"
+
+#: /shortcuts/musichub.DATA.xml
+msgctxt "#31241"
+msgid "Albums - EmbyCon"
+msgstr "Albumai — EmbyCon"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31242"
+msgid "Repositories"
+msgstr "Saugyklos"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31243"
+msgid "Install from zip"
+msgstr "Įdiegti iš ZIP failo"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31244"
+msgid "Edit menu configuration"
+msgstr "Redaguoti meniu konfigūraciją"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31245"
+msgid "Edit widget configuration"
+msgstr "Redaguoti valdiklių konfigūraciją"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31246"
+msgid "Hubs"
+msgstr "Centrai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31247"
+msgid "Menus & widgets"
+msgstr "Meniu ir valdikliai"
+
+#: /xml/Custom_1110_PositionSelector.xml
+msgctxt "#31248"
+msgid "Reset widgets to default"
+msgstr "Atkurti numatytuosius valdiklius"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31249"
+msgid "Window configuration"
+msgstr "Lango konfigūracija"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31250"
+msgid "Automatically switch to full screen when starting playback"
+msgstr "Pradėjus atkūrimą automatiškai perjungti į visą ekraną"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31251"
+msgid "Add-on hub"
+msgstr "Priedų centras"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31252"
+msgid "PVR hub"
+msgstr "PVR centras"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31253"
+msgid "hub"
+msgstr "centras"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31254"
+msgid "Hide main menu and only show widgets"
+msgstr "Slėpti pagrindinį meniu ir rodyti tik valdiklius"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31255"
+msgid "Cinema mode"
+msgstr "Kino režimas"
+
+#: /xml/Embuary_WidgetTemplates.xml
+msgctxt "#31256"
+msgid "On right now"
+msgstr "Dabar rodoma"
+
+#: /shortcuts/overrides.xml
+msgctxt "#31257"
+msgid "Try to use an Emby styled artwork"
+msgstr "Bandyti naudoti Emby stiliaus iliustracijas"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31258"
+msgid "Special"
+msgstr "Speciali serija"
+
+#: /xml/Embuary_InfoDialog.xml
+msgctxt "#31259"
+msgid "More from season"
+msgstr "Daugiau iš sezono"
+
+#: /xml/LoginScreen.xml
+msgctxt "#31260"
+msgid "Please login"
+msgstr "Prisijunkite"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31261"
+msgid "Main menu"
+msgstr "Pagrindinis meniu"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31262"
+msgid "Audio books"
+msgstr "Garso knygos"
+
+#: /xml/script-skin_helper_service-ColorPicker.xml
+msgctxt "#31263"
+msgid "Color palette"
+msgstr "Spalvų paletė"
+
+#: /xml/script-skin_helper_service-ColorPicker.xml
+msgctxt "#31264"
+msgid "Opacity"
+msgstr "Nepermatomumas"
+
+#: /xml/script-skin_helper_service-ColorPicker.xml
+msgctxt "#31265"
+msgid "Current color"
+msgstr "Dabartinė spalva"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31266"
+msgid "Custom colors"
+msgstr "Pasirinktinės spalvos"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31267"
+msgid "Accent color"
+msgstr "Akcento spalva"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31268"
+msgid "Player element color"
+msgstr "Grotuvo elemento spalva"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31269"
+msgid "Item fallback background color"
+msgstr "Atsarginė elemento fono spalva"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31270"
+msgid "Button focused color"
+msgstr "Fokusuoto mygtuko spalva"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31271"
+msgid "Background opacity"
+msgstr "Fono nepermatomumas"
+
+#: /xml/script-skin_helper_service-ColorPicker.xml
+msgctxt "#31272"
+msgid "Set for all"
+msgstr "Taikyti visiems"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31273"
+msgid "Required add-ons and dependencies"
+msgstr "Reikalingi priedai ir priklausomybės"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31274"
+msgid "Supported optional add-ons"
+msgstr "Palaikomi pasirenkami priedai"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31275"
+msgid "List of installed dependencies and supported add-ons. Missing items can be installed from here."
+msgstr "Įdiegtų priklausomybių ir palaikomų priedų sąrašas. Trūkstamus elementus galima įdiegti čia."
+
+#: /xml/SkinSettings.xml
+msgctxt "#31276"
+msgid "Dependencies & add-ons"
+msgstr "Priklausomybės ir priedai"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31277"
+msgid "Hide video OSD while playback is paused"
+msgstr "Slėpti vaizdo OSD, kai atkūrimas pristabdytas"
+
+#: /xml/Embuary_WidgetTemplates.xml
+msgctxt "#31278"
+msgid "Suggestions by genre"
+msgstr "Pasiūlymai pagal žanrą"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31279"
+msgid "Library tag hubs"
+msgstr "Bibliotekos žymų centrai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31280"
+msgid "Edit TV show widget configuration"
+msgstr "Redaguoti serialų valdiklių konfigūraciją"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31281"
+msgid "Edit movie widget configuration"
+msgstr "Redaguoti filmų valdiklių konfigūraciją"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31282"
+msgid "EmbyCon nodes"
+msgstr "EmbyCon mazgai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31283"
+msgid "Edit music widget configuration"
+msgstr "Redaguoti muzikos valdiklių konfigūraciją"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31284"
+msgid "No items found"
+msgstr "Elementų nerasta"
+
+#: /xml/Embuary_Widgets.xml
+msgctxt "#31285"
+msgid "No channels found"
+msgstr "Kanalų nerasta"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31286"
+msgid "Limit items of default widgets"
+msgstr "Riboti numatytųjų valdiklių elementus"
+
+#: /xml/Embuary_InfoDialog.xml
+msgctxt "#31287"
+msgid "More movies directed by"
+msgstr "Daugiau šio režisieriaus filmų"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31288"
+msgid "Limit"
+msgstr "Riba"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31289"
+msgid "not configured yet"
+msgstr "dar nesukonfigūruota"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31290"
+msgid "Config"
+msgstr "Konfigūracija"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31291"
+msgid "Spooky suggestions"
+msgstr "Šiurpūs pasiūlymai"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31292"
+msgid "Holiday season suggestions"
+msgstr "Šventinio laikotarpio pasiūlymai"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31293"
+msgid "Enable suggestion widgets"
+msgstr "Įjungti pasiūlymų valdiklius"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31294"
+msgid "Enable startup sound"
+msgstr "Įjungti paleidimo garsą"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31295"
+msgid "Enable holiday themes"
+msgstr "Įjungti šventines temas"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31296"
+msgid "Useful links for support, to report issues or if you want to help to translate the skin to your language."
+msgstr "Naudingos nuorodos pagalbai gauti, problemoms pranešti arba padėti išversti išvaizdą į jūsų kalbą."
+
+#: /xml/SkinSettings.xml
+msgctxt "#31297"
+msgid "Support at kodi.tv"
+msgstr "Pagalba kodi.tv"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31298"
+msgid "Support & translations"
+msgstr "Pagalba ir vertimai"
+
+#: /xml/Embuary_Settings.xml
+msgctxt "#31299"
+msgid "Update Kodi"
+msgstr "Atnaujinti Kodi"
+
+#: /xml/Embuary_HomeIncludes.xml
+msgctxt "#31300"
+msgid "My media"
+msgstr "Mano medija"
+
+#: /xml/Embuary_WidgetTemplates.xml
+msgctxt "#31301"
+msgid "Latest movies"
+msgstr "Naujausi filmai"
+
+#: /xml/Embuary_WidgetTemplates.xml
+msgctxt "#31302"
+msgid "Latest TV shows"
+msgstr "Naujausi serialai"
+
+#: /xml/Embuary_WidgetTemplates.xml
+msgctxt "#31303"
+msgid "Latest albums"
+msgstr "Naujausi albumai"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31304"
+msgid "Search TV guide"
+msgstr "Ieškoti TV gide"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31305"
+msgid "No color set"
+msgstr "Spalva nenustatyta"
+
+#: /xml/script-skinshortcuts.xml
+msgctxt "#31306"
+msgid "Replace default thumbnail"
+msgstr "Pakeisti numatytąją miniatiūrą"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31307"
+msgid "More specials"
+msgstr "Daugiau specialių serijų"
+
+#: /xml/script-skinshortcuts.xml
+msgctxt "#31308"
+msgid "Thumbnail aspect ratio"
+msgstr "Miniatiūros kraštinių santykis"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31309"
+msgid "scale"
+msgstr "keisti mastelį"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31310"
+msgid "stretch"
+msgstr "ištempti"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31311"
+msgid "keep"
+msgstr "išlaikyti"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31312"
+msgid "Disable 'Skin Helper Service' add-on packages"
+msgstr "Išjungti „Skin Helper Service“ priedų paketus"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31313"
+msgid "Enable 'Skin Helper Service' add-on packages"
+msgstr "Įjungti „Skin Helper Service“ priedų paketus"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31314"
+msgid "To prevent speed penalties and issues it's recommended to disable the following add-ons:[CR][CR][COLOR blue]• script.module.metadatautils[CR]• script.skin.helper.service[CR]• script.skin.helper.widgets[CR]• script.skin.helper.backgrounds[/COLOR]"
+msgstr "Siekiant išvengti spartos sumažėjimo ir problemų, rekomenduojama išjungti šiuos priedus:[CR][CR][COLOR blue]• script.module.metadatautils[CR]• script.skin.helper.service[CR]• script.skin.helper.widgets[CR]• script.skin.helper.backgrounds[/COLOR]"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31315"
+msgid "Do you really want to enable them?"
+msgstr "Ar tikrai norite juos įjungti?"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31316"
+msgid "Do you really want to disable them?"
+msgstr "Ar tikrai norite juos išjungti?"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31317"
+msgid "Enable channel labeling for EPG thumbnails"
+msgstr "Įjungti kanalų etiketes EPG miniatiūrose"
+
+#: /xml/script-embuary-video.xml
+msgctxt "#31318"
+msgid "Premiere"
+msgstr "Premjera"
+
+#: /xml/script-embuary-video.xml
+msgctxt "#31319"
+msgid "Budget"
+msgstr "Biudžetas"
+
+#: /xml/script-embuary-video.xml
+msgctxt "#31320"
+msgid "Revenue"
+msgstr "Pajamos"
+
+#: /xml/script-embuary-video.xml
+msgctxt "#31321"
+msgid "Crew"
+msgstr "Kūrybinė komanda"
+
+#: /xml/Embuary_InfoDialog.xml
+msgctxt "#31322"
+msgid "More seasons"
+msgstr "Daugiau sezonų"
+
+#: /xml/Embuary_BigList_View_59.xml
+msgctxt "#31323"
+msgid "Shuffle"
+msgstr "Maišyti"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31324"
+msgid "Intro folder"
+msgstr "Įžangų aplankas"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31325"
+msgid "Number of trailers"
+msgstr "Anonsų skaičius"
+
+#: /xml/DialogContextMenu.xml
+msgctxt "#31326"
+msgid "Play with cinema mode"
+msgstr "Leisti kino režimu"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31327"
+msgid "Use cinema mode when starting playback via info dialog, play buttons or default widgets"
+msgstr "Naudoti kino režimą paleidžiant iš informacijos lango, leidimo mygtukų arba numatytųjų valdiklių"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31328"
+msgid "Enable and disable items of the shutdown menu."
+msgstr "Įjunkite arba išjunkite išjungimo meniu elementus."
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31329"
+msgid "Change the behaviour of playback and media actions."
+msgstr "Keiskite atkūrimo ir medijos veiksmų elgseną."
+
+#: /xml/SkinSettings.xml
+msgctxt "#31330"
+msgid "Playback & media"
+msgstr "Atkūrimas ir medija"
+
+#: /xml/SkinSettings.xml
+msgctxt "#31331"
+msgid "Home and hubs"
+msgstr "Pagrindinis ir centrai"
+
+#: /xml/DialogKeyboard.xml
+msgctxt "#31332"
+msgid "The updated hub label will be shown on the next opening of the menu editor"
+msgstr "Atnaujinta centro etiketė bus rodoma kitą kartą atidarius meniu rengyklę"
+
+#: /xml/Embuary_MetaIncludes.xml
+msgctxt "#31333"
+msgid "Enabled auto updating"
+msgstr "Automatinis atnaujinimas įjungtas"
+
+#: /xml/Embuary_InfoDialog.xml
+msgctxt "#31334"
+msgid "More available items with"
+msgstr "Daugiau galimų elementų su"
+
+#: /xml/PlayerControls.xml
+msgctxt "#31335"
+msgid "Eject disc"
+msgstr "Išstumti diską"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31336"
+msgid "Show EPG thumbnail in video OSD (if available)"
+msgstr "Rodyti EPG miniatiūrą vaizdo OSD (jei pasiekiama)"
+
+#: /xml/Embuary_Settings.xml
+msgctxt "#31337"
+msgid "Upload Kodi log"
+msgstr "Įkelti Kodi žurnalą"
+
+#: /xml/Embuary_Settings.xml
+msgctxt "#31338"
+msgid "Running services"
+msgstr "Veikiančios paslaugos"
+
+#: /xml/MusicOSD.xml
+msgctxt "#31339"
+msgid "Pan and zoom"
+msgstr "Stumdymas ir mastelio keitimas"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31340"
+msgid "Use available hubs as target"
+msgstr "Naudoti galimus centrus kaip paskirties vietą"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31341"
+msgid "EPG thumbnail aspect ratio"
+msgstr "EPG miniatiūros kraštinių santykis"
+
+#: /xml/Embuary_Settings.xml
+msgctxt "#31342"
+msgid "Embuary changelog"
+msgstr "Embuary pakeitimų žurnalas"
+
+#: /xml/DialogAddonInfo.xml
+msgctxt "#31343"
+msgid "Add-on news"
+msgstr "Priedų naujienos"
+
+#: /xml/Embuary_Includes.xml
+msgctxt "#31344"
+msgid "Force default icon"
+msgstr "Priverstinai naudoti numatytąją piktogramą"
+
+#: /xml/Embuary_Settings.xml
+msgctxt "#31345"
+msgid "Skin dependencies"
+msgstr "Išvaizdos priklausomybės"
+
+#: /xml/DialogPVRChannelsOSD.xml
+msgctxt "#31346"
+msgid "On now"
+msgstr "Dabar rodoma"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31347"
+msgid "Use mini EPG for channels OSD"
+msgstr "Naudoti mini EPG kanalų OSD"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31348"
+msgid "very dark"
+msgstr "labai tamsus"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31349"
+msgid "darker"
+msgstr "tamsesnis"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31350"
+msgid "dark"
+msgstr "tamsus"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31351"
+msgid "bright"
+msgstr "šviesus"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31352"
+msgid "brighter"
+msgstr "šviesesnis"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31353"
+msgid "very bright"
+msgstr "labai šviesus"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31354"
+msgid "Blur background images"
+msgstr "Sulieti fono vaizdus"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31355"
+msgid "This feature is very expensive and should not be enabled on slow devices like a Raspberry Pi. It will also require some storage space on your drive, because each fanart is going to be processed and stored separately as blurred image in the Kodi userdata folder."
+msgstr "Ši funkcija reikalauja daug išteklių ir neturėtų būti įjungta lėtuose įrenginiuose, pvz., Raspberry Pi. Taip pat reikės vietos diske, nes kiekvienas fanart bus apdorojamas atskirai ir išsaugomas kaip sulietas vaizdas Kodi userdata aplanke."
+
+#: /xml/SkinSettings.xml
+msgctxt "#31356"
+msgid "Translate on transifex.com"
+msgstr "Versti transifex.com"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31357"
+msgid "Live long and prosper"
+msgstr "Ilgai gyvenkite ir klestėkite"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31358"
+msgid "Enable cinema mode for"
+msgstr "Įjungti kino režimą"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31359"
+msgid "Disable mouse and touch control"
+msgstr "Išjungti pelės ir lietimo valdymą"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31360"
+msgid "Hide parent folder items"
+msgstr "Slėpti viršutinio aplanko elementus"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31361"
+msgid "Always select the first unwatched season/episode"
+msgstr "Visada pasirinkti pirmą nežiūrėtą sezoną / seriją"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31362"
+msgid "Set the Embuary UI navigation sounds"
+msgstr "Nustatyti Embuary sąsajos naršymo garsus"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31363"
+msgid "Please keep in mind that these settings are global and will be valid for all installed skins. But don't panic, all settings can be reverted in the Kodi settings."
+msgstr "Atminkite, kad šie nustatymai yra visuotiniai ir galios visoms įdiegtoms išvaizdoms. Visus nustatymus galima atkurti Kodi nustatymuose."
+
+#: /xml/DialogPVRInfo.xml
+msgctxt "#31364"
+msgid "Timer"
+msgstr "Laikmatis"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31365"
+msgid "Stop"
+msgstr "Stabdyti"
+
+#: /xml/Embuary_InfoDialog.xml
+msgctxt "#31366"
+msgid "More"
+msgstr "Daugiau"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31367"
+msgid "Show channel groups in the PVR hub"
+msgstr "Rodyti kanalų grupes PVR centre"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31368"
+msgid "Blurring strength"
+msgstr "Suliejimo stiprumas"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31369"
+msgid "Intro"
+msgstr "Įžanga"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31370"
+msgid "Show Emby based Rotten Tomatoes ratings (uses user ratings)"
+msgstr "Rodyti Emby pagrįstus Rotten Tomatoes įvertinimus (naudojami naudotojų įvertinimai)"
+
+#: /xml/Embuary_MetaIncludes.xml
+msgctxt "#31371"
+msgid "Created by"
+msgstr "Sukūrė"
+
+#: /xml/script-embuary-person.xml
+msgctxt "#31372"
+msgid "Known for"
+msgstr "Žinomas dėl"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31373"
+msgid "male"
+msgstr "vyras"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31374"
+msgid "female"
+msgstr "moteris"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31375"
+msgid "Configure menu and widget items of the hubs."
+msgstr "Konfigūruokite centrų meniu ir valdiklių elementus."
+
+#: /xml/Embuary_Settings.xml
+msgctxt "#31376"
+msgid "Home & side panel"
+msgstr "Pagrindinis ir šoninis skydelis"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31377"
+msgid "Use main menu entries in the side panel"
+msgstr "Naudoti pagrindinio meniu įrašus šoniniame skydelyje"
+
+#: /xml/Embuary_Widgets.xml
+msgctxt "#31378"
+msgid "Search themoviedb.org"
+msgstr "Ieškoti themoviedb.org"
+
+#: /xml/Embuary_Widgets.xml
+msgctxt "#31379"
+msgid "Search database"
+msgstr "Ieškoti duomenų bazėje"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31380"
+msgid "items in database"
+msgstr "elementų duomenų bazėje"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31381"
+msgid "item in database"
+msgstr "elementas duomenų bazėje"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31382"
+msgid "Guest stars"
+msgstr "Kviestiniai aktoriai"
+
+#: /xml/Embuary_WidgetTemplates.xml
+msgctxt "#31383"
+msgid "Now playing in theaters"
+msgstr "Dabar kino teatruose"
+
+#: /xml/Embuary_WidgetTemplates.xml
+msgctxt "#31384"
+msgid "New movies coming soon"
+msgstr "Netrukus pasirodysiantys nauji filmai"
+
+#: /xml/Embuary_MetaIncludes.xml
+msgctxt "#31385"
+msgid "Added"
+msgstr "Pridėta"
+
+#: /xml/Embuary_MetaIncludes.xml
+msgctxt "#31386"
+msgid "Updated"
+msgstr "Atnaujinta"
+
+#: /xml/Custom_1112_Reset.xml
+msgctxt "#31387"
+msgid "Movie genres"
+msgstr "Filmų žanrai"
+
+#: /xml/Custom_1112_Reset.xml
+msgctxt "#31388"
+msgid "TV show genres"
+msgstr "Serialų žanrai"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31389"
+msgid "Mixed hub"
+msgstr "Mišrus centras"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31390"
+msgid "Library tag"
+msgstr "Bibliotekos žyma"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31391"
+msgid "Setup"
+msgstr "Sąranka"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31392"
+msgid "Rerun skin setup"
+msgstr "Pakartoti išvaizdos sąranką"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31393"
+msgid "Library tag based hubs"
+msgstr "Centrai pagal bibliotekos žymas"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31394"
+msgid "not recommended"
+msgstr "nerekomenduojama"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31395"
+msgid "Auto populate hubs based on library tags?"
+msgstr "Automatiškai užpildyti centrus pagal bibliotekos žymas?"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31396"
+msgid "Turn off auto whitelisting"
+msgstr "Išjungti automatinį leidžiamų sąrašą"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31397"
+msgid "Toggle enabled tags"
+msgstr "Perjungti įjungtas žymas"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31398"
+msgid "A unique feature of Embuary is the auto generation of hubs based on existing library tags in your database (e.g. 'kids content', 'HDR videos', 'documentaries')."
+msgstr "Unikali Embuary funkcija yra automatinis centrų kūrimas pagal duomenų bazėje esančias bibliotekos žymas (pvz., „turinys vaikams“, „HDR vaizdo įrašai“, „dokumentika“)."
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31399"
+msgid "Since every setup is different and some people only want to have hubs for a few available tags, you can disable the ones you don't want to have populated at any time. By default future and new tags will be whitelisted automatically."
+msgstr "Kadangi kiekviena sąranka skiriasi ir kai kuriems reikia centrų tik kelioms žymoms, nereikalingų žymų užpildymą galima bet kada išjungti. Naujos žymos pagal numatytuosius nustatymus automatiškai įtraukiamos į leidžiamų sąrašą."
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31400"
+msgid "Found tags"
+msgstr "Rastos žymos"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31401"
+msgid "Enabled tags"
+msgstr "Įjungtos žymos"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31402"
+msgid "To get the best out-of-box experience the skin will automatically populate shipped widgets for database items like 'in progress episodes', 'recently added movies' or suggestions based on the items you have watched."
+msgstr "Siekiant geriausios pradinės patirties, išvaizda automatiškai užpildys pateiktus valdiklius tokiais duomenų bazės elementais kaip „nebaigtos serijos“, „neseniai pridėti filmai“ ar pasiūlymai pagal jūsų peržiūras."
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31403"
+msgid "Important"
+msgstr "Svarbu"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31404"
+msgid "For existing Embuary installations, this step must be performed to get everything working due to a recent update. Configured custom widgets are not removed and only need to be reassigned."
+msgstr "Esamose Embuary diegtyse šį veiksmą reikia atlikti dėl naujausio atnaujinimo. Pasirinktiniai valdikliai nepašalinami, juos tik reikia priskirti iš naujo."
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31405"
+msgid "Apply shipped widgets and default configuration?"
+msgstr "Taikyti pateiktus valdiklius ir numatytąją konfigūraciją?"
+
+#: /xml/Embuary_SkinSettings.xml
+msgctxt "#31406"
+msgid "Edit mixed library widget configuration"
+msgstr "Redaguoti mišrios bibliotekos valdiklio konfigūraciją"
+
+#: /xml/DialogFavourites.xml
+msgctxt "#31407"
+msgid "Movie watchlist"
+msgstr "Filmų stebėjimo sąrašas"
+
+#: /xml/DialogFavourites.xml
+msgctxt "#31408"
+msgid "TV show watchlist"
+msgstr "Serialų stebėjimo sąrašas"
+
+#: /xml/Embuary_Set_View_56.xml
+msgctxt "#31409"
+msgid "Favourite"
+msgstr "Mėgstamas"
+
+#: /xml/Embuary_MetaIncludes.xml
+msgctxt "#31410"
+msgid "Disabled auto updating"
+msgstr "Automatinis atnaujinimas išjungtas"
+
+#: /xml/Custom_1119_StartUp.xml
+msgctxt "#31411"
+msgid "OK, add found to whitelist"
+msgstr "Gerai, rastas žymas įtraukti į leidžiamų sąrašą"
+
+#: /xml/DialogButtonMenu.xml
+msgctxt "#31412"
+msgid "Restart Kodi"
+msgstr "Paleisti Kodi iš naujo"
+
+#: /xml/Embuary_Variables.xml
+msgctxt "#31413"
+msgid "Media importer"
+msgstr "Medijos importuotojas"
+
+#: /xml/DialogMediaImportInfo.xml
+msgctxt "#31414"
+msgid "Sync options"
+msgstr "Sinchronizavimo parinktys"
+
+#: /xml/DialogMediaImportInfo.xml
+msgctxt "#31415"
+msgid "Provider"
+msgstr "Teikėjas"
+
+#: /xml/DialogMediaImportInfo.xml
+msgctxt "#31416"
+msgid "Media type"
+msgstr "Medijos tipas"
+
+msgctxt "#31500"
+msgid "Display mode"
+msgstr "Rodymo režimas"
+
+msgctxt "#31501"
+msgid "Video mode"
+msgstr "Vaizdo režimas"
+
+msgctxt "#31502"
+msgid "Color space"
+msgstr "Spalvų erdvė"
+
+msgctxt "#31503"
+msgid "Mb/s"
+msgstr "Mb/s"
+
+msgctxt "#31504"
+msgid "Bit depth"
+msgstr "Bitų gylis"
+
+msgctxt "#31505"
+msgid "Decoder"
+msgstr "Dekoderis"
+
+msgctxt "#31506"
+msgid "VS10 engine"
+msgstr "VS10 variklis"
+
+msgctxt "#31507"
+msgid "More"
+msgstr "Daugiau"
+
+msgctxt "#31508"
+msgid "Video queue"
+msgstr "Vaizdo eilė"
+
+msgctxt "#31509"
+msgid "Video queue data"
+msgstr "Vaizdo eilės duomenys"
+
+msgctxt "#31510"
+msgid "Audio queue"
+msgstr "Garso eilė"
+
+msgctxt "#31511"
+msgid "Audio queue data"
+msgstr "Garso eilės duomenys"
+
+msgctxt "#31512"
+msgid "Kb/s"
+msgstr "Kb/s"
+
+msgctxt "#31513"
+msgid "Playback progress"
+msgstr "Atkūrimo eiga"
+
+msgctxt "#31514"
+msgid "Processor"
+msgstr "Procesorius"
+
+msgctxt "#31515"
+msgid "Version"
+msgstr "Versija"
+
+msgctxt "#31516"
+msgid "Profile"
+msgstr "Profilis"
+
+msgctxt "#31517"
+msgid "Level"
+msgstr "Lygis"
+
+msgctxt "#31518"
+msgid "RPU"
+msgstr "RPU"
+
+msgctxt "#31519"
+msgid "Base Layer"
+msgstr "Bazinis sluoksnis"
+
+msgctxt "#31520"
+msgid "Enhancement Layer"
+msgstr "Patobulinimo sluoksnis"
+
+msgctxt "#31521"
+msgid "Enhancement Layer Type"
+msgstr "Patobulinimo sluoksnio tipas"
+
+msgctxt "#31522"
+msgid "Metadata"
+msgstr "Metaduomenys"
+
+msgctxt "#31523"
+msgid "Pixel format"
+msgstr "Pikselių formatas"
+
+msgctxt "#31524"
+msgid "Aspect ratio"
+msgstr "Kraštinių santykis"
+
+msgctxt "#31525"
+msgid "HDR10 MDL"
+msgstr "HDR10 MDL"
+
+msgctxt "#31526"
+msgid "HDR10 MaxCLL/FALL"
+msgstr "HDR10 MaxCLL/FALL"
+
+msgctxt "#31527"
+msgid "Media source"
+msgstr "Medijos šaltinis"
+
+msgctxt "#31528"
+msgid "Unknown"
+msgstr "Nežinoma"
+
+msgctxt "#31529"
+msgid "On"
+msgstr "Įjungta"
+
+msgctxt "#31530"
+msgid "Off"
+msgstr "Išjungta"
+
+msgctxt "#31531"
+msgid "Deinterlacing"
+msgstr "Išpynimas"
+
+msgctxt "#31532"
+msgid "Player cache"
+msgstr "Grotuvo podėlis"
+
+msgctxt "#31533"
+msgid "N/A"
+msgstr "Nėra"
+
+msgctxt "#31534"
+msgid "Memory usage"
+msgstr "Atminties naudojimas"
+
+msgctxt "#31535"
+msgid "Bit depth"
+msgstr "Bitų gylis"
+
+msgctxt "#31536"
+msgid "AML FPS"
+msgstr "AML FPS"
+
+msgctxt "#31537"
+msgid "DV Configuration"
+msgstr "DV konfigūracija"
+
+msgctxt "#31538"
+msgid "DV Levels Metadata"
+msgstr "DV lygių metaduomenys"
+
+msgctxt "#31539"
+msgid "HDR Static Metadata"
+msgstr "HDR statiniai metaduomenys"
+
+msgctxt "#31540"
+msgid "cd/m²"
+msgstr "cd/m²"
+
+msgctxt "#31541"
+msgid "RPU MDL"
+msgstr "RPU MDL"
+
+msgctxt "#31542"
+msgid "RPU MaxCLL/FALL"
+msgstr "RPU MaxCLL/FALL"
+
+msgctxt "#31543"
+msgid "FLL MIN / MAX / Ø"
+msgstr "FLL MIN / MAX / Ø"
+
+msgctxt "#31544"
+msgid "PQ  MIN / MAX / Ø"
+msgstr "PQ MIN / MAX / Ø"
+
+msgctxt "#31545"
+msgid "12-bit"
+msgstr "12 bitų"
+
+msgctxt "#31546"
+msgid "Codec"
+msgstr "Kodekas"
+
+msgctxt "#31547"
+msgid "Bitrate"
+msgstr "Bitų sparta"
+
+msgctxt "#31548"
+msgid "VS10 status"
+msgstr "VS10 būsena"
+
+msgctxt "#31551"
+msgid "Sample rate"
+msgstr "Diskretizavimo dažnis"
+
+msgctxt "#31552"
+msgid "Audio language"
+msgstr "Garso kalba"
+
+msgctxt "#31553"
+msgid "Subtitle language"
+msgstr "Subtitrų kalba"
+
+msgctxt "#31554"
+msgid "Video"
+msgstr "Vaizdas"
+
+msgctxt "#31555"
+msgid "System"
+msgstr "Sistema"
+
+msgctxt "#31556"
+msgid "Audio"
+msgstr "Garsas"
+
+msgctxt "#31557"
+msgid "Top left"
+msgstr "Viršuje kairėje"
+
+msgctxt "#31558"
+msgid "Top center"
+msgstr "Viršuje centre"
+
+msgctxt "#31559"
+msgid "Top right"
+msgstr "Viršuje dešinėje"
+
+msgctxt "#31560"
+msgid "Position of the codec logos in the OSD"
+msgstr "Kodekų logotipų vieta OSD"
+
+msgctxt "#31561"
+msgid "Position of the codec logos in the PlayerProcessInfo"
+msgstr "Kodekų logotipų vieta PlayerProcessInfo"
+
+msgctxt "#31562"
+msgid "Show codec logos when video starts"
+msgstr "Rodyti kodekų logotipus paleidus vaizdo įrašą"
+
+msgctxt "#31563"
+msgid "Codec logos"
+msgstr "Kodekų logotipai"
+
+msgctxt "#31564"
+msgid "Original"
+msgstr "Originalas"
+
+msgctxt "#31565"
+msgid "VS10 mode"
+msgstr "VS10 režimas"
+
+msgctxt "#31566"
+msgid "Coloured title lines in PlayerProcessInfo"
+msgstr "Spalvotos antraščių eilutės PlayerProcessInfo"
+
+msgctxt "#31567"
+msgid "L5 Active Offsets"
+msgstr "Aktyvūs L5 poslinkiai"
+
+msgctxt "#31568"
+msgid "Version"
+msgstr "Versija"
+
+msgctxt "#31569"
+msgid "Bit depth"
+msgstr "Bitų gylis"
+
+msgctxt "#31570"
+msgid "EOTF & Gamut"
+msgstr "EOTF ir spalvų gama"
+
+msgctxt "#31571"
+msgid "Duration of the codec logos when video starts"
+msgstr "Kodekų logotipų rodymo trukmė paleidus vaizdo įrašą"
+
+msgctxt "#31572"
+msgid "Standard"
+msgstr "Standartinis"
+
+msgctxt "#31575"
+msgid "second"
+msgstr "sekundė"
+
+msgctxt "#31576"
+msgid "seconds"
+msgstr "sekundės"
+
+msgctxt "#31900"
+msgid "Next Episode"
+msgstr "Kita serija"
+
+msgctxt "#31901"
+msgid "Previous Episode"
+msgstr "Ankstesnė serija"
+
+msgctxt "#31902"
+msgid "Codec Logo Style"
+msgstr "Kodekų logotipų stilius"
+
+msgctxt "#31903"
+msgid "Codec Logo Size"
+msgstr "Kodekų logotipų dydis"
+
+msgctxt "#31904"
+msgid "Show Codec Logo Background"
+msgstr "Rodyti kodekų logotipų foną"
+
+msgctxt "#31905"
+msgid "Codec Logo Flag-Style"
+msgstr "Kodekų logotipų vėliavėlių stilius"
+
+msgctxt "#31906"
+msgid "Favourites View:"
+msgstr "Mėgstamų rodinys:"
+
+msgctxt "#31907"
+msgid "vertical"
+msgstr "vertikalus"
+
+msgctxt "#31908"
+msgid "horizontal"
+msgstr "horizontalus"
+
+msgctxt "#31909"
+msgid "Select Favourites Category"
+msgstr "Pasirinkti mėgstamų kategoriją"
+
+msgctxt "#31910"
+msgid "Play"
+msgstr "Leisti"
+
+msgctxt "#31911"
+msgid "Remove from Favourites"
+msgstr "Pašalinti iš mėgstamų"
+
+msgctxt "#31912"
+msgid "Cancel"
+msgstr "Atšaukti"
+
+msgctxt "#31913"
+msgid "Favourite removed"
+msgstr "Pašalinta iš mėgstamų"
+
+msgctxt "#31914"
+msgid "No favourites found"
+msgstr "Mėgstamų nerasta"
+
+msgctxt "#31915"
+msgid "No recognisable favourites found"
+msgstr "Atpažįstamų mėgstamų nerasta"
+
+msgctxt "#31916"
+msgid "Select action"
+msgstr "Pasirinkti veiksmą"
+
+msgctxt "#31917"
+msgid "standard"
+msgstr "standartinis"
+
+msgctxt "#31918"
+msgid "Show Logo Separator"
+msgstr "Rodyti logotipų skirtuką"
+
+msgctxt "#31919"
+msgid "Collection"
+msgstr "Kolekcija"
+
+msgctxt "#31920"
+msgid "Show Codec Info Overlay"
+msgstr "Rodyti kodeko informacijos perdangą"
+
+msgctxt "#31921"
+msgid "External search"
+msgstr "Išorinė paieška"
+
+msgctxt "#31922"
+msgid "Open add-on"
+msgstr "Atidaryti priedą"
+
+msgctxt "#31923"
+msgid "Media importer settings"
+msgstr "Medijos importuotojo nustatymai"
+
+msgctxt "#31924"
+msgid "Search externally"
+msgstr "Ieškoti išorėje"

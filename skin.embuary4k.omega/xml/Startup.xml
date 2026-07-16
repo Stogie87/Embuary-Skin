@@ -9,18 +9,31 @@
 	<onload condition="!Skin.HasSetting(FavouritesViewDefaultsSet)">Skin.SetBool(FavouritesViewDefaultsSet)</onload>
 
 	<!-- Default codec logo settings -->
-	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_flag_name))">Skin.SetString(codeclogos_flag_name,Colorful)</onload>
-	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_flag_path))">Skin.SetString(codeclogos_flag_path,flags/colorful)</onload>
-	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_name))">Skin.SetString(codeclogos_name,Colorful)</onload>
-	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_path))">Skin.SetString(codeclogos_path,codeclogos/colorful)</onload>
-	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + String.IsEmpty(Skin.String(codeclogos_scale))">Skin.SetString(codeclogos_scale,120)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + String.IsEmpty(Skin.String(codeclogos_flag_name))">Skin.SetString(codeclogos_flag_name,Colorful)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + String.IsEmpty(Skin.String(codeclogos_flag_path))">Skin.SetString(codeclogos_flag_path,flags/colorful)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + String.IsEmpty(Skin.String(codeclogos_flag_path_slash)) + [String.IsEmpty(Skin.String(codeclogos_flag_path)) | String.IsEqual(Skin.String(codeclogos_flag_path),flags/colorful)]">Skin.SetString(codeclogos_flag_path_slash,flags/colorful/)</onload>
+
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + String.IsEmpty(Skin.String(codeclogos_name))">Skin.SetString(codeclogos_name,Colorful)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + [String.IsEmpty(Skin.String(codeclogos_path)) | String.IsEqual(Skin.String(codeclogos_path),codeclogos/colorful)]">Skin.SetString(codeclogos_path,codecs/colorful)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + String.IsEmpty(Skin.String(codeclogos_path_slash)) + [String.IsEmpty(Skin.String(codeclogos_path)) | String.IsEqual(Skin.String(codeclogos_path),codeclogos/colorful) | String.IsEqual(Skin.String(codeclogos_path),codecs/colorful)]">Skin.SetString(codeclogos_path_slash,codecs/colorful/)</onload>
+
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + String.IsEmpty(Skin.String(codeclogos_scale))">Skin.SetString(codeclogos_scale,120)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + String.IsEmpty(Skin.String(codeclogos_include)) + [String.IsEmpty(Skin.String(codeclogos_scale)) | String.IsEqual(Skin.String(codeclogos_scale),120)]">Skin.SetString(codeclogos_include,CodecLogoSize_120)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + String.IsEmpty(Skin.String(codeclogos_bg1)) + [String.IsEmpty(Skin.String(codeclogos_scale)) | String.IsEqual(Skin.String(codeclogos_scale),120)]">Skin.SetString(codeclogos_bg1,CodecLogoBG1_120)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + String.IsEmpty(Skin.String(codeclogos_bg2)) + [String.IsEmpty(Skin.String(codeclogos_scale)) | String.IsEqual(Skin.String(codeclogos_scale),120)]">Skin.SetString(codeclogos_bg2,CodecLogoBG2_120)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2) + String.IsEmpty(Skin.String(bar_position_include)) + [String.IsEmpty(Skin.String(codeclogos_scale)) | String.IsEqual(Skin.String(codeclogos_scale),120)]">Skin.SetString(bar_position_include,BarPosition_120)</onload>
+
+	<!-- Only apply boolean defaults on a genuinely fresh installation. -->
 	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet)">Skin.SetBool(show_codec_background)</onload>
 	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet)">Skin.SetBool(CodecInfoOverlayBottomRight)</onload>
-
 	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + !Skin.HasSetting(osd.useleftCodecStartupLogos) + !Skin.HasSetting(osd.usecenterCodecStartupLogos) + !Skin.HasSetting(osd.userightCodecStartupLogos)">Skin.SetBool(osd.userightCodecStartupLogos)</onload>
 	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + !Skin.HasSetting(ppi.useleftCodecLogos) + !Skin.HasSetting(ppi.usecenterCodecLogos) + !Skin.HasSetting(ppi.userightCodecLogos)">Skin.SetBool(ppi.userightCodecLogos)</onload>
 	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet) + !Skin.HasSetting(osd.useleftCodecLogos) + !Skin.HasSetting(osd.usecenterCodecLogos) + !Skin.HasSetting(osd.userightCodecLogos)">Skin.SetBool(osd.userightCodecLogos)</onload>
+
+	<!-- Includes are loaded before Startup.xml runs. Rebuild them once after writing defaults. -->
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2)">AlarmClock(CodecLogoDefaultsReloadV2,ReloadSkin(),00:01,silent)</onload>
 	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSet)">Skin.SetBool(CodecLogoDefaultsSet)</onload>
+	<onload condition="!Skin.HasSetting(CodecLogoDefaultsSetV2)">Skin.SetBool(CodecLogoDefaultsSetV2)</onload>
 
 	<onload>Skin.SetBool(ClearPlaylist)</onload>
 	<onload>SetProperty(startup,1,home)</onload>

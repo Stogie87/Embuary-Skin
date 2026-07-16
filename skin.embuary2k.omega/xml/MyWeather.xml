@@ -208,9 +208,9 @@
 					<height>auto</height>
 					<align>center</align>
 					<itemgap>0</itemgap>
-					<onright>133</onright>
-					<onleft>133</onleft>
-					<onback>133</onback>
+					<onright>100</onright>
+					<onleft>100</onleft>
+					<onback>100</onback>
 					<usecontrolcoords>true</usecontrolcoords>
 					<control type="image" id="4001">
 						<width>100%</width>
