@@ -2141,7 +2141,7 @@ msgstr "Vaizdo eilė"
 
 msgctxt "#31509"
 msgid "Video queue data"
-msgstr "Vaizdo eilės duomenys"
+msgstr ""
 
 msgctxt "#31510"
 msgid "Audio queue"
@@ -2149,7 +2149,7 @@ msgstr "Garso eilė"
 
 msgctxt "#31511"
 msgid "Audio queue data"
-msgstr "Garso eilės duomenys"
+msgstr ""
 
 msgctxt "#31512"
 msgid "Kb/s"

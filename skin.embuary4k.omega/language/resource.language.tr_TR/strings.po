@@ -2141,7 +2141,7 @@ msgstr "Video kuyruğu"
 
 msgctxt "#31509"
 msgid "Video queue data"
-msgstr "Video kuyruğu verileri"
+msgstr ""
 
 msgctxt "#31510"
 msgid "Audio queue"
@@ -2149,7 +2149,7 @@ msgstr "Ses kuyruğu"
 
 msgctxt "#31511"
 msgid "Audio queue data"
-msgstr "Ses kuyruğu verileri"
+msgstr ""
 
 msgctxt "#31512"
 msgid "Kb/s"

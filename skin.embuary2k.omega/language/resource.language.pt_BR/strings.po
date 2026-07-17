@@ -2141,7 +2141,7 @@ msgstr "Fila de vídeo"
 
 msgctxt "#31509"
 msgid "Video queue data"
-msgstr "Dados da fila de vídeo"
+msgstr ""
 
 msgctxt "#31510"
 msgid "Audio queue"
@@ -2149,7 +2149,7 @@ msgstr "Fila de áudio"
 
 msgctxt "#31511"
 msgid "Audio queue data"
-msgstr "Dados da fila de áudio"
+msgstr ""
 
 msgctxt "#31512"
 msgid "Kb/s"

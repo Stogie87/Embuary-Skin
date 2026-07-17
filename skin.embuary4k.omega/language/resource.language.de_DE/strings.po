@@ -2187,7 +2187,7 @@ msgstr "Videowarteschlange"
 
 msgctxt "#31509"
 msgid "Video queue data"
-msgstr "Daten der Videowarteschlange"
+msgstr "Video Queue-Daten"
 
 msgctxt "#31510"
 msgid "Audio queue"
@@ -2195,7 +2195,7 @@ msgstr "Audiowarteschlange"
 
 msgctxt "#31511"
 msgid "Audio queue data"
-msgstr "Daten der Audiowarteschlange"
+msgstr "Audio Queue-Daten"
 
 msgctxt "#31512"
 msgid "Kb/s"

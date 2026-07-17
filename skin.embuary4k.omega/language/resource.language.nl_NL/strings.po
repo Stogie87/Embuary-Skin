@@ -2141,7 +2141,7 @@ msgstr "Videowachtrij"
 
 msgctxt "#31509"
 msgid "Video queue data"
-msgstr "Gegevens videowachtrij"
+msgstr ""
 
 msgctxt "#31510"
 msgid "Audio queue"
@@ -2149,7 +2149,7 @@ msgstr "Audiowachtrij"
 
 msgctxt "#31511"
 msgid "Audio queue data"
-msgstr "Gegevens audiowachtrij"
+msgstr ""
 
 msgctxt "#31512"
 msgid "Kb/s"

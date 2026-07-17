@@ -2141,7 +2141,7 @@ msgstr "Cola de video"
 
 msgctxt "#31509"
 msgid "Video queue data"
-msgstr "Datos de la cola de video"
+msgstr ""
 
 msgctxt "#31510"
 msgid "Audio queue"
@@ -2149,7 +2149,7 @@ msgstr "Cola de audio"
 
 msgctxt "#31511"
 msgid "Audio queue data"
-msgstr "Datos de la cola de audio"
+msgstr ""
 
 msgctxt "#31512"
 msgid "Kb/s"
