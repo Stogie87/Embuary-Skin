@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<widgets>
+  <group name="widget-559" label="559" icon="DefaultFolder.png">
+    <group name="widget-559-32030" label="32030" icon="DefaultFolder.png">
+      <content source="playlists" target="videos"/>
+    </group>
+    <group name="widget-559-32031" label="32031" icon="DefaultFolder.png">
+      <content source="playlists" target="music"/>
+    </group>
+  </group>
+  <group name="widget-32030" label="32030" icon="DefaultFolder.png">
+    <content source="nodes" target="videos"/>
+    <group name="widget-32030-32040" label="32040" icon="DefaultFolder.png">
+      <content source="playlists" target="videos"/>
+    </group>
+    <group name="widget-32030-32010" label="32010" icon="DefaultFolder.png">
+      <content source="addons" target="videos"/>
+    </group>
+    <group name="widget-32030-32075" label="32075" icon="DefaultFolder.png">
+      <content source="sources" target="videos"/>
+    </group>
+  </group>
+  <group name="widget-32031" label="32031" icon="DefaultFolder.png">
+    <content source="nodes" target="music"/>
+    <group name="widget-32031-32040" label="32040" icon="DefaultFolder.png">
+      <content source="playlists" target="music"/>
+    </group>
+    <group name="widget-32031-32011" label="32011" icon="DefaultFolder.png">
+      <content source="addons" target="music"/>
+    </group>
+    <group name="widget-32031-32075" label="32075" icon="DefaultFolder.png">
+      <content source="sources" target="music"/>
+    </group>
+  </group>
+  <group name="widget-32020" label="32020" icon="DefaultFolder.png">
+    <content source="sources" target="pictures"/>
+  </group>
+  <group name="widget-32007" label="32007" icon="DefaultFolder.png">
+    <group name="widget-32007-32010" label="32010" icon="DefaultFolder.png">
+      <widget name="widget-32007-32010-1037" label="1037" type="video" target="videos" icon="DefaultAddonVideo.png" source="addon">
+        <path>addons://sources/video</path>
+      </widget>
+      <content source="addons" target="videos"/>
+    </group>
+    <group name="widget-32007-32011" label="32011" icon="DefaultFolder.png">
+      <widget name="widget-32007-32011-1038" label="1038" type="music" target="music" icon="DefaultAddonMusic.png" source="addon">
+        <path>addons://sources/audio</path>
+      </widget>
+      <content source="addons" target="music"/>
+    </group>
+    <group name="widget-32007-32012" label="32012" icon="DefaultFolder.png">
+      <widget name="widget-32007-32012-1039" label="1039" type="picture" target="pictures" icon="DefaultAddonPicture.png" source="addon">
+        <path>addons://sources/image</path>
+      </widget>
+      <content source="addons" target="pictures"/>
+    </group>
+    <widget name="widget-32007-10001" label="10001" type="program" target="programs" icon="DefaultAddonProgram.png" source="addon">
+      <path>addons://sources/executable</path>
+    </widget>
+  </group>
+  <group name="widget-32006" label="32006" icon="DefaultFolder.png">
+    <content source="favourites"/>
+  </group>
+  <widget name="widget-1036" label="1036" type="favourites" target="videos" icon="defaultfavourites.png" source="favourites">
+    <path>favourites://</path>
+  </widget>
+  <group name="all-content" label="$LOCALIZE[31135]" icon="DefaultFolder.png">
+    <content source="nodes" target="videos"/>
+    <content source="playlists" target="videos"/>
+    <content source="addons" target="videos"/>
+    <content source="sources" target="videos"/>
+    <content source="nodes" target="music"/>
+    <content source="playlists" target="music"/>
+    <content source="addons" target="music"/>
+    <content source="sources" target="music"/>
+    <content source="addons" target="pictures"/>
+    <content source="sources" target="pictures"/>
+    <content source="addons" target="executable"/>
+    <content source="favourites"/>
+  </group>
+</widgets>

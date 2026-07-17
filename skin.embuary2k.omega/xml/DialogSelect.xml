@@ -1,15 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <window>
 	<defaultcontrol always="true">3</defaultcontrol>
 	<include>PropertyIncludes</include>
+	<onload condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + !String.IsEmpty(Window(home).Property(skinshortcuts-picker))">SetFocus(6)</onload>
 	<controls>
 		<control type="group">
 			<visible>![Window.IsVisible(GameVideoFilter) | Window.IsVisible(GameStretchMode) | Window.IsVisible(GameVideoRotation)]</visible>
+			<animation type="WindowClose" reversible="false" condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + !String.IsEmpty(Window(home).Property(skinshortcuts-picker))">
+				<effect type="fade" start="100" end="100" time="500"/>
+			</animation>
 			<control type="label" id="1">
 				<include>HiddenObject</include>
 			</control>
 			<control type="group">
-				<visible>Control.IsVisible(3)</visible>
+				<visible>Control.IsVisible(3) + [!String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) | String.IsEmpty(Window(home).Property(skinshortcuts-picker))]</visible>
 				<control type="list" id="3">
 					<top>-10</top>
 					<left>-10</left>
@@ -170,13 +174,13 @@
 				</control>
 			</control>
 			<control type="group">
-				<visible>Control.IsVisible(6)</visible>
+				<visible>Control.IsVisible(6) | [String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + !String.IsEmpty(Window(home).Property(skinshortcuts-picker))]</visible>
 				<include content="DiffuseMask">
 					<param name="color">background_diffuse</param>
 					<param name="visible">!Window.IsVisible(script-skinshortcuts.xml)</param>
 				</include>
 				<control type="grouplist">
-					<include>Dialog_PopupOpenClose</include>
+					<include condition="!String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) | String.IsEmpty(Window(home).Property(skinshortcuts-picker))">Dialog_PopupOpenClose</include>
 					<centerleft>50%</centerleft>
 					<centertop>50%</centertop>
 					<width>1000</width>

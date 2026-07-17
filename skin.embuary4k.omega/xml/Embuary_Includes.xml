@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <includes>
 	<!-- Common templates -->
 	<include name="ParamHeight">
@@ -36,10 +36,10 @@
 		<top>-3000</top>
 		<width>1</width>
 		<height>1</height>
-		<texturefocus />
-		<texturenofocus />
-		<label></label>
-		<font></font>
+		<texturefocus/>
+		<texturenofocus/>
+		<label/>
+		<font/>
 		<itemlayout/>
 		<focusedlayout/>
 	</include>
@@ -299,61 +299,61 @@
 				<include>HiddenObject</include>
 				<content>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[ListItem.Art($PARAM[art])]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Art($PARAM[art]))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[ListItem.Art($PARAM[art]1)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Art($PARAM[art]1))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[ListItem.Art($PARAM[art]2)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Art($PARAM[art]2))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[ListItem.Art($PARAM[art]3)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Art($PARAM[art]3))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[ListItem.Art($PARAM[art]4)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Art($PARAM[art]4))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[ListItem.Art($PARAM[art]5)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Art($PARAM[art]5))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[ListItem.Art($PARAM[art]6)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Art($PARAM[art]6))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[ListItem.Art($PARAM[art]7)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Art($PARAM[art]7))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[ListItem.Art($PARAM[art]8)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Art($PARAM[art]8))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[ListItem.Art($PARAM[art]9)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(ListItem.Art($PARAM[art]9))</visible>
@@ -371,133 +371,133 @@
 				<include>HiddenObject</include>
 				<content>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(0).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(0).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(1).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(1).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(2).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(2).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(3).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(3).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(4).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(4).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(5).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(5).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(6).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(6).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(7).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(7).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(8).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(8).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(9).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(9).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10052).ListItemAbsolute(10).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10052).ListItemAbsolute(10).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(0).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(0).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(1).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(1).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(2).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(2).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(3).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(3).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(4).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(4).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(5).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(5).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(6).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(6).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(7).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(7).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(8).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(8).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(9).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(9).Art(fanart))</visible>
 					</item>
 					<item>
-						<label></label>
+						<label/>
 						<icon>$INFO[Container(10053).ListItemAbsolute(10).Art(fanart)]</icon>
 						<onclick>noop</onclick>
 						<visible>!String.IsEmpty(Container(10053).ListItemAbsolute(10).Art(fanart))</visible>
@@ -508,26 +508,26 @@
 	</include>
 	<!-- No textures -->
 	<include name="NoTextures">
-		<texturefocus></texturefocus>
-		<texturenofocus></texturenofocus>
-		<textureup></textureup>
-		<texturedown></texturedown>
-		<textureupfocus></textureupfocus>
-		<texturedownfocus></texturedownfocus>
-		<textureupdisabled></textureupdisabled>
-		<texturedowndisabled></texturedowndisabled>
-		<textureradioonfocus></textureradioonfocus>
-		<textureradioonnofocus></textureradioonnofocus>
-		<textureradioofffocus></textureradioofffocus>
-		<textureradiooffnofocus></textureradiooffnofocus>
-		<radiowidth></radiowidth>
-		<radioheight></radioheight>
+		<texturefocus/>
+		<texturenofocus/>
+		<textureup/>
+		<texturedown/>
+		<textureupfocus/>
+		<texturedownfocus/>
+		<textureupdisabled/>
+		<texturedowndisabled/>
+		<textureradioonfocus/>
+		<textureradioonnofocus/>
+		<textureradioofffocus/>
+		<textureradiooffnofocus/>
+		<radiowidth/>
+		<radioheight/>
 	</include>
 	<!-- Spacer -->
 	<include name="Spacer">
-		<param name="visible" default="false" />
-		<param name="width" default="0" />
-		<param name="height" default="0" />
+		<param name="visible" default="false"/>
+		<param name="width" default="0"/>
+		<param name="height" default="0"/>
 		<definition>
 			<control type="label">
 				<width>$PARAM[width]</width>
@@ -866,7 +866,7 @@
 					<align>right</align>
 					<textcolor>white</textcolor>
 					<font>Material28</font>
-					<label>                        &#xf46e;</label>
+					<label>                        </label>
 					<visible>Player.IsTempo + !Player.Rewinding + !Player.Forwarding + !Player.Paused</visible>
 				</control>
 				<control type="label" id="99">
@@ -882,7 +882,7 @@
 					<align>right</align>
 					<font>Material28</font>
 					<textcolor>white</textcolor>
-					<label>                        &#xf45f;</label>
+					<label>                        </label>
 					<visible>Player.Rewinding</visible>
 				</control>
 				<control type="label" id="99">
@@ -898,7 +898,7 @@
 					<align>right</align>
 					<font>Material28</font>
 					<textcolor>white</textcolor>
-					<label>                        &#xf211;</label>
+					<label>                        </label>
 					<visible>Player.Forwarding</visible>
 				</control>
 				<control type="label" id="99">
@@ -914,7 +914,7 @@
 					<align>right</align>
 					<font>Material28</font>
 					<textcolor>white</textcolor>
-					<label>                        &#xf3e4;</label>
+					<label>                        </label>
 					<visible>Player.Paused</visible>
 				</control>
 				<control type="label" id="99">
@@ -922,7 +922,7 @@
 					<align>right</align>
 					<font>Material28</font>
 					<textcolor>white</textcolor>
-					<label>                        &#xf75e;</label>
+					<label>                        </label>
 					<visible>Player.Muted</visible>
 				</control>
 				<control type="label" id="99">
@@ -942,9 +942,9 @@
 		<right>119</right>
 		<height>5</height>
 		<reveal>true</reveal>
-		<righttexture></righttexture>
-		<overlaytexture></overlaytexture>
-		<lefttexture></lefttexture>
+		<righttexture/>
+		<overlaytexture/>
+		<lefttexture/>
 	</include>
 	<!-- Weather templates -->
 	<include name="WeatherSmall">
@@ -1022,8 +1022,8 @@
 	</include>
 	<include name="SetPropertyOnFocus">
 		<control type="button">
-			<texturefocus></texturefocus>
-			<texturenofocus></texturenofocus>
+			<texturefocus/>
+			<texturenofocus/>
 
 			<onfocus>ClearProperty(FocusBounce,home)</onfocus>
 
@@ -1084,7 +1084,8 @@
 		</include>
 		<control type="button" id="$PARAM[id]2">
 			<include>SettingsButton</include>
-			<onclick>RunScript(script.skinshortcuts,type=shortcuts&amp;showNone=True&amp;custom=True&amp;grouping=widget&amp;skinLabel=UserWidget$PARAM[nr]_name&amp;skinAction=UserWidget$PARAM[nr]_action&amp;skinList=UserWidget$PARAM[nr]_path)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=shortcuts&amp;showNone=True&amp;custom=True&amp;grouping=widget&amp;skinLabel=UserWidget$PARAM[nr]_name&amp;skinAction=UserWidget$PARAM[nr]_action&amp;skinList=UserWidget$PARAM[nr]_path)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=skinstring&amp;skinLabel=UserWidget$PARAM[nr]_name&amp;skinPath=UserWidget$PARAM[nr]_path&amp;skinType=UserWidget$PARAM[nr]_type&amp;skinTarget=UserWidget$PARAM[nr]_target)</onclick>
 			<label>$LOCALIZE[748]</label>
 			<label2>$INFO[Skin.String(UserWidget$PARAM[nr]_path)]</label2>
 		</control>
@@ -1291,14 +1292,14 @@
 				</include>
 				<control type="group">
 					<animation type="Conditional" reversible="false" condition="ControlGroup(4100).HasFocus">
-						<effect type="slide" delay="0" start="0,-3000" end="0,0" time="0" />
-						<effect type="zoom" start="80" end="100" center="960,540" delay="160" tween="circle" easin="out" time="240" />
-						<effect type="fade" delay="160" end="100" time="240" />
+						<effect type="slide" delay="0" start="0,-3000" end="0,0" time="0"/>
+						<effect type="zoom" start="80" end="100" center="960,540" delay="160" tween="circle" easin="out" time="240"/>
+						<effect type="fade" delay="160" end="100" time="240"/>
 					</animation>
 					<animation type="Conditional" reversible="false" condition="!ControlGroup(4100).HasFocus">
-						<effect type="slide" delay="240" end="0,-3000" start="0,0" time="0" />
-						<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="circle" easin="out" time="240" />
-						<effect type="fade" start="100" end="0" time="240" />
+						<effect type="slide" delay="240" end="0,-3000" start="0,0" time="0"/>
+						<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="circle" easin="out" time="240"/>
+						<effect type="fade" start="100" end="0" time="240"/>
 					</animation>
 					<centerleft>50%</centerleft>
 					<width>484</width>

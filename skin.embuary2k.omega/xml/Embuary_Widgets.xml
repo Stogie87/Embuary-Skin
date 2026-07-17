@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <includes>
 	<!-- Loading item -->
 	<include name="LoadingWidget">
@@ -11,8 +11,8 @@
 				<left>$PARAM[left]</left>
 				<top>$PARAM[top]</top>
 				<animation type="Conditional" reversible="false" condition="Control.HasFocus($PARAM[id])">
-					<effect type="zoom" end="110" time="75" tween="sine" easing="out" center="auto" />
-					<effect type="zoom" end="90.9090909" time="225" tween="sine" delay="100" easing="out" center="auto" />
+					<effect type="zoom" end="110" time="75" tween="sine" easing="out" center="auto"/>
+					<effect type="zoom" end="90.9090909" time="225" tween="sine" delay="100" easing="out" center="auto"/>
 				</animation>
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
@@ -124,14 +124,14 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="$PARAM[layout]">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$PARAM[thumblabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="visible_icon" value="$PARAM[visible_icon]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
-								<param name="ar" value="$PARAM[ar]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$PARAM[thumblabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="visible_icon" value="$PARAM[visible_icon]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
+								<param name="ar" value="$PARAM[ar]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -143,14 +143,14 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="$PARAM[layout]">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$PARAM[thumblabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="visible_icon" value="$PARAM[visible_icon]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
-								<param name="ar" value="$PARAM[ar]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$PARAM[thumblabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="visible_icon" value="$PARAM[visible_icon]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
+								<param name="ar" value="$PARAM[ar]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -246,15 +246,15 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="$PARAM[layout]">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$PARAM[thumblabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="visible_icon" value="$PARAM[visible_icon]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
-								<param name="ar" value="$PARAM[ar]" />
-								<param name="icon" value="$PARAM[icon]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$PARAM[thumblabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="visible_icon" value="$PARAM[visible_icon]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
+								<param name="ar" value="$PARAM[ar]"/>
+								<param name="icon" value="$PARAM[icon]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -266,15 +266,15 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="$PARAM[layout]">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$PARAM[thumblabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="visible_icon" value="$PARAM[visible_icon]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
-								<param name="ar" value="$PARAM[ar]" />
-								<param name="icon" value="$PARAM[icon]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$PARAM[thumblabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="visible_icon" value="$PARAM[visible_icon]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
+								<param name="ar" value="$PARAM[ar]"/>
+								<param name="icon" value="$PARAM[icon]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -329,7 +329,7 @@
 					<param name="shadow_height" value="361"/>
 					<param name="width" value="237"/>
 					<param name="height" value="355"/>
-					<param name="focused" value="true" />
+					<param name="focused" value="true"/>
 					<param name="focus_width" value="261"/>
 					<param name="focus_height" value="379"/>
 				</include>
@@ -371,14 +371,14 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="$PARAM[layout]">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$PARAM[thumblabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="visible_icon" value="$PARAM[visible_icon]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
-								<param name="icon" value="$PARAM[icon]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$PARAM[thumblabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="visible_icon" value="$PARAM[visible_icon]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
+								<param name="icon" value="$PARAM[icon]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -390,14 +390,14 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="$PARAM[layout]">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$PARAM[thumblabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="visible_icon" value="$PARAM[visible_icon]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
-								<param name="icon" value="$PARAM[icon]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$PARAM[thumblabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="visible_icon" value="$PARAM[visible_icon]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
+								<param name="icon" value="$PARAM[icon]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -443,7 +443,7 @@
 					<param name="shadow_height" value="361"/>
 					<param name="width" value="237"/>
 					<param name="height" value="355"/>
-					<param name="focused" value="true" />
+					<param name="focused" value="true"/>
 					<param name="focus_width" value="261"/>
 					<param name="focus_height" value="379"/>
 				</include>
@@ -486,11 +486,11 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="CastLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -499,11 +499,11 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="CastLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -563,11 +563,11 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="ProfileLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -579,11 +579,11 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="ProfileLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -623,7 +623,7 @@
 					<param name="shadow_height" value="286"/>
 					<param name="width" value="280"/>
 					<param name="height" value="280"/>
-					<param name="focused" value="true" />
+					<param name="focused" value="true"/>
 					<param name="focus_width" value="304"/>
 					<param name="focus_height" value="304"/>
 				</include>
@@ -663,13 +663,13 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="$PARAM[layout]">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="visible_icon" value="$PARAM[visible_icon]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
-								<param name="icon" value="$PARAM[icon]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="visible_icon" value="$PARAM[visible_icon]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
+								<param name="icon" value="$PARAM[icon]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -681,13 +681,13 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="$PARAM[layout]">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="visible_icon" value="$PARAM[visible_icon]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
-								<param name="icon" value="$PARAM[icon]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="visible_icon" value="$PARAM[visible_icon]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
+								<param name="icon" value="$PARAM[icon]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -738,9 +738,9 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="MainMenuLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -752,9 +752,9 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="MainMenuLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -792,9 +792,9 @@
 							<left>70</left>
 							<top>114</top>
 							<include content="MainMenuLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -806,9 +806,9 @@
 							<left>70</left>
 							<top>114</top>
 							<include content="MainMenuLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -853,9 +853,9 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="SmallMenuLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -867,9 +867,9 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="SmallMenuLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -877,10 +877,14 @@
 						<item>
 							<property name="fallback">true</property>
 							<label>$LOCALIZE[31028]</label>
-							<onclick condition="Window.IsVisible(1120)">RunScript(script.skinshortcuts,type=manage&amp;group=moviehub)</onclick>
-							<onclick condition="Window.IsVisible(1121)">RunScript(script.skinshortcuts,type=manage&amp;group=tvshowhub)</onclick>
-							<onclick condition="Window.IsVisible(1122)">RunScript(script.skinshortcuts,type=manage&amp;group=musichub)</onclick>
-							<onclick condition="Window.IsVisible(1125)">RunScript(script.skinshortcuts,type=manage&amp;group=customhub)</onclick>
+							<onclick condition="[Window.IsVisible(1120)] + String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=moviehub)</onclick>
+							<onclick condition="[Window.IsVisible(1120)] + String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=group-moviehub)</onclick>
+							<onclick condition="[Window.IsVisible(1121)] + String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=tvshowhub)</onclick>
+							<onclick condition="[Window.IsVisible(1121)] + String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=group-tvshowhub)</onclick>
+							<onclick condition="[Window.IsVisible(1122)] + String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=musichub)</onclick>
+							<onclick condition="[Window.IsVisible(1122)] + String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=group-musichub)</onclick>
+							<onclick condition="[Window.IsVisible(1125)] + String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=customhub)</onclick>
+							<onclick condition="[Window.IsVisible(1125)] + String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=group-customhub)</onclick>
 							<visible>Window.IsVisible(1120) | Window.IsVisible(1121) | Window.IsVisible(1122) | Window.IsVisible(1125)</visible>
 							<visible>String.IsEmpty(Container($PARAM[id]).ListItemAbsolute(0).Property(id)) + String.IsEmpty(Container($PARAM[id]).ListItemAbsolute(1).Property(id))</visible>
 						</item>
@@ -934,11 +938,11 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="SettingsLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="" />
-								<param name="color" value="$PARAM[color]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value=""/>
+								<param name="color" value="$PARAM[color]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -950,11 +954,11 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="SettingsLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="" />
-								<param name="color" value="$PARAM[color]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value=""/>
+								<param name="color" value="$PARAM[color]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -1099,12 +1103,12 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="PVRLandscapeLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$INFO[ListItem.Channelname]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$INFO[ListItem.Channelname]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -1116,12 +1120,12 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="PVRLandscapeLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$INFO[ListItem.Channelname]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$INFO[ListItem.Channelname]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -1130,12 +1134,12 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="PVR4to3Layout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$INFO[ListItem.Channelname]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$INFO[ListItem.Channelname]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -1147,12 +1151,12 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="PVR4to3Layout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$INFO[ListItem.Channelname]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$INFO[ListItem.Channelname]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</focusedlayout>
@@ -1161,12 +1165,12 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="PVRPosterLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$INFO[ListItem.Channelname]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="focused" value="false" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$INFO[ListItem.Channelname]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="focused" value="false"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</itemlayout>
@@ -1178,21 +1182,21 @@
 							<left>70</left>
 							<top>64</top>
 							<include content="PVRPosterLayout">
-								<param name="mainlabel" value="$PARAM[mainlabel]" />
-								<param name="sublabel" value="$PARAM[sublabel]" />
-								<param name="thumblabel" value="$INFO[ListItem.Channelname]" />
-								<param name="labels_visible" value="$PARAM[labels_visible]" />
-								<param name="focused" value="true" />
-								<param name="id" value="$PARAM[id]" />
+								<param name="mainlabel" value="$PARAM[mainlabel]"/>
+								<param name="sublabel" value="$PARAM[sublabel]"/>
+								<param name="thumblabel" value="$INFO[ListItem.Channelname]"/>
+								<param name="labels_visible" value="$PARAM[labels_visible]"/>
+								<param name="focused" value="true"/>
+								<param name="id" value="$PARAM[id]"/>
 							</include>
 						</control>
 					</focusedlayout>
 					<include condition="$PARAM[use_custom_content]" content="ContainerContentPath">
-						<param name="id" value="$PARAM[id]" />
-						<param name="showdummy" value="String.IsEmpty(Container($PARAM[id]).ListItemAbsolute(0).Channelname)" />
-						<param name="dummylabel" value="$LOCALIZE[31285]" />
-						<param name="dummylabel2" value="$LOCALIZE[19023]" />
-						<param name="dummyaction" value="ActivateWindow(tvchannels)" />
+						<param name="id" value="$PARAM[id]"/>
+						<param name="showdummy" value="String.IsEmpty(Container($PARAM[id]).ListItemAbsolute(0).Channelname)"/>
+						<param name="dummylabel" value="$LOCALIZE[31285]"/>
+						<param name="dummylabel2" value="$LOCALIZE[19023]"/>
+						<param name="dummyaction" value="ActivateWindow(tvchannels)"/>
 						<param name="widget_target">$PARAM[widget_target]</param>
 						<param name="sortby">$PARAM[sortby]</param>
 						<param name="sortorder">$PARAM[sortorder]</param>

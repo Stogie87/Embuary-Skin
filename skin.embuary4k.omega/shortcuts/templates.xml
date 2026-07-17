@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+  <!--
+    Existing/default Embuary items keep their fixed artContainerId and the
+    art1..art4/icon1..icon4 properties emitted on the menu ListItems.
+    Only newly created Skin Shortcuts v3 items use the dynamic 4350xx range.
+  -->
+  <variables>
+    <variable name="EmbuarySkinShortcutsDynamicArt1">
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name]) + !String.IsEmpty(Container($PROPERTY[id]).ListItem(0).Art(poster))">$INFO[Container($PROPERTY[id]).ListItem(0).Art(poster)]</value>
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name]) + !String.IsEmpty(Container($PROPERTY[id]).ListItem(0).Art(thumb))">$INFO[Container($PROPERTY[id]).ListItem(0).Art(thumb)]</value>
+    </variable>
+    <variable name="EmbuarySkinShortcutsDynamicArt2">
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name]) + !String.IsEmpty(Container($PROPERTY[id]).ListItem(1).Art(poster))">$INFO[Container($PROPERTY[id]).ListItem(1).Art(poster)]</value>
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name]) + !String.IsEmpty(Container($PROPERTY[id]).ListItem(1).Art(thumb))">$INFO[Container($PROPERTY[id]).ListItem(1).Art(thumb)]</value>
+    </variable>
+    <variable name="EmbuarySkinShortcutsDynamicArt3">
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name]) + !String.IsEmpty(Container($PROPERTY[id]).ListItem(2).Art(poster))">$INFO[Container($PROPERTY[id]).ListItem(2).Art(poster)]</value>
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name]) + !String.IsEmpty(Container($PROPERTY[id]).ListItem(2).Art(thumb))">$INFO[Container($PROPERTY[id]).ListItem(2).Art(thumb)]</value>
+    </variable>
+    <variable name="EmbuarySkinShortcutsDynamicArt4">
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name]) + !String.IsEmpty(Container($PROPERTY[id]).ListItem(3).Art(poster))">$INFO[Container($PROPERTY[id]).ListItem(3).Art(poster)]</value>
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name]) + !String.IsEmpty(Container($PROPERTY[id]).ListItem(3).Art(thumb))">$INFO[Container($PROPERTY[id]).ListItem(3).Art(thumb)]</value>
+    </variable>
+    <variable name="EmbuarySkinShortcutsDynamicIcon1">
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name])">$INFO[Container($PROPERTY[id]).ListItem(0).Icon]</value>
+    </variable>
+    <variable name="EmbuarySkinShortcutsDynamicIcon2">
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name])">$INFO[Container($PROPERTY[id]).ListItem(1).Icon]</value>
+    </variable>
+    <variable name="EmbuarySkinShortcutsDynamicIcon3">
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name])">$INFO[Container($PROPERTY[id]).ListItem(2).Icon]</value>
+    </variable>
+    <variable name="EmbuarySkinShortcutsDynamicIcon4">
+      <value condition="String.IsEqual(ListItem.Property(name),$PROPERTY[name])">$INFO[Container($PROPERTY[id]).ListItem(3).Icon]</value>
+    </variable>
+    <variableGroup name="EmbuarySkinShortcutsDynamicFakeArtVariables">
+      <variable content="EmbuarySkinShortcutsDynamicArt1"/>
+      <variable content="EmbuarySkinShortcutsDynamicArt2"/>
+      <variable content="EmbuarySkinShortcutsDynamicArt3"/>
+      <variable content="EmbuarySkinShortcutsDynamicArt4"/>
+      <variable content="EmbuarySkinShortcutsDynamicIcon1"/>
+      <variable content="EmbuarySkinShortcutsDynamicIcon2"/>
+      <variable content="EmbuarySkinShortcutsDynamicIcon3"/>
+      <variable content="EmbuarySkinShortcutsDynamicIcon4"/>
+    </variableGroup>
+  </variables>
+
+  <!-- Database-tag artwork using the original fixed container. -->
+  <template include="itemArt" menu="mainmenu">
+    <condition>useFakeArt=true</condition>
+    <condition>tagNr</condition>
+    <condition>artContainerId</condition>
+    <controls>
+      <control type="list" id="$PROPERTY[artContainerId]">
+        <include>HiddenObject</include>
+        <content sortby="random" limit="1">$INFO[Window(home).Property(library.tags.$PROPERTY[tagNr].id),videodb://movies/tags/,/]</content>
+        <content sortby="random" limit="1">$INFO[Window(home).Property(library.tags.$PROPERTY[tagNr].id),videodb://tvshows/tags/,/]</content>
+        <content sortby="random" limit="1">$INFO[Window(home).Property(library.tags.$PROPERTY[tagNr].id),videodb://movies/tags/,/]</content>
+        <content sortby="random" limit="1">$INFO[Window(home).Property(library.tags.$PROPERTY[tagNr].id),videodb://tvshows/tags/,/]</content>
+        <content sortby="random" limit="1">$INFO[Window(home).Property(library.tags.$PROPERTY[tagNr].id),videodb://movies/tags/,/]</content>
+        <content sortby="random" limit="1">$INFO[Window(home).Property(library.tags.$PROPERTY[tagNr].id),videodb://tvshows/tags/,/]</content>
+        <content sortby="random" limit="1">$INFO[Window(home).Property(library.tags.$PROPERTY[tagNr].id),videodb://movies/tags/,/]</content>
+        <content sortby="random" limit="1">$INFO[Window(home).Property(library.tags.$PROPERTY[tagNr].id),videodb://tvshows/tags/,/]</content>
+      </control>
+    </controls>
+  </template>
+
+  <!-- Default library artwork using its original stable artContainerId. -->
+  <template include="itemArt" menu="mainmenu">
+    <condition>useFakeArt=true</condition>
+    <condition>list</condition>
+    <condition>!list=-</condition>
+    <condition>artContainerId</condition>
+    <controls>
+      <control type="list" id="$PROPERTY[artContainerId]">
+        <include>HiddenObject</include>
+        <content sortby="random" limit="4">$PROPERTY[list]</content>
+      </control>
+    </controls>
+  </template>
+
+  <!-- New v3 items: generate artwork from the path extracted from their action. -->
+  <template include="itemArt" menu="mainmenu" idprefix="4350">
+    <!-- Template filters are evaluated before built-in path/default context exists.
+         defaultID and artContainerId are real item properties and reliably
+         identify user-created entries that need dynamic artwork. -->
+    <condition>!defaultID</condition>
+    <condition>!artContainerId</condition>
+    <variableGroup content="EmbuarySkinShortcutsDynamicFakeArtVariables"/>
+    <controls>
+      <control type="list" id="$PROPERTY[id]">
+        <include>HiddenObject</include>
+        <content sortby="random" limit="4">$PROPERTY[path]</content>
+      </control>
+    </controls>
+  </template>
+</templates>

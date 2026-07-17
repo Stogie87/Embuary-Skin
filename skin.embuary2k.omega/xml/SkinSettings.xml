@@ -4,6 +4,19 @@
 	<menucontrol>6666</menucontrol>
 	<backgroundcolor>background</backgroundcolor>
 	<include>PropertyIncludes</include>
+	<!-- Restore the exact Skin Settings button after Skin Shortcuts v3 rebuilds and reloads the skin. -->
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1007)">SetFocus(101)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1007)">SetFocus(1007)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1402)">SetFocus(105)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1402)">SetFocus(1402)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1407)">SetFocus(105)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1407)">SetFocus(1407)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1410)">SetFocus(105)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1410)">SetFocus(1410)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1417)">SetFocus(105)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1417)">SetFocus(1417)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1420)">SetFocus(105)</onload>
+	<onload condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1420)">SetFocus(1420)</onload>
 	<controls>
 		<include>Background</include>
 		<control type="group" id="50">

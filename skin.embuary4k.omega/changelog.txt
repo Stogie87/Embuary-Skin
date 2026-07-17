@@ -1,3 +1,8 @@
+[B]Version 22.0.1[/B]
+- Initial release with Kodi 22 & shortcuts v3 support by Stogie87
+- Added full Kodi 22 and Skin Shortcuts v3 compatibility while preserving Kodi 21 support by Stogie87
+- Improved menu configuration, navigation and artwork fallbacks by Stogie87
+
 [B]Version 21.1.29[/B]
 - Added complete translations for all supported languages by Stogie87
 - Fixed codec logo and flag default initialization by Stogie87

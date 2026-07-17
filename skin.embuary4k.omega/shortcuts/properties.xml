@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<properties>
+  <property name="defaultID" type="text"/>
+  <property name="group" type="text"/>
+  <property name="isDefault" type="text"/>
+  <property name="list" type="text"/>
+  <property name="list2" type="text"/>
+  <property name="tagNr" type="text"/>
+  <property name="tagName" type="text"/>
+  <property name="hasVARLabel" type="text"/>
+  <property name="hasVARLabel.type" type="text"/>
+  <property name="artContainerId" type="text" templateonly="true"/>
+  <property name="art1" type="text"/>
+  <property name="art2" type="text"/>
+  <property name="art3" type="text"/>
+  <property name="art4" type="text"/>
+  <property name="icon1" type="text"/>
+  <property name="icon2" type="text"/>
+  <property name="icon3" type="text"/>
+  <property name="icon4" type="text"/>
+  <property name="aspectRatio" type="options">
+    <options>
+      <option label="$LOCALIZE[31311]">keep</option>
+      <option label="$LOCALIZE[31310]">stretch</option>
+      <option label="$LOCALIZE[31309]">scale</option>
+    </options>
+  </property>
+  <property name="useFakeArt" type="toggle">true</property>
+  <buttons suffix="false">
+    <button id="4003" property="aspectRatio" title="$LOCALIZE[31308]" type="options" showNone="false"/>
+    <button id="4004" property="useFakeArt" title="$LOCALIZE[31257]" type="toggle"/>
+  </buttons>
+  <fallbacks>
+    <fallback property="aspectRatio">
+      <default>keep</default>
+    </fallback>
+  </fallbacks>
+</properties>

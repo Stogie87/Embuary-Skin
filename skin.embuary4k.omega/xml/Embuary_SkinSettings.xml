@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <includes>
 
 	<include name="SettingsGrouplist">
@@ -55,7 +55,10 @@
 		<control type="button" id="$PARAM[id]07">
 			<include>SettingsButton</include>
 			<label>$LOCALIZE[31244]</label>
-			<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=sidepanel)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=sidepanel)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">Skin.SetString(EmbuarySkinSettingsReturnControl,1007)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=group-sidepanel)</onclick>
+			<onfocus condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1007)">Skin.Reset(EmbuarySkinSettingsReturnControl)</onfocus>
 			<enable>!Skin.HasSetting(SidePanelMainMenu)</enable>
 		</control>
 		<control type="radiobutton" id="$PARAM[id]08">
@@ -110,7 +113,10 @@
 		<control type="button" id="$PARAM[id]02">
 			<include>SettingsButton</include>
 			<label>$LOCALIZE[31244]</label>
-			<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">Skin.SetString(EmbuarySkinSettingsReturnControl,1402)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=mainmenu)</onclick>
+			<onfocus condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1402)">Skin.Reset(EmbuarySkinSettingsReturnControl)</onfocus>
 			<enable>!Skin.HasSetting(HideMainMenu)</enable>
 		</control>
 		<control type="button" id="$PARAM[id]03">
@@ -142,7 +148,10 @@
 		<control type="button" id="$PARAM[id]07">
 			<include>SettingsButton</include>
 			<label>$LOCALIZE[31244]</label>
-			<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=moviehub)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=moviehub)</onclick>
+		<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">Skin.SetString(EmbuarySkinSettingsReturnControl,1407)</onclick>
+		<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=group-moviehub)</onclick>
+		<onfocus condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1407)">Skin.Reset(EmbuarySkinSettingsReturnControl)</onfocus>
 		</control>
 		<control type="button" id="$PARAM[id]08">
 			<include>SettingsButton</include>
@@ -159,7 +168,10 @@
 		<control type="button" id="$PARAM[id]10">
 			<include>SettingsButton</include>
 			<label>$LOCALIZE[31244]</label>
-			<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=tvshowhub)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=tvshowhub)</onclick>
+		<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">Skin.SetString(EmbuarySkinSettingsReturnControl,1410)</onclick>
+		<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=group-tvshowhub)</onclick>
+		<onfocus condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1410)">Skin.Reset(EmbuarySkinSettingsReturnControl)</onfocus>
 		</control>
 		<control type="button" id="$PARAM[id]11">
 			<include>SettingsButton</include>
@@ -206,7 +218,10 @@
 		<control type="button" id="$PARAM[id]17">
 			<include>SettingsButton</include>
 			<label>$LOCALIZE[31244]</label>
-			<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=musichub)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=musichub)</onclick>
+		<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">Skin.SetString(EmbuarySkinSettingsReturnControl,1417)</onclick>
+		<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=group-musichub)</onclick>
+		<onfocus condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1417)">Skin.Reset(EmbuarySkinSettingsReturnControl)</onfocus>
 		</control>
 		<control type="button" id="$PARAM[id]18">
 			<include>SettingsButton</include>
@@ -219,12 +234,15 @@
 		<include content="SkinSettingsHeadlineLabel">
 			<param name="id" value="$PARAM[id]19"/>
 			<param name="label" value="$LOCALIZE[31232]"/>
-			<param name="visible" value="Skin.HasSetting(ShowCustomHub)" />
+			<param name="visible" value="Skin.HasSetting(ShowCustomHub)"/>
 		</include>
 		<control type="button" id="$PARAM[id]20">
 			<include>SettingsButton</include>
 			<label>$LOCALIZE[31244]</label>
-			<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=customhub)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=customhub)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">Skin.SetString(EmbuarySkinSettingsReturnControl,1420)</onclick>
+			<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=group-customhub)</onclick>
+			<onfocus condition="String.IsEqual(Skin.String(EmbuarySkinSettingsReturnControl),1420)">Skin.Reset(EmbuarySkinSettingsReturnControl)</onfocus>
 			<visible>Skin.HasSetting(ShowCustomHub)</visible>
 		</control>
 		<control type="button" id="$PARAM[id]21">
@@ -552,25 +570,25 @@
 		</control>
 		<control type="button" id="$PARAM[id]19">
 			<include>SettingsButton</include>
-			<onclick>SetProperty(Context.1.Label,1 &#x00D8;)</onclick>
+			<onclick>SetProperty(Context.1.Label,1 Ø)</onclick>
 			<onclick>SetProperty(Context.1.BuiltIn,Skin.SetString(BlurRadius,1)||RunScript(script.embuary.helper,action=restartservice))</onclick>
-			<onclick>SetProperty(Context.2.Label,2 &#x00D8; ($LOCALIZE[571]))</onclick>
+			<onclick>SetProperty(Context.2.Label,2 Ø ($LOCALIZE[571]))</onclick>
 			<onclick>SetProperty(Context.2.BuiltIn,Skin.SetString(BlurRadius,2)||RunScript(script.embuary.helper,action=restartservice))</onclick>
-			<onclick>SetProperty(Context.3.Label,3 &#x00D8;)</onclick>
+			<onclick>SetProperty(Context.3.Label,3 Ø)</onclick>
 			<onclick>SetProperty(Context.3.BuiltIn,Skin.SetString(BlurRadius,3)||RunScript(script.embuary.helper,action=restartservice))</onclick>
-			<onclick>SetProperty(Context.4.Label,4 &#x00D8;)</onclick>
+			<onclick>SetProperty(Context.4.Label,4 Ø)</onclick>
 			<onclick>SetProperty(Context.4.BuiltIn,Skin.SetString(BlurRadius,4)||RunScript(script.embuary.helper,action=restartservice))</onclick>
-			<onclick>SetProperty(Context.5.Label,5 &#x00D8;)</onclick>
+			<onclick>SetProperty(Context.5.Label,5 Ø)</onclick>
 			<onclick>SetProperty(Context.5.BuiltIn,Skin.SetString(BlurRadius,5)||RunScript(script.embuary.helper,action=restartservice))</onclick>
-			<onclick>SetProperty(Context.6.Label,6 &#x00D8;)</onclick>
+			<onclick>SetProperty(Context.6.Label,6 Ø)</onclick>
 			<onclick>SetProperty(Context.6.BuiltIn,Skin.SetString(BlurRadius,6)||RunScript(script.embuary.helper,action=restartservice))</onclick>
-			<onclick>SetProperty(Context.7.Label,7 &#x00D8;)</onclick>
+			<onclick>SetProperty(Context.7.Label,7 Ø)</onclick>
 			<onclick>SetProperty(Context.7.BuiltIn,Skin.SetString(BlurRadius,7)||RunScript(script.embuary.helper,action=restartservice))</onclick>
-			<onclick>SetProperty(Context.8.Label,8 &#x00D8;)</onclick>
+			<onclick>SetProperty(Context.8.Label,8 Ø)</onclick>
 			<onclick>SetProperty(Context.8.BuiltIn,Skin.SetString(BlurRadius,8)||RunScript(script.embuary.helper,action=restartservice))</onclick>
-			<onclick>SetProperty(Context.9.Label,9 &#x00D8;)</onclick>
+			<onclick>SetProperty(Context.9.Label,9 Ø)</onclick>
 			<onclick>SetProperty(Context.9.BuiltIn,Skin.SetString(BlurRadius,9)||RunScript(script.embuary.helper,action=restartservice))</onclick>
-			<onclick>SetProperty(Context.10.Label,10 &#x00D8;)</onclick>
+			<onclick>SetProperty(Context.10.Label,10 Ø)</onclick>
 			<onclick>SetProperty(Context.10.BuiltIn,Skin.SetString(BlurRadius,10)||RunScript(script.embuary.helper,action=restartservice))</onclick>
 			<onclick>RunScript(script.embuary.helper,action=createcontext)</onclick>
 			<enable>Skin.HasSetting(BlurEnabled)</enable>

@@ -13,7 +13,8 @@
 			<item>
 				<label>$LOCALIZE[31028]</label>
 				<icon>special://skin/extras/icons/menu_conf.jpg</icon>
-				<onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+				<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+				<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=mainmenu)</onclick>
 				<visible>String.IsEmpty(Window(home).Property(startup)) + [String.IsEmpty(Container($PARAM[id]).ListItemAbsolute(0).Property(id)) + String.IsEmpty(Container($PARAM[id]).ListItemAbsolute(1).Property(id))]</visible>
 			</item>
 			<include>skinshortcuts-mainmenu</include>
