@@ -52,15 +52,43 @@
                     <label>$LOCALIZE[31500]:</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
-                    <visible>!String.IsEmpty(Player.Process(amlogic.displaymode))</visible>
                 </control>
+
+                <!-- Amlogic / CoreELEC display mode -->
                 <control type="label">
                     <left>320</left>
                     <top>27</top>
+                    <width>470</width>
                     <label>$INFO[Player.Process(amlogic.displaymode)]</label>
                     <font>font_tiny</font>
                     <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
                     <visible>!String.IsEmpty(Player.Process(amlogic.displaymode))</visible>
+                </control>
+
+                <!-- Standard Kodi display resolution fallback -->
+                <control type="label">
+                    <left>320</left>
+                    <top>27</top>
+                    <width>470</width>
+                    <label>$INFO[System.ScreenResolution]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <scroll>true</scroll>
+                    <visible>String.IsEmpty(Player.Process(amlogic.displaymode))</visible>
+                    <visible>!String.IsEmpty(System.ScreenResolution)</visible>
+                </control>
+
+                <!-- No display resolution available -->
+                <control type="label">
+                    <left>320</left>
+                    <top>27</top>
+                    <width>470</width>
+                    <label>$LOCALIZE[31533]</label>
+                    <font>font_tiny</font>
+                    <textcolor>dialog_fg_90</textcolor>
+                    <visible>String.IsEmpty(Player.Process(amlogic.displaymode))</visible>
+                    <visible>String.IsEmpty(System.ScreenResolution)</visible>
                 </control>
 
                 <!-- Video mode -->

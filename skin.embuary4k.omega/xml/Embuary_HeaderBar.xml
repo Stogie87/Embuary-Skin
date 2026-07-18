@@ -37,7 +37,7 @@
 				<control type="grouplist">
 					<left>20</left>
 					<height>58</height>
-					<width>1920</width>
+					<width>3840</width>
 					<top>0</top>
 					<orientation>horizontal</orientation>
 					<itemgap>15</itemgap>
@@ -320,7 +320,7 @@
 				<control type="grouplist">
 					<left>20</left>
 					<height>58</height>
-					<width>1920</width>
+					<width>3840</width>
 					<bottom>0</bottom>
 					<orientation>horizontal</orientation>
 					<itemgap>15</itemgap>

@@ -25,7 +25,7 @@
       <option label="$LOCALIZE[31309]">scale</option>
     </options>
   </property>
-  <property name="useFakeArt" type="toggle">true</property>
+  <property name="useFakeArt" type="toggle" value="false"/>
   <buttons suffix="false">
     <button id="4003" property="aspectRatio" title="$LOCALIZE[31308]" type="options" showNone="false"/>
     <button id="4004" property="useFakeArt" title="$LOCALIZE[31257]" type="toggle"/>

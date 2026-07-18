@@ -14,7 +14,7 @@ import datetime
 import os
 import sys
 import hashlib
-import urllib.request as urllib
+from urllib.parse import quote, unquote
 
 ########################
 
@@ -34,6 +34,11 @@ DIALOG = xbmcgui.Dialog()
 PLAYER = xbmc.Player()
 VIDEOPLAYLIST = xbmc.PlayList(xbmc.PLAYLIST_VIDEO)
 MUSICPLAYLIST = xbmc.PlayList(xbmc.PLAYLIST_MUSIC)
+
+# Embuary stores selected library tags per skin. Keep the two maintained
+# resolutions separate, but migrate the sibling selection on first use so a
+# 2K/4K switch does not leave the new skin without tag IDs.
+EMBUARY_SKIN_IDS = ('skin.embuary2k.omega', 'skin.embuary4k.omega')
 
 ########################
 
@@ -115,12 +120,12 @@ def get_bool(value,string='true'):
         return False
 
 
-def url_quote(string):
-    return urllib.quote(string)
+def url_quote(string, safe='/'):
+    return quote(string, safe=safe)
 
 
 def url_unquote(string):
-    return urllib.unquote(string)
+    return unquote(string)
 
 
 def md5hash(value):
@@ -236,17 +241,48 @@ def reload_widgets(instant=False,reason='Timer'):
         execute('AlarmClock(WidgetRefresh,SetProperty(EmbuaryWidgetUpdate,%s,home),00:10,silent)' % timestamp)
 
 
-def sync_library_tags(tags=None,recreate=False):
-    save = False
+def tag_whitelist_filename(skin_id=None):
+    skin_id = skin_id or xbmc.getSkinDir()
+    return 'tags_whitelist.%s.data' % skin_id
 
+
+def get_tag_whitelist(skin_id=None, migrate=True):
+    """Load the tag whitelist for a skin and optionally seed it from its sibling.
+
+    Returns ``(whitelist, created)``. Existing non-empty selections are never
+    overwritten. An empty target is seeded from a non-empty sibling selection.
+    """
+    skin_id = skin_id or xbmc.getSkinDir()
+    target = tag_whitelist_filename(skin_id)
+    target_path = os.path.join(ADDON_DATA_PATH, target)
+
+    target_exists = xbmcvfs.exists(target_path)
+    target_whitelist = addon_data(target) if target_exists else []
+    if target_whitelist:
+        return target_whitelist, False
+
+    if migrate and skin_id in EMBUARY_SKIN_IDS:
+        for sibling in EMBUARY_SKIN_IDS:
+            if sibling == skin_id:
+                continue
+
+            source = tag_whitelist_filename(sibling)
+            source_path = os.path.join(ADDON_DATA_PATH, source)
+            if xbmcvfs.exists(source_path):
+                whitelist = addon_data(source)
+                if whitelist:
+                    addon_data(target, whitelist)
+                    log('Migrated library tag selection from %s to %s' % (sibling, skin_id), force=True)
+                    return whitelist, True
+
+    return target_whitelist, not target_exists
+
+
+def sync_library_tags(tags=None,recreate=False):
     if tags is None:
         tags = get_library_tags()
 
-    try:
-        whitelist = addon_data('tags_whitelist.' + xbmc.getSkinDir() +'.data')
-    except Exception:
-        whitelist = []
-        save = True
+    whitelist, save = get_tag_whitelist()
 
     try:
         old_tags = addon_data('tags_all.data')
@@ -256,12 +292,11 @@ def sync_library_tags(tags=None,recreate=False):
 
     ''' cleanup removed old tags
     '''
-    for tag in old_tags:
-        if tag not in tags:
-            save = True
-            old_tags.remove(tag)
-            if tag in whitelist:
-                whitelist.remove(tag)
+    for tag in [item for item in old_tags if item not in tags]:
+        save = True
+        old_tags.remove(tag)
+        if tag in whitelist:
+            whitelist.remove(tag)
 
     ''' recognize new available tags
     '''
@@ -343,15 +378,13 @@ def get_library_tags():
 
 
 def set_library_tags(tags,whitelist=None,save=True,clear=False):
-    setting = 'tags_whitelist.' + xbmc.getSkinDir() +'.data'
+    setting = tag_whitelist_filename()
     index = 0
 
+    if whitelist is None:
+        whitelist, _ = get_tag_whitelist()
+
     if tags and not clear:
-        if not whitelist:
-            try:
-                whitelist = addon_data('tags_whitelist.' + xbmc.getSkinDir() +'.data')
-            except Exception:
-                pass
 
         for item in tags:
             if item in whitelist:
@@ -369,7 +402,7 @@ def set_library_tags(tags,whitelist=None,save=True,clear=False):
     winprop('library.tags', get_joined_items(whitelist))
 
     if save:
-        addon_data('tags_whitelist.' + xbmc.getSkinDir() +'.data', whitelist)
+        addon_data(setting, whitelist)
 
 
 def addon_data_cleanup(number_of_days=60):

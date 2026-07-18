@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <includes>
 	<!-- Startup window -->
 	<variable name="StartUpWindow">
@@ -406,8 +406,8 @@
 		<value condition="String.IsEqual(Container(211).ListItem.property(aspectRatio),stretch)">$LOCALIZE[31310]</value>
 	</variable>
 	<variable name="SkinshortcutsHideIcon">
-		<value condition="!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)">&#xfce0;</value>
-		<value>&#xf209;</value>
+		<value condition="!String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)">ﳠ</value>
+		<value></value>
 	</variable>
 	<variable name="PositionselectorHeadline">
 		<value condition="String.IsEqual(Window(home).Property(SelectorContent),HomeWidgets)">$LOCALIZE[10000]</value>
@@ -751,7 +751,7 @@
 		<!-- global custom or disabled bg -->
 		<value condition="Skin.HasSetting(HideBackground) + Skin.HasSetting(ShowStaticBackgroundImage) + !String.IsEmpty(Skin.String(StaticBackgroundImage))">$INFO[Skin.String(StaticBackgroundImage)]</value>
 		<value condition="Skin.HasSetting(HideBackground) + Skin.HasSetting(ShowRandomBackgroundImage) + !String.IsEmpty(Skin.String(RandomBackgroundImage))">$INFO[Control.GetLabel(100001)]</value>
-		<value condition="Skin.HasSetting(HideBackground)"></value>
+		<value condition="Skin.HasSetting(HideBackground)"/>
 		<!-- based on listitems -->
 		<value condition="Window.IsVisible(script-embuary-video.xml) + !String.IsEmpty(Container(10051).ListItem.Art(fanart))">$INFO[Container(10051).ListItem.Art(fanart)]</value>
 		<value condition="[Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(script-embuary-person.xml)] + !String.IsEmpty(Container(2003).ListItem.Icon) + !Container.OnNext + !Container.OnPrevious">$INFO[Container(2003).ListItem.Icon]</value>
@@ -948,7 +948,7 @@
 		<value condition="String.StartsWith(ListItem.Path,plugin://plugin.audio.prime_music) + String.Contains(ListItem.Filenameandpath,playTrack)">$INFO[ListItem.Artist]</value>
 	</variable>
 	<variable name="RightListLabel">
-		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.video.emby/) + String.Contains(Container.FolderPath,type=livetv)"></value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.video.emby/) + String.Contains(Container.FolderPath,type=livetv)"/>
 		<value condition="String.Contains(Container.Folderpath,script.embuary.info) + String.Contains(Container.Folderpath,call=upcoming)">$INFO[ListItem.Premiered]</value>
 		<value condition="String.Contains(Container.Folderpath,script.embuary.info) + String.Contains(Container.Folderpath,call=now_playing)">$INFO[ListItem.Premiered]</value>
 		<value condition="String.Contains(Container.Folderpath,script.embuary.info) + String.Contains(Container.Folderpath,call=top_rated)">$INFO[ListItem.Rating,$LOCALIZE[563]: ]</value>
@@ -964,7 +964,7 @@
 		<value condition="ListItem.IsFolder + !String.IsEqual(ListItem.Label,$LOCALIZE[35250])">$LOCALIZE[19076]</value>
 	</variable>
 	<variable name="RightListLabel2">
-		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.video.emby/) + String.Contains(Container.FolderPath,type=livetv)"></value>
+		<value condition="String.StartsWith(Container.FolderPath,plugin://plugin.video.emby/) + String.Contains(Container.FolderPath,type=livetv)"/>
 		<value condition="String.Contains(Container.Folderpath,script.embuary.info) + String.Contains(Container.Folderpath,call=now_playing)">$INFO[ListItem.Rating,$LOCALIZE[563]: ]</value>
 		<value condition="Container.Content(tvshows) + !String.IsEmpty(ListItem.Property(TotalSeasons))">$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[36905]]</value>
 		<value condition="!String.IsEmpty(ListItem.Duration) + !String.IsEmpty(ListItem.EndTimeResume)">$INFO[ListItem.EndTimeResume,$LOCALIZE[31037] ]</value>
@@ -1213,7 +1213,7 @@
 		<value condition="!String.IsEmpty(VideoPlayer.SubtitlesLanguage)">[UPPERCASE]$INFO[VideoPlayer.SubtitlesLanguage][/UPPERCASE]</value>
 	</variable>
 	<variable name="SubtitleNameVar">
-		<value condition="String.IsEmpty(VideoPlayer.SubtitlesName)"></value>
+		<value condition="String.IsEmpty(VideoPlayer.SubtitlesName)"/>
 		<value condition="!String.IsEmpty(VideoPlayer.SubtitlesName)">$INFO[VideoPlayer.SubtitlesName,| ,, (,)]</value>
 	</variable>
 	<variable name="DVProfileVar">
@@ -1224,14 +1224,13 @@
 		<value condition="String.Contains(Player.Process(video.dovi.profile),8)">Profile $INFO[Player.Process(video.dovi.profile)]$VAR[DVProfileExtVar]</value>
 	</variable>
 	<variable name="DVProfileExtVar">
-		<value condition="Integer.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),0)"></value>
+		<value condition="Integer.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),0)"/>
 		<value condition="Integer.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),1)">.1</value>
 		<value condition="Integer.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),2)">.2</value>
 		<value condition="Integer.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),3)">.3</value>
-		<value condition="Integer.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)"></value>
+		<value condition="Integer.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),6)"/>
 		<value condition="Integer.IsEqual(Player.Process(video.dovi.bl.signal.compatibility),8)">.8</value>
 	</variable>
-
 	<variable name="DVCurrentProfileShortVar">
 		<value condition="String.Contains(Player.Process(video.dovi.profile),4)">DV P4$VAR[DVProfileExtVar]</value>
 		<value condition="String.Contains(Player.Process(video.dovi.profile),5)">DV P5$VAR[DVProfileExtVar]</value>
@@ -1268,15 +1267,27 @@
 		<value condition="!String.IsEqual(Player.Process(video.source.dovi.profile),0) + !String.IsEqual(Player.Process(video.source.dovi.el.present),Player.Process(video.dovi.el.present))">$VAR[ELPresentVar] [COLOR dialog_fg_70](source: $VAR[ELSourcePresentVar])[/COLOR]</value>
 		<value>$VAR[ELPresentVar]</value>
 	</variable>
-	<variable name="DVHDRSummaryVar">
-		<value condition="String.IsEqual(Player.Process(video.dovi.has.config),1)">$INFO[Player.Process(video.source.hdr.type)] $VAR[DVCurrentProfileShortVar] $VAR[DVELShortVar] $VAR[VideoConvVar]</value>
+	<variable name="CPMSourceHDRVar">
+		<value condition="!String.IsEmpty(Player.Process(video.source.additional.hdr.type)) + !String.IsEqual(Player.Process(video.source.additional.hdr.type.raw),0)">$INFO[Player.Process(video.source.hdr.type)] [COLOR dialog_fg_70]| $INFO[Player.Process(video.source.additional.hdr.type)][/COLOR]</value>
 		<value>$INFO[Player.Process(video.source.hdr.type)]</value>
 	</variable>
-
+	<variable name="DVConfigVersionVar">
+		<value condition="!String.IsEmpty(Player.Process(video.dovi.version.major))">$INFO[Player.Process(video.dovi.version.major)].$INFO[Player.Process(video.dovi.version.minor)]</value>
+	</variable>
+	<variable name="DVSourcePQVar">
+		<value condition="!String.IsEmpty(Player.Process(video.dovi.source.min.pq))">PQ $INFO[Player.Process(video.dovi.source.min.pq)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.source.max.pq)]</value>
+	</variable>
+	<variable name="DVL6LumVar">
+		<value condition="!String.IsEmpty(Player.Process(video.dovi.l6.min.lum))">Lum $INFO[Player.Process(video.dovi.l6.min.lum)] [COLOR dialog_fg_70]|[/COLOR] $INFO[Player.Process(video.dovi.l6.max.lum)]</value>
+	</variable>
+	<variable name="DVHDRSummaryVar">
+		<value condition="String.IsEqual(Player.Process(video.dovi.has.config),1)">$VAR[CPMSourceHDRVar] $VAR[DVCurrentProfileShortVar] $VAR[DVELShortVar] $VAR[VideoConvVar]</value>
+		<value>$VAR[CPMSourceHDRVar]</value>
+	</variable>
 	<variable name="DVELVar">
 		<value condition="String.Contains(Player.Process(video.dovi.el.type),minimum)">[COLOR orange] MEL[/COLOR]</value>
 		<value condition="String.Contains(Player.Process(video.dovi.el.type),full)">[COLOR palegreen] FEL[/COLOR]</value>
-		<value condition="String.IsEqual(Player.Process(video.dovi.el.type),none)"></value>
+		<value condition="String.IsEqual(Player.Process(video.dovi.el.type),none)"/>
 	</variable>
 	<variable name="DVELVar1">
 		<value condition="String.IsEmpty(Player.Process(video.dovi.el.type))">[COLOR tomato][/COLOR]</value>
@@ -1298,14 +1309,14 @@
 		<value>[COLOR 80FF6347][/COLOR]</value>
 	</variable>
 	<variable name="VideoConvVar">
-		<value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + String.Contains(Player.Process(video.dovi.codec.string),8)"></value>
-		<value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + String.Contains(Player.Process(video.dovi.codec.string),7)"></value>
-		<value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + String.Contains(Player.Process(video.dovi.codec.string),5)"></value>
-		<value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + String.Contains(Player.Process(video.dovi.codec.string),4)"></value>
-		<value condition="String.Contains(Player.Process(video.source.hdr.type),SDR) + String.Contains(Player.Process(video.dovi.codec.string),8)"></value>
-		<value condition="String.Contains(Player.Process(video.source.hdr.type),SDR) + String.Contains(Player.Process(video.dovi.codec.string),7)"></value>
-		<value condition="String.Contains(Player.Process(video.source.hdr.type),SDR) + String.Contains(Player.Process(video.dovi.codec.string),5)"></value>
-		<value condition="String.Contains(Player.Process(video.source.hdr.type),SDR) + String.Contains(Player.Process(video.dovi.codec.string),4)"></value>
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + String.Contains(Player.Process(video.dovi.codec.string),8)"/>
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + String.Contains(Player.Process(video.dovi.codec.string),7)"/>
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + String.Contains(Player.Process(video.dovi.codec.string),5)"/>
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + String.Contains(Player.Process(video.dovi.codec.string),4)"/>
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),SDR) + String.Contains(Player.Process(video.dovi.codec.string),8)"/>
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),SDR) + String.Contains(Player.Process(video.dovi.codec.string),7)"/>
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),SDR) + String.Contains(Player.Process(video.dovi.codec.string),5)"/>
+		<value condition="String.Contains(Player.Process(video.source.hdr.type),SDR) + String.Contains(Player.Process(video.dovi.codec.string),4)"/>
 		<value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + String.Contains(Player.Process(amlogic.vs10.mode),Dolby Vision)">-&gt; Dolby Vision Profile 8.1</value>
 		<value condition="String.Contains(Player.Process(video.source.hdr.type),HDR10) + String.Contains(Player.Process(amlogic.vs10.mode),SDR)">-&gt; SDR</value>
 		<value condition="String.Contains(Player.Process(video.source.hdr.type),SDR) + String.Contains(Player.Process(amlogic.vs10.mode),HDR10)">-&gt; HDR10</value>
@@ -1378,15 +1389,15 @@
 		<value condition="Integer.IsEqual(VideoPlayer.AudioChannels,10)">9.1</value>
 	</variable>
 	<variable name="VideoInfoButton8Icon">
-		<value condition="Container(50).Content(seasons)">&#xf24b;</value>
-		<value condition="String.IsEqual(ListItem.DBType,season) + String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + String.IsEqual(ListItem.Label,All)">&#xf24b;</value>
-		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[20366])">&#xf24b;</value>
-		<value condition="String.IsEqual(ListItem.DBType,season)">&#xf24b;</value>
-		<value condition="String.IsEqual(ListItem.DBType,tvshow)">&#xf24b;</value>
-		<value condition="String.IsEqual(ListItem.DBType,set)">&#xf24b;</value>
-		<value condition="ListItem.IsResumable">&#xf40a;</value>
-		<value condition="ListItem.IsFolder">&#xf24b;</value>
-		<value>&#xf40a;</value>
+		<value condition="Container(50).Content(seasons)"></value>
+		<value condition="String.IsEqual(ListItem.DBType,season) + String.StartsWith(ListItem.Path,plugin://plugin.video.embycon) + String.IsEqual(ListItem.Label,All)"></value>
+		<value condition="String.IsEqual(ListItem.Label,$LOCALIZE[20366])"></value>
+		<value condition="String.IsEqual(ListItem.DBType,season)"></value>
+		<value condition="String.IsEqual(ListItem.DBType,tvshow)"></value>
+		<value condition="String.IsEqual(ListItem.DBType,set)"></value>
+		<value condition="ListItem.IsResumable"></value>
+		<value condition="ListItem.IsFolder"></value>
+		<value></value>
 	</variable>
 	<variable name="VideoInfoButton8">
 		<value condition="String.Contains(ListItem.Filenameandpath,script.embuary.info)">$LOCALIZE[31366]</value>
@@ -1510,10 +1521,10 @@
 		<value condition="Integer.IsGreaterOrEqual(player.volume,0)">0</value>
 	</variable>
 	<variable name="VolumeIcon">
-		<value condition="Player.Muted">&#xf75e;</value>
-		<value condition="Integer.IsGreater(player.volume,75)">&#xf57e;</value>
-		<value condition="Integer.IsGreater(player.volume,25)">&#xf580;</value>
-		<value condition="!Integer.IsGreater(player.volume,25)">&#xf57f;</value>
+		<value condition="Player.Muted"></value>
+		<value condition="Integer.IsGreater(player.volume,75)"></value>
+		<value condition="Integer.IsGreater(player.volume,25)"></value>
+		<value condition="!Integer.IsGreater(player.volume,25)"></value>
 	</variable>
 	<variable name="VolumeDetails">
 		<value condition="!Player.Muted + Integer.IsGreaterOrEqual(player.volume,10)">$INFO[Control.GetLabel(404),,%]</value>
@@ -1717,9 +1728,9 @@
 		<value condition="Player.Rewinding32x">32x</value>
 	</variable>
 	<variable name="PlayerSeekStepIcon">
-		<value condition="[[!String.IsEmpty(Player.SeekOffset) + !String.Contains(Player.SeekOffset,-)] | [!String.IsEmpty(Player.SeekStepSize) + !String.Contains(Player.SeekStepSize,-)]] + Player.Seeking">&#xf4ac;</value>
-		<value condition="[[!String.IsEmpty(Player.SeekOffset) + String.Contains(Player.SeekOffset,-)] | [!String.IsEmpty(Player.SeekStepSize) + String.Contains(Player.SeekStepSize,-)]] + Player.Seeking">&#xf4ab;</value>
-		<value condition="!String.IsEmpty(Player.Chapter) + !String.IsEqual(Player.Chapter,00) + !String.IsEqual(Player.Chapter,-1)">&#xf0c0;</value>
+		<value condition="[[!String.IsEmpty(Player.SeekOffset) + !String.Contains(Player.SeekOffset,-)] | [!String.IsEmpty(Player.SeekStepSize) + !String.Contains(Player.SeekStepSize,-)]] + Player.Seeking"></value>
+		<value condition="[[!String.IsEmpty(Player.SeekOffset) + String.Contains(Player.SeekOffset,-)] | [!String.IsEmpty(Player.SeekStepSize) + String.Contains(Player.SeekStepSize,-)]] + Player.Seeking"></value>
+		<value condition="!String.IsEmpty(Player.Chapter) + !String.IsEqual(Player.Chapter,00) + !String.IsEqual(Player.Chapter,-1)"></value>
 	</variable>
 	<variable name="TopPlayerSeekStepLabel">
 		<value condition="!String.IsEmpty(Player.SeekStepSize) + Player.Seeking">$INFO[Player.SeekStepSize]</value>
@@ -1747,8 +1758,8 @@
 		<value>$LOCALIZE[351]</value>
 	</variable>
 	<variable name="PlaylistRepeatLabel">
-		<value condition="Playlist.IsRepeatOne">&#xf458;</value>
-		<value condition="Playlist.IsRepeat">&#xf456;</value>
+		<value condition="Playlist.IsRepeatOne"></value>
+		<value condition="Playlist.IsRepeat"></value>
 	</variable>
 	<variable name="PlaylistRepeatButtonColor">
 		<value condition="Playlist.IsRepeatOne | Playlist.IsRepeat | Control.HasFocus(613)">$VAR[AccentColor]</value>
@@ -1935,7 +1946,7 @@
 		<value condition="Integer.IsEqual(Container(2000).NumItems,58)">57</value>
 		<value condition="Integer.IsEqual(Container(2000).NumItems,59)">58</value>
 		<value condition="Integer.IsEqual(Container(2000).NumItems,60)">59</value>
-		<value condition="Integer.IsGreater(Container(2000).NumItems,60)">60&#x3C;</value>
+		<value condition="Integer.IsGreater(Container(2000).NumItems,60)">60&lt;</value>
 	</variable>
 	<variable name="PlaylistMainLabel">
 		<value condition="!String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
@@ -2415,25 +2426,25 @@
 	</variable>
 	<variable name="SidebarIcon">
 		<value condition="!String.IsEmpty(ListItem.Property(forced_icon))">$INFO[ListItem.Icon]</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_emby)">&#xf6b3;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),movies)">&#xf230;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),shows)">&#xf502;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),collection)">&#xfcf4;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),tag)">&#xfcf4;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),pvr)">&#xf7f3;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),recordings)">&#xf7f3;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),music)">&#xf759;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),games)">&#xfb5e;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),customhub)">&#xf337;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),addons)">&#xf03b;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),weather)">&#xf595;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),library_update)">&#xfcdb;</value>
-		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),videos)">&#xfcf5;</value>
-		<value condition="String.Contains(ListItem.Property(path),library://video) | String.Contains(ListItem.Property(path),videodb://) | String.Contains(ListItem.Property(list),videodb://)">&#xfcf5;</value>
-		<value condition="String.Contains(ListItem.Property(path),library://music) | String.Contains(ListItem.Property(path),musicdb://) | String.Contains(ListItem.Property(list),musicdb://)">&#xf333;</value>
-		<value condition="String.Contains(ListItem.Property(path),androidapp) | String.Contains(ListItem.Property(path),programs) | String.Contains(ListItem.Property(path),addonbrowser) | String.Contains(ListItem.Property(path),plugin://) | String.Contains(ListItem.Property(list),plugin://)">&#xf03b;</value>
-		<value condition="String.Contains(ListItem.Property(path),sources://)">&#xf62c;</value>
-		<value>&#xf337;</value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_emby)"></value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),movies)"></value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),shows)"></value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),collection)">ﳴ</value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),tag)">ﳴ</value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),pvr)"></value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),recordings)"></value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),music)"></value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),games)">ﭞ</value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),customhub)"></value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),addons)"></value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),weather)"></value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),library_update)">ﳛ</value>
+		<value condition="String.StartsWith(ListItem.Property(defaultID),embuary_) + String.Contains(ListItem.Property(defaultID),videos)">ﳵ</value>
+		<value condition="String.Contains(ListItem.Property(path),library://video) | String.Contains(ListItem.Property(path),videodb://) | String.Contains(ListItem.Property(list),videodb://)">ﳵ</value>
+		<value condition="String.Contains(ListItem.Property(path),library://music) | String.Contains(ListItem.Property(path),musicdb://) | String.Contains(ListItem.Property(list),musicdb://)"></value>
+		<value condition="String.Contains(ListItem.Property(path),androidapp) | String.Contains(ListItem.Property(path),programs) | String.Contains(ListItem.Property(path),addonbrowser) | String.Contains(ListItem.Property(path),plugin://) | String.Contains(ListItem.Property(list),plugin://)"></value>
+		<value condition="String.Contains(ListItem.Property(path),sources://)"></value>
+		<value></value>
 	</variable>
 	<variable name="RefreshEPG">
 		<value condition="String.IsEqual(System.Time(ss),00) | !String.IsEmpty(Window(home).Property(PVRWidgetRefresh))">1</value>
@@ -2515,5 +2526,4 @@
 		<value condition="String.IsEqual(Control.GetLabel(11),$LOCALIZE[16])">plugin://script.embuary.info/nextaired/4</value>
 		<value condition="String.IsEqual(Control.GetLabel(11),$LOCALIZE[17])">plugin://script.embuary.info/nextaired/5</value>
 	</variable>
-
 </includes>

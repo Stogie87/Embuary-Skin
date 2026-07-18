@@ -31,6 +31,7 @@ class Service(xbmc.Monitor):
         self.player_monitor = False
         self.restart = False
         self.screensaver = False
+        self.current_skin = xbmc.getSkinDir()
         self.service_enabled = ADDON.getSettingBool('service')
 
         if self.service_enabled:
@@ -60,6 +61,26 @@ class Service(xbmc.Monitor):
     def onScreensaverDeactivated(self):
         self.screensaver = False
 
+    def check_skin_change(self):
+        """Publish the correct tag IDs when switching between Embuary skins."""
+        current_skin = xbmc.getSkinDir()
+        if not current_skin or current_skin == self.current_skin:
+            return
+
+        previous_skin = self.current_skin
+        self.current_skin = current_skin
+        log('Skin changed: %s -> %s' % (previous_skin, current_skin), force=True)
+
+        if current_skin not in EMBUARY_SKIN_IDS:
+            return
+
+        sync_library_tags()
+        reload_widgets(instant=True, reason='SkinChanged')
+
+        if condition('System.HasAlarm(EmbuarySkinChangeReload)'):
+            execute('CancelAlarm(EmbuarySkinChangeReload,silent)')
+        execute('AlarmClock(EmbuarySkinChangeReload,ReloadSkin(),00:01,silent)')
+
     def stop(self):
         if self.service_enabled:
             del self.player_monitor
@@ -76,6 +97,7 @@ class Service(xbmc.Monitor):
         log('Service: Disabled', force=True)
 
         while not self.abortRequested() and not self.restart:
+            self.check_skin_change()
             self.waitForAbort(5)
 
         self.stop()
@@ -95,6 +117,8 @@ class Service(xbmc.Monitor):
         arts = {}  # <-- Fix: initialisiere arts
 
         while not self.abortRequested() and not self.restart:
+
+            self.check_skin_change()
 
             ''' Only run timed tasks if screensaver is inactive and no media is playing '''
             if not self.screensaver and not xbmc.Player().isPlaying():

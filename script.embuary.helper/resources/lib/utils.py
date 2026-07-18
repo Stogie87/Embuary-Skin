@@ -11,6 +11,7 @@ import json
 import random
 import os
 import locale
+from urllib.parse import quote
 
 from resources.lib.helper import *
 from resources.lib.library import *
@@ -475,6 +476,20 @@ def jumptoshow_by_episode(params):
         return
 
     go_to_path('videodb://tvshows/titles/%s/' % tvshow_id)
+
+
+def externaladdonsearch(params):
+    dbtype = remove_quotes(params.get('dbtype', '')).lower()
+    title = remove_quotes(params.get('title', '')).strip()
+    label = remove_quotes(params.get('label', '')).strip()
+    tvshowtitle = remove_quotes(params.get('tvshowtitle', '')).strip()
+
+    search_title = tvshowtitle if dbtype in ('episode', 'season') and tvshowtitle else title or tvshowtitle or label
+    if not search_title:
+        return
+
+    path = 'plugin://plugin.video.xstream/?function=searchTMDB&searchTitle=%s' % quote(search_title, safe='')
+    go_to_path(path, 'videos')
 
 
 def goto(params):

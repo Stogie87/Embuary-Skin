@@ -1,9 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <includes>
 	<!-- menu items -->
 	<include name="Home_Menu">
 		<param name="id">100</param>
 		<definition>
+			<!-- Keep the generated menu before the two empty-menu fallbacks. The
+			     fallbacks must inspect generated items, not their own positions. -->
+			<!-- Kodi 21 / Skin Shortcuts v2 keeps the original generated menu. -->
+			<include condition="!String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">skinshortcuts-mainmenu</include>
+			<!-- Kodi 22 / Skin Shortcuts v3 uses the per-item artwork renderer. -->
+			<include condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">skinshortcuts-template-mainmenu-v3</include>
 			<item>
 				<label>$LOCALIZE[20186]</label>
 				<icon>special://skin/extras/icons/menu_loading.jpg</icon>
@@ -17,7 +23,6 @@
 				<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">RunScript(script.skinshortcuts,type=manage&amp;menu=mainmenu)</onclick>
 				<visible>String.IsEmpty(Window(home).Property(startup)) + [String.IsEmpty(Container($PARAM[id]).ListItemAbsolute(0).Property(id)) + String.IsEmpty(Container($PARAM[id]).ListItemAbsolute(1).Property(id))]</visible>
 			</item>
-			<include>skinshortcuts-mainmenu</include>
 			<item>
 				<label>$LOCALIZE[341]</label>
 				<icon>DefaultDVDRom.png</icon>

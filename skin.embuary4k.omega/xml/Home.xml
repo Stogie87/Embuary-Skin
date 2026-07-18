@@ -6,9 +6,10 @@
 	<!-- setup run -->
 	<onload condition="!Skin.HasSetting(EmbuaryInitMessage)">ReplaceWindow(1119)</onload>
 	<onload condition="Skin.HasSetting(EmbuaryInitMessage) + String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=100&amp;levels=0&amp;group=mainmenu|moviehub|tvshowhub|musichub|customhub|sidepanel)</onload>
-	<onload condition="Skin.HasSetting(EmbuaryInitMessage) + String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + !Skin.HasSetting(EmbuarySkinShortcutsDynamicArtFixV4)">RunScript(script.skinshortcuts,type=buildxml&amp;force=true)</onload>
-	<onload condition="Skin.HasSetting(EmbuaryInitMessage) + String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + !Skin.HasSetting(EmbuarySkinShortcutsDynamicArtFixV4)">Skin.SetBool(EmbuarySkinShortcutsDynamicArtFixV4)</onload>
-	<onload condition="Skin.HasSetting(EmbuaryInitMessage) + String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + Skin.HasSetting(EmbuarySkinShortcutsDynamicArtFixV4)">RunScript(script.skinshortcuts,type=buildxml)</onload>
+	<!-- Skin Shortcuts v3: force one rebuild after installing the corrected v3 artwork templates. -->
+	<onload condition="Skin.HasSetting(EmbuaryInitMessage) + String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + Skin.HasSetting(EmbuarySkinShortcutsV3Artwork20260718)">RunScript(script.skinshortcuts,type=buildxml)</onload>
+	<onload condition="Skin.HasSetting(EmbuaryInitMessage) + String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + !Skin.HasSetting(EmbuarySkinShortcutsV3Artwork20260718)">RunScript(script.skinshortcuts,type=buildxml&amp;force=true)</onload>
+	<onload condition="Skin.HasSetting(EmbuaryInitMessage) + String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + !Skin.HasSetting(EmbuarySkinShortcutsV3Artwork20260718)">Skin.SetBool(EmbuarySkinShortcutsV3Artwork20260718)</onload>
 	<!-- script actions -->
 	<onload condition="System.HasAddon(plugin.video.embycon) + String.IsEmpty(Window(home).property(plugin.video.embycon-group_movies))">RunScript(script.embuary.helper,action=getaddonsetting,addon=plugin.video.embycon,setting=group_movies)</onload>
 	<onload condition="System.HasAddon(plugin.video.jellyfin)">RunScript(script.embuary.helper,action=getaddonsetting,addon=plugin.video.jellyfin,setting=username)</onload>

@@ -196,7 +196,7 @@
 						<control type="button" id="201">
 							<include>DarkGreyButton</include>
 							<label>$LOCALIZE[31093]</label>
-							<onclick>RunScript(script.skinshortcuts,type=resetall&amp;warning=false)</onclick>
+							<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=resetall&amp;warning=false)</onclick>
 							<onclick>SetProperty(DefaultsReset,1,home)</onclick>
 							<onclick>ActivateWindow(1112)</onclick>
 							<onclick>SetFocus(300)</onclick>

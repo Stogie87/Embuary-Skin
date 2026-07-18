@@ -1,3 +1,6 @@
+[B]Version 22.0.3[/B]
+- Fixed incorrect library artwork on the home screen with Skin Shortcuts v3 by Stogie87
+
 [B]Version 22.0.2[/B]
 - Fixed Player Process Info queue label translations by Stogie87
 
@@ -8,6 +11,11 @@
 
 [B]Version 21.1.30[/B]
 - Fixed Player Process Info queue label translations by Stogie87
+
+[B]Version 21.1.29[/B]
+- Added complete translations for all supported languages by Stogie87
+- Fixed codec logo and flag default initialization by Stogie87
+- Fixed minor navigation and media information issues by Stogie87
 
 [B]Version 21.1.28[/B]
 - Fixed incorrect Skin Shortcuts localization IDs in menu and widget configuration by Stogie87
@@ -30,6 +38,7 @@
 - Added extended CPM Dolby Vision playback information by Stogie87
 - Added Source PQ, L6 luminance and DV configuration details by Stogie87
 - Fixed incorrect metadata separators in Player Process Info by Stogie87
+- Added xStream Support by Stogie87
 
 [B]Version 21.1.22[/B]
 - Fixed non-functional More buttons for Jellyfin, Emby and local library items by Stogie87

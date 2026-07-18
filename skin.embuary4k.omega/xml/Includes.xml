@@ -153,7 +153,7 @@
 		[
 			!Container.Content(seasons)
 			+ !Container.Content(episodes)
-			+ [!String.Contains(Container.Folderpath,setid) | Container.Content(movies)]
+			+ [!String.Contains(Container.FolderPath,setid) | Container.Content(movies)]
 			+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
 			+ !Container.Content(albums)
 			+ !Container.Content(songs) + !Container.Content(actors)
@@ -274,7 +274,7 @@
 
 	<expression name="BannerViewVisible">[
 		[Container.Content(movies) | Container.Content(tvshows)]
-		+ !String.Contains(Container.FolderPath,setid)
+		+ [!String.Contains(Container.FolderPath,setid) | Container.Content(movies)]
 		+ ![String.Contains(Container.FolderPath,BoxSet) + !String.Contains(Container.FolderPath,CollapseBoxSet) + Container.Content(movies)]
 		]
 	</expression>

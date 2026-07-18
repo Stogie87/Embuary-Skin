@@ -540,11 +540,11 @@
 					<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + String.IsEqual(Window.Property(menuname),group-musichub)">RunScript(script.skinshortcuts,type=reset&amp;menu=group-musichub)</onclick>
 					<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + String.IsEqual(Window.Property(menuname),group-customhub)">RunScript(script.skinshortcuts,type=reset&amp;menu=group-customhub)</onclick>
 					<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + String.IsEqual(Window.Property(menuname),group-sidepanel)">RunScript(script.skinshortcuts,type=reset&amp;menu=group-sidepanel)</onclick>
-					<onclick>Skin.Reset(MovieHubHeadline)</onclick>
-					<onclick>Skin.Reset(TVShowHubHeadline)</onclick>
-					<onclick>Skin.Reset(CustomHubHeadline)</onclick>
-					<onclick>close</onclick>
-					<onclick>AlarmClock(restoremenu2,Notification(Embuary,$LOCALIZE[31207]),00:01,silent)</onclick>
+					<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">Skin.Reset(MovieHubHeadline)</onclick>
+					<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">Skin.Reset(TVShowHubHeadline)</onclick>
+					<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">Skin.Reset(CustomHubHeadline)</onclick>
+					<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">close</onclick>
+					<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">AlarmClock(restoremenu2,Notification(Embuary,$LOCALIZE[31207]),00:01,silent)</onclick>
 					<onup condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">SetFocus(100)</onup>
 					<onup condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">SetFocus(301)</onup>
 				</control>
@@ -619,7 +619,7 @@
 						<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.) + [!String.IsEqual(Container(211).ListItem.property(useFakeArt),true)]">SetProperty(customProperty,useFakeArt)</onclick>
 						<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.) + [!String.IsEqual(Container(211).ListItem.property(useFakeArt),true)]">SetProperty(customValue,true)</onclick>
 						<onclick condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.) + [!String.IsEqual(Container(211).ListItem.property(useFakeArt),true)]">SendClick(404)</onclick>
-						<selected>String.IsEqual(Container(211).ListItem.property(useFakeArt),true)</selected>
+						<selected>[String.StartsWith(System.AddonVersion(script.skinshortcuts),2.) + String.IsEqual(Container(211).ListItem.Property(useFakeArt),true)] | [String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + !String.IsEqual(Container(211).ListItem.Property(useFakeArt),false)]</selected>
 						<visible>!String.StartsWith(Container(211).ListItem.Property(defaultID),embuary_embycon) + !String.StartsWith(Container(211).ListItem.Property(defaultID),embuary_customhub)</visible>
 						<visible>String.Contains(Container(211).ListItem.Property(path),://) | String.StartsWith(Container(211).ListItem.Property(defaultID),embuary)</visible>
 					</control>
