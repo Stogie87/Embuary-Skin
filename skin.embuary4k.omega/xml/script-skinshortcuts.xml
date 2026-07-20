@@ -6,6 +6,7 @@
 	<defaultcontrol always="true">9999</defaultcontrol>
 	<include>PropertyIncludes</include>
 	<onunload condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),2.)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=100&amp;group=mainmenu|moviehub|tvshowhub|musichub|customhub|sidepanel)</onunload>
+	<onunload condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">ClearProperty(EmbuarySkinShortcutsPickerActive,home)</onunload>
 	<controls>
 		<!-- Version-safe initial focus router. This control is off-screen but focusable. -->
 		<control type="button" id="9999">
@@ -48,9 +49,16 @@
 		</include>
 		<!-- dialog -->
 		<control type="grouplist" id="20">
-			<visible>!Window.IsVisible(DialogSelect.xml) + [!String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) | String.IsEmpty(Window(home).Property(skinshortcuts-picker))] + [!String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) | [!Window.IsVisible(busydialog) + !Window.IsVisible(busydialognocancel)]] + !Window.IsVisible(filebrowser) + !Window.IsVisible(virtualkeyboard) + !Window.IsVisible(DialogConfirm.xml) + !ControlGroup(4000).HasFocus + String.IsEmpty(Window(home).Property(skipAnimation))</visible>
+			<visible>!Window.IsVisible(DialogSelect.xml) + [!String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) | String.IsEmpty(Window(home).Property(skinshortcuts-picker))] + [!String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) | String.IsEmpty(Window(home).Property(EmbuarySkinShortcutsPickerActive))] + [!String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) | [!Window.IsVisible(busydialog) + !Window.IsVisible(busydialognocancel)]] + !Window.IsVisible(filebrowser) + !Window.IsVisible(virtualkeyboard) + !Window.IsVisible(DialogConfirm.xml) + !ControlGroup(4000).HasFocus + String.IsEmpty(Window(home).Property(skipAnimation))</visible>
 			<include>Dialog_PopupOpenClose</include>
-			<include>Visible_PopupOpenClose</include>
+			<include condition="!String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">Visible_PopupOpenClose</include>
+			<!-- Fast v3 handover: hide immediately, but reveal only if no next picker appears within 500 ms. -->
+			<animation type="Visible" reversible="false" condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">
+				<effect type="fade" start="0" end="100" delay="500" time="120"/>
+			</animation>
+			<animation type="Hidden" reversible="false" condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.)">
+				<effect type="fade" start="100" end="0" time="0"/>
+			</animation>
 			<centertop>50%</centertop>
 			<centerleft>50%</centerleft>
 			<width>900</width>

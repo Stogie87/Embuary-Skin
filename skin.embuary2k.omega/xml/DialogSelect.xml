@@ -2,6 +2,9 @@
 <window>
 	<defaultcontrol always="true">3</defaultcontrol>
 	<include>PropertyIncludes</include>
+	<!-- Fast XML picker bridge for Skin Shortcuts v3.0.1. The editor itself handles the short handover debounce. -->
+	<onload condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + Window.IsVisible(script-skinshortcuts.xml)">SetProperty(EmbuarySkinShortcutsPickerActive,1,home)</onload>
+	<onunload condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + !String.IsEmpty(Window(home).Property(EmbuarySkinShortcutsPickerActive))">ClearProperty(EmbuarySkinShortcutsPickerActive,home)</onunload>
 	<onload condition="String.StartsWith(System.AddonVersion(script.skinshortcuts),3.) + !String.IsEmpty(Window(home).Property(skinshortcuts-picker))">SetFocus(6)</onload>
 	<controls>
 		<control type="group">

@@ -1,3 +1,6 @@
+[B]Version 22.0.4[/B]
+- Fixed menu shortcut selection transitions with Skin Shortcuts v3 by Stogie87
+
 [B]Version 22.0.3[/B]
 - Fixed incorrect library artwork on the home screen with Skin Shortcuts v3 by Stogie87
 
