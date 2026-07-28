@@ -4,6 +4,7 @@ from __future__ import division, absolute_import, print_function, unicode_litera
 #################################################################################################
 
 import os
+import threading
 
 import xbmc
 import xbmcvfs
@@ -33,6 +34,10 @@ class Player(xbmc.Player):
 
     def __init__(self):
         xbmc.Player.__init__(self)
+        # Player callbacks and JSON-RPC notifications can report the same stop
+        # event from different threads. Serialize final reporting so the first
+        # complete stop report wins and duplicate callbacks become harmless.
+        self._stop_lock = threading.RLock()
 
     def get_playing_file(self):
         try:
@@ -425,91 +430,171 @@ class Player(xbmc.Player):
     def onPlayBackStopped(self):
         """Will be called when user stops playing a file."""
         window("jellyfin_play", clear=True)
-        self.stop_playback()
+        self.stop_playback(refresh_position=True, infer_ended=True)
         LOG.info("--<[ playback ]")
 
     def onPlayBackEnded(self):
-        """Will be called when kodi stops playing a file."""
-        self.stop_playback()
+        """Will be called when Kodi reaches the natural end of a file."""
+        self.stop_playback(ended=True)
         LOG.info("--<<[ playback ]")
 
-    def stop_playback(self):
-        """Stop all playback. Check for external player for positionticks."""
-        if not self.played:
-            return
+    @staticmethod
+    def _runtime_ticks(item):
+        """Return the item's runtime in Jellyfin ticks.
 
-        self._reset_state()
+        Playback metadata normally stores RunTimeTicks, while the fallback in
+        set_item() stores Kodi's getTotalTime() value in seconds. Supporting
+        both forms avoids multiplying an already tick-based runtime twice.
+        """
+        try:
+            runtime = float(item.get("Runtime") or 0)
+        except (TypeError, ValueError):
+            return 0
 
-        LOG.info("Played info: %s", self.played)
+        if runtime <= 0:
+            return 0
 
-        for file in self.played:
-            item = self.get_file_info(file)
+        # One second equals 10,000,000 Jellyfin ticks. Real video runtimes in
+        # ticks are therefore always at least this large; smaller values are
+        # the getTotalTime() seconds fallback.
+        if runtime < 10000000:
+            return int(runtime * 10000000)
 
-            window("jellyfin.skip.%s.bool" % item["Id"], True)
+        return int(runtime)
 
-            if window("jellyfin.external.bool"):
-                window("jellyfin.external", clear=True)
+    @classmethod
+    def _is_near_end(cls, item, tolerance_seconds=15):
+        """Detect an EOF-style stop when a platform reports Stopped, not Ended."""
+        runtime_ticks = cls._runtime_ticks(item)
+        if runtime_ticks <= 0:
+            return False
 
-                if int(item["CurrentPosition"]) == 1:
-                    item["CurrentPosition"] = int(item["Runtime"])
+        try:
+            current_ticks = int(float(item.get("CurrentPosition") or 0) * 10000000)
+        except (TypeError, ValueError):
+            return False
 
-            data = {
-                "ItemId": item["Id"],
-                "MediaSourceId": item["MediaSourceId"],
-                "PositionTicks": int(item["CurrentPosition"] * 10000000),
-                "PlaySessionId": item["PlaySessionId"],
-            }
-            item["Server"].jellyfin.session_stop(data)
+        remaining_ticks = runtime_ticks - current_ticks
+        return 0 <= remaining_ticks <= int(tolerance_seconds * 10000000)
 
-            if item.get("LiveStreamId"):
+    def _stop_position_ticks(
+        self, item, ended=False, refresh_position=False, infer_ended=False
+    ):
+        """Calculate the final position sent to Jellyfin."""
+        try:
+            current_position = float(item.get("CurrentPosition") or 0)
+        except (TypeError, ValueError):
+            current_position = 0.0
 
-                LOG.info("<[ livestream/%s ]", item["LiveStreamId"])
-                item["Server"].jellyfin.close_live_stream(item["LiveStreamId"])
+        if refresh_position:
+            try:
+                current_position = max(current_position, float(self.getTime()))
+                item["CurrentPosition"] = current_position
+            except Exception as error:
+                # Kodi commonly makes getTime() unavailable as playback closes.
+                LOG.debug("Could not refresh final playback position: %s", error)
 
-            elif item["PlayMethod"] == "Transcode":
+        if ended or (infer_ended and self._is_near_end(item)):
+            runtime_ticks = self._runtime_ticks(item)
+            if runtime_ticks > 0:
+                item["CurrentPosition"] = runtime_ticks / 10000000.0
+                return runtime_ticks
 
-                LOG.info("<[ transcode/%s ]", item["Id"])
-                item["Server"].jellyfin.close_transcode(
-                    item["DeviceId"], item["PlaySessionId"]
+        item["CurrentPosition"] = current_position
+        return int(current_position * 10000000)
+
+    def stop_playback(
+        self, ended=False, refresh_position=False, infer_ended=False
+    ):
+        """Stop playback and report an accurate final position to Jellyfin."""
+        with self._stop_lock:
+            if not self.played:
+                return
+
+            self._reset_state()
+
+            LOG.info("Played info: %s", self.played)
+
+            for file in list(self.played):
+                item = self.get_file_info(file)
+
+                window("jellyfin.skip.%s.bool" % item["Id"], True)
+
+                external_finished = False
+                if window("jellyfin.external.bool"):
+                    window("jellyfin.external", clear=True)
+                    try:
+                        external_finished = int(item["CurrentPosition"]) == 1
+                    except (KeyError, TypeError, ValueError):
+                        pass
+
+                position_ticks = self._stop_position_ticks(
+                    item,
+                    ended=ended or external_finished,
+                    refresh_position=refresh_position,
+                    infer_ended=infer_ended,
                 )
 
-            path = translate_path(
-                "special://profile/addon_data/plugin.video.jellyfin/temp/"
-            )
+                data = {
+                    "ItemId": item["Id"],
+                    "MediaSourceId": item["MediaSourceId"],
+                    "PositionTicks": position_ticks,
+                    "PlaySessionId": item["PlaySessionId"],
+                }
+                item["Server"].jellyfin.session_stop(data)
 
-            if xbmcvfs.exists(path):
-                dirs, files = xbmcvfs.listdir(path)
+                if item.get("LiveStreamId"):
 
-                for file in files:
-                    # Only delete the cached files for the previous play session
-                    if item["Id"] in file:
-                        xbmcvfs.delete(os.path.join(path, file))
+                    LOG.info("<[ livestream/%s ]", item["LiveStreamId"])
+                    item["Server"].jellyfin.close_live_stream(item["LiveStreamId"])
 
-            result = item["Server"].jellyfin.get_item(item["Id"]) or {}
+                elif item["PlayMethod"] == "Transcode":
 
-            if "UserData" in result and result["UserData"]["Played"]:
-                delete = False
+                    LOG.info("<[ transcode/%s ]", item["Id"])
+                    item["Server"].jellyfin.close_transcode(
+                        item["DeviceId"], item["PlaySessionId"]
+                    )
 
-                if result["Type"] == "Episode" and settings("deleteTV.bool"):
-                    delete = True
-                elif result["Type"] == "Movie" and settings("deleteMovies.bool"):
-                    delete = True
+                path = translate_path(
+                    "special://profile/addon_data/plugin.video.jellyfin/temp/"
+                )
 
-                if not settings("offerDelete.bool"):
+                if xbmcvfs.exists(path):
+                    dirs, files = xbmcvfs.listdir(path)
+
+                    for temp_file in files:
+                        # Only delete cached files for this play session.
+                        if item["Id"] in temp_file:
+                            xbmcvfs.delete(os.path.join(path, temp_file))
+
+                result = item["Server"].jellyfin.get_item(item["Id"]) or {}
+
+                if "UserData" in result and result["UserData"]["Played"]:
                     delete = False
 
-                if delete:
-                    LOG.info("Offer delete option")
+                    if result["Type"] == "Episode" and settings("deleteTV.bool"):
+                        delete = True
+                    elif result["Type"] == "Movie" and settings("deleteMovies.bool"):
+                        delete = True
 
-                    if dialog(
-                        "yesno", translate(30091), translate(33015), autoclose=120000
-                    ):
-                        item["Server"].jellyfin.delete_item(item["Id"])
+                    if not settings("offerDelete.bool"):
+                        delete = False
 
-            window("jellyfin.external_check", clear=True)
+                    if delete:
+                        LOG.info("Offer delete option")
 
-        self.played.clear()
-        window("jellyfin_playing_id", clear=True)
+                        if dialog(
+                            "yesno",
+                            translate(30091),
+                            translate(33015),
+                            autoclose=120000,
+                        ):
+                            item["Server"].jellyfin.delete_item(item["Id"])
+
+                window("jellyfin.external_check", clear=True)
+
+            self.played.clear()
+            window("jellyfin_playing_id", clear=True)
 
     def _fetch_skip_segments(self, item):
         if not settings("mediaSegmentsEnabled.bool"):

@@ -109,6 +109,21 @@ class Monitor(xbmc.Monitor):
                 Otherwise the next played item will be added the previous queue.
                 """
                 if method == "Player.OnStop":
+                    # Kodi exposes an authoritative `end` flag on Player.OnStop.
+                    # Use it as a platform-independent fallback for builds that
+                    # report natural EOF through onPlayBackStopped instead of
+                    # onPlayBackEnded.
+                    try:
+                        stop_data = json.loads(data)
+                        ended = bool(stop_data.get("end"))
+                        self.player.stop_playback(
+                            ended=ended,
+                            refresh_position=not ended,
+                            infer_ended=not ended,
+                        )
+                    except Exception as error:
+                        LOG.warning("Could not process Player.OnStop data: %s", error)
+
                     xbmc.sleep(
                         3000
                     )  # let's wait for the player, so we don't clear the canceled playlist by mistake.
