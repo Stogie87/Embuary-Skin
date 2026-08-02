@@ -115,7 +115,6 @@
 					</include>
 					<onclick>action(AudioNextLanguage)</onclick>
 					<visible>!String.IsEmpty(Window(home).Property(EmbuaryPlayerAudioTracks))</visible>
-					<visible>!String.IsEmpty(VideoPlayer.AudioLanguage)</visible>
 					<visible>!VideoPlayer.Content(musicvideos) + !$EXP[HideVideoOSD]</visible>
 				</control>
 				<control type="button" id="615">

@@ -1,3 +1,6 @@
+[B]Version 22.0.5[/B]
+- Fixed missing audio track switch button for streams by Stogie87
+
 [B]Version 22.0.4[/B]
 - Fixed menu shortcut selection transitions with Skin Shortcuts v3 by Stogie87
 
