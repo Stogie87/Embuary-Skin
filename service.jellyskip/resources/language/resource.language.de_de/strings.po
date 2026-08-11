@@ -18,3 +18,34 @@ msgctxt "#1003"
 msgid "Show 'Skip outro' button"
 msgstr "„Outro überspringen“-Schaltfläche anzeigen"
 
+msgctxt "#1004"
+msgid "Show 'Skip recap' button"
+msgstr "„Rückblick überspringen“-Schaltfläche anzeigen"
+
+msgctxt "#1005"
+msgid "Show 'Skip preview' button"
+msgstr "„Vorschau überspringen“-Schaltfläche anzeigen"
+
+msgctxt "#1006"
+msgid "Show 'Skip commercial' button"
+msgstr "„Werbung überspringen“-Schaltfläche anzeigen"
+
+msgctxt "#1010"
+msgid "Skip intro"
+msgstr "Intro überspringen"
+
+msgctxt "#1011"
+msgid "Skip outro"
+msgstr "Outro überspringen"
+
+msgctxt "#1012"
+msgid "Skip recap"
+msgstr "Rückblick überspringen"
+
+msgctxt "#1013"
+msgid "Skip preview"
+msgstr "Vorschau überspringen"
+
+msgctxt "#1014"
+msgid "Skip commercial"
+msgstr "Werbung überspringen"

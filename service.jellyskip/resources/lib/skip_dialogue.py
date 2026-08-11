@@ -539,30 +539,20 @@ class SkipSegmentDialogue(xbmcgui.WindowXMLDialog):
 
     def onInit(self):
         try:
-            language = xbmc.getLanguage(xbmc.ISO_639_1)
-
-            skip_translations = {
-                "de": "Überspringe", "fr": "Passer", "es": "Saltar", "it": "Salta",
-                "nl": "Overslaan", "pt": "Pular", "pl": "Pomiń", "sv": "Hoppa över",
-                "ru": "Пропустить", "tr": "Atla", "en": "Skip"
-            }
-            segment_translations = {
-                "intro": {
-                    "de": "Intro", "fr": "l'intro", "es": "la introducción", "it": "l'introduzione", "en": "Intro"
-                },
-                "ads": {
-                    "de": "Werbung", "fr": "la pub", "es": "los anuncios", "en": "Ads"
-                },
-                "outro": {
-                    "de": "Outro", "fr": "la fin", "es": "el outro", "en": "Outro"
-                }
+            segment_label_ids = {
+                "intro": 1010,
+                "outro": 1011,
+                "recap": 1012,
+                "preview": 1013,
+                "commercial": 1014,
             }
 
-            prefix = skip_translations.get(language, "Skip")
             segment_key = str(self.segment_type or "").lower()
-            translated_segment = segment_translations.get(segment_key, {}).get(language, self.segment_type)
+            label_id = segment_label_ids.get(segment_key)
+            skip_label = ADDON.getLocalizedString(label_id) if label_id else ""
+            if not skip_label:
+                skip_label = f"Skip {self.segment_type}"
 
-            skip_label = f"{prefix} {translated_segment}"
             try:
                 skip_button = self.getControl(OK_BUTTON)
                 skip_button.setLabel(skip_label)

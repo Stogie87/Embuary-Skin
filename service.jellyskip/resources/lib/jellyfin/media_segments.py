@@ -2,6 +2,7 @@ import json
 from enum import Enum
 from typing import List
 
+
 class SegmentType(Enum):
     UNKNOWN = "Unknown"
     COMMERCIAL = "Commercial"
@@ -10,6 +11,16 @@ class SegmentType(Enum):
     OUTRO = "Outro"
     INTRO = "Intro"
 
+
+SUPPORTED_SEGMENT_TYPES = {
+    SegmentType.INTRO,
+    SegmentType.OUTRO,
+    SegmentType.RECAP,
+    SegmentType.PREVIEW,
+    SegmentType.COMMERCIAL,
+}
+
+
 class MediaSegmentItem:
     def __init__(self, itemId: str, item_id: str, segment_type: SegmentType, start_ticks: int, end_ticks: int):
         self.itemId = itemId
@@ -17,7 +28,6 @@ class MediaSegmentItem:
         self.segment_type = segment_type
         self.start_ticks = start_ticks
         self.end_ticks = end_ticks
-
 
     def get_segment_type_display(self):
         return self.segment_type.value
@@ -34,12 +44,18 @@ class MediaSegmentItem:
 
     @classmethod
     def from_dict(cls, data: dict):
+        segment_type_value = data.get("Type", SegmentType.UNKNOWN.value)
+        try:
+            segment_type = SegmentType(segment_type_value)
+        except ValueError:
+            segment_type = SegmentType.UNKNOWN
+
         return cls(
-            itemId=data["Id"],
-            item_id=data["ItemId"],
-            segment_type=SegmentType(data["Type"]),
-            start_ticks=data["StartTicks"],
-            end_ticks=data["EndTicks"]
+            itemId=data.get("Id", ""),
+            item_id=data.get("ItemId", ""),
+            segment_type=segment_type,
+            start_ticks=int(data.get("StartTicks", 0) or 0),
+            end_ticks=int(data.get("EndTicks", 0) or 0)
         )
 
     def __str__(self):
@@ -56,48 +72,73 @@ class MediaSegmentItem:
 
         return same_item_id and same_type and same_start and same_end
 
+
 class MediaSegmentResponse:
     def __init__(self, items: List[MediaSegmentItem], total_record_count: int, start_index: int):
         self.items = items
         self.total_record_count = total_record_count
         self.start_index = start_index
 
-    def get_next_item(self, current_seconds, only_upcoming=False):
+    def get_next_item(self, current_seconds, only_upcoming=False, allowed_segment_types=None):
         """
-        Get the next item in the list based on the current time in seconds.
+        Get the next enabled item in the list based on the current time in seconds.
         If only_upcoming is True, it will only return upcoming items.
-        If only_upcoming is False, it will return the first item that is currently playing or the next upcoming item.
-        E.g. if the current time is 10 seconds and the next item starts at 20 seconds, it will return that item.
-        If the current time is 10 seconds and an item starts at 5 seconds and ends at 15 seconds, it will return that item only if only_upcoming is false.
-
-        :param current_seconds: The current time in seconds.
-        :param only_upcoming: If True, only return upcoming items. If False, return the first item that is currently playing or the next upcoming item.
-        :return: The next item in the list based on the current time in seconds.
+        If only_upcoming is False, it will return the first enabled item that is
+        currently playing or the next enabled upcoming item.
         """
+        allowed_segment_types = (
+            {str(segment_type).lower() for segment_type in allowed_segment_types}
+            if allowed_segment_types is not None
+            else None
+        )
+
         smallest_difference = None
         item_to_return = None
         for item in self.items:
+            segment_type = item.get_segment_type_display().lower()
+            if allowed_segment_types is not None and segment_type not in allowed_segment_types:
+                continue
+
             start_seconds = item.get_start_seconds()
             end_seconds = item.get_end_seconds()
 
-            if start_seconds < current_seconds < end_seconds and not only_upcoming:
+            if start_seconds <= current_seconds <= end_seconds and not only_upcoming:
                 return item
 
             if start_seconds > current_seconds:
-                if not smallest_difference or start_seconds - current_seconds < smallest_difference:
-                    smallest_difference = start_seconds - current_seconds
+                difference = start_seconds - current_seconds
+                if smallest_difference is None or difference < smallest_difference:
+                    smallest_difference = difference
                     item_to_return = item
 
         return item_to_return
 
     @classmethod
-    def from_json(cls, json_dict: dict):
-        data = json_dict
-        items = [MediaSegmentItem.from_dict(item) for item in data["Items"]]
+    def from_json(cls, json_dict: dict, expected_item_id=None):
+        data = json_dict or {}
+        items = []
+
+        for item_data in data.get("Items", []):
+            try:
+                item = MediaSegmentItem.from_dict(item_data)
+            except (TypeError, ValueError):
+                continue
+
+            if item.segment_type not in SUPPORTED_SEGMENT_TYPES:
+                continue
+
+            if expected_item_id is not None and str(item.item_id) != str(expected_item_id):
+                continue
+
+            if item.end_ticks <= item.start_ticks:
+                continue
+
+            items.append(item)
+
         return cls(
             items=items,
-            total_record_count=data["TotalRecordCount"],
-            start_index=data["StartIndex"]
+            total_record_count=len(items),
+            start_index=int(data.get("StartIndex", 0) or 0)
         )
 
     def get_items_by_type(self, segment_type: SegmentType) -> List[MediaSegmentItem]:

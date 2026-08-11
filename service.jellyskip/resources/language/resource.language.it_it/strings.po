@@ -17,3 +17,35 @@ msgstr "Mostra il pulsante 'Salta intro'"
 msgctxt "#1003"
 msgid "Show 'Skip outro' button"
 msgstr "Mostra il pulsante 'Salta outro'"
+
+msgctxt "#1004"
+msgid "Show 'Skip recap' button"
+msgstr "Mostra il pulsante 'Salta riepilogo'"
+
+msgctxt "#1005"
+msgid "Show 'Skip preview' button"
+msgstr "Mostra il pulsante 'Salta anteprima'"
+
+msgctxt "#1006"
+msgid "Show 'Skip commercial' button"
+msgstr "Mostra il pulsante 'Salta pubblicità'"
+
+msgctxt "#1010"
+msgid "Skip intro"
+msgstr "Salta intro"
+
+msgctxt "#1011"
+msgid "Skip outro"
+msgstr "Salta outro"
+
+msgctxt "#1012"
+msgid "Skip recap"
+msgstr "Salta riepilogo"
+
+msgctxt "#1013"
+msgid "Skip preview"
+msgstr "Salta anteprima"
+
+msgctxt "#1014"
+msgid "Skip commercial"
+msgstr "Salta pubblicità"

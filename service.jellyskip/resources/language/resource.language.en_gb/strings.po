@@ -17,3 +17,35 @@ msgstr "Show 'Skip intro' button"
 msgctxt "#1003"
 msgid "Show 'Skip outro' button"
 msgstr "Show 'Skip outro' button"
+
+msgctxt "#1004"
+msgid "Show 'Skip recap' button"
+msgstr "Show 'Skip recap' button"
+
+msgctxt "#1005"
+msgid "Show 'Skip preview' button"
+msgstr "Show 'Skip preview' button"
+
+msgctxt "#1006"
+msgid "Show 'Skip commercial' button"
+msgstr "Show 'Skip commercial' button"
+
+msgctxt "#1010"
+msgid "Skip intro"
+msgstr "Skip intro"
+
+msgctxt "#1011"
+msgid "Skip outro"
+msgstr "Skip outro"
+
+msgctxt "#1012"
+msgid "Skip recap"
+msgstr "Skip recap"
+
+msgctxt "#1013"
+msgid "Skip preview"
+msgstr "Skip preview"
+
+msgctxt "#1014"
+msgid "Skip commercial"
+msgstr "Skip commercial"

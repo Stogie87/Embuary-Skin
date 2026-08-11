@@ -17,3 +17,35 @@ msgstr "Показать кнопку 'Пропустить интро'"
 msgctxt "#1003"
 msgid "Show 'Skip outro' button"
 msgstr "Показать кнопку 'Пропустить аутро'"
+
+msgctxt "#1004"
+msgid "Show 'Skip recap' button"
+msgstr "Показать кнопку 'Пропустить краткое содержание'"
+
+msgctxt "#1005"
+msgid "Show 'Skip preview' button"
+msgstr "Показать кнопку 'Пропустить превью'"
+
+msgctxt "#1006"
+msgid "Show 'Skip commercial' button"
+msgstr "Показать кнопку 'Пропустить рекламу'"
+
+msgctxt "#1010"
+msgid "Skip intro"
+msgstr "Пропустить интро"
+
+msgctxt "#1011"
+msgid "Skip outro"
+msgstr "Пропустить аутро"
+
+msgctxt "#1012"
+msgid "Skip recap"
+msgstr "Пропустить краткое содержание"
+
+msgctxt "#1013"
+msgid "Skip preview"
+msgstr "Пропустить превью"
+
+msgctxt "#1014"
+msgid "Skip commercial"
+msgstr "Пропустить рекламу"

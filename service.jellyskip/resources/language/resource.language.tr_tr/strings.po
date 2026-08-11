@@ -17,3 +17,35 @@ msgstr "'Girişi atla' düğmesini göster"
 msgctxt "#1003"
 msgid "Show 'Skip outro' button"
 msgstr "'Kapanışı atla' düğmesini göster"
+
+msgctxt "#1004"
+msgid "Show 'Skip recap' button"
+msgstr "'Özeti atla' düğmesini göster"
+
+msgctxt "#1005"
+msgid "Show 'Skip preview' button"
+msgstr "'Önizlemeyi atla' düğmesini göster"
+
+msgctxt "#1006"
+msgid "Show 'Skip commercial' button"
+msgstr "'Reklamı atla' düğmesini göster"
+
+msgctxt "#1010"
+msgid "Skip intro"
+msgstr "Girişi atla"
+
+msgctxt "#1011"
+msgid "Skip outro"
+msgstr "Kapanışı atla"
+
+msgctxt "#1012"
+msgid "Skip recap"
+msgstr "Özeti atla"
+
+msgctxt "#1013"
+msgid "Skip preview"
+msgstr "Önizlemeyi atla"
+
+msgctxt "#1014"
+msgid "Skip commercial"
+msgstr "Reklamı atla"

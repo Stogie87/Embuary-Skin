@@ -1,51 +1,51 @@
 msgid ""
 msgstr ""
-"Language: fr_fr\n"
+"Language: nl_nl\n"
 
 msgctxt "#1000"
 msgid "Jellyskip Settings"
-msgstr "Paramètres Jellyskip"
+msgstr "Jellyskip-instellingen"
 
 msgctxt "#1001"
 msgid "Enable plugin"
-msgstr "Activer le plugin"
+msgstr "Add-on inschakelen"
 
 msgctxt "#1002"
 msgid "Show 'Skip intro' button"
-msgstr "Afficher le bouton 'Passer l’intro'"
+msgstr "Knop 'Intro overslaan' tonen"
 
 msgctxt "#1003"
 msgid "Show 'Skip outro' button"
-msgstr "Afficher le bouton 'Passer l’outro'"
+msgstr "Knop 'Outro overslaan' tonen"
 
 msgctxt "#1004"
 msgid "Show 'Skip recap' button"
-msgstr "Afficher le bouton 'Passer le récapitulatif'"
+msgstr "Knop 'Samenvatting overslaan' tonen"
 
 msgctxt "#1005"
 msgid "Show 'Skip preview' button"
-msgstr "Afficher le bouton 'Passer l’aperçu'"
+msgstr "Knop 'Voorvertoning overslaan' tonen"
 
 msgctxt "#1006"
 msgid "Show 'Skip commercial' button"
-msgstr "Afficher le bouton 'Passer la publicité'"
+msgstr "Knop 'Reclame overslaan' tonen"
 
 msgctxt "#1010"
 msgid "Skip intro"
-msgstr "Passer l’intro"
+msgstr "Intro overslaan"
 
 msgctxt "#1011"
 msgid "Skip outro"
-msgstr "Passer l’outro"
+msgstr "Outro overslaan"
 
 msgctxt "#1012"
 msgid "Skip recap"
-msgstr "Passer le récapitulatif"
+msgstr "Samenvatting overslaan"
 
 msgctxt "#1013"
 msgid "Skip preview"
-msgstr "Passer l’aperçu"
+msgstr "Voorvertoning overslaan"
 
 msgctxt "#1014"
 msgid "Skip commercial"
-msgstr "Passer la publicité"
+msgstr "Reclame overslaan"

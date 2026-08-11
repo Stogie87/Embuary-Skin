@@ -1,3 +1,9 @@
+[B]Version 1.0.7[/B]
+- Added configurable Recap, Preview and Commercial segment buttons by Stogie87
+- Added localized settings and skip labels for all Jellyskip-supported UI languages by Stogie87
+- Improved enabled-segment filtering so disabled markers cannot block later active segments by Stogie87
+- Fixed invalid segment handling while preserving active Jellyfin episode validation by Stogie87
+
 [B]Version 1.0.6[/B]
 - Added robust outro detection system ensuring outro dialogs appear reliably even after skipping intros by Stogie87
 - Optimized episode transitions with improved loading times through episode preloading by Stogie87
@@ -5,7 +11,6 @@
 - Improved dialog control for smoother user experience without UI blocking by Stogie87
 - Implemented prioritized episode search methods for faster next episode detection by Stogie87
 - Added improved error handling for exceptional situations like prematurely ended playback by Stogie87
-
 
 [B]Version 1.0.5[/B]
 - Implemented universal player event handling by Stogie87

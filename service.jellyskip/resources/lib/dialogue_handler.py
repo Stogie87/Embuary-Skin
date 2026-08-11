@@ -12,16 +12,49 @@ addonPath = utils.translate_path(addonInfo('path'))
 
 LOG = LazyLogger(__name__)
 SECOND_PADDING = 1
-MIN_DIALOGUE_VISIBLE = 2  # Mindestanzeigezeit in Sekunden für Dialog
-POSITION_TOLERANCE = 1.5  # Toleranzzeitfenster für Segmenterkennung
+MIN_DIALOGUE_VISIBLE = 2  # Mindestanzeigezeit in Sekunden fuer Dialog
+POSITION_TOLERANCE = 1.5  # Toleranzzeitfenster fuer Segmenterkennung
+SEGMENT_SETTING_IDS = {
+    "intro": "skip_intro",
+    "outro": "skip_outro",
+    "recap": "skip_recap",
+    "preview": "skip_preview",
+    "commercial": "skip_commercial",
+}
+SUPPORTED_SEGMENT_TYPES = set(SEGMENT_SETTING_IDS)
 
 
 def get_settings():
     addon = xbmcaddon.Addon()
     enabled = addon.getSettingBool("enabled")
-    skip_intro = addon.getSettingBool("skip_intro")
-    skip_outro = addon.getSettingBool("skip_outro")
-    return enabled, skip_intro, skip_outro
+    segment_settings = {
+        segment_type: addon.getSettingBool(setting_id)
+        for segment_type, setting_id in SEGMENT_SETTING_IDS.items()
+    }
+    return enabled, segment_settings
+
+
+def get_enabled_segment_types():
+    enabled, segment_settings = get_settings()
+    if not enabled:
+        return set()
+    return {
+        segment_type
+        for segment_type, is_enabled in segment_settings.items()
+        if is_enabled
+    }
+
+
+def is_segment_enabled(item: MediaSegmentItem):
+    if not item:
+        return False
+
+    segment_type = item.get_segment_type_display().lower()
+    if segment_type not in SUPPORTED_SEGMENT_TYPES:
+        return False
+
+    enabled, segment_settings = get_settings()
+    return enabled and segment_settings.get(segment_type, False)
 
 
 class DialogueHandler:
@@ -34,35 +67,37 @@ class DialogueHandler:
 
     def schedule_skip_gui(self, item: MediaSegmentItem, current_seconds):
         try:
-            # --- Settings-Auswertung ---
-            enabled, skip_intro, skip_outro = get_settings()
+            enabled, segment_settings = get_settings()
             if not enabled:
-                LOG.info("schedule_skip_gui: Plugin deaktiviert – kein Dialog.")
-                self.close_gui()  # Dialog schließen, wenn Plugin deaktiviert
+                LOG.info("schedule_skip_gui: Plugin deaktiviert - kein Dialog.")
+                self.close_gui()
                 return
 
             if not item:
                 LOG.warn("schedule_skip_gui: No item provided.")
                 return
 
-            if item:
-                seg_type = item.get_segment_type_display().lower()
-                if seg_type == "intro" and not skip_intro:
-                    LOG.info("schedule_skip_gui: Intro-Skip deaktiviert – kein Dialog.")
-                    return
-                if seg_type == "outro" and not skip_outro:
-                    LOG.info("schedule_skip_gui: Outro-Skip deaktiviert – kein Dialog.")
-                    return
+            seg_type = item.get_segment_type_display().lower()
+            if seg_type not in SUPPORTED_SEGMENT_TYPES:
+                LOG.info(f"schedule_skip_gui: Ignoring unsupported segment type {seg_type}")
+                self.close_gui()
+                return
+
+            if not segment_settings.get(seg_type, False):
+                LOG.info(f"schedule_skip_gui: {seg_type} skip disabled - no dialogue.")
+                return
 
             self.cancel_scheduled()
 
-            # Prüfe ob wir gerade außerhalb des Segments sind und resette das Flag, damit ein erneuter Eintritt den Dialog wieder anzeigt
+            # Pruefe ob wir gerade ausserhalb des Segments sind und resette das Flag,
+            # damit ein erneuter Eintritt den Dialog wieder anzeigt.
             if self.last_item and not self.is_last_item_segment() and self.dialogue:
                 LOG.info(
-                    f"Closing dialogue for {self.last_item.get_segment_type_display()} at {self.last_item.get_start_seconds()} as it is not currently playing")
+                    f"Closing dialogue for {self.last_item.get_segment_type_display()} at "
+                    f"{self.last_item.get_start_seconds()} as it is not currently playing"
+                )
                 self.close_gui()
 
-            # --- NEU: Setze last_item zurück, wenn nicht mehr im Segment ---
             if self.last_item and not self.is_last_item_segment():
                 self.last_item = None
 
@@ -81,7 +116,9 @@ class DialogueHandler:
                         kwargs={'item': item}
                     )
                     LOG.info(
-                        f"Scheduled dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} in {seconds_till_start} seconds")
+                        f"Scheduled dialogue for {item.get_segment_type_display()} at "
+                        f"{item.get_start_seconds()} in {seconds_till_start} seconds"
+                    )
                 except Exception as e:
                     LOG.error(f"Failed to schedule threaded dialogue: {e}")
         except Exception as e:
@@ -89,34 +126,28 @@ class DialogueHandler:
 
     def on_gui_scheduled(self, item: MediaSegmentItem):
         try:
-            # --- Settings-Auswertung auch hier ---
-            enabled, skip_intro, skip_outro = get_settings()
-            if not enabled:
-                LOG.info("on_gui_scheduled: Plugin deaktiviert – kein Dialog.")
+            if not is_segment_enabled(item):
+                segment_name = item.get_segment_type_display() if item else "unknown"
+                LOG.info(f"on_gui_scheduled: {segment_name} skip disabled or unsupported - no dialogue.")
                 return
 
-            if item:
-                seg_type = item.get_segment_type_display().lower()
-                if seg_type == "intro" and not skip_intro:
-                    LOG.info("on_gui_scheduled: Intro-Skip deaktiviert – kein Dialog.")
-                    return
-                if seg_type == "outro" and not skip_outro:
-                    LOG.info("on_gui_scheduled: Outro-Skip deaktiviert – kein Dialog.")
-                    return
-
             player = xbmc.Player()
-            if not player.isPlayingVideo():  # Prüfen, ob Video noch läuft
+            if not player.isPlayingVideo():
                 LOG.info("on_gui_scheduled: Video nicht mehr aktiv")
                 return
 
             current_seconds = player.getTime()
             LOG.info(
-                f"Opening scheduled dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as within segment")
+                f"Opening scheduled dialogue for {item.get_segment_type_display()} at "
+                f"{item.get_start_seconds()} as within segment"
+            )
             if item.get_start_seconds() - POSITION_TOLERANCE <= current_seconds <= item.get_end_seconds() + POSITION_TOLERANCE:
                 self.open_gui(item)
                 return
             LOG.info(
-                f"Skipping dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as not within segment ({current_seconds})")
+                f"Skipping dialogue for {item.get_segment_type_display()} at "
+                f"{item.get_start_seconds()} as not within segment ({current_seconds})"
+            )
         except Exception as e:
             LOG.error(f"on_gui_scheduled failed: {e}")
 
@@ -136,13 +167,12 @@ class DialogueHandler:
                 if now - self.dialogue_opened_at < MIN_DIALOGUE_VISIBLE:
                     time_to_wait = MIN_DIALOGUE_VISIBLE - (now - self.dialogue_opened_at)
                     LOG.info(f"Delaying close of dialogue by {time_to_wait:.2f}s to ensure min visible time")
-                    # Statt sleep, einen verzögerten Thread verwenden
                     utils.run_threaded(
                         self._delayed_close,
                         delay=time_to_wait,
                         kwargs={}
                     )
-                    return  # Früh zurückkehren, _delayed_close wird es erledigen
+                    return
                 self.dialogue.close()
                 self.dialogue = None
                 self.dialogue_opened_at = 0
@@ -151,7 +181,7 @@ class DialogueHandler:
             LOG.error(f"close_gui failed: {e}")
 
     def _delayed_close(self):
-        """Hilfsmethode zum verzögerten Schließen des Dialogs"""
+        """Hilfsmethode zum verzoegerten Schliessen des Dialogs"""
         try:
             if self.dialogue:
                 self.dialogue.close()
@@ -177,7 +207,9 @@ class DialogueHandler:
                 return False
             current_seconds = player.getTime()
             return (
-                    self.last_item.get_start_seconds() - POSITION_TOLERANCE <= current_seconds <= self.last_item.get_end_seconds() + POSITION_TOLERANCE
+                self.last_item.get_start_seconds() - POSITION_TOLERANCE
+                <= current_seconds
+                <= self.last_item.get_end_seconds() + POSITION_TOLERANCE
             )
         except Exception as e:
             LOG.error(f"is_last_item_segment failed: {e}")
@@ -185,23 +217,31 @@ class DialogueHandler:
 
     def open_gui(self, item: MediaSegmentItem):
         try:
-            # Aktuelle Zeit prüfen, um schnelle Wiederaufrufe zu vermeiden
-            now = time.time()
-            if now - self.dialogue_opened_at < 1.0 and self.dialogue:  # Mindestens 1 Sekunde zwischen Dialogöffnungen
-                LOG.info(f"Skipping dialogue open - too soon after last open")
+            if not is_segment_enabled(item):
+                LOG.info("open_gui: Ignoring disabled or unsupported media segment")
                 return
 
-            # Dialog soll immer erneut getriggert werden, wenn man wieder im Segment ist
+            now = time.time()
+            if now - self.dialogue_opened_at < 1.0 and self.dialogue:
+                LOG.info("Skipping dialogue open - too soon after last open")
+                return
+
             if self.is_last_item(item) and self.dialogue:
                 LOG.info(
-                    f"Skipping dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()} as it is the same as the last item and already open")
+                    f"Skipping dialogue for {item.get_segment_type_display()} at "
+                    f"{item.get_start_seconds()} as it is the same as the last item and already open"
+                )
                 return
 
             self.last_item = item
             LOG.info(f"Opening dialogue for {item.get_segment_type_display()} at {item.get_start_seconds()}")
             self.close_gui()
-            dialog = SkipSegmentDialogue('script-dialog.xml', addonPath, seek_time_seconds=item.get_end_seconds(),
-                                         segment_type=item.get_segment_type_display())
+            dialog = SkipSegmentDialogue(
+                'script-dialog.xml',
+                addonPath,
+                seek_time_seconds=item.get_end_seconds(),
+                segment_type=item.get_segment_type_display()
+            )
             self.dialogue = dialog
             self.dialogue_opened_at = time.time()
             try:

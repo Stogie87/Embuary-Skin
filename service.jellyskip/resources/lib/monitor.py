@@ -7,7 +7,7 @@ import helper.utils as utils
 
 from jellyfin.jellyfin_grabber import JellyfinHack
 from skip_dialogue import SkipSegmentDialogue
-from dialogue_handler import dialogue_handler
+from dialogue_handler import dialogue_handler, get_enabled_segment_types
 
 addonInfo = xbmcaddon.Addon().getAddonInfo
 addonPath = utils.translate_path(addonInfo('path'))
@@ -99,10 +99,31 @@ class JellySkipMonitor(xbmc.Monitor):
     def stop(self):
         LOG.info('Stopping JellySkipMonitor')
 
+    def _is_supported_playback(self):
+        """Jellyskip is intentionally limited to Jellyfin TV episodes."""
+        try:
+            return bool(
+                self.player
+                and self.player.isPlayingVideo()
+                and xbmc.getCondVisibility("VideoPlayer.Content(episodes)")
+            )
+        except Exception as e:
+            LOG.debug(f"Unable to determine playback content type: {e}")
+            return False
+
+    def _clear_tracking(self):
+        """Clear stale item ids, timers and dialogs for unsupported playback."""
+        try:
+            jf_hack.reset_itemid()
+            dialogue_handler.cancel_scheduled()
+            dialogue_handler.close_gui()
+        except Exception as e:
+            LOG.error(f"_clear_tracking failed: {e}")
+
     def ensure_outro_tracking(self):
         """Spezielle Methode um sicherzustellen, dass das Outro-Segment erkannt wird"""
         try:
-            if self.player and self.player.isPlayingVideo():
+            if self._is_supported_playback():
                 LOG.info("Performing scheduled outro check")
                 # Hier explizit only_upcoming=False setzen, um alle Segmente zu prüfen
                 self.start_tracking(only_upcoming=False)
@@ -141,6 +162,16 @@ class JellySkipMonitor(xbmc.Monitor):
                 LOG.error(f"Handler for method {method} failed: {e}")
 
             if method == 'Other.UserDataChanged':
+                # Jellyskip verarbeitet ausschließlich Serienepisoden. Dadurch können
+                # Film-Credits/Commercial-Marker niemals einen Jellyskip-Dialog öffnen.
+                if not self._is_supported_playback():
+                    LOG.info("Ignoring media segments because current video is not an episode")
+                    self._clear_tracking()
+                    return
+
+                # Prefer the exact current item id exposed by Jellyfin for Kodi.
+                jf_hack.sync_itemid_from_player()
+
                 # Robust warten auf korrekte ItemID
                 waited = 0
                 while not jf_hack.has_itemid():
@@ -171,6 +202,13 @@ class JellySkipMonitor(xbmc.Monitor):
                 LOG.info('Not playing video')
                 return
 
+            if not self._is_supported_playback():
+                LOG.info('Jellyskip ignores non-episode video playback')
+                self._clear_tracking()
+                return
+
+            jf_hack.sync_itemid_from_player()
+
             time_seconds = 0
             duration_seconds = 0
             try:
@@ -194,10 +232,24 @@ class JellySkipMonitor(xbmc.Monitor):
                     LOG.error(f"dialogue_handler.close_gui() failed: {e}")
                 return
 
-            LOG.info(f"Start tracking: time={time_seconds}, duration={duration_seconds}")
+            enabled_segment_types = get_enabled_segment_types()
+            if not enabled_segment_types:
+                LOG.info('No media segment types enabled in Jellyskip settings')
+                dialogue_handler.cancel_scheduled()
+                dialogue_handler.close_gui()
+                return
+
+            LOG.info(
+                f"Start tracking: time={time_seconds}, duration={duration_seconds}, "
+                f"enabled_segments={sorted(enabled_segment_types)}"
+            )
 
             try:
-                next_item = media_segments.get_next_item(time_seconds, only_upcoming)
+                next_item = media_segments.get_next_item(
+                    time_seconds,
+                    only_upcoming,
+                    allowed_segment_types=enabled_segment_types
+                )
             except Exception as e:
                 LOG.error(f"media_segments.get_next_item failed: {e}")
                 next_item = None

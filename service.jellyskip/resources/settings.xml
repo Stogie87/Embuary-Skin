@@ -3,6 +3,8 @@
         <setting id="enabled" type="bool" label="1001" default="true" />
         <setting id="skip_intro" type="bool" label="1002" default="true" />
         <setting id="skip_outro" type="bool" label="1003" default="true" />
+        <setting id="skip_recap" type="bool" label="1004" default="false" />
+        <setting id="skip_preview" type="bool" label="1005" default="false" />
+        <setting id="skip_commercial" type="bool" label="1006" default="false" />
     </category>
 </settings>
-

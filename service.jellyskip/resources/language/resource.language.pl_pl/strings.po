@@ -1,51 +1,51 @@
 msgid ""
 msgstr ""
-"Language: fr_fr\n"
+"Language: pl_pl\n"
 
 msgctxt "#1000"
 msgid "Jellyskip Settings"
-msgstr "Paramètres Jellyskip"
+msgstr "Ustawienia Jellyskip"
 
 msgctxt "#1001"
 msgid "Enable plugin"
-msgstr "Activer le plugin"
+msgstr "Włącz dodatek"
 
 msgctxt "#1002"
 msgid "Show 'Skip intro' button"
-msgstr "Afficher le bouton 'Passer l’intro'"
+msgstr "Pokaż przycisk 'Pomiń intro'"
 
 msgctxt "#1003"
 msgid "Show 'Skip outro' button"
-msgstr "Afficher le bouton 'Passer l’outro'"
+msgstr "Pokaż przycisk 'Pomiń outro'"
 
 msgctxt "#1004"
 msgid "Show 'Skip recap' button"
-msgstr "Afficher le bouton 'Passer le récapitulatif'"
+msgstr "Pokaż przycisk 'Pomiń podsumowanie'"
 
 msgctxt "#1005"
 msgid "Show 'Skip preview' button"
-msgstr "Afficher le bouton 'Passer l’aperçu'"
+msgstr "Pokaż przycisk 'Pomiń zapowiedź'"
 
 msgctxt "#1006"
 msgid "Show 'Skip commercial' button"
-msgstr "Afficher le bouton 'Passer la publicité'"
+msgstr "Pokaż przycisk 'Pomiń reklamę'"
 
 msgctxt "#1010"
 msgid "Skip intro"
-msgstr "Passer l’intro"
+msgstr "Pomiń intro"
 
 msgctxt "#1011"
 msgid "Skip outro"
-msgstr "Passer l’outro"
+msgstr "Pomiń outro"
 
 msgctxt "#1012"
 msgid "Skip recap"
-msgstr "Passer le récapitulatif"
+msgstr "Pomiń podsumowanie"
 
 msgctxt "#1013"
 msgid "Skip preview"
-msgstr "Passer l’aperçu"
+msgstr "Pomiń zapowiedź"
 
 msgctxt "#1014"
 msgid "Skip commercial"
-msgstr "Passer la publicité"
+msgstr "Pomiń reklamę"

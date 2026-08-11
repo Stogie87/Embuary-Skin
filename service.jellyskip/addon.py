@@ -9,16 +9,16 @@ language = xbmc.getLanguage(xbmc.ISO_639_1)
 
 if language == "de":
     line1 = (
-        "Jellyskip ist ein Kodi-Plugin, das während der Wiedergabe von Serienepisoden aus Jellyfin automatisch "
-        "einen 'Intro überspringen'- und 'Outro überspringen'-Button anzeigt. Die Segmenterkennung erfolgt zuverlässig "
-        "über Jellyfin-Metadaten. Das Plugin springt präzise zum Segmentende oder direkt zur nächsten Folge. "
-        "Das Design des Skip-Buttons passt sich dynamisch an die gewählten Skin-Farben an und unterstützt mehrere Sprachen."
+        "Jellyskip ist ein Kodi-Plugin für Jellyfin-Mediensegmente. Intro, Outro, Rückblick, Vorschau und Werbung "
+        "können in den Einstellungen getrennt aktiviert oder deaktiviert werden. Die Segmenterkennung erfolgt zuverlässig "
+        "über Jellyfin-Metadaten. Das Plugin springt präzise zum Segmentende oder beim Outro direkt zur nächsten Folge. "
+        "Die Skip-Buttons passen sich dynamisch an die gewählten Skin-Farben und die Kodi-Sprache an."
     )
 else:
     line1 = (
-        "Jellyskip is a Kodi plugin that automatically displays 'Skip Intro' and 'Skip Outro' buttons during playback of "
-        "TV episodes from Jellyfin. Segment detection is reliable via Jellyfin metadata. The plugin accurately skips to "
-        "the segment end or directly to the next episode. The button design dynamically adapts to your chosen skin colors and supports multiple languages."
+        "Jellyskip is a Kodi plugin for Jellyfin media segments. Intro, Outro, Recap, Preview and Commercial can be "
+        "enabled or disabled independently in the settings. Segment detection uses Jellyfin metadata. The plugin accurately "
+        "skips to the segment end or, for outros, directly to the next episode. Skip buttons adapt to the skin colors and Kodi UI language."
     )
 
 xbmcgui.Dialog().ok(addonname, line1)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="service.jellyskip" name="Jellyskip" version="1.0.6" provider-name="Jalau & Stogie87">
+<addon id="service.jellyskip" name="Jellyskip" version="1.0.7" provider-name="Jalau &amp; Stogie87">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -14,8 +14,8 @@
         <platform>all</platform>
         <summary lang="en">Interact with Jellyfin Media Segments</summary>
         <summary lang="de">Interagiere mit Jellyfin-Mediensegmenten</summary>
-        <description lang="de">Jellyskip ist ein Kodi-Plugin, das während der Wiedergabe von Serienepisoden aus Jellyfin automatisch einen „Intro überspringen“- und „Outro überspringen“-Button anzeigt. Die Segmenterkennung erfolgt zuverlässig über Jellyfin-Metadaten. Per Knopfdruck kannst du direkt zum Segmentende oder zur nächsten Folge springen. Das Design des Buttons passt sich dynamisch den gewählten Skin-Farben an und unterstützt mehrere Sprachen.</description>
-        <description lang="en">Jellyskip is a Kodi plugin that automatically displays “Skip Intro” and “Skip Outro” buttons for TV episodes from Jellyfin. Segment detection is reliable using Jellyfin metadata. With a single button press, you can jump to the segment end or directly to the next episode. The button design dynamically adapts to your skin’s color settings and supports multiple languages.</description>
+        <description lang="de">Jellyskip ist ein Kodi-Plugin für Jellyfin-Mediensegmente. Intro, Outro, Rückblick, Vorschau und Werbung können getrennt aktiviert oder deaktiviert werden. Die Segmenterkennung erfolgt über Jellyfin-Metadaten; per Knopfdruck springt Jellyskip zum Segmentende oder beim Outro direkt zur nächsten Folge. Die Skip-Buttons passen sich den Skin-Farben an und werden passend zur Kodi-Sprache lokalisiert.</description>
+        <description lang="en">Jellyskip is a Kodi plugin for Jellyfin media segments. Intro, Outro, Recap, Preview and Commercial can be enabled or disabled independently. Segment detection uses Jellyfin metadata; with a single button press Jellyskip jumps to the segment end or, for outros, directly to the next episode. Skip buttons adapt to the skin colors and are localized for the Kodi UI language.</description>
         <license>GNU General Public License, v2</license>
         <settings>resources/settings.xml</settings>
         <assets>
@@ -25,6 +25,6 @@
             <screenshot>resources/screenshot-02.jpg</screenshot>
             <screenshot>resources/screenshot-03.jpg</screenshot>
         </assets>
-        <news>Added multilingual support and refined settings handling.</news>
+        <news>Added configurable Recap, Preview and Commercial segments with multilingual settings and safer enabled-segment filtering.</news>
     </extension>
 </addon>

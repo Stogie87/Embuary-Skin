@@ -1,6 +1,6 @@
 # Jellyskip
 
-Jellyskip is a Kodi service that interacts with the Jellyfin Media Segments API to provide a button for skipping media segments such as intros and outros. This tool enhances your media watching experience by allowing you to easily skip unwanted segments with a single click.
+Jellyskip is a Kodi service that interacts with the Jellyfin Media Segments API to provide configurable buttons for skipping Intro, Outro, Recap, Preview and Commercial media segments. This tool enhances your media watching experience by allowing you to easily skip unwanted segments with a single click.
 
 For example use [intro-skipper](https://github.com/intro-skipper/intro-skipper) jellyfin addon to create intro segments for your media files.
 Then install this addon in Kodi alongside [jellyfin kodi](https://github.com/jellyfin/jellyfin-kodi) addon to skip the intro segments.
@@ -46,7 +46,7 @@ This project was inspired (and code was taken from) by the following repositorie
 Depending on whether this feature is ported to the Jellyfin-Kodi addon or any other addon, this project may be deprecated.
 The current version is very simple and includes the following planned improvements:
 
-- Settings to define which segments to present a button for, skip delays, etc.
+- Additional skip timing and display customization options.
 - Bug fixes
 - Code cleanup
 

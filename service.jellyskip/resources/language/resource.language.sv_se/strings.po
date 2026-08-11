@@ -1,51 +1,51 @@
 msgid ""
 msgstr ""
-"Language: fr_fr\n"
+"Language: sv_se\n"
 
 msgctxt "#1000"
 msgid "Jellyskip Settings"
-msgstr "Paramètres Jellyskip"
+msgstr "Jellyskip-inställningar"
 
 msgctxt "#1001"
 msgid "Enable plugin"
-msgstr "Activer le plugin"
+msgstr "Aktivera tillägg"
 
 msgctxt "#1002"
 msgid "Show 'Skip intro' button"
-msgstr "Afficher le bouton 'Passer l’intro'"
+msgstr "Visa knappen 'Hoppa över intro'"
 
 msgctxt "#1003"
 msgid "Show 'Skip outro' button"
-msgstr "Afficher le bouton 'Passer l’outro'"
+msgstr "Visa knappen 'Hoppa över outro'"
 
 msgctxt "#1004"
 msgid "Show 'Skip recap' button"
-msgstr "Afficher le bouton 'Passer le récapitulatif'"
+msgstr "Visa knappen 'Hoppa över sammanfattning'"
 
 msgctxt "#1005"
 msgid "Show 'Skip preview' button"
-msgstr "Afficher le bouton 'Passer l’aperçu'"
+msgstr "Visa knappen 'Hoppa över förhandsvisning'"
 
 msgctxt "#1006"
 msgid "Show 'Skip commercial' button"
-msgstr "Afficher le bouton 'Passer la publicité'"
+msgstr "Visa knappen 'Hoppa över reklam'"
 
 msgctxt "#1010"
 msgid "Skip intro"
-msgstr "Passer l’intro"
+msgstr "Hoppa över intro"
 
 msgctxt "#1011"
 msgid "Skip outro"
-msgstr "Passer l’outro"
+msgstr "Hoppa över outro"
 
 msgctxt "#1012"
 msgid "Skip recap"
-msgstr "Passer le récapitulatif"
+msgstr "Hoppa över sammanfattning"
 
 msgctxt "#1013"
 msgid "Skip preview"
-msgstr "Passer l’aperçu"
+msgstr "Hoppa över förhandsvisning"
 
 msgctxt "#1014"
 msgid "Skip commercial"
-msgstr "Passer la publicité"
+msgstr "Hoppa över reklam"
