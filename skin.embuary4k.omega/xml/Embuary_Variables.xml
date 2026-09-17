@@ -631,8 +631,10 @@
 		<value>Emby</value>
 	</variable>
 	<variable name="MediaMainlabel">
-		<value condition="String.IsEqual(ListItem.DBType,episode)">$INFO[ListItem.TVShowTitle]</value>
-		<value condition="String.IsEqual(ListItem.DBType,tvshow)">$INFO[ListItem.TVShowTitle]</value>
+		<value condition="String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.TVShowTitle]</value>
+		<value condition="String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Property(showtitle))">$INFO[ListItem.Property(showtitle)]</value>
+		<value condition="String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Property(tvshowtitle))">$INFO[ListItem.Property(tvshowtitle)]</value>
+		<value condition="String.IsEqual(ListItem.DBType,tvshow)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Title]</value>
 	</variable>
 	<variable name="MediaSublabel">

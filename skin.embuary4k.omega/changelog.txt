@@ -1,3 +1,6 @@
+[B]Version 22.0.6[/B]
+- Fixed missing series titles in Next Episode and Latest TV Shows widgets by Stogie87
+
 [B]Version 22.0.5[/B]
 - Fixed missing audio track switch button for streams by Stogie87
 
